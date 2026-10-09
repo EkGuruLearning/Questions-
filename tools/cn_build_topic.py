@@ -54,7 +54,10 @@ def load_topic(topic_num):
 def build_one(topic_num, verbose=True):
     t, sections, pending = load_topic(topic_num)
     n_q = sum(len(s["questions"]) for s in sections)
-    base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {n_q} MCQs (Answers + Nukte)"
+    if n_q == 0 and pending:
+        base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {len(pending)} Pending Questions (Needs Verification)"
+    else:
+        base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {n_q} MCQs (Answers + Nukte)"
     pdf_path = os.path.join(OUT_DIR, base + ".pdf")
     md_path = os.path.join(OUT_DIR, base + ".md")
     pages = cn_engine.build_pdf(topic_num, t["title"], sections, pending, pdf_path)

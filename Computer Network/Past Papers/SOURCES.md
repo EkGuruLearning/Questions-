@@ -41,11 +41,17 @@ text layer is OCR-garbled, so Hindi is **re-authored** during curation.
 > Repo PDF **page headers are copy-pasted and unreliable** — every question is
 > classified by **content** (`tools/cn_taxonomy.py`), never by header.
 
-## B. Additional trusted source (fetched & saved)
+## B. Additional trusted sources (downloaded from GitHub & saved in this repo)
 
 | Source | What was captured | File |
 |--------|-------------------|------|
 | **RPSC Programmer (Paper-I & II) Solved Papers & Practice Book** — YCT Publications (A.K. Mahajan), source: `yctfastbook.com/upload/1726202413_RPSC Pragrammer .pdf` | RPSC Programmer **syllabus — "3. Data Communication and Computer Networks"** (Network Architecture, Circuit/Packet/Message Switching, Network Structure, Physical Layer, Data Link Layer, Framing, Retransmission algorithms, Multiple access & Aloha, CSMA/CD & Ethernet, High Speed LANs & topologies, Broadcast routing & spanning trees, TCP/IP Stack, IP Networks & Internet, DNS & Firewalls, Intrusion Detection & Prevention, Transport layer & TCP/IP, Network Management & Interoperability) + a solved PYQ (sliding-window max window size). | `RPSC Programmer - Data Communication & CN (PYQ) - source yctfastbook.md` |
+| **RPSC Programmer 2024 Paper-1 (full 100 questions + OFFICIAL answer key + section analysis + syllabus)** — source: GitHub `tarunsha009/RPSC` | **Real previous paper** with ~30 CN questions (CIDR /24, subnet masks, IPv4 header fragment-offset & total-length, ARP, DNS/reverse-lookup, CRC, slotted-ALOHA throughput, multiple-access for wired nets, Stop-and-Wait ARQ, 3-way handshake, SMTP/email, ICMP layer, MAC 48-bit, NAV/CSMA-CA, circuit switching, physical layer, DMZ/firewall, zeroconf/DHCP, bus topology…). Every answer has the **official RPSC key**. Already ingested topic-wise into `tools/data/topicN_pending.py`. | `RPSC Programmer 2024 Paper-1/` (5 files) |
+| **Forouzan — *Data Communications and Networking with TCP/IP Protocol Suite*, 6th ed. (861 pp)** — source: GitHub `Kuldeepsinghdev/Programmer-Books` | The **reference textbook** for this bank (used to verify every answer + nukte + gap-fill). Saved here so nobody has to hunt for it again. | `Reference Books/Forouzan - Data Communications and Networking with TCP-IP Protocol Suite.pdf` |
+
+> **Blocked from this sandbox** (download on your machine & drop into `Incoming/` if needed):
+> `rssb.rajasthan.gov.in`, `rpsc.rajasthan.gov.in`, scribd, testbook, utkarsh, etc.
+> GitHub / npm / pypi are reachable — everything above was fetched through GitHub.
 
 ## C. Exams this question bank serves
 

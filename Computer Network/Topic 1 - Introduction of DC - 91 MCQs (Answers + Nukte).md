@@ -2787,3 +2787,63 @@
 *[Source: CN Topic Test-04.pdf | auto-classified: Topic 1 / DC Components & Protocol Basics]*
 
 ---
+### P46. Let us assume that there are four (4) network segments in Bus topologies: A1 – A2, B1 – B2 – B3, C1 – C2 and D1 – D2 – D3. If A1, B1, C1 and D1 are interconnected in mesh, then how many mesh connections are required?
+
+- **(A)** 12
+- **(B)** 10
+- **(C)** 6
+- **(D)** 45
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / Network Structure / Topology]*
+
+---
+### P47. What is the advantage of setting up a DMZ (Demilitarized Zone) using firewall?
+
+- **(A)** To create multiple zones of trust
+- **(B)** Load balancing on the server
+- **(C)** Improve network performance
+- **(D)** Brings internet service into home from internet service provider
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / Types of Networks]*
+
+---
+### P48. There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. What is the probability that only one station transmits in a given time slot?
+
+- **(A)** n × p × (1 - p)ⁿ⁻¹
+- **(B)** p × (1 - p)ⁿ⁻¹
+- **(C)** 1 - (1 - p)ⁿ⁻¹
+- **(D)** (1 - p)ⁿ⁻¹
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / Types of Networks]*
+
+---
+### P49. ICMP protocol is a ........................ layer protocol.
+
+- **(A)** Data link
+- **(B)** Transport
+- **(C)** Application
+- **(D)** Network
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / DC Components & Protocol Basics]*
+
+---
+### P50. Which of the following is true for Circuit Switching handling multiple simultaneous connections?
+
+- **(A)** A single path is used and shared for all data
+- **(B)** All connections are multiplexed into a single channel
+- **(C)** It encodes all data into a single channel
+- **(D)** Separate physical paths are allocated for each channel
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / General Network Basics]*
+
+---
+### P51. The physical layer is responsible for -
+
+- **(A)** Bit-by-bit delivery
+- **(B)** Port to port delivery
+- **(C)** Process to process delivery
+- **(D)** Application to application delivery
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key) | auto-classified: Topic 1 / Characteristics & Criteria]*
+
+---

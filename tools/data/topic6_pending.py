@@ -1346,5 +1346,125 @@ PENDING = [
   ],
   "topic": 6,
   "subtopic": "Session, Presentation & Application"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "For Stop-and-Wait ARQ, for 10 data packets sent, ............ acknowledgements are needed.",
+  "opts_en": [
+   "9",
+   "20",
+   "11",
+   "10"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Flow & Error Control"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The message 1001 is to be transmitted using the CRC polynomial x³ + x + 1 to protect it from errors. The message that should be transmitted is -",
+  "opts_en": [
+   "1001100",
+   "1001011",
+   "1001110",
+   "1001000"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Flow & Error Control"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "In a slotted ALOHA with G-stations attempting to transmit in one slot, the throughput is equal to -",
+  "opts_en": [
+   "G × e⁻ᴳ",
+   "2G × e⁻ᴳ",
+   "e⁻ᴳ",
+   "G × e⁻²ᴳ"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Framing & MAC"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Which of the following protocol is used for transferring email messages from one machine to another?",
+  "opts_en": [
+   "SNMP",
+   "FTP",
+   "TELNET",
+   "SMTP"
+  ],
+  "topic": 6,
+  "subtopic": "Session, Presentation & Application"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Which of the following Multiple Access Protocols is not suitable for wired networks?",
+  "opts_en": [
+   "CSMA/CD",
+   "TGMA",
+   "TDMA",
+   "CSMA/CA"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Framing & MAC"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The three-way handshake mechanism in TCP aims to -",
+  "opts_en": [
+   "secure the communication",
+   "send bits from one device to another over an optical fibre connection",
+   "perform error detection and correction",
+   "establish connection and synchronize sequence numbers"
+  ],
+  "topic": 6,
+  "subtopic": "Transport Layer"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Which of the following protocol may be used as zeroconf and plug-and-play?",
+  "opts_en": [
+   "TCP",
+   "DHCP",
+   "NAT",
+   "ICMP"
+  ],
+  "topic": 6,
+  "subtopic": "Network Layer"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "How many bits for 'Fragment Offset' field are there in IPv4 header?",
+  "opts_en": [
+   "16 bits",
+   "10 bits",
+   "13 bits",
+   "32 bits"
+  ],
+  "topic": 6,
+  "subtopic": "Network Layer"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Network Allocation Vector (NAV) is associated with which of the following MAC technologies?",
+  "opts_en": [
+   "Wi-Fi",
+   "CSMA/CD",
+   "Bluetooth",
+   "Ethernet"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Framing & MAC"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Which of the following is not related to data link layer?",
+  "opts_en": [
+   "Error control",
+   "Congestion control",
+   "Framing",
+   "MAC addressing"
+  ],
+  "topic": 6,
+  "subtopic": "Data Link: Flow & Error Control"
  }
 ]

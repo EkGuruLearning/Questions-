@@ -542,5 +542,77 @@ PENDING = [
   ],
   "topic": 1,
   "subtopic": "DC Components & Protocol Basics"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Let us assume that there are four (4) network segments in Bus topologies: A1 – A2, B1 – B2 – B3, C1 – C2 and D1 – D2 – D3. If A1, B1, C1 and D1 are interconnected in mesh, then how many mesh connections are required?",
+  "opts_en": [
+   "12",
+   "10",
+   "6",
+   "45"
+  ],
+  "topic": 1,
+  "subtopic": "Network Structure / Topology"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "What is the advantage of setting up a DMZ (Demilitarized Zone) using firewall?",
+  "opts_en": [
+   "To create multiple zones of trust",
+   "Load balancing on the server",
+   "Improve network performance",
+   "Brings internet service into home from internet service provider"
+  ],
+  "topic": 1,
+  "subtopic": "Types of Networks"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. What is the probability that only one station transmits in a given time slot?",
+  "opts_en": [
+   "n × p × (1 - p)ⁿ⁻¹",
+   "p × (1 - p)ⁿ⁻¹",
+   "1 - (1 - p)ⁿ⁻¹",
+   "(1 - p)ⁿ⁻¹"
+  ],
+  "topic": 1,
+  "subtopic": "Types of Networks"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "ICMP protocol is a ........................ layer protocol.",
+  "opts_en": [
+   "Data link",
+   "Transport",
+   "Application",
+   "Network"
+  ],
+  "topic": 1,
+  "subtopic": "DC Components & Protocol Basics"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "Which of the following is true for Circuit Switching handling multiple simultaneous connections?",
+  "opts_en": [
+   "A single path is used and shared for all data",
+   "All connections are multiplexed into a single channel",
+   "It encodes all data into a single channel",
+   "Separate physical paths are allocated for each channel"
+  ],
+  "topic": 1,
+  "subtopic": "General Network Basics"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The physical layer is responsible for -",
+  "opts_en": [
+   "Bit-by-bit delivery",
+   "Port to port delivery",
+   "Process to process delivery",
+   "Application to application delivery"
+  ],
+  "topic": 1,
+  "subtopic": "Characteristics & Criteria"
  }
 ]

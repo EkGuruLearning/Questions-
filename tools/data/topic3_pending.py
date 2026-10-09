@@ -818,5 +818,113 @@ PENDING = [
   ],
   "topic": 3,
   "subtopic": "MAC Address"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "What does /24 denote in CIDR?",
+  "opts_en": [
+   "24 bits are used for host portion",
+   "24 bits are used for network portion",
+   "24 subnets are created",
+   "24 addresses are available in the subnet"
+  ],
+  "topic": 3,
+  "subtopic": "Subnetting & CIDR"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "IP address 172.16.123.213 is found to be residing on a sub-network with the following subnet mask: 255.255.255.240. What is the network address of this subnet?",
+  "opts_en": [
+   "172.16.123.240",
+   "172.16.123.208",
+   "172.16.123.213",
+   "172.16.123.245"
+  ],
+  "topic": 3,
+  "subtopic": "Subnetting & CIDR"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The size of the 'total length field' of IPv4 datagram is -",
+  "opts_en": [
+   "16 bits",
+   "32 bits",
+   "8 bits",
+   "4 bits"
+  ],
+  "topic": 3,
+  "subtopic": "IPv4 Addressing"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "What is the role of DNS? It is best described as -",
+  "opts_en": [
+   "maps a domain name to an IP address",
+   "translate a host's private IP address to a public IP address",
+   "translate a host's IPv6 address to an IPv4 address",
+   "maps a MAC address to an IP address"
+  ],
+  "topic": 3,
+  "subtopic": "IPv4 Addressing"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "A Reverse Lookup in DNS means a lookup to ........................ using ........................ records.",
+  "opts_en": [
+   "identify mail servers, SOA",
+   "map IP address to domain name, PTR",
+   "map domain names to IP address, A",
+   "determine the authoritative name servers, CNAME"
+  ],
+  "topic": 3,
+  "subtopic": "IPv4 Addressing"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "An organization has a Class B network and wishes to form subnets for 64 departments. The subnet mask would be -",
+  "opts_en": [
+   "255.255.128.0",
+   "255.255.0.0",
+   "255.255.64.0",
+   "255.255.252.0"
+  ],
+  "topic": 3,
+  "subtopic": "Subnetting & CIDR"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?",
+  "opts_en": [
+   "2046",
+   "1022",
+   "1023",
+   "1024"
+  ],
+  "topic": 3,
+  "subtopic": "Subnetting & CIDR"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The Address Resolution Protocol (ARP) is used for -",
+  "opts_en": [
+   "finding the IP address that corresponds to a MAC address",
+   "finding the MAC address that corresponds to an IP address",
+   "finding the IP address from the DNS",
+   "finding the IP address of the default gateway"
+  ],
+  "topic": 3,
+  "subtopic": "IPv4 Addressing"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The size of MAC address (in bits) is -",
+  "opts_en": [
+   "42",
+   "48",
+   "24",
+   "36"
+  ],
+  "topic": 3,
+  "subtopic": "MAC Address"
  }
 ]

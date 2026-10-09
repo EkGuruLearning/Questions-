@@ -914,5 +914,29 @@ PENDING = [
   ],
   "topic": 2,
   "subtopic": "OSI Model Basics"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The reliable data transfer is implemented by",
+  "opts_en": [
+   "Network layer",
+   "Physical layer",
+   "Presentation layer",
+   "Transport layer"
+  ],
+  "topic": 2,
+  "subtopic": "OSI Model Basics"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "In IPv4, packet fragmentation and reassembly is handled by",
+  "opts_en": [
+   "using the More Fragments and Fragment Offset Fields",
+   "using the MAC Header",
+   "using the Header Checksum",
+   "encapsulating packets in larger data frames"
+  ],
+  "topic": 2,
+  "subtopic": "OSI vs TCP/IP & Layer Functions"
  }
 ]

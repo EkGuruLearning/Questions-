@@ -422,5 +422,17 @@ PENDING = [
   ],
   "topic": 5,
   "subtopic": "Unguided Media"
+ },
+ {
+  "src": "RPSC Programmer 2024 Paper-1 (with official key)",
+  "q_en": "The primary use of scramblers in Line Coding Schemes is to -",
+  "opts_en": [
+   "make the data look random",
+   "compress transmission data",
+   "increase signal bandwidth",
+   "decrease signal bandwidth"
+  ],
+  "topic": 5,
+  "subtopic": "Signals & Performance"
  }
 ]
