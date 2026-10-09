@@ -204,4 +204,9 @@ PENDING = [{'src': 'BCI Subject Test-8.pdf',
   'q_en': '- transmission medium modern internet backbone networks primary ? Which transmission medium is primarily used in modern internet backbone networks',
   'opts_en': ['Twisted Pair Cable', 'Coaxial Cable', 'Single Mode Fiber Optic Cable', 'Microwave Links'],
   'topic': 1,
-  'subtopic': 'DC Components & Protocol Basics'}]
+  'subtopic': 'DC Components & Protocol Basics'},
+ {'src': 'CN Topic Test-04.pdf',
+  'q_en': 'Which physical layer technique allows multiple users to share the same bandwidth simultaneously',
+  'opts_en': ['TDMA', 'FDMA', 'CDMA', 'ARQ'],
+  'topic': 2,
+  'subtopic': 'OSI Model Basics'}]

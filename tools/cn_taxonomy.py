@@ -24,7 +24,7 @@ EXAMS = [
     "REET (Level 1 / Level 2 — Computer)",
     "RAS / Rajasthan Govt. (General) Exams",
 ]
-EXAMS_LINE = "RPSC Programmer • RSMSSB IA • RSMSSB SA • Data Entry/DD • BCI • SCI • REET • RAS & other Rajasthan Govt. Exams"
+EXAMS_LINE = "RPSC Programmer • ACP (Analyst Cum Programmer) • RSMSSB IA • SA • Data Entry/DD • BCI • SCI • REET • RAS • SSC CGL/CHSL • RRB • IBPS & other Rajasthan & Central Govt. Exams (Computer Awareness)"
 
 # ---------------------------------------------------------------------------
 # The 7 topics. Each sub-topic carries keywords used for content classification.

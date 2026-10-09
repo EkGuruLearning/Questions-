@@ -440,4 +440,9 @@ PENDING = [{'src': 'BCI Subject Test-8.pdf',
   'q_en': 'IP address can be used in WAN IP WAN',
   'opts_en': ['256.0.0.1', '172.16.0.10', '15.1.5.6', '127.256.0.118.'],
   'topic': 1,
-  'subtopic': 'Types of Networks'}]
+  'subtopic': 'Types of Networks'},
+ {'src': 'CN Topic Test-03.pdf',
+  'q_en': 'Which organization is responsible for managing IP address allocation globally',
+  'opts_en': ['IEEE', 'ICANN', 'IETF', 'ISO'],
+  'topic': 2,
+  'subtopic': 'OSI Model Basics'}]
