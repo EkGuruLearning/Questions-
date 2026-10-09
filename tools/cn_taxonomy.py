@@ -16,6 +16,7 @@ page headers printed inside the source PDFs.
 # ---------------------------------------------------------------------------
 EXAMS = [
     "RPSC Programmer",
+    "ACP — Analyst Cum Programmer (RPSC)",
     "RSMSSB Informatics Assistant (IA / Suchna Sahayak)",
     "RSMSSB School Administrator (SA)",
     "RSMSSB Data Entry / Computer Operator (DD)",
@@ -23,8 +24,15 @@ EXAMS = [
     "SCI — Senior Computer Instructor",
     "REET (Level 1 / Level 2 — Computer)",
     "RAS / Rajasthan Govt. (General) Exams",
+    "DSSSB (TGT / PGT / LDC / Computer Instructor)",
+    "KVS / NVS (PGT / TGT Computer Science)",
+    "HTET / Other Teaching Exams",
+    "SSC CGL / CHSL / MTS (Computer Awareness)",
+    "RRB NTPC / Group D / JE (Computer Awareness)",
+    "IBPS PO / Clerk & Banking Exams (Computer Awareness)",
+    "UPSC / Other Central Govt. Exams",
 ]
-EXAMS_LINE = "RPSC Programmer • ACP (Analyst Cum Programmer) • RSMSSB IA • SA • Data Entry/DD • BCI • SCI • REET • RAS • SSC CGL/CHSL • RRB • IBPS & other Rajasthan & Central Govt. Exams (Computer Awareness)"
+EXAMS_LINE = "RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)"
 
 # ---------------------------------------------------------------------------
 # The 7 topics. Each sub-topic carries keywords used for content classification.

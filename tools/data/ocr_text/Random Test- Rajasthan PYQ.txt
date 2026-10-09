@@ -1,0 +1,492 @@
+
+--- page 1 ---
+Random Test
+Computer
+Nelwork
+Rajashan-RSSB $RPSC
+--- page 2 ---
+4Htlo0r
+91
+In a DataEntry Office,thecomputer centers
+200
+are on Ist and 4th floor.Both the centres are
+connected three LAN.However the signals
+take time to travel.Which amongst the
+34AN
+followinghardware canimprove the data
+transmission?
+Modem
+(B)
+Repeater
+1s+ flor
+(C)
+Router
+Computer
+100
+(E)
+Question not attempted
+，
+pmug
+？
+(B)
+Rdler
+(A)
+(C)
+(D)
+(E)
+--- page 3 ---
+88
+All the information on theinternet is passed
+using
+switchingmethod.
+(A)
+Portable
+Packets
+(C)
+Pouch
+(D)
+Primary
+(E)
+Questionnot attempted
+#
+N
+(g)(B)
+2eb
+(A)
+(C)
+(D)
+bhjhalk
+22lh
+(E)
+gaRa
+上66
+--- page 4 ---
+104 In LAN,connectivity can be created using
+Wi-Fi,or
+cables.
+(A)
+TV
+(B)
+Radio
+(C)
+Mobile
+Ethernet
+(E)
+Question not attempted
+LAN Wi-Fi,I
+h
+(A)
+TV
+(B)
+(D)
+上6K上
+--- page 5 ---
+108
+signals are discrete and generated
+by digital modulations.
+(A)
+Analog
+Digital
+(C)
+Noise
+(D)
+Bandwidth
+(E)
+Question not attempted
+(A)T
+(B)
+(C)n
+(D)
+(E)
+E
+--- page 6 ---
+110
+is a network security system
+designed to protect a trustedprivatenetwork
+from an untrusted outside network to which
+it is connected.
+(A)
+Bridge
+(B)
+Cookies
+Firewall
+(D)
+SSL
+(E)
+Question not attempted
+(A)
+(B)
+(C)
+(D)
+SSL
+(E)
+--- page 7 ---
+IP&ecuwily
+117
+IPSEC,IP Encapsulation and Tunneling
+are
+the technologies used in
+only.
+IP Encopsulation
+Intranet
+TCP
+VPN
+(D)
+Internet
+$
+(E)
+Question not attempted
+Tunneung
+IPSECIP
+Virtuol Rivade Netwons
+(A)
+(B)
+TCP
+(C)
+VPN
+(D)
+(E)
+--- page 8 ---
+23.Match TCP/IP layers and protocols-
+Column-I
+3(P) Transport layer UDP
+(Q) Network (internet) layer IC M P
+2(R) Application layer →FT P
+Column-II
+1.ICMP
+2.FTP
+3.UDP
+(A)P-2,Q-1,R-3
+(B)P-1,Q-2,R-3
+(P-3,Q-1,R-2
+(D)P-3,Q-2,R-1
+--- page 9 ---
+HTTP,
+FTP?
+Applicationlayer
+(B)Transport layer
+(C)Internal layer
+(D)Hardware layer
+SMTPHTTPFTP
+(A)
+(B)
+(C)
+--- page 10 ---
+CQuanizing
+39.
+Quantizing
+noise occurs in
+Pulbre Gade Moduoechon
+APCM
+(B)TDM
+(C)FDM
+(D)PPM
+(A)PCM
+(B）TDM
+(C)FDM
+(D)PPM
+--- page 11 ---
+M
+Llhh
+Division Mwiple Access
+83.
+Select the
+false statement about
+CDMA
+technology
+益益
+I.CDMA technology optimizes theuseof
+availablebandwidthasit transmitsover the
+C1:SL
+entire frequency range.
+(2:S2
+≤s:≤)
+II.Each user in a CDMA system uses a
+c4:54
+different code to modulate their signal
+y 43
+X
+CDMA technology offers lesssecurity as
+compared to theGSM technology.
+Rar
+A SIMcard is alwaysrequired for the
+Gmpvice
+workingofa CDMA device.
+CDMA Moc eCM 
+Only (I)
+Xonly (H)
+Io GSM
+()and (II)
+(IIl) and (IV)
+--- page 12 ---
+93.Network devices
+and
+are
+used atphysical layer.
+Gateway,Bridge
+Router,Repeaier
+Hub,Switch
+Repeater,Hub
+--- page 13 ---
+64
+mask would be.-
+(1)255.255.0.0
+255.255.252.0
+(E)
+255.255.64.0
+(4)
+255.255.128.0
+(5)
+Question not attempted
+64>2= 64
+cass B= 6bit 
+P!PN
+16 bts
+//////00. 00000000
+Host hit
+2S2.
+--- page 14 ---
+47.The physical layer is responsible for-
+(1)
+Process to process delivery
+Bit-by-bit delivery
+(3)
+Application to application delivery
+(4)
+Port to port delivery
+Appliovhon
+aye
+Fanpot
+(5)
+Question not attempted
+--- page 15 ---
+49.Which of the followingMultipleAccessProtocols is not suitableforwirednetworks?
+CSMA/CA
+(2)
+CSMA/CD
+(3)
+TGMA
+(4) 
+TDMA
+(5)
+Question not attempted
+IcA → Caurien Semr Mwhple Access
+CSMA
+Gll son Avoidn
+Wirde ss
+--- page 16 ---
+52. For Stop-and-Wait ARQ, for 10 data packets sent,
+acknowledgements are needed.
+(1) 11
+(2) 9
+10
+(4)20
+(5) Question not attempted
+1o dly
+10 Aek 
+packel
+--- page 17 ---
+54. What is'the role of DNS? It is best described as -
+(1)
+translate a host's IPv6 address to an IPv4 address
+(2)
+maps a MAC address to an IP address
+(3)
+translate a host's private IP address to a public-IP address
+4
+maps a domain name to an IP address
+Question not attempted
+--- page 18 ---
+56.If a Class B networkon the internet has a subnet mask of 255.255.248.0, what is the maximum
+numberofhosts.persubnet?
+(1)1023
+(2)1022
+(3)
+1024
+2046
+(5)
+Questionnotattempted:
+248.0
+16 bt
+P!YeN
+1111000 .0000000 0
+Hot=2-2
+2648-2≤2046
+--- page 19 ---
+57. The Address Resolution Protocol (ARP) is used for -
+(1)finding the'IP address from the DNS.
+(2)finding the.IP address that corresponds to a MAC address.
+(3)
+finding the IP address. of the default gateway.
+finding.the MAC address that corresponds to an IP address.
+(5)Question not attempted
+--- page 20 ---
+mechanism?
+Reliability
+(2)
+Availability
+(3)
+Confidentiality
+(4)
+Scalability
+(5)
+Question not attempted
+Timen
+Plow Gontod
+peidA3
+AutontreRepenle
+① Sfop $ wait AR@
+Regpuen
+--- page 21 ---
+64.The size of the ‘total length field’ of IPv4 datagram is -
+16 bits
+(2)4 bits
+(3)   8 bits
+(4)- 32 bits
+(5)Question not attempted
+Congestion control
+(2)
+Error control
+(3) Framing
+(4)MACaddressing
+(5)  Question not attempted
+--- page 22 ---
+Prafocd
+71. ICMP protocol is a .
+ layer protocol.
+(1) Data link
+(2)
+Application
+(3)
+Transport
+Network
+Classless.Tnter Domain
+(5)
+Question not attempted
+CIDR
+72. What does /24 denote in CIDR?
+24
+(1)
+(2)24 addresses are available in the subnet
+24bits areused fornetworkportion
+(4) 24 bits are used for host portion
+(3)
+24 subnets are created
+(5)
+Question not attempted
+32-24
+2
+256
+=2
+Hos+IP=256-2f254
+--- page 23 ---
+73.
+Network Allocation Vector (NAV) is associated with which of the following MAC technologies?
+(1)CSMA/CD
+(2)
+Bluetooth
+CSMA ICA
+(3)Wi-Fi
+(4)Ethernet
+(5)Questionnot attempted
+Wireless
+--- page 24 ---
+80. Which of the following is true for Circuit Switching handling multiple simultaneous
+connections?
+XA single path is used and shared for all data
+XIt encodes all data into a single channel
+Separate physical paths are allocated for each channel
+(4) All connections are multiplexed into a single channel
+(5)
+Question not attempted
+--- page 25 ---
+82. Which of the following protocol may be used as zeroconf and plug-and-play?
+(2) ICMP
+DHCP
+(3)NAT
+(4)
+TCP
+(5)
+Questionnot attempted
+DHcPcLiev
+V
+0. 0.0. 0
+--- page 26 ---
+84.The reliable data transfer is implemented by.
+(2)  Presentation layer
+(1)  Network layer
+Transport layer
+(3) Physical layer
+(5) Question not attempted
+--- page 27 ---
+94. How many bits for ‘Fragment Offset' field are there in IPv4 header?
+(1)10 bits
+(2)32 bits
+(4)16 bits
+13 bits
+(5)
+Question not attempted
+95. The size of MAC address (in bits) is -
+(1)24
+48
+(4)42
+(3) 36
+(5) Question not attempted
+--- page 28 ---
+98. The message 1001 is to be transmitted using the CRC polynomial x²+ x + 1 to protect it from
+errors. The message that should be transmitted is -
+CRC generhr
+(1)
+1001000
+(2)
+1001100
+B+x+
+1001110
+(4) 
+100101i
+(5)
+Questionnot attempted
+lool!o→sent .
+[ol!
+-00-0
+ΦΦ-o0o
+-o--
+--- page 29 ---
+99. The three-way handshake mechanism in TCP aims to -
+(1)
+secure the communication.
+(2)
+9)send bits from one device to another over an optical fibre conniection.
+(3)
+perform error detection and correction.
+establish connection and synchronize seauence numbers.
+(5)
+)Question not attempted
+--- page 30 ---
+45.If the channel band is limited to 6kHz and
+channe
+signal to noise ratio is 16,what would be the
+capacity of channel?
+og(4
+zgir
+(A)15.15kbps
+24.74kbps
+Radio
+Noicy
+Nosdess
+(g(8)
+(C)30.12kbps
+(D)52.18kbps
+chann
+channel
+(dNs+)
+1
+01009
+4
+(1+16)
+(A)15.15kbps
+(B)24.74kbps
+24 006
+(C)30.12kbps
+(D)52.18kbps
+41.

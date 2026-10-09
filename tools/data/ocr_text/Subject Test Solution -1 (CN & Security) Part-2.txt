@@ -1,0 +1,327 @@
+
+--- page 1 ---
+SUNILYADAV SIR
+9694473047
+Which of the following uses the same key for
+encryption and decryption?
+岁?
+Symmetric Key Cipher
+PaiY
+C. Hash Function
+Com
+D. Digital Signature
+ANINSTITUTEFOR
+COMPUTESCIENCE
+public
+Pivale
+kwy
+key
+--- page 2 ---
+SUNIL YADAV SIR
+9694473047
+Which of the following uses a pair of keys
+(public and private)?
+(d
+y?
+A. Symmetric Cipher
+Asymmetric Cipher
+C. DES
+Compul
+demy
+D. AES
+AN INSTITUTE FOR
+COMPUTESCIENCE
+--- page 3 ---
+SUNIL YADAV SIR
+9694473047
+Which of the following is faster in encryption
+and decryption?
+Symmetric Key Cipher
+B. Asymmetric Key Cipher
+C. Cannot decide
+D. None of these
+CompuTechAcademy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 4 ---
+SUNIL YADAV SIR
+9694473047
+Public key is used to
+Encrypt the data
+B. Decrypt the data
+C. Both encrypt and decrypt
+D. Generate session keys
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 5 ---
+SUNIL YADAV SIR
+9694473047
+Which of the following is NOT a symmetric
+encryption algorithm?
+A.
+AES
+B. DES
+C. Blowfish
+Compu D. RSA
+ademy
+ANTNSTITUTEFOR
+COMPUTESCIENCE
+--- page 6 ---
+SUNILYADAV SIR
+9694473047
+What is the main disadvantage of symmetric
+key encryption?
+A. It is very slow
+E. Key distribution is difficult
+C. It uses two keys
+D. It cannot encrypt text
+CompuTechAcademy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 7 ---
+SUNILYADAVSIR
+9694473047
+In public key cryptography, the message encrypted
+with the public key can only be decrypted by
+T
+A. Another public key
+B. Same public key
+C. Private key corresponding to that public key
+D. Session key
+AN INSTIYUTE FOR
+COMPUTESCIENCE
+--- page 8 ---
+SUNILYADAVSIR
+9694473047
+Which one of the following statements is true about
+symmetric and asymmetric cryptography?
+花上
+Symmetric cryptography provides authentication.
+. Asymmetric cryptography is faster than symmetric.
+Symmetric cryptography requires secure key
+exchange.
+CX. Both use two different keys.
+--- page 9 ---
+SUNIL YADAV SIR
+9694473047
+What is the key length of AES-256 encryption?
+AES-256?
+A. 128 bits
+B. 192 bits
+C. 256 bits
+D. 512 bits
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 10 ---
+SUNILYADAVSIR
+9694473047
+Which cipher method encrypts one bit or byte
+at a time?
+lE
+A. Block Cipher
+Stream Cipher
+C. Substitution Cipher
+CO
+D. Transposition Cipher
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 11 ---
+SUNILYADAV SIR
+9694473047
+Which of the following statements is FALSE?
+A. AES is a block cipher.
+. RsA is a symmetric cipher.
+C. Diffie-Hellman is used for key exchange.
+D. DES is symmetric.
+CompuTech Academy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 12 ---
+SUNIL YADAV SIR
+9694473047
+Nelwonk seuniy
+Which of the following is NOT a goal of network
+security?
+goads.
+A. Confidentiality (Jlu)
+B. Integrity (3sI)
+CIA
+C. Availability (3uvcT)
+Gonldatiaity
+. Redundancy (3fqyeI)
+ompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+Integily
+Aralakility
+--- page 13 ---
+SUNIL YADAV SIR
+9694473047
+The term "CIA triad" in information security
+refers to
+bbH  "Sh .   E
+元
+A. Cryptography, Integrity, Authentication
+Confidentiality, Integrity, Availability
+C. Confidentiality, Information, Access
+D. Control, Information, Access
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 14 ---
+SUNIL YADAV SIR
+9694473047
+The goal of “Integrity" ensures that -
+A. Data can be accessed only by authorized
+users
+Data is accurate and has not been modified
+C. Data is always available when needed
+D. Unauthorized users cannot enter the
+Compusystemademy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 15 ---
+SUNILYADAVSIR
+9694473047
+Which of the following attacks violates
+confidentiality?
+pmvauw
+Interception
+B. Modification
+C. Fabrication
+CompuTechp. Interruption
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 16 ---
+SUNILYADAVSIR
+9694473047
+A television broadcast is an example of
+transmission.
+Simplex
+B. Half-duplex
+C. Full-duplex
+D. Automatic
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 17 ---
+SUNIL YADAV SIR
+9694473047
+Modification attack violates which security
+goal?
+岁?
+A. Confidentiality
+. Integrity
+C. Availability
+Comp D.Authentication
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 18 ---
+SUNILYADAVSIR
+9694473047
+Denial of Service (DoS) attack violates which
+Usu
+Senvice Amol
+goal?
+Denial of Service (DoS) HeI fH 可& 
+A. Confidentiality
+B. Integrity
+Availability
+Com
+D. Authentication
+FOR
+COMPUTESCIENCE
+--- page 19 ---
+SUNIL YADAV SIR
+9694473047
+Spoofing attack targets which type of security
+aspect?
+Authentication
+B. Integrity
+C. Availability
+D. Confidentiality
+CompuTechAcademy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 20 ---
+SUNILYADAVSIR
+9694473047
+Which of the following is an active attack?
+(）
+A. Interception
+miv
+Modification
+C. Traffic Analysis
+D. Eavesdropping.
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 21 ---
+SUNIL YADAV SIR
+9694473047
+The primary difference between active and passive
+attacks is
+Active 3Passive He  H 3iR T?
+Active attacks change data; passive do not.
+B. Passive attacks destroy hardware.
+C. Both are same.
+D. Passive attacks are legal.
+CompuTechAcademy
+AN INSTITUTE FOR
+COMPUTESCIENCE
+--- page 22 ---
+SUNIL YADAV SIR
+9694473047
+The Caesar Cipher is an example of which type
+of cryptographic technique?
+Caesar
+3GTQUT
+#?
+A. Transposition Cipher
+P. Substitution Cipher
+C. Stream Cipher
+D. Block Cipher
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 23 ---
+SUNIL YADAV SIR
+9694473047
+In Steganography, the file used to hide secret data
+is called
+Steganography   H u
+A. Secret File
+ Cover File
+C. Cipher File
+chAcademy
+D. Key File
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 24 ---
+SUNIL YADAV SIR
+9694473047
+The process of detecting hidden data inside a
+file is known as
+Y?
+A. Cryptanalysis
+Steganalysis
+C. Data Mining
+Cor
+D. Steganography
+AN INSTIUTEF
+COMPUTESCIENCE
+--- page 25 ---
+SUNIL YADAV SIR
+9694473047
+What is the output of a Steganography process
+called?Steganography ufqT T 3Hscyc
+T
+?
+A. Ciphertext
+Stego-object
+C. Encoded file
+D. Key file
+CompuTechAcademy
+AN INSTITUTEFOR
+COMPUTESCIENCE

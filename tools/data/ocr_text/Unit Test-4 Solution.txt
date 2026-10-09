@@ -1,0 +1,542 @@
+
+--- page 1 ---
+UNIT TEST4 CN
+(PHYSICAL,DATALINKLAYER),JAVA
+(CLASS AND OBJECT,INTERFACE)
+--- page 2 ---
+1。
+The portion of physical layer that interfaces with the media
+access control sublayer is called
+Physical signaling sublayer
+(b) Physical data sublayer
+(c) Physical address sublayer
+(d) Physical transport sublayer
+--- page 3 ---
+2。
+On what type of switching does internet work?
+(a) Circuit
+(b) Bit
+Lof Packet
+t(d) Line
+--- page 4 ---
+Which of the following techniques is used for transmitting
+3.
+digital signal?
+(a) Amplitude modulation
+(b) Frequency modulation
+(c) Pulse code modulation
+(d) Amplitude shift keying
+--- page 5 ---
+4。
+Which of the following is an advantage of computer
+networks?
+(a) Resource sharing
+(b) Improving reliability and availability
+(c) Enhancing performance
+(dy All of the above
+--- page 6 ---
+5.
+ In which layer of network architecture, the secured socket
+layer (SsL) is used?
+becwu
+QuyeeTL ≤
+.Socke
+(a) Physical layer
+(b) Session layer
+bayen
+Appli ah'on
+(c) Application layer
+y Presentation layer
+Toanrpor
+byer
+--- page 7 ---
+6.  X. 21 is
+(a) A method of determining which device has access to the
+transmission medium at any time
+(b) A method access control technique or multiple access
+transmission media
+(c) Very common but oriented at linked protocol issued to
+ISO
+(d) A network access standard for connecting stations to a
+circuit switch network
+--- page 8 ---
+7. In early ARPANET, which routing method was used:
+(a/Distance vector routing - Locl Qalabax
+(b) Link state routing →→Cleba Qalahav
+(c) Least cost routing
+(d) Flooding
+--- page 9 ---
+8.
+Which of the ‘following Ethernet encoding has the highest
+redundancy'
+Encading
+(a)
+) 1B2B
+(q)
+4B5B
+(c)
+5B6B
+prerent
+g<
+(d)
+8B10B
+abser.
+Fke Nw
+ophcad
+3J59
+--- page 10 ---
+Which of the following
+9.
+ error detection techniques is based on
+binary division?
+(a) Checksum
+(b) Cyclic Redundancy Check (CRC)
+(c) Simple parity check
+(d) Two-dimensional parity check
+--- page 11 ---
+10. The term UPnP protocol is a short form for:
+(a)
+Uniform Plug and Play
+(b)
+Unit Plug and Play
+(c)
+Useful Plug and Play
+(d)  Universal Plug and Play
+--- page 12 ---
+11. Which of this is not a network edge device?
+(a) PC
+(b) Server
+(c) Smartphone
+(dySwitch
+--- page 13 ---
+12. The
+is the physical path over which a message travels.
+(a) Path
+(b) Protocol
+(c) Route
+(dyMedium
+--- page 14 ---
+13. The structure of format of data is called:
+LajSyntax
+(b) Struct
+(c) Semantic
+(d) None of the above
+--- page 15 ---
+14. Consider the following
+ statements about the functionality
+of an IP based router.
+QX A
+router
+does
+modify
+the
+IP
+during
+not
+packets
+forwarding.
+JI. It is
+ not
+necessary
+for a router to i
+implement
+any
+routing protocol.
+WI. A router should
+1 reassemble IP f
+fragments if the MTU of
+the outgoing link is larger than the size of the incoming
+IP
+packet.
+Which of the above statements is/are TRUE?
+(a) I and 1I only
+(b) I only
+(c) 1I and 11I only
+ 11 only
+--- page 16 ---
+15. If a computer network cable is broken whole network goes
+down in
+topology
+(a) 
+ Star
+(b) Ring
+CmF
+(c)
+ Mesh
+(d) All options are correct
+--- page 17 ---
+16. Hierarchical topology is used to establish a network which is also
+known as
+(a) Bus network
+(b) Star network
+(ej Tree network
+(d) Mesh network
+--- page 18 ---
+17. Which of the following
+component is responsible for network
+communication in a computer system?
+(a) UPS
+NIC
+(b) Ethernet card
+(c) SvGA card
+(d) SMPS
+--- page 19 ---
+18. Speed of internet connection is measured in
+a) Kilo bits per second
+(b) Kilo Boolean per second
+(c) Meter per second
+(d) None of these
+--- page 20 ---
+19. TCP/IP is an example of
+(a) Communication protocol
+(b) Networking protocol
+(c) Data transfer protocol
+( All options are correct
+--- page 21 ---
+20. In a computer
+network, which of the following
+isa
+connecting device?
+(a) Router
+(b) Hub
+(c) Switch
+(d)All options are correct
+--- page 22 ---
+21.
+is a device that combines transmission from various
+I/O devices into one line
+(a) Modifier
+Multiplexer
+(c) Concentrator (d) Gateway
+--- page 23 ---
+22. The amount of data transmitted in a fixed amount of time
+iscalled
+(a) Refresh rate (b) Resolution
+efBandwidth
+(d) Frequency
+--- page 24 ---
+23. File server is a
+which is used to store files received
+from various client machines
+(a) Specialized computer system
+(b) Modem
+(c) Router
+(d) Transponder
+--- page 25 ---
+24. Which of the following is a recovery technique?
+(a) Public key encryption
+(b Shadow paging
+(c) Hash file organization
+(d) Indexed file organization
+--- page 26 ---
+25. Bit stuffing refers to
+(a) Inserting a ‘O' in user stream to differentiate it with a flag
+(b) Inserting a “0' in flag stream to avoid ambiguity
+(c) Appending a nibble to the flag sequence
+(d) Appending a nibble to the user data stream
+--- page 27 ---
+26. Dynamic routing protocol enable routers to:
+(a) Dynamically discover and maintain router
+(b) Distribute routing updates to other routers
+(c) Reach agreement with other routers about the network
+topology
+(d) All of the above
+--- page 28 ---
+27. In
+Ethernet
+CSMA/CD,
+the
+special
+bit
+is
+sequence
+transmitted by media access management to handle collision
+is called
+(a) Preamble
+(b) Post amble
+Je) Jam
+(d) None of these
+Jammq
+--- page 29 ---
+28. Lightweight Directory Access Protocol is used for
+(a) Routing the packets
+(byAuthentication
+(c) Obtaining IP address
+(d) Domain name resolving
+--- page 30 ---
+29. The encoding technique used to transmit the signal in giga
+Ethernet technology over fiber optic medium is
+(a) Differential Manchester encoding
+(b) Non Return to zero
+(c) 4B/5B encoding
+(d) 8B/10B encoding
+--- page 31 ---
+30. What is the primary purpose of a VLAN?
+(a) Demonstrating the proper layout for network
+(b) Simulating a network
+(c) To create a virtual private network
+(d) Segmenting a network inside a switch or device
+--- page 32 ---
+31. what is the result of compiling and
+(a) It does not compile
+executing the following class ?
+(b) It compile but throws
+an
+class AAA
+exception at runtime
+(c) It compile and output 50
+final int a=20;
+(d) It compile and output 30
+public static void main(Stringll java)
+int b=30;
+System.out.println(a+b);
+--- page 33 ---
+32. what will be the output of following Java
+code ?
+class AAA {
+MY
+AAA()
+ins
+System.out.print("1");
+System.out.print("3");
+public static void main(Stringll java)
+static
+new AAA();new AAA();
+System.out.print("2");
+(a) 2133
+21313
+(c) 2313
+(d) 23131
+--- page 34 ---
+33. A blueprint for a software object is called
+(a)   Object
+(b)  Class
+(c)
+Instance
+(d)
+Encapsulation
+--- page 35 ---
+34.what will be get output of the following
+(a)
+sunilsunil
+Java code ?
+(q)
+sunil
+protected glass AAA
+(c)
+run time exception
+public static void main(Stringl java)
+(d)
+compile time error
+String Name="sunil";
+Name=Name+Name;
+System.out.println(Name);
+--- page 36 ---
+35. Which of the following statement about a default branch in a switch
+statement is correct ?
+(a) all switch statements must include a default statemenft
+(b) the default statement is required to be placed after
+case
+statements
+(o) unlike a case statement the default statement does not take a
+value
+(d) a default statements can only be used when at least one case
+statement is present
+--- page 37 ---
+36. what will be the output of the following Java code ?
+class AAA {
+public static void main(Stringll java)
+(a) 0
+(b) Garbage value
+B obj=null;
+(c) Compile time error
+System.out.println(obj.a);
+(d) Run time exception
+class
+B
+int a;
+--- page 38 ---
+37. What is the use of 'this' keyword in Java?
+Jaj used to hold the reference of the current object.
+(b) holds object value
+(c) used to create a new instance
+(d) all of these
+--- page 39 ---
+38. what will be the output of the following java code ?
+class AAA {
+public static void main(Stringll java)
+new B();
+call();
+class B
+void call()
+B()
+System.out.println("method callled");))
+(a)
+Compile error bcoz we cannot call method within constructor
+(b
+method called
+(c)
+run time exception
+(d)
+none of these
+--- page 40 ---
+39.
+What is the output of the below Java
+(a)
+Count=0
+program with constructors?
+(b)
+Count=10
+public class Constructor2
+Compiler error
+(d)
+None of the above
+int count=10;
+Constructor2(int count)
+System.out.println("Count=" + count);
+public static void main(Stringll args)
+Constructor2 con = new Constructor2();
+--- page 41 ---
+40. A constructor can call another overloaded constructor using
+the
+keyword in Java.
+(a) super
+(b) local
+(c) con
+(dythis
+--- page 42 ---
+41. what will me the output of the following java code ?
+class Constructor3
+System.out.println("Birds=" +birds);
+SO
+inskan u
+int birds=10, -
+Constructor3()
+public static void main(String
+[ args)
+this(20);
+Constructor3 con = new Constructor3();
+11
+Constructor3(int birds)
+this.birds=50;
+a)
+Birds=0
+m
+b) 
+Birds=10
+c Birds=20
+d) Compile time error
+--- page 43 ---
+42. In Java, you can 
+variables from one constructor to
+ pass
+another overloaded constructor.
+Shaheinta
+=-D
+(a) local variables
+(b) static variables
+thus
+(c) non-static variables
+(d) local and static variables
+--- page 44 ---
+43. Choosing a suitable overloaded
+constructor happens at
+time in Java.
+(a)
+Compile-time
+Run time
+(c)
+Depends on Compiler
+(d)
+None of the above
+--- page 45 ---
+44. A "this" operator used inside a Java
+method refers to
+variable.
+(a)
+Global variable
+(b)
+Method local variable
+Instance variable
+(d)
+None of the above
+--- page 46 ---
+45. In Java, local variables are stored in
+memory and instance
+variables are stored in
+memory.
+(a)
+Stack, Stack
+vod call ( )
+(b)
+Heap, Heap
+int a =o;
+Stack, Heap
+(d)
+Heap, Stack
+--- page 47 ---
+46. What is the output of the below Java
+public class TestingMethods10
+program?
+class Road
+public static void main(String args)
+static void show()
+Road.show();
+System.out.println("Inside static method.");
+Inside static method.
+b)
+empty message
+c)
+Compiler error
+d)
+Runtime error / exception
+--- page 48 ---
+47. A Java reference is comparable to
+_  in C language.
+(a)
+Enum
+(b)
+Structure
+(e
+Pointer
+(d)
+None of the above
+--- page 49 ---
+48. Choose the correct statements about choosing a name for
+a class in Java.
+(a) T
+ The class name can start with only a letter or underscore
+or dollar sign.
+(b)
+) The class name can contain numbers
+All of the above
+--- page 50 ---
+49. In a .java file, how many numbers of public types namely
+class, interface or abstract can be managed?
+(b)  2
+(c)  3
+(d)
+Any number
+--- page 51 ---
+50. which is true about an anonymous inner class?
+(a)
+ It can extend exactly one class and implement
+texactly one
+interface.
+(b) It can 
+ exactly
+one class and  canCxmplement
+extend 
+multiple interfaces.
+(c
+It can extend exactly one class or implement exactly one
+interface.
+(d) It can
+implement
+multiple
+interfaces
+regardless
+s of
+whether it also extends a class.
+--- page 52 ---
+SUNIL YADAV SIR

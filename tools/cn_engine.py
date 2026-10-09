@@ -127,19 +127,24 @@ def rapid_chunks(rapid):
 # --------------------------------------------------------------------------
 # cover
 # --------------------------------------------------------------------------
-def cover_chunks(topic_num, topic_title, n_q, sections_meta, n_rapid=0):
+def cover_chunks(topic_num, topic_title, n_q, sections_meta, n_rapid=0, n_pending=0):
     ranges, n = [], 0
     for s in sections_meta:
         start = n + 1; n += s["count"]; ranges.append((start, n, s["title"]))
+    if n_q == 0 and n_pending:
+        count_line = f'<b>{n_pending} Pending Questions</b> — staged from repo exam PDFs &amp; trusted sources — <b>NEED VERIFICATION</b> (answers + Hindi to be verified during topic build)'
+    else:
+        count_line = f'<b>{n_q} MCQs</b> — Repo Exam Questions + Forouzan — bilingual (English + Hindi), exam-ready'
     c1 = pad_top(f"""
 <div class="ctitle">Data Communication &amp; Computer Networks (CN)</div>
 <div class="csub">Topic {topic_num} of 7 : {esc(topic_title)}</div>
-<div class="cline"><b>{n_q} MCQs</b> — Repo Exam Questions + Forouzan — bilingual (English + Hindi), exam-ready</div>
+<div class="cline">{count_line}</div>
 <div class="cline">Reference Book: <b>Data Communications and Networking — Behrouz A. Forouzan</b></div>
 <div class="cline">Prepared for: <b>{esc(EXAMS_LINE)}</b></div>
 """, 22)
+    total_row = (f"<b>{n_q}</b> MCQs" + (f" + <b>{n_rapid}</b> Nukte rapid-fire revision points" if n_rapid else "")) if n_q else f"<b>{n_pending}</b> pending questions (staging)"
     info_rows = [
-        ("Total Questions", f"<b>{n_q}</b> MCQs" + (f" + <b>{n_rapid}</b> Nukte rapid-fire revision points" if n_rapid else "")),
+        ("Total Questions", total_row),
         ("Question Type", "MCQ — 4 options (A, B, C, D) per question, in English + Hindi"),
         ("Layout", "Left = <b>question</b> &nbsp;|&nbsp; Right = <b>explanation</b> (green): <b>✔ why the correct answer is right</b> + <b>★ Nukta</b> (key exam point)"),
         ("Language rule", "Hindi is the second language; <b>technical terms stay in English</b> (topology, protocol, jitter…)"),
@@ -172,7 +177,8 @@ def build_pdf(topic_num, topic_title, sections, pending, out_pdf, nukte_rapid=No
     n_q = sum(len(s["questions"]) for s in sections)
     n_rapid = len(nukte_rapid or [])
     chunks = [("cover", c) for c in cover_chunks(topic_num, topic_title, n_q,
-               [{"title": s["title"], "count": len(s["questions"])} for s in sections], n_rapid)]
+               [{"title": s["title"], "count": len(s["questions"])} for s in sections], n_rapid,
+               n_pending=len(pending))]
     qno = 0
     for s in sections:
         band = pad_top(f'<div class="band">{esc(s["title"])}</div><div class="bandnote">{esc(s["note"])}</div>', 12)
@@ -196,9 +202,10 @@ def build_pdf(topic_num, topic_title, sections, pending, out_pdf, nukte_rapid=No
         rows = []
         for i, q in enumerate(pending, 1):
             opts = "".join(f'<p class="opt"><b>({LETTERS[j]})</b> {esc(o)}</p>' for j, o in enumerate(q.get("opts_en", [])))
+            note = esc(q.get("note", "")) if q.get("note") else "auto-ingested — answer needs verification"
             rows.append(f'<table class="qt"><tr><td class="tq"><p class="qhead"><b>P{i}.</b> {esc(q.get("q_en",""))}</p>{opts}'
                         f'<p class="src">[Source: {esc(q.get("src",""))} | auto-classified: Topic {q.get("topic","?")} / {esc(q.get("subtopic",""))}]</p></td>'
-                        f'<td class="te"><p class="why">⚠ auto-ingested — answer needs verification</p></td></tr></table>')
+                        f'<td class="te"><p class="why">⚠ {note}</p></td></tr></table>')
         chunks.append(("bandq", band + rows[0]))
         for r in rows[1:]:
             chunks.append(("q", r))

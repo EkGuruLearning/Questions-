@@ -96,11 +96,15 @@ reference. All content is curated from these; nothing is invented.
 ```
 Computer Network/
   Topic N - ....pdf / .md        # the 7 deliverable topic books (generated)
-  <15 source exam PDFs>          # original question papers (from main branch)
-  Past Papers/                   # SOURCES.md + extra trusted sources
+  COVERAGE.md                    # full question accounting — nothing left out
+  <15 source exam PDFs>          # original question papers (on main branch)
+  Past Papers/                   # SOURCES.md + trusted sources (RPSC 2024 key,
+                                 #   Forouzan book, cnp3 textbook MCQ banks)
   Incoming/                      # DROP new question PDFs here
 tools/
   cn_taxonomy.py  cn_extract.py  cn_pipeline.py  cn_engine.py  cn_build_topic.py
-  data/topicN_data.py  topicN_pending.py
+  cn_ocr_cache.py  cn_parse_ocr.py  cn_parse_cnp3.py  cn_ingest_web.py
+  data/topicN_data.py  topicN_pending.py  answer_keys.py  web_pyq_raw.py
+  data/ocr_text/                 # OCR texts of the 5 scanned source PDFs
   fonts/                         # bundled fonts
 ```

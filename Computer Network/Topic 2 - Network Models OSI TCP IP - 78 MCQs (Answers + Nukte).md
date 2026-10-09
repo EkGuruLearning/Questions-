@@ -3,7 +3,7 @@
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
-**Prepared for:** RPSC Programmer • ACP (Analyst Cum Programmer) • RSMSSB IA • SA • Data Entry/DD • BCI • SCI • REET • RAS • SSC CGL/CHSL • RRB • IBPS & other Rajasthan & Central Govt. Exams (Computer Awareness)
+**Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
 **Total Questions:** 78 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 

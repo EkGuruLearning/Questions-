@@ -1,0 +1,422 @@
+
+--- page 1 ---
+SUNIL YADAV SIR
+9694473047
+What does jitter refer to in data communication?
+Dala Gmmunication
+charactertics.
+a) Loss of data
+Qeliveuy
+b Delay variation in packets
+c) Data synchronization
+Accwy
+d) Data encoding
+CompuTechAcademy
+Timelene xs
+ANINSTITUTEFOR
+COMPUTESCIENCE
+Tilter
+Delay Aluw Dafa Pekel
+--- page 2 ---
+SUNIL YADAV SIR
+9694473047
+Which type of network covers an entire
+city or
+campus?
+B
+a) LAN / 
+Mabopelctian
+Area
+aluifae gRq aeq
+MAN /
+gRqa
+WAN / aI$T
+C
+Netwerck
+pb2t Ihyn DEh/ N4d (p
+--- page 3 ---
+SUNIL YADAV SIR
+9694473047
+What is the mode of transmission where data
+flows in only one direction?
+lbk
+Simplex / fd
+Remote -TV,A( ,
+b) Half-Duplex / T-
+Comp
+c) Full-Duplex / y-R
+Fadhonl Monitor
+AN
+h / xd(
+Keuyboand , Meut
+--- page 4 ---
+SUNILYADAVSIR
+9694473047
+What type of topology connects each node in a
+closed loop?
+a) Star / R
+b) Mesh / I
+Ring / f
+lip
+Cx
+emy
+d
+Bus / gH
+JTE'FOR
+COMPUTESCIENCE
+--- page 5 ---
+SUNILYADAVSIR
+9694473047
+Which of the following is a wireless networking
+technology?
+a)Ethernet / g?Rc
+)Wi-Fi / aT$-T$
+c) Fiber Optic / WTqR 3if
+d) DSL / 3gAQ
+INSTITUTE
+COMPUTESCIENCE
+--- page 6 ---
+SUNIL YADAV SIR
+9694473047
+Deliveuy
+Which of the following is a characteristic of data
+communication?fu 可  3 R
+Acowuuu
+ Timeliness / HHquld
+Timelene
+b) Delay / faciq
+c) Speed / Tf
+d)
+) Size / 3Tp
+FOR
+COMPUTESCIENCE
+--- page 7 ---
+SUNILYADAVSIR
+9694473047
+Which of these is NoT a type of network?
+a) LAN / PT & q
+b2t k? hlbI9 / NN (q
+b2比 k 29b / nvm (o
+TAN / IUU
+CompuTechAcademy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 8 ---
+SUNIL YADAV SIR
+9694473047
+Accuracy in data communication means:
+Right Data
+a) Data is sent quickly
+b) Data is not corrupted
+c) Data is encrypted
+d) Data reaches the receiver
+CompuTechAcademy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 9 ---
+SUNILYADAVSIR
+9694473047
+What is the maximum data rate of a transmission
+书?
+heeee
+Bandwidth / 
+2hk / andy8noryy (q
+Tranmission
+c) Latency / 2f
+d) Jitter / fcr
+demy
+Medium
+COMPUTESCIENCE
+Maxirum Capacuty
+Bandridh,
+--- page 10 ---
+SUNILYADAVSIR
+9694473047
+Which transmission mode is used in walkie-talkie
+communication? 可- R  fH YR 可
+& Eh  
+a) Simplex / fdR
+Half-Duplex / Tu-gH
+Full-Duplex / yM-gR
+Multiplex / Hcv
+d
+ANINSTTTUTEFOR
+COMPUTESCIENCE
+--- page 11 ---
+SUNIL YADAV SIR
+9694473047
+The term WAN stands for?
+(a) wide Area Net
+(b) Wide Access Network
+(c) wide Area Network
+(d) wide Access Net
+CompuTech Academy
+ANINSTITUTEFOR
+COMPUTESCIENCE
+--- page 12 ---
+SUNIL YADAV SIR
+9694473047
+The Internet is an example of -
+Tnter Coreeted
+InternetfpHoT 3qIRU
+A) LAN
+B) MAN
+WAN
+D) PAN
+CompuTech Academy
+AN INSTITUTEFOR
+COMPUTESCIENCE
+--- page 13 ---
+SUNIL YADAV SIR
+9694473047
+SAN is mainly
+(bhe Lb NVS
+ used for -
+e Area N/w
+A) File Sharing
+Specadl Nlw 
+) Storage Management
+P
+C)
+Internet Access
+berwer Site
+D) Printing Documents
+CompuTechAcademy
+Dalabare ff Gmechuilty
+AN INSTITUTEFOR
+COMPUTESCIENCE
+LE5
+--- page 14 ---
+SUNIL YADAV SIR
+9694473047
+PAN is used for connecting -
+Pen oral Areg Netwonk
+NV
+ Personal devices like mobile, laptop,
+Bluetooth headset
+B)
+ Computers in a company
+C)
+Computers in a city
+CompuTe
+D) Global offices
+ANINST
+COMPUTESCIENCE
+--- page 15 ---
+SUNIL YADAV SIR
+9694473047
+Caue-shudy
+type
+school has
+four (
+computer labs in the same
+building.
+Each
+lab
+has
+20
+computers
+connected
+to
+a
+central
+server. Students can share files and print from any lab.
+ 20
+iwhich
+AIST
+type
+of
+network is implemented in this school?
+hhK
+COMPUTESCIENCE
+A)
+)WAN
+B) MAN
+local Arca Nefwoel
+LAN>
+D) CAN
+--- page 16 ---
+SUNIL YADAV SIR
+9694473047
+A university has different departments in separate buildings
+like Engineering, Arts, and Commerce. Each department has
+its own LAN. All these LANs are connected together for
+communication.
+-, 
+I3AN
+ N N
+Which type of network connects all these LANs?Φ--HI
+A) LAN
+Area Netwock
+Campus
+P CAN
+C)
+MAN
+D) WAN
+--- page 17 ---
+SUNIL YADAV SIR
+9694473047
+An international bank
+ connects
+: its main office in New
+York
+ with branches
+sin
+Delhi,
+London,
+and
+Tokyo.p
+k?>>.5
+klblb
+(splhhe)
+fff,
+H@
+which
+1 network type is used
+h he hh - hcay
+A) MAN
+(Wile ArcgNeluwork
+B WAN
+C) CAN
+COMPUTESCIENCE
+D) LAN
+--- page 18 ---
+SUNILYADAVSIR
+9694473047
+ company has several servers that store and manage large
+A
+volumes of data. All storage devices are interconnected for
+b Ep e h  he eh'ssaoe eep paads-ya
+长丘↓
+Which type of network is this?
+CompuTechAcademy
+AN INSTITUTEFOR
+A) LAN
+COMPUTESCIENCE
+roman
+BY sAN( S+orage
+Arca N
+C) CAN
+D) WAN
+--- page 19 ---
+SUNILYADAVSIR
+9694473047
+A supplier accessing a company's order tracking
+system uses -
+A) Internet
+B) Intranet
+cademy
+Extranet
+FOR
+D) VPNUTESCIENCE
+--- page 20 ---
+SUNIL YADAV SIR
+9694473047
+Which network type provides maximum security
+and privacy?
+3?
+A) Internet
+ABivate ourhip N/u.
+Intranet
+cade
+C)
+Extranet
+TUTEFOR
+D) NoneTE SCIENCE
+--- page 21 ---
+SUNIL YADAV SIR
+9694473047
+A software company shares project reports and progress updates
+with its clients through a secure online portal that requires
+R
+CompuTech Academy
+A) Internet
+AN INSTITUTEFOR
+B) Intranet
+COMPUTESCIENCE
+Extranet
+D) MAN
+--- page 22 ---
+SUNIL YADAV SIR
+9694473047
+Bank
+employees
+internal
+l financial
+1 databases, while
+access
+Trhanet
+their
+accounts through
+ online banking
+customers
+access
+websites.
+3iaRqeTd
+Exhanet
+    
+iwhich
+networks
+are
+being
+used
+by
+employees
+and
+可戒影
+chAcademy
+NSTITUTEFOR
+COMPUTESCIENCE
+Employees - Intranet; Customers - Extranet
+B)
+Employees - Internet;
+; Customers - Intranet
+C
+Employees - Extranet; Customers - Internet
+D) Both - Internet
+--- page 23 ---
+SUNILYADAVSIR
+9694473047
+Which of the following is an example of Client-
+Server architecture? fug   Φ-HI
+Client-Server 3R TT 3qIeU 3?
+A) Chat between two Bluetooth devices
+Web browser accessing a website
+PY
+C) File transfer via USB cable
+D) Two laptops connected directly
+--- page 24 ---
+SUNILYADAVSIR
+9694473047
+Which of the following uses Peer-to- Peer (P2P)
+architecture, not Client-Server?
+u-H Client-Server
+-d
+to-Peer 3dR可 3uu Tra?
+BitTorrent file sharing
+B) Google search
+Acade
+C) Gmail
+D) YouTubeENCE
+--- page 25 ---
+SUNIL YADAV SIR
+9694473047
+In a bank, customers
+use
+e ATMs to check
+ balance
+withdraw
+ cash. ATM
+I machines send
+1 the request to a
+central computer for verification and processing.Φ
+可
+hh
+ Iwhich type of architecture is used here?
+CompuTechAcademy
+AN INSTITUTEFOR
+A) Peer-to-PeerTE SClENCE
+Client-Server
+C
+Multipoint
+D) Point-to-Point
