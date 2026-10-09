@@ -24,15 +24,17 @@ Computer Instructor) • REET (Computer) • RAS & other Rajasthan Govt. exams.
 
 Each output file: `Topic N - <name> - <count> MCQs (Answers + Nukte).pdf` (+ `.md` source).
 
-## ✅ What every question contains
+## ✅ What every question contains (v2 layout)
 
-- **4 options (A–D)** in English + Hindi
-- **✔ Correct answer** + why it is right (EN + HI)
-- **★ Nukta** — the key exam point / memory tip (EN + HI)
-- **✖ Option-wise verification** — why each wrong option is wrong (EN + HI)
+- **Side-by-side design** — LEFT: question (black) + 4 options (A–D) EN+HI | RIGHT (green):
+  **✔ correct answer + why it is right** + **★ Nukta** (key exam point) — compact, ~4 questions per page
+- **Bilingual**: English + Hindi (technical terms stay in English)
 - a grey **source tag** (which paper/book it came from)
+- Wrong options are **verified internally** during curation (recorded in the data file) —
+  the printed PDF keeps only the why-correct explanation, to stay compact
 - Answers **cross-verified 4×** and matched against official answer keys (Subject Test /
-  Unit Test Solutions) where available.
+  Unit Test Solutions / RPSC 2024 key) + the Forouzan textbook where available
+- **★ Nukte Rapid-Fire** revision page at the end (one-line exam pointers)
 
 ---
 

@@ -7,8 +7,8 @@ Usage:
     python tools/cn_build_topic.py --all              # rebuild every topic that has data
 
 Reads:
-    tools/data/topic<N>_data.py      -> SECTIONS (curated, verified)
-    tools/data/topic<N>_pending.py   -> PENDING (auto-ingested, needs review) [optional]
+    tools/data/topic<N>_data.py      -> SECTIONS (curated, verified) + optional NUKTE_RAPID
+    tools/data/topic<N>_pending.py   -> PENDING (auto-ingested) [optional, legacy]
 Writes (into Computer Network/):
     Topic N - <title> - <count> MCQs (Answers + Nukte).pdf
     Topic N - <title> - <count> MCQs (Answers + Nukte).md
@@ -32,8 +32,7 @@ def _load_module(path, name):
     return m
 
 def _slug(title):
-    s = re.sub(r"[^A-Za-z0-9]+", " ", title).strip()
-    return s
+    return re.sub(r"[^A-Za-z0-9]+", " ", title).strip()
 
 def load_topic(topic_num):
     t = topic_by_num(topic_num)
@@ -44,15 +43,16 @@ def load_topic(topic_num):
         raise SystemExit(f"No data file for topic {topic_num}: {data_path}")
     m = _load_module(data_path, f"topic{topic_num}_data")
     sections = m.SECTIONS
+    rapid = getattr(m, "NUKTE_RAPID", [])
     pend_path = os.path.join(DATA_DIR, f"topic{topic_num}_pending.py")
     pending = []
     if os.path.exists(pend_path):
         pm = _load_module(pend_path, f"topic{topic_num}_pending")
         pending = getattr(pm, "PENDING", [])
-    return t, sections, pending
+    return t, sections, pending, rapid
 
 def build_one(topic_num, verbose=True):
-    t, sections, pending = load_topic(topic_num)
+    t, sections, pending, rapid = load_topic(topic_num)
     n_q = sum(len(s["questions"]) for s in sections)
     if n_q == 0 and pending:
         base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {len(pending)} Pending Questions (Needs Verification)"
@@ -60,11 +60,11 @@ def build_one(topic_num, verbose=True):
         base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {n_q} MCQs (Answers + Nukte)"
     pdf_path = os.path.join(OUT_DIR, base + ".pdf")
     md_path = os.path.join(OUT_DIR, base + ".md")
-    pages = cn_engine.build_pdf(topic_num, t["title"], sections, pending, pdf_path)
-    cn_engine.build_markdown(topic_num, t["title"], sections, pending, md_path)
+    pages = cn_engine.build_pdf(topic_num, t["title"], sections, pending, pdf_path, nukte_rapid=rapid)
+    cn_engine.build_markdown(topic_num, t["title"], sections, pending, md_path, nukte_rapid=rapid)
     if verbose:
         print(f"Topic {topic_num} — {t['title']}")
-        print(f"  questions: {n_q} (+{len(pending)} pending) | pages: {pages}")
+        print(f"  questions: {n_q} (+{len(rapid)} rapid) (+{len(pending)} pending) | pages: {pages}")
         print(f"  PDF: {pdf_path} ({os.path.getsize(pdf_path)} bytes)")
         print(f"  MD : {md_path} ({os.path.getsize(md_path)} bytes)")
     return pdf_path, md_path
