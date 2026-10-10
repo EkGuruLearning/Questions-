@@ -41,38 +41,38 @@ CSS = """
 @font-face { font-family: 'DVSB'; src: url('DejaVuSans-Bold.ttf'); font-weight: bold; }
 @font-face { font-family: 'ND'; src: url('NotoDev-Regular.ttf'); }
 @font-face { font-family: 'NDB'; src: url('NotoDev-Bold.ttf'); font-weight: bold; }
-body { font-family: 'DVS'; font-size: 9pt; line-height: 1.32; color: #1a1a1a; margin: 0; padding: 0; }
+body { font-family: 'DVS'; font-size: 10pt; line-height: 1.42; color: #1a1a1a; margin: 0; padding: 0; }
 b, strong { font-family: 'DVSB'; }
 .hi { font-family: 'ND'; }
-.ctitle { font-size: 18pt; font-weight: bold; color: #1F3864; text-align: center; line-height: 1.25; }
-.csub { font-size: 12pt; font-weight: bold; color: #1F3864; text-align: center; margin-top: 8pt; }
-.cline { font-size: 9.5pt; text-align: center; color: #333; margin-top: 4pt; }
+.ctitle { font-size: 19pt; font-weight: bold; color: #1F3864; text-align: center; line-height: 1.3; }
+.csub { font-size: 13pt; font-weight: bold; color: #1F3864; text-align: center; margin-top: 10pt; }
+.cline { font-size: 10.5pt; text-align: center; color: #333; margin-top: 6pt; }
 .cline b { color: #1F3864; }
-.box { border: 0.7pt solid #C9D4E4; padding: 6px 9px; font-size: 9pt; }
+.box { border: 0.7pt solid #C9D4E4; padding: 9px 12px; font-size: 10pt; }
 .box .lbl { color: #1F3864; font-weight: bold; }
-.irow { border-bottom: 0.5pt solid #DCE4F0; padding: 3pt 0; }
-.h2 { font-size: 11pt; color: #1F3864; font-weight: bold; padding-top: 12pt; }
-.crow { border-bottom: 0.5pt solid #DCE4F0; padding: 3pt 0; font-size: 9pt; }
+.irow { border-bottom: 0.5pt solid #DCE4F0; padding: 5pt 0; }
+.h2 { font-size: 12pt; color: #1F3864; font-weight: bold; padding-top: 14pt; }
+.crow { border-bottom: 0.5pt solid #DCE4F0; padding: 4.5pt 0; font-size: 10pt; }
 .crow .qr { color: #1F3864; font-weight: bold; }
 .howto { border: 1pt solid #E0C060; border-left: 5pt solid #E0C060; }
-.srcfiles { border: 0.7pt solid #C9D4E4; font-size: 8.5pt; color: #333; }
-.band { color: #1F3864; font-weight: bold; font-size: 11pt; border-bottom: 2.2pt solid #1F3864; padding: 2pt 0 4pt 0; }
-.bandnote { font-size: 8.2pt; color: #555; margin: 3pt 0 5pt 0; }
-table.qt { width: 100%; border-collapse: collapse; margin: 0 0 2pt 0; }
-table.qt td { vertical-align: top; padding: 4pt 6pt 5pt 0; border-bottom: 0.6pt solid #C9D4E4; }
-td.tq { width: 57%; color: #101010; border-right: 0.7pt solid #BFCEDD; padding-right: 8pt; }
-td.te { width: 43%; color: #0B6623; padding-left: 8pt; }
-.qhead { font-size: 9.2pt; margin: 0 0 1pt 0; }
-.qhi { font-family: 'ND'; font-size: 8.8pt; color: #3a3a3a; margin: 0 0 2.5pt 14pt; }
-.opt { margin: 0 0 0.5pt 2pt; font-size: 8.9pt; }
-.optb { margin: 0 0 0.5pt 2pt; font-size: 8.9pt; }
-.why { margin: 0 0 1.5pt 0; font-size: 8.7pt; }
-.nukta { margin: 0 0 1.5pt 0; font-size: 8.7pt; }
-.src { color: #7a7a7a; font-size: 7.3pt; margin: 2pt 0 0 0; }
+.srcfiles { border: 0.7pt solid #C9D4E4; font-size: 9pt; color: #333; }
+.band { color: #1F3864; font-weight: bold; font-size: 12pt; border-bottom: 2.2pt solid #1F3864; padding: 3pt 0 5pt 0; }
+.bandnote { font-size: 9pt; color: #555; margin: 4pt 0 8pt 0; }
+table.qt { width: 100%; border-collapse: collapse; margin: 0 0 7pt 0; }
+table.qt td { vertical-align: top; padding: 7pt 8pt 8pt 0; border-bottom: 0.7pt solid #C9D4E4; }
+td.tq { width: 57%; color: #101010; border-right: 0.7pt solid #BFCEDD; padding-right: 11pt; }
+td.te { width: 43%; color: #0B6623; padding-left: 11pt; }
+.qhead { font-size: 10.4pt; margin: 0 0 2.5pt 0; line-height: 1.35; }
+.qhi { font-family: 'ND'; font-size: 9.8pt; color: #3a3a3a; margin: 0 0 4pt 14pt; line-height: 1.42; }
+.opt { margin: 0 0 1.8pt 2pt; font-size: 10pt; }
+.optb { margin: 0 0 1.8pt 2pt; font-size: 10pt; }
+.why { margin: 0 0 3pt 0; font-size: 9.6pt; line-height: 1.4; }
+.nukta { margin: 0 0 2.5pt 0; font-size: 9.6pt; line-height: 1.4; }
+.src { color: #7a7a7a; font-size: 8pt; margin: 3pt 0 0 0; }
 table.rt { width: 100%; border-collapse: collapse; }
-table.rt td { vertical-align: top; padding: 3pt 6pt 3pt 0; border-bottom: 0.5pt solid #DCE4F0; }
-td.rq { width: 47%; color: #101010; border-right: 0.7pt solid #BFCEDD; padding-right: 8pt; font-size: 8.8pt; }
-td.ra { width: 53%; color: #0B6623; padding-left: 8pt; font-size: 8.8pt; }
+table.rt td { vertical-align: top; padding: 5pt 8pt 5pt 0; border-bottom: 0.5pt solid #DCE4F0; }
+td.rq { width: 47%; color: #101010; border-right: 0.7pt solid #BFCEDD; padding-right: 11pt; font-size: 9.8pt; }
+td.ra { width: 53%; color: #0B6623; padding-left: 11pt; font-size: 9.8pt; }
 """
 
 def pad_top(chunk, pt):
@@ -84,12 +84,14 @@ def pad_top(chunk, pt):
 def q_chunk(no, q):
     a = q["ans"]
     left = [f'<p class="qhead"><b>Q{no}.</b> {esc(q["q"][0])}</p>']
-    if q["q"][1].strip():
+    if (q["q"][1] or "").strip():
         left.append(f'<p class="qhi">{esc(q["q"][1])}</p>')
     opts = q["opts"]
     # options in pairs (A+B / C+D) for compactness; skip Hindi gloss when identical to English
     def _opttxt(i):
         oe, oh = opts[i]
+        oe = oe or ""
+        oh = oh or ""
         s = f'<b>({LETTERS[i]})</b> {esc(oe)}'
         oh2 = oh.strip()
         if oh2 and oh2.lower() != oe.strip().lower():
@@ -100,10 +102,10 @@ def q_chunk(no, q):
     left.append(f'<p class="src">[Source: {esc(q["src"])}]</p>')
 
     right = [f'<p class="why">✔ <b>Correct: ({LETTERS[a]}) {esc(q["opts"][a][0])}</b> — {esc(q["wr"][0])}</p>']
-    if q["wr"][1].strip():
+    if (q["wr"][1] or "").strip():
         right.append(f'<p class="why"><span class="hi">{esc(q["wr"][1])}</span></p>')
     right.append(f'<p class="nukta">★ <b>Nukta:</b> {esc(q["nk"][0])}</p>')
-    if q["nk"][1].strip():
+    if (q["nk"][1] or "").strip():
         right.append(f'<p class="nukta"><span class="hi">{esc(q["nk"][1])}</span></p>')
 
     return ('<table class="qt"><tr>'
@@ -304,22 +306,23 @@ def build_markdown(topic_num, topic_title, sections, pending, out_md, nukte_rapi
             a = q["ans"]
             L.append(f"### Q{qno}. {q['q'][0]}")
             L.append("")
-            if q["q"][1].strip():
+            if (q["q"][1] or "").strip():
                 L.append(f"<span lang='hi'>{q['q'][1]}</span>")
                 L.append("")
             for i, (oe, oh) in enumerate(q["opts"]):
                 mark = " ✅ **(CORRECT)**" if i == a else ""
+                oh = oh or ""; oe = oe or ""
                 hi = f" / {oh}" if oh.strip() else ""
                 L.append(f"- **({LETTERS[i]})** {oe}{hi}{mark}")
             L.append("")
             L.append(f"**✔ Correct Answer: ({LETTERS[a]}) {q['opts'][a][0]}** — {q['wr'][0]}")
             L.append("")
-            if q["wr"][1].strip():
+            if (q["wr"][1] or "").strip():
                 L.append(f"*{q['wr'][1]}*")
                 L.append("")
             L.append(f"**★ Nukta (Key Point):** {q['nk'][0]}")
             L.append("")
-            if q["nk"][1].strip():
+            if (q["nk"][1] or "").strip():
                 L.append(f"*{q['nk'][1]}*")
                 L.append("")
             L.append(f"*[Source: {q['src']}]*")

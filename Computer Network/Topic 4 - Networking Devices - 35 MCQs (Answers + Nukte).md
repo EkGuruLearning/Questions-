@@ -1,20 +1,20 @@
 # Data Communication & Computer Networks (CN)
-## Topic 4 of 7 : Networking Devices — 34 MCQs (English + Hindi)
+## Topic 4 of 7 : Networking Devices — 35 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 34 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 35 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
 | 1 | Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices) | Q1 - Q7 |
-| 2 | Section B — Switch / NIC / Bridge | Q8 - Q15 |
-| 3 | Section C — Router / Brouter | Q16 - Q23 |
-| 4 | Section D — Gateway, Firewall & NAT Devices | Q24 - Q34 |
+| 2 | Section B — Switch / NIC / Bridge | Q8 - Q16 |
+| 3 | Section C — Router / Brouter | Q17 - Q24 |
+| 4 | Section D — Gateway, Firewall & NAT Devices | Q25 - Q35 |
 
 ---
 
@@ -327,12 +327,32 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
+### Q16. Which of the following component is responsible for network communication in a computer system?
+
+<span lang='hi'>कंप्यूटर सिस्टम में network communication के लिए कौन-सा component ज़िम्मेदार होता है?</span>
+
+- **(A)** UPS
+- **(B)** Ethernet card (NIC) ✅ **(CORRECT)**
+- **(C)** SVGA card
+- **(D)** SMPS
+
+**✔ Correct Answer: (B) Ethernet card (NIC)** — Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता है और frames भेजने-पाने का काम करता है.
+
+*Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता है और frames भेजने-पाने का काम करता है.*
+
+**★ Nukta (Key Point):** NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.
+
+*NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.*
+
+*[Source: Unit Test-4 Solution.pdf (OCR), p18]*
+
+---
 
 ## Section C — Router / Brouter
 
 *Router functions & layers, per-hop packet changes, broadcast-domain boundaries, congestion (RED), routing basics.*
 
-### Q16. Which hardware forwards data packets between computer networks?
+### Q17. Which hardware forwards data packets between computer networks?
 
 <span lang='hi'>कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?</span>
 
@@ -352,7 +372,7 @@
 *[Source: KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03]*
 
 ---
-### Q17. Which device operates at Layer 3 of the OSI model?
+### Q18. Which device operates at Layer 3 of the OSI model?
 
 <span lang='hi'>OSI model की Layer 3 पर कौन-सा device काम करता है?</span>
 
@@ -372,7 +392,7 @@
 *[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard)]*
 
 ---
-### Q18. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
+### Q19. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
 
 <span lang='hi'>इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?</span>
 
@@ -392,7 +412,7 @@
 *[Source: Kerala PSC repeated PYQs (via pscarivukal)]*
 
 ---
-### Q19. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
+### Q20. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
 
 <span lang='hi'>Router निम्न में से कौन-सा कार्य करता है? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision</span>
 
@@ -412,7 +432,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28]*
 
 ---
-### Q20. Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
+### Q21. Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
 
 <span lang='hi'>देखिए: S1: TTL field हर router पर घटती है। S2: MAC address हर hop पर बदलता है। कौन-सा सही है?</span>
 
@@ -432,7 +452,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q21. A router drops some packets deliberately due to congestion. What is this technique called?
+### Q22. A router drops some packets deliberately due to congestion. What is this technique called?
 
 <span lang='hi'>Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?</span>
 
@@ -452,7 +472,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q22. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
+### Q23. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
 
 <span lang='hi'>IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?</span>
 
@@ -472,7 +492,7 @@
 *[Source: Unit Test-4 Solution (OCR), p15]*
 
 ---
-### Q23. Which device creates a separate broadcast domain?
+### Q24. Which device creates a separate broadcast domain?
 
 <span lang='hi'>कौन-सा device अलग broadcast domain बनाता है?</span>
 
@@ -497,7 +517,7 @@
 
 *Gateway as protocol converter, firewall types (packet/stateful/proxy), NAT types, device-vs-software identification.*
 
-### Q24. If two systems use DIFFERENT protocols, which device is used to link them?
+### Q25. If two systems use DIFFERENT protocols, which device is used to link them?
 
 <span lang='hi'>यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?</span>
 
@@ -517,7 +537,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)]*
 
 ---
-### Q25. Which device can operate across all 7 layers of the OSI model?
+### Q26. Which device can operate across all 7 layers of the OSI model?
 
 <span lang='hi'>कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?</span>
 
@@ -537,7 +557,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q26. Devices on one network can communicate with devices on another network via:
+### Q27. Devices on one network can communicate with devices on another network via:
 
 <span lang='hi'>एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?</span>
 
@@ -557,7 +577,7 @@
 *[Source: SSC CGL Internet & Networking (via EduRev bank)]*
 
 ---
-### Q27. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
+### Q28. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
 
 <span lang='hi'>कौन-सी firewall network layer पर packets की जाँच करके IP addresses के आधार पर निर्णय लेती है?</span>
 
@@ -577,7 +597,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q28. Which firewall acts as an intermediary between the client and server at the application layer?
+### Q29. Which firewall acts as an intermediary between the client and server at the application layer?
 
 <span lang='hi'>कौन-सी firewall application layer पर client और server के बीच मध्यस्थ (intermediary) के रूप में काम करती है?</span>
 
@@ -597,7 +617,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q29. What is the role of a firewall in computer networks?
+### Q30. What is the role of a firewall in computer networks?
 
 <span lang='hi'>Computer networks में firewall की भूमिका क्या है?</span>
 
@@ -617,7 +637,7 @@
 *[Source: 30 important CN MCQs (Medium blog bank)]*
 
 ---
-### Q30. What is the purpose of a proxy server in networking?
+### Q31. What is the purpose of a proxy server in networking?
 
 <span lang='hi'>Networking में proxy server का उद्देश्य क्या है?</span>
 
@@ -637,7 +657,7 @@
 *[Source: 30 important CN MCQs (Medium blog bank)]*
 
 ---
-### Q31. Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
+### Q32. Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
 
 <span lang='hi'>कौन-सी network security system trusted private network को उस जुड़े हुए untrusted outside network से बचाने के लिए बनी है?</span>
 
@@ -657,7 +677,7 @@
 *[Source: Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)]*
 
 ---
-### Q32. What kind of NAT maps one private IP to exactly one public IP?
+### Q33. What kind of NAT maps one private IP to exactly one public IP?
 
 <span lang='hi'>किस प्रकार का NAT एक private IP को ठीक एक public IP से जोड़ता है?</span>
 
@@ -677,7 +697,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q33. Which of the following is NOT a networking device?
+### Q34. Which of the following is NOT a networking device?
 
 <span lang='hi'>निम्न में से कौन-सा networking device नहीं है?</span>
 
@@ -697,7 +717,7 @@
 *[Source: InstrumentationTools 150 CN MCQs]*
 
 ---
-### Q34. Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
+### Q35. Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
 
 <span lang='hi'>निम्न में से कौन-सा networking device नहीं है? (Hub / Switch / Bridge / इनमें से कोई नहीं)</span>
 

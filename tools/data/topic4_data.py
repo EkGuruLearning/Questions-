@@ -216,6 +216,19 @@ SEC_B = [
    {0: ["Network location is described by the IP address + prefix, not the MAC. (Internal.)", ""],
     2: ["Internet connectivity comes from an ISP + IP configuration. (Internal.)", ""],
     3: ["The routing path is built by routing protocols, not by MAC addresses. (Internal.)", ""]}),
+        Q("Unit Test-4 Solution.pdf (OCR), p18",
+          "Which of the following component is responsible for network communication in a computer system?",
+          "कंप्यूटर सिस्टम में network communication के लिए कौन-सा component ज़िम्मेदार होता है?",
+          [("UPS", None), ("Ethernet card (NIC)", None), ("SVGA card", None), ("SMPS", None)], 1,
+          ("Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता "
+           "है और frames भेजने-पाने का काम करता है.",
+           "Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता "
+           "है और frames भेजने-पाने का काम करता है."),
+          ("NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.",
+           "NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है."),
+          {0: ("UPS power देता है, communication नहीं.", "UPS power देता है, communication नहीं."),
+           2: ("SVGA card graphics संभालता है.", "SVGA card graphics संभालता है."),
+           3: ("SMPS power supply है.", "SMPS power supply है.")}),
 ]
 
 # ---------------------------------------------------------------------------

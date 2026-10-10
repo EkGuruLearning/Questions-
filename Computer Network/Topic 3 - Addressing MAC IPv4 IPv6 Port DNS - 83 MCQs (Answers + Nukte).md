@@ -1,21 +1,21 @@
 # Data Communication & Computer Networks (CN)
-## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 82 MCQs (English + Hindi)
+## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 83 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 82 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 83 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
 | 1 | Section A — Address Levels & MAC Address (Physical Address) | Q1 - Q10 |
-| 2 | Section B — IPv4 Addressing (Format, Classes & Special Addresses) | Q11 - Q39 |
-| 3 | Section C — Subnetting & CIDR | Q40 - Q62 |
-| 4 | Section D — IPv6 Addressing | Q63 - Q70 |
-| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q71 - Q82 |
+| 2 | Section B — IPv4 Addressing (Format, Classes & Special Addresses) | Q11 - Q40 |
+| 3 | Section C — Subnetting & CIDR | Q41 - Q63 |
+| 4 | Section D — IPv6 Addressing | Q64 - Q71 |
+| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q72 - Q83 |
 
 ---
 
@@ -808,12 +808,32 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
+### Q40. Which of the following is NOT a valid private (RFC-1918) IP address?
+
+<span lang='hi'>निम्न में से कौन-सा वैध private (RFC-1918) IP पता नहीं है?</span>
+
+- **(A)** 10.0.0.1
+- **(B)** 172.16.5.4
+- **(C)** 192.168.1.10
+- **(D)** 11.0.0.1 / 11.0.0.1 ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) 11.0.0.1** — RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. 11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं.
+
+*RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. 11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं.*
+
+**★ Nukta (Key Point):** Private ranges याद रखो: 10.x (Class A), 172.16–172.31.x (Class B), 192.168.x (Class C) — बाकी सब public.
+
+*Private ranges याद रखो: 10.x (Class A), 172.16–172.31.x (Class B), 192.168.x (Class C) — बाकी सब public.*
+
+*[Source: CN Topic Test 5.pdf]*
+
+---
 
 ## Section C — Subnetting & CIDR
 
 *Subnet masks, /n notation, usable hosts & subnet counts, block arithmetic — basic to advanced calculations.*
 
-### Q40. What does the term 'subnetting' refer to in networking?
+### Q41. What does the term 'subnetting' refer to in networking?
 
 <span lang='hi'>Networking में 'subnetting' शब्द का क्या अर्थ है?</span>
 
@@ -833,7 +853,7 @@
 *[Source: 30 important CN MCQs (Medium blog bank) · also CN Topic Test-03]*
 
 ---
-### Q41. When IPv4 addressing is manually configured, which property identifies the network and host portions of the address?
+### Q42. When IPv4 addressing is manually configured, which property identifies the network and host portions of the address?
 
 <span lang='hi'>जब IPv4 addressing manually configure होती है, तो कौन-सा property address के network और host भाग पहचानती है?</span>
 
@@ -853,7 +873,7 @@
 *[Source: IP Addressing quiz (Studocu bank, with keys)]*
 
 ---
-### Q42. In a subnet mask, the number of 1's represents:
+### Q43. In a subnet mask, the number of 1's represents:
 
 <span lang='hi'>Subnet mask में 1's की संख्या किसका प्रतिनिधित्व करती है?</span>
 
@@ -873,7 +893,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q43. In CIDR notation, what does /16 represent?
+### Q44. In CIDR notation, what does /16 represent?
 
 <span lang='hi'>CIDR notation में /16 का क्या अर्थ है?</span>
 
@@ -893,7 +913,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q44. What does /24 denote in CIDR?
+### Q45. What does /24 denote in CIDR?
 
 <span lang='hi'>CIDR में /24 किसे दर्शाता है?</span>
 
@@ -913,7 +933,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key)]*
 
 ---
-### Q45. How many USABLE hosts are there in a /24 subnet?
+### Q46. How many USABLE hosts are there in a /24 subnet?
 
 <span lang='hi'>/24 subnet में कितने उपयोगी (usable) hosts होते हैं?</span>
 
@@ -933,7 +953,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5) · also CN Topic Test-03]*
 
 ---
-### Q46. How many usable hosts are there in a /30 subnet?
+### Q47. How many usable hosts are there in a /30 subnet?
 
 <span lang='hi'>/30 subnet में कितने उपयोगी hosts होते हैं?</span>
 
@@ -953,7 +973,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q47. A subnet /30 is MOST commonly used for:
+### Q48. A subnet /30 is MOST commonly used for:
 
 <span lang='hi'>Subnet /30 सबसे अधिक किसके लिए उपयोग होती है?</span>
 
@@ -973,7 +993,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q48. A subnet mask of 255.255.255.248 allows how many usable hosts?
+### Q49. A subnet mask of 255.255.255.248 allows how many usable hosts?
 
 <span lang='hi'>Subnet mask 255.255.255.248 कितने उपयोगी hosts की अनुमति देता है?</span>
 
@@ -993,7 +1013,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q49. The subnet mask 255.255.255.128 provides how many subnets for a Class C network?
+### Q50. The subnet mask 255.255.255.128 provides how many subnets for a Class C network?
 
 <span lang='hi'>Subnet mask 255.255.255.128, Class C network के लिए कितने subnets देता है?</span>
 
@@ -1013,7 +1033,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q50. A network needs 5 subnets, each with at least 16 hosts. Which subnet mask (Class C) should be used?
+### Q51. A network needs 5 subnets, each with at least 16 hosts. Which subnet mask (Class C) should be used?
 
 <span lang='hi'>एक network को 5 subnets चाहिए, हर एक में कम से कम 16 hosts। कौन-सा subnet mask (Class C) उपयोग करें?</span>
 
@@ -1033,7 +1053,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q51. A subnet mask for Class C can have how many 1's by default (remaining bits 0)?
+### Q52. A subnet mask for Class C can have how many 1's by default (remaining bits 0)?
 
 <span lang='hi'>Class C के लिए subnet mask में डिफ़ॉल्ट रूप से कितने 1's हो सकते हैं (बाकी bits 0)?</span>
 
@@ -1053,7 +1073,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q52. What is the valid host range for the subnet 192.168.1.0/25?
+### Q53. What is the valid host range for the subnet 192.168.1.0/25?
 
 <span lang='hi'>Subnet 192.168.1.0/25 के लिए वैध host range क्या है?</span>
 
@@ -1073,7 +1093,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q53. Which part of the IP address 172.16.5.4/24 identifies the network?
+### Q54. Which part of the IP address 172.16.5.4/24 identifies the network?
 
 <span lang='hi'>IP address 172.16.5.4/24 का कौन-सा भाग network पहचानता है?</span>
 
@@ -1093,7 +1113,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q54. A network ID (address with all host bits = 0) cannot be assigned to:
+### Q55. A network ID (address with all host bits = 0) cannot be assigned to:
 
 <span lang='hi'>Network ID (सभी host bits = 0 वाला address) किसे assign नहीं किया जा सकता?</span>
 
@@ -1113,7 +1133,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q55. A host has IP 192.168.10.45/27. Which statement is TRUE?
+### Q56. A host has IP 192.168.10.45/27. Which statement is TRUE?
 
 <span lang='hi'>एक host का IP 192.168.10.45/27 है। कौन-सा कथन सही है?</span>
 
@@ -1133,7 +1153,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-03]*
 
 ---
-### Q56. In subnetting, reducing the number of host bits does what?
+### Q57. In subnetting, reducing the number of host bits does what?
 
 <span lang='hi'>Subnetting में host bits की संख्या घटाने से क्या होता है?</span>
 
@@ -1153,7 +1173,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q57. In a class B subnet: IP address 125.134.112.66, mask 255.255.224.0. What is the first address (network address)?
+### Q58. In a class B subnet: IP address 125.134.112.66, mask 255.255.224.0. What is the first address (network address)?
 
 <span lang='hi'>Class B subnet में: IP address 125.134.112.66, mask 255.255.224.0। पहला address (network address) क्या होगा?</span>
 
@@ -1173,7 +1193,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q58. A Class B network is to be split into subnets with a 3-bit subnet number. What is the maximum number of subnets and hosts in each subnet?
+### Q59. A Class B network is to be split into subnets with a 3-bit subnet number. What is the maximum number of subnets and hosts in each subnet?
 
 <span lang='hi'>एक Class B network को 3-bit subnet number में बाँटना है। प्रत्येक subnet में subnets और hosts की अधिकतम संख्या कितनी होगी?</span>
 
@@ -1193,7 +1213,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q59. IP address 172.16.123.213 has subnet mask 255.255.255.240. What is its network (first) address?
+### Q60. IP address 172.16.123.213 has subnet mask 255.255.255.240. What is its network (first) address?
 
 <span lang='hi'>IP address 172.16.123.213 का subnet mask 255.255.255.240 है। इसका network (पहला) address क्या है?</span>
 
@@ -1213,7 +1233,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q60. An organization has a Class B network and wishes to form subnets for 64 departments. The subnet mask would be:
+### Q61. An organization has a Class B network and wishes to form subnets for 64 departments. The subnet mask would be:
 
 <span lang='hi'>एक संगठन के पास Class B network है और वह 64 departments के लिए subnets बनाना चाहता है। Subnet mask क्या होगा?</span>
 
@@ -1233,7 +1253,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key)]*
 
 ---
-### Q61. A Class B network has a subnet mask of 255.255.248.0. What is the maximum number of hosts per subnet?
+### Q62. A Class B network has a subnet mask of 255.255.248.0. What is the maximum number of hosts per subnet?
 
 <span lang='hi'>एक Class B network का subnet mask 255.255.248.0 है। प्रति subnet hosts की अधिकतम संख्या कितनी है?</span>
 
@@ -1253,7 +1273,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · Rajasthan PYQ Q56]*
 
 ---
-### Q62. An IP address 156.233.42.56 is configured with a 7-bit subnet mask (7 bits borrowed from the host part of the classful network). How many hosts and subnets are possible?
+### Q63. An IP address 156.233.42.56 is configured with a 7-bit subnet mask (7 bits borrowed from the host part of the classful network). How many hosts and subnets are possible?
 
 <span lang='hi'>IP address 156.233.42.56 को 7-bit subnet mask (classful network के host भाग से 7 bits उधार) के साथ configure किया गया है। कितने hosts और subnets संभव हैं?</span>
 
@@ -1278,7 +1298,7 @@
 
 *128-bit addresses, address types (no broadcast), IPv6-only header changes, transition (tunneling), AAAA records.*
 
-### Q63. In IPv6, how many bits are in the address?
+### Q64. In IPv6, how many bits are in the address?
 
 <span lang='hi'>IPv6 में address कितने bits का होता है?</span>
 
@@ -1298,7 +1318,7 @@
 *[Source: Repo: CN Topic Test-6 (UNIT TEST-6) · Sanfoundry / Medium / MQuestions banks]*
 
 ---
-### Q64. IPv6 does NOT use which type of address?
+### Q65. IPv6 does NOT use which type of address?
 
 <span lang='hi'>IPv6 किस type का address उपयोग नहीं करता?</span>
 
@@ -1318,7 +1338,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q65. Which features are present in IPv4 but NOT in IPv6?
+### Q66. Which features are present in IPv4 but NOT in IPv6?
 
 <span lang='hi'>कौन-सी features IPv4 में हैं लेकिन IPv6 में नहीं?</span>
 
@@ -1338,7 +1358,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q66. Which of the following is TRUE for IPv6?
+### Q67. Which of the following is TRUE for IPv6?
 
 <span lang='hi'>IPv6 के लिए निम्न में से क्या सही है?</span>
 
@@ -1358,7 +1378,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q67. Which IPv6 address type is globally unique and globally routable?
+### Q68. Which IPv6 address type is globally unique and globally routable?
 
 <span lang='hi'>कौन-सा IPv6 address type globally unique और globally routable होता है?</span>
 
@@ -1378,7 +1398,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q68. IPv6 was developed by:
+### Q69. IPv6 was developed by:
 
 <span lang='hi'>IPv6 किसने develop किया?</span>
 
@@ -1398,7 +1418,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q69. Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
+### Q70. Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
 
 <span lang='hi'>दो IPv6 nodes को interoperable होना है लेकिन वे बीच में आने वाले IPv4 routers से जुड़े हैं। सबसे अच्छा समाधान क्या है?</span>
 
@@ -1418,7 +1438,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q70. Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
+### Q71. Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
 
 <span lang='hi'>किसी name से जुड़ा IPv6 address पाने के लिए कौन-सी DNS resource record query करनी चाहिए?</span>
 
@@ -1443,7 +1463,7 @@
 
 *16-bit ports & ranges, socket addressing, DNS records & lookups, ARP/RARP, URL layer.*
 
-### Q71. Which of the following sets of port numbers belongs to the 'well-known' ports category?
+### Q72. Which of the following sets of port numbers belongs to the 'well-known' ports category?
 
 <span lang='hi'>निम्न में से कौन-से port numbers 'well-known' ports category में आते हैं?</span>
 
@@ -1463,7 +1483,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q72. What is the typical range of ephemeral (dynamic) ports?
+### Q73. What is the typical range of ephemeral (dynamic) ports?
 
 <span lang='hi'>Ephemeral (dynamic) ports की सामान्य range क्या है?</span>
 
@@ -1483,7 +1503,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test 5]*
 
 ---
-### Q73. The transport layer uses which type of addressing?
+### Q74. The transport layer uses which type of addressing?
 
 <span lang='hi'>Transport layer किस प्रकार की addressing उपयोग करता है?</span>
 
@@ -1503,7 +1523,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q74. Which of the following uniquely identifies a process on a host?
+### Q75. Which of the following uniquely identifies a process on a host?
 
 <span lang='hi'>Host पर किसी process की unique पहचान कौन करता है?</span>
 
@@ -1523,7 +1543,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q75. A URL (like www.example.com) belongs to which layer?
+### Q76. A URL (like www.example.com) belongs to which layer?
 
 <span lang='hi'>URL (जैसे www.example.com) किस layer से संबंधित है?</span>
 
@@ -1543,7 +1563,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q76. DNS works at which layer of the OSI model?
+### Q77. DNS works at which layer of the OSI model?
 
 <span lang='hi'>DNS, OSI model की किस layer पर काम करता है?</span>
 
@@ -1563,7 +1583,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q77. What is the default port number for DNS?
+### Q78. What is the default port number for DNS?
 
 <span lang='hi'>DNS का default port number क्या है?</span>
 
@@ -1583,7 +1603,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q78. DNS is the abbreviation of:
+### Q79. DNS is the abbreviation of:
 
 <span lang='hi'>DNS का पूरा नाम (full form) क्या है?</span>
 
@@ -1603,7 +1623,7 @@
 *[Source: Networking MCQ bank (MQuestions blog)]*
 
 ---
-### Q79. What is the role of DNS? It is best described as:
+### Q80. What is the role of DNS? It is best described as:
 
 <span lang='hi'>DNS की भूमिका क्या है? सबसे सही विवरण है:</span>
 
@@ -1623,7 +1643,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test-02 / Medium bank]*
 
 ---
-### Q80. A reverse lookup in DNS means a lookup to ______ using ______ records.
+### Q81. A reverse lookup in DNS means a lookup to ______ using ______ records.
 
 <span lang='hi'>DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की lookup।</span>
 
@@ -1643,7 +1663,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test 5]*
 
 ---
-### Q81. Which DNS record type maps a domain name to an IPv4 address?
+### Q82. Which DNS record type maps a domain name to an IPv4 address?
 
 <span lang='hi'>कौन-सी DNS record type domain name को IPv4 address से जोड़ती है?</span>
 
@@ -1663,7 +1683,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6) · also cnp3 DNS2]*
 
 ---
-### Q82. The Address Resolution Protocol (ARP) is used for:
+### Q83. The Address Resolution Protocol (ARP) is used for:
 
 <span lang='hi'>Address Resolution Protocol (ARP) किस काम में आता है?</span>
 

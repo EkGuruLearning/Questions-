@@ -503,6 +503,22 @@ SEC_B = [
    {0: ["Unicast reaches exactly one device. (Internal.)", ""],
     2: ["Multicast reaches only the subscribed group members. (Internal.)", ""],
     3: ["Anycast routes to the nearest member of a group (used by CDNs/DNS roots). (Internal.)", ""]}),
+        Q("CN Topic Test 5.pdf",
+          "Which of the following is NOT a valid private (RFC-1918) IP address?",
+          "निम्न में से कौन-सा वैध private (RFC-1918) IP पता नहीं है?",
+          [("10.0.0.1", None), ("172.16.5.4", None), ("192.168.1.10", None),
+           ("11.0.0.1", "11.0.0.1")], 3,
+          ("RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. "
+           "11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं.",
+           "RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. "
+           "11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं."),
+          ("Private ranges याद रखो: 10.x (Class A), 172.16–172.31.x (Class B), 192.168.x (Class C) — "
+           "बाकी सब public.",
+           "Private ranges याद रखो: 10.x (Class A), 172.16–172.31.x (Class B), 192.168.x (Class C) — "
+           "बाकी सब public."),
+          {0: ("10.x पूरा Class A private है.", "10.x पूरा Class A private है."),
+           1: ("172.16–172.31.x Class B private है.", "172.16–172.31.x Class B private है."),
+           2: ("192.168.x Class C private है.", "192.168.x Class C private है.")}),
 ]
 
 # ---------------------------------------------------------------------------
