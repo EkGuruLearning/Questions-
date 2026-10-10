@@ -4,14 +4,24 @@ Last updated: 2026-10-09 (after OCR of scanned PDFs + web/textbook-bank harvest)
 This file proves that **every** question in every source is accounted for:
 either curated into a book, staged in a queue, or dropped with a documented reason.
 
-## Grand totals
+## Grand totals (updated after T1/T2 update + Topic 3 build)
 
 | Bucket | Count | Where |
 |---|---|---|
-| Curated books (T1 + T2) | **191** | `tools/data/topic1_data.py` (113) + `topic2_data.py` (78) |
-| T1/T2 holding (awaiting book merge) | **53** | `tools/data/web_extra_t1t2.py` |
-| Pending queues (T3–T7, staged/verified at build) | **412** | `tools/data/topic{3-7}_pending.py` (108/52/45/162/45) |
-| **TOTAL unique questions captured** | **656** | (deduped: exact + near-duplicate) |
+| Curated books (T1 + T2 + T3) | **280** | topic1_data.py (118) + topic2_data.py (81) + topic3_data.py (81) |
+| T1/T2 holding (awaiting next book update) | **1** | `tools/data/web_extra_t1t2.py` (Windows-XP statement) |
+| Pending queues (T4–T7, staged for their topic builds) | **323** | topic{4-7}_pending.py (53/46/177/47) |
+| **TOTAL items captured** | **604** | + ~50 near-dups folded into multi-source book questions (see dispositions) |
+
+### T1/T2 update pass (holding 53 disposed — see `tools/data/holding_dispositions.md`)
+- 8 questions merged into T1/T2 books (benefits of networking, ring-break, tree topology, kbps speed, UPnP, data-link protocols, end-system app layer, physical-layer translate — answer corrected to Data link layer).
+- 15 items routed to T3–T7 pending; ~30 near-dups of existing book questions dropped with notes; 2 cnp3 figure-based dropped.
+
+### Topic 3 build pass (109 pending → 81 curated MCQs + 27 Nukte Rapid-Fire)
+- 98 pending merged into 81 book questions (multi-source tags where several banks asked the same fact).
+- 5 moved to correct topics (scanner tool → T7; IGMP/ICMP/LDAP/IPv4-total-length → T6).
+- 1 held for T1 (Windows XP statements), 2 dropped (binary-missing question — source text layer broken; cnp3 figure question).
+- Official keys used: RPSC 2024 + Rajasthan PYQ (`tools/data/answer_keys.py`).
 
 ## 1. Repo source PDFs (on `main`, folder `Computer Network/`)
 

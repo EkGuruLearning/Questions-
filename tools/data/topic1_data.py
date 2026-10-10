@@ -48,7 +48,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'Data communication में transmission medium वह physical path है (twisted-pair, coaxial, fiber या radio waves) जिस पर message '
                         'sender से receiver तक जाता है। (Forouzan)'],
                  'nk': ['Medium = physical path between sender and receiver. Remember: Message -> Sender -> Medium -> Receiver.',
-                        'Medium = sender और receiver के बीच का physical path. Yaad रखो: Message -> Sender -> Medium -> Receiver.'],
+                        'Medium = sender और receiver के बीच का physical path. याद रखें: Message -> Sender -> Medium -> Receiver.'],
                  'ww': {0: ['Path is a general word; the technical term in data communication is transmission medium.',
                             'Path एक common shabd hai; data communication में technical term transmission medium hai।'],
                         2: ['Protocol is the set of rules, not the physical path.', 'Protocol niyamon ka set hai, physical path nahi।'],
@@ -94,9 +94,9 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'wr': ['A node is any device connected to the network. It can originate (sender), route (router/switch) or terminate (receiver) '
                         'data, so all of the mentioned is correct.',
                         'Node = network से जुड़ा कोई भी device. यह data को originate (sender), route (router/switch) या terminate (receiver) कर सकता '
-                        'है, इसलिए uparyukt सभी सही हैं।'],
+                        'है, इसलिए उपर्युक्त सभी सही हैं।'],
                  'nk': ['Node = any connected device of the network (computer, printer, router, etc.).',
-                        'Node = network का कोई भी connected device (computer, printer, router, ityadi).'],
+                        'Node = network का कोई भी connected device (computer, printer, router, आदि).'],
                  'ww': {0: ['Only originator is wrong: a node can also route or receive data.',
                             'Sirf originator galat hai: node route bhi kar sakta hai aur receive bhi।'],
                         1: ['Only router is wrong: a node can also be a sender or a receiver.',
@@ -105,7 +105,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                             'Sirf terminator galat hai: node originate bhi kar sakta hai aur route bhi।']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q44',
                  'q': ['_______ refers to two characteristics: when data should be sent and how fast it can be sent.',
-                       '_______ दो characteristics को बताता है: data कब भेजा jaye और कितनी तेज़ी से भेजा जा सकता है।'],
+                       '_______ दो characteristics को बताता है: data कब भेजा जाए और कितनी तेज़ी से भेजा जा सकता है।'],
                  'opts': [['Semantics', 'अर्थ (semantics)'],
                           ['Syntax', 'संरचना (syntax)'],
                           ['Timing', 'समय-निर्धारण (timing)'],
@@ -113,7 +113,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 2,
                  'wr': ['The three key elements of a protocol are syntax, semantics and timing. Timing refers to two characteristics: when data '
                         'should be sent and how fast it can be sent. (Forouzan)',
-                        'Protocol के 3 key elements हैं: syntax, semantics और timing. Timing do characteristics से जुड़ा है: data कब भेजा jaye और '
+                        'Protocol के 3 key elements हैं: syntax, semantics और timing. Timing दो characteristics से जुड़ा है: data कब भेजा जाए और '
                         'कितनी तेज़ी से भेजा जा सकता है। (Forouzan)'],
                  'nk': ['Protocol के 3 elements = Syntax (format), Semantics (meaning), Timing (when & how fast).',
                         'Protocol के 3 elements = Syntax (format), Semantics (अर्थ), Timing (कब और कितनी तेज़ी से).'],
@@ -153,7 +153,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'and how fast).',
                         'Protocol के 3 key elements हैं: syntax (data का format/structure), semantics (data का अर्थ) और timing (कब भेजना है और कितनी '
                         'तेज़ी से).'],
-                 'nk': ['Yaad रखो: Protocol = Syntax + Semantics + Timing.', 'Yaad रखो: Protocol = Syntax + Semantics + Timing.'],
+                 'nk': ['याद रखें: Protocol = Syntax + Semantics + Timing.', 'याद रखें: Protocol = Syntax + Semantics + Timing.'],
                  'ww': {0: ['1,2 only misses Timing, which is also an element.', '1,2 mein Timing chhoot gaya, jo bhi ek element hai।'],
                         1: ['1,3 only misses Semantics, which is also an element.', '1,3 mein Semantics chhoot gaya, jo bhi ek element hai।'],
                         2: ['2,3 only misses Syntax, which is also an element.', '2,3 mein Syntax chhoot gaya, jo bhi ek element hai।']}},
@@ -185,8 +185,8 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'when it is communicated. (Forouzan)',
                         'Protocol = नियमों का set जो data communication को govern करता है. यह बताता है की क्या communicate होगा, कैसे होगा और कब '
                         'होगा। (Forouzan)'],
-                 'nk': ['Protocol = rules का set. Yaad रखो: without a protocol, two devices may be connected but cannot communicate.',
-                        'Protocol = नियमों का set. Yaad रखो: बिना protocol के do devices जुड़े to हो सकते हैं लेकिन communicate नहीं कर सकते।'],
+                 'nk': ['Protocol = rules का set. याद रखें: without a protocol, two devices may be connected but cannot communicate.',
+                        'Protocol = नियमों का set. याद रखें: बिना protocol के दो devices जुड़े to हो सकते हैं लेकिन communicate नहीं कर सकते।'],
                  'ww': {0: ['Rule is a single rule, not the complete set of rules.', 'Rule ek akela niyam hai, poora set nahi।'],
                         1: ['Medium is the physical path, not the rules.', 'Medium physical path hai, niyam nahi।'],
                         2: ['Link is the physical connection, not the rules.', 'Link physical connection hai, niyam nahi।']}},
@@ -259,8 +259,8 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         '(Network layer), not one of the five fundamental components.',
                         'Five basic components हैं: message, sender, receiver, transmission medium और protocol. Router एक networking device है '
                         '(Network layer), five fundamental components में से नहीं।'],
-                 'nk': ['Yaad रखो 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device, component नहीं।',
-                        'Yaad रखो 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device है, component नहीं।'],
+                 'nk': ['याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device, component नहीं।',
+                        'याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device है, component नहीं।'],
                  'ww': {0: ['Message IS a component: it is the data (information) to be communicated.',
                             'Message ek component hai: ye communicate ki jane wali data hai।'],
                         1: ['Protocol IS a component: the set of rules that governs the communication.',
@@ -276,7 +276,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                           ['Hub', 'Hub (hub)']],
                  'ans': 1,
                  'wr': ['The sender is the device (computer, workstation, mobile phone, camera, TV, etc.) that sends the data message.',
-                        'Sender वह device है (computer, workstation, mobile phone, camera, TV, ityadi) जो data message भेजता है।'],
+                        'Sender वह device है (computer, workstation, mobile phone, camera, TV, आदि) जो data message भेजता है।'],
                  'nk': ['Sender = source device; Receiver = destination device.', 'Sender = source device; Receiver = destination device.'],
                  'ww': {0: ['The receiver is the destination: it receives the message, it does not send it.',
                             'Receiver destination hai: ye message receive karta hai, bhejta nahi।'],
@@ -345,10 +345,10 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 1,
                  'wr': ['Accuracy means the system must deliver the data accurately. Data that has been altered in transmission and left uncorrected '
                         'is useless.',
-                        'Accuracy का मतलब है system data को accurately (सही) pahunchaye. Jo data transmission में badal गया और sudhara नहीं गया, '
+                        'Accuracy का मतलब है system data को accurately (सही) पहुँचाए. जो data transmission में बदल गया और सुधारा नहीं गया, '
                         'बेकार है।'],
                  'nk': ['Accuracy = error-free data; altered/corrupted data is useless.',
-                        'Accuracy = error-free data; badal गया/corrupt data बेकार है।'],
+                        'Accuracy = error-free data; बदल गया/corrupt data बेकार है।'],
                  'ww': {0: ['Sending quickly is timeliness/speed, not accuracy.', 'Tezi se bhejna timeliness/speed hai, accuracy nahi।'],
                         2: ['Encryption is a security function, not accuracy.', 'Encryption ek security function hai, accuracy nahi।'],
                         3: ['Reaching the receiver is delivery, not accuracy.', 'Receiver tak pahunchna = delivery hai, accuracy nahi।']}},
@@ -362,21 +362,39 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'Bandwidth = किसी communication channel/medium की अधिकतम data rate (transmission capacity) है, जिसे आम तौर पर bits per '
                         'second (bps) में मापा जाता है।'],
                  'nk': ['Bandwidth = maximum capacity of the channel (in bps). Throughput = actual rate achieved (usually less).',
-                        'Bandwidth = channel की अधिकतम capacity (bps में). Throughput = asli में हासिल होने वाली rate (आम तौर पर कम).'],
+                        'Bandwidth = channel की अधिकतम capacity (bps में). Throughput = वास्तविक रूप से हासिल होने वाली rate (आम तौर पर कम).'],
                  'ww': {1: ['Throughput is the actual data rate achieved, which is usually less than bandwidth.',
                             'Throughput asli mein hasil hone wali data rate hai, jo aam taur par bandwidth se kam hoti hai।'],
                         2: ['Latency is the delay before data transfer begins, not the maximum rate.',
                             'Latency data transfer shuru hone se pehle ki dely hai, adhikatam rate nahi।'],
                         3: ['Jitter is the variation in packet arrival time, not a data rate.',
                             'Jitter packet pahunchne ke samay ka antar hai, data rate nahi।']}},
+                {'src': 'Repo: Unit Test-4 Solution (OCR), p19',
+                 'q': ['Speed of an internet connection is measured in:',
+                       'Internet connection की speed किसमें मापी जाती है?'],
+                 'opts': [['Kilobits per second (kbps)', 'Kilobits per second (kbps)'],
+                          ['Kilobytes per second (KB/s) only', 'केवल Kilobytes per second (KB/s)'],
+                          ['Metres per second', 'Metres per second'],
+                          ['Hertz', 'Hertz']],
+                 'ans': 0,
+                 'wr': ['Data transmission speed (data rate / bandwidth) is measured in bits per second — kbps, Mbps or Gbps — not bytes and not metres.',
+                        'Data transmission speed (data rate / bandwidth) bits per second में मापी जाती है — kbps, Mbps या Gbps — bytes में नहीं, metres में नहीं।'],
+                 'nk': ['Speed = bits per second (bps family). KB/s (bytes) is for file-size/download display — exam answer is kbps.',
+                        'Speed = bits per second (bps family)। KB/s (bytes) file-size/download display के लिए है — exam का answer kbps है।'],
+                 'ww': {1: ['KB/s shows file transfer in bytes; network speed is standardised in bits per second.',
+                            'KB/s file transfer bytes में दिखाता है; network speed bits per second में standardised है।'],
+                        2: ['Metres per second is a unit of physical speed, not data rate.',
+                            'Metres per second physical speed का unit है, data rate का नहीं।'],
+                        3: ['Hertz measures frequency (cycles per second), not data speed.',
+                            'Hertz frequency (cycles per second) मापता है, data speed नहीं।']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q39',
                  'q': ['Frequency of failure and network recovery time after a failure are measures of the _______ of a network.',
-                       'Failure की aavritti (frequency) और failure के बाद network recovery time kis cheez के measures हैं?'],
+                       'Failure की आवृत्ति (frequency) और failure के बाद network recovery time किस चीज़ के measures हैं?'],
                  'opts': [['Performance', 'performance'], ['Reliability', 'reliability'], ['Security', 'security'], ['Feasibility', 'feasibility']],
                  'ans': 1,
                  'wr': ['Reliability is measured by the frequency of failure (how often the network fails), the time it takes to recover after a '
                         'failure, and robustness in a catastrophe. (Forouzan)',
-                        'Reliability को failure की frequency (network कितनी baar fail होता है), failure के बाद recover होने का time, और catastrophe '
+                        'Reliability को failure की frequency (network कितनी बार fail होता है), failure के बाद recover होने का time, और catastrophe '
                         'में robustness से मापा जाता है। (Forouzan)'],
                  'nk': ['Reliability = failure frequency + recovery time + robustness. Performance = transit time, response time, throughput, delay.',
                         'Reliability = failure frequency + recovery time + robustness. Performance = transit time, response time, throughput, '
@@ -391,14 +409,14 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'opts': [['Performance', 'performance'],
                           ['Reliability', 'reliability'],
                           ['Security', 'security'],
-                          ['All of the above', 'ऊपर Sabhi']],
+                          ['All of the above', 'ऊपर दिए गए सभी']],
                  'ans': 2,
                  'wr': ['Security means protecting data from unauthorized access, protecting data from damage, and ensuring confidentiality and data '
                         'integrity. An unauthorized user is a security issue.',
                         'Security का मतलब है data को unauthorized access से bachana, damage से bachana, और confidentiality और data integrity '
                         'sunishchit करना। Unauthorized user एक security issue है।'],
-                 'nk': ['Security = unauthorized access से bachav + confidentiality + integrity (CIA triad).',
-                        'Security = unauthorized access से bachav + confidentiality + integrity (CIA triad).'],
+                 'nk': ['Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).',
+                        'Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).'],
                  'ww': {0: ['Performance is about speed/throughput/delay, not unauthorized users.',
                             'Performance speed/throughput/delay ke baare mein hai, unauthorized users ke nahi।'],
                         1: ['Reliability is about failure frequency and recovery, not unauthorized users.',
@@ -613,7 +631,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 0,
                  'wr': ['Simplex: communication is unidirectional, like a one-way street. Only one of the two devices on a link can transmit; the '
                         'other can only receive. (Forouzan)',
-                        'Simplex: communication एक ही direction का होता है, जैसे one-way street. Link के do devices में से सिर्फ एक transmit कर सकता '
+                        'Simplex: communication एक ही direction का होता है, जैसे one-way street. Link के दो devices में से सिर्फ एक transmit कर सकता '
                         'है; दूसरा सिर्फ receive करता है। (Forouzan)'],
                  'nk': ['Simplex = one-way only (keyboard to monitor, TV broadcast).',
                         'Simplex = सिर्फ एक तरफ़ (keyboard to monitor, TV broadcast).'],
@@ -660,7 +678,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                             'स्पष्ट अंतर है: simultaneous two-way (full) बनाम alternating two-way (half)।']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q45',
                  'q': ['Data flow between two devices can occur in a _______ way.', 'Do devices के बीच data flow _______ tareeke से हो सकता है।'],
-                 'opts': [['simplex', 'simplex'], ['half-duplex', 'half-duplex'], ['full-duplex', 'full-duplex'], ['all of the above', 'ऊपर Sabhi']],
+                 'opts': [['simplex', 'simplex'], ['half-duplex', 'half-duplex'], ['full-duplex', 'full-duplex'], ['all of the above', 'ऊपर दिए गए सभी']],
                  'ans': 3,
                  'wr': ['Data flow between two devices can be simplex (one way), half-duplex (both ways, one at a time) or full-duplex (both ways at '
                         'the same time). Hence all of the above.',
@@ -849,6 +867,22 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         2: ['15 cables is right, but each device needs 5 ports (one per other device), not 6.',
                             '15 cables सही है, पर हर device को 5 ports चाहिए, 6 नहीं।'],
                         3: ['6 cables is the count for a RING topology (n links), not mesh.', '6 cables RING topology का count है, mesh का नहीं।']}},
+                {'src': 'Repo: Unit Test-4 Solution (OCR), p16',
+                 'q': ['If a computer network cable breaks, the whole network goes down in which topology?',
+                       'यदि computer network cable टूट जाए, तो किस topology में पूरा network बंद हो जाता है?'],
+                 'opts': [['Star', 'Star'], ['Ring', 'Ring'], ['Mesh', 'Mesh'],
+                          ['All of these', 'ये सभी']],
+                 'ans': 1,
+                 'wr': ['In a Ring topology every device is connected to its two neighbours in a closed loop — one cable break opens the ring, so the whole network goes down.',
+                        'Ring topology में हर device अपने दो neighbours से बंद loop में जुड़ा होता है — एक cable टूटने से ring खुल जाती है, इसलिए पूरा network बंद हो जाता है।'],
+                 'nk': ['Ring = one break downs ALL. Star = only that device drops. Mesh = network survives (many paths).',
+                        'Ring = एक break से सब down। Star = सिर्फ वह device गिरता है। Mesh = network बच जाता है (कई paths)।'],
+                 'ww': {0: ['Star topology me cable break hone par sirf wah device bahar hota hai, pura network nahi. (Not printed — internal.)',
+                            ''],
+                        2: ['Mesh me har pair ke beech dedicated link hota hai, isliye ek break pura network nahi girata. (Not printed — internal.)',
+                            ''],
+                        3: ['Sirf ring me ek cable break pura network band karta hai. (Not printed — internal.)',
+                            '']}},
                 {'src': 'Forouzan Ch1 (P1-4) — Practice Set (Problem)',
                  'q': ['In which topology does the failure of a single cable or device NOT affect the rest of the network?',
                        'किस topology में एक cable या device के fail होने पर बाकी network प्रभावित नहीं होता?'],
@@ -877,7 +911,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'Star: हर device का सिर्फ एक central controller (usually hub) से dedicated point-to-point link होता है। Hub frames को '
                         'destination तक relay करता है। (Forouzan)'],
                  'nk': ['Star = hub/switch at centre; easy to install & reconfigure; but if hub fails, the WHOLE network goes down.',
-                        'Star = centre में hub/switch; install और reconfigure करना आसान; लेकिन hub fail हो गया toh POORA network band हो जाता है।'],
+                        'Star = centre में hub/switch; install और reconfigure करना आसान; लेकिन hub fail हो गया तो पूरा network बंद हो जाता है।'],
                  'ww': {0: ['Mesh = links between every pair of devices, no central hub.',
                             'Mesh = har pair of devices ke beech links, central hub nahi।'],
                         1: ['Ring = links only between neighbours, no hub.', 'Ring = sirf neighbours ke beech links, hub nahi।'],
@@ -921,14 +955,14 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                 {'src': 'Extra (Forouzan) - fills syllabus gap',
                  'q': ['In a _______ topology, each device is connected to its two neighbours, data travels in one direction around the loop, and '
                        'each device regenerates (repeats) the signal - this is called token passing.',
-                       '_______ topology में हर device अपने do neighbours से जुड़ा होता है, data loop में एक ही direction में जाता है, और हर device '
+                       '_______ topology में हर device अपने दो neighbours से जुड़ा होता है, data loop में एक ही direction में जाता है, और हर device '
                        'signal को regenerate (repeat) करता है - इसे token passing कहते हैं।'],
                  'opts': [['Bus', 'bus'], ['Ring', 'ring'], ['Star', 'star'], ['Mesh', 'mesh']],
                  'ans': 1,
                  'wr': ['Ring: each device is connected to its two neighbours. Data travels in one direction. Each device in the ring incorporates a '
                         'repeater; it regenerates the bits and passes them along. Access is typically by token passing. (Forouzan)',
-                        'Ring: हर device अपने do neighbours से जुड़ा होता है। Data एक ही direction में जाता है। Ring का हर device एक repeater की तरह '
-                        'काम करता है; यह bits को regenerate karke आगे pass करता है। Access आम तौर पर token passing से होता है। (Forouzan)'],
+                        'Ring: हर device अपने दो neighbours से जुड़ा होता है। Data एक ही direction में जाता है। Ring का हर device एक repeater की तरह '
+                        'काम करता है; यह bits को regenerate करके आगे pass करता है। Access आम तौर पर token passing से होता है। (Forouzan)'],
                  'nk': ['Ring = loop, one direction, token passing, each device = repeater.',
                         'Ring = loop, एक direction, token passing, हर device = repeater.'],
                  'ww': {0: ['Bus = shared backbone cable.', 'Bus = shared backbone cable hai।'],
@@ -955,6 +989,19 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                             'Mesh aur Ring basic physical topologies hain, combinations/hierarchies nahi।'],
                         3: ['Bus and Star are basic topologies, not combination/hierarchy.',
                             'Bus aur Star basic topologies hain, combination/hierarchy nahi।']}},
+                {'src': 'Repo: Unit Test-4 Solution (OCR), p17',
+                 'q': ['Hierarchical topology, used to establish a network, is also known as a:',
+                       'Hierarchical topology, जिससे network स्थापित किया जाता है, किस नाम से भी जानी जाती है?'],
+                 'opts': [['Bus network', 'Bus network'], ['Star network', 'Star network'],
+                          ['Tree network', 'Tree network'], ['Mesh network', 'Mesh network']],
+                 'ans': 2,
+                 'wr': ['A hierarchical (tree) topology connects groups of computers to a central computer (root/hub) and then links those groups in a tree-like structure — a star of stars.',
+                        'Hierarchical (tree) topology computers के groups को एक central computer (root/hub) से जोड़ती है, और फिर उन groups को tree जैसी structure में जोड़ती है — star of stars।'],
+                 'nk': ['Hierarchical = Tree = star-of-stars (root + branches). Used in big office/campus LANs.',
+                        'Hierarchical = Tree = star-of-stars (root + branches)। बड़े office/campus LANs में use होती है।'],
+                 'ww': {0: ['Bus = single backbone cable, not hierarchical groups. (Internal.)', ''],
+                        1: ['Star = one central hub only; tree = multiple star groups joined hierarchically. (Internal.)', ''],
+                        3: ['Mesh = every device linked to every other; no tree structure. (Internal.)', '']}},
                 {'src': 'Extra (Forouzan) - fills syllabus gap',
                  'q': ['The ______ topology of a network defines how the devices are physically laid out/connected, whereas the ______ topology '
                        'defines how the data actually flow / how the devices access the network to transmit.',
@@ -967,8 +1014,8 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 1,
                  'wr': ['Physical topology = the actual layout of devices and cables. Logical topology = the way data flows / how devices access the '
                         'medium. Two networks can have the same logical topology but different physical topologies.',
-                        'Physical topology = devices और cables का asli layout. Logical topology = data कैसे flow करता है / devices medium को कैसे '
-                        'access करते हैं। Do networks की logical topology same हो सकती है लेकिन physical अलग हो सकती है।'],
+                        'Physical topology = devices और cables का वास्तविक layout. Logical topology = data कैसे flow करता है / devices medium को कैसे '
+                        'access करते हैं। दो networks की logical topology same हो सकती है लेकिन physical अलग हो सकती है।'],
                  'nk': ['Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical possible.',
                         'Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical हो सकता है।'],
                  'ww': {0: ['Reverses the two definitions.', 'Dono definitions ko ulta kar diya hai।'],
@@ -1027,7 +1074,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'wr': ['Mesh has a dedicated link between every pair of devices, so the failure of one link does not affect the others - it is the '
                         'most robust. But n(n-1)/2 links make it the most expensive and hardest to install/wire.',
                         'Mesh में हर pair of devices के बीच dedicated link होता है, इसलिए एक link fail होने से दूसरे affected नहीं होते - यह सबसे '
-                        'robust है। लेकिन n(n-1)/2 links की wajah से यह सबसे महंगी और install करने में सबसे मुश्किल है।'],
+                        'robust है। लेकिन n(n-1)/2 links की वजह से यह सबसे महंगी और install करने में सबसे मुश्किल है।'],
                  'nk': ['Mesh = most robust + most costly (n(n-1)/2 cables). Star = cheap & easy but hub is a single point of failure. Bus = '
                         'cheapest, hardest fault isolation.',
                         'Mesh = सबसे robust + सबसे महंगी (n(n-1)/2 cables). Star = sasti और आसान लेकिन hub single point of failure है. Bus = सबसे '
@@ -1119,7 +1166,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'wr': ['A Virtual Private Network (VPN) extends a private network across a public network (e.g., the Internet) using tunneling and '
                         'encryption, so data travels securely as if on a private network.',
                         'Virtual Private Network (VPN) एक private network को एक public network (जैसे Internet) के paar extend करता है, tunneling और '
-                        'encryption के through, ताकि data private network की तरह securely travel kare।'],
+                        'encryption के through, ताकि data private network की तरह securely travel करे।'],
                  'nk': ['VPN = Virtual Private Network - private network को public (Internet) पर extend करता है, securely.',
                         'VPN = Virtual Private Network - private network को public (Internet) पर extend करता है, securely.'],
                  'ww': {0: ['LAN is a small private network itself; it does not extend across public networks.',
@@ -1172,7 +1219,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         'largest).',
                         'Size के hisaab से badhta kram: PAN (एक person के around, सबसे छोटा) < LAN (building/campus) < MAN (city) < WAN (देश/दुनिया, '
                         'सबसे बड़ा).'],
-                 'nk': ['Yaad रखो: PAN < LAN < MAN < WAN (छोटा से बड़ा).', 'Yaad रखो: PAN < LAN < MAN < WAN (छोटा से बड़ा).'],
+                 'nk': ['याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).', 'याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).'],
                  'ww': {0: ['PAN, MAN, LAN, WAN: MAN aur LAN ka order galat hai (LAN < MAN).',
                             'PAN, MAN, LAN, WAN: MAN aur LAN ka order galat hai (LAN < MAN).'],
                         1: ['LAN, MAN, WAN, PAN: PAN sabse chhota hai, sabse bada nahi.',
@@ -1737,8 +1784,8 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 1,
                  'wr': ['Tim Berners-Lee invented the WWW at CERN in 1991 (using HTML, HTTP and URLs). The Mosaic browser (1993) later made the web '
                         'popular; the Internet opened to commercial use in the 1990s.',
-                        'Tim Berners-Lee ने 1991 में CERN में WWW का invention किया था (HTML, HTTP और URLs का use karke). Mosaic browser (1993) ने '
-                        'बाद में web को popular बनाया; Internet 1990s में commercial use के लिए khula।'],
+                        'Tim Berners-Lee ने 1991 में CERN में WWW का invention किया था (HTML, HTTP और URLs का use करके). Mosaic browser (1993) ने '
+                        'बाद में web को popular बनाया; Internet 1990s में commercial use के लिए खुला।'],
                  'nk': ['WWW = 1991, Tim Berners-Lee @ CERN. Mosaic browser 1993. Vint Cerf & Bob Kahn = fathers of the Internet (TCP/IP).',
                         'WWW = 1991, Tim Berners-Lee @ CERN. Mosaic browser 1993. Vint Cerf & Bob Kahn = Internet के fathers (TCP/IP).'],
                  'ww': {0: ['Vint Cerf co-developed TCP/IP - father of the Internet, not the WWW.',
@@ -1794,8 +1841,8 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'ans': 1,
                  'wr': ['Uploading means sending/transferring information from a local device to a host/remote computer over a network.',
                         'Uploading का मतलब है information को एक local device से एक host/remote computer को network के through भेजना।'],
-                 'nk': ['Uploading = local से remote/host को भेजना. Downloading = remote से local को lena.',
-                        'Uploading = local से remote/host को भेजना. Downloading = remote से local को lena.'],
+                 'nk': ['Uploading = local से remote/host को भेजना. Downloading = remote से local को लेना.',
+                        'Uploading = local से remote/host को भेजना. Downloading = remote से local को लेना.'],
                  'ww': {0: ['Sorting data on a disk is organising files, not uploading.',
                             'Disk par data sort karna files ko organise karna hai, uploading nahi।'],
                         2: ['Receiving information from a host is downloading, not uploading.',
@@ -1865,7 +1912,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                  'opts': [['PPPoE (PPP over Ethernet)', 'PPPoE (PPP over Ethernet)'],
                           ['PPPoA (PPP over ATM)', 'PPPoA (PPP over ATM)'],
                           ['Bridge protocol', 'bridge protocol'],
-                          ['All of the above', 'ऊपर Sabhi']],
+                          ['All of the above', 'ऊपर दिए गए सभी']],
                  'ans': 0,
                  'wr': ['Home DSL broadband connections typically use PPPoE (PPP over Ethernet) to carry PPP traffic over the DSL/Ethernet '
                         'connection.',
@@ -1913,7 +1960,7 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                             'Electronic Digital Interchange sahi expansion nahi hai।'],
                         3: ['Electronic Data Internet is not the correct expansion.', 'Electronic Data Internet sahi expansion nahi hai।']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q47 / CN Topic Test-02 (UNIT TEST-2), Q47',
-                 'q': ['A computer network permits sharing of:', 'Ek computer network kis cheez की sharing की अनुमति देता है?'],
+                 'q': ['A computer network permits sharing of:', 'एक computer network किस चीज़ की sharing की अनुमति देता है?'],
                  'opts': [['Resources', 'resources (printer, disk, etc.)'],
                           ['Information', 'information (data)'],
                           ['Both a & b', 'दोनों a और b'],
@@ -1929,6 +1976,36 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
                         1: ['Information only is incomplete - resources are also shared.',
                             'Sirf information adhura hai - resources bhi share hote hain।'],
                         3: ['Both are shared, so none-of-these is wrong.', 'Dono share hote hain, isliye koi-nahi galat hai।']}},
+                {'src': 'InstrumentationTools 150 CN MCQs',
+                 'q': ['Which of the following is a benefit of networking?',
+                       'Networking का कौन-सा लाभ (benefit) है?'],
+                 'opts': [['File sharing', 'File sharing'],
+                          ['Easier access to resources', 'resources तक आसान पहुँच'],
+                          ['Easier backups', 'आसान backups'],
+                          ['All of the above', 'ऊपर दिए गए सभी']],
+                 'ans': 3,
+                 'wr': ['Computer networks allow file sharing, easy access to shared resources (printers, servers, internet) and easier centralised backups — so all of these are benefits.',
+                        'Computer networks file sharing, shared resources (printers, server, internet) तक आसान पहुँच, और आसान centralised backups की अनुमति देते हैं — इसलिए ये सभी लाभ हैं।'],
+                 'nk': ['Networking benefits: sharing (files/resources/peripherals) + communication + backup + cost saving. Exam favourite: "All of the above".',
+                        'Networking के लाभ: sharing (files/resources/peripherals) + communication + backup + cost saving। Exam favourite: "All of the above"।'],
+                 'ww': {0: ['File sharing is one benefit, but not the only one. (Internal.)', ''],
+                        1: ['Easy resource access is one benefit, but not the only one. (Internal.)', ''],
+                        2: ['Easier backup is one benefit, but not the only one. (Internal.)', '']}},
+                {'src': 'Repo: Unit Test-4 Solution (OCR), p11',
+                 'q': ['The term UPnP is a short form of:',
+                       'UPnP term का पूरा नाम (full form) क्या है?'],
+                 'opts': [['Uniform Plug and Play', 'Uniform Plug and Play'],
+                          ['Unit Plug and Play', 'Unit Plug and Play'],
+                          ['Useful Plug and Play', 'Useful Plug and Play'],
+                          ['Universal Plug and Play', 'Universal Plug and Play']],
+                 'ans': 3,
+                 'wr': ['UPnP = Universal Plug and Play — a set of networking protocols that lets devices discover each other and connect automatically (zero-configuration).',
+                        'UPnP = Universal Plug and Play — networking protocols का एक set जो devices को एक-दूसरे को automatically discover और connect (zero-configuration) करने देता है।'],
+                 'nk': ['UPnP = Universal Plug and Play (device auto-discovery). Compare: DHCP = auto IP configuration.',
+                        'UPnP = Universal Plug and Play (device auto-discovery)। तुलना: DHCP = auto IP configuration।'],
+                 'ww': {0: ['"Uniform" is a distractor — the standard expansion is Universal. (Internal.)', ''],
+                        1: ['"Unit" is a distractor. (Internal.)', ''],
+                        2: ['"Useful" is a distractor. (Internal.)', '']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q15',
                  'q': ['How many digits of the Data Network Identification Code (DNIC) identify the country?',
                        'Data Network Identification Code (DNIC) के kitne digits देश (country) की पहचान करते हैं?'],
