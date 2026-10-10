@@ -4,24 +4,30 @@ Last updated: 2026-10-09 (after OCR of scanned PDFs + web/textbook-bank harvest)
 This file proves that **every** question in every source is accounted for:
 either curated into a book, staged in a queue, or dropped with a documented reason.
 
-## Grand totals (updated after T1/T2 update + Topic 3 build)
+## Grand totals (updated after Topic 4 build)
 
 | Bucket | Count | Where |
 |---|---|---|
-| Curated books (T1 + T2 + T3) | **280** | topic1_data.py (118) + topic2_data.py (81) + topic3_data.py (81) |
-| T1/T2 holding (awaiting next book update) | **1** | `tools/data/web_extra_t1t2.py` (Windows-XP statement) |
-| Pending queues (T4–T7, staged for their topic builds) | **323** | topic{4-7}_pending.py (53/46/177/47) |
-| **TOTAL items captured** | **604** | + ~50 near-dups folded into multi-source book questions (see dispositions) |
+| Curated books (T1 + T2 + T3 + T4) | **315** | topic1_data (118) + topic2_data (81) + topic3_data (82) + topic4_data (34) |
+| T1/T2 holding (awaiting next book update) | **1** | `tools/data/web_extra_t1t2.py` |
+| Pending queues (T5–T7, staged for their topic builds) | **277** | topic{5-7}_pending.py (46/184/47) |
+| **TOTAL items captured** | **593** | + ~50 near-dups folded into multi-source book questions |
 
 ### T1/T2 update pass (holding 53 disposed — see `tools/data/holding_dispositions.md`)
 - 8 questions merged into T1/T2 books (benefits of networking, ring-break, tree topology, kbps speed, UPnP, data-link protocols, end-system app layer, physical-layer translate — answer corrected to Data link layer).
 - 15 items routed to T3–T7 pending; ~30 near-dups of existing book questions dropped with notes; 2 cnp3 figure-based dropped.
 
-### Topic 3 build pass (109 pending → 81 curated MCQs + 27 Nukte Rapid-Fire)
-- 98 pending merged into 81 book questions (multi-source tags where several banks asked the same fact).
+### Topic 3 build pass (109 pending → 82 curated MCQs + 27 Nukte Rapid-Fire)
+- 98 pending merged into 82 book questions (multi-source tags where several banks asked the same fact).
 - 5 moved to correct topics (scanner tool → T7; IGMP/ICMP/LDAP/IPv4-total-length → T6).
 - 1 held for T1 (Windows XP statements), 2 dropped (binary-missing question — source text layer broken; cnp3 figure question).
 - Official keys used: RPSC 2024 + Rajasthan PYQ (`tools/data/answer_keys.py`).
+
+### Topic 4 build pass (53 pending → 34 curated MCQs + 22 Nukte Rapid-Fire)
+- 45 pending merged into 34 book questions (multi-source tags; recovered garbled items from source PDFs: BCI T9 statements, ST-7 router-functions, UT-4 router-statements & MUX).
+- 7 moved to Topic 6 (transport multiplexing, BGP, MPLS, L7 protocols, MAC sublayer, early-ARPANET routing, dynamic routing protocols).
+- 11 dropped/documented: 3 covered in Topic 3 (subnet-mask/ARP/NAT-fn), 5 near-dups merged (collision-domain & router-definition variants), 1 match-format garbled, 1 cnp3 figure, 1 Rajasthan-PYQ Q91 (option D unreadable even at 300-dpi OCR — not fabricated).
+- +1 question added into Topic 3 (network ID reserved — cannot be assigned to a host).
 
 ## 1. Repo source PDFs (on `main`, folder `Computer Network/`)
 
