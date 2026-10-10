@@ -181,6 +181,21 @@ decks + web banks + cnp3 banks = 656+ items accounted; pending sets disposed).
 - Totals: **631 MCQs** (T1 124, T2 82, T3 93, T4 38, T5 48, T6 193, T7 53) + 165
   nukte rapid; Easy 86 / Medium 339 / Hard 206.
 
+
+## 10. The Complete Book (Theory + Questions) — Oct 2026
+
+User spec ke hisaab se nayi complete book: **"The Complete Computer Network -
+Theory + 631 MCQs (Answers + Nukte).pdf/.md"** (216 pages):
+
+- Har section mein PEHLE **समझ (Theory)** — full-width bilingual structured notes
+  (intro + bullets + table) — Forouzan se; PHIR questions **Easy → Medium → Hard**.
+- Question row = 2 columns: LEFT question + options | RIGHT = sirf **✔ correct
+  answer + ★ Nukte** (lambi explanation nahi — theory pages woh kaam karte hain).
+- Sab 7 topics, 31 sections, 631 MCQs + 165 nukte rapid-fire covered.
+- No pictures; structured lining; Hindi clean Devanagari.
+- Theory data: `tools/data/topic{1..7}_theory.py`; builder: `tools/cn_build_complete.py`.
+- 7 topic books (detailed why-correct format) bhi repo mein hain as-is.
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2
