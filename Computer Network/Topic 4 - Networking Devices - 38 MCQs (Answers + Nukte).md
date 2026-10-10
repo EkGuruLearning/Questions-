@@ -1,20 +1,20 @@
 # Data Communication & Computer Networks (CN)
-## Topic 4 of 7 : Networking Devices — 35 MCQs (English + Hindi)
+## Topic 4 of 7 : Networking Devices — 38 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 35 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 38 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
-| 1 | Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices) | Q1 - Q7 |
-| 2 | Section B — Switch / NIC / Bridge | Q8 - Q16 |
-| 3 | Section C — Router / Brouter | Q17 - Q24 |
-| 4 | Section D — Gateway, Firewall & NAT Devices | Q25 - Q35 |
+| 1 | Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices) | Q1 - Q9 |
+| 2 | Section B — Switch / NIC / Bridge | Q10 - Q19 |
+| 3 | Section C — Router / Brouter | Q20 - Q27 |
+| 4 | Section D — Gateway, Firewall & NAT Devices | Q28 - Q38 |
 
 ---
 
@@ -162,12 +162,52 @@
 *[Source: Unit Test-4 Solution (OCR), p24]*
 
 ---
+### Q8. In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?
+
+<span lang='hi'>एक data-entry office में 1वीं और 4वीं मंज़िल के computer centres LAN से जुड़े हैं, पर signals में समय लगता है. बेहतर transmission के लिए कौन-सा hardware लगाएँ?</span>
+
+- **(A)** Repeater ✅ **(CORRECT)**
+- **(B)** Router
+- **(C)** Computer
+- **(D)** Modem
+
+**✔ Correct Answer: (A) Repeater** — Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है.
+
+*Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है.*
+
+**★ Nukta (Key Point):** संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.
+
+*संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.*
+
+*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)]*
+
+---
+### Q9. A device that operates at the physical layer of the OSI model is:
+
+<span lang='hi'>OSI model की physical layer पर काम करने वाला device है:</span>
+
+- **(A)** Bridge
+- **(B)** Router
+- **(C)** Repeater ✅ **(CORRECT)**
+- **(D)** All of these
+
+**✔ Correct Answer: (C) Repeater** — Repeater physical layer (Layer 1) का device है — यह signal regenerate करता है. Bridge Layer 2, Router Layer 3 पर.
+
+*Repeater physical layer (Layer 1) का device है — यह signal regenerate करता है. Bridge Layer 2, Router Layer 3 पर.*
+
+**★ Nukta (Key Point):** Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, L4+ = Gateway.
+
+*Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, L4+ = Gateway.*
+
+*[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)]*
+
+---
 
 ## Section B — Switch / NIC / Bridge
 
 *CAM table, per-port collision domains, flooding behaviour, VLANs & broadcast domains, wireless AP as bridge.*
 
-### Q8. Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
+### Q10. Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
 
 <span lang='hi'>कौन-सा device collision domains को कम करता है (हर port का अपना collision domain) लेकिन broadcast domains को तोड़ता नहीं?</span>
 
@@ -187,7 +227,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-6]*
 
 ---
-### Q9. Which device stores MAC addresses in a CAM table?
+### Q11. Which device stores MAC addresses in a CAM table?
 
 <span lang='hi'>कौन-सा device MAC addresses को CAM table में संग्रहित करता है?</span>
 
@@ -207,7 +247,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q10. A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
+### Q12. A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
 
 <span lang='hi'>एक switch को frame मिलता है जिसका destination MAC उसके MAC table में नहीं है। Switch क्या करेगा?</span>
 
@@ -227,7 +267,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q11. A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
+### Q13. A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
 
 <span lang='hi'>दो switches के बीच एक router जुड़ा है। यदि Switch-A पर broadcast frame भेजा जाए, तो Switch-B क्या प्राप्त करेगा?</span>
 
@@ -247,7 +287,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q12. A switch has 4 VLANs configured. How many broadcast domains exist?
+### Q14. A switch has 4 VLANs configured. How many broadcast domains exist?
 
 <span lang='hi'>एक switch पर 4 VLANs configure हैं। कितने broadcast domains होंगे?</span>
 
@@ -267,7 +307,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q13. In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
+### Q15. In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
 
 <span lang='hi'>VLANs वाले router-on-a-stick setup में VLAN tagging कौन करता है और inter-VLAN routing कौन?</span>
 
@@ -287,7 +327,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q14. A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
+### Q16. A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
 
 <span lang='hi'>एक packet यात्रा करता है: wired PC → Switch → Access Point → Wireless laptop। कौन-से devices केवल Layer 2 पर काम करते हैं?</span>
 
@@ -307,7 +347,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q15. What does a MAC address represent?
+### Q17. What does a MAC address represent?
 
 <span lang='hi'>MAC address किसका प्रतिनिधित्व करता है?</span>
 
@@ -327,7 +367,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q16. Which of the following component is responsible for network communication in a computer system?
+### Q18. Which of the following component is responsible for network communication in a computer system?
 
 <span lang='hi'>कंप्यूटर सिस्टम में network communication के लिए कौन-सा component ज़िम्मेदार होता है?</span>
 
@@ -347,12 +387,32 @@
 *[Source: Unit Test-4 Solution.pdf (OCR), p18]*
 
 ---
+### Q19. LANs can be connected by which of the following devices that operate on the data link layer?
+
+<span lang='hi'>LANs को data link layer पर काम करने वाले निम्न में से किस device से जोड़ा जा सकता है?</span>
+
+- **(A)** Hub
+- **(B)** Bridges ✅ **(CORRECT)**
+- **(C)** HDLC
+- **(D)** Tunnel
+
+**✔ Correct Answer: (B) Bridges** — Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses देखकर frames आगे भेजते हैं.
+
+*Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses देखकर frames आगे भेजते हैं.*
+
+**★ Nukta (Key Point):** Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+.
+
+*Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+.*
+
+*[Source: SBI PO Computer Awareness PYQ (via bankersadda)]*
+
+---
 
 ## Section C — Router / Brouter
 
 *Router functions & layers, per-hop packet changes, broadcast-domain boundaries, congestion (RED), routing basics.*
 
-### Q17. Which hardware forwards data packets between computer networks?
+### Q20. Which hardware forwards data packets between computer networks?
 
 <span lang='hi'>कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?</span>
 
@@ -372,7 +432,7 @@
 *[Source: KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03]*
 
 ---
-### Q18. Which device operates at Layer 3 of the OSI model?
+### Q21. Which device operates at Layer 3 of the OSI model?
 
 <span lang='hi'>OSI model की Layer 3 पर कौन-सा device काम करता है?</span>
 
@@ -392,7 +452,7 @@
 *[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard)]*
 
 ---
-### Q19. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
+### Q22. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
 
 <span lang='hi'>इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?</span>
 
@@ -412,7 +472,7 @@
 *[Source: Kerala PSC repeated PYQs (via pscarivukal)]*
 
 ---
-### Q20. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
+### Q23. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
 
 <span lang='hi'>Router निम्न में से कौन-सा कार्य करता है? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision</span>
 
@@ -432,7 +492,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28]*
 
 ---
-### Q21. Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
+### Q24. Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
 
 <span lang='hi'>देखिए: S1: TTL field हर router पर घटती है। S2: MAC address हर hop पर बदलता है। कौन-सा सही है?</span>
 
@@ -452,7 +512,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q22. A router drops some packets deliberately due to congestion. What is this technique called?
+### Q25. A router drops some packets deliberately due to congestion. What is this technique called?
 
 <span lang='hi'>Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?</span>
 
@@ -472,7 +532,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q23. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
+### Q26. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
 
 <span lang='hi'>IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?</span>
 
@@ -492,7 +552,7 @@
 *[Source: Unit Test-4 Solution (OCR), p15]*
 
 ---
-### Q24. Which device creates a separate broadcast domain?
+### Q27. Which device creates a separate broadcast domain?
 
 <span lang='hi'>कौन-सा device अलग broadcast domain बनाता है?</span>
 
@@ -517,7 +577,7 @@
 
 *Gateway as protocol converter, firewall types (packet/stateful/proxy), NAT types, device-vs-software identification.*
 
-### Q25. If two systems use DIFFERENT protocols, which device is used to link them?
+### Q28. If two systems use DIFFERENT protocols, which device is used to link them?
 
 <span lang='hi'>यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?</span>
 
@@ -537,7 +597,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)]*
 
 ---
-### Q26. Which device can operate across all 7 layers of the OSI model?
+### Q29. Which device can operate across all 7 layers of the OSI model?
 
 <span lang='hi'>कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?</span>
 
@@ -557,7 +617,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q27. Devices on one network can communicate with devices on another network via:
+### Q30. Devices on one network can communicate with devices on another network via:
 
 <span lang='hi'>एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?</span>
 
@@ -577,7 +637,7 @@
 *[Source: SSC CGL Internet & Networking (via EduRev bank)]*
 
 ---
-### Q28. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
+### Q31. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
 
 <span lang='hi'>कौन-सी firewall network layer पर packets की जाँच करके IP addresses के आधार पर निर्णय लेती है?</span>
 
@@ -597,7 +657,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q29. Which firewall acts as an intermediary between the client and server at the application layer?
+### Q32. Which firewall acts as an intermediary between the client and server at the application layer?
 
 <span lang='hi'>कौन-सी firewall application layer पर client और server के बीच मध्यस्थ (intermediary) के रूप में काम करती है?</span>
 
@@ -617,7 +677,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q30. What is the role of a firewall in computer networks?
+### Q33. What is the role of a firewall in computer networks?
 
 <span lang='hi'>Computer networks में firewall की भूमिका क्या है?</span>
 
@@ -637,7 +697,7 @@
 *[Source: 30 important CN MCQs (Medium blog bank)]*
 
 ---
-### Q31. What is the purpose of a proxy server in networking?
+### Q34. What is the purpose of a proxy server in networking?
 
 <span lang='hi'>Networking में proxy server का उद्देश्य क्या है?</span>
 
@@ -657,7 +717,7 @@
 *[Source: 30 important CN MCQs (Medium blog bank)]*
 
 ---
-### Q32. Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
+### Q35. Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
 
 <span lang='hi'>कौन-सी network security system trusted private network को उस जुड़े हुए untrusted outside network से बचाने के लिए बनी है?</span>
 
@@ -677,7 +737,7 @@
 *[Source: Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)]*
 
 ---
-### Q33. What kind of NAT maps one private IP to exactly one public IP?
+### Q36. What kind of NAT maps one private IP to exactly one public IP?
 
 <span lang='hi'>किस प्रकार का NAT एक private IP को ठीक एक public IP से जोड़ता है?</span>
 
@@ -697,7 +757,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q34. Which of the following is NOT a networking device?
+### Q37. Which of the following is NOT a networking device?
 
 <span lang='hi'>निम्न में से कौन-सा networking device नहीं है?</span>
 
@@ -717,7 +777,7 @@
 *[Source: InstrumentationTools 150 CN MCQs]*
 
 ---
-### Q35. Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
+### Q38. Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
 
 <span lang='hi'>निम्न में से कौन-सा networking device नहीं है? (Hub / Switch / Bridge / इनमें से कोई नहीं)</span>
 

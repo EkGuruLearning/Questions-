@@ -1,11 +1,11 @@
 # Data Communication & Computer Networks (CN)
-## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 83 MCQs (English + Hindi)
+## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 88 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 83 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 88 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
@@ -13,9 +13,9 @@
 |---|-----------|-----------|
 | 1 | Section A — Address Levels & MAC Address (Physical Address) | Q1 - Q10 |
 | 2 | Section B — IPv4 Addressing (Format, Classes & Special Addresses) | Q11 - Q40 |
-| 3 | Section C — Subnetting & CIDR | Q41 - Q63 |
-| 4 | Section D — IPv6 Addressing | Q64 - Q71 |
-| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q72 - Q83 |
+| 3 | Section C — Subnetting & CIDR | Q41 - Q65 |
+| 4 | Section D — IPv6 Addressing | Q66 - Q74 |
+| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q75 - Q88 |
 
 ---
 
@@ -1293,12 +1293,52 @@
 *[Source: Unit Test -2 Solutions (OCR), p5]*
 
 ---
+### Q64. If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?
+
+<span lang='hi'>यदि internet पर किसी Class B network की subnet mask 255.255.248.0 हो, तो हर subnet में अधिकतम hosts कितने होंगे?</span>
+
+- **(A)** 1023
+- **(B)** 1022
+- **(C)** 1024
+- **(D)** 2046 ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) 2046** — 255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 = 2046.
+
+*255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 = 2046.*
+
+**★ Nukta (Key Point):** 248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 (network और broadcast हटाकर).
+
+*248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 (network और broadcast हटाकर).*
+
+*[Source: RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)]*
+
+---
+### Q65. The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?
+
+<span lang='hi'>Class B host के पते को 6-bit subnet number से subnets में बाँटना है. अधिकतम subnets और हर subnet में अधिकतम hosts कितने होंगे?</span>
+
+- **(A)** 62 subnets and 262142 hosts
+- **(B)** 64 subnets and 262142 hosts
+- **(C)** 62 subnets and 1022 hosts ✅ **(CORRECT)**
+- **(D)** 64 subnets and 1024 hosts
+
+**✔ Correct Answer: (C) 62 subnets and 1022 hosts** — Class B में host bits 16 होती हैं; 6 bits subnet में जाने पर बचीं 10 host bits → hosts = 2¹⁰ − 2 = 1022. Subnets = 2⁶ − 2 = 62 (subnet-zero और all-ones हटाकर).
+
+*Class B में host bits 16 होती हैं; 6 bits subnet में जाने पर बचीं 10 host bits → hosts = 2¹⁰ − 2 = 1022. Subnets = 2⁶ − 2 = 62 (subnet-zero और all-ones हटाकर).*
+
+**★ Nukta (Key Point):** RPSC 2011 और GATE 2005 दोनों में यही प्रश्न — official key (C) 62 subnets, 1022 hosts.
+
+*RPSC 2011 और GATE 2005 दोनों में यही प्रश्न — official key (C) 62 subnets, 1022 hosts.*
+
+*[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in) + GATE CS 2005]*
+
+---
 
 ## Section D — IPv6 Addressing
 
 *128-bit addresses, address types (no broadcast), IPv6-only header changes, transition (tunneling), AAAA records.*
 
-### Q64. In IPv6, how many bits are in the address?
+### Q66. In IPv6, how many bits are in the address?
 
 <span lang='hi'>IPv6 में address कितने bits का होता है?</span>
 
@@ -1318,7 +1358,7 @@
 *[Source: Repo: CN Topic Test-6 (UNIT TEST-6) · Sanfoundry / Medium / MQuestions banks]*
 
 ---
-### Q65. IPv6 does NOT use which type of address?
+### Q67. IPv6 does NOT use which type of address?
 
 <span lang='hi'>IPv6 किस type का address उपयोग नहीं करता?</span>
 
@@ -1338,7 +1378,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q66. Which features are present in IPv4 but NOT in IPv6?
+### Q68. Which features are present in IPv4 but NOT in IPv6?
 
 <span lang='hi'>कौन-सी features IPv4 में हैं लेकिन IPv6 में नहीं?</span>
 
@@ -1358,7 +1398,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q67. Which of the following is TRUE for IPv6?
+### Q69. Which of the following is TRUE for IPv6?
 
 <span lang='hi'>IPv6 के लिए निम्न में से क्या सही है?</span>
 
@@ -1378,7 +1418,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q68. Which IPv6 address type is globally unique and globally routable?
+### Q70. Which IPv6 address type is globally unique and globally routable?
 
 <span lang='hi'>कौन-सा IPv6 address type globally unique और globally routable होता है?</span>
 
@@ -1398,7 +1438,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q69. IPv6 was developed by:
+### Q71. IPv6 was developed by:
 
 <span lang='hi'>IPv6 किसने develop किया?</span>
 
@@ -1418,7 +1458,7 @@
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q70. Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
+### Q72. Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
 
 <span lang='hi'>दो IPv6 nodes को interoperable होना है लेकिन वे बीच में आने वाले IPv4 routers से जुड़े हैं। सबसे अच्छा समाधान क्या है?</span>
 
@@ -1438,7 +1478,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6]*
 
 ---
-### Q71. Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
+### Q73. Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
 
 <span lang='hi'>किसी name से जुड़ा IPv6 address पाने के लिए कौन-सी DNS resource record query करनी चाहिए?</span>
 
@@ -1458,12 +1498,32 @@
 *[Source: cnp3 MCQ (Bonaventure CN textbook), DNS1]*
 
 ---
+### Q74. IPv6 addresses are ______ bit addresses.
+
+<span lang='hi'>IPv6 addresses ______ bit के पते होते हैं.</span>
+
+- **(A)** 32
+- **(B)** 64
+- **(C)** 16
+- **(D)** 128 ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) 128** — IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए IPv6 में पतों की कमी नहीं.
+
+*IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए IPv6 में पतों की कमी नहीं.*
+
+**★ Nukta (Key Point):** IPv4 = 32-bit (4 numbers); IPv6 = 128-bit (8 groups).
+
+*IPv4 = 32-bit (4 numbers); IPv6 = 128-bit (8 groups).*
+
+*[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)]*
+
+---
 
 ## Section E — Port Numbers, DNS/URL & Address Resolution (ARP)
 
 *16-bit ports & ranges, socket addressing, DNS records & lookups, ARP/RARP, URL layer.*
 
-### Q72. Which of the following sets of port numbers belongs to the 'well-known' ports category?
+### Q75. Which of the following sets of port numbers belongs to the 'well-known' ports category?
 
 <span lang='hi'>निम्न में से कौन-से port numbers 'well-known' ports category में आते हैं?</span>
 
@@ -1483,7 +1543,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q73. What is the typical range of ephemeral (dynamic) ports?
+### Q76. What is the typical range of ephemeral (dynamic) ports?
 
 <span lang='hi'>Ephemeral (dynamic) ports की सामान्य range क्या है?</span>
 
@@ -1503,7 +1563,7 @@
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test 5]*
 
 ---
-### Q74. The transport layer uses which type of addressing?
+### Q77. The transport layer uses which type of addressing?
 
 <span lang='hi'>Transport layer किस प्रकार की addressing उपयोग करता है?</span>
 
@@ -1523,7 +1583,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q75. Which of the following uniquely identifies a process on a host?
+### Q78. Which of the following uniquely identifies a process on a host?
 
 <span lang='hi'>Host पर किसी process की unique पहचान कौन करता है?</span>
 
@@ -1543,7 +1603,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q76. A URL (like www.example.com) belongs to which layer?
+### Q79. A URL (like www.example.com) belongs to which layer?
 
 <span lang='hi'>URL (जैसे www.example.com) किस layer से संबंधित है?</span>
 
@@ -1563,7 +1623,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q77. DNS works at which layer of the OSI model?
+### Q80. DNS works at which layer of the OSI model?
 
 <span lang='hi'>DNS, OSI model की किस layer पर काम करता है?</span>
 
@@ -1583,7 +1643,7 @@
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q78. What is the default port number for DNS?
+### Q81. What is the default port number for DNS?
 
 <span lang='hi'>DNS का default port number क्या है?</span>
 
@@ -1603,7 +1663,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
 
 ---
-### Q79. DNS is the abbreviation of:
+### Q82. DNS is the abbreviation of:
 
 <span lang='hi'>DNS का पूरा नाम (full form) क्या है?</span>
 
@@ -1623,7 +1683,7 @@
 *[Source: Networking MCQ bank (MQuestions blog)]*
 
 ---
-### Q80. What is the role of DNS? It is best described as:
+### Q83. What is the role of DNS? It is best described as:
 
 <span lang='hi'>DNS की भूमिका क्या है? सबसे सही विवरण है:</span>
 
@@ -1643,7 +1703,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test-02 / Medium bank]*
 
 ---
-### Q81. A reverse lookup in DNS means a lookup to ______ using ______ records.
+### Q84. A reverse lookup in DNS means a lookup to ______ using ______ records.
 
 <span lang='hi'>DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की lookup।</span>
 
@@ -1663,7 +1723,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test 5]*
 
 ---
-### Q82. Which DNS record type maps a domain name to an IPv4 address?
+### Q85. Which DNS record type maps a domain name to an IPv4 address?
 
 <span lang='hi'>कौन-सी DNS record type domain name को IPv4 address से जोड़ती है?</span>
 
@@ -1683,7 +1743,7 @@
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6) · also cnp3 DNS2]*
 
 ---
-### Q83. The Address Resolution Protocol (ARP) is used for:
+### Q86. The Address Resolution Protocol (ARP) is used for:
 
 <span lang='hi'>Address Resolution Protocol (ARP) किस काम में आता है?</span>
 
@@ -1701,6 +1761,46 @@
 *ARP = IP→MAC (Address Resolution)। RARP = MAC→IP (अप्रचलित — BOOTP/DHCP से बदला)। DNS = name→IP।*
 
 *[Source: RPSC Programmer 2024 Paper-1 (official key)]*
+
+---
+### Q87. Which one of the following protocols is NOT used to resolve one form of address into another?
+
+<span lang='hi'>निम्न में से कौन-सा protocol एक प्रकार के पते को दूसरे में बदलने के लिए उपयोग नहीं होता?</span>
+
+- **(A)** DNS
+- **(B)** ARP
+- **(C)** DHCP ✅ **(CORRECT)**
+- **(D)** RARP
+
+**✔ Correct Answer: (C) DHCP** — DNS नाम→IP, ARP IP→MAC, RARP MAC→IP बदलते हैं. DHCP तो नए device को IP देता है — किसी पते का translation नहीं करता.
+
+*DNS नाम→IP, ARP IP→MAC, RARP MAC→IP बदलते हैं. DHCP तो नए device को IP देता है — किसी पते का translation नहीं करता.*
+
+**★ Nukta (Key Point):** Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.
+
+*Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.*
+
+*[Source: GATE CS PYQ (via Computer Science Junction / examprev)]*
+
+---
+### Q88. A reverse lookup in DNS means a lookup to ______ using ______ records.
+
+<span lang='hi'>DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.</span>
+
+- **(A)** map domain names to IP address, A
+- **(B)** map IP address to domain name, PTR ✅ **(CORRECT)**
+- **(C)** determine the authoritative name servers, CNAME
+- **(D)** identify mail servers, SOA
+
+**✔ Correct Answer: (B) map IP address to domain name, PTR** — Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.
+
+*Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.*
+
+**★ Nukta (Key Point):** Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.
+
+*Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.*
+
+*[Source: RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)]*
 
 ---
 

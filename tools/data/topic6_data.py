@@ -2188,3 +2188,283 @@ NUKTE_RAPID = [
   "a": ["Transport layer (ports से processes share करते हैं). Presentation = data का रूप.",
         "Transport layer (ports से processes share करते हैं). Presentation = data का रूप."]},
 ]
+
+# --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
+
+SEC_A.extend([
+    Q("GATE CS 2007",
+      "The message 11001001 is to be transmitted using the CRC polynomial x³ + 1 to protect it from errors. The codeword that should be transmitted is:",
+      "संदेश 11001001 को CRC बहुपद x³ + 1 से errors से बचाने के लिए भेजना है. भेजा जाने वाला codeword होगा:",
+      ["11001001000", "11001001011", "11001010", "110010010011"], 1,
+      ("x³ + 1 = 1001. Message के आगे 3 zeros लगाकर 11001001000 को 1001 से भाग "
+       "दो → remainder 011. जोड़ने पर codeword = 11001001011.",
+       "x³ + 1 = 1001. Message के आगे 3 zeros लगाकर 11001001000 को 1001 से भाग "
+       "दो → remainder 011. जोड़ने पर codeword = 11001001011."),
+      ("GATE official key (B). यही तरीका RPSC के x³+x+1 वाले प्रश्न में भी — "
+       "degree n पर n zeros, भाग का remainder जोड़ो.",
+       "GATE official key (B). यही तरीका RPSC के x³+x+1 वाले प्रश्न में भी — "
+       "degree n पर n zeros, भाग का remainder जोड़ो."),
+      {0: ("11001001000 बिना remainder अधूरा है.", "11001001000 बिना remainder अधूरा है."),
+       2: ("11001010 तो message जैसा ही है.", "11001010 तो message जैसा ही है."),
+       3: ("110010010011 में remainder गलत जुड़ा है.", "110010010011 में remainder गलत जुड़ा है.")}),
+    Q("GATE CS 2009",
+      "Let G(x) be the generator polynomial used for CRC checking. What condition must G(x) satisfy to detect an odd number of bits in error?",
+      "मान लीजिए G(x), CRC जाँच में उपयोग होने वाला generator polynomial है. Odd संख्या में बिट-त्रुटियाँ पकड़ने के लिए G(x) पर क्या शर्त होनी चाहिए?",
+      ["G(x) contains more than two terms", "G(x) does not divide 1 + x^k for any k within the frame length", "1 + x is a factor of G(x)", "G(x) has an odd number of terms"], 2,
+      ("यदि (1 + x) यानी x + 1, G(x) का factor हो, तो code की सभी codewords में "
+       "1s की संख्या even होती है — इसलिए odd त्रुटियाँ पकड़ में आ जाती हैं.",
+       "यदि (1 + x) यानी x + 1, G(x) का factor हो, तो code की सभी codewords में "
+       "1s की संख्या even होती है — इसलिए odd त्रुटियाँ पकड़ में आ जाती हैं."),
+      ("GATE official key (C). x+1 factor ↔ even parity code ↔ odd errors detect.",
+       "GATE official key (C). x+1 factor ↔ even parity code ↔ odd errors detect."),
+      {0: ("Terms की संख्या से यह शर्त नहीं बनती.", "Terms की संख्या से यह शर्त नहीं बनती."),
+       1: ("यह शर्त दूसरे प्रकार की truटि पकड़ने से जुड़ी है.", "यह शर्त दूसरे प्रकार की truटि पकड़ने से जुड़ी है."),
+       3: ("Odd terms होना काफ़ी नहीं.", "Odd terms होना काफ़ी नहीं.")}),
+    Q("UGC NET Computer Science Dec 2022 (via samagracs)",
+      "In CRC coding, if the data word is 111111, the divisor is 1010 and the remainder is 110, which of the following is the transmitted code?",
+      "CRC coding में, यदि data word 111111 है, divisor 1010 है और remainder 110 है, तो निम्न में से कौन-सा भेजा गया code है?",
+      ["011111101", "001010110", "111111110", "110111111"], 2,
+      ("Transmitted code = data word + remainder = 111111 + 110 = 111111110.",
+       "Transmitted code = data word + remainder = 111111 + 110 = 111111110."),
+      ("CRC में codeword = data के पीछे remainder. बाकी options remainder जोड़ने "
+       "का हिसाब नहीं रखते.",
+       "CRC में codeword = data के पीछे remainder. बाकी options remainder जोड़ने "
+       "का हिसाब नहीं रखते."),
+      {0: ("यह remainder को अलग जगह जोड़ता है.", "यह remainder को अलग जगह जोड़ता है."),
+       1: ("यह data भी बदल देता है.", "यह data भी बदल देता है."),
+       3: ("यह data को बदलकर जोड़ता है.", "यह data को बदलकर जोड़ता है.")}),
+    Q("GATE CS 2003 + RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "A 2 km long broadcast LAN has 10⁷ bps bandwidth and uses CSMA/CD. The signal travels along the wire at 2 × 10⁸ m/s. What is the minimum packet size that can be used on this network?",
+      "एक 2 km लंबे broadcast LAN की bandwidth 10⁷ bps है और यह CSMA/CD उपयोग करता है. Signal तार में 2 × 10⁸ m/s से चलता है. इस network पर उपयोग होने वाला न्यूनतम packet आकार कितना है?",
+      ["50 bytes", "100 bytes", "200 bytes", "None of the above"], 3,
+      ("न्यूनतम frame = 2 × d × R / v = 2 × 2000 × 10⁷ / (2 × 10⁸) = 200 bits = "
+       "25 bytes. यह किसी दिए option में नहीं — इसलिए 'None of the above'.",
+       "न्यूनतम frame = 2 × d × R / v = 2 × 2000 × 10⁷ / (2 × 10⁸) = 200 bits = "
+       "25 bytes. यह किसी दिए option में नहीं — इसलिए 'None of the above'."),
+      ("GATE 2003 और RPSC 2011 दोनों का official key (D). याद रखो: min frame "
+       "= 2 × propagation delay × bandwidth (round-trip).",
+       "GATE 2003 और RPSC 2011 दोनों का official key (D). याद रखो: min frame "
+       "= 2 × propagation delay × bandwidth (round-trip)."),
+      {0: ("50 bytes दोगुना हुआ.", "50 bytes दोगुना हुआ."),
+       1: ("100 bytes तो चारगुना हुआ.", "100 bytes तो चारगुना हुआ."),
+       2: ("200 bytes नहीं — 200 bits हैं (25 bytes).", "200 bytes नहीं — 200 bits हैं (25 bytes).")}),
+    Q("UGC NET Computer Science Jan 2025 (via samagracs solved paper)",
+      "A network using CSMA/CD has a bandwidth of 20 Mbps. If the maximum propagation time is 25 µs, what is the minimum size of the frame?",
+      "CSMA/CD उपयोग करने वाले network की bandwidth 20 Mbps है. यदि अधिकतम propagation time 25 µs हो, तो frame का न्यूनतम आकार क्या होगा?",
+      ["500 bits", "1000 bits", "1500 bits", "2000 bits"], 1,
+      ("Minimum frame = 2 × Tp × BW = 2 × 25µs × 20 Mbps = 2 × 25×10⁻⁶ × 20×10⁶ "
+       "= 1000 bits.",
+       "Minimum frame = 2 × Tp × BW = 2 × 25µs × 20 Mbps = 2 × 25×10⁻⁶ × 20×10⁶ "
+       "= 1000 bits."),
+      ("UGC NET Jan 2025 key (ii). यही formula ऊपर वाले GATE प्रश्न में भी — "
+       "बस units बदलो.",
+       "UGC NET Jan 2025 key (ii). यही formula ऊपर वाले GATE प्रश्न में भी — "
+       "बस units बदलो."),
+      {0: ("500 में गुणक 2 छूट गया.", "500 में गुणक 2 छूट गया."),
+       2: ("1500 ज़्यादा है.", "1500 ज़्यादा है."),
+       3: ("2000 दोगुना है.", "2000 दोगुना है.")}),
+    Q("GATE CSE 2015 Set 3",
+      "A CSMA/CD network transmits data at 100 Mbps over a 1 km cable with no repeaters. If the minimum frame size required is 1250 bytes, what is the signal speed in the cable (in km/sec)?",
+      "एक CSMA/CD network बिना repeaters के 1 km cable पर 100 Mbps से data भेजता है. यदि आवश्यक न्यूनतम frame आकार 1250 bytes हो, तो cable में signal की गति (km/sec में) कितनी है?",
+      ["8000", "10000", "16000", "20000"], 3,
+      ("Min frame = 2dR/v → v = 2dR/L = 2 × 1 km × 10⁸ bps / (1250×8 bits) "
+       "= 2×10⁸/10⁴ = 20000 km/sec.",
+       "Min frame = 2dR/v → v = 2dR/L = 2 × 1 km × 10⁸ bps / (1250×8 bits) "
+       "= 2×10⁸/10⁴ = 20000 km/sec."),
+      ("GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही "
+       "इस प्रश्न का खेल है.",
+       "GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही "
+       "इस प्रश्न का खेल है."),
+      {0: ("8000 गलत गणना से.", "8000 गलत गणना से."),
+       1: ("10000 गलत.", "10000 गलत."),
+       2: ("16000 गलत.", "16000 गलत.")}),
+    Q("GATE CS 2008",
+      "In the starting phase (slow start) of the TCP congestion control algorithm, the congestion window size:",
+      "TCP congestion control algorithm के शुरुआती चरण (slow start) में congestion window का आकार:",
+      ["Increases linearly", "Does not increase", "Increases exponentially", "Remains constant at threshold"], 2,
+      ("Slow start में हर RTT पर window दोगुनी होती है — यानी exponential वृद्धि. "
+       "Threshold के बाद linear वृद्धि (congestion avoidance) शुरू होती है.",
+       "Slow start में हर RTT पर window दोगुनी होती है — यानी exponential वृद्धि. "
+       "Threshold के बाद linear वृद्धि (congestion avoidance) शुरू होती है."),
+      ("GATE 2008 key: exponential. क्रम याद रखो: Slow start (exponential) → "
+       "Congestion avoidance (linear).",
+       "GATE 2008 key: exponential. क्रम याद रखो: Slow start (exponential) → "
+       "Congestion avoidance (linear)."),
+      {0: ("Linear वृद्धि दूसरे चरण (avoidance) में होती है.", "Linear वृद्धि दूसरे चरण (avoidance) में होती है."),
+       1: ("Window बढ़ती ज़रूर है.", "Window बढ़ती ज़रूर है."),
+       3: ("Threshold पर टिकी नहीं रहती.", "Threshold पर टिकी नहीं रहती.")}),
+    Q("GATE CS 2012",
+      "Consider the following statements: I. TCP connections are full duplex. II. TCP has no option for selective acknowledgment. III. TCP connections are message streams. Which of the following is correct?",
+      "निम्न कथनों पर विचार करें: I. TCP connections full duplex होती हैं. II. TCP में selective acknowledgment का कोई विकल्प नहीं है. III. TCP connections message streams हैं. निम्न में से क्या सही है?",
+      ["Only I is correct", "Only I and II are correct", "Only II and III are correct", "All of I, II and III are correct"], 0,
+      ("I सही — TCP full duplex है. II गलत — TCP में SACK (Selective ACK) विकल्प "
+       "होता है. III गलत — TCP byte streams है, message streams नहीं.",
+       "I सही — TCP full duplex है. II गलत — TCP में SACK (Selective ACK) विकल्प "
+       "होता है. III गलत — TCP byte streams है, message streams नहीं."),
+      ("GATE 2012 official key (a). याद रखो: TCP = full-duplex byte-stream + SACK "
+       "उपलब्ध; UDP = message-oriented.",
+       "GATE 2012 official key (a). याद रखो: TCP = full-duplex byte-stream + SACK "
+       "उपलब्ध; UDP = message-oriented."),
+      {1: ("II गलत है — SACK मौजूद है.", "II गलत है — SACK मौजूद है."),
+       2: ("I तो सही है ही.", "I तो सही है ही."),
+       3: ("II और III दोनों गलत.", "II और III दोनों गलत.")}),
+])
+
+SEC_B.extend([
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "Which of the following is NOT true with respect to a transparent bridge and a router?",
+      "Transparent bridge और router के संबंध में निम्न में से कौन-सा सही नहीं है?",
+      ["Both bridge and router selectively forward data packets", "A bridge uses IP addresses while a router uses MAC addresses", "A bridge builds its table by inspecting incoming packets", "A router can connect between a LAN and a WAN"], 1,
+      ("यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP "
+       "addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.",
+       "यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP "
+       "addresses. इसलिए यही 'सही नहीं' वाला विकल्प है."),
+      ("RPSC 2011 official key (2). याद रखो: Bridge = MAC (L2), Router = IP (L3).",
+       "RPSC 2011 official key (2). याद रखो: Bridge = MAC (L2), Router = IP (L3)."),
+      {0: ("दोनों selective forwarding करते हैं — यह सही कथन है.", "दोनों selective forwarding करते हैं — यह सही कथन है."),
+       2: ("Bridge आते frames से अपनी table बनाता है — सही कथन.", "Bridge आते frames से अपनी table बनाता है — सही कथन."),
+       3: ("Router LAN-WAN जोड़ सकता है — सही कथन.", "Router LAN-WAN जोड़ सकता है — सही कथन.")}),
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "Which of the following is NOT a function of the AAL (ATM Adaptation Layer)?",
+      "निम्न में से कौन-सा AAL (ATM Adaptation Layer) का काम नहीं है?",
+      ["Cell header generation", "Handling of lost and misinserted cells", "Handling of cell delay variation", "Segmentation and reassembly of user information"], 0,
+      ("Cell header बनाना ATM layer का काम है — AAL user data को cells में "
+       "तोड़ने-जोड़ने और error/delay संभालने का काम करती है.",
+       "Cell header बनाना ATM layer का काम है — AAL user data को cells में "
+       "तोड़ने-जोड़ने और error/delay संभालने का काम करती है."),
+      ("RPSC 2011 official key (1). ATM में: ATM layer = cell header/switching; "
+       "AAL = segmentation+reassembly.",
+       "RPSC 2011 official key (1). ATM में: ATM layer = cell header/switching; "
+       "AAL = segmentation+reassembly."),
+      {1: ("Lost/misinserted cells संभालना AAL का काम है.", "Lost/misinserted cells संभालना AAL का काम है."),
+       2: ("Cell delay variation भी AAL संभालती है.", "Cell delay variation भी AAL संभालती है."),
+       3: ("Segmentation/reassembly AAL का मुख्य काम है.", "Segmentation/reassembly AAL का मुख्य काम है.")}),
+])
+
+SEC_C.extend([
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "One of the header fields in an IP datagram is the Time to Live (TTL). Which statement best explains the need for this field?",
+      "IP datagram के header fields में से एक Time to Live (TTL) है. निम्न में से कौन-सा कथन इस field की आवश्यकता सबसे अच्छे से बताता है?",
+      ["It can be used to prioritize packets", "It can be used to reduce delays", "It can be used to optimize throughput", "It can be used to prevent packet looping"], 3,
+      ("TTL हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है — इसी से "
+       "routing loops में packet घूमते नहीं रहते.",
+       "TTL हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है — इसी से "
+       "routing loops में packet घूमते नहीं रहते."),
+      ("RPSC 2011 official key (4). TTL = loop-रोधक; priority ToS से, delay/throughput "
+       "इससे नहीं.",
+       "RPSC 2011 official key (4). TTL = loop-रोधक; priority ToS से, delay/throughput "
+       "इससे नहीं."),
+      {0: ("Priority ToS/DiffServ field देता है.", "Priority ToS/DiffServ field देता है."),
+       1: ("Delay कम करना TTL का काम नहीं.", "Delay कम करना TTL का काम नहीं."),
+       2: ("Throughput इससे optimize नहीं होती.", "Throughput इससे optimize नहीं होती.")}),
+])
+
+SEC_D.extend([
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "Why are port numbers included in the TCP header of a segment?",
+      "Segment के TCP header में port numbers क्यों रखे जाते हैं?",
+      ["To indicate the correct router interface for forwarding", "To identify which switch ports should receive the frame", "To determine which Layer 3 protocol encapsulates the data", "To enable a receiving host to forward the data to the appropriate application"], 3,
+      ("Port numbers बताते हैं कि receiver पर data किस application (process) को "
+       "देना है — इसीलिए एक ही connection पर कई apps चल सकते हैं.",
+       "Port numbers बताते हैं कि receiver पर data किस application (process) को "
+       "देना है — इसीलिए एक ही connection पर कई apps चल सकते हैं."),
+      ("RPSC 2011 official key (4). यही transport-layer multiplexing है.",
+       "RPSC 2011 official key (4). यही transport-layer multiplexing है."),
+      {0: ("Router interface IP routing से तय होते हैं.", "Router interface IP routing से तय होते हैं."),
+       1: ("Switch ports MAC tables से चलते हैं.", "Switch ports MAC tables से चलते हैं."),
+       2: ("L3 protocol का निर्णय Protocol field से होता है.", "L3 protocol का निर्णय Protocol field से होता है.")}),
+])
+
+SEC_E.extend([
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in)",
+      "Which one of the following is NOT a client-server application?",
+      "निम्न में से कौन-सा client-server application नहीं है?",
+      ["Internet Chat", "Web browsing", "E-mail", "Ping"], 3,
+      ("Ping एक diagnostic tool है जो ICMP Echo भेजता है — यह client-server "
+       "application नहीं. बाकी तीनों में client और server होते हैं.",
+       "Ping एक diagnostic tool है जो ICMP Echo भेजता है — यह client-server "
+       "application नहीं. बाकी तीनों में client और server होते हैं."),
+      ("RPSC 2011 official key (4). Ping = reachability जाँच, application service नहीं.",
+       "RPSC 2011 official key (4). Ping = reachability जाँच, application service नहीं."),
+      {0: ("Chat में client-server होते हैं.", "Chat में client-server होते हैं."),
+       1: ("Web browser-client + web server.", "Web browser-client + web server."),
+       2: ("Mail client + mail server.", "Mail client + mail server.")}),
+    Q("RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)",
+      "Which protocol is used for receiving an email?",
+      "Email प्राप्त करने के लिए कौन-सा protocol उपयोग होता है?",
+      ["HTTP", "FTP", "POP3", "SSH"], 2,
+      ("POP3 (Post Office Protocol v3) email लाने के लिए उपयोग होता है; भेजने "
+       "के लिए SMTP.",
+       "POP3 (Post Office Protocol v3) email लाने के लिए उपयोग होता है; भेजने "
+       "के लिए SMTP."),
+      ("Mail की जोड़ी: भेजो SMTP (25), लो POP3 (110) या IMAP (143).",
+       "Mail की जोड़ी: भेजो SMTP (25), लो POP3 (110) या IMAP (143)."),
+      {0: ("HTTP web के लिए है.", "HTTP web के लिए है."),
+       1: ("FTP files के लिए है.", "FTP files के लिए है."),
+       3: ("SSH remote login के लिए है.", "SSH remote login के लिए है.")}),
+    Q("RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)",
+      "Which of the following is the odd one out?",
+      "निम्न में से असंगत कौन-सा है?",
+      ["IMAP", "POP", "SNMP", "SMTP"], 2,
+      ("IMAP, POP और SMTP — तीनों email के protocols हैं; SNMP (Simple Network "
+       "Management Protocol) devices manage करता है.",
+       "IMAP, POP और SMTP — तीनों email के protocols हैं; SNMP (Simple Network "
+       "Management Protocol) devices manage करता है."),
+      ("Mail family: SMTP/POP3/IMAP; Management family: SNMP.",
+       "Mail family: SMTP/POP3/IMAP; Management family: SNMP."),
+      {0: ("Email receive protocol.", "Email receive protocol."),
+       1: ("Email receive protocol.", "Email receive protocol."),
+       3: ("Email send protocol.", "Email send protocol.")}),
+    Q("SSC MTS computer PYQ (via Testbook solved)",
+      "For what application is the HTTP protocol used?",
+      "HTTP protocol किस काम के लिए उपयोग होता है?",
+      ["To increase upload speed", "To develop a website", "To deliver data on the World Wide Web", "To download images only"], 2,
+      ("HTTP (Hypertext Transfer Protocol) WWW पर data — web pages, images आदि "
+       "— भेजने-लाने का मानक protocol है.",
+       "HTTP (Hypertext Transfer Protocol) WWW पर data — web pages, images आदि "
+       "— भेजने-लाने का मानक protocol है."),
+      ("SSC MTS official key (3). HTTP = web की धड़कन (port 80).",
+       "SSC MTS official key (3). HTTP = web की धड़कन (port 80)."),
+      {0: ("Speed बढ़ाना इसका काम नहीं.", "Speed बढ़ाना इसका काम नहीं."),
+       1: ("Website बनाना developers का काम है.", "Website बनाना developers का काम है."),
+       3: ("सिर्फ images नहीं — पूरा web data.", "सिर्फ images नहीं — पूरा web data.")}),
+    Q("IBPS PO Computer Awareness PYQ (via Testbook solved)",
+      "ICMP is a network-layer protocol used by devices to diagnose network issues. ICMP stands for:",
+      "ICMP network-layer protocol है जो devices को network समस्याएँ जाँचने में सहायता करता है. ICMP का पूरा नाम है:",
+      ["Internet Control Manage Process", "Internet Comfort Mass Protocol", "Information Control Manage Protocol", "Internet Control Message Protocol"], 3,
+      ("ICMP = Internet Control Message Protocol — ping और error messages इसी "
+       "से जाते हैं.",
+       "ICMP = Internet Control Message Protocol — ping और error messages इसी "
+       "से जाते हैं."),
+      ("बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.",
+       "बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है."),
+      {0: ("'Manage Process' कोई मानक शब्द नहीं.", "'Manage Process' कोई मानक शब्द नहीं."),
+       1: ("'Comfort Mass' बनावटी नाम है.", "'Comfort Mass' बनावटी नाम है."),
+       2: ("'Information Control' गलत है.", "'Information Control' गलत है.")}),
+    Q("SBI/IBPS Computer Awareness Capsule 2018 (IBT India)",
+      "POP3 stands for:",
+      "POP3 का पूरा नाम है:",
+      ["Peer to Peer Protocol", "Peer to Post Protocol", "Peer Office Protocol", "Post Office Protocol"], 3,
+      ("POP3 = Post Office Protocol (version 3) — यह mail server से आपकी "
+       "mail लाता है, डाकखाने की तरह.",
+       "POP3 = Post Office Protocol (version 3) — यह mail server से आपकी "
+       "mail लाता है, डाकखाने की तरह."),
+      ("POP = Post Office Protocol. याद रखो: POP3 mail लाता है, SMTP भेजता है.",
+       "POP = Post Office Protocol. याद रखो: POP3 mail लाता है, SMTP भेजता है."),
+      {0: ("'Peer to Peer' P2P networks की बात है.", "'Peer to Peer' P2P networks की बात है."),
+       1: ("'Peer to Post' बनावटी है.", "'Peer to Post' बनावटी है."),
+       2: ("'Peer Office' बनावटी है.", "'Peer Office' बनावटी है.")}),
+    Q("IBPS/banking computer banks (via tpointtech MCQ)",
+      "SLIP stands for:",
+      "SLIP का पूरा नाम है:",
+      ["System Line Internet Protocol", "Serial Line Internet Protocol", "Signal Line Internet Protocol", "Signal Internet Protocol"], 1,
+      ("SLIP = Serial Line Internet Protocol — serial line (modem) पर IP "
+       "चलाने का पुराना protocol; आजकल PPP उपयोग होता है.",
+       "SLIP = Serial Line Internet Protocol — serial line (modem) पर IP "
+       "चलाने का पुराना protocol; आजकल PPP उपयोग होता है."),
+      ("SLIP का उत्तराधिकारी PPP (byte-oriented) है — दोनों point-to-point.",
+       "SLIP का उत्तराधिकारी PPP (byte-oriented) है — दोनों point-to-point."),
+      {0: ("'System Line' गलत नाम है.", "'System Line' गलत नाम है."),
+       2: ("'Signal Line' गलत है.", "'Signal Line' गलत है."),
+       3: ("'Signal Internet Protocol' बनावटी है.", "'Signal Internet Protocol' बनावटी है.")}),
+])

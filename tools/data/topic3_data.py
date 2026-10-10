@@ -1116,3 +1116,87 @@ SECTIONS = [
   "note": "16-bit ports & ranges, socket addressing, DNS records & lookups, ARP/RARP, URL layer.",
   "questions": SEC_E},
 ]
+
+# --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
+
+SEC_C.extend([
+    Q("RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
+      "If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?",
+      "यदि internet पर किसी Class B network की subnet mask 255.255.248.0 हो, तो हर subnet में अधिकतम hosts कितने होंगे?",
+      ["1023", "1022", "1024", "2046"], 3,
+      ("255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 "
+       "= 2046.",
+       "255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 "
+       "= 2046."),
+      ("248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 "
+       "(network और broadcast हटाकर).",
+       "248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 "
+       "(network और broadcast हटाकर)."),
+      {0: ("1023 = 2¹⁰−1 — यहाँ host bits 11 हैं.", "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं."),
+       1: ("1022 = 2¹⁰−2.", "1022 = 2¹⁰−2."),
+       2: ("1024 = 2¹⁰ बिना −2.", "1024 = 2¹⁰ बिना −2.")}),
+    Q("RPSC Programmer 2011 Paper-1 (via pyqp.in) + GATE CS 2005",
+      "The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?",
+      "Class B host के पते को 6-bit subnet number से subnets में बाँटना है. अधिकतम subnets और हर subnet में अधिकतम hosts कितने होंगे?",
+      ["62 subnets and 262142 hosts", "64 subnets and 262142 hosts", "62 subnets and 1022 hosts", "64 subnets and 1024 hosts"], 2,
+      ("Class B में host bits 16 होती हैं; 6 bits subnet में जाने पर बचीं 10 host "
+       "bits → hosts = 2¹⁰ − 2 = 1022. Subnets = 2⁶ − 2 = 62 (subnet-zero और "
+       "all-ones हटाकर).",
+       "Class B में host bits 16 होती हैं; 6 bits subnet में जाने पर बचीं 10 host "
+       "bits → hosts = 2¹⁰ − 2 = 1022. Subnets = 2⁶ − 2 = 62 (subnet-zero और "
+       "all-ones हटाकर)."),
+      ("RPSC 2011 और GATE 2005 दोनों में यही प्रश्न — official key (C) "
+       "62 subnets, 1022 hosts.",
+       "RPSC 2011 और GATE 2005 दोनों में यही प्रश्न — official key (C) "
+       "62 subnets, 1022 hosts."),
+      {0: ("262142 hosts के लिए 18 host bits चाहिए.", "262142 hosts के लिए 18 host bits चाहिए."),
+       1: ("Subnet-zero गिनने पर 64 मिलते हैं, पर hosts फिर भी 1022.", "Subnet-zero गिनने पर 64 मिलते हैं, पर hosts फिर भी 1022."),
+       3: ("1024 बिना −2 वाली गिनती है.", "1024 बिना −2 वाली गिनती है.")}),
+])
+
+SEC_D.extend([
+    Q("SBI/IBPS Computer Awareness Capsule 2018 (IBT India)",
+      "IPv6 addresses are ______ bit addresses.",
+      "IPv6 addresses ______ bit के पते होते हैं.",
+      ["32", "64", "16", "128"], 3,
+      ("IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए "
+       "IPv6 में पतों की कमी नहीं.",
+       "IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए "
+       "IPv6 में पतों की कमी नहीं."),
+      ("IPv4 = 32-bit (4 numbers); IPv6 = 128-bit (8 groups).",
+       "IPv4 = 32-bit (4 numbers); IPv6 = 128-bit (8 groups)."),
+      {0: ("32 bits IPv4 के हैं.", "32 bits IPv4 के हैं."),
+       1: ("64 bits किसी standard IP के नहीं.", "64 bits किसी standard IP के नहीं."),
+       2: ("16 bits port numbers के हैं.", "16 bits port numbers के हैं.")}),
+])
+
+SEC_E.extend([
+    Q("GATE CS PYQ (via Computer Science Junction / examprev)",
+      "Which one of the following protocols is NOT used to resolve one form of address into another?",
+      "निम्न में से कौन-सा protocol एक प्रकार के पते को दूसरे में बदलने के लिए उपयोग नहीं होता?",
+      ["DNS", "ARP", "DHCP", "RARP"], 2,
+      ("DNS नाम→IP, ARP IP→MAC, RARP MAC→IP बदलते हैं. DHCP तो नए device को IP "
+       "देता है — किसी पते का translation नहीं करता.",
+       "DNS नाम→IP, ARP IP→MAC, RARP MAC→IP बदलते हैं. DHCP तो नए device को IP "
+       "देता है — किसी पते का translation नहीं करता."),
+      ("Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.",
+       "Address resolvers: DNS, ARP, RARP. Address distributor: DHCP."),
+      {0: ("DNS नाम→IP करता है.", "DNS नाम→IP करता है."),
+       1: ("ARP IP→MAC करता है.", "ARP IP→MAC करता है."),
+       3: ("RARP MAC→IP करता है.", "RARP MAC→IP करता है.")}),
+    Q("RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
+      "A reverse lookup in DNS means a lookup to ______ using ______ records.",
+      "DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.",
+      ["map domain names to IP address, A", "map IP address to domain name, PTR", "determine the authoritative name servers, CNAME", "identify mail servers, SOA"], 1,
+      ("Reverse lookup में IP address से domain name निकाला जाता है और इसमें "
+       "PTR (Pointer) records उपयोग होते हैं.",
+       "Reverse lookup में IP address से domain name निकाला जाता है और इसमें "
+       "PTR (Pointer) records उपयोग होते हैं."),
+      ("Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी "
+       "परीक्षा में बार-बार आती है.",
+       "Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी "
+       "परीक्षा में बार-बार आती है."),
+      {0: ("A record सामान्य (forward) lookup का है.", "A record सामान्य (forward) lookup का है."),
+       2: ("CNAME alias बनाता है.", "CNAME alias बनाता है."),
+       3: ("SOA zone की जानकारी देता है.", "SOA zone की जानकारी देता है.")}),
+])

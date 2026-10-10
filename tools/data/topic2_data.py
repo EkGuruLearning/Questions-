@@ -1348,3 +1348,21 @@ SECTIONS = [
      "note": "OSI vs TCP/IP, encapsulation order & direction, PDUs per layer, numericals.",
      "questions": SEC_D},
 ]
+
+# --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
+
+SEC_C.extend([
+    Q("IBPS RRB PO Computer Awareness PYQ (via meritnotes) + SSC MTS computer PYQ (via Testbook)",
+      "Which is the standard protocol suite of the Internet?",
+      "Internet की मानक protocol suite कौन-सी है?",
+      ["TCP/IP", "UDP", "FTP", "WWW"], 0,
+      ("TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet "
+       "चलता है.",
+       "TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet "
+       "चलता है."),
+      ("UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.",
+       "UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं."),
+      {1: ("UDP transport protocol है, suite नहीं.", "UDP transport protocol है, suite नहीं."),
+       2: ("FTP application protocol है.", "FTP application protocol है."),
+       3: ("WWW सेवा/system है.", "WWW सेवा/system है.")}),
+])

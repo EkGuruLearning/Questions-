@@ -125,6 +125,44 @@ scanned (OCR'd with RapidOCR — texts kept in `tools/data/ocr_text/`).
 /home/user/pdfenv/bin/python tools/cn_pipeline.py status        # queue status
 ```
 
+
+## 8. India-level PYQ drive (2011–2026) — merged Oct 2026
+
+45 new previous-year questions harvested from every accessible exam bank and
+merged topic-wise at section level (books now 602 MCQs total):
+
+- **RPSC Programmer 2011 Paper-1** (via pyqp.in text dump): TCP port numbers,
+  TTL loop-prevention, not-client-server (Ping), bridge-vs-router, AAL function,
+  CSMA/CD min-packet (joint key with GATE CS 2003).
+- **RPSC Programmer 2024** (via Suraku Academy official-key solutions):
+  Class B /21 subnet hosts=2046; DNS reverse lookup = PTR.
+- **GATE CS**: 2003 (CSMA/CD 2 km min packet), 2005 (Class B 6-bit subnet 62/1022),
+  2007 (CRC x³+1 → 11001001011), 2008 (slow-start exponential), 2009 (CRC odd-bit
+  condition = x+1 factor), 2012 (TCP statements), 2015 Set-3 (signal speed 20000 km/s),
+  symmetric-key count N(N-1)/2.
+- **UGC NET CS Jan 2025 / Dec 2022** (via samagracs): CSMA/CD 20 Mbps→1000 bits;
+  Nyquist 5000 Hz→10000 bps; CRC data 111111.
+- **RSMSSB Informatics Assistant 2023** (via examsmantra): repeater, mesh wires,
+  MAC 48-bit (merged), VoIP, digital signals.
+- **SSC CHSL 2022-23 / SSC MTS / SSC CGL** (via Testbook, adda247, pendulumedu):
+  DHCP dynamic IP (merged), FTP full form (merged), HTTP = WWW delivery,
+  TCP/IP standard protocol.
+- **HTET 2024 / BPSC TRE 2024** (via KnowledgeGate): worm resource-exhaustion,
+  VPN private-over-public.
+- **RRB NTPC PYQ banks** (via adda247 50-PYQ PDF, practicemock): POP3 receive,
+  odd-one SNMP, firewall monitoring, spam, WLL/ISDN/Hertz-odd (selected).
+- **Banking (IBPS/SBI PO & Clerk, RRB PO)** (via meritnotes, bankersadda,
+  ixambee, IBT capsule, tpointtech): TCP/IP suite, broadband vs baseband,
+  dial-up not broadband, bridges connect LANs, plaintext/ciphertext, time bomb,
+  authentication, biometric, IPv6=128, POP3/SLIP full forms, ICMP full form.
+- **Solved-drop list** (documented, not fabricated): items with missing options
+  (preamble-Q option-4 bleed in RPSC 2011 dump, sliding-window numerics),
+  disputed keys (MAC-vs-IP "permanent address"), 5-option papers adapted with
+  notes (BPSC), figure/scenario GATE items.
+
+All prior repo-PDF content was already fully merged (§1–§7; 15 papers + OCR
+decks + web banks + cnp3 banks = 656+ items accounted; pending sets disposed).
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2

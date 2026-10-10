@@ -615,3 +615,129 @@ SECTIONS = [
   "note": "DMZ design, IPSec modes (transport/tunnel), SSL/TLS & HTTPS, security-protocol and mechanism layer mapping.",
   "questions": SEC_C},
 ]
+
+# --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
+
+SEC_A.extend([
+    Q("HTET 2024 (via KnowledgeGate solved PYQ bank)",
+      "A ______ does not perform any destructive action directly; it only consumes system resources to bring the system down.",
+      "एक ______ सीधे कोई विनाशकारी काम नहीं करता; वह सिस्टम को गिराने के लिए सिर्फ system resources खाता है.",
+      ["Virus", "Worm", "Trojan", "Spyware"], 1,
+      ("Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory "
+       "खा जाता है — सीधा डेटा नष्ट नहीं करता.",
+       "Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory "
+       "खा जाता है — सीधा डेटा नष्ट नहीं करता."),
+      ("HTET 2024 official key (b). फ़र्क: Virus = फ़ाइल में घुसता; Worm = खुद "
+       "फैलता; Trojan = छिपकर; Spyware = जासूसी.",
+       "HTET 2024 official key (b). फ़र्क: Virus = फ़ाइल में घुसता; Worm = खुद "
+       "फैलता; Trojan = छिपकर; Spyware = जासूसी."),
+      {0: ("Virus को host file चाहिए और यह तोड़-फोड़ भी करता है.", "Virus को host file चाहिए और यह तोड़-फोड़ भी करता है."),
+       2: ("Trojan छिपकर दरवाज़ा खोलता है.", "Trojan छिपकर दरवाज़ा खोलता है."),
+       3: ("Spyware जानकारी चुराता है.", "Spyware जानकारी चुराता है.")}),
+    Q("RRB NTPC computer banks (via practicemock PYQ set)",
+      "'Junk email' is also known as:",
+      "'Junk email' को और क्या कहते हैं?",
+      ["Spam", "Spoof", "Sniffer", "Spool"], 0,
+      ("अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार "
+       "धोखाधड़ी का ज़रिया होती है.",
+       "अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार "
+       "धोखाधड़ी का ज़रिया होती है."),
+      ("Spam = junk mail; Spoof = पहचान छिपाना; Sniffer = चोरी से सुनना.",
+       "Spam = junk mail; Spoof = पहचान छिपाना; Sniffer = चोरी से सुनना."),
+      {1: ("Spoof नकली पहचान है.", "Spoof नकली पहचान है."),
+       2: ("Sniffer traffic चुराता है.", "Sniffer traffic चुराता है."),
+       3: ("Spool printing की कतार है.", "Spool printing की कतार है.")}),
+])
+
+SEC_B.extend([
+    Q("SBI PO Computer Awareness PYQ (via bankersadda)",
+      "The data to be encrypted at the sender's site is called ______ and the data to be decrypted at the receiver's end is called ______.",
+      "Sender की ओर encrypt किए जाने वाले data को ______ और receiver की ओर decrypt किए जाने वाले data को ______ कहते हैं.",
+      ["Secret key, public key", "Public key, secret key", "Plain text, cipher text", "Cipher text, plain text"], 2,
+      ("मूल data = Plain text; encrypt होने के बाद = Cipher text. Receiver पर "
+       "cipher text decrypt होकर फिर plain text बनता है.",
+       "मूल data = Plain text; encrypt होने के बाद = Cipher text. Receiver पर "
+       "cipher text decrypt होकर फिर plain text बनता है."),
+      ("याद रखो: Plain (सादा) → encrypt → Cipher (गूँथा) → decrypt → Plain.",
+       "याद रखो: Plain (सादा) → encrypt → Cipher (गूँथा) → decrypt → Plain."),
+      {0: ("Keys अलग चीज़ हैं — data नहीं.", "Keys अलग चीज़ हैं — data नहीं."),
+       1: ("Keys का क्रम भी data नहीं.", "Keys का क्रम भी data नहीं."),
+       3: ("क्रम उल्टा है.", "क्रम उल्टा है.")}),
+    Q("GATE CS PYQ (via examprev)",
+      "Suppose everyone in a group of N people wants to communicate secretly with the N−1 others using a symmetric-key cryptographic system. The number of keys required in the system as a whole is:",
+      "मान लीजिए N लोगों के समूह में हर व्यक्ति बाकी N−1 लोगों से symmetric-key cryptographic system से गुप्त बातचीत करना चाहता है. कुल कितने keys चाहिए होंगी?",
+      ["2N", "N(N − 1)", "N(N − 1)/2", "(N − 1)²"], 2,
+      ("Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के "
+       "जोड़े = N(N−1)/2.",
+       "Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के "
+       "जोड़े = N(N−1)/2."),
+      ("GATE key (c). Public-key में यह समस्या नहीं — इसीलिए hybrid systems आए.",
+       "GATE key (c). Public-key में यह समस्या नहीं — इसीलिए hybrid systems आए."),
+      {0: ("2N तो public-key जैसा है.", "2N तो public-key जैसा है."),
+       1: ("N(N−1) जोड़े दोहरा देता है.", "N(N−1) जोड़े दोहरा देता है."),
+       3: ("(N−1)² गलत गिनती है.", "(N−1)² गलत गिनती है.")}),
+])
+
+SEC_C.extend([
+    Q("SBI PO Computer Awareness PYQ (via bankersadda)",
+      "When a logic bomb is activated by a time-related event, it is known as a:",
+      "जब कोई logic bomb किसी समय-संबंधी घटना से सक्रिय होता है, तो उसे कहते हैं:",
+      ["Time-related bomb sequence", "Virus", "Time bomb", "Trojan horse"], 2,
+      ("समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस).",
+       "समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस)."),
+      ("Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.",
+       "Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb."),
+      {0: ("यह कोई मानक नाम नहीं.", "यह कोई मानक नाम नहीं."),
+       1: ("Virus व्यापक श्रेणी है.", "Virus व्यापक श्रेणी है."),
+       3: ("Trojan छल से घुसता है.", "Trojan छल से घुसता है.")}),
+    Q("RBI/IBPS computer-awareness banks (via ixambee)",
+      "Verification based on a login ID and password is called:",
+      "Login ID और password के आधार पर जाँच कहलाती है:",
+      ["Logging in", "Configuration", "Authentication", "Confidentiality"], 2,
+      ("पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला "
+       "दरवाज़ा है.",
+       "पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला "
+       "दरवाज़ा है."),
+      ("Authentication = 'तुम कौन हो?'; Authorization = 'तुम्हें क्या अनुमति है?'.",
+       "Authentication = 'तुम कौन हो?'; Authorization = 'तुम्हें क्या अनुमति है?'."),
+      {0: ("Logging in क्रिया है, जाँच नहीं.", "Logging in क्रिया है, जाँच नहीं."),
+       1: ("Configuration सेटिंग है.", "Configuration सेटिंग है."),
+       3: ("Confidentiality गोपनीयता है.", "Confidentiality गोपनीयता है.")}),
+    Q("SBI PO Computer Awareness PYQ (via bankersadda)",
+      "Access control based on a person's fingerprints is an example of:",
+      "किसी व्यक्ति की उंगलियों के निशान पर आधारित access control का उदाहरण है:",
+      ["Biometric identification", "Characteristic identification", "Encryption", "Logistics"], 0,
+      ("उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं.",
+       "उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं."),
+      ("ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).",
+       "ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric)."),
+      {1: ("'Characteristic identification' मानक शब्द नहीं.", "'Characteristic identification' मानक शब्द नहीं."),
+       2: ("Encryption data छिपाता है.", "Encryption data छिपाता है."),
+       3: ("Logistics आपूर्ति का काम है.", "Logistics आपूर्ति का काम है.")}),
+    Q("BPSC TRE 2024 (via KnowledgeGate solved PYQ bank)",
+      "Which of the following networks extends a private network across public networks?",
+      "निम्न में से कौन-सा network public networks के ऊपर private network का विस्तार करता है?",
+      ["Virtual private network (VPN)", "Local area network", "Enterprise private network", "None of these"], 0,
+      ("VPN (Virtual Private Network) tunneling और encryption से public Internet "
+       "पर एक सुरक्षित private रास्ता बनाता है.",
+       "VPN (Virtual Private Network) tunneling और encryption से public Internet "
+       "पर एक सुरक्षित private रास्ता बनाता है."),
+      ("BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.",
+       "BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन."),
+      {1: ("LAN स्थानीय network है.", "LAN स्थानीय network है."),
+       2: ("Enterprise private network संगठन का अपना network है.", "Enterprise private network संगठन का अपना network है."),
+       3: ("VPN सही जवाब है.", "VPN सही जवाब है.")}),
+    Q("RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)",
+      "Which one of the following is a key function of a firewall?",
+      "निम्न में से firewall का एक मुख्य काम कौन-सा है?",
+      ["Monitoring", "Copying", "Deleting", "Moving"], 0,
+      ("Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत "
+       "पहुँच को रोकता है.",
+       "Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत "
+       "पहुँच को रोकता है."),
+      ("Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.",
+       "Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है."),
+      {1: ("Copying firewall का काम नहीं.", "Copying firewall का काम नहीं."),
+       2: ("Deleting भी नहीं.", "Deleting भी नहीं."),
+       3: ("Moving भी नहीं.", "Moving भी नहीं.")}),
+])

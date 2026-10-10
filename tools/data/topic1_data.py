@@ -2139,3 +2139,59 @@ NUKTE_RAPID = [{'q': ['5 components of data communication?', 'Data communication
   'a': ['Packet switching (data travels in packets)', 'Packet switching (data packets में चलता है)']},
  {'q': ['Circuit switching key?', 'Circuit switching की कुंजी?'],
   'a': ['Dedicated separate physical path per connection', 'हर connection का dedicated अलग physical path']}]
+
+# ---------------------------------------------------------------------------
+# Q() helper for PYQ 2011-2026 additions (dict-literal format)
+def Q(src, qen, qhi, opts, ans, wr, nk, ww):
+    o2 = [(list(o) if isinstance(o, tuple) else [o, o]) for o in opts]
+    return dict(src=src, q=[qen, qhi], opts=o2, ans=ans, wr=list(wr), nk=list(nk),
+                ww={i: (list(w) if isinstance(w, tuple) else [w, w]) for i, w in ww.items()})
+
+
+SECTIONS[0]['questions'].extend([
+    Q("IBPS/SBI computer-awareness banks (via tpointtech & meritnotes)",
+      "ARPANET stands for:",
+      "ARPANET का पूरा नाम है:",
+      ["Advanced Research Projects Agency Network", "Advanced Recheck Projects Agency Internet", "American Research Projects Agency Network", "Advanced Research Protocol Agency Network"], 0,
+      ("ARPANET = Advanced Research Projects Agency Network — अमेरिकी रक्षा विभाग की "
+       "ARPA द्वारा बनाया गया विश्व का पहला packet-switching network.",
+       "ARPANET = Advanced Research Projects Agency Network — अमेरिकी रक्षा विभाग की "
+       "ARPA द्वारा बनाया गया विश्व का पहला packet-switching network."),
+      ("यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.",
+       "यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी."),
+      {1: ("'Recheck' कोई शब्द नहीं.", "'Recheck' कोई शब्द नहीं."),
+       2: ("अमेरिकी एजेंसी ARPA है, 'American Research' नहीं.", "अमेरिकी एजेंसी ARPA है, 'American Research' नहीं."),
+       3: ("Protocol नहीं, Projects Agency.", "Protocol नहीं, Projects Agency.")}),
+])
+
+SECTIONS[1]['questions'].extend([
+    Q("KVS PGT/TGT/PRT computer banks 2018 (via jagranjosh)",
+      "The capacity of a communication channel is measured in:",
+      "Communication channel की क्षमता मापी जाती है:",
+      ["Bandwidth", "Bit capacity", "Volume", "Noise"], 0,
+      ("Channel की क्षमता यानी bandwidth मापी जाती है — कितनी आवृत्तियाँ/bits "
+       "प्रति सेकंड संभव हैं.",
+       "Channel की क्षमता यानी bandwidth मापी जाती है — कितनी आवृत्तियाँ/bits "
+       "प्रति सेकंड संभव हैं."),
+      ("Channel capacity ↔ bandwidth (Hz या bps) — यही standard इकाई है.",
+       "Channel capacity ↔ bandwidth (Hz या bps) — यही standard इकाई है."),
+      {1: ("'Bit capacity' कोई मानक इकाई नहीं.", "'Bit capacity' कोई मानक इकाई नहीं."),
+       2: ("Volume ध्वनि की इकाई है.", "Volume ध्वनि की इकाई है."),
+       3: ("Noise हस्तक्षेप है, क्षमता नहीं.", "Noise हस्तक्षेप है, क्षमता नहीं.")}),
+])
+
+SECTIONS[4]['questions'].extend([
+    Q("RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)",
+      "______ converts analog voice signals into digital and then transmits them over the broadband line.",
+      "______ analog voice signals को digital में बदलकर broadband line पर भेजता है.",
+      ["VoIP (Voice over Internet Protocol)", "Chatting", "Website", "Video conferencing"], 0,
+      ("VoIP आवाज़ को digital packets में बदलकर Internet जैसी lines पर भेजता है — "
+       "Skype/WhatsApp call इसी के उदाहरण हैं.",
+       "VoIP आवाज़ को digital packets में बदलकर Internet जैसी lines पर भेजता है — "
+       "Skype/WhatsApp call इसी के उदाहरण हैं."),
+      ("VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.",
+       "VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप."),
+      {1: ("Chatting text के लिए है.", "Chatting text के लिए है."),
+       2: ("Website का इससे लेना-देना नहीं.", "Website का इससे लेना-देना नहीं."),
+       3: ("Video conferencing में voice+video दोनों — शुद्ध voice-convertor VoIP है.", "Video conferencing में voice+video दोनों — शुद्ध voice-convertor VoIP है.")}),
+])

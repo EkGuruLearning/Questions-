@@ -1,19 +1,19 @@
 # Data Communication & Computer Networks (CN)
-## Topic 7 of 7 : Network Security — 44 MCQs (English + Hindi)
+## Topic 7 of 7 : Network Security — 53 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 44 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 53 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
-| 1 | Section A — Security Goals & Attacks | Q1 - Q15 |
-| 2 | Section B — Cryptography | Q16 - Q34 |
-| 3 | Section C — Firewalls, IPSec & Security Protocols | Q35 - Q44 |
+| 1 | Section A — Security Goals & Attacks | Q1 - Q17 |
+| 2 | Section B — Cryptography | Q18 - Q38 |
+| 3 | Section C — Firewalls, IPSec & Security Protocols | Q39 - Q53 |
 
 ---
 
@@ -321,12 +321,52 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q3 match (codes recovered)]*
 
 ---
+### Q16. A ______ does not perform any destructive action directly; it only consumes system resources to bring the system down.
+
+<span lang='hi'>एक ______ सीधे कोई विनाशकारी काम नहीं करता; वह सिस्टम को गिराने के लिए सिर्फ system resources खाता है.</span>
+
+- **(A)** Virus
+- **(B)** Worm ✅ **(CORRECT)**
+- **(C)** Trojan
+- **(D)** Spyware
+
+**✔ Correct Answer: (B) Worm** — Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory खा जाता है — सीधा डेटा नष्ट नहीं करता.
+
+*Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory खा जाता है — सीधा डेटा नष्ट नहीं करता.*
+
+**★ Nukta (Key Point):** HTET 2024 official key (b). फ़र्क: Virus = फ़ाइल में घुसता; Worm = खुद फैलता; Trojan = छिपकर; Spyware = जासूसी.
+
+*HTET 2024 official key (b). फ़र्क: Virus = फ़ाइल में घुसता; Worm = खुद फैलता; Trojan = छिपकर; Spyware = जासूसी.*
+
+*[Source: HTET 2024 (via KnowledgeGate solved PYQ bank)]*
+
+---
+### Q17. 'Junk email' is also known as:
+
+<span lang='hi'>'Junk email' को और क्या कहते हैं?</span>
+
+- **(A)** Spam ✅ **(CORRECT)**
+- **(B)** Spoof
+- **(C)** Sniffer
+- **(D)** Spool
+
+**✔ Correct Answer: (A) Spam** — अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार धोखाधड़ी का ज़रिया होती है.
+
+*अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार धोखाधड़ी का ज़रिया होती है.*
+
+**★ Nukta (Key Point):** Spam = junk mail; Spoof = पहचान छिपाना; Sniffer = चोरी से सुनना.
+
+*Spam = junk mail; Spoof = पहचान छिपाना; Sniffer = चोरी से सुनना.*
+
+*[Source: RRB NTPC computer banks (via practicemock PYQ set)]*
+
+---
 
 ## Section B — Cryptography
 
 *Plaintext/ciphertext/key, symmetric vs asymmetric ciphers, DES/AES/RSA, stream vs block, classical ciphers, digital signatures, steganography.*
 
-### Q16. The text that gets transformed using a cipher algorithm is called:
+### Q18. The text that gets transformed using a cipher algorithm is called:
 
 <span lang='hi'>Cipher algorithm से जिस text को बदला जाता है उसे क्या कहते हैं?</span>
 
@@ -346,7 +386,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q9]*
 
 ---
-### Q17. Which statement about plaintext, ciphertext and key is MOST accurate?
+### Q19. Which statement about plaintext, ciphertext and key is MOST accurate?
 
 <span lang='hi'>Plaintext, ciphertext और key के बारे में कौन-सा कथन सबसे सही है?</span>
 
@@ -366,7 +406,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q10]*
 
 ---
-### Q18. Which of the following uses the SAME key for encryption and decryption?
+### Q20. Which of the following uses the SAME key for encryption and decryption?
 
 <span lang='hi'>निम्न में से कौन-सा encryption और decryption के लिए एक ही key उपयोग करता है?</span>
 
@@ -386,7 +426,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q19. Which of the following uses a PAIR of keys (public and private)?
+### Q21. Which of the following uses a PAIR of keys (public and private)?
 
 <span lang='hi'>निम्न में से कौन-सा keys की एक जोड़ी (public और private) उपयोग करता है?</span>
 
@@ -406,7 +446,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q20. Which is FASTER in encryption and decryption?
+### Q22. Which is FASTER in encryption and decryption?
 
 <span lang='hi'>Encryption और decryption में कौन-सा तेज़ है?</span>
 
@@ -426,7 +466,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q21. What is the main disadvantage of symmetric key encryption?
+### Q23. What is the main disadvantage of symmetric key encryption?
 
 <span lang='hi'>Symmetric key encryption की मुख्य कमी क्या है?</span>
 
@@ -446,7 +486,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q22. Public key is used to:
+### Q24. Public key is used to:
 
 <span lang='hi'>Public key का उपयोग किसके लिए होता है?</span>
 
@@ -466,7 +506,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q23. In public-key cryptography, a message encrypted with the public key can only be decrypted by:
+### Q25. In public-key cryptography, a message encrypted with the public key can only be decrypted by:
 
 <span lang='hi'>Public-key cryptography में public key से encrypt किया संदेश केवल किसके द्वारा decrypt हो सकता है?</span>
 
@@ -486,7 +526,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q24. Which statement about symmetric and asymmetric cryptography is TRUE?
+### Q26. Which statement about symmetric and asymmetric cryptography is TRUE?
 
 <span lang='hi'>Symmetric और asymmetric cryptography के बारे में कौन-सा कथन सही है?</span>
 
@@ -506,7 +546,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security) — Q33]*
 
 ---
-### Q25. Data Encryption Standard (DES) is a:
+### Q27. Data Encryption Standard (DES) is a:
 
 <span lang='hi'>Data Encryption Standard (DES) क्या है?</span>
 
@@ -526,7 +566,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q26. What is the key length of AES-256 encryption?
+### Q28. What is the key length of AES-256 encryption?
 
 <span lang='hi'>AES-256 encryption की key length कितनी है?</span>
 
@@ -546,7 +586,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q27. Which cipher method encrypts one bit or byte at a time?
+### Q29. Which cipher method encrypts one bit or byte at a time?
 
 <span lang='hi'>कौन-सी cipher method एक बार में एक bit या byte encrypt करती है?</span>
 
@@ -566,7 +606,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q28. Which of the following statements is FALSE?
+### Q30. Which of the following statements is FALSE?
 
 <span lang='hi'>निम्न में से कौन-सा कथन गलत है?</span>
 
@@ -586,7 +626,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q29. In the digital signature technique, when the whole message is signed using an asymmetric key, the receiver uses:
+### Q31. In the digital signature technique, when the whole message is signed using an asymmetric key, the receiver uses:
 
 <span lang='hi'>Digital signature technique में, जब पूरा संदेश asymmetric key से sign होता है, तो प्राप्तकर्ता उपयोग करता है:</span>
 
@@ -606,7 +646,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q30. The Caesar Cipher is an example of which cryptographic technique?
+### Q32. The Caesar Cipher is an example of which cryptographic technique?
 
 <span lang='hi'>Caesar Cipher किस cryptographic technique का उदाहरण है?</span>
 
@@ -626,7 +666,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q31. The process of detecting hidden data inside a file is known as:
+### Q33. The process of detecting hidden data inside a file is known as:
 
 <span lang='hi'>किसी file के भीतर छिपे data का पता लगाने की प्रक्रिया को क्या कहते हैं?</span>
 
@@ -646,7 +686,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q32. What is the output of a steganography process called?
+### Q34. What is the output of a steganography process called?
 
 <span lang='hi'>Steganography प्रक्रिया के output को क्या कहते हैं?</span>
 
@@ -666,7 +706,7 @@
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)]*
 
 ---
-### Q33. In steganography, the file used to hide the secret data is called:
+### Q35. In steganography, the file used to hide the secret data is called:
 
 <span lang='hi'>Steganography में secret data छिपाने के लिए जिस file का उपयोग होता है उसे क्या कहते हैं?</span>
 
@@ -686,7 +726,7 @@
 *[Source: Subject Test Solution-1 Part-2 (CN & Security) slides]*
 
 ---
-### Q34. Which of the following is an example of asymmetric encryption?
+### Q36. Which of the following is an example of asymmetric encryption?
 
 <span lang='hi'>निम्न में से कौन-सा asymmetric encryption का उदाहरण है?</span>
 
@@ -706,12 +746,52 @@
 *[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard) · also BCI_SCI ST-01]*
 
 ---
+### Q37. The data to be encrypted at the sender's site is called ______ and the data to be decrypted at the receiver's end is called ______.
+
+<span lang='hi'>Sender की ओर encrypt किए जाने वाले data को ______ और receiver की ओर decrypt किए जाने वाले data को ______ कहते हैं.</span>
+
+- **(A)** Secret key, public key
+- **(B)** Public key, secret key
+- **(C)** Plain text, cipher text ✅ **(CORRECT)**
+- **(D)** Cipher text, plain text
+
+**✔ Correct Answer: (C) Plain text, cipher text** — मूल data = Plain text; encrypt होने के बाद = Cipher text. Receiver पर cipher text decrypt होकर फिर plain text बनता है.
+
+*मूल data = Plain text; encrypt होने के बाद = Cipher text. Receiver पर cipher text decrypt होकर फिर plain text बनता है.*
+
+**★ Nukta (Key Point):** याद रखो: Plain (सादा) → encrypt → Cipher (गूँथा) → decrypt → Plain.
+
+*याद रखो: Plain (सादा) → encrypt → Cipher (गूँथा) → decrypt → Plain.*
+
+*[Source: SBI PO Computer Awareness PYQ (via bankersadda)]*
+
+---
+### Q38. Suppose everyone in a group of N people wants to communicate secretly with the N−1 others using a symmetric-key cryptographic system. The number of keys required in the system as a whole is:
+
+<span lang='hi'>मान लीजिए N लोगों के समूह में हर व्यक्ति बाकी N−1 लोगों से symmetric-key cryptographic system से गुप्त बातचीत करना चाहता है. कुल कितने keys चाहिए होंगी?</span>
+
+- **(A)** 2N
+- **(B)** N(N − 1)
+- **(C)** N(N − 1)/2 ✅ **(CORRECT)**
+- **(D)** (N − 1)²
+
+**✔ Correct Answer: (C) N(N − 1)/2** — Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के जोड़े = N(N−1)/2.
+
+*Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के जोड़े = N(N−1)/2.*
+
+**★ Nukta (Key Point):** GATE key (c). Public-key में यह समस्या नहीं — इसीलिए hybrid systems आए.
+
+*GATE key (c). Public-key में यह समस्या नहीं — इसीलिए hybrid systems आए.*
+
+*[Source: GATE CS PYQ (via examprev)]*
+
+---
 
 ## Section C — Firewalls, IPSec & Security Protocols
 
 *DMZ design, IPSec modes (transport/tunnel), SSL/TLS & HTTPS, security-protocol and mechanism layer mapping.*
 
-### Q35. What is the advantage of setting up a DMZ (Demilitarized Zone) using a firewall?
+### Q39. What is the advantage of setting up a DMZ (Demilitarized Zone) using a firewall?
 
 <span lang='hi'>Firewall का उपयोग करके DMZ (Demilitarized Zone) बनाने का क्या लाभ है?</span>
 
@@ -731,7 +811,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (official key)]*
 
 ---
-### Q36. Match the security mechanisms with their OSI layers: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer
+### Q40. Match the security mechanisms with their OSI layers: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer
 
 <span lang='hi'>Security mechanisms को OSI layers से मिलाइए: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer</span>
 
@@ -751,7 +831,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q4 match (codes recovered)]*
 
 ---
-### Q37. Match the security protocols with their OSI layers: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)
+### Q41. Match the security protocols with their OSI layers: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)
 
 <span lang='hi'>Security protocols को OSI layers से मिलाइए: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)</span>
 
@@ -771,7 +851,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q1 match (codes recovered)]*
 
 ---
-### Q38. IPSec is MOST commonly used to implement:
+### Q42. IPSec is MOST commonly used to implement:
 
 <span lang='hi'>IPSec मुख्यतः किसके लिए उपयोग होता है?</span>
 
@@ -791,7 +871,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q39. IPSec operates in which mode(s)?
+### Q43. IPSec operates in which mode(s)?
 
 <span lang='hi'>IPSec किस/किन mode(s) में काम करता है?</span>
 
@@ -811,7 +891,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q40. In IPSec Tunnel mode:
+### Q44. In IPSec Tunnel mode:
 
 <span lang='hi'>IPSec Tunnel mode में:</span>
 
@@ -831,7 +911,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q41. Which mode of IPSec provides end-to-end security between two hosts?
+### Q45. Which mode of IPSec provides end-to-end security between two hosts?
 
 <span lang='hi'>IPSec का कौन-सा mode दो hosts के बीच end-to-end security देता है?</span>
 
@@ -851,7 +931,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q42. The SSL/TLS handshake protocol is mainly used for:
+### Q46. The SSL/TLS handshake protocol is mainly used for:
 
 <span lang='hi'>SSL/TLS handshake protocol मुख्यतः किसके लिए उपयोग होता है?</span>
 
@@ -871,7 +951,7 @@
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
 
 ---
-### Q43. Which of the following is used in HTTPS for encryption?
+### Q47. Which of the following is used in HTTPS for encryption?
 
 <span lang='hi'>HTTPS में encryption के लिए निम्न में से क्या उपयोग होता है?</span>
 
@@ -891,7 +971,7 @@
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
 
 ---
-### Q44. In which layer of the network architecture is the Secure Socket Layer (SSL) used?
+### Q48. In which layer of the network architecture is the Secure Socket Layer (SSL) used?
 
 <span lang='hi'>Secure Socket Layer (SSL) network architecture की किस layer में उपयोग होती है?</span>
 
@@ -909,6 +989,106 @@
 *Exam convention: SSL = Session layer (secure session setup + negotiation)। नोट: TLS, SSL का उत्तराधिकारी है।*
 
 *[Source: Unit Test-4 Solution (OCR), p6 (bank key)]*
+
+---
+### Q49. When a logic bomb is activated by a time-related event, it is known as a:
+
+<span lang='hi'>जब कोई logic bomb किसी समय-संबंधी घटना से सक्रिय होता है, तो उसे कहते हैं:</span>
+
+- **(A)** Time-related bomb sequence
+- **(B)** Virus
+- **(C)** Time bomb ✅ **(CORRECT)**
+- **(D)** Trojan horse
+
+**✔ Correct Answer: (C) Time bomb** — समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस).
+
+*समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस).*
+
+**★ Nukta (Key Point):** Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.
+
+*Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.*
+
+*[Source: SBI PO Computer Awareness PYQ (via bankersadda)]*
+
+---
+### Q50. Verification based on a login ID and password is called:
+
+<span lang='hi'>Login ID और password के आधार पर जाँच कहलाती है:</span>
+
+- **(A)** Logging in
+- **(B)** Configuration
+- **(C)** Authentication ✅ **(CORRECT)**
+- **(D)** Confidentiality
+
+**✔ Correct Answer: (C) Authentication** — पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला दरवाज़ा है.
+
+*पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला दरवाज़ा है.*
+
+**★ Nukta (Key Point):** Authentication = 'तुम कौन हो?'; Authorization = 'तुम्हें क्या अनुमति है?'.
+
+*Authentication = 'तुम कौन हो?'; Authorization = 'तुम्हें क्या अनुमति है?'.*
+
+*[Source: RBI/IBPS computer-awareness banks (via ixambee)]*
+
+---
+### Q51. Access control based on a person's fingerprints is an example of:
+
+<span lang='hi'>किसी व्यक्ति की उंगलियों के निशान पर आधारित access control का उदाहरण है:</span>
+
+- **(A)** Biometric identification ✅ **(CORRECT)**
+- **(B)** Characteristic identification
+- **(C)** Encryption
+- **(D)** Logistics
+
+**✔ Correct Answer: (A) Biometric identification** — उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं.
+
+*उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं.*
+
+**★ Nukta (Key Point):** ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).
+
+*ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).*
+
+*[Source: SBI PO Computer Awareness PYQ (via bankersadda)]*
+
+---
+### Q52. Which of the following networks extends a private network across public networks?
+
+<span lang='hi'>निम्न में से कौन-सा network public networks के ऊपर private network का विस्तार करता है?</span>
+
+- **(A)** Virtual private network (VPN) ✅ **(CORRECT)**
+- **(B)** Local area network
+- **(C)** Enterprise private network
+- **(D)** None of these
+
+**✔ Correct Answer: (A) Virtual private network (VPN)** — VPN (Virtual Private Network) tunneling और encryption से public Internet पर एक सुरक्षित private रास्ता बनाता है.
+
+*VPN (Virtual Private Network) tunneling और encryption से public Internet पर एक सुरक्षित private रास्ता बनाता है.*
+
+**★ Nukta (Key Point):** BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.
+
+*BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.*
+
+*[Source: BPSC TRE 2024 (via KnowledgeGate solved PYQ bank)]*
+
+---
+### Q53. Which one of the following is a key function of a firewall?
+
+<span lang='hi'>निम्न में से firewall का एक मुख्य काम कौन-सा है?</span>
+
+- **(A)** Monitoring ✅ **(CORRECT)**
+- **(B)** Copying
+- **(C)** Deleting
+- **(D)** Moving
+
+**✔ Correct Answer: (A) Monitoring** — Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.
+
+*Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.*
+
+**★ Nukta (Key Point):** Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.
+
+*Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.*
+
+*[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)]*
 
 ---
 

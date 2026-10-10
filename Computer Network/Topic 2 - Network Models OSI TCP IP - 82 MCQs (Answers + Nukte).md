@@ -1,11 +1,11 @@
 # Data Communication & Computer Networks (CN)
-## Topic 2 of 7 : Network Models (OSI & TCP/IP) — 81 MCQs (English + Hindi)
+## Topic 2 of 7 : Network Models (OSI & TCP/IP) — 82 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 81 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 82 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
@@ -13,8 +13,8 @@
 |---|-----------|-----------|
 | 1 | Section A — OSI Model: Basics, Layer Order & Support Layers | Q1 - Q12 |
 | 2 | Section B — OSI Layer Functions (Layer 1 → Layer 7) | Q13 - Q63 |
-| 3 | Section C — TCP/IP Model | Q64 - Q74 |
-| 4 | Section D — Comparison, Encapsulation & PDUs | Q75 - Q81 |
+| 3 | Section C — TCP/IP Model | Q64 - Q75 |
+| 4 | Section D — Comparison, Encapsulation & PDUs | Q76 - Q82 |
 
 ---
 
@@ -1518,12 +1518,32 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Forouzan Ch1 (Q1-16) — Practice Set]*
 
 ---
+### Q75. Which is the standard protocol suite of the Internet?
+
+<span lang='hi'>Internet की मानक protocol suite कौन-सी है?</span>
+
+- **(A)** TCP/IP ✅ **(CORRECT)**
+- **(B)** UDP
+- **(C)** FTP
+- **(D)** WWW
+
+**✔ Correct Answer: (A) TCP/IP** — TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.
+
+*TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.*
+
+**★ Nukta (Key Point):** UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.
+
+*UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.*
+
+*[Source: IBPS RRB PO Computer Awareness PYQ (via meritnotes) + SSC MTS computer PYQ (via Testbook)]*
+
+---
 
 ## Section D — Comparison, Encapsulation & PDUs
 
 *OSI vs TCP/IP, encapsulation order & direction, PDUs per layer, numericals.*
 
-### Q75. Identify the correct order of data encapsulation from Layer 7 to Layer 1:
+### Q76. Identify the correct order of data encapsulation from Layer 7 to Layer 1:
 
 <span lang='hi'>Layer 7 से Layer 1 तक data encapsulation का सही क्रम पहचानिए:</span>
 
@@ -1543,7 +1563,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
 
 ---
-### Q76. Encapsulation happens from:
+### Q77. Encapsulation happens from:
 
 <span lang='hi'>Encapsulation किस दिशा में होती है?</span>
 
@@ -1563,7 +1583,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
 
 ---
-### Q77. In the layer hierarchy, as the data packet moves from the upper to the lower layers, headers are:
+### Q78. In the layer hierarchy, as the data packet moves from the upper to the lower layers, headers are:
 
 <span lang='hi'>Layer hierarchy में, जब data packet ऊपर से नीचे की layers की ओर जाता है, तो headers:</span>
 
@@ -1583,7 +1603,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
 
 ---
-### Q78. A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
+### Q79. A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
 
 <span lang='hi'>Source S और destination D के बीच एक intermediate router R है। यात्रा के दौरान packet Network layer और Data Link layer को कितनी बार visit करता है?</span>
 
@@ -1603,7 +1623,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
 
 ---
-### Q79. In TCP/IP, which data unit is encapsulated INSIDE a frame?
+### Q80. In TCP/IP, which data unit is encapsulated INSIDE a frame?
 
 <span lang='hi'>TCP/IP में कौन-सा data unit frame के अंदर encapsulate होता है?</span>
 
@@ -1623,7 +1643,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Forouzan Ch1 (Q1-20) — Practice Set]*
 
 ---
-### Q80. In the TCP/IP model, the unit of data at the transport layer is called a:
+### Q81. In the TCP/IP model, the unit of data at the transport layer is called a:
 
 <span lang='hi'>TCP/IP model में transport layer पर data की unit कहलाती है:</span>
 
@@ -1643,7 +1663,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *[Source: Forouzan Ch1 (Q1-20/21) — Practice Set]*
 
 ---
-### Q81. A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
+### Q82. A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
 
 <span lang='hi'>एक system में पाँच protocol layers हैं। Application 100-byte message बनाती है और हर layer (5वीं और 1वीं सहित) 10-byte header जोड़ती है। Efficiency कितनी होगी (application bytes / कुल transmitted bytes)?</span>
 

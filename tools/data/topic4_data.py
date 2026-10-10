@@ -516,3 +516,52 @@ SECTIONS = [
   "note": "Gateway as protocol converter, firewall types (packet/stateful/proxy), NAT types, device-vs-software identification.",
   "questions": SEC_D},
 ]
+
+# --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
+
+SEC_A.extend([
+    Q("RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)",
+      "In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?",
+      "एक data-entry office में 1वीं और 4वीं मंज़िल के computer centres LAN से जुड़े हैं, पर signals में समय लगता है. बेहतर transmission के लिए कौन-सा hardware लगाएँ?",
+      ["Repeater", "Router", "Computer", "Modem"], 0,
+      ("Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — "
+       "इसलिए दूरी की समस्या में यही लगता है.",
+       "Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — "
+       "इसलिए दूरी की समस्या में यही लगता है."),
+      ("संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.",
+       "संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem."),
+      {1: ("Router अलग networks जोड़ता है.", "Router अलग networks जोड़ता है."),
+       2: ("Computer यह काम नहीं करता.", "Computer यह काम नहीं करता."),
+       3: ("Modem analog-digital बदलता है.", "Modem analog-digital बदलता है.")}),
+    Q("SBI/IBPS Computer Awareness Capsule 2018 (IBT India)",
+      "A device that operates at the physical layer of the OSI model is:",
+      "OSI model की physical layer पर काम करने वाला device है:",
+      ["Bridge", "Router", "Repeater", "All of these"], 2,
+      ("Repeater physical layer (Layer 1) का device है — यह signal regenerate "
+       "करता है. Bridge Layer 2, Router Layer 3 पर.",
+       "Repeater physical layer (Layer 1) का device है — यह signal regenerate "
+       "करता है. Bridge Layer 2, Router Layer 3 पर."),
+      ("Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, "
+       "L4+ = Gateway.",
+       "Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, "
+       "L4+ = Gateway."),
+      {0: ("Bridge data link layer पर है.", "Bridge data link layer पर है."),
+       1: ("Router network layer पर है.", "Router network layer पर है."),
+       3: ("तीनों नहीं — सिर्फ Repeater.", "तीनों नहीं — सिर्फ Repeater.")}),
+])
+
+SEC_B.extend([
+    Q("SBI PO Computer Awareness PYQ (via bankersadda)",
+      "LANs can be connected by which of the following devices that operate on the data link layer?",
+      "LANs को data link layer पर काम करने वाले निम्न में से किस device से जोड़ा जा सकता है?",
+      ["Hub", "Bridges", "HDLC", "Tunnel"], 1,
+      ("Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses "
+       "देखकर frames आगे भेजते हैं.",
+       "Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses "
+       "देखकर frames आगे भेजते हैं."),
+      ("Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+.",
+       "Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+."),
+      {0: ("Hub L1 का dumb device है.", "Hub L1 का dumb device है."),
+       2: ("HDLC protocol है, device नहीं.", "HDLC protocol है, device नहीं."),
+       3: ("Tunnel एक virtual path है.", "Tunnel एक virtual path है.")}),
+])
