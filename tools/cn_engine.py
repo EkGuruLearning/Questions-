@@ -36,6 +36,12 @@ TOP, BOTTOM = MT, PAGE_H - MB
 LETTERS = ["A", "B", "C", "D"]
 def esc(t): return _html.escape(str(t), quote=False)
 
+# difficulty (Easy->Medium->Hard ordering per user spec)
+try:
+    from cn_difficulty import q_diff, sort_questions, DIFF_LABEL
+except ImportError:
+    from tools.cn_difficulty import q_diff, sort_questions, DIFF_LABEL
+
 CSS = """
 @font-face { font-family: 'DVS'; src: url('DejaVuSans.ttf'); }
 @font-face { font-family: 'DVSB'; src: url('DejaVuSans-Bold.ttf'); font-weight: bold; }
@@ -99,7 +105,7 @@ def q_chunk(no, q):
         return s
     for i in (0, 2):
         left.append(f'<p class="opt">{_opttxt(i)} &nbsp;&nbsp;&nbsp; {_opttxt(i+1)}</p>')
-    left.append(f'<p class="src">[Source: {esc(q["src"])}]</p>')
+    left.append(f'<p class="src">[Source: {esc(q["src"])}] · {DIFF_LABEL[q_diff(q)]}</p>')
 
     right = [f'<p class="why">✔ <b>Correct: ({LETTERS[a]}) {esc(q["opts"][a][0])}</b> — {esc(q["wr"][0])}</p>']
     if (q["wr"][1] or "").strip():
@@ -184,7 +190,7 @@ def build_pdf(topic_num, topic_title, sections, pending, out_pdf, nukte_rapid=No
     qno = 0
     for s in sections:
         band = pad_top(f'<div class="band">{esc(s["title"])}</div><div class="bandnote">{esc(s["note"])}</div>', 12)
-        qs = s["questions"]
+        qs = sort_questions(s["questions"])
         qno += 1
         chunks.append(("bandq", band + q_chunk(qno, qs[0])))
         for q in qs[1:]:
@@ -301,7 +307,7 @@ def build_markdown(topic_num, topic_title, sections, pending, out_md, nukte_rapi
         L.append("")
         L.append(f"*{s['note']}*")
         L.append("")
-        for q in s["questions"]:
+        for q in sort_questions(s["questions"]):
             qno += 1
             a = q["ans"]
             L.append(f"### Q{qno}. {q['q'][0]}")
@@ -325,7 +331,7 @@ def build_markdown(topic_num, topic_title, sections, pending, out_md, nukte_rapi
             if (q["nk"][1] or "").strip():
                 L.append(f"*{q['nk'][1]}*")
                 L.append("")
-            L.append(f"*[Source: {q['src']}]*")
+            L.append(f"*[Source: {q['src']}] · {DIFF_LABEL[q_diff(q)]}*")
             L.append("")
             L.append("---")
     if nukte_rapid:

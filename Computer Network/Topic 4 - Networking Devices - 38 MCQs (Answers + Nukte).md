@@ -39,30 +39,10 @@
 
 *Layer 1 = Hub, Repeater, Modem, cables। Layer 2 = Switch, Bridge, NIC। Layer 3 = Router। Gateway = सभी 7 (protocol converter)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) · also CN Topic Test-6]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) · also CN Topic Test-6] · Easy*
 
 ---
-### Q2. Which of the following devices operates only in the physical layer?
-
-<span lang='hi'>निम्न में से कौन-सा device केवल physical layer पर काम करता है?</span>
-
-- **(A)** Two-layer switch
-- **(B)** Router
-- **(C)** Repeater ✅ **(CORRECT)**
-- **(D)** Bridge
-
-**✔ Correct Answer: (C) Repeater** — A repeater works at Layer 1 — it only regenerates (amplifies + reshapes) the signal to extend the cable distance.
-
-*Repeater Layer 1 पर काम करता है — यह केवल signal को regenerate (amplify + reshape) करके cable distance बढ़ाता है।*
-
-**★ Nukta (Key Point):** Repeater = signal regenerator (L1). Hub = multi-port repeater (L1). Both are 'dumb' devices.
-
-*Repeater = signal regenerator (L1)। Hub = multi-port repeater (L1)। दोनों 'dumb' devices हैं।*
-
-*[Source: Kerala PSC repeated PYQs (via pscarivukal)]*
-
----
-### Q3. Which of the following pairs lists the network devices used at the physical layer?
+### Q2. Which of the following pairs lists the network devices used at the physical layer?
 
 <span lang='hi'>निम्न में से कौन-सी जोड़ी physical layer पर उपयोग होने वाले network devices बताती है?</span>
 
@@ -79,10 +59,10 @@
 
 *Rajasthan PYQ (verified key: D)। Physical-layer जोड़ी = Repeater + Hub। Switch/Bridge = L2, Gateway = L7।*
 
-*[Source: Random Test- Rajasthan PYQ (OCR), p12 — Q93 (options reconstructed from screenshot)]*
+*[Source: Random Test- Rajasthan PYQ (OCR), p12 — Q93 (options reconstructed from screenshot)] · Medium*
 
 ---
-### Q4. Which of the following are network connecting devices? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth
+### Q3. Which of the following are network connecting devices? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth
 
 <span lang='hi'>निम्न में से कौन network connecting devices हैं? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth</span>
 
@@ -99,10 +79,10 @@
 
 *Devices बनाम technologies: repeater/bridge/hub/switch/router = devices। Bluetooth/Wi-Fi/Ethernet = technologies/standards।*
 
-*[Source: Unit Test -2 Solutions (OCR), p11]*
+*[Source: Unit Test -2 Solutions (OCR), p11] · Medium*
 
 ---
-### Q5. Which of the following statements are TRUE? 1. Switch reduces collision domain. 2. Hub creates a separate collision domain for each port. 3. Router separates broadcast domains.
+### Q4. Which of the following statements are TRUE? 1. Switch reduces collision domain. 2. Hub creates a separate collision domain for each port. 3. Router separates broadcast domains.
 
 <span lang='hi'>निम्न में से कौन-से कथन सही हैं? 1. Switch collision domain को कम करता है। 2. Hub हर port के लिए अलग collision domain बनाता है। 3. Router broadcast domains को अलग करता है।</span>
 
@@ -119,10 +99,10 @@
 
 *Switch: collision ↓ (per-port)। Hub: 1 collision domain। Router: broadcast domains अलग। ये तीनों golden statements हैं।*
 
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q26]*
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q26] · Medium*
 
 ---
-### Q6. Which device combines transmission from various I/O devices into one line?
+### Q5. Which device combines transmission from various I/O devices into one line?
 
 <span lang='hi'>कौन-सा device विभिन्न I/O devices के transmission को एक line में मिलाता है?</span>
 
@@ -139,10 +119,10 @@
 
 *MUX = कई→एक line (FDM/TDM/WDM)। Concentrator = line का statistical sharing। Gateway = protocol converter।*
 
-*[Source: Unit Test-4 Solution (OCR), p22]*
+*[Source: Unit Test-4 Solution (OCR), p22] · Medium*
 
 ---
-### Q7. A file server is a ______ which is used to store files received from various client machines.
+### Q6. A file server is a ______ which is used to store files received from various client machines.
 
 <span lang='hi'>File server एक ______ है जिसका उपयोग विभिन्न client machines से प्राप्त files संग्रहित करने के लिए होता है।</span>
 
@@ -159,10 +139,10 @@
 
 *Servers (file/print/mail/web) = विशेष computers। Modem = signal converter, Router = packet forwarder, Transponder = satellite relay।*
 
-*[Source: Unit Test-4 Solution (OCR), p24]*
+*[Source: Unit Test-4 Solution (OCR), p24] · Medium*
 
 ---
-### Q8. In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?
+### Q7. In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?
 
 <span lang='hi'>एक data-entry office में 1वीं और 4वीं मंज़िल के computer centres LAN से जुड़े हैं, पर signals में समय लगता है. बेहतर transmission के लिए कौन-सा hardware लगाएँ?</span>
 
@@ -179,7 +159,27 @@
 
 *संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.*
 
-*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)]*
+*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)] · Medium*
+
+---
+### Q8. Which of the following devices operates only in the physical layer?
+
+<span lang='hi'>निम्न में से कौन-सा device केवल physical layer पर काम करता है?</span>
+
+- **(A)** Two-layer switch
+- **(B)** Router
+- **(C)** Repeater ✅ **(CORRECT)**
+- **(D)** Bridge
+
+**✔ Correct Answer: (C) Repeater** — A repeater works at Layer 1 — it only regenerates (amplifies + reshapes) the signal to extend the cable distance.
+
+*Repeater Layer 1 पर काम करता है — यह केवल signal को regenerate (amplify + reshape) करके cable distance बढ़ाता है।*
+
+**★ Nukta (Key Point):** Repeater = signal regenerator (L1). Hub = multi-port repeater (L1). Both are 'dumb' devices.
+
+*Repeater = signal regenerator (L1)। Hub = multi-port repeater (L1)। दोनों 'dumb' devices हैं।*
+
+*[Source: Kerala PSC repeated PYQs (via pscarivukal)] · Hard*
 
 ---
 ### Q9. A device that operates at the physical layer of the OSI model is:
@@ -199,7 +199,7 @@
 
 *Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, L4+ = Gateway.*
 
-*[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)]*
+*[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)] · Hard*
 
 ---
 
@@ -207,27 +207,7 @@
 
 *CAM table, per-port collision domains, flooding behaviour, VLANs & broadcast domains, wireless AP as bridge.*
 
-### Q10. Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
-
-<span lang='hi'>कौन-सा device collision domains को कम करता है (हर port का अपना collision domain) लेकिन broadcast domains को तोड़ता नहीं?</span>
-
-- **(A)** Switch ✅ **(CORRECT)**
-- **(B)** Router
-- **(C)** Hub
-- **(D)** Gateway
-
-**✔ Correct Answer: (A) Switch** — A switch gives every port a separate collision domain (full-duplex = no collisions) but ALL its ports share ONE broadcast domain (unless VLANs are used).
-
-*Switch हर port को अलग collision domain देता है (full-duplex = कोई collision नहीं) लेकिन सभी ports एक ही broadcast domain share करते हैं (जब तक VLAN न हो)।*
-
-**★ Nukta (Key Point):** Switch = collision domains many, broadcast 1. Router = broadcast domains many. Hub = 1 collision + 1 broadcast. VLAN = splits broadcast on a switch.
-
-*Switch = collision domains कई, broadcast 1। Router = broadcast domains कई। Hub = 1 collision + 1 broadcast। VLAN = switch पर broadcast तोड़ता है।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-6]*
-
----
-### Q11. Which device stores MAC addresses in a CAM table?
+### Q10. Which device stores MAC addresses in a CAM table?
 
 <span lang='hi'>कौन-सा device MAC addresses को CAM table में संग्रहित करता है?</span>
 
@@ -244,30 +224,10 @@
 
 *Switch = MAC table (CAM)। Router = routing table (IP)। Hub = कोई table नहीं (floods)। ARP cache = IP→MAC mapping (host)।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q12. A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
-
-<span lang='hi'>एक switch को frame मिलता है जिसका destination MAC उसके MAC table में नहीं है। Switch क्या करेगा?</span>
-
-- **(A)** Send the frame to the router only
-- **(B)** Flood the frame out of all its ports (same broadcast domain) ✅ **(CORRECT)**
-- **(C)** Drop the frame
-- **(D)** Broadcast it on the entire internet
-
-**✔ Correct Answer: (B) Flood the frame out of all its ports (same broadcast domain)** — On an unknown unicast destination, the switch floods the frame out of every port (except the source port) within the broadcast domain — this is how it learns.
-
-*अज्ञात unicast destination पर switch frame को हर port (source port को छोड़कर) से broadcast domain के भीतर flood करता है — इसी तरह वह सीखता है।*
-
-**★ Nukta (Key Point):** Unknown unicast → flood. Known unicast → single port. Broadcast FF:FF:... → flood. Source MAC → learn/refresh in CAM.
-
-*Unknown unicast → flood। Known unicast → एक port। Broadcast FF:FF:... → flood। Source MAC → CAM में learn/refresh।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q13. A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
+### Q11. A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
 
 <span lang='hi'>दो switches के बीच एक router जुड़ा है। यदि Switch-A पर broadcast frame भेजा जाए, तो Switch-B क्या प्राप्त करेगा?</span>
 
@@ -284,70 +244,10 @@
 
 *Router = broadcast firewall। इसीलिए router broadcast domains तोड़ते हैं और switches नहीं।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q14. A switch has 4 VLANs configured. How many broadcast domains exist?
-
-<span lang='hi'>एक switch पर 4 VLANs configure हैं। कितने broadcast domains होंगे?</span>
-
-- **(A)** 1
-- **(B)** 2
-- **(C)** 4 ✅ **(CORRECT)**
-- **(D)** Depends on the router
-
-**✔ Correct Answer: (C) 4** — Each VLAN is its own broadcast domain — 4 VLANs = 4 broadcast domains on that switch.
-
-*हर VLAN अपना अलग broadcast domain है — उस switch पर 4 VLANs = 4 broadcast domains।*
-
-**★ Nukta (Key Point):** VLAN = virtual switch = its own broadcast domain. Inter-VLAN communication needs a router (or L3 switch).
-
-*VLAN = virtual switch = अपना broadcast domain। Inter-VLAN संचार के लिए router (या L3 switch) चाहिए।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q15. In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
-
-<span lang='hi'>VLANs वाले router-on-a-stick setup में VLAN tagging कौन करता है और inter-VLAN routing कौन?</span>
-
-- **(A)** Switch – VLAN tags, Router – routing ✅ **(CORRECT)**
-- **(B)** Router – VLAN tags, Switch – routing
-- **(C)** Both switch and router do VLAN tagging
-- **(D)** Neither does VLAN tagging
-
-**✔ Correct Answer: (A) Switch – VLAN tags, Router – routing** — The switch carries VLAN-tagged (802.1Q) frames on the trunk, and the router (sub-interfaces) routes between the VLANs.
-
-*Switch trunk पर VLAN-tagged (802.1Q) frames ले जाता है, और router (sub-interfaces) VLANs के बीच routing करता है।*
-
-**★ Nukta (Key Point):** 802.1Q tagging = switch trunk job. Inter-VLAN routing = router (router-on-a-stick) or L3 switch.
-
-*802.1Q tagging = switch trunk का काम। Inter-VLAN routing = router (router-on-a-stick) या L3 switch।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q16. A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
-
-<span lang='hi'>एक packet यात्रा करता है: wired PC → Switch → Access Point → Wireless laptop। कौन-से devices केवल Layer 2 पर काम करते हैं?</span>
-
-- **(A)** Switch only
-- **(B)** Access Point only
-- **(C)** Both switch and access point ✅ **(CORRECT)**
-- **(D)** Neither
-
-**✔ Correct Answer: (C) Both switch and access point** — A switch is a Layer-2 device and an access point acts as a wireless bridge — also Layer-2 (it bridges 802.3 frames to 802.11 frames).
-
-*Switch एक Layer-2 device है और access point एक wireless bridge की तरह काम करता है — वह भी Layer-2 (यह 802.3 frames को 802.11 frames में बदलता है)।*
-
-**★ Nukta (Key Point):** AP = wireless bridge (L2). Switch = L2. Router = L3. WAPs don't route unless configured as routers.
-
-*AP = wireless bridge (L2)। Switch = L2। Router = L3। WAPs routing नहीं करते (जब तक router mode में न हों)।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q17. What does a MAC address represent?
+### Q12. What does a MAC address represent?
 
 <span lang='hi'>MAC address किसका प्रतिनिधित्व करता है?</span>
 
@@ -364,7 +264,107 @@
 
 *MAC = NIC identity (कौन)। IP = network में स्थान (कहाँ)। Routing path = router का काम।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q13. Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
+
+<span lang='hi'>कौन-सा device collision domains को कम करता है (हर port का अपना collision domain) लेकिन broadcast domains को तोड़ता नहीं?</span>
+
+- **(A)** Switch ✅ **(CORRECT)**
+- **(B)** Router
+- **(C)** Hub
+- **(D)** Gateway
+
+**✔ Correct Answer: (A) Switch** — A switch gives every port a separate collision domain (full-duplex = no collisions) but ALL its ports share ONE broadcast domain (unless VLANs are used).
+
+*Switch हर port को अलग collision domain देता है (full-duplex = कोई collision नहीं) लेकिन सभी ports एक ही broadcast domain share करते हैं (जब तक VLAN न हो)।*
+
+**★ Nukta (Key Point):** Switch = collision domains many, broadcast 1. Router = broadcast domains many. Hub = 1 collision + 1 broadcast. VLAN = splits broadcast on a switch.
+
+*Switch = collision domains कई, broadcast 1। Router = broadcast domains कई। Hub = 1 collision + 1 broadcast। VLAN = switch पर broadcast तोड़ता है।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-6] · Medium*
+
+---
+### Q14. A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
+
+<span lang='hi'>एक switch को frame मिलता है जिसका destination MAC उसके MAC table में नहीं है। Switch क्या करेगा?</span>
+
+- **(A)** Send the frame to the router only
+- **(B)** Flood the frame out of all its ports (same broadcast domain) ✅ **(CORRECT)**
+- **(C)** Drop the frame
+- **(D)** Broadcast it on the entire internet
+
+**✔ Correct Answer: (B) Flood the frame out of all its ports (same broadcast domain)** — On an unknown unicast destination, the switch floods the frame out of every port (except the source port) within the broadcast domain — this is how it learns.
+
+*अज्ञात unicast destination पर switch frame को हर port (source port को छोड़कर) से broadcast domain के भीतर flood करता है — इसी तरह वह सीखता है।*
+
+**★ Nukta (Key Point):** Unknown unicast → flood. Known unicast → single port. Broadcast FF:FF:... → flood. Source MAC → learn/refresh in CAM.
+
+*Unknown unicast → flood। Known unicast → एक port। Broadcast FF:FF:... → flood। Source MAC → CAM में learn/refresh।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
+
+---
+### Q15. A switch has 4 VLANs configured. How many broadcast domains exist?
+
+<span lang='hi'>एक switch पर 4 VLANs configure हैं। कितने broadcast domains होंगे?</span>
+
+- **(A)** 1
+- **(B)** 2
+- **(C)** 4 ✅ **(CORRECT)**
+- **(D)** Depends on the router
+
+**✔ Correct Answer: (C) 4** — Each VLAN is its own broadcast domain — 4 VLANs = 4 broadcast domains on that switch.
+
+*हर VLAN अपना अलग broadcast domain है — उस switch पर 4 VLANs = 4 broadcast domains।*
+
+**★ Nukta (Key Point):** VLAN = virtual switch = its own broadcast domain. Inter-VLAN communication needs a router (or L3 switch).
+
+*VLAN = virtual switch = अपना broadcast domain। Inter-VLAN संचार के लिए router (या L3 switch) चाहिए।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
+
+---
+### Q16. In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
+
+<span lang='hi'>VLANs वाले router-on-a-stick setup में VLAN tagging कौन करता है और inter-VLAN routing कौन?</span>
+
+- **(A)** Switch – VLAN tags, Router – routing ✅ **(CORRECT)**
+- **(B)** Router – VLAN tags, Switch – routing
+- **(C)** Both switch and router do VLAN tagging
+- **(D)** Neither does VLAN tagging
+
+**✔ Correct Answer: (A) Switch – VLAN tags, Router – routing** — The switch carries VLAN-tagged (802.1Q) frames on the trunk, and the router (sub-interfaces) routes between the VLANs.
+
+*Switch trunk पर VLAN-tagged (802.1Q) frames ले जाता है, और router (sub-interfaces) VLANs के बीच routing करता है।*
+
+**★ Nukta (Key Point):** 802.1Q tagging = switch trunk job. Inter-VLAN routing = router (router-on-a-stick) or L3 switch.
+
+*802.1Q tagging = switch trunk का काम। Inter-VLAN routing = router (router-on-a-stick) या L3 switch।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
+
+---
+### Q17. A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
+
+<span lang='hi'>एक packet यात्रा करता है: wired PC → Switch → Access Point → Wireless laptop। कौन-से devices केवल Layer 2 पर काम करते हैं?</span>
+
+- **(A)** Switch only
+- **(B)** Access Point only
+- **(C)** Both switch and access point ✅ **(CORRECT)**
+- **(D)** Neither
+
+**✔ Correct Answer: (C) Both switch and access point** — A switch is a Layer-2 device and an access point acts as a wireless bridge — also Layer-2 (it bridges 802.3 frames to 802.11 frames).
+
+*Switch एक Layer-2 device है और access point एक wireless bridge की तरह काम करता है — वह भी Layer-2 (यह 802.3 frames को 802.11 frames में बदलता है)।*
+
+**★ Nukta (Key Point):** AP = wireless bridge (L2). Switch = L2. Router = L3. WAPs don't route unless configured as routers.
+
+*AP = wireless bridge (L2)। Switch = L2। Router = L3। WAPs routing नहीं करते (जब तक router mode में न हों)।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
 ---
 ### Q18. Which of the following component is responsible for network communication in a computer system?
@@ -384,7 +384,7 @@
 
 *NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.*
 
-*[Source: Unit Test-4 Solution.pdf (OCR), p18]*
+*[Source: Unit Test-4 Solution.pdf (OCR), p18] · Medium*
 
 ---
 ### Q19. LANs can be connected by which of the following devices that operate on the data link layer?
@@ -404,7 +404,7 @@
 
 *Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+.*
 
-*[Source: SBI PO Computer Awareness PYQ (via bankersadda)]*
+*[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
 ---
 
@@ -412,67 +412,7 @@
 
 *Router functions & layers, per-hop packet changes, broadcast-domain boundaries, congestion (RED), routing basics.*
 
-### Q20. Which hardware forwards data packets between computer networks?
-
-<span lang='hi'>कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?</span>
-
-- **(A)** Switch
-- **(B)** Router ✅ **(CORRECT)**
-- **(C)** Cable
-- **(D)** Nibble
-
-**✔ Correct Answer: (B) Router** — A router forwards packets between DIFFERENT networks using the routing information (IP addresses) in the packet.
-
-*Router packet के भीतर routing information (IP addresses) का उपयोग करके विभिन्न networks के बीच packets को आगे भेजता है।*
-
-**★ Nukta (Key Point):** Official KVS key. Router = between networks (L3). Switch = within a network (L2). Cable = medium. Nibble = 4 bits!
-
-*Official KVS key। Router = networks के बीच (L3)। Switch = network के भीतर (L2)। Cable = medium। Nibble = 4 bits!*
-
-*[Source: KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03]*
-
----
-### Q21. Which device operates at Layer 3 of the OSI model?
-
-<span lang='hi'>OSI model की Layer 3 पर कौन-सा device काम करता है?</span>
-
-- **(A)** Hub
-- **(B)** Switch
-- **(C)** Router ✅ **(CORRECT)**
-- **(D)** Repeater
-
-**✔ Correct Answer: (C) Router** — The router works at the Network layer (Layer 3) — it forwards packets using logical IP addresses and routing tables.
-
-*Router Network layer (Layer 3) पर काम करता है — यह logical IP addresses और routing tables का उपयोग करके packets भेजता है।*
-
-**★ Nukta (Key Point):** Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7.
-
-*Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7।*
-
-*[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard)]*
-
----
-### Q22. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
-
-<span lang='hi'>इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?</span>
-
-- **(A)** i and iv only
-- **(B)** i and ii only
-- **(C)** iii and iv only ✅ **(CORRECT)**
-- **(D)** ii and iii only
-
-**✔ Correct Answer: (C) iii and iv only** — Switch and router are intelligent — they read addresses (MAC/IP) and make forwarding decisions; repeater and hub blindly repeat/forward signals.
-
-*Switch और router intelligent हैं — ये addresses (MAC/IP) पढ़कर forwarding decisions लेते हैं; repeater और hub अंधों की तरह signals दोहराते/भेजते हैं।*
-
-**★ Nukta (Key Point):** Intelligent = reads addresses + filters/forwards selectively (switch, router, bridge, gateway). Dumb = hub, repeater.
-
-*Intelligent = addresses पढ़ता है + selectively filter/forward करता है (switch, router, bridge, gateway)। Dumb = hub, repeater।*
-
-*[Source: Kerala PSC repeated PYQs (via pscarivukal)]*
-
----
-### Q23. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
+### Q20. A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
 
 <span lang='hi'>Router निम्न में से कौन-सा कार्य करता है? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision</span>
 
@@ -489,7 +429,67 @@
 
 *Router = forward + route + logical addressing। Collision detection नहीं (वह switches/NICs पर Ethernet L2 का काम है)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28] · Easy*
+
+---
+### Q21. A router drops some packets deliberately due to congestion. What is this technique called?
+
+<span lang='hi'>Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?</span>
+
+- **(A)** Delay policing
+- **(B)** Redundancy
+- **(C)** Random Early Detection (RED) ✅ **(CORRECT)**
+- **(D)** Reverse flooding
+
+**✔ Correct Answer: (C) Random Early Detection (RED)** — Random Early Detection (RED) proactively drops (or marks) packets before the queue is full, signalling senders to slow down — a congestion-avoidance technique.
+
+*Random Early Detection (RED) queue भरने से पहले ही packets छोड़ (या mark) देता है, जिससे senders धीमे हो जाएँ — यह एक congestion-avoidance तकनीक है।*
+
+**★ Nukta (Key Point):** Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping. Dropping ALL at overflow = tail drop.
+
+*Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping। Overflow पर सब छोड़ना = tail drop।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q22. Which device creates a separate broadcast domain?
+
+<span lang='hi'>कौन-सा device अलग broadcast domain बनाता है?</span>
+
+- **(A)** Switch
+- **(B)** Bridge
+- **(C)** Router ✅ **(CORRECT)**
+- **(D)** Repeater
+
+**✔ Correct Answer: (C) Router** — Each router interface belongs to a different broadcast domain — the router is the boundary between them.
+
+*हर router interface अलग broadcast domain से संबंधित होता है — router उनके बीच की सीमा है।*
+
+**★ Nukta (Key Point):** Broadcast domain boundary = router (or VLAN). Collision domain boundary = switch port/bridge.
+
+*Broadcast domain सीमा = router (या VLAN)। Collision domain सीमा = switch port/bridge।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
+
+---
+### Q23. Which device operates at Layer 3 of the OSI model?
+
+<span lang='hi'>OSI model की Layer 3 पर कौन-सा device काम करता है?</span>
+
+- **(A)** Hub
+- **(B)** Switch
+- **(C)** Router ✅ **(CORRECT)**
+- **(D)** Repeater
+
+**✔ Correct Answer: (C) Router** — The router works at the Network layer (Layer 3) — it forwards packets using logical IP addresses and routing tables.
+
+*Router Network layer (Layer 3) पर काम करता है — यह logical IP addresses और routing tables का उपयोग करके packets भेजता है।*
+
+**★ Nukta (Key Point):** Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7.
+
+*Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7।*
+
+*[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard)] · Medium*
 
 ---
 ### Q24. Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
@@ -509,30 +509,50 @@
 
 *Per-hop बदलाव: TTL↓ + MAC फिर से लिखा जाता है। End-to-end: IP addresses अपरिवर्तित (NAP को छोड़कर)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
 ---
-### Q25. A router drops some packets deliberately due to congestion. What is this technique called?
+### Q25. Which hardware forwards data packets between computer networks?
 
-<span lang='hi'>Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?</span>
+<span lang='hi'>कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?</span>
 
-- **(A)** Delay policing
-- **(B)** Redundancy
-- **(C)** Random Early Detection (RED) ✅ **(CORRECT)**
-- **(D)** Reverse flooding
+- **(A)** Switch
+- **(B)** Router ✅ **(CORRECT)**
+- **(C)** Cable
+- **(D)** Nibble
 
-**✔ Correct Answer: (C) Random Early Detection (RED)** — Random Early Detection (RED) proactively drops (or marks) packets before the queue is full, signalling senders to slow down — a congestion-avoidance technique.
+**✔ Correct Answer: (B) Router** — A router forwards packets between DIFFERENT networks using the routing information (IP addresses) in the packet.
 
-*Random Early Detection (RED) queue भरने से पहले ही packets छोड़ (या mark) देता है, जिससे senders धीमे हो जाएँ — यह एक congestion-avoidance तकनीक है।*
+*Router packet के भीतर routing information (IP addresses) का उपयोग करके विभिन्न networks के बीच packets को आगे भेजता है।*
 
-**★ Nukta (Key Point):** Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping. Dropping ALL at overflow = tail drop.
+**★ Nukta (Key Point):** Official KVS key. Router = between networks (L3). Switch = within a network (L2). Cable = medium. Nibble = 4 bits!
 
-*Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping। Overflow पर सब छोड़ना = tail drop।*
+*Official KVS key। Router = networks के बीच (L3)। Switch = network के भीतर (L2)। Cable = medium। Nibble = 4 bits!*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03] · Hard*
 
 ---
-### Q26. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
+### Q26. Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
+
+<span lang='hi'>इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?</span>
+
+- **(A)** i and iv only
+- **(B)** i and ii only
+- **(C)** iii and iv only ✅ **(CORRECT)**
+- **(D)** ii and iii only
+
+**✔ Correct Answer: (C) iii and iv only** — Switch and router are intelligent — they read addresses (MAC/IP) and make forwarding decisions; repeater and hub blindly repeat/forward signals.
+
+*Switch और router intelligent हैं — ये addresses (MAC/IP) पढ़कर forwarding decisions लेते हैं; repeater और hub अंधों की तरह signals दोहराते/भेजते हैं।*
+
+**★ Nukta (Key Point):** Intelligent = reads addresses + filters/forwards selectively (switch, router, bridge, gateway). Dumb = hub, repeater.
+
+*Intelligent = addresses पढ़ता है + selectively filter/forward करता है (switch, router, bridge, gateway)। Dumb = hub, repeater।*
+
+*[Source: Kerala PSC repeated PYQs (via pscarivukal)] · Hard*
+
+---
+### Q27. Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
 
 <span lang='hi'>IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?</span>
 
@@ -549,27 +569,7 @@
 
 *उन्नत लेकिन classic: router IP header बदलता है (TTL/checksum), केवल static चला सकता है, fragments कभी नहीं जोड़ता (destination जोड़ता है)।*
 
-*[Source: Unit Test-4 Solution (OCR), p15]*
-
----
-### Q27. Which device creates a separate broadcast domain?
-
-<span lang='hi'>कौन-सा device अलग broadcast domain बनाता है?</span>
-
-- **(A)** Switch
-- **(B)** Bridge
-- **(C)** Router ✅ **(CORRECT)**
-- **(D)** Repeater
-
-**✔ Correct Answer: (C) Router** — Each router interface belongs to a different broadcast domain — the router is the boundary between them.
-
-*हर router interface अलग broadcast domain से संबंधित होता है — router उनके बीच की सीमा है।*
-
-**★ Nukta (Key Point):** Broadcast domain boundary = router (or VLAN). Collision domain boundary = switch port/bridge.
-
-*Broadcast domain सीमा = router (या VLAN)। Collision domain सीमा = switch port/bridge।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Unit Test-4 Solution (OCR), p15] · Hard*
 
 ---
 
@@ -577,67 +577,7 @@
 
 *Gateway as protocol converter, firewall types (packet/stateful/proxy), NAT types, device-vs-software identification.*
 
-### Q28. If two systems use DIFFERENT protocols, which device is used to link them?
-
-<span lang='hi'>यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?</span>
-
-- **(A)** Repeater
-- **(B)** Gateway ✅ **(CORRECT)**
-- **(C)** Bridge
-- **(D)** Hub
-
-**✔ Correct Answer: (B) Gateway** — A gateway is a protocol converter — it translates between different protocols/architectures so dissimilar systems can communicate.
-
-*Gateway एक protocol converter है — यह विभिन्न protocols/architectures के बीच अनुवाद करता है ताकि भिन्न systems संवाद कर सकें।*
-
-**★ Nukta (Key Point):** Gateway = protocol converter (L7). Bridge = similar LANs, same protocols (L2). Repeater/Hub = signal level (L1).
-
-*Gateway = protocol converter (L7)। Bridge = समान LANs, समान protocols (L2)। Repeater/Hub = signal level (L1)।*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)]*
-
----
-### Q29. Which device can operate across all 7 layers of the OSI model?
-
-<span lang='hi'>कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?</span>
-
-- **(A)** Router
-- **(B)** Hub
-- **(C)** Gateway ✅ **(CORRECT)**
-- **(D)** Switch
-
-**✔ Correct Answer: (C) Gateway** — A gateway (protocol converter) works at the application layer and may involve all layers to translate between different protocol stacks.
-
-*Gateway (protocol converter) application layer पर काम करता है और भिन्न protocol stacks के बीच अनुवाद के लिए सभी layers को शामिल कर सकता है।*
-
-**★ Nukta (Key Point):** Gateway = 'all 7 layers' device. Hub 1, switch/bridge 2, router 3 — exam one-liner.
-
-*Gateway = 'सभी 7 layers' वाला device। Hub 1, switch/bridge 2, router 3 — exam one-liner।*
-
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
-
----
-### Q30. Devices on one network can communicate with devices on another network via:
-
-<span lang='hi'>एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?</span>
-
-- **(A)** File server
-- **(B)** Utility server
-- **(C)** Printer server
-- **(D)** Gateway ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Gateway** — A gateway connects different networks (often with different protocols) and lets their devices communicate — the entry/exit point between networks.
-
-*Gateway विभिन्न networks (अक्सर भिन्न protocols वाले) को जोड़ता है और उनके devices को संवाद करने देता है — networks के बीच प्रवेश/निकास बिंदु।*
-
-**★ Nukta (Key Point):** Gateway = network-to-network doorway (also default gateway = router IP used to exit the LAN).
-
-*Gateway = network-to-network दरवाज़ा (default gateway भी = LAN से बाहर निकलने के लिए router IP)।*
-
-*[Source: SSC CGL Internet & Networking (via EduRev bank)]*
-
----
-### Q31. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
+### Q28. Which type of firewall inspects packets at the network layer and decides based on IP addresses?
 
 <span lang='hi'>कौन-सी firewall network layer पर packets की जाँच करके IP addresses के आधार पर निर्णय लेती है?</span>
 
@@ -654,10 +594,10 @@
 
 *Firewall types: Packet filtering (L3/L4, stateless) → Stateful (sessions याद रखती है) → Proxy/Application gateway (L7) → Circuit-level gateway (L5)।*
 
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q32. Which firewall acts as an intermediary between the client and server at the application layer?
+### Q29. Which firewall acts as an intermediary between the client and server at the application layer?
 
 <span lang='hi'>कौन-सी firewall application layer पर client और server के बीच मध्यस्थ (intermediary) के रूप में काम करती है?</span>
 
@@ -674,7 +614,67 @@
 
 *Proxy = L7 intermediary (गहरी जाँच, internals छिपाती है)। Circuit gateway = L5 (session/relay)।*
 
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
+
+---
+### Q30. If two systems use DIFFERENT protocols, which device is used to link them?
+
+<span lang='hi'>यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?</span>
+
+- **(A)** Repeater
+- **(B)** Gateway ✅ **(CORRECT)**
+- **(C)** Bridge
+- **(D)** Hub
+
+**✔ Correct Answer: (B) Gateway** — A gateway is a protocol converter — it translates between different protocols/architectures so dissimilar systems can communicate.
+
+*Gateway एक protocol converter है — यह विभिन्न protocols/architectures के बीच अनुवाद करता है ताकि भिन्न systems संवाद कर सकें।*
+
+**★ Nukta (Key Point):** Gateway = protocol converter (L7). Bridge = similar LANs, same protocols (L2). Repeater/Hub = signal level (L1).
+
+*Gateway = protocol converter (L7)। Bridge = समान LANs, समान protocols (L2)। Repeater/Hub = signal level (L1)।*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
+
+---
+### Q31. Which device can operate across all 7 layers of the OSI model?
+
+<span lang='hi'>कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?</span>
+
+- **(A)** Router
+- **(B)** Hub
+- **(C)** Gateway ✅ **(CORRECT)**
+- **(D)** Switch
+
+**✔ Correct Answer: (C) Gateway** — A gateway (protocol converter) works at the application layer and may involve all layers to translate between different protocol stacks.
+
+*Gateway (protocol converter) application layer पर काम करता है और भिन्न protocol stacks के बीच अनुवाद के लिए सभी layers को शामिल कर सकता है।*
+
+**★ Nukta (Key Point):** Gateway = 'all 7 layers' device. Hub 1, switch/bridge 2, router 3 — exam one-liner.
+
+*Gateway = 'सभी 7 layers' वाला device। Hub 1, switch/bridge 2, router 3 — exam one-liner।*
+
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
+
+---
+### Q32. Devices on one network can communicate with devices on another network via:
+
+<span lang='hi'>एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?</span>
+
+- **(A)** File server
+- **(B)** Utility server
+- **(C)** Printer server
+- **(D)** Gateway ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Gateway** — A gateway connects different networks (often with different protocols) and lets their devices communicate — the entry/exit point between networks.
+
+*Gateway विभिन्न networks (अक्सर भिन्न protocols वाले) को जोड़ता है और उनके devices को संवाद करने देता है — networks के बीच प्रवेश/निकास बिंदु।*
+
+**★ Nukta (Key Point):** Gateway = network-to-network doorway (also default gateway = router IP used to exit the LAN).
+
+*Gateway = network-to-network दरवाज़ा (default gateway भी = LAN से बाहर निकलने के लिए router IP)।*
+
+*[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
 ---
 ### Q33. What is the role of a firewall in computer networks?
@@ -694,7 +694,7 @@
 
 *Firewall = trusted और untrusted networks के बीच traffic filter (screening router, DMZ...)। DHCP = IP management; DNS = names।*
 
-*[Source: 30 important CN MCQs (Medium blog bank)]*
+*[Source: 30 important CN MCQs (Medium blog bank)] · Medium*
 
 ---
 ### Q34. What is the purpose of a proxy server in networking?
@@ -714,7 +714,7 @@
 
 *Proxy = filter + forward + cache + client छिपाना। Firewall = rules से block/allow। दोनों security/traffic devices हैं।*
 
-*[Source: 30 important CN MCQs (Medium blog bank)]*
+*[Source: 30 important CN MCQs (Medium blog bank)] · Medium*
 
 ---
 ### Q35. Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
@@ -734,7 +734,7 @@
 
 *Rajasthan PYQ (verified key: C) — firewall की classic परिभाषा। तुलना: bridge = L2 link, cookie = web state, SSL = encryption।*
 
-*[Source: Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)]*
+*[Source: Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)] · Medium*
 
 ---
 ### Q36. What kind of NAT maps one private IP to exactly one public IP?
@@ -754,7 +754,7 @@
 
 *NAT types: Static = 1↔1 स्थायी। Dynamic = pool mapping। PAT/NAT-overload = ports से many↔1।*
 
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
 ---
 ### Q37. Which of the following is NOT a networking device?
@@ -774,7 +774,7 @@
 
 *Device बनाम OS: hardware devices (hub/switch/router) बनाम software (OS, antivirus) बनाम firmware-based security devices (firewall)।*
 
-*[Source: InstrumentationTools 150 CN MCQs]*
+*[Source: InstrumentationTools 150 CN MCQs] · Hard*
 
 ---
 ### Q38. Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
@@ -794,7 +794,7 @@
 
 *'Linux' वाले प्रश्न का दर्पण — option SET ध्यान से पढ़ें: यहाँ सूचीबद्ध सब devices हैं।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Hard*
 
 ---
 

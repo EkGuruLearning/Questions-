@@ -163,6 +163,24 @@ merged topic-wise at section level (books now 602 MCQs total):
 All prior repo-PDF content was already fully merged (§1–§7; 15 papers + OCR
 decks + web banks + cnp3 banks = 656+ items accounted; pending sets disposed).
 
+
+## 9. Wave-2 GATE sweep + difficulty ordering + Material Archive (Oct 2026)
+
+- **Wave 2 (+29):** GATE 2011–2026 full sweep (2012 Class C 2²¹, 2013 last-fragment
+  2400–2759, 2014 ×3, 2015 ×2 stop-wait numerics + router NOT-modify, 2016 ×2,
+  2017 FIN_WAIT_2, 2018 ×2 seq-reuse=34s + slow-start (iv), 2019 ×2 /30 + ARP,
+  2020 router stmts, 2021 handshake X+1, 2022 ×2 7.08ms + 33-bits, 2024 ×3 NAT/CIDR/
+  6-fragments, 2025 ×2 flags + next-hop), KVS PGT 2017 (153.6 Mbps, 1000/4000 baud),
+  EMRS PGT (WWW). All complete items; zero repeats (deduped against 602 existing).
+- **Difficulty ordering (user spec):** har section ke andar Easy → Medium → Hard;
+  `tools/cn_difficulty.py` exam-level + content heuristics (SCI/BCI/MTS/CHSL/REET =
+  easy; GATE/NET/KVS/EMRS/DSSSB/JNV/Programmer/PGT = hard; beech = medium). Books
+  mein source line par chip: `· Easy / · Medium / · Hard`.
+- **Material Archive/** — future subjects (DBMS, SAD, Java) ke liye saara research
+  material + source registries + workflow README (2-din roadmap).
+- Totals: **631 MCQs** (T1 124, T2 82, T3 93, T4 38, T5 48, T6 193, T7 53) + 165
+  nukte rapid; Easy 86 / Medium 339 / Hard 206.
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2

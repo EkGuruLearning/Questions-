@@ -1,23 +1,23 @@
 # Data Communication & Computer Networks (CN)
-## Topic 1 of 7 : Introduction of DC (Data Communication) — 121 MCQs (English + Hindi)
+## Topic 1 of 7 : Introduction of DC (Data Communication) — 124 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 121 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 124 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
 | 1 | Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol) | Q1 - Q17 |
-| 2 | Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security) | Q18 - Q33 |
-| 3 | Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex) | Q34 - Q42 |
-| 4 | Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802) | Q43 - Q63 |
-| 5 | Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P) | Q64 - Q96 |
-| 6 | Section F - Network History (ARPANET to Today's Network) | Q97 - Q104 |
-| 7 | Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests) | Q105 - Q121 |
+| 2 | Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security) | Q18 - Q36 |
+| 3 | Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex) | Q37 - Q45 |
+| 4 | Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802) | Q46 - Q66 |
+| 5 | Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P) | Q67 - Q99 |
+| 6 | Section F - Network History (ARPANET to Today's Network) | Q100 - Q107 |
+| 7 | Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests) | Q108 - Q124 |
 
 ---
 
@@ -25,7 +25,27 @@
 
 *Syllabus: DC Components - Message, Sender, Receiver, Transmission Medium, Protocol*
 
-### Q1. Identify the five components of a data communication system.
+### Q1. The physical path between the sender and receiver is called:
+
+<span lang='hi'>Sender और receiver के बीच का physical path _______ कहलाता है:</span>
+
+- **(A)** Link / link (link) ✅ **(CORRECT)**
+- **(B)** Node / node (node)
+- **(C)** Segment / सегмент (segment)
+- **(D)** Socket / सॉकेट (socket)
+
+**✔ Correct Answer: (A) Link** — In this context, the physical medium of connection between devices is known as a link (the devices connected to it are called nodes).
+
+*Is context में, devices को जोड़ने वाला physical medium link कहलाता है (is से जुड़े devices को nodes कहते हैं).*
+
+**★ Nukta (Key Point):** Note: In Forouzan's 5 components, this same physical path is called the transmission medium. Both terms mean the physical path.
+
+*Note: Forouzan के 5 components में इसी physical path को transmission medium कहा गया है। दोनों का मतलब physical path ही है।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (UNIT TEST-2 BCI/SCI), Q20] · Easy*
+
+---
+### Q2. Identify the five components of a data communication system.
 
 <span lang='hi'>Data communication system के पाँच components की पहचान कीजिए।</span>
 
@@ -42,10 +62,10 @@
 
 *5 components: Message → Sender → Medium → Receiver + Protocol (rules)। Exam का favourite question।*
 
-*[Source: Forouzan Ch1 (Q1-1) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-1) — Practice Set] · Medium*
 
 ---
-### Q2. The _______ is the physical path over which a message travels from sender to receiver.
+### Q3. The _______ is the physical path over which a message travels from sender to receiver.
 
 <span lang='hi'>_______ वह physical path है जिस पर message sender से receiver तक जाता है।</span>
 
@@ -62,10 +82,10 @@
 
 *Medium = sender और receiver के बीच का physical path. याद रखें: Message -> Sender -> Medium -> Receiver.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q35]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q35] · Medium*
 
 ---
-### Q3. The information to be communicated in a data communication system is called the _______.
+### Q4. The information to be communicated in a data communication system is called the _______.
 
 <span lang='hi'>Data communication system में communicate की जाने वाली information _______ कहलाती है।</span>
 
@@ -82,10 +102,10 @@
 
 *Message = communicate की जाने वाली data. 5 popular forms: text, numbers, images, audio, video.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q38]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q38] · Medium*
 
 ---
-### Q4. Which of the following shares the data of two computers?
+### Q5. Which of the following shares the data of two computers?
 
 <span lang='hi'>निम्नलिखित में से कौन दो computers का data share (साझा) करता है?</span>
 
@@ -102,27 +122,7 @@
 
 *Network = 2 या ज़्यादा devices का आपस में जुड़ना, data/resources share करने के लिए।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q13]*
-
----
-### Q5. In a computer network, nodes are:
-
-<span lang='hi'>Computer network में nodes होते हैं:</span>
-
-- **(A)** the computer that originates the data / जो computer data को originate (shurua) करता है
-- **(B)** the computer that routes the data / जो computer data को route करता है
-- **(C)** the computer that terminates the data / जो computer data को terminate (समाप्त) करता है
-- **(D)** all of the mentioned / उपर्युक्त सभी (all of the above) ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) all of the mentioned** — A node is any device connected to the network. It can originate (sender), route (router/switch) or terminate (receiver) data, so all of the mentioned is correct.
-
-*Node = network से जुड़ा कोई भी device. यह data को originate (sender), route (router/switch) या terminate (receiver) कर सकता है, इसलिए उपर्युक्त सभी सही हैं।*
-
-**★ Nukta (Key Point):** Node = any connected device of the network (computer, printer, router, etc.).
-
-*Node = network का कोई भी connected device (computer, printer, router, आदि).*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q30]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q13] · Medium*
 
 ---
 ### Q6. _______ refers to two characteristics: when data should be sent and how fast it can be sent.
@@ -142,30 +142,10 @@
 
 *Protocol के 3 elements = Syntax (format), Semantics (अर्थ), Timing (कब और कितनी तेज़ी से).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q44]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q44] · Medium*
 
 ---
-### Q7. Consider the statements: S1: The physical medium of connection is known as a link. S2: The computers connected to it are known as nodes.
-
-<span lang='hi'>कथनों पर विचार करें: S1: connection का physical medium link कहलाता है। S2: इससे जुड़े computers nodes कहलाते हैं।</span>
-
-- **(A)** Both S1 and S2 are false / दोनों S1 और S2 ग़लत हैं
-- **(B)** S1 true but S2 false / S1 सही है लेकिन S2 ग़लत है
-- **(C)** S1 false but S2 true / S1 ग़लत है लेकिन S2 सही है
-- **(D)** Both S1 and S2 true / दोनों S1 और S2 सही हैं ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Both S1 and S2 true** — In networking, the physical medium connecting devices is called a link, and the connected devices (computers) are called nodes. Both statements are true.
-
-*Networking में devices को जोड़ने वाला physical medium link कहलाता है, और जुड़े हुए devices (computers) nodes कहलाते हैं। दोनों कथन सही हैं।*
-
-**★ Nukta (Key Point):** Link = physical medium; Node = connected device (computer).
-
-*Link = physical medium; Node = जुड़ा हुआ device (computer).*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q2]*
-
----
-### Q8. What are the main elements of a protocol? 1. Syntax  2. Semantics  3. Timing
+### Q7. What are the main elements of a protocol? 1. Syntax  2. Semantics  3. Timing
 
 <span lang='hi'>किसी protocol के मुख्य तत्व (elements) क्या हैं? 1. Syntax  2. Semantics  3. Timing</span>
 
@@ -182,10 +162,10 @@
 
 *याद रखें: Protocol = Syntax + Semantics + Timing.*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q3]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q3] · Medium*
 
 ---
-### Q9. Why are protocols needed in data communication?
+### Q8. Why are protocols needed in data communication?
 
 <span lang='hi'>Data communication में protocols की आवश्यकता क्यों होती है?</span>
 
@@ -202,10 +182,10 @@
 
 *Protocol = rules का agreement (syntax + semantics + timing)। इसके बिना communication impossible है।*
 
-*[Source: Forouzan Ch1 (Q1-11) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-11) — Practice Set] · Medium*
 
 ---
-### Q10. A set of rules that governs data communication is called a:
+### Q9. A set of rules that governs data communication is called a:
 
 <span lang='hi'>Data communication को regulate (नियंत्रित) करने वाले rules का set _______ कहलाता है:</span>
 
@@ -222,30 +202,10 @@
 
 *Protocol = नियमों का set. याद रखें: बिना protocol के दो devices जुड़े to हो सकते हैं लेकिन communicate नहीं कर सकते।*
 
-*[Source: Repo: CN Topic Test-03 (UNIT TEST-3), Q15]*
+*[Source: Repo: CN Topic Test-03 (UNIT TEST-3), Q15] · Medium*
 
 ---
-### Q11. The physical path between the sender and receiver is called:
-
-<span lang='hi'>Sender और receiver के बीच का physical path _______ कहलाता है:</span>
-
-- **(A)** Link / link (link) ✅ **(CORRECT)**
-- **(B)** Node / node (node)
-- **(C)** Segment / सегмент (segment)
-- **(D)** Socket / सॉकेट (socket)
-
-**✔ Correct Answer: (A) Link** — In this context, the physical medium of connection between devices is known as a link (the devices connected to it are called nodes).
-
-*Is context में, devices को जोड़ने वाला physical medium link कहलाता है (is से जुड़े devices को nodes कहते हैं).*
-
-**★ Nukta (Key Point):** Note: In Forouzan's 5 components, this same physical path is called the transmission medium. Both terms mean the physical path.
-
-*Note: Forouzan के 5 components में इसी physical path को transmission medium कहा गया है। दोनों का मतलब physical path ही है।*
-
-*[Source: Repo: BCI_SCI Subject Test-7 (UNIT TEST-2 BCI/SCI), Q20]*
-
----
-### Q12. Consider: (1) Twisted pair cables (2) Microwaves and satellite signals (3) Repeaters (4) Analog transmissions (5) Fiber optics. Which of the above is considered as signal transmission medium in data communications?
+### Q10. Consider: (1) Twisted pair cables (2) Microwaves and satellite signals (3) Repeaters (4) Analog transmissions (5) Fiber optics. Which of the above is considered as signal transmission medium in data communications?
 
 <span lang='hi'>विचार करें: (1) Twisted pair cables (2) Microwaves और satellite signals (3) Repeaters (4) Analog transmissions (5) Fiber optics। उपरोक्त में से data communications में signal transmission medium के रूप में क्या माना जाता है?</span>
 
@@ -262,10 +222,10 @@
 
 *Guided media: twisted pair, coaxial, fiber. Unguided media: radio, microwave, infrared.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q10]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q10] · Medium*
 
 ---
-### Q13. Data communication is the exchange of _______ between two devices via some form of transmission medium.
+### Q11. Data communication is the exchange of _______ between two devices via some form of transmission medium.
 
 <span lang='hi'>Data communication = do devices के बीच _______ का exchange, किसी transmission medium के through।</span>
 
@@ -282,30 +242,10 @@
 
 *Data communication = do devices के बीच DATA (message) का exchange, medium के through।*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q14. Which one of the following is NOT one of the five basic components of a data communication system?
-
-<span lang='hi'>निम्नलिखित में से कौन data communication system के five basic components में से एक नहीं है?</span>
-
-- **(A)** Message / Message (message)
-- **(B)** Protocol / Protocol (protocol)
-- **(C)** Router / Router (router) ✅ **(CORRECT)**
-- **(D)** Transmission medium / Transmission medium (medium)
-
-**✔ Correct Answer: (C) Router** — The five basic components are: message, sender, receiver, transmission medium and protocol. A router is a networking device (Network layer), not one of the five fundamental components.
-
-*Five basic components हैं: message, sender, receiver, transmission medium और protocol. Router एक networking device है (Network layer), five fundamental components में से नहीं।*
-
-**★ Nukta (Key Point):** याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device, component नहीं।
-
-*याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device है, component नहीं।*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q15. The device that sends the data message in a data communication system is called the _______.
+### Q12. The device that sends the data message in a data communication system is called the _______.
 
 <span lang='hi'>Data communication system में जो device data message भेजता है, use _______ कहते हैं।</span>
 
@@ -322,10 +262,10 @@
 
 *Sender = source device; Receiver = destination device.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q16. Which of the following best lists the popular forms of information (message) in data communication?
+### Q13. Which of the following best lists the popular forms of information (message) in data communication?
 
 <span lang='hi'>Data communication में information (message) के popular forms को सबसे achhe से कौन बताता है?</span>
 
@@ -342,10 +282,10 @@
 
 *Message के 5 popular forms: text, numbers, images, audio, video.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q17. ARPANET stands for:
+### Q14. ARPANET stands for:
 
 <span lang='hi'>ARPANET का पूरा नाम है:</span>
 
@@ -362,7 +302,67 @@
 
 *यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.*
 
-*[Source: IBPS/SBI computer-awareness banks (via tpointtech & meritnotes)]*
+*[Source: IBPS/SBI computer-awareness banks (via tpointtech & meritnotes)] · Medium*
+
+---
+### Q15. In a computer network, nodes are:
+
+<span lang='hi'>Computer network में nodes होते हैं:</span>
+
+- **(A)** the computer that originates the data / जो computer data को originate (shurua) करता है
+- **(B)** the computer that routes the data / जो computer data को route करता है
+- **(C)** the computer that terminates the data / जो computer data को terminate (समाप्त) करता है
+- **(D)** all of the mentioned / उपर्युक्त सभी (all of the above) ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) all of the mentioned** — A node is any device connected to the network. It can originate (sender), route (router/switch) or terminate (receiver) data, so all of the mentioned is correct.
+
+*Node = network से जुड़ा कोई भी device. यह data को originate (sender), route (router/switch) या terminate (receiver) कर सकता है, इसलिए उपर्युक्त सभी सही हैं।*
+
+**★ Nukta (Key Point):** Node = any connected device of the network (computer, printer, router, etc.).
+
+*Node = network का कोई भी connected device (computer, printer, router, आदि).*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q30] · Hard*
+
+---
+### Q16. Consider the statements: S1: The physical medium of connection is known as a link. S2: The computers connected to it are known as nodes.
+
+<span lang='hi'>कथनों पर विचार करें: S1: connection का physical medium link कहलाता है। S2: इससे जुड़े computers nodes कहलाते हैं।</span>
+
+- **(A)** Both S1 and S2 are false / दोनों S1 और S2 ग़लत हैं
+- **(B)** S1 true but S2 false / S1 सही है लेकिन S2 ग़लत है
+- **(C)** S1 false but S2 true / S1 ग़लत है लेकिन S2 सही है
+- **(D)** Both S1 and S2 true / दोनों S1 और S2 सही हैं ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Both S1 and S2 true** — In networking, the physical medium connecting devices is called a link, and the connected devices (computers) are called nodes. Both statements are true.
+
+*Networking में devices को जोड़ने वाला physical medium link कहलाता है, और जुड़े हुए devices (computers) nodes कहलाते हैं। दोनों कथन सही हैं।*
+
+**★ Nukta (Key Point):** Link = physical medium; Node = connected device (computer).
+
+*Link = physical medium; Node = जुड़ा हुआ device (computer).*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q2] · Hard*
+
+---
+### Q17. Which one of the following is NOT one of the five basic components of a data communication system?
+
+<span lang='hi'>निम्नलिखित में से कौन data communication system के five basic components में से एक नहीं है?</span>
+
+- **(A)** Message / Message (message)
+- **(B)** Protocol / Protocol (protocol)
+- **(C)** Router / Router (router) ✅ **(CORRECT)**
+- **(D)** Transmission medium / Transmission medium (medium)
+
+**✔ Correct Answer: (C) Router** — The five basic components are: message, sender, receiver, transmission medium and protocol. A router is a networking device (Network layer), not one of the five fundamental components.
+
+*Five basic components हैं: message, sender, receiver, transmission medium और protocol. Router एक networking device है (Network layer), five fundamental components में से नहीं।*
+
+**★ Nukta (Key Point):** याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device, component नहीं।
+
+*याद रखें 5 components: Message, Sender, Receiver, Transmission Medium, Protocol. Router = device है, component नहीं।*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Hard*
 
 ---
 
@@ -370,7 +370,27 @@
 
 *Syllabus: Characteristics - Delivery, Accuracy, Timeliness, Jitter | Properties/Criteria - Performance, Reliability, Security*
 
-### Q18. What does jitter refer to in data communication?
+### Q18. Which physical layer impairment mainly causes jitter in VoIP traffic?
+
+<span lang='hi'>VoIP traffic में jitter का मुख्य kaaran कौन सा physical layer impairment है?</span>
+
+- **(A)** Attenuation / attenuation (signal की shakti कम होना)
+- **(B)** Delay variation / delay का अंतर (variation) ✅ **(CORRECT)**
+- **(C)** Distortion / distortion (vikriti)
+- **(D)** Crosstalk / crosstalk
+
+**✔ Correct Answer: (B) Delay variation** — Jitter is caused by delay variation: packets experience different queuing/transmission delays, so they arrive at uneven intervals, distorting real-time VoIP/video.
+
+*Jitter delay variation से होता है: packets को अलग-अलग queuing/transmission delays milte हैं, इसलिए वह uneven intervals पर pahunchte हैं, जिससे real-time VoIP/video ख़राब होता है।*
+
+**★ Nukta (Key Point):** Jitter = delay variation. Attenuation = signal weakening; distortion = signal shape change; crosstalk = interference from nearby cables.
+
+*Jitter = delay variation. Attenuation = signal की shakti कम होना; distortion = signal का रूप badalna; crosstalk = पास की cables से interference.*
+
+*[Source: Repo: BCI Subject Test-8 (UNIT TEST-3 BCI/SCI), Q36] · Easy*
+
+---
+### Q19. What does jitter refer to in data communication?
 
 <span lang='hi'>Data communication में jitter का मतलब क्या होता है?</span>
 
@@ -387,10 +407,10 @@
 
 *Jitter = packet पहुँचने में uneven delay -> audio/video playback ख़राब हो जाती है।*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q1]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q1] · Medium*
 
 ---
-### Q19. Which of the following is a characteristic of data communication?
+### Q20. Which of the following is a characteristic of data communication?
 
 <span lang='hi'>निम्नलिखित में से कौन data communication की एक characteristic (विशेषता) है?</span>
 
@@ -407,27 +427,7 @@
 
 *4 characteristics याद रखो: Delivery, Accuracy, Timeliness, Jitter.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q6]*
-
----
-### Q20. Accuracy in data communication means:
-
-<span lang='hi'>Data communication में accuracy का अर्थ है:</span>
-
-- **(A)** Data is sent quickly / data तेज़ी से भेजा जाता है
-- **(B)** Data is not corrupted / data corrupted (खराब) नहीं होता ✅ **(CORRECT)**
-- **(C)** Data is encrypted / data encrypt होता है
-- **(D)** Data reaches the receiver / data receiver तक pahunchta है
-
-**✔ Correct Answer: (B) Data is not corrupted** — Accuracy means the system must deliver the data accurately. Data that has been altered in transmission and left uncorrected is useless.
-
-*Accuracy का मतलब है system data को accurately (सही) पहुँचाए. जो data transmission में बदल गया और सुधारा नहीं गया, बेकार है।*
-
-**★ Nukta (Key Point):** Accuracy = error-free data; altered/corrupted data is useless.
-
-*Accuracy = error-free data; बदल गया/corrupt data बेकार है।*
-
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q8]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q6] · Medium*
 
 ---
 ### Q21. What is the maximum data rate of a transmission medium known as?
@@ -447,7 +447,7 @@
 
 *Bandwidth = channel की अधिकतम capacity (bps में). Throughput = वास्तविक रूप से हासिल होने वाली rate (आम तौर पर कम).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q9]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q9] · Medium*
 
 ---
 ### Q22. Speed of an internet connection is measured in:
@@ -467,7 +467,7 @@
 
 *Speed = bits per second (bps family)। KB/s (bytes) file-size/download display के लिए है — exam का answer kbps है।*
 
-*[Source: Repo: Unit Test-4 Solution (OCR), p19]*
+*[Source: Repo: Unit Test-4 Solution (OCR), p19] · Medium*
 
 ---
 ### Q23. Frequency of failure and network recovery time after a failure are measures of the _______ of a network.
@@ -487,30 +487,10 @@
 
 *Reliability = failure frequency + recovery time + robustness. Performance = transit time, response time, throughput, delay.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q39]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q39] · Medium*
 
 ---
-### Q24. An unauthorized user is a network _______ issue.
-
-<span lang='hi'>An unauthorized user एक network _______ issue है.</span>
-
-- **(A)** Performance / performance
-- **(B)** Reliability / reliability
-- **(C)** Security / security ✅ **(CORRECT)**
-- **(D)** All of the above / ऊपर दिए गए सभी
-
-**✔ Correct Answer: (C) Security** — Security means protecting data from unauthorized access, protecting data from damage, and ensuring confidentiality and data integrity. An unauthorized user is a security issue.
-
-*Security का मतलब है data को unauthorized access से bachana, damage से bachana, और confidentiality और data integrity sunishchit करना। Unauthorized user एक security issue है।*
-
-**★ Nukta (Key Point):** Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).
-
-*Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q40]*
-
----
-### Q25. What is the criteria to check the reliability of a network? 1. Downtime  2. Failure Frequency  3. Fault Tolerance  4. Security
+### Q24. What is the criteria to check the reliability of a network? 1. Downtime  2. Failure Frequency  3. Fault Tolerance  4. Security
 
 <span lang='hi'>Network की reliability check करने के criteria क्या हैं? 1. Downtime  2. Failure Frequency  3. Fault Tolerance  4. Security</span>
 
@@ -527,10 +507,10 @@
 
 *3 network criteria: Performance, Reliability, Security. Reliability = failure frequency + recovery time + fault tolerance.*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q1]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q1] · Medium*
 
 ---
-### Q26. What are the three criteria necessary for an effective and efficient network?
+### Q25. What are the three criteria necessary for an effective and efficient network?
 
 <span lang='hi'>Effective और efficient network के लिए आवश्यक तीन criteria क्या हैं?</span>
 
@@ -547,30 +527,10 @@
 
 *Network के 3 criteria = Performance, Reliability, Security। Data communication के 4 characteristics = Delivery, Accuracy, Timeliness, Jitter।*
 
-*[Source: Forouzan Ch1 (Q1-2) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-2) — Practice Set] · Medium*
 
 ---
-### Q27. Which physical layer impairment mainly causes jitter in VoIP traffic?
-
-<span lang='hi'>VoIP traffic में jitter का मुख्य kaaran कौन सा physical layer impairment है?</span>
-
-- **(A)** Attenuation / attenuation (signal की shakti कम होना)
-- **(B)** Delay variation / delay का अंतर (variation) ✅ **(CORRECT)**
-- **(C)** Distortion / distortion (vikriti)
-- **(D)** Crosstalk / crosstalk
-
-**✔ Correct Answer: (B) Delay variation** — Jitter is caused by delay variation: packets experience different queuing/transmission delays, so they arrive at uneven intervals, distorting real-time VoIP/video.
-
-*Jitter delay variation से होता है: packets को अलग-अलग queuing/transmission delays milte हैं, इसलिए वह uneven intervals पर pahunchte हैं, जिससे real-time VoIP/video ख़राब होता है।*
-
-**★ Nukta (Key Point):** Jitter = delay variation. Attenuation = signal weakening; distortion = signal shape change; crosstalk = interference from nearby cables.
-
-*Jitter = delay variation. Attenuation = signal की shakti कम होना; distortion = signal का रूप badalna; crosstalk = पास की cables से interference.*
-
-*[Source: Repo: BCI Subject Test-8 (UNIT TEST-3 BCI/SCI), Q36]*
-
----
-### Q28. What network property is achieved through the use of the Automatic Repeat reQuest (ARQ) mechanism?
+### Q26. What network property is achieved through the use of the Automatic Repeat reQuest (ARQ) mechanism?
 
 <span lang='hi'>Automatic Repeat reQuest (ARQ) mechanism से network की कौन सी property हासिल होती है?</span>
 
@@ -587,10 +547,10 @@
 
 *ARQ = error control -> Reliability. Flow control = efficient delivery (receiver का buffer overflow नहीं होना).*
 
-*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)]*
+*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)] · Medium*
 
 ---
-### Q29. For effective data communication, the system must deliver data to the correct destination. This characteristic is called _______.
+### Q27. For effective data communication, the system must deliver data to the correct destination. This characteristic is called _______.
 
 <span lang='hi'>Effective data communication के लिए system को data सही destination पर पहुँचाना चाहिए। Is characteristic को _______ कहते हैं।</span>
 
@@ -607,10 +567,10 @@
 
 *4 characteristics: Delivery (सही jagah), Accuracy (error-free), Timeliness (time पर), Jitter (even delay).*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q30. Data delivered late is useless (especially in real-time audio/video). Delivering data in a timely manner is called _______.
+### Q28. Data delivered late is useless (especially in real-time audio/video). Delivering data in a timely manner is called _______.
 
 <span lang='hi'>देर से पहुँचने वाला data बेकार है (ख़ास कर real-time audio/video में)। Time पर data pahunchane को _______ कहते हैं।</span>
 
@@ -627,10 +587,10 @@
 
 *Timeliness = time पर पहुँचाना; देर वाला data बेकार है -> real-time transmission (audio/video).*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q31. The network criterion measured by transit time, response time, throughput and delay is called _______.
+### Q29. The network criterion measured by transit time, response time, throughput and delay is called _______.
 
 <span lang='hi'>Transit time, response time, throughput और delay से maape jane वाले network criterion को _______ कहते हैं।</span>
 
@@ -647,7 +607,47 @@
 
 *Performance = transit time + response time (throughput और delay isse जुड़े measures हैं).*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q30. Accuracy in data communication means:
+
+<span lang='hi'>Data communication में accuracy का अर्थ है:</span>
+
+- **(A)** Data is sent quickly / data तेज़ी से भेजा जाता है
+- **(B)** Data is not corrupted / data corrupted (खराब) नहीं होता ✅ **(CORRECT)**
+- **(C)** Data is encrypted / data encrypt होता है
+- **(D)** Data reaches the receiver / data receiver तक pahunchta है
+
+**✔ Correct Answer: (B) Data is not corrupted** — Accuracy means the system must deliver the data accurately. Data that has been altered in transmission and left uncorrected is useless.
+
+*Accuracy का मतलब है system data को accurately (सही) पहुँचाए. जो data transmission में बदल गया और सुधारा नहीं गया, बेकार है।*
+
+**★ Nukta (Key Point):** Accuracy = error-free data; altered/corrupted data is useless.
+
+*Accuracy = error-free data; बदल गया/corrupt data बेकार है।*
+
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q8] · Hard*
+
+---
+### Q31. An unauthorized user is a network _______ issue.
+
+<span lang='hi'>An unauthorized user एक network _______ issue है.</span>
+
+- **(A)** Performance / performance
+- **(B)** Reliability / reliability
+- **(C)** Security / security ✅ **(CORRECT)**
+- **(D)** All of the above / ऊपर दिए गए सभी
+
+**✔ Correct Answer: (C) Security** — Security means protecting data from unauthorized access, protecting data from damage, and ensuring confidentiality and data integrity. An unauthorized user is a security issue.
+
+*Security का मतलब है data को unauthorized access से bachana, damage से bachana, और confidentiality और data integrity sunishchit करना। Unauthorized user एक security issue है।*
+
+**★ Nukta (Key Point):** Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).
+
+*Security = unauthorized access से बचाव + confidentiality + integrity (CIA triad).*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q40] · Hard*
 
 ---
 ### Q32. Which of the following is NOT one of the three fundamental criteria (properties) that a network must meet?
@@ -667,7 +667,7 @@
 
 *Network criteria = 3: Performance, Reliability, Security.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Hard*
 
 ---
 ### Q33. The capacity of a communication channel is measured in:
@@ -687,7 +687,67 @@
 
 *Channel capacity ↔ bandwidth (Hz या bps) — यही standard इकाई है.*
 
-*[Source: KVS PGT/TGT/PRT computer banks 2018 (via jagranjosh)]*
+*[Source: KVS PGT/TGT/PRT computer banks 2018 (via jagranjosh)] · Hard*
+
+---
+### Q34. Consider a 100 Mbps link between an earth station (sender) and a satellite (receiver) at an altitude of 2100 km. The signal propagates at 3×10⁸ m/s. The time taken (in milliseconds, rounded to two decimal places) for the receiver to completely receive a 1000-byte packet transmitted by the sender is ______.
+
+<span lang='hi'>100 Mbps के link पर earth station से 2100 km ऊँचे satellite को 1000-byte packet भेजा गया; signal की speed 3×10⁸ m/s है। Receiver को packet पूरा मिलने में लगा समय (ms में, दो दशमलव) कितना है?</span>
+
+- **(A)** 7.08 / 7.08 ✅ **(CORRECT)**
+- **(B)** 2.10 / 2.10
+- **(C)** 7.00 / 7.00
+- **(D)** 21.08 / 21.08
+
+**✔ Correct Answer: (A) 7.08** — Transmission time = 8000 bits ÷ 10⁸ bps = 0.08 ms; propagation time = 2100×10³ m ÷ 3×10⁸ m/s = 7 ms; total = 7.08 ms — link ki poori latency transmission aur propagation dono ka yog hota hai.
+
+*Transmission time = 8000 ÷ 10⁸ = 0.08 ms; propagation = 2100×10³ ÷ 3×10⁸ = 7 ms; kul = 7.08 ms — dono delay milte hain.*
+
+**★ Nukta (Key Point):** Round-off trap: 2.10 sirf propagation ka fraction pakadta hai; 7.00 transmission time bhool jata hai.
+
+*Round-off jaal: 2.10 sirf propagation; 7.00 mein transmission time chhoot jata hai.*
+
+*[Source: GATE CS 2022] · Hard*
+
+---
+### Q35. What is the bit rate for transmitting an uncompressed 800×600 pixel colour frame with 8 bits/pixel at 40 frames per second?
+
+<span lang='hi'>बिना compression के 800×600 pixel वाला colour frame (8 bits/pixel) 40 frames per second पर transmit हो — bit rate कितना होगा?</span>
+
+- **(A)** 2.4 Mbps / 2.4 Mbps
+- **(B)** 153.6 Mbps / 153.6 Mbps ✅ **(CORRECT)**
+- **(C)** 15.36 Mbps / 15.36 Mbps
+- **(D)** 1536 Mbps / 1536 Mbps
+
+**✔ Correct Answer: (B) 153.6 Mbps** — 800×600×8 bits × 40 = 153,600,000 bps = 153.6 Mbps — frame ke total bits ko frame rate se guna karo.
+
+*800×600×8 × 40 = 15,36,00,000 bps = 153.6 Mbps — frame ke bits × frame rate.*
+
+**★ Nukta (Key Point):** Decimal shift jaal: 15.36 aur 1536 bas decimal ki galti hain; 2.4 Mbps sirf pixel count se bina bits aur frames ke nikla hai.
+
+*Decimal ki galtiyan: 15.36/1536; 2.4 Mbps bits aur frames bhool kar aata hai.*
+
+*[Source: KVS PGT Computer Science 2017] · Hard*
+
+---
+### Q36. An analog signal carries 4 bits in each signal unit. If 1000 signal units are sent per second, then the baud rate and bit rate of the signal are ______ and ______.
+
+<span lang='hi'>एक analog signal हर signal unit में 4 bits रखता है। 1000 signal units per second भेजे जाएँ तो signal की baud rate और bit rate क्रमशः कितनी होगी?</span>
+
+- **(A)** 4000 bauds/sec, 4000 bps / 4000 bauds/sec, 4000 bps
+- **(B)** 1000 bauds/sec, 1000 bps / 1000 bauds/sec, 1000 bps
+- **(C)** 4000 bauds/sec, 1000 bps / 4000 bauds/sec, 1000 bps
+- **(D)** 1000 bauds/sec, 4000 bps / 1000 bauds/sec, 4000 bps ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) 1000 bauds/sec, 4000 bps** — Baud rate = signal units per second = 1000 bauds; bit rate = baud × bits per unit = 1000×4 = 4000 bps — baud rate signalling speed hai, bit rate data speed.
+
+*Baud rate = 1000 signals/sec = 1000 bauds; bit rate = 1000×4 = 4000 bps — baud signal ki speed, bit rate data ki.*
+
+**★ Nukta (Key Point):** Dono ko same mat samjho: 4000 bauds/4000 bps confusion hai; 4000 bauds/1000 bps ulta ratio hai.
+
+*Dono alag hain: 4000/4000 confusion; 4000/1000 ulta hai.*
+
+*[Source: KVS PGT Computer Science 2017] · Hard*
 
 ---
 
@@ -695,27 +755,7 @@
 
 *Syllabus: Transmission Mode - Simplex, Half-Duplex, Full-Duplex*
 
-### Q34. Which of the following transmission directions listed is not a legitimate channel?
-
-<span lang='hi'>निम्नलिखित में से कौन सा transmission direction एक legitimate (vaidh) channel नहीं है?</span>
-
-- **(A)** Simplex / simplex
-- **(B)** Half Duplex / half duplex
-- **(C)** Full Duplex / full duplex
-- **(D)** Double Duplex / double duplex ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Double Duplex** — The three legitimate directions of data flow are simplex (one way only), half-duplex (both ways, one at a time) and full-duplex (both ways simultaneously). Double duplex is not a stअंदरd term.
-
-*Data flow के तीन legitimate directions हैं: simplex (एक ही तरफ़), half-duplex (दोनों तरफ़, एक समय में एक), full-duplex (दोनों तरफ़, एक साथ). Double duplex कोई stअंदरd term नहीं है।*
-
-**★ Nukta (Key Point):** 3 transmission modes: Simplex, Half-Duplex, Full-Duplex. Double duplex = गलत.
-
-*3 transmission modes: Simplex, Half-Duplex, Full-Duplex. Double duplex = गलत है।*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q3]*
-
----
-### Q35. Communication between a computer and a keyboard involves ______________ transmission.
+### Q37. Communication between a computer and a keyboard involves ______________ transmission.
 
 <span lang='hi'>Computer और keyboard के बीच communication में ______________ transmission होता है।</span>
 
@@ -732,10 +772,10 @@
 
 *Keyboard -> Computer = simplex (एक तरफ़). Examples: keyboard-monitor, TV broadcast.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q33]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q33] · Medium*
 
 ---
-### Q36. A television broadcast is an example of _______ transmission.
+### Q38. A television broadcast is an example of _______ transmission.
 
 <span lang='hi'>Television broadcast _______ transmission का एक example है।</span>
 
@@ -752,10 +792,10 @@
 
 *TV/radio broadcast = simplex (station -> TV ही, wapas नहीं).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q41]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q41] · Medium*
 
 ---
-### Q37. What is the mode of transmission where data flows in only one direction?
+### Q39. What is the mode of transmission where data flows in only one direction?
 
 <span lang='hi'>Wo transmission mode kaunsa है जिसमें data सिर्फ एक direction में flow करता है?</span>
 
@@ -772,10 +812,10 @@
 
 *Simplex = सिर्फ एक तरफ़ (keyboard to monitor, TV broadcast).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q3]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q3] · Medium*
 
 ---
-### Q38. Which transmission mode is used in walkie-talkie communication?
+### Q40. Which transmission mode is used in walkie-talkie communication?
 
 <span lang='hi'>Walkie-talkie communication में कौन सा transmission mode use होता है?</span>
 
@@ -792,70 +832,10 @@
 
 *Walkie-talkie = half-duplex (push-to-talk, एक समय में एक ही bolega).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q10]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q10] · Medium*
 
 ---
-### Q39. What is the difference between half-duplex and full-duplex transmission modes?
-
-<span lang='hi'>Half-Duplex और Full-Duplex transmission modes में अंतर क्या है?</span>
-
-- **(A)** Half-duplex allows only one-way flow; full-duplex also allows only one-way flow / Half-Duplex में सिर्फ one-way flow; Full-Duplex में भी सिर्फ one-way flow
-- **(B)** Half-duplex flows both ways one direction at a time; full-duplex flows both ways at the same time / Half-Duplex में data दोनों तरफ़ पर एक समय में एक direction; Full-Duplex में एक साथ दोनों तरफ़ ✅ **(CORRECT)**
-- **(C)** Half-duplex is only for wireless; full-duplex only for wired networks / Half-Duplex सिर्फ wireless के लिए; Full-Duplex सिर्फ wired के लिए
-- **(D)** There is no difference between the two / दोनों में कोई अंतर नहीं है
-
-**✔ Correct Answer: (B) Half-duplex flows both ways one direction at a time; full-duplex flows both ways at the same time** — Half-duplex = both directions, one at a time (walkie-talkie). Full-duplex = both directions simultaneously (telephone).
-
-*Half-Duplex = दोनों direction, पर एक समय में एक (walkie-talkie)। Full-Duplex = एक साथ दोनों direction (telephone)।*
-
-**★ Nukta (Key Point):** Half = एक time पर एक ही side (walkie-talkie). Full = दोनों side एक साथ (telephone).
-
-*Half = एक समय में एक side (walkie-talkie)। Full = दोनों side एक साथ (telephone)।*
-
-*[Source: Forouzan Ch1 (Q1-6) — Practice Set]*
-
----
-### Q40. Data flow between two devices can occur in a _______ way.
-
-<span lang='hi'>Do devices के बीच data flow _______ tareeke से हो सकता है।</span>
-
-- **(A)** simplex / simplex
-- **(B)** half-duplex / half-duplex
-- **(C)** full-duplex / full-duplex
-- **(D)** all of the above / ऊपर दिए गए सभी ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) all of the above** — Data flow between two devices can be simplex (one way), half-duplex (both ways, one at a time) or full-duplex (both ways at the same time). Hence all of the above.
-
-*Do devices के बीच data flow simplex (एक तरफ़), half-duplex (दोनों तरफ़, एक समय में एक) या full-duplex (दोनों तरफ़, एक साथ) हो सकता है। इसलिए ऊपर सभी सही हैं।*
-
-**★ Nukta (Key Point):** 3 ways of data flow: simplex, half-duplex, full-duplex.
-
-*Data flow के 3 tareeke: simplex, half-duplex, full-duplex.*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q45]*
-
----
-### Q41. In a telephone conversation, both persons can speak and hear each other at the same time. This is an example of _______.
-
-<span lang='hi'>Telephone conversation में दोनों persons एक साथ bol और sun सकते हैं। यह _______ का example है।</span>
-
-- **(A)** Simplex / simplex
-- **(B)** Half-duplex / half-duplex
-- **(C)** Full-duplex / full-duplex ✅ **(CORRECT)**
-- **(D)** Unicast / unicast
-
-**✔ Correct Answer: (C) Full-duplex** — Full-duplex: both stations can transmit and receive simultaneously. The telephone network is Forouzan's example of full-duplex.
-
-*Full-duplex: दोनों stations एक साथ transmit और receive कर सकते हैं। Telephone network full-duplex का Forouzan का example है।*
-
-**★ Nukta (Key Point):** Telephone = full-duplex (दोनों एक साथ bol और sun सकते हैं).
-
-*Telephone = full-duplex (दोनों एक साथ bol और sun सकते हैं).*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q42. Which of the following statements are TRUE?
+### Q41. Which of the following statements are TRUE?
 1. Hubs operate in Half-Duplex mode.
 2. Switches operate in Full-Duplex mode.
 3. Routers broadcast by default.
@@ -878,7 +858,87 @@
 
 *Hub = Half-Duplex + एक collision domain; Switch = Full-Duplex + per-port collision domain; Router = broadcasts रोकता है।*
 
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
+
+---
+### Q42. Which of the following transmission directions listed is not a legitimate channel?
+
+<span lang='hi'>निम्नलिखित में से कौन सा transmission direction एक legitimate (vaidh) channel नहीं है?</span>
+
+- **(A)** Simplex / simplex
+- **(B)** Half Duplex / half duplex
+- **(C)** Full Duplex / full duplex
+- **(D)** Double Duplex / double duplex ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Double Duplex** — The three legitimate directions of data flow are simplex (one way only), half-duplex (both ways, one at a time) and full-duplex (both ways simultaneously). Double duplex is not a stअंदरd term.
+
+*Data flow के तीन legitimate directions हैं: simplex (एक ही तरफ़), half-duplex (दोनों तरफ़, एक समय में एक), full-duplex (दोनों तरफ़, एक साथ). Double duplex कोई stअंदरd term नहीं है।*
+
+**★ Nukta (Key Point):** 3 transmission modes: Simplex, Half-Duplex, Full-Duplex. Double duplex = गलत.
+
+*3 transmission modes: Simplex, Half-Duplex, Full-Duplex. Double duplex = गलत है।*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q3] · Hard*
+
+---
+### Q43. What is the difference between half-duplex and full-duplex transmission modes?
+
+<span lang='hi'>Half-Duplex और Full-Duplex transmission modes में अंतर क्या है?</span>
+
+- **(A)** Half-duplex allows only one-way flow; full-duplex also allows only one-way flow / Half-Duplex में सिर्फ one-way flow; Full-Duplex में भी सिर्फ one-way flow
+- **(B)** Half-duplex flows both ways one direction at a time; full-duplex flows both ways at the same time / Half-Duplex में data दोनों तरफ़ पर एक समय में एक direction; Full-Duplex में एक साथ दोनों तरफ़ ✅ **(CORRECT)**
+- **(C)** Half-duplex is only for wireless; full-duplex only for wired networks / Half-Duplex सिर्फ wireless के लिए; Full-Duplex सिर्फ wired के लिए
+- **(D)** There is no difference between the two / दोनों में कोई अंतर नहीं है
+
+**✔ Correct Answer: (B) Half-duplex flows both ways one direction at a time; full-duplex flows both ways at the same time** — Half-duplex = both directions, one at a time (walkie-talkie). Full-duplex = both directions simultaneously (telephone).
+
+*Half-Duplex = दोनों direction, पर एक समय में एक (walkie-talkie)। Full-Duplex = एक साथ दोनों direction (telephone)।*
+
+**★ Nukta (Key Point):** Half = एक time पर एक ही side (walkie-talkie). Full = दोनों side एक साथ (telephone).
+
+*Half = एक समय में एक side (walkie-talkie)। Full = दोनों side एक साथ (telephone)।*
+
+*[Source: Forouzan Ch1 (Q1-6) — Practice Set] · Hard*
+
+---
+### Q44. Data flow between two devices can occur in a _______ way.
+
+<span lang='hi'>Do devices के बीच data flow _______ tareeke से हो सकता है।</span>
+
+- **(A)** simplex / simplex
+- **(B)** half-duplex / half-duplex
+- **(C)** full-duplex / full-duplex
+- **(D)** all of the above / ऊपर दिए गए सभी ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) all of the above** — Data flow between two devices can be simplex (one way), half-duplex (both ways, one at a time) or full-duplex (both ways at the same time). Hence all of the above.
+
+*Do devices के बीच data flow simplex (एक तरफ़), half-duplex (दोनों तरफ़, एक समय में एक) या full-duplex (दोनों तरफ़, एक साथ) हो सकता है। इसलिए ऊपर सभी सही हैं।*
+
+**★ Nukta (Key Point):** 3 ways of data flow: simplex, half-duplex, full-duplex.
+
+*Data flow के 3 tareeke: simplex, half-duplex, full-duplex.*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q45] · Hard*
+
+---
+### Q45. In a telephone conversation, both persons can speak and hear each other at the same time. This is an example of _______.
+
+<span lang='hi'>Telephone conversation में दोनों persons एक साथ bol और sun सकते हैं। यह _______ का example है।</span>
+
+- **(A)** Simplex / simplex
+- **(B)** Half-duplex / half-duplex
+- **(C)** Full-duplex / full-duplex ✅ **(CORRECT)**
+- **(D)** Unicast / unicast
+
+**✔ Correct Answer: (C) Full-duplex** — Full-duplex: both stations can transmit and receive simultaneously. The telephone network is Forouzan's example of full-duplex.
+
+*Full-duplex: दोनों stations एक साथ transmit और receive कर सकते हैं। Telephone network full-duplex का Forouzan का example है।*
+
+**★ Nukta (Key Point):** Telephone = full-duplex (दोनों एक साथ bol और sun सकते हैं).
+
+*Telephone = full-duplex (दोनों एक साथ bol और sun सकते हैं).*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Hard*
 
 ---
 
@@ -886,367 +946,7 @@
 
 *Syllabus: Physical Topology - Mesh, Star, Bus, Ring, Others (Hybrid, Tree) | Logical Topology - IEEE 802*
 
-### Q43. What are the advantages of star topology?
-
-<span lang='hi'>Star topology के क्या advantages (लाभ) हैं?</span>
-
-- **(A)** Less number of cables are required / कम number में cables चाहिए ✅ **(CORRECT)**
-- **(B)** More number of cables are required / ज़्यादा number में cables चाहिए
-- **(C)** It is a distributed topology / यह एक distributed topology है
-- **(D)** Security is high / security ज़्यादा है
-
-**✔ Correct Answer: (A) Less number of cables are required** — In a star topology, each device has a dedicated point-to-point link only to a central hub, so far fewer cables are required than in a mesh. It is also easy to install and reconfigure.
-
-*Star topology में हर device का सिर्फ central hub से dedicated point-to-point link होता है, इसलिए mesh की tulna में kaafi कम cables चाहिए. इसे install और reconfigure करना भी आसान है।*
-
-**★ Nukta (Key Point):** Star = hub at centre, dedicated links, fewer cables (vs mesh), easy to install. But if hub fails, whole network goes down.
-
-*Star = centre में hub, dedicated links, कम cables (mesh के muqable), install करना आसान. लेकिन hub fail हो गया toh पूरा network band हो जाता है।*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q1]*
-
----
-### Q44. Which type of topology is best suited for large businesses which must carefully control and coordinate the operation of distributed branch outlets?
-
-<span lang='hi'>Large businesses के लिए कौन सी topology सबसे उपयुक्त है, jahan distributed branch outlets के operation को carefully control और coordinate करना हो?</span>
-
-- **(A)** Ring / ring
-- **(B)** Local area / local area
-- **(C)** Hierarchical / hierarchical (tree) ✅ **(CORRECT)**
-- **(D)** Star / star
-
-**✔ Correct Answer: (C) Hierarchical** — A hierarchical (tree) topology is best for large organisations with distributed branch outlets because it is a hierarchy of stars and allows central control and coordination at each level.
-
-*Hierarchical (tree) topology large organisations के लिए सबसे उपयुक्त है jahan distributed branch outlets hon, क्योंकि यह stars की hierarchy है और हर level पर central control/coordination की अनुमति देती है।*
-
-**★ Nukta (Key Point):** Tree = hierarchical star. Large orgs with branches -> hierarchical/tree topology.
-
-*Tree = hierarchical star. Badi sansthaon में branches के लिए -> hierarchical/tree topology.*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q2]*
-
----
-### Q45. Which one of the following is not a network topology?
-
-<span lang='hi'>निम्नलिखित में से कौन एक network topology नहीं है?</span>
-
-- **(A)** Star / star
-- **(B)** Ring / ring
-- **(C)** Bus / bus
-- **(D)** Peer to Peer / peer to peer ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Peer to Peer** — Star, ring and bus are physical topologies. Peer-to-peer is a network architecture (how devices share resources), not a topology.
-
-*Star, ring और bus physical topologies हैं। Peer-to-peer एक network architecture है (devices कैसे resources share karenge), topology नहीं।*
-
-**★ Nukta (Key Point):** Topologies = mesh, star, bus, ring, hybrid, tree. P2P = architecture (not topology).
-
-*Topologies = mesh, star, bus, ring, hybrid, tree. P2P = architecture है (topology नहीं).*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q9]*
-
----
-### Q46. The repeater is used in _______ topology.
-
-<span lang='hi'>Repeater का use _______ topology में होता है।</span>
-
-- **(A)** Mesh Topology / mesh topology
-- **(B)** Ring Topology / ring topology
-- **(C)** Bus Topology / bus topology ✅ **(CORRECT)**
-- **(D)** Star Topology / star topology
-
-**✔ Correct Answer: (C) Bus Topology** — In a bus topology, one long backbone cable carries the signal over the whole length; a repeater is used to regenerate/amplify the signal so it can travel the long distance without degradation.
-
-*Bus topology में एक लंबा backbone cable पूरी length पर signal le जाता है; repeater का use signal को regenerate/amplify करने के लिए होता है ताकि वह लंबी दूरी बिना ख़राब हुए जा sake।*
-
-**★ Nukta (Key Point):** Bus = long backbone -> signal weak हो जाता है -> repeater use होता है. (Ring में भी हर device repeater की तरह काम करता है.)
-
-*Bus = लंबा backbone -> signal kamzor हो जाता है -> repeater use होता है। (Ring में भी हर device repeater की तरह काम करता है.)*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q50]*
-
----
-### Q47. What type of topology connects each node in a closed loop?
-
-<span lang='hi'>कौन सी topology हर node को एक closed loop में जोड़ती है?</span>
-
-- **(A)** Star / star
-- **(B)** Mesh / mesh
-- **(C)** Ring / ring ✅ **(CORRECT)**
-- **(D)** Bus / bus
-
-**✔ Correct Answer: (C) Ring** — In a ring topology, each device is connected to its two neighbours (one on each side), forming a closed loop. Data travels in one direction and each device regenerates the signal (token passing).
-
-*Ring topology में हर device अपने दोनों neighbours से जुड़ा होता है (एक दोनों तरफ़), जिससे एक closed loop बनता है। Data एक ही direction में जाता है और हर device signal को regenerate करता है (token passing).*
-
-**★ Nukta (Key Point):** Ring = closed loop, one direction, token passing, each device = repeater.
-
-*Ring = closed loop, एक direction, token passing, हर device = repeater.*
-
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q4]*
-
----
-### Q48. In a _______ topology, every device has a dedicated point-to-point link to every other device. For n devices, the number of links is n(n-1)/2 and each device needs n-1 I/O ports.
-
-<span lang='hi'>_______ topology में हर device का हर दूसरे device से dedicated point-to-point link होता है। n devices के लिए links की संख्या n(n-1)/2 होती है और हर device को n-1 I/O ports चाहिए।</span>
-
-- **(A)** Bus / bus
-- **(B)** Star / star
-- **(C)** Ring / ring
-- **(D)** Mesh / mesh ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Mesh** — Mesh: every device has a dedicated point-to-point link to every other device. Number of links = n(n-1)/2; each device needs n-1 I/O ports. (Forouzan)
-
-*Mesh: हर device का हर दूसरे device से dedicated point-to-point link होता है। Links की संख्या = n(n-1)/2; हर device को n-1 I/O ports चाहिए। (Forouzan)*
-
-**★ Nukta (Key Point):** Mesh formula (EXAM favourite): links = n(n-1)/2, ports per device = n-1. E.g., 5 devices -> 10 links.
-
-*Mesh formula (EXAM favourite): links = n(n-1)/2, हर device के ports = n-1. Jaise 5 devices -> 10 links.*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q49. For n devices in a network, how many cable links are required in a mesh topology?
-
-<span lang='hi'>Network में n devices के लिए mesh topology में कितने cable links चाहिए?</span>
-
-- **(A)** n / n
-- **(B)** n - 1 / n - 1
-- **(C)** n(n - 1)/2 / n(n - 1)/2 ✅ **(CORRECT)**
-- **(D)** n(n - 1) / n(n - 1)
-
-**✔ Correct Answer: (C) n(n - 1)/2** — In a mesh every device has a dedicated point-to-point link to every other device, so links = n(n-1)/2 (each link is shared by two devices).
-
-*Mesh में हर device का हर दूसरे device तक dedicated point-to-point link होता है, इसलिए links = n(n-1)/2।*
-
-**★ Nukta (Key Point):** Mesh cables = n(n-1)/2, ports/device = n-1. Star = n cables. Ring = n. Bus = 1 backbone.
-
-*Mesh cables = n(n-1)/2, ports/device = n-1। Star = n। Ring = n। Bus = 1।*
-
-*[Source: Forouzan Ch1 (Q1-8) — Practice Set]*
-
----
-### Q50. Six devices are arranged in a mesh topology. How many cables are needed, and how many ports does each device need?
-
-<span lang='hi'>छह devices को mesh topology में जोड़ा गया है। कितनी cables चाहिए और हर device को कितने ports चाहिए?</span>
-
-- **(A)** 15 cables, 5 ports each / 15 cables, हर device पर 5 ports ✅ **(CORRECT)**
-- **(B)** 30 cables, 6 ports each / 30 cables, हर device पर 6 ports
-- **(C)** 15 cables, 6 ports each / 15 cables, हर device पर 6 ports
-- **(D)** 6 cables, 5 ports each / 6 cables, हर device पर 5 ports
-
-**✔ Correct Answer: (A) 15 cables, 5 ports each** — Links = n(n-1)/2 = 6×5/2 = 15 cables. Each device connects to the other 5 devices, so each needs n-1 = 5 ports.
-
-*Links = n(n-1)/2 = 6×5/2 = 15 cables। हर device बाकी 5 devices से जुड़ता है, इसलिए ports = 5।*
-
-**★ Nukta (Key Point):** Mesh formula: cables = n(n-1)/2, ports/device = n-1. Numerical में हमेशा yahi do numbers maange जाते हैं.
-
-*Mesh: cables = n(n-1)/2, ports/device = n-1। Numerical में यही दो numbers पूछे जाते हैं।*
-
-*[Source: Forouzan Ch1 (P1-3) — Practice Set (Problem)]*
-
----
-### Q51. If a computer network cable breaks, the whole network goes down in which topology?
-
-<span lang='hi'>यदि computer network cable टूट जाए, तो किस topology में पूरा network बंद हो जाता है?</span>
-
-- **(A)** Star / Star
-- **(B)** Ring / Ring ✅ **(CORRECT)**
-- **(C)** Mesh / Mesh
-- **(D)** All of these / ये सभी
-
-**✔ Correct Answer: (B) Ring** — In a Ring topology every device is connected to its two neighbours in a closed loop — one cable break opens the ring, so the whole network goes down.
-
-*Ring topology में हर device अपने दो neighbours से बंद loop में जुड़ा होता है — एक cable टूटने से ring खुल जाती है, इसलिए पूरा network बंद हो जाता है।*
-
-**★ Nukta (Key Point):** Ring = one break downs ALL. Star = only that device drops. Mesh = network survives (many paths).
-
-*Ring = एक break से सब down। Star = सिर्फ वह device गिरता है। Mesh = network बच जाता है (कई paths)।*
-
-*[Source: Repo: Unit Test-4 Solution (OCR), p16]*
-
----
-### Q52. In which topology does the failure of a single cable or device NOT affect the rest of the network?
-
-<span lang='hi'>किस topology में एक cable या device के fail होने पर बाकी network प्रभावित नहीं होता?</span>
-
-- **(A)** Bus / Bus
-- **(B)** Ring / Ring
-- **(C)** Star / Star
-- **(D)** Mesh / Mesh ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Mesh** — In a mesh, redundant links exist — if one link/device fails, traffic takes another path, so the rest of the network keeps working. In bus/ring a cable failure breaks the whole network; in star the hub is a single point of failure.
-
-*Mesh में redundant links होती हैं — एक link/device fail होने पर traffic दूसरे रास्ते से चलता है। Bus/ring में cable failure पूरा network तोड़ देता है; star में hub single point of failure है।*
-
-**★ Nukta (Key Point):** Mesh = most fault-tolerant (redundant paths) — इसलिए 'highest robustness' mesh में होती है.
-
-*Mesh = सबसे ज़्यादा fault-tolerant (redundant paths) — इसीलिए mesh most robust है।*
-
-*[Source: Forouzan Ch1 (P1-4) — Practice Set (Problem)]*
-
----
-### Q53. In a _______ topology, each device has a dedicated point-to-point link only to a central controller, usually called a hub (or switch).
-
-<span lang='hi'>_______ topology में हर device का सिर्फ एक central controller (hub/switch) से dedicated point-to-point link होता है।</span>
-
-- **(A)** Mesh / mesh
-- **(B)** Ring / ring
-- **(C)** Star / star ✅ **(CORRECT)**
-- **(D)** Bus / bus
-
-**✔ Correct Answer: (C) Star** — Star: each device has a dedicated point-to-point link only to a central controller, usually called a hub. The hub relays frames to the destination. (Forouzan)
-
-*Star: हर device का सिर्फ एक central controller (usually hub) से dedicated point-to-point link होता है। Hub frames को destination तक relay करता है। (Forouzan)*
-
-**★ Nukta (Key Point):** Star = hub/switch at centre; easy to install & reconfigure; but if hub fails, the WHOLE network goes down.
-
-*Star = centre में hub/switch; install और reconfigure करना आसान; लेकिन hub fail हो गया तो पूरा network बंद हो जाता है।*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q54. In a _______ topology, one long cable acts as a backbone to link all the devices; devices connect via drop lines and taps, and terminators are needed at both ends of the backbone.
-
-<span lang='hi'>_______ topology में एक लंबा cable backbone की तरह सभी devices को जोड़ता है; devices drop lines और taps से connect होते हैं, और backbone के दोनों ends पर terminators चाहिए।</span>
-
-- **(A)** Bus / bus ✅ **(CORRECT)**
-- **(B)** Star / star
-- **(C)** Ring / ring
-- **(D)** Mesh / mesh
-
-**✔ Correct Answer: (A) Bus** — Bus: one long cable acts as a backbone to link all the devices. Nodes are connected to the bus cable by drop lines and taps. Terminators at both ends absorb the signal to prevent reflection. (Forouzan)
-
-*Bus: एक लंबा cable backbone की तरह सभी devices को जोड़ता है। Nodes को bus cable से drop lines और taps के through जोड़ा जाता है। दोनों ends पर terminators signal को absorb करते हैं ताकि reflection na हो। (Forouzan)*
-
-**★ Nukta (Key Point):** Bus = one backbone + drop lines + taps + terminators at both ends. Fault isolation is difficult; a backbone break stops everything.
-
-*Bus = एक backbone + drop lines + taps + दोनों ends पर terminators. Fault isolation मुश्किल है; backbone tootne से सब कुछ band हो जाता है।*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q55. Which network topology requires a multipoint connection?
-
-<span lang='hi'>किस network topology में multipoint connection की आवश्यकता होती है?</span>
-
-- **(A)** Ring / Ring
-- **(B)** Bus / Bus ✅ **(CORRECT)**
-- **(C)** Star / Star
-- **(D)** Mesh / Mesh
-
-**✔ Correct Answer: (B) Bus** — In a bus topology one long cable acts as a backbone and three or more devices share it — a multipoint connection. Mesh, star and ring use point-to-point links.
-
-*Bus topology में एक long cable backbone बनती है और तीन+ devices उसे share करती हैं — यही multipoint connection है। Mesh, star, ring point-to-point links use करते हैं।*
-
-**★ Nukta (Key Point):** Bus = multipoint (shared backbone). Mesh/Star/Ring = point-to-point links. Yahi difference exam में poochha जाता है.
-
-*Bus = multipoint (shared backbone)। Mesh/Star/Ring = point-to-point links।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q56. In a _______ topology, each device is connected to its two neighbours, data travels in one direction around the loop, and each device regenerates (repeats) the signal - this is called token passing.
-
-<span lang='hi'>_______ topology में हर device अपने दो neighbours से जुड़ा होता है, data loop में एक ही direction में जाता है, और हर device signal को regenerate (repeat) करता है - इसे token passing कहते हैं।</span>
-
-- **(A)** Bus / bus
-- **(B)** Ring / ring ✅ **(CORRECT)**
-- **(C)** Star / star
-- **(D)** Mesh / mesh
-
-**✔ Correct Answer: (B) Ring** — Ring: each device is connected to its two neighbours. Data travels in one direction. Each device in the ring incorporates a repeater; it regenerates the bits and passes them along. Access is typically by token passing. (Forouzan)
-
-*Ring: हर device अपने दो neighbours से जुड़ा होता है। Data एक ही direction में जाता है। Ring का हर device एक repeater की तरह काम करता है; यह bits को regenerate करके आगे pass करता है। Access आम तौर पर token passing से होता है। (Forouzan)*
-
-**★ Nukta (Key Point):** Ring = loop, one direction, token passing, each device = repeater.
-
-*Ring = loop, एक direction, token passing, हर device = repeater.*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q57. A network in which two or more different topologies are combined (e.g., a star connected to another star) is called a _______ topology, while a _______ topology is a hierarchy of stars (a variation of the star topology).
-
-<span lang='hi'>जिसमें do या ज़्यादा अलग topologies combine हो (जैसे एक star दूसरे star से जुड़ा हो), use _______ topology कहते हैं, और _______ topology stars की hierarchy है (star topology का variation).</span>
-
-- **(A)** Hybrid ; Tree / hybrid ; tree ✅ **(CORRECT)**
-- **(B)** Tree ; Hybrid / tree ; hybrid
-- **(C)** Mesh ; Ring / mesh ; ring
-- **(D)** Bus ; Star / bus ; star
-
-**✔ Correct Answer: (A) Hybrid ; Tree** — Hybrid = a combination of two or more different topologies (e.g., a star of stars). Tree = a hierarchical arrangement of stars, a variation of the star topology.
-
-*Hybrid = do या ज़्यादा अलग topologies का combination है (जैसे star of stars). Tree = stars की hierarchical arrangement है, star topology का एक variation.*
-
-**★ Nukta (Key Point):** Hybrid = mix of topologies; Tree = star of stars (hierarchical star).
-
-*Hybrid = topologies का mix; Tree = star of stars (hierarchical star).*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q58. Hierarchical topology, used to establish a network, is also known as a:
-
-<span lang='hi'>Hierarchical topology, जिससे network स्थापित किया जाता है, किस नाम से भी जानी जाती है?</span>
-
-- **(A)** Bus network / Bus network
-- **(B)** Star network / Star network
-- **(C)** Tree network / Tree network ✅ **(CORRECT)**
-- **(D)** Mesh network / Mesh network
-
-**✔ Correct Answer: (C) Tree network** — A hierarchical (tree) topology connects groups of computers to a central computer (root/hub) and then links those groups in a tree-like structure — a star of stars.
-
-*Hierarchical (tree) topology computers के groups को एक central computer (root/hub) से जोड़ती है, और फिर उन groups को tree जैसी structure में जोड़ती है — star of stars।*
-
-**★ Nukta (Key Point):** Hierarchical = Tree = star-of-stars (root + branches). Used in big office/campus LANs.
-
-*Hierarchical = Tree = star-of-stars (root + branches)। बड़े office/campus LANs में use होती है।*
-
-*[Source: Repo: Unit Test-4 Solution (OCR), p17]*
-
----
-### Q59. The ______ topology of a network defines how the devices are physically laid out/connected, whereas the ______ topology defines how the data actually flow / how the devices access the network to transmit.
-
-<span lang='hi'>Network की _______ topology बताती है की devices physically कैसे जुड़े हैं, jabki _______ topology बताती है की data asal में कैसे flow करता है / devices transmit करने के लिए network को कैसे access करते हैं।</span>
-
-- **(A)** Logical ; Physical / logical ; physical
-- **(B)** Physical ; Logical / physical ; logical ✅ **(CORRECT)**
-- **(C)** Star ; Bus / star ; bus
-- **(D)** Mesh ; Ring / mesh ; ring
-
-**✔ Correct Answer: (B) Physical ; Logical** — Physical topology = the actual layout of devices and cables. Logical topology = the way data flows / how devices access the medium. Two networks can have the same logical topology but different physical topologies.
-
-*Physical topology = devices और cables का वास्तविक layout. Logical topology = data कैसे flow करता है / devices medium को कैसे access करते हैं। दो networks की logical topology same हो सकती है लेकिन physical अलग हो सकती है।*
-
-**★ Nukta (Key Point):** Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical possible.
-
-*Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical हो सकता है।*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q60. The IEEE 802 stअंदरds (such as 802.3 for Ethernet, 802.5 for Token Ring, 802.11 for Wi-Fi) primarily define the ______ of LANs/MANs.
-
-<span lang='hi'>IEEE 802 stअंदरds (जैसे 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi) primarily LANs/MANs की _______ define करते हैं।</span>
-
-- **(A)** Physical and Data Link layers (including the logical topology / MAC) / Physical और Data Link layers (logical topology / MAC sahit) ✅ **(CORRECT)**
-- **(B)** Only the Application layer / सिर्फ Application layer
-- **(C)** Only IP addressing / सिर्फ IP addressing
-- **(D)** Only WAN routing / सिर्फ WAN routing
-
-**✔ Correct Answer: (A) Physical and Data Link layers (including the logical topology / MAC)** — IEEE 802 is the family of stअंदरds for LANs and MANs; it covers the Physical layer and the Data Link layer (split into LLC - 802.2 - and MAC sublayers). 802.3 = Ethernet, 802.5 = Token Ring, 802.11 = Wireless LAN. The logical topology (bus/ring) is a Data-Link/MAC concern.
-
-*IEEE 802 LANs और MANs के लिए stअंदरds का family है; यह Physical layer और Data Link layer को cover करता है (LLC - 802.2 - और MAC sublayers में बनता है). 802.3 = Ethernet, 802.5 = Token Ring, 802.11 = Wireless LAN. Logical topology (bus/ring) एक Data-Link/MAC concern है।*
-
-**★ Nukta (Key Point):** IEEE 802 = LAN/MAN stअंदरds (Physical + Data Link). 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi.
-
-*IEEE 802 = LAN/MAN stअंदरds (Physical + Data Link). 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi.*
-
-*[Source: Extra (Forouzan) - fills syllabus gap]*
-
----
-### Q61. IEEE 802.2 stअंदरd is related to which sub-layer?
+### Q46. IEEE 802.2 stअंदरd is related to which sub-layer?
 
 <span lang='hi'>IEEE 802.2 stअंदरd किस sub-layer से संबंधित है?</span>
 
@@ -1263,10 +963,230 @@
 
 *802.2 = LLC। 802.3 = Ethernet/MAC, 802.5 = Token Ring, 802.11 = Wi-Fi।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q62. Which physical topology offers the highest robustness (fault tolerance) because of multiple redundant paths, but is also the most expensive and hardest to install because of the huge amount of cabling?
+### Q47. What are the advantages of star topology?
+
+<span lang='hi'>Star topology के क्या advantages (लाभ) हैं?</span>
+
+- **(A)** Less number of cables are required / कम number में cables चाहिए ✅ **(CORRECT)**
+- **(B)** More number of cables are required / ज़्यादा number में cables चाहिए
+- **(C)** It is a distributed topology / यह एक distributed topology है
+- **(D)** Security is high / security ज़्यादा है
+
+**✔ Correct Answer: (A) Less number of cables are required** — In a star topology, each device has a dedicated point-to-point link only to a central hub, so far fewer cables are required than in a mesh. It is also easy to install and reconfigure.
+
+*Star topology में हर device का सिर्फ central hub से dedicated point-to-point link होता है, इसलिए mesh की tulna में kaafi कम cables चाहिए. इसे install और reconfigure करना भी आसान है।*
+
+**★ Nukta (Key Point):** Star = hub at centre, dedicated links, fewer cables (vs mesh), easy to install. But if hub fails, whole network goes down.
+
+*Star = centre में hub, dedicated links, कम cables (mesh के muqable), install करना आसान. लेकिन hub fail हो गया toh पूरा network band हो जाता है।*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q1] · Medium*
+
+---
+### Q48. Which type of topology is best suited for large businesses which must carefully control and coordinate the operation of distributed branch outlets?
+
+<span lang='hi'>Large businesses के लिए कौन सी topology सबसे उपयुक्त है, jahan distributed branch outlets के operation को carefully control और coordinate करना हो?</span>
+
+- **(A)** Ring / ring
+- **(B)** Local area / local area
+- **(C)** Hierarchical / hierarchical (tree) ✅ **(CORRECT)**
+- **(D)** Star / star
+
+**✔ Correct Answer: (C) Hierarchical** — A hierarchical (tree) topology is best for large organisations with distributed branch outlets because it is a hierarchy of stars and allows central control and coordination at each level.
+
+*Hierarchical (tree) topology large organisations के लिए सबसे उपयुक्त है jahan distributed branch outlets hon, क्योंकि यह stars की hierarchy है और हर level पर central control/coordination की अनुमति देती है।*
+
+**★ Nukta (Key Point):** Tree = hierarchical star. Large orgs with branches -> hierarchical/tree topology.
+
+*Tree = hierarchical star. Badi sansthaon में branches के लिए -> hierarchical/tree topology.*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q2] · Medium*
+
+---
+### Q49. The repeater is used in _______ topology.
+
+<span lang='hi'>Repeater का use _______ topology में होता है।</span>
+
+- **(A)** Mesh Topology / mesh topology
+- **(B)** Ring Topology / ring topology
+- **(C)** Bus Topology / bus topology ✅ **(CORRECT)**
+- **(D)** Star Topology / star topology
+
+**✔ Correct Answer: (C) Bus Topology** — In a bus topology, one long backbone cable carries the signal over the whole length; a repeater is used to regenerate/amplify the signal so it can travel the long distance without degradation.
+
+*Bus topology में एक लंबा backbone cable पूरी length पर signal le जाता है; repeater का use signal को regenerate/amplify करने के लिए होता है ताकि वह लंबी दूरी बिना ख़राब हुए जा sake।*
+
+**★ Nukta (Key Point):** Bus = long backbone -> signal weak हो जाता है -> repeater use होता है. (Ring में भी हर device repeater की तरह काम करता है.)
+
+*Bus = लंबा backbone -> signal kamzor हो जाता है -> repeater use होता है। (Ring में भी हर device repeater की तरह काम करता है.)*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q50] · Medium*
+
+---
+### Q50. What type of topology connects each node in a closed loop?
+
+<span lang='hi'>कौन सी topology हर node को एक closed loop में जोड़ती है?</span>
+
+- **(A)** Star / star
+- **(B)** Mesh / mesh
+- **(C)** Ring / ring ✅ **(CORRECT)**
+- **(D)** Bus / bus
+
+**✔ Correct Answer: (C) Ring** — In a ring topology, each device is connected to its two neighbours (one on each side), forming a closed loop. Data travels in one direction and each device regenerates the signal (token passing).
+
+*Ring topology में हर device अपने दोनों neighbours से जुड़ा होता है (एक दोनों तरफ़), जिससे एक closed loop बनता है। Data एक ही direction में जाता है और हर device signal को regenerate करता है (token passing).*
+
+**★ Nukta (Key Point):** Ring = closed loop, one direction, token passing, each device = repeater.
+
+*Ring = closed loop, एक direction, token passing, हर device = repeater.*
+
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q4] · Medium*
+
+---
+### Q51. In a _______ topology, every device has a dedicated point-to-point link to every other device. For n devices, the number of links is n(n-1)/2 and each device needs n-1 I/O ports.
+
+<span lang='hi'>_______ topology में हर device का हर दूसरे device से dedicated point-to-point link होता है। n devices के लिए links की संख्या n(n-1)/2 होती है और हर device को n-1 I/O ports चाहिए।</span>
+
+- **(A)** Bus / bus
+- **(B)** Star / star
+- **(C)** Ring / ring
+- **(D)** Mesh / mesh ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Mesh** — Mesh: every device has a dedicated point-to-point link to every other device. Number of links = n(n-1)/2; each device needs n-1 I/O ports. (Forouzan)
+
+*Mesh: हर device का हर दूसरे device से dedicated point-to-point link होता है। Links की संख्या = n(n-1)/2; हर device को n-1 I/O ports चाहिए। (Forouzan)*
+
+**★ Nukta (Key Point):** Mesh formula (EXAM favourite): links = n(n-1)/2, ports per device = n-1. E.g., 5 devices -> 10 links.
+
+*Mesh formula (EXAM favourite): links = n(n-1)/2, हर device के ports = n-1. Jaise 5 devices -> 10 links.*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q52. In a _______ topology, each device has a dedicated point-to-point link only to a central controller, usually called a hub (or switch).
+
+<span lang='hi'>_______ topology में हर device का सिर्फ एक central controller (hub/switch) से dedicated point-to-point link होता है।</span>
+
+- **(A)** Mesh / mesh
+- **(B)** Ring / ring
+- **(C)** Star / star ✅ **(CORRECT)**
+- **(D)** Bus / bus
+
+**✔ Correct Answer: (C) Star** — Star: each device has a dedicated point-to-point link only to a central controller, usually called a hub. The hub relays frames to the destination. (Forouzan)
+
+*Star: हर device का सिर्फ एक central controller (usually hub) से dedicated point-to-point link होता है। Hub frames को destination तक relay करता है। (Forouzan)*
+
+**★ Nukta (Key Point):** Star = hub/switch at centre; easy to install & reconfigure; but if hub fails, the WHOLE network goes down.
+
+*Star = centre में hub/switch; install और reconfigure करना आसान; लेकिन hub fail हो गया तो पूरा network बंद हो जाता है।*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q53. Which network topology requires a multipoint connection?
+
+<span lang='hi'>किस network topology में multipoint connection की आवश्यकता होती है?</span>
+
+- **(A)** Ring / Ring
+- **(B)** Bus / Bus ✅ **(CORRECT)**
+- **(C)** Star / Star
+- **(D)** Mesh / Mesh
+
+**✔ Correct Answer: (B) Bus** — In a bus topology one long cable acts as a backbone and three or more devices share it — a multipoint connection. Mesh, star and ring use point-to-point links.
+
+*Bus topology में एक long cable backbone बनती है और तीन+ devices उसे share करती हैं — यही multipoint connection है। Mesh, star, ring point-to-point links use करते हैं।*
+
+**★ Nukta (Key Point):** Bus = multipoint (shared backbone). Mesh/Star/Ring = point-to-point links. Yahi difference exam में poochha जाता है.
+
+*Bus = multipoint (shared backbone)। Mesh/Star/Ring = point-to-point links।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q54. In a _______ topology, each device is connected to its two neighbours, data travels in one direction around the loop, and each device regenerates (repeats) the signal - this is called token passing.
+
+<span lang='hi'>_______ topology में हर device अपने दो neighbours से जुड़ा होता है, data loop में एक ही direction में जाता है, और हर device signal को regenerate (repeat) करता है - इसे token passing कहते हैं।</span>
+
+- **(A)** Bus / bus
+- **(B)** Ring / ring ✅ **(CORRECT)**
+- **(C)** Star / star
+- **(D)** Mesh / mesh
+
+**✔ Correct Answer: (B) Ring** — Ring: each device is connected to its two neighbours. Data travels in one direction. Each device in the ring incorporates a repeater; it regenerates the bits and passes them along. Access is typically by token passing. (Forouzan)
+
+*Ring: हर device अपने दो neighbours से जुड़ा होता है। Data एक ही direction में जाता है। Ring का हर device एक repeater की तरह काम करता है; यह bits को regenerate करके आगे pass करता है। Access आम तौर पर token passing से होता है। (Forouzan)*
+
+**★ Nukta (Key Point):** Ring = loop, one direction, token passing, each device = repeater.
+
+*Ring = loop, एक direction, token passing, हर device = repeater.*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q55. A network in which two or more different topologies are combined (e.g., a star connected to another star) is called a _______ topology, while a _______ topology is a hierarchy of stars (a variation of the star topology).
+
+<span lang='hi'>जिसमें do या ज़्यादा अलग topologies combine हो (जैसे एक star दूसरे star से जुड़ा हो), use _______ topology कहते हैं, और _______ topology stars की hierarchy है (star topology का variation).</span>
+
+- **(A)** Hybrid ; Tree / hybrid ; tree ✅ **(CORRECT)**
+- **(B)** Tree ; Hybrid / tree ; hybrid
+- **(C)** Mesh ; Ring / mesh ; ring
+- **(D)** Bus ; Star / bus ; star
+
+**✔ Correct Answer: (A) Hybrid ; Tree** — Hybrid = a combination of two or more different topologies (e.g., a star of stars). Tree = a hierarchical arrangement of stars, a variation of the star topology.
+
+*Hybrid = do या ज़्यादा अलग topologies का combination है (जैसे star of stars). Tree = stars की hierarchical arrangement है, star topology का एक variation.*
+
+**★ Nukta (Key Point):** Hybrid = mix of topologies; Tree = star of stars (hierarchical star).
+
+*Hybrid = topologies का mix; Tree = star of stars (hierarchical star).*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q56. Hierarchical topology, used to establish a network, is also known as a:
+
+<span lang='hi'>Hierarchical topology, जिससे network स्थापित किया जाता है, किस नाम से भी जानी जाती है?</span>
+
+- **(A)** Bus network / Bus network
+- **(B)** Star network / Star network
+- **(C)** Tree network / Tree network ✅ **(CORRECT)**
+- **(D)** Mesh network / Mesh network
+
+**✔ Correct Answer: (C) Tree network** — A hierarchical (tree) topology connects groups of computers to a central computer (root/hub) and then links those groups in a tree-like structure — a star of stars.
+
+*Hierarchical (tree) topology computers के groups को एक central computer (root/hub) से जोड़ती है, और फिर उन groups को tree जैसी structure में जोड़ती है — star of stars।*
+
+**★ Nukta (Key Point):** Hierarchical = Tree = star-of-stars (root + branches). Used in big office/campus LANs.
+
+*Hierarchical = Tree = star-of-stars (root + branches)। बड़े office/campus LANs में use होती है।*
+
+*[Source: Repo: Unit Test-4 Solution (OCR), p17] · Medium*
+
+---
+### Q57. The ______ topology of a network defines how the devices are physically laid out/connected, whereas the ______ topology defines how the data actually flow / how the devices access the network to transmit.
+
+<span lang='hi'>Network की _______ topology बताती है की devices physically कैसे जुड़े हैं, jabki _______ topology बताती है की data asal में कैसे flow करता है / devices transmit करने के लिए network को कैसे access करते हैं।</span>
+
+- **(A)** Logical ; Physical / logical ; physical
+- **(B)** Physical ; Logical / physical ; logical ✅ **(CORRECT)**
+- **(C)** Star ; Bus / star ; bus
+- **(D)** Mesh ; Ring / mesh ; ring
+
+**✔ Correct Answer: (B) Physical ; Logical** — Physical topology = the actual layout of devices and cables. Logical topology = the way data flows / how devices access the medium. Two networks can have the same logical topology but different physical topologies.
+
+*Physical topology = devices और cables का वास्तविक layout. Logical topology = data कैसे flow करता है / devices medium को कैसे access करते हैं। दो networks की logical topology same हो सकती है लेकिन physical अलग हो सकती है।*
+
+**★ Nukta (Key Point):** Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical possible.
+
+*Physical = कैसे जुड़े (cables); Logical = data कैसे flow करता है (access). Same logical, different physical हो सकता है।*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
+
+---
+### Q58. Which physical topology offers the highest robustness (fault tolerance) because of multiple redundant paths, but is also the most expensive and hardest to install because of the huge amount of cabling?
 
 <span lang='hi'>कौन सी physical topology सबसे ज़्यादा robust (fault tolerant) है क्योंकि ismein कई redundant paths होते हैं, लेकिन सबसे महंगी और install करने में सबसे मुश्किल भी है क्योंकि बहुत ज़्यादा cabling चाहिए?</span>
 
@@ -1283,10 +1203,150 @@
 
 *Mesh = सबसे robust + सबसे महंगी (n(n-1)/2 cables). Star = sasti और आसान लेकिन hub single point of failure है. Bus = सबसे sasti, fault isolation सबसे मुश्किल.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q63. Four network segments in Bus topology are: A1–A2, B1–B2–B3, C1–C2 and D1–D2–D3. If A1, B1, C1 and D1 are interconnected in a mesh, how many mesh connections are required?
+### Q59. Which one of the following is not a network topology?
+
+<span lang='hi'>निम्नलिखित में से कौन एक network topology नहीं है?</span>
+
+- **(A)** Star / star
+- **(B)** Ring / ring
+- **(C)** Bus / bus
+- **(D)** Peer to Peer / peer to peer ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Peer to Peer** — Star, ring and bus are physical topologies. Peer-to-peer is a network architecture (how devices share resources), not a topology.
+
+*Star, ring और bus physical topologies हैं। Peer-to-peer एक network architecture है (devices कैसे resources share karenge), topology नहीं।*
+
+**★ Nukta (Key Point):** Topologies = mesh, star, bus, ring, hybrid, tree. P2P = architecture (not topology).
+
+*Topologies = mesh, star, bus, ring, hybrid, tree. P2P = architecture है (topology नहीं).*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q9] · Hard*
+
+---
+### Q60. For n devices in a network, how many cable links are required in a mesh topology?
+
+<span lang='hi'>Network में n devices के लिए mesh topology में कितने cable links चाहिए?</span>
+
+- **(A)** n / n
+- **(B)** n - 1 / n - 1
+- **(C)** n(n - 1)/2 / n(n - 1)/2 ✅ **(CORRECT)**
+- **(D)** n(n - 1) / n(n - 1)
+
+**✔ Correct Answer: (C) n(n - 1)/2** — In a mesh every device has a dedicated point-to-point link to every other device, so links = n(n-1)/2 (each link is shared by two devices).
+
+*Mesh में हर device का हर दूसरे device तक dedicated point-to-point link होता है, इसलिए links = n(n-1)/2।*
+
+**★ Nukta (Key Point):** Mesh cables = n(n-1)/2, ports/device = n-1. Star = n cables. Ring = n. Bus = 1 backbone.
+
+*Mesh cables = n(n-1)/2, ports/device = n-1। Star = n। Ring = n। Bus = 1।*
+
+*[Source: Forouzan Ch1 (Q1-8) — Practice Set] · Hard*
+
+---
+### Q61. Six devices are arranged in a mesh topology. How many cables are needed, and how many ports does each device need?
+
+<span lang='hi'>छह devices को mesh topology में जोड़ा गया है। कितनी cables चाहिए और हर device को कितने ports चाहिए?</span>
+
+- **(A)** 15 cables, 5 ports each / 15 cables, हर device पर 5 ports ✅ **(CORRECT)**
+- **(B)** 30 cables, 6 ports each / 30 cables, हर device पर 6 ports
+- **(C)** 15 cables, 6 ports each / 15 cables, हर device पर 6 ports
+- **(D)** 6 cables, 5 ports each / 6 cables, हर device पर 5 ports
+
+**✔ Correct Answer: (A) 15 cables, 5 ports each** — Links = n(n-1)/2 = 6×5/2 = 15 cables. Each device connects to the other 5 devices, so each needs n-1 = 5 ports.
+
+*Links = n(n-1)/2 = 6×5/2 = 15 cables। हर device बाकी 5 devices से जुड़ता है, इसलिए ports = 5।*
+
+**★ Nukta (Key Point):** Mesh formula: cables = n(n-1)/2, ports/device = n-1. Numerical में हमेशा yahi do numbers maange जाते हैं.
+
+*Mesh: cables = n(n-1)/2, ports/device = n-1। Numerical में यही दो numbers पूछे जाते हैं।*
+
+*[Source: Forouzan Ch1 (P1-3) — Practice Set (Problem)] · Hard*
+
+---
+### Q62. If a computer network cable breaks, the whole network goes down in which topology?
+
+<span lang='hi'>यदि computer network cable टूट जाए, तो किस topology में पूरा network बंद हो जाता है?</span>
+
+- **(A)** Star / Star
+- **(B)** Ring / Ring ✅ **(CORRECT)**
+- **(C)** Mesh / Mesh
+- **(D)** All of these / ये सभी
+
+**✔ Correct Answer: (B) Ring** — In a Ring topology every device is connected to its two neighbours in a closed loop — one cable break opens the ring, so the whole network goes down.
+
+*Ring topology में हर device अपने दो neighbours से बंद loop में जुड़ा होता है — एक cable टूटने से ring खुल जाती है, इसलिए पूरा network बंद हो जाता है।*
+
+**★ Nukta (Key Point):** Ring = one break downs ALL. Star = only that device drops. Mesh = network survives (many paths).
+
+*Ring = एक break से सब down। Star = सिर्फ वह device गिरता है। Mesh = network बच जाता है (कई paths)।*
+
+*[Source: Repo: Unit Test-4 Solution (OCR), p16] · Hard*
+
+---
+### Q63. In which topology does the failure of a single cable or device NOT affect the rest of the network?
+
+<span lang='hi'>किस topology में एक cable या device के fail होने पर बाकी network प्रभावित नहीं होता?</span>
+
+- **(A)** Bus / Bus
+- **(B)** Ring / Ring
+- **(C)** Star / Star
+- **(D)** Mesh / Mesh ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Mesh** — In a mesh, redundant links exist — if one link/device fails, traffic takes another path, so the rest of the network keeps working. In bus/ring a cable failure breaks the whole network; in star the hub is a single point of failure.
+
+*Mesh में redundant links होती हैं — एक link/device fail होने पर traffic दूसरे रास्ते से चलता है। Bus/ring में cable failure पूरा network तोड़ देता है; star में hub single point of failure है।*
+
+**★ Nukta (Key Point):** Mesh = most fault-tolerant (redundant paths) — इसलिए 'highest robustness' mesh में होती है.
+
+*Mesh = सबसे ज़्यादा fault-tolerant (redundant paths) — इसीलिए mesh most robust है।*
+
+*[Source: Forouzan Ch1 (P1-4) — Practice Set (Problem)] · Hard*
+
+---
+### Q64. In a _______ topology, one long cable acts as a backbone to link all the devices; devices connect via drop lines and taps, and terminators are needed at both ends of the backbone.
+
+<span lang='hi'>_______ topology में एक लंबा cable backbone की तरह सभी devices को जोड़ता है; devices drop lines और taps से connect होते हैं, और backbone के दोनों ends पर terminators चाहिए।</span>
+
+- **(A)** Bus / bus ✅ **(CORRECT)**
+- **(B)** Star / star
+- **(C)** Ring / ring
+- **(D)** Mesh / mesh
+
+**✔ Correct Answer: (A) Bus** — Bus: one long cable acts as a backbone to link all the devices. Nodes are connected to the bus cable by drop lines and taps. Terminators at both ends absorb the signal to prevent reflection. (Forouzan)
+
+*Bus: एक लंबा cable backbone की तरह सभी devices को जोड़ता है। Nodes को bus cable से drop lines और taps के through जोड़ा जाता है। दोनों ends पर terminators signal को absorb करते हैं ताकि reflection na हो। (Forouzan)*
+
+**★ Nukta (Key Point):** Bus = one backbone + drop lines + taps + terminators at both ends. Fault isolation is difficult; a backbone break stops everything.
+
+*Bus = एक backbone + drop lines + taps + दोनों ends पर terminators. Fault isolation मुश्किल है; backbone tootne से सब कुछ band हो जाता है।*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Hard*
+
+---
+### Q65. The IEEE 802 stअंदरds (such as 802.3 for Ethernet, 802.5 for Token Ring, 802.11 for Wi-Fi) primarily define the ______ of LANs/MANs.
+
+<span lang='hi'>IEEE 802 stअंदरds (जैसे 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi) primarily LANs/MANs की _______ define करते हैं।</span>
+
+- **(A)** Physical and Data Link layers (including the logical topology / MAC) / Physical और Data Link layers (logical topology / MAC sahit) ✅ **(CORRECT)**
+- **(B)** Only the Application layer / सिर्फ Application layer
+- **(C)** Only IP addressing / सिर्फ IP addressing
+- **(D)** Only WAN routing / सिर्फ WAN routing
+
+**✔ Correct Answer: (A) Physical and Data Link layers (including the logical topology / MAC)** — IEEE 802 is the family of stअंदरds for LANs and MANs; it covers the Physical layer and the Data Link layer (split into LLC - 802.2 - and MAC sublayers). 802.3 = Ethernet, 802.5 = Token Ring, 802.11 = Wireless LAN. The logical topology (bus/ring) is a Data-Link/MAC concern.
+
+*IEEE 802 LANs और MANs के लिए stअंदरds का family है; यह Physical layer और Data Link layer को cover करता है (LLC - 802.2 - और MAC sublayers में बनता है). 802.3 = Ethernet, 802.5 = Token Ring, 802.11 = Wireless LAN. Logical topology (bus/ring) एक Data-Link/MAC concern है।*
+
+**★ Nukta (Key Point):** IEEE 802 = LAN/MAN stअंदरds (Physical + Data Link). 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi.
+
+*IEEE 802 = LAN/MAN stअंदरds (Physical + Data Link). 802.3 Ethernet, 802.5 Token Ring, 802.11 Wi-Fi.*
+
+*[Source: Extra (Forouzan) - fills syllabus gap] · Hard*
+
+---
+### Q66. Four network segments in Bus topology are: A1–A2, B1–B2–B3, C1–C2 and D1–D2–D3. If A1, B1, C1 and D1 are interconnected in a mesh, how many mesh connections are required?
 
 <span lang='hi'>Bus topology में चार network segments हैं: A1–A2, B1–B2–B3, C1–C2 और D1–D2–D3। यदि A1, B1, C1 और D1 को mesh में जोड़ा जाए, तो कितने mesh connections चाहिए?</span>
 
@@ -1303,7 +1363,7 @@
 
 *Mesh formula n(n-1)/2 — पर n सिर्फ meshed nodes है (4), पूरे network के hosts (10) नहीं!*
 
-*[Source: RPSC Programmer 2024 Paper-1 (with official key)]*
+*[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
 
@@ -1311,7 +1371,7 @@
 
 *Syllabus: Types of Networks - Geographical (LAN, MAN, WAN, PAN, CAN, SAN) | Accessibility (Internet, Intranet, Extranet) | Architecture (Point-to-Point, Multipoint)*
 
-### Q64. The term WAN stands for?
+### Q67. The term WAN stands for?
 
 <span lang='hi'>WAN का पूरा नाम (full form) क्या है?</span>
 
@@ -1328,10 +1388,10 @@
 
 *WAN = Wide Area Network. Internet सबसे बड़ा WAN है।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q11 / BCI_SCI Subject Test-01, Q11]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q11 / BCI_SCI Subject Test-01, Q11] · Medium*
 
 ---
-### Q65. Which network is suitable for a building?
+### Q68. Which network is suitable for a building?
 
 <span lang='hi'>किसी एक building के लिए कौन सा network उपयुक्त (suitable) है?</span>
 
@@ -1348,10 +1408,10 @@
 
 *LAN = Local Area Network - छोटा area (office/building/campus), private, high speed.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q27]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q27] · Medium*
 
 ---
-### Q66. Bluetooth is an example of:
+### Q69. Bluetooth is an example of:
 
 <span lang='hi'>Bluetooth इसका example है:</span>
 
@@ -1368,10 +1428,10 @@
 
 *PAN = Personal Area Network - एक person के around (Bluetooth: phone <-> earphones).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q31]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q31] · Medium*
 
 ---
-### Q67. Which one of the following extends a private network across public networks?
+### Q70. Which one of the following extends a private network across public networks?
 
 <span lang='hi'>निम्नलिखित में से कौन एक private network को public networks के paar (across) extend करता है?</span>
 
@@ -1388,10 +1448,10 @@
 
 *VPN = Virtual Private Network - private network को public (Internet) पर extend करता है, securely.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q32]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q32] · Medium*
 
 ---
-### Q68. ______ is a network that covers geographic areas that are larger, such as districts or cities.
+### Q71. ______ is a network that covers geographic areas that are larger, such as districts or cities.
 
 <span lang='hi'>______ एक ऐसा network है जो बड़े geographical areas, जैसे districts या cities, को cover करता है।</span>
 
@@ -1408,10 +1468,10 @@
 
 *MAN = Metropolitan Area Network - city level (cable TV network).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q49]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q49] · Medium*
 
 ---
-### Q69. Which factor primarily decides whether a communication system is a LAN or a WAN?
+### Q72. Which factor primarily decides whether a communication system is a LAN or a WAN?
 
 <span lang='hi'>कौन-सा factor मुख्य रूप से तय करता है कि communication system LAN है या WAN?</span>
 
@@ -1428,10 +1488,10 @@
 
 *छोटा area = LAN, city = MAN, state/country/world = WAN। फैसला सिर्फ area का।*
 
-*[Source: Forouzan Ch1 (Q1-9) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-9) — Practice Set] · Medium*
 
 ---
-### Q70. In terms of the size of the network, the correct order (ascending) is:
+### Q73. In terms of the size of the network, the correct order (ascending) is:
 
 <span lang='hi'>Network के size के hisaab से सही kram (badhta हुआ/ascending order) क्या है?</span>
 
@@ -1448,10 +1508,10 @@
 
 *याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q42]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q42] · Medium*
 
 ---
-### Q71. Which type of network covers an entire city or campus?
+### Q74. Which type of network covers an entire city or campus?
 
 <span lang='hi'>कौन सा network पूरे एक city या campus को cover करता है?</span>
 
@@ -1468,30 +1528,10 @@
 
 *MAN = city level. Note: एक building/campus का LAN आम तौर पर LAN/CAN होता है; पूरी city = MAN.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q2]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q2] · Medium*
 
 ---
-### Q72. Which of these is NOT a type of network?
-
-<span lang='hi'>इनमें से कौन network का एक prakar (type) नहीं है?</span>
-
-- **(A)** LAN / LAN
-- **(B)** MAN / MAN
-- **(C)** WAN / WAN
-- **(D)** TAN / TAN ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) TAN** — LAN, MAN and WAN are stअंदरd network types (by geographical area). TAN is not a stअंदरd type of network.
-
-*LAN, MAN और WAN stअंदरd network types हैं (geographical area के aadhar पर). TAN कोई stअंदरd network type नहीं है।*
-
-**★ Nukta (Key Point):** Network types: PAN, LAN, MAN, WAN (+ CAN, SAN). TAN = नहीं है.
-
-*Network types: PAN, LAN, MAN, WAN (+ CAN, SAN). TAN = नहीं है।*
-
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q7]*
-
----
-### Q73. The Internet is an example of:
+### Q75. The Internet is an example of:
 
 <span lang='hi'>Internet इसका example है:</span>
 
@@ -1508,30 +1548,10 @@
 
 *Internet = सबसे बड़ा WAN (network of networks).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q12]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q12] · Medium*
 
 ---
-### Q74. What is the difference between an 'internet' and the 'Internet'?
-
-<span lang='hi'>'internet' और 'Internet' में अंतर क्या है?</span>
-
-- **(A)** There is no difference; both mean the World Wide Web / कोई अंतर नहीं; दोनों का अर्थ World Wide Web है
-- **(B)** An internet is any network of networks; the Internet is the specific global one we use today / internet कोई भी network of networks है; Internet आज की वह विशिष्ट विश्वव्यापी network of networks है ✅ **(CORRECT)**
-- **(C)** An internet is smaller than a LAN; the Internet is larger than a WAN / internet LAN से छोटा है; Internet WAN से बड़ा है
-- **(D)** An internet uses cables; the Internet uses only wireless / internet cables use करता है; Internet सिर्फ wireless use करता है
-
-**✔ Correct Answer: (B) An internet is any network of networks; the Internet is the specific global one we use today** — An 'internet' (lower-case) is any generic network of networks. The 'Internet' (capital I) is THE specific worldwide internet that grew from ARPANET.
-
-*'internet' (छोटा i) कोई भी generic network of networks है। 'Internet' (बड़ा I) वह विशिष्ट विश्वव्यापी internet है जो ARPANET से विकसित हुआ।*
-
-**★ Nukta (Key Point):** internet = generic network of networks. Internet = THE global network (capital I).
-
-*internet = generic network of networks। Internet = वह global network (बड़ा I)।*
-
-*[Source: Forouzan Ch1 (Q1-10) — Practice Set]*
-
----
-### Q75. SAN is mainly used for:
+### Q76. SAN is mainly used for:
 
 <span lang='hi'>SAN का मुख्य उपयोग किसके लिए होता है?</span>
 
@@ -1548,10 +1568,10 @@
 
 *SAN = Storage Area Network - servers <-> storage devices, data centre.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q13]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q13] · Medium*
 
 ---
-### Q76. PAN is used for connecting:
+### Q77. PAN is used for connecting:
 
 <span lang='hi'>PAN किसके connect करने के लिए use होता है?</span>
 
@@ -1568,10 +1588,10 @@
 
 *PAN = Personal Area Network - एक person के devices (mobile, laptop, headset).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q14]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q14] · Medium*
 
 ---
-### Q77. A school has four computer labs in the same building. Each lab has 20 computers connected to a central server. Students can share files and print from any lab. Which type of network is implemented in this school?
+### Q78. A school has four computer labs in the same building. Each lab has 20 computers connected to a central server. Students can share files and print from any lab. Which type of network is implemented in this school?
 
 <span lang='hi'>Ek school में एक ही building में चार computer labs हैं. हर lab में 20 computers एक central server से जुड़े हैं। Students किसी भी lab से files share और print कर सकते हैं। School में कौन सा network implemented है?</span>
 
@@ -1588,10 +1608,10 @@
 
 *LAN = एक building/campus, private, high speed. Example: school lab, office.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q15]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q15] · Medium*
 
 ---
-### Q78. A university has different departments in separate buildings like Engineering, Arts, and Commerce. Each department has its own LAN. All these LANs are connected together for communication. Which type of network connects all these LANs?
+### Q79. A university has different departments in separate buildings like Engineering, Arts, and Commerce. Each department has its own LAN. All these LANs are connected together for communication. Which type of network connects all these LANs?
 
 <span lang='hi'>Ek university में अलग-अलग departments अलग buildings में हैं जैसे Engineering, Arts, Commerce। हर department का apna LAN है। यह सब LANs communication के लिए आपस में जुड़े हैं। कौन सा network in सब LANs को जोड़ता है?</span>
 
@@ -1608,10 +1628,10 @@
 
 *CAN = Campus Area Network - एक campus की कई buildings के LANs को जोड़ता है।*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q16]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q16] · Medium*
 
 ---
-### Q79. An international bank connects its main office in New York with branches in Delhi, London, and Tokyo. Which network type is used here?
+### Q80. An international bank connects its main office in New York with branches in Delhi, London, and Tokyo. Which network type is used here?
 
 <span lang='hi'>Ek international bank अपने main office (New York) को Delhi, London, और Tokyo की branches से जोड़ता है। यहाँ कौन सा network type use होता है?</span>
 
@@ -1628,10 +1648,10 @@
 
 *WAN = लंबी दूरी (city/देश/continent). Worldwide bank branches = WAN.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q17]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q17] · Medium*
 
 ---
-### Q80. A company has several servers that store and manage large volumes of data. All storage devices are interconnected for high-speed data access. Which type of network is this?
+### Q81. A company has several servers that store and manage large volumes of data. All storage devices are interconnected for high-speed data access. Which type of network is this?
 
 <span lang='hi'>Ek company के पास कई servers हैं जो बड़ी matra में data store और manage करते हैं। सब storage devices high-speed data access के लिए interconnected हैं। यह कौन सा network है?</span>
 
@@ -1648,10 +1668,10 @@
 
 *SAN = Storage Area Network - storage devices को high-speed access dene के लिए।*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q18]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q18] · Medium*
 
 ---
-### Q81. A supplier accessing a company's order tracking system uses:
+### Q82. A supplier accessing a company's order tracking system uses:
 
 <span lang='hi'>Ek supplier जो company के order tracking system को access करता है, कौन सा network use करता है?</span>
 
@@ -1668,10 +1688,10 @@
 
 *Extranet = intranet + authorized outsiders (suppliers/partners/customers).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q19]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q19] · Medium*
 
 ---
-### Q82. Which network type provides maximum security and privacy?
+### Q83. Which network type provides maximum security and privacy?
 
 <span lang='hi'>कौन सा network type अधिकतम (maximum) security और privacy provide करता है?</span>
 
@@ -1688,10 +1708,10 @@
 
 *Security order: Intranet (सबसे secure/private) > Extranet > Internet (public).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q20]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q20] · Medium*
 
 ---
-### Q83. A software company shares project reports and progress updates with its clients through a secure online portal that requires login credentials. Which network type is this?
+### Q84. A software company shares project reports and progress updates with its clients through a secure online portal that requires login credentials. Which network type is this?
 
 <span lang='hi'>Ek software company अपने clients के साथ project reports और progress updates एक secure online portal के through share करती है जिसमें login credentials चाहिए। यह कौन सा network type है?</span>
 
@@ -1708,27 +1728,7 @@
 
 *Clients को secure portal से share करना = Extranet.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q21]*
-
----
-### Q84. Bank employees access internal financial databases, while customers access their accounts through online banking websites. Which networks are being used by employees and customers respectively?
-
-<span lang='hi'>Bank employees internal financial databases access करते हैं, jabki customers online banking websites के through अपने accounts access करते हैं। Employees और customers kramashah कौन से networks use कर रहे हैं?</span>
-
-- **(A)** Employees - Intranet; Customers - Extranet / employees - Intranet; customers - Extranet ✅ **(CORRECT)**
-- **(B)** Employees - Internet; Customers - Intranet / employees - Internet; customers - Intranet
-- **(C)** Employees - Extranet; Customers - Internet / employees - Extranet; customers - Internet
-- **(D)** Both - Internet / दोनों - Internet
-
-**✔ Correct Answer: (A) Employees - Intranet; Customers - Extranet** — Employees use the bank's internal private network = Intranet. Customers access the bank's system from outside = Extranet (per the official key: the bank's online banking is its intranet extended to customers).
-
-*Employees bank के internal private network = Intranet use करते हैं। Customers बाहर से bank के system को access करते हैं = Extranet (official key के anusaar: bank का online banking uske intranet का customers के लिए extension है).*
-
-**★ Nukta (Key Point):** Employees -> Intranet (internal). Outsiders (customers/suppliers) -> Extranet. Public -> Internet.
-
-*Employees -> Intranet (internal). Outsiders (customers/suppliers) -> Extranet. Public -> Internet.*
-
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q22]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q21] · Medium*
 
 ---
 ### Q85. Three or more devices share a link in ________ connection.
@@ -1748,7 +1748,7 @@
 
 *Multipoint = एक link, कई devices; capacity shared. Point-to-point = dedicated link, सिर्फ 2 devices.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q36]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q36] · Medium*
 
 ---
 ### Q86. What are the two types of line configuration?
@@ -1768,7 +1768,7 @@
 
 *Line configuration के 2 type: Point-to-Point और Multipoint। Simplex/Half/Full-Duplex transmission modes हैं।*
 
-*[Source: Forouzan Ch1 (Q1-4) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-4) — Practice Set] · Medium*
 
 ---
 ### Q87. What is the advantage of a multipoint connection over a point-to-point connection?
@@ -1788,7 +1788,7 @@
 
 *Multipoint = कम cable = कम खर्च। Point-to-point = dedicated link (ज़्यादा cable, ज़्यादा privacy)।*
 
-*[Source: Forouzan Ch1 (Q1-3) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-3) — Practice Set] · Medium*
 
 ---
 ### Q88. A _______ connection provides a dedicated link between two devices.
@@ -1808,30 +1808,10 @@
 
 *Point-to-point = dedicated link, पूरी capacity सिर्फ 2 devices के लिए. Example: TV remote (IR), leased line.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q42]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q42] · Medium*
 
 ---
-### Q89. How many point-to-point WANs are needed to connect n LANs so that every LAN can directly communicate with every other LAN?
-
-<span lang='hi'>n LANs को इस तरह जोड़ने के लिए कितने point-to-point WANs चाहिए कि हर LAN हर दूसरी LAN से सीधे communicate कर सके?</span>
-
-- **(A)** n / n
-- **(B)** n - 1 / n - 1
-- **(C)** n(n - 1)/2 / n(n - 1)/2 ✅ **(CORRECT)**
-- **(D)** n² / n²
-
-**✔ Correct Answer: (C) n(n - 1)/2** — Direct communication between every pair of LANs needs one WAN link per pair — n(n-1)/2 links (the same mesh formula).
-
-*हर LAN-युग्म के बीच सीधे communication के लिए हर युग्म को एक WAN link चाहिए — n(n-1)/2 links (mesh जैसा ही formula)।*
-
-**★ Nukta (Key Point):** Full mesh of LANs = n(n-1)/2 WAN links. Formula mesh वाला ही है.
-
-*LANs का full mesh = n(n-1)/2 WAN links। Formula mesh जैसा ही है।*
-
-*[Source: Forouzan Ch1 (Q1-13) — Practice Set]*
-
----
-### Q90. When a person makes a local telephone call to another person, what type of connection is it?
+### Q89. When a person makes a local telephone call to another person, what type of connection is it?
 
 <span lang='hi'>जब कोई व्यक्ति दूसरे व्यक्ति को local telephone call करता है, तो यह किस प्रकार का connection है?</span>
 
@@ -1848,10 +1828,10 @@
 
 *Telephone call = 2 parties, dedicated link = point-to-point। Bus/Ethernet = multipoint।*
 
-*[Source: Forouzan Ch1 (P1-7) — Practice Set (Problem)]*
+*[Source: Forouzan Ch1 (P1-7) — Practice Set (Problem)] · Medium*
 
 ---
-### Q91. Which of the following is an example of Client-Server architecture?
+### Q90. Which of the following is an example of Client-Server architecture?
 
 <span lang='hi'>निम्नलिखित में से कौन Client-Server architecture का example है?</span>
 
@@ -1868,30 +1848,10 @@
 
 *Client-Server = client request करता है, server service provide करता है। Example: web browser - website.*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q23]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q23] · Medium*
 
 ---
-### Q92. Which of the following uses Peer-to-Peer (P2P) architecture, not Client-Server?
-
-<span lang='hi'>निम्नलिखित में से कौन Peer-to-Peer (P2P) architecture use करता है, Client-Server नहीं?</span>
-
-- **(A)** BitTorrent file sharing / BitTorrent file sharing ✅ **(CORRECT)**
-- **(B)** Google search / Google search
-- **(C)** Gmail / Gmail
-- **(D)** YouTube / YouTube
-
-**✔ Correct Answer: (A) BitTorrent file sharing** — BitTorrent is peer-to-peer: users (peers) share file pieces directly with each other without a central server. Google search, Gmail and YouTube are client-server services.
-
-*BitTorrent peer-to-peer है: users (peers) file के tukde directly आपस में share करते हैं बिना किसी central server के। Google search, Gmail और YouTube client-server services हैं।*
-
-**★ Nukta (Key Point):** P2P = peers आपस में directly share करते हैं (BitTorrent). Client-Server = server service देता है (Google, Gmail, YouTube).
-
-*P2P = peers आपस में directly share करते हैं (BitTorrent). Client-Server = server service देता है (Google, Gmail, YouTube).*
-
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q24]*
-
----
-### Q93. In a bank, customers use ATMs to check balance or withdraw cash. ATM machines send the request to a central computer for verification and processing. Which type of architecture is used here?
+### Q91. In a bank, customers use ATMs to check balance or withdraw cash. ATM machines send the request to a central computer for verification and processing. Which type of architecture is used here?
 
 <span lang='hi'>Ek bank में customers ATMs से balance check या cash withdraw करते हैं। ATM machines request एक central computer को verification और processing के लिए bhejte हैं। यहाँ कौन सी architecture use होती है?</span>
 
@@ -1908,10 +1868,10 @@
 
 *ATM -> central server = client-server (client request, server verify/process).*
 
-*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q25]*
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q25] · Medium*
 
 ---
-### Q94. In a LAN, connectivity can be created using Wi-Fi or _______.
+### Q92. In a LAN, connectivity can be created using Wi-Fi or _______.
 
 <span lang='hi'>Ek LAN में connectivity Wi-Fi या _______ से बनाई जा सकती है।</span>
 
@@ -1928,10 +1888,10 @@
 
 *LAN connectivity = Wi-Fi (wireless) + Ethernet (wired cable).*
 
-*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)]*
+*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)] · Medium*
 
 ---
-### Q95. Which network type is built on top of another existing network?
+### Q93. Which network type is built on top of another existing network?
 
 <span lang='hi'>कौन-सा network type किसी मौजूदा network के ऊपर बनाया जाता है?</span>
 
@@ -1948,10 +1908,10 @@
 
 *Overlay = network के ऊपर बना network (VPN इसका classic example है)। बाकी 3 real network types नहीं हैं।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q96. ______ converts analog voice signals into digital and then transmits them over the broadband line.
+### Q94. ______ converts analog voice signals into digital and then transmits them over the broadband line.
 
 <span lang='hi'>______ analog voice signals को digital में बदलकर broadband line पर भेजता है.</span>
 
@@ -1968,7 +1928,107 @@
 
 *VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.*
 
-*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)]*
+*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)] · Medium*
+
+---
+### Q95. Which of these is NOT a type of network?
+
+<span lang='hi'>इनमें से कौन network का एक prakar (type) नहीं है?</span>
+
+- **(A)** LAN / LAN
+- **(B)** MAN / MAN
+- **(C)** WAN / WAN
+- **(D)** TAN / TAN ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) TAN** — LAN, MAN and WAN are stअंदरd network types (by geographical area). TAN is not a stअंदरd type of network.
+
+*LAN, MAN और WAN stअंदरd network types हैं (geographical area के aadhar पर). TAN कोई stअंदरd network type नहीं है।*
+
+**★ Nukta (Key Point):** Network types: PAN, LAN, MAN, WAN (+ CAN, SAN). TAN = नहीं है.
+
+*Network types: PAN, LAN, MAN, WAN (+ CAN, SAN). TAN = नहीं है।*
+
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q7] · Hard*
+
+---
+### Q96. What is the difference between an 'internet' and the 'Internet'?
+
+<span lang='hi'>'internet' और 'Internet' में अंतर क्या है?</span>
+
+- **(A)** There is no difference; both mean the World Wide Web / कोई अंतर नहीं; दोनों का अर्थ World Wide Web है
+- **(B)** An internet is any network of networks; the Internet is the specific global one we use today / internet कोई भी network of networks है; Internet आज की वह विशिष्ट विश्वव्यापी network of networks है ✅ **(CORRECT)**
+- **(C)** An internet is smaller than a LAN; the Internet is larger than a WAN / internet LAN से छोटा है; Internet WAN से बड़ा है
+- **(D)** An internet uses cables; the Internet uses only wireless / internet cables use करता है; Internet सिर्फ wireless use करता है
+
+**✔ Correct Answer: (B) An internet is any network of networks; the Internet is the specific global one we use today** — An 'internet' (lower-case) is any generic network of networks. The 'Internet' (capital I) is THE specific worldwide internet that grew from ARPANET.
+
+*'internet' (छोटा i) कोई भी generic network of networks है। 'Internet' (बड़ा I) वह विशिष्ट विश्वव्यापी internet है जो ARPANET से विकसित हुआ।*
+
+**★ Nukta (Key Point):** internet = generic network of networks. Internet = THE global network (capital I).
+
+*internet = generic network of networks। Internet = वह global network (बड़ा I)।*
+
+*[Source: Forouzan Ch1 (Q1-10) — Practice Set] · Hard*
+
+---
+### Q97. Bank employees access internal financial databases, while customers access their accounts through online banking websites. Which networks are being used by employees and customers respectively?
+
+<span lang='hi'>Bank employees internal financial databases access करते हैं, jabki customers online banking websites के through अपने accounts access करते हैं। Employees और customers kramashah कौन से networks use कर रहे हैं?</span>
+
+- **(A)** Employees - Intranet; Customers - Extranet / employees - Intranet; customers - Extranet ✅ **(CORRECT)**
+- **(B)** Employees - Internet; Customers - Intranet / employees - Internet; customers - Intranet
+- **(C)** Employees - Extranet; Customers - Internet / employees - Extranet; customers - Internet
+- **(D)** Both - Internet / दोनों - Internet
+
+**✔ Correct Answer: (A) Employees - Intranet; Customers - Extranet** — Employees use the bank's internal private network = Intranet. Customers access the bank's system from outside = Extranet (per the official key: the bank's online banking is its intranet extended to customers).
+
+*Employees bank के internal private network = Intranet use करते हैं। Customers बाहर से bank के system को access करते हैं = Extranet (official key के anusaar: bank का online banking uske intranet का customers के लिए extension है).*
+
+**★ Nukta (Key Point):** Employees -> Intranet (internal). Outsiders (customers/suppliers) -> Extranet. Public -> Internet.
+
+*Employees -> Intranet (internal). Outsiders (customers/suppliers) -> Extranet. Public -> Internet.*
+
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q22] · Hard*
+
+---
+### Q98. How many point-to-point WANs are needed to connect n LANs so that every LAN can directly communicate with every other LAN?
+
+<span lang='hi'>n LANs को इस तरह जोड़ने के लिए कितने point-to-point WANs चाहिए कि हर LAN हर दूसरी LAN से सीधे communicate कर सके?</span>
+
+- **(A)** n / n
+- **(B)** n - 1 / n - 1
+- **(C)** n(n - 1)/2 / n(n - 1)/2 ✅ **(CORRECT)**
+- **(D)** n² / n²
+
+**✔ Correct Answer: (C) n(n - 1)/2** — Direct communication between every pair of LANs needs one WAN link per pair — n(n-1)/2 links (the same mesh formula).
+
+*हर LAN-युग्म के बीच सीधे communication के लिए हर युग्म को एक WAN link चाहिए — n(n-1)/2 links (mesh जैसा ही formula)।*
+
+**★ Nukta (Key Point):** Full mesh of LANs = n(n-1)/2 WAN links. Formula mesh वाला ही है.
+
+*LANs का full mesh = n(n-1)/2 WAN links। Formula mesh जैसा ही है।*
+
+*[Source: Forouzan Ch1 (Q1-13) — Practice Set] · Hard*
+
+---
+### Q99. Which of the following uses Peer-to-Peer (P2P) architecture, not Client-Server?
+
+<span lang='hi'>निम्नलिखित में से कौन Peer-to-Peer (P2P) architecture use करता है, Client-Server नहीं?</span>
+
+- **(A)** BitTorrent file sharing / BitTorrent file sharing ✅ **(CORRECT)**
+- **(B)** Google search / Google search
+- **(C)** Gmail / Gmail
+- **(D)** YouTube / YouTube
+
+**✔ Correct Answer: (A) BitTorrent file sharing** — BitTorrent is peer-to-peer: users (peers) share file pieces directly with each other without a central server. Google search, Gmail and YouTube are client-server services.
+
+*BitTorrent peer-to-peer है: users (peers) file के tukde directly आपस में share करते हैं बिना किसी central server के। Google search, Gmail और YouTube client-server services हैं।*
+
+**★ Nukta (Key Point):** P2P = peers आपस में directly share करते हैं (BitTorrent). Client-Server = server service देता है (Google, Gmail, YouTube).
+
+*P2P = peers आपस में directly share करते हैं (BitTorrent). Client-Server = server service देता है (Google, Gmail, YouTube).*
+
+*[Source: Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q24] · Hard*
 
 ---
 
@@ -1976,7 +2036,7 @@
 
 *Syllabus: Network History - ARPANET to today's network*
 
-### Q97. ARPANET stands for _______.
+### Q100. ARPANET stands for _______.
 
 <span lang='hi'>ARPANET का पूरा नाम है _______.</span>
 
@@ -1993,10 +2053,10 @@
 
 *ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q26]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q26] · Medium*
 
 ---
-### Q98. The first network was:
+### Q101. The first network was:
 
 <span lang='hi'>सबसे पहला network था:</span>
 
@@ -2013,10 +2073,10 @@
 
 *First network = ARPANET (1969). NSFNET = 1986 (backbone).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q34]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q34] · Medium*
 
 ---
-### Q99. In the original ARPANET, _______ were directly connected together.
+### Q102. In the original ARPANET, _______ were directly connected together.
 
 <span lang='hi'>Original ARPANET में, _______ आपस में directly connected the।</span>
 
@@ -2033,10 +2093,10 @@
 
 *Original ARPANET: IMPs (packet switches) directly connected the; hosts IMPs से attach होते the।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q43]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q43] · Medium*
 
 ---
-### Q100. The first operational computer network in the world was the _________ for the United States Department of Defense.
+### Q103. The first operational computer network in the world was the _________ for the United States Department of Defense.
 
 <span lang='hi'>दुनिया का पहला operational computer network, United States Department of Defense के लिए _________ था।</span>
 
@@ -2053,10 +2113,10 @@
 
 *First operational network = ARPANET (1969, U.S. DoD).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q48]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q48] · Medium*
 
 ---
-### Q101. ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
+### Q104. ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
 
 <span lang='hi'>ARPANET - aaj के Internet का purvaj - ______ में ARPA (Advanced Research Projects Agency), U.S. Department of Defense द्वारा बनाया गया था, चार nodes से shuruaat हुई (UCLA, SRI, UC Santa Barbara, University of Utah).</span>
 
@@ -2073,10 +2133,10 @@
 
 *ARPANET = 1969, 4 nodes (UCLA, SRI, UCSB, Utah); पहला message 29 Oct 1969 (LOGIN का LO).*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q102. TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
+### Q105. TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
 
 <span lang='hi'>TCP/IP (Vint Cerf और Bob Kahn द्वारा develop किया गया) को ARPANET ने apna official protocol suite बनाया था 1 January ______ को - is event को fflag day कहा जाता है।</span>
 
@@ -2093,10 +2153,10 @@
 
 *Fflag day = 1 Jan 1983 (ARPANET -> TCP/IP). TCP/IP Cerf & Kahn ने 1970s में develop किया (demo 1972). Syllabus का TCP/IP model 1972 = development era.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q103. NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
+### Q106. NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
 
 <span lang='hi'>NSFNET, U.S. National Science Foundation द्वारा ______ में बनाया गया, Internet का एक major backbone बन गया, universities और research centres को जोड़ता था।</span>
 
@@ -2113,10 +2173,10 @@
 
 *NSFNET = 1986 (National Science Foundation), T1 backbone -> Internet backbone.*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q104. The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
+### Q107. The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
 
 <span lang='hi'>World Wide Web (WWW) का invention 1991 में CERN में ______ ने किया था, और isne Internet को आम public के बीच popular बनाया।</span>
 
@@ -2133,7 +2193,7 @@
 
 *WWW = 1991, Tim Berners-Lee @ CERN. Mosaic browser 1993. Vint Cerf & Bob Kahn = Internet के fathers (TCP/IP).*
 
-*[Source: Extra (Forouzan) - fills syllabus gap]*
+*[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
 
@@ -2141,7 +2201,7 @@
 
 *Syllabus: Introduction of DC - general basics asked in BCI/RPSC exams (Specific Address/URL, Application services, Switching)*
 
-### Q105. A collection of hyperlinked documents on the internet forms the?
+### Q108. A collection of hyperlinked documents on the internet forms the?
 
 <span lang='hi'>Internet पर hyperlinked documents का sangrah (collection) क्या banata है?</span>
 
@@ -2158,10 +2218,10 @@
 
 *WWW = hyperlinked documents का collection. HTML = un documents की language है (WWW नहीं).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q5]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q5] · Medium*
 
 ---
-### Q106. Which one of the following is a valid email address?
+### Q109. Which one of the following is a valid email address?
 
 <span lang='hi'>निम्नलिखित में से कौन सा एक valid email address है?</span>
 
@@ -2178,10 +2238,10 @@
 
 *Valid email = local@domain.TLD (जैसे name@site.com).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q6]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q6] · Medium*
 
 ---
-### Q107. Which of the following best describes uploading information?
+### Q110. Which of the following best describes uploading information?
 
 <span lang='hi'>निम्नलिखित में से कौन uploading information को सबसे achhe से describe करता है?</span>
 
@@ -2198,10 +2258,10 @@
 
 *Uploading = local से remote/host को भेजना. Downloading = remote से local को लेना.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q7]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q7] · Medium*
 
 ---
-### Q108. Which one of the following is the most common internet protocol?
+### Q111. Which one of the following is the most common internet protocol?
 
 <span lang='hi'>Nimnlikhis में से कौन सा सबसे common internet protocol है?</span>
 
@@ -2218,10 +2278,10 @@
 
 *Internet का core protocol = TCP/IP. HTML = language है, protocol नहीं.*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q8]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q8] · Medium*
 
 ---
-### Q109. The dial-up connections to access the internet use ___ protocol.
+### Q112. The dial-up connections to access the internet use ___ protocol.
 
 <span lang='hi'>Internet access के लिए dial-up connections ___ protocol use करते हैं।</span>
 
@@ -2238,10 +2298,10 @@
 
 *Dial-up Internet = PPP (Point-to-Point Protocol).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q18]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q18] · Medium*
 
 ---
-### Q110. When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
+### Q113. When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
 
 <span lang='hi'>जब कोई व्यक्ति Internet से जुड़ने के लिए dial-up या DSL service use करता है, तो telephone company की भूमिका क्या होती है?</span>
 
@@ -2258,30 +2318,10 @@
 
 *Telephone company सिर्फ रास्ता देती है (local loop + switching)। Website hosting/IP assignment ISP/DNS का काम है।*
 
-*[Source: Forouzan Ch1 (Q1-14) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-14) — Practice Set] · Medium*
 
 ---
-### Q111. Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
-
-<span lang='hi'>DSL (Digital Subscriber Line) पर काम करने वाले home broadband connections ___ protocol use करते हैं।</span>
-
-- **(A)** PPPoE (PPP over Ethernet) / PPPoE (PPP over Ethernet) ✅ **(CORRECT)**
-- **(B)** PPPoA (PPP over ATM) / PPPoA (PPP over ATM)
-- **(C)** Bridge protocol / bridge protocol
-- **(D)** All of the above / ऊपर दिए गए सभी
-
-**✔ Correct Answer: (A) PPPoE (PPP over Ethernet)** — Home DSL broadband connections typically use PPPoE (PPP over Ethernet) to carry PPP traffic over the DSL/Ethernet connection.
-
-*Home DSL broadband connections आम तौर पर PPPoE (PPP over Ethernet) use करते हैं ताकि PPP traffic DSL/Ethernet connection पर carry हो sake।*
-
-**★ Nukta (Key Point):** Home DSL broadband = PPPoE (PPP over Ethernet).
-
-*Home DSL broadband = PPPoE (PPP over Ethernet).*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q19]*
-
----
-### Q112. Which of the following servers allows LAN users to share data?
+### Q114. Which of the following servers allows LAN users to share data?
 
 <span lang='hi'>निम्नलिखित में से कौन सा server LAN users को data share करने की अनुमति देता है?</span>
 
@@ -2298,10 +2338,10 @@
 
 *File server = files store करता है + LAN users को share करने देता है।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q22]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q22] · Medium*
 
 ---
-### Q113. EDI stands for ____.
+### Q115. EDI stands for ____.
 
 <span lang='hi'>EDI का पूरा नाम है ____.</span>
 
@@ -2318,47 +2358,7 @@
 
 *EDI = Electronic Data Interchange (business documents का e-exchange).*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q25]*
-
----
-### Q114. A computer network permits sharing of:
-
-<span lang='hi'>एक computer network किस चीज़ की sharing की अनुमति देता है?</span>
-
-- **(A)** Resources / resources (printer, disk, etc.)
-- **(B)** Information / information (data)
-- **(C)** Both a & b / दोनों a और b ✅ **(CORRECT)**
-- **(D)** None of these / इनमें से कोई नहीं
-
-**✔ Correct Answer: (C) Both a & b** — A computer network permits sharing of both resources (printers, storage, devices) and information (data/messages) among connected users.
-
-*Ek computer network दोनों cheezon की sharing की अनुमति देता है: resources (printers, storage, devices) और information (data/messages), connected users के बीच।*
-
-**★ Nukta (Key Point):** Network = resources + information sharing.
-
-*Network = resources + information sharing.*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q47 / CN Topic Test-02 (UNIT TEST-2), Q47]*
-
----
-### Q115. Which of the following is a benefit of networking?
-
-<span lang='hi'>Networking का कौन-सा लाभ (benefit) है?</span>
-
-- **(A)** File sharing / File sharing
-- **(B)** Easier access to resources / resources तक आसान पहुँच
-- **(C)** Easier backups / आसान backups
-- **(D)** All of the above / ऊपर दिए गए सभी ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) All of the above** — Computer networks allow file sharing, easy access to shared resources (printers, servers, internet) and easier centralised backups — so all of these are benefits.
-
-*Computer networks file sharing, shared resources (printers, server, internet) तक आसान पहुँच, और आसान centralised backups की अनुमति देते हैं — इसलिए ये सभी लाभ हैं।*
-
-**★ Nukta (Key Point):** Networking benefits: sharing (files/resources/peripherals) + communication + backup + cost saving. Exam favourite: "All of the above".
-
-*Networking के लाभ: sharing (files/resources/peripherals) + communication + backup + cost saving। Exam favourite: "All of the above"।*
-
-*[Source: InstrumentationTools 150 CN MCQs]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q25] · Medium*
 
 ---
 ### Q116. The term UPnP is a short form of:
@@ -2378,30 +2378,10 @@
 
 *UPnP = Universal Plug and Play (device auto-discovery)। तुलना: DHCP = auto IP configuration।*
 
-*[Source: Repo: Unit Test-4 Solution (OCR), p11]*
+*[Source: Repo: Unit Test-4 Solution (OCR), p11] · Medium*
 
 ---
-### Q117. How many digits of the Data Network Identification Code (DNIC) identify the country?
-
-<span lang='hi'>Data Network Identification Code (DNIC) के kitne digits देश (country) की पहचान करते हैं?</span>
-
-- **(A)** first three / पहले तीन ✅ **(CORRECT)**
-- **(B)** first four / पहले चार
-- **(C)** first five / पहले पाँच
-- **(D)** first six / पहले छह
-
-**✔ Correct Answer: (A) first three** — In the DNIC (used in X.121 addressing), the first three digits are the country code and the fourth digit identifies the network within that country. So the first three digits identify the country.
-
-*DNIC (X.121 addressing में use होता है) में पहले तीन digits country code होते हैं और चौथा digit उस देश के अंदर के network की पहचान करता है। इसलिए पहले तीन digits देश की पहचान करते हैं।*
-
-**★ Nukta (Key Point):** DNIC: first 3 digits = country code, 4th digit = network code.
-
-*DNIC: पहले 3 digits = country code, चौथा digit = network code.*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q15]*
-
----
-### Q118. Consider the switching statements:
+### Q117. Consider the switching statements:
 1. Circuit Switching establishes a dedicated path.
 2. Packet Switching routes data in packets on different paths.
 3. Message Switching uses store-and-forward.
@@ -2426,10 +2406,10 @@ Which statements are correct?
 
 *3 switching types: Circuit (dedicated path), Packet (packets, अलग paths), Message (store-and-forward) — तीनों सही।*
 
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
 ---
-### Q119. All the information on the internet is passed using _______ switching method.
+### Q118. All the information on the internet is passed using _______ switching method.
 
 <span lang='hi'>Internet पर saari information _______ switching method से pass होती है।</span>
 
@@ -2446,10 +2426,10 @@ Which statements are correct?
 
 *Internet = packet switching. Circuit switching = dedicated path (पुराना telephone).*
 
-*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)]*
+*[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)] · Medium*
 
 ---
-### Q120. Which technique breaks data into packets for transmission?
+### Q119. Which technique breaks data into packets for transmission?
 
 <span lang='hi'>Transmission के लिए data को packets में तोड़ने की technique कौन-सी है?</span>
 
@@ -2466,10 +2446,90 @@ Which statements are correct?
 
 *Internet packet switching पर चलता है — data packets में टूटता है।*
 
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
 ---
-### Q121. Which of the following is true for Circuit Switching handling multiple simultaneous connections?
+### Q120. Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
+
+<span lang='hi'>DSL (Digital Subscriber Line) पर काम करने वाले home broadband connections ___ protocol use करते हैं।</span>
+
+- **(A)** PPPoE (PPP over Ethernet) / PPPoE (PPP over Ethernet) ✅ **(CORRECT)**
+- **(B)** PPPoA (PPP over ATM) / PPPoA (PPP over ATM)
+- **(C)** Bridge protocol / bridge protocol
+- **(D)** All of the above / ऊपर दिए गए सभी
+
+**✔ Correct Answer: (A) PPPoE (PPP over Ethernet)** — Home DSL broadband connections typically use PPPoE (PPP over Ethernet) to carry PPP traffic over the DSL/Ethernet connection.
+
+*Home DSL broadband connections आम तौर पर PPPoE (PPP over Ethernet) use करते हैं ताकि PPP traffic DSL/Ethernet connection पर carry हो sake।*
+
+**★ Nukta (Key Point):** Home DSL broadband = PPPoE (PPP over Ethernet).
+
+*Home DSL broadband = PPPoE (PPP over Ethernet).*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q19] · Hard*
+
+---
+### Q121. A computer network permits sharing of:
+
+<span lang='hi'>एक computer network किस चीज़ की sharing की अनुमति देता है?</span>
+
+- **(A)** Resources / resources (printer, disk, etc.)
+- **(B)** Information / information (data)
+- **(C)** Both a & b / दोनों a और b ✅ **(CORRECT)**
+- **(D)** None of these / इनमें से कोई नहीं
+
+**✔ Correct Answer: (C) Both a & b** — A computer network permits sharing of both resources (printers, storage, devices) and information (data/messages) among connected users.
+
+*Ek computer network दोनों cheezon की sharing की अनुमति देता है: resources (printers, storage, devices) और information (data/messages), connected users के बीच।*
+
+**★ Nukta (Key Point):** Network = resources + information sharing.
+
+*Network = resources + information sharing.*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q47 / CN Topic Test-02 (UNIT TEST-2), Q47] · Hard*
+
+---
+### Q122. Which of the following is a benefit of networking?
+
+<span lang='hi'>Networking का कौन-सा लाभ (benefit) है?</span>
+
+- **(A)** File sharing / File sharing
+- **(B)** Easier access to resources / resources तक आसान पहुँच
+- **(C)** Easier backups / आसान backups
+- **(D)** All of the above / ऊपर दिए गए सभी ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) All of the above** — Computer networks allow file sharing, easy access to shared resources (printers, servers, internet) and easier centralised backups — so all of these are benefits.
+
+*Computer networks file sharing, shared resources (printers, server, internet) तक आसान पहुँच, और आसान centralised backups की अनुमति देते हैं — इसलिए ये सभी लाभ हैं।*
+
+**★ Nukta (Key Point):** Networking benefits: sharing (files/resources/peripherals) + communication + backup + cost saving. Exam favourite: "All of the above".
+
+*Networking के लाभ: sharing (files/resources/peripherals) + communication + backup + cost saving। Exam favourite: "All of the above"।*
+
+*[Source: InstrumentationTools 150 CN MCQs] · Hard*
+
+---
+### Q123. How many digits of the Data Network Identification Code (DNIC) identify the country?
+
+<span lang='hi'>Data Network Identification Code (DNIC) के kitne digits देश (country) की पहचान करते हैं?</span>
+
+- **(A)** first three / पहले तीन ✅ **(CORRECT)**
+- **(B)** first four / पहले चार
+- **(C)** first five / पहले पाँच
+- **(D)** first six / पहले छह
+
+**✔ Correct Answer: (A) first three** — In the DNIC (used in X.121 addressing), the first three digits are the country code and the fourth digit identifies the network within that country. So the first three digits identify the country.
+
+*DNIC (X.121 addressing में use होता है) में पहले तीन digits country code होते हैं और चौथा digit उस देश के अंदर के network की पहचान करता है। इसलिए पहले तीन digits देश की पहचान करते हैं।*
+
+**★ Nukta (Key Point):** DNIC: first 3 digits = country code, 4th digit = network code.
+
+*DNIC: पहले 3 digits = country code, चौथा digit = network code.*
+
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q15] · Hard*
+
+---
+### Q124. Which of the following is true for Circuit Switching handling multiple simultaneous connections?
 
 <span lang='hi'>एक साथ अनेक connections संभालते समय Circuit Switching के बारे में क्या सही है?</span>
 
@@ -2486,7 +2546,7 @@ Which statements are correct?
 
 *Circuit switching = हर connection का अपना अलग path। Packet switching = shared medium, packets अलग paths से।*
 
-*[Source: RPSC Programmer 2024 Paper-1 (with official key)]*
+*[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
 

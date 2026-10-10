@@ -22,27 +22,7 @@
 
 *OSI = Open Systems Interconnection (ISO, 1984): 7 layers, layer order, network vs user support layers, address types.*
 
-### Q1. OSI stands for:
-
-<span lang='hi'>OSI का पूरा नाम (full form) क्या है?</span>
-
-- **(A)** Open Systems Interconnection ✅ **(CORRECT)**
-- **(B)** Operating System Interface
-- **(C)** Optical Service Implementation
-- **(D)** None of these
-
-**✔ Correct Answer: (A) Open Systems Interconnection** — OSI = Open Systems Interconnection — the reference model published by ISO in 1984 that standardises network communication into 7 layers.
-
-*OSI = Open Systems Interconnection — ISO द्वारा 1984 में publish किया गया reference model जो network communication को 7 layers में बाँटता है।*
-
-**★ Nukta (Key Point):** OSI = Open Systems Interconnection (ISO, 1984, 7 layers). Ye sabse favourite one-liner hai.
-
-*OSI = Open Systems Interconnection (ISO, 1984, 7 layers)। सबसे favourite one-liner।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q2. The OSI model was developed by:
+### Q1. The OSI model was developed by:
 
 <span lang='hi'>OSI model किसने develop किया?</span>
 
@@ -59,7 +39,27 @@
 
 *OSI = ISO का (1984)। TCP/IP = DoD/ARPA का। IEEE = 802 LAN standards। IETF = TCP/IP standards।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q2. OSI stands for:
+
+<span lang='hi'>OSI का पूरा नाम (full form) क्या है?</span>
+
+- **(A)** Open Systems Interconnection ✅ **(CORRECT)**
+- **(B)** Operating System Interface
+- **(C)** Optical Service Implementation
+- **(D)** None of these
+
+**✔ Correct Answer: (A) Open Systems Interconnection** — OSI = Open Systems Interconnection — the reference model published by ISO in 1984 that standardises network communication into 7 layers.
+
+*OSI = Open Systems Interconnection — ISO द्वारा 1984 में publish किया गया reference model जो network communication को 7 layers में बाँटता है।*
+
+**★ Nukta (Key Point):** OSI = Open Systems Interconnection (ISO, 1984, 7 layers). Ye sabse favourite one-liner hai.
+
+*OSI = Open Systems Interconnection (ISO, 1984, 7 layers)। सबसे favourite one-liner।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
 ### Q3. The OSI model has how many layers?
@@ -79,7 +79,7 @@
 
 *Mnemonic: Please Do Not Throw Sausage Pizza Away (Physical, Data-link, Network, Transport, Session, Presentation, Application)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
 ---
 ### Q4. Why was the OSI model developed?
@@ -99,7 +99,7 @@
 
 *OSI = OPEN systems — कोई भी दो systems जुड़ सकें। इसलिए 'standards were needed' सही उत्तर है।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
 ### Q5. In the OSI model, when data is sent from device A to device B, which is the 5th layer to receive data at B (counting from the bottom)?
@@ -119,50 +119,10 @@
 
 *Layer क्रम (bottom-up): Physical(1), Data-link(2), Network(3), Transport(4), Session(5), Presentation(6), Application(7)।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q6. The session, presentation, and application layers are the ______ support layers.
-
-<span lang='hi'>Session, Presentation और Application layers ______ support layers हैं।</span>
-
-- **(A)** user ✅ **(CORRECT)**
-- **(B)** network
-- **(C)** both (a) and (b)
-- **(D)** neither (a) nor (b)
-
-**✔ Correct Answer: (A) user** — Layers 5-6-7 (Session, Presentation, Application) are called USER support layers; layers 1-2-3 are NETWORK support layers; Transport (layer 4) joins both.
-
-*Layers 5-6-7 (Session, Presentation, Application) USER support layers कहलाती हैं; layers 1-2-3 NETWORK support layers; Transport (layer 4) दोनों को जोड़ती है।*
-
-**★ Nukta (Key Point):** User support = 5,6,7. Network support = 1,2,3. Transport(4) = dono ka bridge.
-
-*User support = 5,6,7। Network support = 1,2,3। Transport(4) = दोनों का bridge।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q7. Which of the following is NOT a network support layer?
-
-<span lang='hi'>निम्नलिखित में से कौन network support layer नहीं है?</span>
-
-- **(A)** Transport Layer ✅ **(CORRECT)**
-- **(B)** Network Layer
-- **(C)** Data Link Layer
-- **(D)** Physical Layer
-
-**✔ Correct Answer: (A) Transport Layer** — Network support layers = Physical(1), Data Link(2), Network(3). Transport(4) is the bridge between network and user support layers, so it is not counted as a network support layer.
-
-*Network support layers = Physical(1), Data Link(2), Network(3)। Transport(4) network और user support layers के बीच bridge है।*
-
-**★ Nukta (Key Point):** Yaad rakho: NOT-network-support = Transport. (1,2,3 = network support; 5,6,7 = user support.)
-
-*याद रखो: NOT-network-support = Transport। (1,2,3 = network support; 5,6,7 = user support.)*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q8. Network support layers are:
+### Q6. Network support layers are:
 
 <span lang='hi'>Network support layers कौन-सी हैं?</span>
 
@@ -179,10 +139,10 @@
 
 *1,2,3 = network support; 5,6,7 = user support; 4 = bridge।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q9. Which layer connects the network support layers and the user support layers?
+### Q7. Which layer connects the network support layers and the user support layers?
 
 <span lang='hi'>कौन-सी layer network support layers और user support layers को जोड़ती है?</span>
 
@@ -199,10 +159,10 @@
 
 *Transport = bridge layer (ऊपर और नीचे दोनों से जुड़ती है)।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q10. In the ISO-OSI reference model, the Session layer offers dialog control, token management and ______ as services.
+### Q8. In the ISO-OSI reference model, the Session layer offers dialog control, token management and ______ as services.
 
 <span lang='hi'>ISO-OSI reference model में Session layer dialog control, token management और ______ services देती है।</span>
 
@@ -219,10 +179,10 @@
 
 *Session की 3 services: Dialog control + Token management + Synchronization (checkpoint)।*
 
-*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
+*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
 ---
-### Q11. How many address types (identifiers) are used from sender to receiver in OSI/TCP-IP communication?
+### Q9. How many address types (identifiers) are used from sender to receiver in OSI/TCP-IP communication?
 
 <span lang='hi'>OSI/TCP-IP communication में sender से receiver तक कितने address types (identifiers) use होते हैं?</span>
 
@@ -239,10 +199,10 @@
 
 *4 addresses: Physical(48-bit) / IP(32-bit) / Port(16-bit) / Specific।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
 ---
-### Q12. Who developed the standards for the OSI reference model?
+### Q10. Who developed the standards for the OSI reference model?
 
 <span lang='hi'>OSI reference model के standards किसने develop किए?</span>
 
@@ -259,7 +219,47 @@
 
 *OSI के standards = ISO के। ANSI/IEEE/ACM के अलग काम हैं।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q11. The session, presentation, and application layers are the ______ support layers.
+
+<span lang='hi'>Session, Presentation और Application layers ______ support layers हैं।</span>
+
+- **(A)** user ✅ **(CORRECT)**
+- **(B)** network
+- **(C)** both (a) and (b)
+- **(D)** neither (a) nor (b)
+
+**✔ Correct Answer: (A) user** — Layers 5-6-7 (Session, Presentation, Application) are called USER support layers; layers 1-2-3 are NETWORK support layers; Transport (layer 4) joins both.
+
+*Layers 5-6-7 (Session, Presentation, Application) USER support layers कहलाती हैं; layers 1-2-3 NETWORK support layers; Transport (layer 4) दोनों को जोड़ती है।*
+
+**★ Nukta (Key Point):** User support = 5,6,7. Network support = 1,2,3. Transport(4) = dono ka bridge.
+
+*User support = 5,6,7। Network support = 1,2,3। Transport(4) = दोनों का bridge।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
+
+---
+### Q12. Which of the following is NOT a network support layer?
+
+<span lang='hi'>निम्नलिखित में से कौन network support layer नहीं है?</span>
+
+- **(A)** Transport Layer ✅ **(CORRECT)**
+- **(B)** Network Layer
+- **(C)** Data Link Layer
+- **(D)** Physical Layer
+
+**✔ Correct Answer: (A) Transport Layer** — Network support layers = Physical(1), Data Link(2), Network(3). Transport(4) is the bridge between network and user support layers, so it is not counted as a network support layer.
+
+*Network support layers = Physical(1), Data Link(2), Network(3)। Transport(4) network और user support layers के बीच bridge है।*
+
+**★ Nukta (Key Point):** Yaad rakho: NOT-network-support = Transport. (1,2,3 = network support; 5,6,7 = user support.)
+
+*याद रखो: NOT-network-support = Transport। (1,2,3 = network support; 5,6,7 = user support.)*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
 
 ---
 
@@ -284,50 +284,10 @@
 
 *Media (cable, fiber, radio) = Physical layer का काम।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q14. The term 'Baud Rate' is associated with which layer?
-
-<span lang='hi'>'Baud Rate' शब्द किस layer से जुड़ा है?</span>
-
-- **(A)** Network Layer
-- **(B)** Data Link Layer
-- **(C)** Physical Layer ✅ **(CORRECT)**
-- **(D)** Application Layer
-
-**✔ Correct Answer: (C) Physical Layer** — Baud rate = number of signal changes per second — a Physical layer concept (signal/line encoding).
-
-*Baud rate = प्रति सेकंड signal changes की संख्या — Physical layer की concept (signal/line encoding)।*
-
-**★ Nukta (Key Point):** Baud rate = signalling rate = Physical layer. Bit rate ≠ baud rate (bits per symbol yaad rakho).
-
-*Baud rate = signalling rate = Physical layer। Bit rate ≠ baud rate।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q15. The layer used to deal with mechanical and electrical specifications is:
-
-<span lang='hi'>Mechanical और electrical specifications से निपटने वाली layer कौन-सी है?</span>
-
-- **(A)** Physical Layer ✅ **(CORRECT)**
-- **(B)** Data Link Layer
-- **(C)** Network Layer
-- **(D)** Transport Layer
-
-**✔ Correct Answer: (A) Physical Layer** — The Physical layer defines mechanical, electrical, functional and procedural specifications of the physical link (connectors, voltages, pin layout, signals).
-
-*Physical layer physical link की mechanical, electrical, functional और procedural specifications define करती है (connectors, voltages, pin layout, signals)।*
-
-**★ Nukta (Key Point):** Mechanical + Electrical + Functional + Procedural = Physical layer ke 4 specifications.
-
-*Mechanical + Electrical + Functional + Procedural = Physical layer की 4 specifications।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q16. The Physical layer deals with:
+### Q14. The Physical layer deals with:
 
 <span lang='hi'>Physical layer किससे निपटती है?</span>
 
@@ -344,90 +304,10 @@
 
 *Physical = bits + signals + media। बाकी ऊपर की layers का काम है।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q17. The Physical layer is responsible for which of the following operations?
-
-<span lang='hi'>Physical layer निम्नलिखित में से किन operations के लिए जिम्मेदार है?</span>
-
-- **(A)** Line coding
-- **(B)** Channel coding
-- **(C)** Modulation
-- **(D)** All of the above ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) All of the above** — Line coding, channel coding and modulation are all Physical layer functions — they prepare the bits for transmission over the medium.
-
-*Line coding, channel coding और modulation — तीनों Physical layer के functions हैं।*
-
-**★ Nukta (Key Point):** Physical layer = Line coding + Channel coding + Modulation + signals/media — 'All of the above' yaad rakho.
-
-*Physical layer = Line coding + Channel coding + Modulation। 'All of the above' याद रखो।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q18. Transmission data rate is decided by:
-
-<span lang='hi'>Transmission data rate कौन तय करती है?</span>
-
-- **(A)** Network layer
-- **(B)** Physical layer ✅ **(CORRECT)**
-- **(C)** Data Link layer
-- **(D)** Transport layer
-
-**✔ Correct Answer: (B) Physical layer** — The data (bit) rate is a Physical layer property — it depends on the bandwidth of the medium and the encoding/modulation used.
-
-*Data (bit) rate Physical layer की property है — यह medium की bandwidth और encoding/modulation पर निर्भर करती है।*
-
-**★ Nukta (Key Point):** Data rate = Physical layer. (Throughput/delay performance bhi isi layer ke signals par depend karti hai.)
-
-*Data rate = Physical layer।*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)]*
-
----
-### Q19. Repeaters function in:
-
-<span lang='hi'>Repeaters किस layer पर काम करते हैं?</span>
-
-- **(A)** Physical layer ✅ **(CORRECT)**
-- **(B)** Data link layer
-- **(C)** Network layer
-- **(D)** Both (A) and (B)
-
-**✔ Correct Answer: (A) Physical layer** — A repeater regenerates the electrical/optical signal — a Physical layer device (layer 1).
-
-*Repeater electrical/optical signal regenerate करता है — Physical layer device (layer 1)।*
-
-**★ Nukta (Key Point):** Repeater/Hub = Physical (L1). Bridge/Switch = Data Link (L2). Router = Network (L3).
-
-*Repeater/Hub = Physical (L1)। Bridge/Switch = Data Link (L2)। Router = Network (L3)।*
-
-*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
-
----
-### Q20. The physical layer is responsible for:
-
-<span lang='hi'>Physical layer किसके लिए जिम्मेदार है?</span>
-
-- **(A)** Bit-by-bit delivery ✅ **(CORRECT)**
-- **(B)** Port to port delivery
-- **(C)** Process to process delivery
-- **(D)** Application to application delivery
-
-**✔ Correct Answer: (A) Bit-by-bit delivery** — Physical layer = transmission of individual bits over the link (bit-by-bit delivery). Port-to-port = Transport; process-to-process = Transport; application-to-application = Application. (Matches the official RPSC key.)
-
-*Physical layer = link पर bit-by-bit delivery। Port-to-port = Transport; process-to-process = Transport; application-to-application = Application। (Official RPSC key से match.)*
-
-**★ Nukta (Key Point):** Bit-by-bit = Physical. Hop-to-hop = Data Link. Source-to-destination = Network. Process-to-process = Transport.
-
-*Bit-by-bit = Physical। Hop-to-hop = Data Link। Source-to-destination = Network। Process-to-process = Transport।*
-
-*[Source: RPSC Programmer 2024 Paper-1 (with official key)]*
-
----
-### Q21. The sub-layer of the Physical layer which directly interfaces with the MAC sub-layer is called:
+### Q15. The sub-layer of the Physical layer which directly interfaces with the MAC sub-layer is called:
 
 <span lang='hi'>Physical layer का वह sub-layer जो सीधे MAC sub-layer से जुड़ता है, कहलाता है:</span>
 
@@ -444,90 +324,10 @@
 
 *PLS (Physical Layer Signalling) = Physical layer का upper sub-layer जो MAC से जुड़ता है।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q22. The physical layer translates logical communication requests from the ______ into hardware-specific operations.
-
-<span lang='hi'>Physical layer, ______ के logical communication requests को hardware-specific operations में बदलता है।</span>
-
-- **(A)** Network layer
-- **(B)** Transport layer
-- **(C)** Data link layer ✅ **(CORRECT)**
-- **(D)** Application layer
-
-**✔ Correct Answer: (C) Data link layer** — The data link layer (directly above the physical layer) sends logical requests like 'transmit this frame'; the physical layer converts them into the electrical/optical hardware operations on the medium.
-
-*Data link layer (physical layer के ठीक ऊपर) जैसे logical requests भेजती है — 'यह frame transmit करो'; physical layer उन्हें medium पर electrical/optical hardware operations में बदलती है।*
-
-**★ Nukta (Key Point):** Each layer serves the layer ABOVE it — physical serves data link. Exam banks sometimes mis-key this as 'network layer'; the correct neighbour is the data link layer.
-
-*हर layer अपने ऊपर वाली layer की सेवा करती है — physical, data link की। कुछ exam banks इसे गलती से 'network layer' लिखते हैं; सही उत्तर data link layer है।*
-
-*[Source: InstrumentationTools 150 CN MCQs (key corrected vs Forouzan)]*
-
----
-### Q23. Which one of the following is a data link (Layer 2) protocol?
-
-<span lang='hi'>निम्न में से कौन data link (Layer 2) protocol है?</span>
-
-- **(A)** Point-to-Point Protocol (PPP)
-- **(B)** HDLC
-- **(C)** Ethernet
-- **(D)** All of these ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) All of these** — PPP, HDLC and Ethernet are all data link layer (Layer 2) protocols — they frame packets and handle physical addressing/error detection at the link level.
-
-*PPP, HDLC और Ethernet — तीनों data link layer (Layer 2) protocols हैं — ये packets को frame करते हैं और link level पर physical addressing/error detection करते हैं।*
-
-**★ Nukta (Key Point):** Layer 2 protocols = PPP, HDLC, Ethernet, Frame Relay, ATM (cell-based). Network layer = IP, ICMP, ARP.
-
-*Layer 2 protocols = PPP, HDLC, Ethernet, Frame Relay, ATM (cell-based)। Network layer = IP, ICMP, ARP।*
-
-*[Source: InstrumentationTools 150 CN MCQs]*
-
----
-### Q24. The Application layer is implemented in:
-
-<span lang='hi'>Application layer कहाँ implement होती है?</span>
-
-- **(A)** End system ✅ **(CORRECT)**
-- **(B)** NIC
-- **(C)** Ethernet
-- **(D)** Packet transport
-
-**✔ Correct Answer: (A) End system** — In the protocol stack, the application layer (like transport) is implemented in the end systems — the hosts (user's computer or the server) — not inside intermediate network devices.
-
-*Protocol stack में application layer (transport की तरह) end systems में implement होती है — hosts (user का computer या server) में — बीच के network devices में नहीं।*
-
-**★ Nukta (Key Point):** End systems (hosts) implement layers up to the application; switches implement only Layers 1-2, routers only Layers 1-3.
-
-*End systems (hosts) application तक की layers implement करते हैं; switches सिर्फ Layers 1-2, routers सिर्फ Layers 1-3।*
-
-*[Source: Sanfoundry CN MCQs — Reference Models]*
-
----
-### Q25. Which layer of the OSI model is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium?
-
-<span lang='hi'>OSI model की कौन-सी layer device और physical transmission medium के बीच unstructured raw data के transmission और reception के लिए जिम्मेदार है?</span>
-
-- **(A)** Transport layer
-- **(B)** Data-Link layer
-- **(C)** Network layer
-- **(D)** Physical layer ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Physical layer** — Raw (unstructured) bit transmission over the medium is exactly the Physical layer's role.
-
-*Medium पर raw (unstructured) bits भेजना Physical layer का ही काम है।*
-
-**★ Nukta (Key Point):** 'Raw data + physical medium' = Physical layer. SSC/Railway mein ye one-liner common hai.
-
-*'Raw data + physical medium' = Physical layer।*
-
-*[Source: Central exams — SSC/Railway/UPSC Computer Awareness (Exampundit)]*
-
----
-### Q26. Which layer creates the 'collision domain'?
+### Q16. Which layer creates the 'collision domain'?
 
 <span lang='hi'>'Collision domain' कौन-सी layer बनाती है?</span>
 
@@ -544,10 +344,10 @@
 
 *Hub network = एक collision domain (Physical)। Switch = per-port collision domain (Data Link)। Router = broadcast domain boundary (Network)।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q27. Data Link Layer is divided into:
+### Q17. Data Link Layer is divided into:
 
 <span lang='hi'>Data Link Layer किनमें विभाजित है?</span>
 
@@ -564,30 +364,10 @@
 
 *Data Link = LLC (ऊपर, 802.2) + MAC (नीचे, 802.3)।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q28. Which statement best describes the difference between the LLC and MAC sub-layers?
-
-<span lang='hi'>LLC और MAC sub-layers के बीच अंतर सबसे अच्छा कौन बताता है?</span>
-
-- **(A)** LLC handles physical addressing, MAC handles flow control / LLC physical addressing करता है, MAC flow control करता है
-- **(B)** LLC provides the service interface to the Network layer; MAC controls access to the medium / LLC, Network layer को service interface देता है; MAC medium तक access control करता है ✅ **(CORRECT)**
-- **(C)** LLC works only in wireless networks, MAC only in wired networks / LLC सिर्फ wireless में, MAC सिर्फ wired में काम करता है
-- **(D)** LLC performs framing, MAC performs routing / LLC framing करता है, MAC routing करता है
-
-**✔ Correct Answer: (B) LLC provides the service interface to the Network layer; MAC controls access to the medium** — LLC (802.2) provides an interface to the Network layer (flow/error control over the link); MAC (802.3 etc.) handles physical addressing and media access (CSMA/CD etc.).
-
-*LLC (802.2) Network layer को interface देता है; MAC (802.3 आदि) physical addressing और media access (CSMA/CD आदि) संभालता है।*
-
-**★ Nukta (Key Point):** LLC = upar wala sub-layer (network layer se link). MAC = neeche wala (medium access + physical address).
-
-*LLC = ऊपर का sub-layer। MAC = नीचे का (medium access + physical address)।*
-
-*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)]*
-
----
-### Q29. Physical (hardware) addressing is added at:
+### Q18. Physical (hardware) addressing is added at:
 
 <span lang='hi'>Physical (hardware) addressing किस layer पर जोड़ी जाती है?</span>
 
@@ -604,30 +384,10 @@
 
 *Physical/MAC address = Data Link। IP/Logical = Network। Port = Transport।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q30. A frame is received at the Data Link layer with an incorrect FCS. What will happen?
-
-<span lang='hi'>Data Link layer पर frame गलत FCS के साथ प्राप्त होता है। क्या होगा?</span>
-
-- **(A)** Frame discarded ✅ **(CORRECT)**
-- **(B)** Frame corrected
-- **(C)** Sent to network layer
-- **(D)** Re-transmitted automatically
-
-**✔ Correct Answer: (A) Frame discarded** — FCS (Frame Check Sequence, usually CRC) detects errors; a frame with a bad FCS is silently discarded by the receiver's Data Link layer (retransmission, if any, is a higher-level/ARQ decision).
-
-*FCS (Frame Check Sequence, सामान्यतः CRC) errors detect करता है; गलत FCS वाला frame receiver की Data Link layer द्वारा discard कर दिया जाता है।*
-
-**★ Nukta (Key Point):** Bad FCS = frame drop (discard). Correction/Data Link khud re-transmit nahi karti — wo ARQ/higher layer ka decision hai.
-
-*गलत FCS = frame discard।*
-
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
-
----
-### Q31. 'Transparent transmission' is the function of which layer?
+### Q19. 'Transparent transmission' is the function of which layer?
 
 <span lang='hi'>'Transparent transmission' किस layer का काम है?</span>
 
@@ -644,10 +404,10 @@
 
 *Data Link = 'transparent service' — Network layer को नीचे की मेहनत पता नहीं चलती।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q32. Which layer handles 'hop-to-hop' flow control?
+### Q20. Which layer handles 'hop-to-hop' flow control?
 
 <span lang='hi'>'Hop-to-hop' flow control कौन-सी layer संभालती है?</span>
 
@@ -664,90 +424,10 @@
 
 *Hop-to-hop = Data Link। End-to-end = Transport।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q33. The ______ layer is responsible for delivering data units from one station to the next without errors.
-
-<span lang='hi'>______ layer data units को एक station से अगले station तक बिना errors पहुँचाने के लिए जिम्मेदार है।</span>
-
-- **(A)** Transport
-- **(B)** Network
-- **(C)** Data link ✅ **(CORRECT)**
-- **(D)** Physical
-
-**✔ Correct Answer: (C) Data link** — Forouzan: the Data Link layer is responsible for delivering data units from one station to the NEXT without errors (hop-to-hop delivery).
-
-*Forouzan: Data Link layer data units को एक station से अगले तक बिना errors पहुँचाती है (hop-to-hop delivery)।*
-
-**★ Nukta (Key Point):** 'Station to next station' = Data Link (hop-to-hop). 'Source to destination' = Network.
-
-*'Station to next station' = Data Link। 'Source to destination' = Network।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q34. ______ Layer is responsible for framing, error detection and physical addressing.
-
-<span lang='hi'>______ Layer framing, error detection और physical addressing के लिए जिम्मेदार है।</span>
-
-- **(A)** Network
-- **(B)** Transport
-- **(C)** Application
-- **(D)** Data Link ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Data Link** — Framing, error detection (CRC/FCS) and physical (MAC) addressing — all three are classic Data Link layer responsibilities.
-
-*Framing, error detection (CRC/FCS) और physical (MAC) addressing — तीनों Data Link layer की जिम्मेदारी हैं।*
-
-**★ Nukta (Key Point):** Framing + Error detection + MAC addressing = Data Link ka 'trio'.
-
-*Framing + Error detection + MAC addressing = Data Link का trio।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q35. Bridge works in which layer of the OSI model?
-
-<span lang='hi'>Bridge OSI model की किस layer पर काम करता है?</span>
-
-- **(A)** Application layer
-- **(B)** Transport layer
-- **(C)** Network layer
-- **(D)** Data link layer ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Data link layer** — A bridge connects two LAN segments and filters/forwards frames using MAC addresses — a Data Link layer (layer 2) device.
-
-*Bridge दो LAN segments को जोड़ता है और MAC addresses से frames filter/forward करता है — Data Link layer (layer 2) device।*
-
-**★ Nukta (Key Point):** Bridge/Switch = L2. Router = L3. Hub/Repeater = L1. Gateway = L4+.
-
-*Bridge/Switch = L2। Router = L3। Hub/Repeater = L1। Gateway = L4+।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2) · also asked in KVS PGT CS 2018 Official Paper]*
-
----
-### Q36. From which layer does the Data Link layer collect packets and encapsulate them into frames for transmission?
-
-<span lang='hi'>Data Link layer किस layer से packets लेकर उन्हें transmission के लिए frames में encapsulate करती है?</span>
-
-- **(A)** Transport layer
-- **(B)** Application layer
-- **(C)** Network layer ✅ **(CORRECT)**
-- **(D)** Physical layer
-
-**✔ Correct Answer: (C) Network layer** — The Data Link layer receives packets (datagrams) from the Network layer above and encapsulates them into frames.
-
-*Data Link layer ऊपर की Network layer से packets (datagrams) लेती है और उन्हें frames में encapsulate करती है।*
-
-**★ Nukta (Key Point):** Encapsulation: Network packet -> Data Link frame -> Physical bits. Upar se neeche.
-
-*Encapsulation: Network packet -> Data Link frame -> Physical bits।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q37. Which OSI layer is responsible for logical addressing?
+### Q21. Which OSI layer is responsible for logical addressing?
 
 <span lang='hi'>Logical addressing के लिए कौन-सी OSI layer जिम्मेदार है?</span>
 
@@ -764,50 +444,10 @@
 
 *Logical address = IP = Network layer (L3)। Physical address = MAC = Data Link (L2)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q38. IPv4 and IPv6 work at which OSI layer?
-
-<span lang='hi'>IPv4 और IPv6 किस OSI layer पर काम करते हैं?</span>
-
-- **(A)** Data link layer
-- **(B)** Network layer ✅ **(CORRECT)**
-- **(C)** Transport layer
-- **(D)** Application layer
-
-**✔ Correct Answer: (B) Network layer** — IP (IPv4/IPv6) is the Network layer protocol of the Internet — layer 3.
-
-*IP (IPv4/IPv6) Internet का Network layer protocol है — layer 3।*
-
-**★ Nukta (Key Point):** IP = Internet Protocol = Network/Internet layer (L3). Hamesha!
-
-*IP = Network/Internet layer (L3)।*
-
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
-
----
-### Q39. The ______ layer is responsible for the source-to-destination delivery of a packet across multiple network links.
-
-<span lang='hi'>______ layer एक packet की multiple network links के बीच source-to-destination delivery के लिए जिम्मेदार है।</span>
-
-- **(A)** Transport
-- **(B)** Network ✅ **(CORRECT)**
-- **(C)** Data link
-- **(D)** Physical
-
-**✔ Correct Answer: (B) Network** — Forouzan: the Network layer handles source-to-destination (host-to-host) delivery of a packet across multiple links via routing.
-
-*Forouzan: Network layer routing के जरिए packet की multiple links के बीच source-to-destination delivery करती है।*
-
-**★ Nukta (Key Point):** Source-to-destination = Network. Process-to-process = Transport. Station-to-station = Data Link.
-
-*Source-to-destination = Network। Process-to-process = Transport। Station-to-station = Data Link।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q40. Which layer performs segmentation?
+### Q22. Which layer performs segmentation?
 
 <span lang='hi'>Segmentation कौन-सी layer करती है?</span>
 
@@ -824,10 +464,10 @@
 
 *Segmentation + Reassembly = Transport। (Packetisation Network की, Framing Data Link की।)*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q41. Which layer provides end-to-end communication?
+### Q23. Which layer provides end-to-end communication?
 
 <span lang='hi'>End-to-end communication कौन-सी layer देती है?</span>
 
@@ -844,10 +484,10 @@
 
 *End-to-end = Transport। Source-to-destination = Network। Hop-to-hop = Data Link। Bit-by-bit = Physical।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q42. In the OSI model, which layer(s) participate in 'end-to-end' delivery? (1) Network (2) Transport (3) Session (4) Data link
+### Q24. In the OSI model, which layer(s) participate in 'end-to-end' delivery? (1) Network (2) Transport (3) Session (4) Data link
 
 <span lang='hi'>OSI model में 'end-to-end' delivery में कौन-सी layer(s) भाग लेती हैं? (1) Network (2) Transport (3) Session (4) Data link</span>
 
@@ -864,10 +504,10 @@
 
 *End-to-end = सिर्फ Transport।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q43. Which layer performs 'service point addressing'?
+### Q25. Which layer performs 'service point addressing'?
 
 <span lang='hi'>'Service point addressing' कौन-सी layer करती है?</span>
 
@@ -884,10 +524,10 @@
 
 *Service point = Port। Port addressing = Transport (16-bit port numbers)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q44. Which OSI layer handles message boundaries (knowing where one message ends and the next begins)?
+### Q26. Which OSI layer handles message boundaries (knowing where one message ends and the next begins)?
 
 <span lang='hi'>कौन-सी OSI layer message boundaries संभालती है (एक message कहाँ समाप्त होता है और अगला कहाँ शुरू)?</span>
 
@@ -904,27 +544,387 @@
 
 *Message boundary = transport-level concept।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
-### Q45. The reliable data transfer is implemented by:
+### Q27. Determine the OSI layer responsible for dialogue control (half-duplex or full-duplex communication).
 
-<span lang='hi'>Reliable data transfer कौन-सी layer implement करती है?</span>
+<span lang='hi'>Dialogue control (half-duplex या full-duplex communication) के लिए कौन-सी OSI layer जिम्मेदार है?</span>
+
+- **(A)** Session Layer ✅ **(CORRECT)**
+- **(B)** Transport Layer
+- **(C)** Network Layer
+- **(D)** Data Link Layer
+
+**✔ Correct Answer: (A) Session Layer** — Dialog control — deciding whose turn it is to speak (half/full-duplex dialog) — is a Session layer service.
+
+*Dialog control — किसकी बारी है (half/full-duplex dialog) — Session layer की service है।*
+
+**★ Nukta (Key Point):** Dialog control + Token management + Synchronization = Session layer ka kaam.
+
+*Dialog control + Token management + Synchronization = Session layer का काम।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
+
+---
+### Q28. Which layer supports 'checkpointing' (synchronisation for recovery)?
+
+<span lang='hi'>कौन-सी layer 'checkpointing' (recovery के लिए synchronization) support करती है?</span>
+
+- **(A)** Transport
+- **(B)** Application
+- **(C)** Session ✅ **(CORRECT)**
+- **(D)** Data link
+
+**✔ Correct Answer: (C) Session** — The Session layer inserts checkpoints/synchronisation points in the data stream so a dialog can resume after a failure.
+
+*Session layer data stream में checkpoints/synchronisation points लगाती है ताकि failure के बाद dialog जारी रह सके।*
+
+**★ Nukta (Key Point):** Checkpointing = Session (synchronization). Ye exam ka classic sawaal hai.
+
+*Checkpointing = Session।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q29. Which layer translates data from a format used by the application into a common format (e.g., ASCII to EBCDIC)?
+
+<span lang='hi'>कौन-सी layer data को application के format से common format में बदलती है (जैसे ASCII से EBCDIC)?</span>
+
+- **(A)** Application Layer
+- **(B)** Presentation Layer ✅ **(CORRECT)**
+- **(C)** Session Layer
+- **(D)** Transport Layer
+
+**✔ Correct Answer: (B) Presentation Layer** — Translation between data formats (ASCII/EBCDIC), encryption and compression are Presentation layer jobs.
+
+*Data formats के बीच translation (ASCII/EBCDIC), encryption और compression Presentation layer का काम है।*
+
+**★ Nukta (Key Point):** Presentation = Translation + Encryption + Compression (TEC). ASCII<->EBCDIC isi layer ka classic example hai.
+
+*Presentation = Translation + Encryption + Compression।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
+
+---
+### Q30. Which layer is responsible for encryption?
+
+<span lang='hi'>Encryption के लिए कौन-सी layer जिम्मेदार है?</span>
+
+- **(A)** Session
+- **(B)** Presentation ✅ **(CORRECT)**
+- **(C)** Application
+- **(D)** Transport
+
+**✔ Correct Answer: (B) Presentation** — Encryption/decryption of data for presentation is a Presentation layer responsibility (layer 6).
+
+*Presentation के लिए data की encryption/decryption Presentation layer (layer 6) की जिम्मेदारी है।*
+
+**★ Nukta (Key Point):** Encryption + Compression + Translation = Presentation (L6).
+
+*Encryption + Compression + Translation = Presentation (L6)।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q31. Which OSI layer ensures interoperability between different data formats?
+
+<span lang='hi'>कौन-सी OSI layer अलग-अलग data formats के बीच interoperability सुनिश्चित करती है?</span>
+
+- **(A)** Presentation ✅ **(CORRECT)**
+- **(B)** Application
+- **(C)** Session
+- **(D)** Network
+
+**✔ Correct Answer: (A) Presentation** — The Presentation layer provides a common data representation/translation so different systems understand each other's formats.
+
+*Presentation layer एक common data representation/translation देती है ताकि अलग systems एक-दूसरे के formats समझ सकें।*
+
+**★ Nukta (Key Point):** Common format = Presentation. Isi liye ise 'syntax layer' bhi kehte hain.
+
+*Common format = Presentation। इसे 'syntax layer' भी कहते हैं।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
+
+---
+### Q32. Which OSI layer decides the type of compression?
+
+<span lang='hi'>कौन-सी OSI layer compression का प्रकार तय करती है?</span>
+
+- **(A)** Application
+- **(B)** Presentation ✅ **(CORRECT)**
+- **(C)** Transport
+- **(D)** Data link
+
+**✔ Correct Answer: (B) Presentation** — Data compression (and its type) is a Presentation layer function.
+
+*Data compression (और उसका प्रकार) Presentation layer का काम है।*
+
+**★ Nukta (Key Point):** Compression = Presentation. (Encryption aur translation bhi isi ke saath.)
+
+*Compression = Presentation।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
+
+---
+### Q33. The term 'Baud Rate' is associated with which layer?
+
+<span lang='hi'>'Baud Rate' शब्द किस layer से जुड़ा है?</span>
+
+- **(A)** Network Layer
+- **(B)** Data Link Layer
+- **(C)** Physical Layer ✅ **(CORRECT)**
+- **(D)** Application Layer
+
+**✔ Correct Answer: (C) Physical Layer** — Baud rate = number of signal changes per second — a Physical layer concept (signal/line encoding).
+
+*Baud rate = प्रति सेकंड signal changes की संख्या — Physical layer की concept (signal/line encoding)।*
+
+**★ Nukta (Key Point):** Baud rate = signalling rate = Physical layer. Bit rate ≠ baud rate (bits per symbol yaad rakho).
+
+*Baud rate = signalling rate = Physical layer। Bit rate ≠ baud rate।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
+
+---
+### Q34. The layer used to deal with mechanical and electrical specifications is:
+
+<span lang='hi'>Mechanical और electrical specifications से निपटने वाली layer कौन-सी है?</span>
+
+- **(A)** Physical Layer ✅ **(CORRECT)**
+- **(B)** Data Link Layer
+- **(C)** Network Layer
+- **(D)** Transport Layer
+
+**✔ Correct Answer: (A) Physical Layer** — The Physical layer defines mechanical, electrical, functional and procedural specifications of the physical link (connectors, voltages, pin layout, signals).
+
+*Physical layer physical link की mechanical, electrical, functional और procedural specifications define करती है (connectors, voltages, pin layout, signals)।*
+
+**★ Nukta (Key Point):** Mechanical + Electrical + Functional + Procedural = Physical layer ke 4 specifications.
+
+*Mechanical + Electrical + Functional + Procedural = Physical layer की 4 specifications।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q35. The Physical layer is responsible for which of the following operations?
+
+<span lang='hi'>Physical layer निम्नलिखित में से किन operations के लिए जिम्मेदार है?</span>
+
+- **(A)** Line coding
+- **(B)** Channel coding
+- **(C)** Modulation
+- **(D)** All of the above ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) All of the above** — Line coding, channel coding and modulation are all Physical layer functions — they prepare the bits for transmission over the medium.
+
+*Line coding, channel coding और modulation — तीनों Physical layer के functions हैं।*
+
+**★ Nukta (Key Point):** Physical layer = Line coding + Channel coding + Modulation + signals/media — 'All of the above' yaad rakho.
+
+*Physical layer = Line coding + Channel coding + Modulation। 'All of the above' याद रखो।*
+
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
+
+---
+### Q36. Transmission data rate is decided by:
+
+<span lang='hi'>Transmission data rate कौन तय करती है?</span>
 
 - **(A)** Network layer
-- **(B)** Physical layer
-- **(C)** Presentation layer
-- **(D)** Transport layer ✅ **(CORRECT)**
+- **(B)** Physical layer ✅ **(CORRECT)**
+- **(C)** Data Link layer
+- **(D)** Transport layer
 
-**✔ Correct Answer: (D) Transport layer** — Reliability (acknowledgements, retransmission, in-order delivery) is implemented by the Transport layer (e.g. TCP). (Matches the official RPSC key.)
+**✔ Correct Answer: (B) Physical layer** — The data (bit) rate is a Physical layer property — it depends on the bandwidth of the medium and the encoding/modulation used.
 
-*Reliability (acknowledgements, retransmission, in-order delivery) Transport layer implement करती है (जैसे TCP)। (Official RPSC key से match.)*
+*Data (bit) rate Physical layer की property है — यह medium की bandwidth और encoding/modulation पर निर्भर करती है।*
 
-**★ Nukta (Key Point):** Reliable delivery = Transport (TCP). IP (Network) unreliable hai — best-effort only.
+**★ Nukta (Key Point):** Data rate = Physical layer. (Throughput/delay performance bhi isi layer ke signals par depend karti hai.)
 
-*Reliable delivery = Transport (TCP)। IP (Network) unreliable है।*
+*Data rate = Physical layer।*
 
-*[Source: RPSC Programmer 2024 Paper-1 (with official key)]*
+*[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
+
+---
+### Q37. The physical layer translates logical communication requests from the ______ into hardware-specific operations.
+
+<span lang='hi'>Physical layer, ______ के logical communication requests को hardware-specific operations में बदलता है।</span>
+
+- **(A)** Network layer
+- **(B)** Transport layer
+- **(C)** Data link layer ✅ **(CORRECT)**
+- **(D)** Application layer
+
+**✔ Correct Answer: (C) Data link layer** — The data link layer (directly above the physical layer) sends logical requests like 'transmit this frame'; the physical layer converts them into the electrical/optical hardware operations on the medium.
+
+*Data link layer (physical layer के ठीक ऊपर) जैसे logical requests भेजती है — 'यह frame transmit करो'; physical layer उन्हें medium पर electrical/optical hardware operations में बदलती है।*
+
+**★ Nukta (Key Point):** Each layer serves the layer ABOVE it — physical serves data link. Exam banks sometimes mis-key this as 'network layer'; the correct neighbour is the data link layer.
+
+*हर layer अपने ऊपर वाली layer की सेवा करती है — physical, data link की। कुछ exam banks इसे गलती से 'network layer' लिखते हैं; सही उत्तर data link layer है।*
+
+*[Source: InstrumentationTools 150 CN MCQs (key corrected vs Forouzan)] · Medium*
+
+---
+### Q38. The Application layer is implemented in:
+
+<span lang='hi'>Application layer कहाँ implement होती है?</span>
+
+- **(A)** End system ✅ **(CORRECT)**
+- **(B)** NIC
+- **(C)** Ethernet
+- **(D)** Packet transport
+
+**✔ Correct Answer: (A) End system** — In the protocol stack, the application layer (like transport) is implemented in the end systems — the hosts (user's computer or the server) — not inside intermediate network devices.
+
+*Protocol stack में application layer (transport की तरह) end systems में implement होती है — hosts (user का computer या server) में — बीच के network devices में नहीं।*
+
+**★ Nukta (Key Point):** End systems (hosts) implement layers up to the application; switches implement only Layers 1-2, routers only Layers 1-3.
+
+*End systems (hosts) application तक की layers implement करते हैं; switches सिर्फ Layers 1-2, routers सिर्फ Layers 1-3।*
+
+*[Source: Sanfoundry CN MCQs — Reference Models] · Medium*
+
+---
+### Q39. Which statement best describes the difference between the LLC and MAC sub-layers?
+
+<span lang='hi'>LLC और MAC sub-layers के बीच अंतर सबसे अच्छा कौन बताता है?</span>
+
+- **(A)** LLC handles physical addressing, MAC handles flow control / LLC physical addressing करता है, MAC flow control करता है
+- **(B)** LLC provides the service interface to the Network layer; MAC controls access to the medium / LLC, Network layer को service interface देता है; MAC medium तक access control करता है ✅ **(CORRECT)**
+- **(C)** LLC works only in wireless networks, MAC only in wired networks / LLC सिर्फ wireless में, MAC सिर्फ wired में काम करता है
+- **(D)** LLC performs framing, MAC performs routing / LLC framing करता है, MAC routing करता है
+
+**✔ Correct Answer: (B) LLC provides the service interface to the Network layer; MAC controls access to the medium** — LLC (802.2) provides an interface to the Network layer (flow/error control over the link); MAC (802.3 etc.) handles physical addressing and media access (CSMA/CD etc.).
+
+*LLC (802.2) Network layer को interface देता है; MAC (802.3 आदि) physical addressing और media access (CSMA/CD आदि) संभालता है।*
+
+**★ Nukta (Key Point):** LLC = upar wala sub-layer (network layer se link). MAC = neeche wala (medium access + physical address).
+
+*LLC = ऊपर का sub-layer। MAC = नीचे का (medium access + physical address)।*
+
+*[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
+
+---
+### Q40. A frame is received at the Data Link layer with an incorrect FCS. What will happen?
+
+<span lang='hi'>Data Link layer पर frame गलत FCS के साथ प्राप्त होता है। क्या होगा?</span>
+
+- **(A)** Frame discarded ✅ **(CORRECT)**
+- **(B)** Frame corrected
+- **(C)** Sent to network layer
+- **(D)** Re-transmitted automatically
+
+**✔ Correct Answer: (A) Frame discarded** — FCS (Frame Check Sequence, usually CRC) detects errors; a frame with a bad FCS is silently discarded by the receiver's Data Link layer (retransmission, if any, is a higher-level/ARQ decision).
+
+*FCS (Frame Check Sequence, सामान्यतः CRC) errors detect करता है; गलत FCS वाला frame receiver की Data Link layer द्वारा discard कर दिया जाता है।*
+
+**★ Nukta (Key Point):** Bad FCS = frame drop (discard). Correction/Data Link khud re-transmit nahi karti — wo ARQ/higher layer ka decision hai.
+
+*गलत FCS = frame discard।*
+
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
+
+---
+### Q41. The ______ layer is responsible for delivering data units from one station to the next without errors.
+
+<span lang='hi'>______ layer data units को एक station से अगले station तक बिना errors पहुँचाने के लिए जिम्मेदार है।</span>
+
+- **(A)** Transport
+- **(B)** Network
+- **(C)** Data link ✅ **(CORRECT)**
+- **(D)** Physical
+
+**✔ Correct Answer: (C) Data link** — Forouzan: the Data Link layer is responsible for delivering data units from one station to the NEXT without errors (hop-to-hop delivery).
+
+*Forouzan: Data Link layer data units को एक station से अगले तक बिना errors पहुँचाती है (hop-to-hop delivery)।*
+
+**★ Nukta (Key Point):** 'Station to next station' = Data Link (hop-to-hop). 'Source to destination' = Network.
+
+*'Station to next station' = Data Link। 'Source to destination' = Network।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q42. ______ Layer is responsible for framing, error detection and physical addressing.
+
+<span lang='hi'>______ Layer framing, error detection और physical addressing के लिए जिम्मेदार है।</span>
+
+- **(A)** Network
+- **(B)** Transport
+- **(C)** Application
+- **(D)** Data Link ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Data Link** — Framing, error detection (CRC/FCS) and physical (MAC) addressing — all three are classic Data Link layer responsibilities.
+
+*Framing, error detection (CRC/FCS) और physical (MAC) addressing — तीनों Data Link layer की जिम्मेदारी हैं।*
+
+**★ Nukta (Key Point):** Framing + Error detection + MAC addressing = Data Link ka 'trio'.
+
+*Framing + Error detection + MAC addressing = Data Link का trio।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q43. From which layer does the Data Link layer collect packets and encapsulate them into frames for transmission?
+
+<span lang='hi'>Data Link layer किस layer से packets लेकर उन्हें transmission के लिए frames में encapsulate करती है?</span>
+
+- **(A)** Transport layer
+- **(B)** Application layer
+- **(C)** Network layer ✅ **(CORRECT)**
+- **(D)** Physical layer
+
+**✔ Correct Answer: (C) Network layer** — The Data Link layer receives packets (datagrams) from the Network layer above and encapsulates them into frames.
+
+*Data Link layer ऊपर की Network layer से packets (datagrams) लेती है और उन्हें frames में encapsulate करती है।*
+
+**★ Nukta (Key Point):** Encapsulation: Network packet -> Data Link frame -> Physical bits. Upar se neeche.
+
+*Encapsulation: Network packet -> Data Link frame -> Physical bits।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
+
+---
+### Q44. IPv4 and IPv6 work at which OSI layer?
+
+<span lang='hi'>IPv4 और IPv6 किस OSI layer पर काम करते हैं?</span>
+
+- **(A)** Data link layer
+- **(B)** Network layer ✅ **(CORRECT)**
+- **(C)** Transport layer
+- **(D)** Application layer
+
+**✔ Correct Answer: (B) Network layer** — IP (IPv4/IPv6) is the Network layer protocol of the Internet — layer 3.
+
+*IP (IPv4/IPv6) Internet का Network layer protocol है — layer 3।*
+
+**★ Nukta (Key Point):** IP = Internet Protocol = Network/Internet layer (L3). Hamesha!
+
+*IP = Network/Internet layer (L3)।*
+
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
+
+---
+### Q45. The ______ layer is responsible for the source-to-destination delivery of a packet across multiple network links.
+
+<span lang='hi'>______ layer एक packet की multiple network links के बीच source-to-destination delivery के लिए जिम्मेदार है।</span>
+
+- **(A)** Transport
+- **(B)** Network ✅ **(CORRECT)**
+- **(C)** Data link
+- **(D)** Physical
+
+**✔ Correct Answer: (B) Network** — Forouzan: the Network layer handles source-to-destination (host-to-host) delivery of a packet across multiple links via routing.
+
+*Forouzan: Network layer routing के जरिए packet की multiple links के बीच source-to-destination delivery करती है।*
+
+**★ Nukta (Key Point):** Source-to-destination = Network. Process-to-process = Transport. Station-to-station = Data Link.
+
+*Source-to-destination = Network। Process-to-process = Transport। Station-to-station = Data Link।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
 ### Q46. Which layer is responsible for reliable delivery in the OSI model?
@@ -944,7 +944,7 @@
 
 *Reliable = Transport।*
 
-*[Source: Repo: CN Topic Test 5 (UNIT TEST-5)]*
+*[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
 ---
 ### Q47. Which layer is responsible for process-to-process delivery?
@@ -964,150 +964,10 @@
 
 *Process-to-process = Transport। Host-to-host = Network।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q48. If a port number is 16 bits (2 bytes), what is the MINIMUM size of the transport-layer header needed to carry the port addresses?
-
-<span lang='hi'>यदि port number 16 bits (2 bytes) का है, तो port addresses ले जाने के लिए transport-layer header की MINIMUM size कितनी होगी?</span>
-
-- **(A)** 2 bytes
-- **(B)** 4 bytes ✅ **(CORRECT)**
-- **(C)** 8 bytes
-- **(D)** 20 bytes
-
-**✔ Correct Answer: (B) 4 bytes** — A transport header must carry at least two port numbers (source + destination) = 2 × 2 bytes = 4 bytes. (Real protocols add more: UDP header = 8 bytes, TCP header = 20 bytes.)
-
-*Transport header में कम से कम दो port numbers (source + destination) होते हैं = 2 × 2 bytes = 4 bytes। (असली protocols में और fields होते हैं: UDP = 8 bytes, TCP = 20 bytes।)*
-
-**★ Nukta (Key Point):** Min transport header (ports only) = 4 bytes. UDP = 8, TCP = 20 — teeno numbers exam mein aate hain.
-
-*Min transport header (ports only) = 4 bytes। UDP = 8, TCP = 20।*
-
-*[Source: Forouzan Ch1 (Q1-23) — Practice Set]*
-
----
-### Q49. Determine the OSI layer responsible for dialogue control (half-duplex or full-duplex communication).
-
-<span lang='hi'>Dialogue control (half-duplex या full-duplex communication) के लिए कौन-सी OSI layer जिम्मेदार है?</span>
-
-- **(A)** Session Layer ✅ **(CORRECT)**
-- **(B)** Transport Layer
-- **(C)** Network Layer
-- **(D)** Data Link Layer
-
-**✔ Correct Answer: (A) Session Layer** — Dialog control — deciding whose turn it is to speak (half/full-duplex dialog) — is a Session layer service.
-
-*Dialog control — किसकी बारी है (half/full-duplex dialog) — Session layer की service है।*
-
-**★ Nukta (Key Point):** Dialog control + Token management + Synchronization = Session layer ka kaam.
-
-*Dialog control + Token management + Synchronization = Session layer का काम।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q50. Which layer supports 'checkpointing' (synchronisation for recovery)?
-
-<span lang='hi'>कौन-सी layer 'checkpointing' (recovery के लिए synchronization) support करती है?</span>
-
-- **(A)** Transport
-- **(B)** Application
-- **(C)** Session ✅ **(CORRECT)**
-- **(D)** Data link
-
-**✔ Correct Answer: (C) Session** — The Session layer inserts checkpoints/synchronisation points in the data stream so a dialog can resume after a failure.
-
-*Session layer data stream में checkpoints/synchronisation points लगाती है ताकि failure के बाद dialog जारी रह सके।*
-
-**★ Nukta (Key Point):** Checkpointing = Session (synchronization). Ye exam ka classic sawaal hai.
-
-*Checkpointing = Session।*
-
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
-
----
-### Q51. Which layer translates data from a format used by the application into a common format (e.g., ASCII to EBCDIC)?
-
-<span lang='hi'>कौन-सी layer data को application के format से common format में बदलती है (जैसे ASCII से EBCDIC)?</span>
-
-- **(A)** Application Layer
-- **(B)** Presentation Layer ✅ **(CORRECT)**
-- **(C)** Session Layer
-- **(D)** Transport Layer
-
-**✔ Correct Answer: (B) Presentation Layer** — Translation between data formats (ASCII/EBCDIC), encryption and compression are Presentation layer jobs.
-
-*Data formats के बीच translation (ASCII/EBCDIC), encryption और compression Presentation layer का काम है।*
-
-**★ Nukta (Key Point):** Presentation = Translation + Encryption + Compression (TEC). ASCII<->EBCDIC isi layer ka classic example hai.
-
-*Presentation = Translation + Encryption + Compression।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q52. Which layer is responsible for encryption?
-
-<span lang='hi'>Encryption के लिए कौन-सी layer जिम्मेदार है?</span>
-
-- **(A)** Session
-- **(B)** Presentation ✅ **(CORRECT)**
-- **(C)** Application
-- **(D)** Transport
-
-**✔ Correct Answer: (B) Presentation** — Encryption/decryption of data for presentation is a Presentation layer responsibility (layer 6).
-
-*Presentation के लिए data की encryption/decryption Presentation layer (layer 6) की जिम्मेदारी है।*
-
-**★ Nukta (Key Point):** Encryption + Compression + Translation = Presentation (L6).
-
-*Encryption + Compression + Translation = Presentation (L6)।*
-
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
-
----
-### Q53. Which OSI layer ensures interoperability between different data formats?
-
-<span lang='hi'>कौन-सी OSI layer अलग-अलग data formats के बीच interoperability सुनिश्चित करती है?</span>
-
-- **(A)** Presentation ✅ **(CORRECT)**
-- **(B)** Application
-- **(C)** Session
-- **(D)** Network
-
-**✔ Correct Answer: (A) Presentation** — The Presentation layer provides a common data representation/translation so different systems understand each other's formats.
-
-*Presentation layer एक common data representation/translation देती है ताकि अलग systems एक-दूसरे के formats समझ सकें।*
-
-**★ Nukta (Key Point):** Common format = Presentation. Isi liye ise 'syntax layer' bhi kehte hain.
-
-*Common format = Presentation। इसे 'syntax layer' भी कहते हैं।*
-
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
-
----
-### Q54. Which OSI layer decides the type of compression?
-
-<span lang='hi'>कौन-सी OSI layer compression का प्रकार तय करती है?</span>
-
-- **(A)** Application
-- **(B)** Presentation ✅ **(CORRECT)**
-- **(C)** Transport
-- **(D)** Data link
-
-**✔ Correct Answer: (B) Presentation** — Data compression (and its type) is a Presentation layer function.
-
-*Data compression (और उसका प्रकार) Presentation layer का काम है।*
-
-**★ Nukta (Key Point):** Compression = Presentation. (Encryption aur translation bhi isi ke saath.)
-
-*Compression = Presentation।*
-
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
-
----
-### Q55. Which OSI layer is responsible for encryption and compression?
+### Q48. Which OSI layer is responsible for encryption and compression?
 
 <span lang='hi'>Encryption और compression के लिए कौन-सी OSI layer जिम्मेदार है?</span>
 
@@ -1124,10 +984,10 @@
 
 *Trio: Translation, Encryption, Compression = Presentation।*
 
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
 ---
-### Q56. Which layer helps to present data in one form on a host to another host in its native representation?
+### Q49. Which layer helps to present data in one form on a host to another host in its native representation?
 
 <span lang='hi'>कौन-सी layer एक host पर किसी form में data को दूसरे host पर उसकी native representation में प्रस्तुत करने में मदद करती है?</span>
 
@@ -1144,10 +1004,10 @@
 
 *Native format <-> common format = Presentation।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q57. ______ layer defines how data is formatted, presented, encoded, and converted for use on the network.
+### Q50. ______ layer defines how data is formatted, presented, encoded, and converted for use on the network.
 
 <span lang='hi'>______ layer तय करती है कि data network में उपयोग के लिए कैसे format, present, encode और convert होता है।</span>
 
@@ -1164,10 +1024,10 @@
 
 *'Formatted, presented, encoded, converted' = Presentation।*
 
-*[Source: Central exams — SSC/Bank/Insurance Computer Awareness (BYJU'S)]*
+*[Source: Central exams — SSC/Bank/Insurance Computer Awareness (BYJU'S)] · Medium*
 
 ---
-### Q58. Which layer provides services to the user?
+### Q51. Which layer provides services to the user?
 
 <span lang='hi'>कौन-सी layer user को services देती है?</span>
 
@@ -1184,10 +1044,10 @@
 
 *User के सबसे करीब = Application layer (L7)।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q59. A server at a company is using TCP/IP to connect to the network and is running multiple applications. At which OSI layer is this server operating?
+### Q52. A server at a company is using TCP/IP to connect to the network and is running multiple applications. At which OSI layer is this server operating?
 
 <span lang='hi'>एक company का server network से जुड़ने के लिए TCP/IP use कर रहा है और अनेक applications चला रहा है। यह server किस OSI layer पर काम कर रहा है?</span>
 
@@ -1204,10 +1064,10 @@
 
 *Server + applications = Application layer।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q60. Simple Network Management Protocol (SNMP) runs on:
+### Q53. Simple Network Management Protocol (SNMP) runs on:
 
 <span lang='hi'>Simple Network Management Protocol (SNMP) किस layer पर चलता है?</span>
 
@@ -1224,50 +1084,10 @@
 
 *SNMP/DNS/HTTP/FTP/SMTP = Application layer protocols।*
 
-*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
+*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
 ---
-### Q61. Application layer protocol defines:
-
-<span lang='hi'>Application layer protocol क्या define करता है?</span>
-
-- **(A)** Types of messages exchanged / कौन-से messages आदान-प्रदान होते हैं
-- **(B)** Rules for when and how processes send and respond to messages / processes messages कब और कैसे भेजें/जवाब दें — इसके rules
-- **(C)** Message format, syntax and semantics / Message format, syntax और semantics
-- **(D)** All of the above / उपरोक्त सभी ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) All of the above** — An application-layer protocol defines the message types, the rules for when/how processes send and respond, and the message format (syntax + semantics) — all of the above.
-
-*Application-layer protocol message types, भेजने/जवाब के rules, और message format (syntax + semantics) — सब define करता है।*
-
-**★ Nukta (Key Point):** Application protocol = Message types + Rules + Format. 'All of the above' hi jawab hai.
-
-*Application protocol = Message types + Rules + Format।*
-
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
-
----
-### Q62. SMTP, FTP and DNS are the protocols of which layer of the OSI model?
-
-<span lang='hi'>SMTP, FTP और DNS OSI model की किस layer के protocols हैं?</span>
-
-- **(A)** Network layer
-- **(B)** Transport layer
-- **(C)** Application layer ✅ **(CORRECT)**
-- **(D)** Data Link layer
-
-**✔ Correct Answer: (C) Application layer** — SMTP (e-mail), FTP (file transfer) and DNS (name resolution) are all Application layer protocols (layer 7).
-
-*SMTP (e-mail), FTP (file transfer) और DNS (name resolution) — तीनों Application layer protocols (layer 7) हैं।*
-
-**★ Nukta (Key Point):** User-facing protocols (HTTP, FTP, SMTP, DNS, POP3, IMAP) = Application layer.
-
-*User-facing protocols = Application layer।*
-
-*[Source: Central exams — SSC/Railway/UPSC Computer Awareness (Exampundit)]*
-
----
-### Q63. Consider the statements:
+### Q54. Consider the statements:
 S1: Network layer handles both logical addressing and routing.
 S2: Transport layer handles segmentation and reassembly.
 Which is correct?
@@ -1290,7 +1110,187 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Network = IP addressing + Routing। Transport = Segmentation + Reassembly।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
+
+---
+### Q55. Repeaters function in:
+
+<span lang='hi'>Repeaters किस layer पर काम करते हैं?</span>
+
+- **(A)** Physical layer ✅ **(CORRECT)**
+- **(B)** Data link layer
+- **(C)** Network layer
+- **(D)** Both (A) and (B)
+
+**✔ Correct Answer: (A) Physical layer** — A repeater regenerates the electrical/optical signal — a Physical layer device (layer 1).
+
+*Repeater electrical/optical signal regenerate करता है — Physical layer device (layer 1)।*
+
+**★ Nukta (Key Point):** Repeater/Hub = Physical (L1). Bridge/Switch = Data Link (L2). Router = Network (L3).
+
+*Repeater/Hub = Physical (L1)। Bridge/Switch = Data Link (L2)। Router = Network (L3)।*
+
+*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
+
+---
+### Q56. The physical layer is responsible for:
+
+<span lang='hi'>Physical layer किसके लिए जिम्मेदार है?</span>
+
+- **(A)** Bit-by-bit delivery ✅ **(CORRECT)**
+- **(B)** Port to port delivery
+- **(C)** Process to process delivery
+- **(D)** Application to application delivery
+
+**✔ Correct Answer: (A) Bit-by-bit delivery** — Physical layer = transmission of individual bits over the link (bit-by-bit delivery). Port-to-port = Transport; process-to-process = Transport; application-to-application = Application. (Matches the official RPSC key.)
+
+*Physical layer = link पर bit-by-bit delivery। Port-to-port = Transport; process-to-process = Transport; application-to-application = Application। (Official RPSC key से match.)*
+
+**★ Nukta (Key Point):** Bit-by-bit = Physical. Hop-to-hop = Data Link. Source-to-destination = Network. Process-to-process = Transport.
+
+*Bit-by-bit = Physical। Hop-to-hop = Data Link। Source-to-destination = Network। Process-to-process = Transport।*
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
+
+---
+### Q57. Which one of the following is a data link (Layer 2) protocol?
+
+<span lang='hi'>निम्न में से कौन data link (Layer 2) protocol है?</span>
+
+- **(A)** Point-to-Point Protocol (PPP)
+- **(B)** HDLC
+- **(C)** Ethernet
+- **(D)** All of these ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) All of these** — PPP, HDLC and Ethernet are all data link layer (Layer 2) protocols — they frame packets and handle physical addressing/error detection at the link level.
+
+*PPP, HDLC और Ethernet — तीनों data link layer (Layer 2) protocols हैं — ये packets को frame करते हैं और link level पर physical addressing/error detection करते हैं।*
+
+**★ Nukta (Key Point):** Layer 2 protocols = PPP, HDLC, Ethernet, Frame Relay, ATM (cell-based). Network layer = IP, ICMP, ARP.
+
+*Layer 2 protocols = PPP, HDLC, Ethernet, Frame Relay, ATM (cell-based)। Network layer = IP, ICMP, ARP।*
+
+*[Source: InstrumentationTools 150 CN MCQs] · Hard*
+
+---
+### Q58. Which layer of the OSI model is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium?
+
+<span lang='hi'>OSI model की कौन-सी layer device और physical transmission medium के बीच unstructured raw data के transmission और reception के लिए जिम्मेदार है?</span>
+
+- **(A)** Transport layer
+- **(B)** Data-Link layer
+- **(C)** Network layer
+- **(D)** Physical layer ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Physical layer** — Raw (unstructured) bit transmission over the medium is exactly the Physical layer's role.
+
+*Medium पर raw (unstructured) bits भेजना Physical layer का ही काम है।*
+
+**★ Nukta (Key Point):** 'Raw data + physical medium' = Physical layer. SSC/Railway mein ye one-liner common hai.
+
+*'Raw data + physical medium' = Physical layer।*
+
+*[Source: Central exams — SSC/Railway/UPSC Computer Awareness (Exampundit)] · Hard*
+
+---
+### Q59. Bridge works in which layer of the OSI model?
+
+<span lang='hi'>Bridge OSI model की किस layer पर काम करता है?</span>
+
+- **(A)** Application layer
+- **(B)** Transport layer
+- **(C)** Network layer
+- **(D)** Data link layer ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Data link layer** — A bridge connects two LAN segments and filters/forwards frames using MAC addresses — a Data Link layer (layer 2) device.
+
+*Bridge दो LAN segments को जोड़ता है और MAC addresses से frames filter/forward करता है — Data Link layer (layer 2) device।*
+
+**★ Nukta (Key Point):** Bridge/Switch = L2. Router = L3. Hub/Repeater = L1. Gateway = L4+.
+
+*Bridge/Switch = L2। Router = L3। Hub/Repeater = L1। Gateway = L4+।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2) · also asked in KVS PGT CS 2018 Official Paper] · Hard*
+
+---
+### Q60. The reliable data transfer is implemented by:
+
+<span lang='hi'>Reliable data transfer कौन-सी layer implement करती है?</span>
+
+- **(A)** Network layer
+- **(B)** Physical layer
+- **(C)** Presentation layer
+- **(D)** Transport layer ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Transport layer** — Reliability (acknowledgements, retransmission, in-order delivery) is implemented by the Transport layer (e.g. TCP). (Matches the official RPSC key.)
+
+*Reliability (acknowledgements, retransmission, in-order delivery) Transport layer implement करती है (जैसे TCP)। (Official RPSC key से match.)*
+
+**★ Nukta (Key Point):** Reliable delivery = Transport (TCP). IP (Network) unreliable hai — best-effort only.
+
+*Reliable delivery = Transport (TCP)। IP (Network) unreliable है।*
+
+*[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
+
+---
+### Q61. If a port number is 16 bits (2 bytes), what is the MINIMUM size of the transport-layer header needed to carry the port addresses?
+
+<span lang='hi'>यदि port number 16 bits (2 bytes) का है, तो port addresses ले जाने के लिए transport-layer header की MINIMUM size कितनी होगी?</span>
+
+- **(A)** 2 bytes
+- **(B)** 4 bytes ✅ **(CORRECT)**
+- **(C)** 8 bytes
+- **(D)** 20 bytes
+
+**✔ Correct Answer: (B) 4 bytes** — A transport header must carry at least two port numbers (source + destination) = 2 × 2 bytes = 4 bytes. (Real protocols add more: UDP header = 8 bytes, TCP header = 20 bytes.)
+
+*Transport header में कम से कम दो port numbers (source + destination) होते हैं = 2 × 2 bytes = 4 bytes। (असली protocols में और fields होते हैं: UDP = 8 bytes, TCP = 20 bytes।)*
+
+**★ Nukta (Key Point):** Min transport header (ports only) = 4 bytes. UDP = 8, TCP = 20 — teeno numbers exam mein aate hain.
+
+*Min transport header (ports only) = 4 bytes। UDP = 8, TCP = 20।*
+
+*[Source: Forouzan Ch1 (Q1-23) — Practice Set] · Hard*
+
+---
+### Q62. Application layer protocol defines:
+
+<span lang='hi'>Application layer protocol क्या define करता है?</span>
+
+- **(A)** Types of messages exchanged / कौन-से messages आदान-प्रदान होते हैं
+- **(B)** Rules for when and how processes send and respond to messages / processes messages कब और कैसे भेजें/जवाब दें — इसके rules
+- **(C)** Message format, syntax and semantics / Message format, syntax और semantics
+- **(D)** All of the above / उपरोक्त सभी ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) All of the above** — An application-layer protocol defines the message types, the rules for when/how processes send and respond, and the message format (syntax + semantics) — all of the above.
+
+*Application-layer protocol message types, भेजने/जवाब के rules, और message format (syntax + semantics) — सब define करता है।*
+
+**★ Nukta (Key Point):** Application protocol = Message types + Rules + Format. 'All of the above' hi jawab hai.
+
+*Application protocol = Message types + Rules + Format।*
+
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
+
+---
+### Q63. SMTP, FTP and DNS are the protocols of which layer of the OSI model?
+
+<span lang='hi'>SMTP, FTP और DNS OSI model की किस layer के protocols हैं?</span>
+
+- **(A)** Network layer
+- **(B)** Transport layer
+- **(C)** Application layer ✅ **(CORRECT)**
+- **(D)** Data Link layer
+
+**✔ Correct Answer: (C) Application layer** — SMTP (e-mail), FTP (file transfer) and DNS (name resolution) are all Application layer protocols (layer 7).
+
+*SMTP (e-mail), FTP (file transfer) और DNS (name resolution) — तीनों Application layer protocols (layer 7) हैं।*
+
+**★ Nukta (Key Point):** User-facing protocols (HTTP, FTP, SMTP, DNS, POP3, IMAP) = Application layer.
+
+*User-facing protocols = Application layer।*
+
+*[Source: Central exams — SSC/Railway/UPSC Computer Awareness (Exampundit)] · Hard*
 
 ---
 
@@ -1298,24 +1298,24 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *TCP/IP (DoD, 1970s): 4/5 layers, layer mapping to OSI, Internet layer protocols, address levels.*
 
-### Q64. TCP/IP model does not have ______ layer but the OSI model has it.
+### Q64. Which is the standard protocol suite of the Internet?
 
-<span lang='hi'>TCP/IP model में ______ layer नहीं है पर OSI model में है।</span>
+<span lang='hi'>Internet की मानक protocol suite कौन-सी है?</span>
 
-- **(A)** Session layer
-- **(B)** Presentation layer
-- **(C)** Application layer
-- **(D)** Both (a) and (b) ✅ **(CORRECT)**
+- **(A)** TCP/IP ✅ **(CORRECT)**
+- **(B)** UDP
+- **(C)** FTP
+- **(D)** WWW
 
-**✔ Correct Answer: (D) Both (a) and (b)** — TCP/IP has no separate Session or Presentation layers — their functions are absorbed by the TCP/IP Application layer. (OSI = 7 layers; TCP/IP = 4 layers.)
+**✔ Correct Answer: (A) TCP/IP** — TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.
 
-*TCP/IP में Session या Presentation की अलग layer नहीं है — उनके काम TCP/IP की Application layer में आ जाते हैं।*
+*TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.*
 
-**★ Nukta (Key Point):** TCP/IP mein Session + Presentation nahi hoti — dono Application mein merge ho jaati hain.
+**★ Nukta (Key Point):** UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.
 
-*TCP/IP में Session + Presentation नहीं होती — दोनों Application में merge होती हैं।*
+*UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: IBPS RRB PO Computer Awareness PYQ (via meritnotes) + SSC MTS computer PYQ (via Testbook)] · Easy*
 
 ---
 ### Q65. The TCP/IP model was developed ______ the OSI model.
@@ -1335,7 +1335,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *TCP/IP (1970s) पहले; OSI (1984) बाद में।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
 ### Q66. The TCP/IP ______ layer is equivalent to the combined Session, Presentation and Application layers of the OSI model.
@@ -1355,30 +1355,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Mapping: TCP/IP Application = OSI 5+6+7; Internet = Network; Network Access = Data Link+Physical।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q67. Which of the following is NOT a part of the TCP/IP model?
-
-<span lang='hi'>निम्नलिखित में से कौन TCP/IP model का हिस्सा नहीं है?</span>
-
-- **(A)** Application
-- **(B)** Transport
-- **(C)** Data link
-- **(D)** Session ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Session** — TCP/IP (4-layer) = Application, Transport, Internet, Network Access. Session is an OSI layer with no separate TCP/IP layer.
-
-*TCP/IP (4-layer) = Application, Transport, Internet, Network Access। Session OSI की layer है, TCP/IP में अलग नहीं।*
-
-**★ Nukta (Key Point):** TCP/IP ke 4 layers: Application, Transport, Internet, Network Access. Session sirf OSI mein.
-
-*TCP/IP की 4 layers: Application, Transport, Internet, Network Access। Session सिर्फ OSI में।*
-
-*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)]*
-
----
-### Q68. The number of layers in the Internet protocol stack (reference model) is:
+### Q67. The number of layers in the Internet protocol stack (reference model) is:
 
 <span lang='hi'>Internet protocol stack (reference model) में layers की संख्या कितनी है?</span>
 
@@ -1395,50 +1375,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *5-layer Internet stack, 4-layer TCP/IP suite, 7-layer OSI — तीनों numbers याद रखो!*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q69. How many layers are there in the TCP/IP model (original 4-layer suite)?
-
-<span lang='hi'>TCP/IP model (मूल 4-layer suite) में कितनी layers हैं?</span>
-
-- **(A)** Seven
-- **(B)** Five
-- **(C)** Four ✅ **(CORRECT)**
-- **(D)** Nine
-
-**✔ Correct Answer: (C) Four** — The original TCP/IP model has 4 layers: Network Access, Internet, Host-to-Host (Transport), Application.
-
-*मूल TCP/IP model में 4 layers हैं: Network Access, Internet, Host-to-Host (Transport), Application।*
-
-**★ Nukta (Key Point):** 4-layer TCP/IP: Network Access + Internet + Transport (Host-to-Host) + Application.
-
-*4-layer TCP/IP: Network Access + Internet + Transport + Application।*
-
-*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)]*
-
----
-### Q70. Which of the following is NOT a layer of the TCP/IP model? (Host-to-Host / Internet / Network Access / Physical)
-
-<span lang='hi'>निम्नलिखित में से कौन TCP/IP model की layer नहीं है? (Host-to-Host / Internet / Network Access / Physical)</span>
-
-- **(A)** Host to Host
-- **(B)** Internet
-- **(C)** Network Access
-- **(D)** Physical ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Physical** — The 4-layer TCP/IP suite has no separate Physical layer — physical functions are part of Network Access.
-
-*4-layer TCP/IP suite में अलग Physical layer नहीं है — physical functions Network Access का हिस्सा हैं।*
-
-**★ Nukta (Key Point):** TCP/IP ki 4 layers: Network Access, Internet, Host-to-Host, Application. 'Physical' alag layer nahi hai.
-
-*TCP/IP की 4 layers: Network Access, Internet, Host-to-Host, Application।*
-
-*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)]*
-
----
-### Q71. The Data Link layer and Physical layer of the OSI model combine to form the ______ layer of the TCP/IP model.
+### Q68. The Data Link layer and Physical layer of the OSI model combine to form the ______ layer of the TCP/IP model.
 
 <span lang='hi'>OSI model की Data Link और Physical layers मिलकर TCP/IP model की ______ layer बनाती हैं।</span>
 
@@ -1455,10 +1395,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *OSI 1+2 = Network Access। OSI 5+6+7 = Application।*
 
-*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)]*
+*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Medium*
 
 ---
-### Q72. IP (Internet Protocol) is a protocol of the ______ layer of the TCP/IP model.
+### Q69. IP (Internet Protocol) is a protocol of the ______ layer of the TCP/IP model.
 
 <span lang='hi'>IP (Internet Protocol) TCP/IP model की ______ layer का protocol है.</span>
 
@@ -1475,10 +1415,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *IP = Internet layer। TCP/UDP = Transport। Ethernet = Network Access।*
 
-*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)]*
+*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Medium*
 
 ---
-### Q73. In TCP/IP, which layer uses specific (user-friendly) addresses — e.g. a URL like example.com?
+### Q70. In TCP/IP, which layer uses specific (user-friendly) addresses — e.g. a URL like example.com?
 
 <span lang='hi'>TCP/IP में कौन-सी layer specific (user-friendly) addresses use करती है — जैसे example.com जैसी URL?</span>
 
@@ -1495,10 +1435,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Address levels: Application = specific, Transport = port, Network = IP, Data Link = MAC।*
 
-*[Source: Forouzan Ch1 (Q1-24) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-24) — Practice Set] · Medium*
 
 ---
-### Q74. In the TCP/IP model, a link-layer switch operates at which layers?
+### Q71. In the TCP/IP model, a link-layer switch operates at which layers?
 
 <span lang='hi'>TCP/IP model में link-layer switch किन layers पर काम करता है?</span>
 
@@ -1515,27 +1455,87 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Switch = L1+L2। Router = L3 तक। Gateway = L4+।*
 
-*[Source: Forouzan Ch1 (Q1-16) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-16) — Practice Set] · Medium*
 
 ---
-### Q75. Which is the standard protocol suite of the Internet?
+### Q72. TCP/IP model does not have ______ layer but the OSI model has it.
 
-<span lang='hi'>Internet की मानक protocol suite कौन-सी है?</span>
+<span lang='hi'>TCP/IP model में ______ layer नहीं है पर OSI model में है।</span>
 
-- **(A)** TCP/IP ✅ **(CORRECT)**
-- **(B)** UDP
-- **(C)** FTP
-- **(D)** WWW
+- **(A)** Session layer
+- **(B)** Presentation layer
+- **(C)** Application layer
+- **(D)** Both (a) and (b) ✅ **(CORRECT)**
 
-**✔ Correct Answer: (A) TCP/IP** — TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.
+**✔ Correct Answer: (D) Both (a) and (b)** — TCP/IP has no separate Session or Presentation layers — their functions are absorbed by the TCP/IP Application layer. (OSI = 7 layers; TCP/IP = 4 layers.)
 
-*TCP/IP ही Internet की standard protocol suite है — इसी पर पूरा Internet चलता है.*
+*TCP/IP में Session या Presentation की अलग layer नहीं है — उनके काम TCP/IP की Application layer में आ जाते हैं।*
 
-**★ Nukta (Key Point):** UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.
+**★ Nukta (Key Point):** TCP/IP mein Session + Presentation nahi hoti — dono Application mein merge ho jaati hain.
 
-*UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.*
+*TCP/IP में Session + Presentation नहीं होती — दोनों Application में merge होती हैं।*
 
-*[Source: IBPS RRB PO Computer Awareness PYQ (via meritnotes) + SSC MTS computer PYQ (via Testbook)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
+
+---
+### Q73. Which of the following is NOT a part of the TCP/IP model?
+
+<span lang='hi'>निम्नलिखित में से कौन TCP/IP model का हिस्सा नहीं है?</span>
+
+- **(A)** Application
+- **(B)** Transport
+- **(C)** Data link
+- **(D)** Session ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Session** — TCP/IP (4-layer) = Application, Transport, Internet, Network Access. Session is an OSI layer with no separate TCP/IP layer.
+
+*TCP/IP (4-layer) = Application, Transport, Internet, Network Access। Session OSI की layer है, TCP/IP में अलग नहीं।*
+
+**★ Nukta (Key Point):** TCP/IP ke 4 layers: Application, Transport, Internet, Network Access. Session sirf OSI mein.
+
+*TCP/IP की 4 layers: Application, Transport, Internet, Network Access। Session सिर्फ OSI में।*
+
+*[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Hard*
+
+---
+### Q74. How many layers are there in the TCP/IP model (original 4-layer suite)?
+
+<span lang='hi'>TCP/IP model (मूल 4-layer suite) में कितनी layers हैं?</span>
+
+- **(A)** Seven
+- **(B)** Five
+- **(C)** Four ✅ **(CORRECT)**
+- **(D)** Nine
+
+**✔ Correct Answer: (C) Four** — The original TCP/IP model has 4 layers: Network Access, Internet, Host-to-Host (Transport), Application.
+
+*मूल TCP/IP model में 4 layers हैं: Network Access, Internet, Host-to-Host (Transport), Application।*
+
+**★ Nukta (Key Point):** 4-layer TCP/IP: Network Access + Internet + Transport (Host-to-Host) + Application.
+
+*4-layer TCP/IP: Network Access + Internet + Transport + Application।*
+
+*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Hard*
+
+---
+### Q75. Which of the following is NOT a layer of the TCP/IP model? (Host-to-Host / Internet / Network Access / Physical)
+
+<span lang='hi'>निम्नलिखित में से कौन TCP/IP model की layer नहीं है? (Host-to-Host / Internet / Network Access / Physical)</span>
+
+- **(A)** Host to Host
+- **(B)** Internet
+- **(C)** Network Access
+- **(D)** Physical ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Physical** — The 4-layer TCP/IP suite has no separate Physical layer — physical functions are part of Network Access.
+
+*4-layer TCP/IP suite में अलग Physical layer नहीं है — physical functions Network Access का हिस्सा हैं।*
+
+**★ Nukta (Key Point):** TCP/IP ki 4 layers: Network Access, Internet, Host-to-Host, Application. 'Physical' alag layer nahi hai.
+
+*TCP/IP की 4 layers: Network Access, Internet, Host-to-Host, Application।*
+
+*[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Hard*
 
 ---
 
@@ -1560,7 +1560,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Encapsulation: Data -> Segment -> Packet -> Frame -> Bits।*
 
-*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)]*
+*[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
 ---
 ### Q77. Encapsulation happens from:
@@ -1580,7 +1580,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Sender = encapsulation (top->bottom)। Receiver = de-encapsulation (bottom->top)।*
 
-*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)]*
+*[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
 ---
 ### Q78. In the layer hierarchy, as the data packet moves from the upper to the lower layers, headers are:
@@ -1600,30 +1600,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *नीचे की ओर = headers ADD। ऊपर की ओर = headers REMOVE।*
 
-*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)]*
+*[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
 ---
-### Q79. A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
-
-<span lang='hi'>Source S और destination D के बीच एक intermediate router R है। यात्रा के दौरान packet Network layer और Data Link layer को कितनी बार visit करता है?</span>
-
-- **(A)** Network layer - 4 times, Data link layer - 4 times
-- **(B)** Network layer - 4 times, Data link layer - 6 times
-- **(C)** Network layer - 2 times, Data link layer - 4 times
-- **(D)** Network layer - 3 times, Data link layer - 4 times ✅ **(CORRECT)**
-
-**✔ Correct Answer: (D) Network layer - 3 times, Data link layer - 4 times** — Network layer: once at S (send), once at R (forward), once at D (receive) = 3. Data Link: 2 links (S→R, R→D), each visited twice (send + receive) = 4.
-
-*Network layer: S पर 1, R पर 1, D पर 1 = 3 बार। Data Link: 2 links (S→R, R→D), हर link 2 बार (send + receive) = 4 बार।*
-
-**★ Nukta (Key Point):** Formula: n routers -> Network layer visits = n+2, Data Link visits = 2(n+1). Yahan n=1 -> NL=3, DL=4.
-
-*Formula: n routers -> Network layer = n+2, Data Link = 2(n+1)। यहाँ n=1 -> NL=3, DL=4।*
-
-*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)]*
-
----
-### Q80. In TCP/IP, which data unit is encapsulated INSIDE a frame?
+### Q79. In TCP/IP, which data unit is encapsulated INSIDE a frame?
 
 <span lang='hi'>TCP/IP में कौन-सा data unit frame के अंदर encapsulate होता है?</span>
 
@@ -1640,10 +1620,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Frame के अंदर DATAGRAM होता है।*
 
-*[Source: Forouzan Ch1 (Q1-20) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-20) — Practice Set] · Medium*
 
 ---
-### Q81. In the TCP/IP model, the unit of data at the transport layer is called a:
+### Q80. In the TCP/IP model, the unit of data at the transport layer is called a:
 
 <span lang='hi'>TCP/IP model में transport layer पर data की unit कहलाती है:</span>
 
@@ -1660,10 +1640,10 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *PDU: Transport = Segment, Network = Datagram, Data Link = Frame, Physical = Bits।*
 
-*[Source: Forouzan Ch1 (Q1-20/21) — Practice Set]*
+*[Source: Forouzan Ch1 (Q1-20/21) — Practice Set] · Medium*
 
 ---
-### Q82. A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
+### Q81. A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
 
 <span lang='hi'>एक system में पाँच protocol layers हैं। Application 100-byte message बनाती है और हर layer (5वीं और 1वीं सहित) 10-byte header जोड़ती है। Efficiency कितनी होगी (application bytes / कुल transmitted bytes)?</span>
 
@@ -1680,7 +1660,27 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 *Efficiency = data / (data + headers) = 100/150 = 66.7%।*
 
-*[Source: Forouzan Ch1 (P1-11) — Practice Set (Problem)]*
+*[Source: Forouzan Ch1 (P1-11) — Practice Set (Problem)] · Medium*
+
+---
+### Q82. A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
+
+<span lang='hi'>Source S और destination D के बीच एक intermediate router R है। यात्रा के दौरान packet Network layer और Data Link layer को कितनी बार visit करता है?</span>
+
+- **(A)** Network layer - 4 times, Data link layer - 4 times
+- **(B)** Network layer - 4 times, Data link layer - 6 times
+- **(C)** Network layer - 2 times, Data link layer - 4 times
+- **(D)** Network layer - 3 times, Data link layer - 4 times ✅ **(CORRECT)**
+
+**✔ Correct Answer: (D) Network layer - 3 times, Data link layer - 4 times** — Network layer: once at S (send), once at R (forward), once at D (receive) = 3. Data Link: 2 links (S→R, R→D), each visited twice (send + receive) = 4.
+
+*Network layer: S पर 1, R पर 1, D पर 1 = 3 बार। Data Link: 2 links (S→R, R→D), हर link 2 बार (send + receive) = 4 बार।*
+
+**★ Nukta (Key Point):** Formula: n routers -> Network layer visits = n+2, Data Link visits = 2(n+1). Yahan n=1 -> NL=3, DL=4.
+
+*Formula: n routers -> Network layer = n+2, Data Link = 2(n+1)। यहाँ n=1 -> NL=3, DL=4।*
+
+*[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
 ---
 

@@ -1200,3 +1200,51 @@ SEC_E.extend([
        2: ("CNAME alias बनाता है.", "CNAME alias बनाता है."),
        3: ("SOA zone की जानकारी देता है.", "SOA zone की जानकारी देता है.")}),
 ])
+
+# --- PYQ wave 2: GATE 2011-2026 full + KVS/EMRS (Oct 2026) ---
+
+SEC_B.extend([
+    Q('GATE CS 2012',
+    'In the IPv4 addressing format, the number of networks allowed under Class C addresses is:',
+    'IPv4 addressing में Class C addresses के अंतर्गत कुल कितने networks allowed हैं?',
+    [('2¹⁴', '2¹⁴'), ('2⁷', '2⁷'), ('2²¹', '2²¹'), ('2²⁴', '2²⁴')],
+    2,
+    ('Class C mein network ID ke liye 24 bits hote hain, par pehle 3 bits fixed (110) hain — isliye 2⁴⁻³ = 2²¹ networks bante hain (GATE 2012 official key).', 'Class C में network ID 24 bits की, पर पहले 3 bits fix (110) — इसलिए 2⁴⁻³ = 2²¹ networks (GATE 2012 official key).'),
+    ('2²⁴ poore network field ka size hai (fixed 3 bits bhool kar); 2⁷ aur 2¹⁴ host/other class ke figures hain.', '2²⁴ poora field (3 fixed bits bhool kar); 2⁷/2¹⁴ doosre figures hain.'),
+    {}),
+    Q('GATE CS 2024 Set-2',
+    'Which one of the following CIDR prefixes exactly represents the range of IP addresses 10.12.2.0 to 10.12.3.255?',
+    'CIDR prefix में से कौन-सा 10.12.2.0 से 10.12.3.255 तक की IP range को ठीक-ठीक दर्शाता है?',
+    [('10.12.2.0/24', '10.12.2.0/24'), ('10.12.2.0/23', '10.12.2.0/23'), ('10.12.0.0/22', '10.12.0.0/22'), ('10.12.3.0/25', '10.12.3.0/25')],
+    1,
+    ('Range mein 512 addresses hain (2⁹) aur 10.12.2.0 9 host-bits ke liye properly aligned hai — /32−9 = /23, yaani 10.12.2.0/23.', 'Range में 512 addresses (2⁹) और 10.12.2.0 alignment सही — /32−9 = /23, यानी 10.12.2.0/23.'),
+    ('/24 sirf 2.0–2.255 cover karta hai; /22 bahut bada (4 blocks); /25 aadha block.', '/24 sirf 2.x; /22 bahut bada; /25 aadha block.'),
+    {}),
+    Q('GATE CS 2019',
+    'Three machines M, N and P have IP addresses 100.10.5.2, 100.10.5.5 and 100.10.5.6 respectively. The subnet mask is set to 255.255.255.252 for all three machines. Which one of the following is true?',
+    'तीन machines M, N, P के IP addresses क्रमशः 100.10.5.2, 100.10.5.5 और 100.10.5.6 हैं। तीनों का subnet mask 255.255.255.252 है। निम्न में से कौन-सा कथन सही है?',
+    [('All three belong to the same subnet', 'तीनों एक ही subnet में हैं'), ('M and N belong to the same subnet', 'M और N एक ही subnet में हैं'), ('N and P belong to the same subnet', 'N और P एक ही subnet में हैं'), ('M and P belong to the same subnet', 'M और P एक ही subnet में हैं')],
+    2,
+    ('Mask /30 ke 4-address blocks banata hai: 100.10.5.0–.3, .4–.7; M (.2) pehle block mein, N (.5) aur P (.6) doosre block mein — N aur P ek hi subnet ke hain.', 'Mask /30 se 4-address blocks: .0–.3, .4–.7; M (.2) पहले में, N (.5), P (.6) दूसरे में — N और P एक ही subnet के।'),
+    ('Adjacent numbers ka matlab same subnet nahi — /30 par block boundary .3/.4 par hoti hai.', 'पास के numbers = एक subnet नहीं; /30 में boundary .3/.4 पर है।'),
+    {}),
+])
+
+SEC_C.extend([
+    Q('GATE CS 2019',
+    'Suppose that in an IP-over-Ethernet network, a machine X wishes to find the MAC address of another machine Y in its subnet. Which one of the following techniques can be used for this?',
+    'IP-over-Ethernet network में machine X को अपने ही subnet की machine Y का MAC address जानना है। इसके लिए निम्न में से कौन-सी technique प्रयोग होगी?',
+    [('ARP request broadcast', 'ARP request broadcast'), ('RARP request broadcast', 'RARP request broadcast'), ('DNS query', 'DNS query'), ('ICMP query', 'ICMP query')],
+    0,
+    ('X ARP request ko broadcast karta hai (Y ki IP puch kar); Y unicast ARP reply mein apna MAC deta hai — ARP hi IP→MAC resolution ka tarika hai.', 'X ARP request broadcast karta hai (Y ki IP); Y unicast reply mein MAC deta hai — ARP = IP→MAC resolution.'),
+    ('RARP ulta (MAC→IP) hai; DNS naam→IP; ICMP error/control — koi bhi MAC nahi deta.', 'RARP उल्टा (MAC→IP); DNS नाम→IP; ICMP error — MAC कोई नहीं देता।'),
+    {}),
+    Q('GATE CS 2025 Set-2',
+    'Node X has a TCP connection open to node Y. Packets from X to Y go through an intermediate IP router R; Ethernet switch S is the first switch on the path. For a packet sent from X, which of the following is TRUE about its destination IP and MAC addresses at the time it leaves X?',
+    'Node X की node Y से TCP connection है; packets router R से होकर जाते हैं और पहला Ethernet switch S है। X से निकलते packet के destination IP और MAC addresses के बारे में क्या सही है?',
+    [("Destination IP = Y's IP; destination MAC = R's MAC", 'Destination IP = Y का IP; destination MAC = R का MAC'), ("Destination IP = R's IP; destination MAC = R's MAC", 'Destination IP = R का IP; destination MAC = R का MAC'), ("Destination IP = Y's IP; destination MAC = Y's MAC", 'Destination IP = Y का IP; destination MAC = Y का MAC'), ("Destination IP = R's IP; destination MAC = S's MAC", 'Destination IP = R का IP; destination MAC = S का MAC')],
+    0,
+    ('IP address end-to-end hota hai — destination IP hamesha Y ka; MAC har hop par badalta hai, isliye pehle hop (router R) ka MAC lagta hai — ARP se gateway ka MAC mila hota hai.', 'IP end-to-end होता है — destination IP सदा Y का; MAC हर hop पर बदलता है, पहले hop (router R) का MAC लगता है।'),
+    ('IP ko hop-by-hop badalna common galti hai; switch MAC forwarding karta hai par packet ka destination MAC router ka hi rehta hai.', 'IP को hop-by-hop बदलना आम गलती; packet का destination MAC router का ही रहता है।'),
+    {}),
+])

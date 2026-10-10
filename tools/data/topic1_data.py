@@ -2195,3 +2195,35 @@ SECTIONS[4]['questions'].extend([
        2: ("Website का इससे लेना-देना नहीं.", "Website का इससे लेना-देना नहीं."),
        3: ("Video conferencing में voice+video दोनों — शुद्ध voice-convertor VoIP है.", "Video conferencing में voice+video दोनों — शुद्ध voice-convertor VoIP है.")}),
 ])
+
+# --- PYQ wave 2: GATE 2011-2026 full + KVS/EMRS (Oct 2026) ---
+
+SECTIONS[1]['questions'].extend([
+    Q('GATE CS 2022',
+    'Consider a 100 Mbps link between an earth station (sender) and a satellite (receiver) at an altitude of 2100 km. The signal propagates at 3×10⁸ m/s. The time taken (in milliseconds, rounded to two decimal places) for the receiver to completely receive a 1000-byte packet transmitted by the sender is ______.',
+    '100 Mbps के link पर earth station से 2100 km ऊँचे satellite को 1000-byte packet भेजा गया; signal की speed 3×10⁸ m/s है। Receiver को packet पूरा मिलने में लगा समय (ms में, दो दशमलव) कितना है?',
+    [('7.08', '7.08'), ('2.10', '2.10'), ('7.00', '7.00'), ('21.08', '21.08')],
+    0,
+    ('Transmission time = 8000 bits ÷ 10⁸ bps = 0.08 ms; propagation time = 2100×10³ m ÷ 3×10⁸ m/s = 7 ms; total = 7.08 ms — link ki poori latency transmission aur propagation dono ka yog hota hai.', 'Transmission time = 8000 ÷ 10⁸ = 0.08 ms; propagation = 2100×10³ ÷ 3×10⁸ = 7 ms; kul = 7.08 ms — dono delay milte hain.'),
+    ('Round-off trap: 2.10 sirf propagation ka fraction pakadta hai; 7.00 transmission time bhool jata hai.', 'Round-off jaal: 2.10 sirf propagation; 7.00 mein transmission time chhoot jata hai.'),
+    {}),
+    Q('KVS PGT Computer Science 2017',
+    'What is the bit rate for transmitting an uncompressed 800×600 pixel colour frame with 8 bits/pixel at 40 frames per second?',
+    'बिना compression के 800×600 pixel वाला colour frame (8 bits/pixel) 40 frames per second पर transmit हो — bit rate कितना होगा?',
+    [('2.4 Mbps', '2.4 Mbps'), ('153.6 Mbps', '153.6 Mbps'), ('15.36 Mbps', '15.36 Mbps'), ('1536 Mbps', '1536 Mbps')],
+    1,
+    ('800×600×8 bits × 40 = 153,600,000 bps = 153.6 Mbps — frame ke total bits ko frame rate se guna karo.', '800×600×8 × 40 = 15,36,00,000 bps = 153.6 Mbps — frame ke bits × frame rate.'),
+    ('Decimal shift jaal: 15.36 aur 1536 bas decimal ki galti hain; 2.4 Mbps sirf pixel count se bina bits aur frames ke nikla hai.', 'Decimal ki galtiyan: 15.36/1536; 2.4 Mbps bits aur frames bhool kar aata hai.'),
+    {}),
+])
+
+SECTIONS[1]['questions'].extend([
+    Q('KVS PGT Computer Science 2017',
+  'An analog signal carries 4 bits in each signal unit. If 1000 signal units are sent per second, then the baud rate and bit rate of the signal are ______ and ______.',
+  'एक analog signal हर signal unit में 4 bits रखता है। 1000 signal units per second भेजे जाएँ तो signal की baud rate और bit rate क्रमशः कितनी होगी?',
+  [('4000 bauds/sec, 4000 bps', '4000 bauds/sec, 4000 bps'), ('1000 bauds/sec, 1000 bps', '1000 bauds/sec, 1000 bps'), ('4000 bauds/sec, 1000 bps', '4000 bauds/sec, 1000 bps'), ('1000 bauds/sec, 4000 bps', '1000 bauds/sec, 4000 bps')],
+  3,
+  ('Baud rate = signal units per second = 1000 bauds; bit rate = baud × bits per unit = 1000×4 = 4000 bps — baud rate signalling speed hai, bit rate data speed.', 'Baud rate = 1000 signals/sec = 1000 bauds; bit rate = 1000×4 = 4000 bps — baud signal ki speed, bit rate data ki.'),
+  ('Dono ko same mat samjho: 4000 bauds/4000 bps confusion hai; 4000 bauds/1000 bps ulta ratio hai.', 'Dono alag hain: 4000/4000 confusion; 4000/1000 ulta hai.'),
+  {}),
+])
