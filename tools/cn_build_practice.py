@@ -81,7 +81,7 @@ def q_cell(no, q, first):
 
 
 def load(name):
-    import importlib
+    import importlib.util
     spec = importlib.util.spec_from_file_location(name, os.path.join(DATA, f"{name}.py"))
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
     return m
@@ -164,7 +164,7 @@ def build_booklet(n, title):
             else:
                 cells += '<td class="pc"></td>'
             row_html.append(f'<tr>{cells}</tr>')
-            if len(row_html) >= 6:
+            if len(row_html) >= 1:
                 flush_rows()
     flush_rows()
 
@@ -189,7 +189,7 @@ def build_booklet(n, title):
         spare, _ = p.insert_htmlbox(fitz.Rect(0, 0, CONTENT_W, MH - 2), chunk, css=CSS, archive=arch)
         h = (MH - 2) - spare + SAFETY
         scratch.delete_page(-1)
-        new_page = (idx != 0 and (kind in ("ak", "sec") or y + h > BOTTOM_LIM))
+        new_page = (idx != 0 and y + h > BOTTOM_LIM)
         if new_page:
             y = TOP
         placed.append((chunk, new_page))

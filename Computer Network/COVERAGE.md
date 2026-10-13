@@ -213,6 +213,21 @@ Theory + 631 MCQs (Answers + Nukte).pdf/.md"** (216 pages):
 - Builder: `tools/cn_build_practice.py`; counts: T1 144, T2 96, T3 113, T4 48, T5 60,
   T6 223, T7 67
 
+
+## 12. Online Quiz & Exam app (HTML) + practice-PDF blank-page fix — Oct 2026
+
+- `Computer Network/Online Quiz/` — single-file offline HTML apps (Topic 1 & 2
+  abhi; Topic 3–7 same generator se baad mein):
+  * **Quiz mode** — click par turant ✔/✗ + correct answer + explanation
+  * **Exam mode** — solve -> Submit -> score, accuracy, time taken + per-question
+    analysis (explanations submit ke baad)
+  * Name entry -> test start; branding **by PRAKASH • EkGuru**
+  * Questions + options **shuffle every time** (Fisher-Yates; answer remap)
+  * Responsive (phone/laptop), offline file://, embedded JSON (144 + 96 Qs)
+  * Generator: `tools/cn_build_quiz.py N...` — JS syntax node-checked
+- Practice booklets blank-page fix: section/page forced breaks hataye, row-level
+  flow — **108 -> 75 pages, 0 sparse pages** (751 Qs intact).
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2
