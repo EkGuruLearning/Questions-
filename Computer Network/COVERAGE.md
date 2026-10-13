@@ -276,3 +276,33 @@ articles; TCS iON IBPS/SBI examinee instructions; NTA Mains advisory):
    syllabus positions, never appended at the end.
 3. **Forouzan Ch2–7 practice sets** — converted during their topic turns.
 4. Snippet-truncated web finds (§3) — pick up when a full source is available.
+
+## 15. Wave 3 — Worldwide exam-level originals (Oct 2026)
+
+Research patterns studied (questions ORIGINAL — zero repeats): GATE CSE CN
+archives (byjus, CS Junction), UGC NET CS banks (compsciedu), Cisco CCNA 200-301
+practice (smenode-academy, prepforcerts, ipcisco), CompTIA Network+ N10-009
+(flashgenius). Hot worldwide-exam facts confirmed from research and used as
+originals: OSPF = IP proto 89 (not TCP/UDP), BGP = TCP 179, RIP = UDP 520,
+IPv6 link-local FE80::/10, DHCP UDP 67/68, DNS zone transfer TCP 53,
+OSPF cost = bandwidth-based, MTU mismatch → EXSTART/EXCHANGE.
+
+39 new original questions (practice_new_p4.py, section lists `*_X`) — harder,
+exam-level: protocol timing elements, reliability vs performance, 100BASE-TX
+full-duplex pairs, bus termination, SAN, NSFNET, ATM 53-byte cells, OSI
+two-layer flow/error control, dialog control, TCP/IP process-to-process,
+encapsulation order, IEEE MAC administration, CGNAT 100.64.0.0/10,
+/26 usable range, /30 P2P links, IPv6 SLAAC + FE80::/10, DNS TCP-53 zone
+transfer, hub = 1 collision domain, microsegmentation, brouter layer-2 for
+non-routable, PAT=NAT overload, Shannon 1MHz/30dB ≈ 10 Mbps, NRZ-I, Cat6a,
+802.11n MIMO, GBN receiver window = 1, piggybacking, 802.3z, OSPF/BGP/RIP
+transport ports, TCP TIME-WAIT 2×MSL, UDP 8-byte header, DHCP 67/68,
+SYN flood = TCP handshake, AES 128/192/256, IPSec ESP + tunnel mode.
+
+Dedupe: 3 duplicates found by normalized-match audit and REPLACED before build
+(DHCP-APIPA ×1, stop-and-wait window ×1, GBN window ×1); 2 further borderline
+(SR max window, ALOHA 1/e) replaced after full-text comparison with
+topic6_data.py. Build: `_X` wave lists auto-attach to their NEW_MAP section.
+
+Totals after wave 3: **790 practice questions** (631 sourced + 159 originals),
+78 booklet pages, 7 quiz HTMLs regenerated. Future waves use `*_X2`, `*_X3`…

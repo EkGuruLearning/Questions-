@@ -107,7 +107,8 @@ NEW_MAP = {
 
 def build_booklet(n, title):
     d = load(f"topic{n}_data")
-    new_mods = [load("practice_new_p1"), load("practice_new_p2"), load("practice_new_p3")]
+    new_mods = [load("practice_new_p1"), load("practice_new_p2"), load("practice_new_p3"),
+                load("practice_new_p4")]
     new_map = {}
     for m in new_mods:
         for k in dir(m):
@@ -120,8 +121,11 @@ def build_booklet(n, title):
     for idx, s in enumerate(d.SECTIONS):
         qs = list(s["questions"])
         newname = NEW_MAP[n][idx] if idx < len(NEW_MAP[n]) else None
-        if newname and newname in new_map:
-            qs.extend(to_qdict(t) for t in new_map[newname])
+        if newname:
+            # base wave list + extra waves named NEWNAME_X / NEWNAME_X2 / ...
+            for k2 in sorted(new_map):
+                if k2 == newname or k2.startswith(newname + "_X"):
+                    qs.extend(to_qdict(t) for t in new_map[k2])
         qs = sort_questions(qs)
         for q in qs:
             qno += 1

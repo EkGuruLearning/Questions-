@@ -60,7 +60,8 @@ def to_qdict(t):
 def collect(n):
     d = load(f"topic{n}_data")
     new_map = {}
-    for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3"):
+    for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3",
+               "practice_new_p4"):
         m = load(pn)
         for k in dir(m):
             if k.startswith("P") and isinstance(getattr(m, k), list):
@@ -69,8 +70,11 @@ def collect(n):
     for idx, s in enumerate(d.SECTIONS):
         qs = list(s["questions"])
         nn = NEW_MAP[n][idx] if idx < len(NEW_MAP.get(n, [])) else None
-        if nn and nn in new_map:
-            qs.extend(to_qdict(t) for t in new_map[nn])
+        if nn:
+            # base wave list + extra waves named NN_X / NN_X2 / ...
+            for k2 in sorted(new_map):
+                if k2 == nn or k2.startswith(nn + "_X"):
+                    qs.extend(to_qdict(t) for t in new_map[k2])
         for q in qs:
             opts = [[(o[0] or ""), (o[1] or "")] for o in q["opts"]]
             exp_en = (q["wr"][0] or "").strip()
