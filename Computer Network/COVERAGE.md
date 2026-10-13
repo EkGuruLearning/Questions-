@@ -196,6 +196,23 @@ Theory + 631 MCQs (Answers + Nukte).pdf/.md"** (216 pages):
 - Theory data: `tools/data/topic{1..7}_theory.py`; builder: `tools/cn_build_complete.py`.
 - 7 topic books (detailed why-correct format) bhi repo mein hain as-is.
 
+
+## 11. Practice Test Booklets (print-ready) — Oct 2026
+
+`Computer Network/Practice/` — 7 topic-wise practice PDFs (108 pages, 751 MCQs):
+
+- **2-column, WITHOUT solutions** — sirf question + 4 options + [Source + difficulty];
+  max density (~10-12 Q/page), readable print size (9pt)
+- Content = existing sourced bank + **120 ORIGINAL predicted questions**
+  (`tools/data/practice_new_p{1,2,3}.py`, "Practice — original (textbook-based)") —
+  future exam patterns (numerics, scenarios, NOT/odd-one, matching)
+- **ZERO repeats**: 6 near-dup flags audited — 2 real dups dropped (OSI-layers count,
+  public-key decrypt), 1 rephrased (IPv6 header), 3 template-similar but distinct kept
+- Easy + Medium + Hard mix in every booklet; section order; Easy->Hard inside sections
+- **Answer Key (letters only)** at the end of each booklet (print ke liye; no solutions)
+- Builder: `tools/cn_build_practice.py`; counts: T1 144, T2 96, T3 113, T4 48, T5 60,
+  T6 223, T7 67
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2
