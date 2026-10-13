@@ -5,7 +5,56 @@
 **Reference orientation:** Behrouz A. Forouzan, *Data Communications and Networking*, plus official exam syllabi/papers/answer keys, other recognised networking texts, standards/RFCs, and original practice questions.  
 **Last working review:** 13 October 2026
 
----
+---      Read `ARENA_CN_MASTER_EXECUTION_PROMPT.md` completely and follow it as the master specification. Do not start coding before reading the project requirements and inspecting all available source files.
+
+### Step 1 — Read everything in this order
+
+1. `README.md` and `README_CN_QUESTION_BANK.md`
+2. `Repeater_Ring_Topology_Correction.md`
+3. `EkGuru_CN_Topic1_Question_Audit.csv`
+4. Both original Topic 1 HTML files, the updated HTML file, and `Pasted text (5).txt`
+5. All seven Topic 1–7 Practice Questions PDFs, reading every page, question, option, diagram, and source label.
+
+Do not double-count duplicate copies of the same HTML. Record missing files or unreadable pages instead of pretending they were processed.
+
+### Step 2 — Audit the entire question bank
+
+Extract and normalize the raw questions from all seven PDFs and the existing HTML. Compare exact duplicates and semantically similar questions. Maintain traceable source references and a duplicate-audit report.
+
+Independently verify every answer. The supplied Topics 2–7 PDFs have no complete answer key, so do not guess answers or include unchecked answers in a verified scored test.
+
+Use official exam papers and final answer keys to verify PYQs. Clearly distinguish verified official PYQs, unverified PYQ claims, repository/coaching questions, textbook-based practice, and original questions.
+
+### Step 3 — Build the complete exam-wise question bank
+
+Support relevant Rajasthan recruitment exams, RPSC Programmer, Informatics Assistant, applicable ACP/Deputy Director and BCI/SCI posts, GATE CS, UGC-NET Computer Science and Applications, and other examinations only when their current syllabus supports the coverage.
+
+Create a proper syllabus map for each supported exam. Do not make the exam selector decorative: selecting an exam must filter questions using audited exam tags. Verify the exam-specific time, marks, and negative-marking pattern before claiming an exact simulation.
+
+Use Forouzan and other recognised networking references to verify concepts. Record sources actually consulted. Do not claim that every book worldwide has been reviewed, and do not copy entire copyrighted question banks verbatim.
+
+### Step 4 — Fix the HTML test portal
+
+Keep EkGuru branding and the `By PRAKASH` footer professional. Add working selection controls for exam, topic, question type, source status, difficulty, question count, language, quiz/exam mode, time, and marking scheme.
+
+Fix option shuffling so the correct answer always remains mapped correctly. Test the timer, question palette, unsaved-answer warning, mark-for-review, Save & Next, final submission, score calculation, and question-wise explanations. Quiz mode must show instant explanations; exam mode must hide answers until submission. Test mobile and desktop layouts.
+
+Correct the repeater question to preserve the intended answer, Ring Topology, while clarifying that the question refers to a traditional ring network. Do not claim this corrected question is an official PYQ unless its original paper and key are verified.
+
+### Step 5 — Deliver working files
+
+Update the master `README.md` and produce:
+- A normalized `data/cn_questions.json`
+- A source register
+- A question inventory and duplicate-audit report
+- An answer-verification report
+- Exam-specific syllabus and marking blueprints
+- The working updated HTML portal
+- A QA report and release ZIP
+
+Preserve all original PDFs and HTML files. Work on a safe branch, avoid unrelated changes, and do not overwrite original source material.
+
+Finally, run the available tests and report what is complete, the actual number of questions extracted and checked, what remains unresolved, which files changed, and any defects found. Never claim 100% answer verification or zero duplicates without evidence. Start executing the work; do not stop after providing a plan.
 
 ## 1. Project goal
 
