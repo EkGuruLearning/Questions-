@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EkGuru Online Test — Topic 4: Networking Devices</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Roboto, Arial, 'Noto Sans Devanagari', sans-serif; background: #f0f2f5; color: #1c2733; font-size: 15px; }
+.topstrip { background: #1F3864; color: #fff; padding: 7px 14px; font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.topstrip b { color: #ffd580; }
+.nav { background: #fff; border-bottom: 3px solid #E97313; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.logo { font-size: 24px; font-weight: 800; letter-spacing: .3px; }
+.logo .e { color: #E97313; } .logo .g { color: #1F3864; }
+.logo small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 2.2px; color: #667; }
+.navtitle { font-size: 14.5px; font-weight: 700; color: #1F3864; text-align: right; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 12px 10px 26px; }
+.card { background: #fff; border: 1px solid #d7dde6; border-radius: 6px; padding: 16px 16px; margin-bottom: 12px; }
+h2 { font-size: 17px; color: #1F3864; border-bottom: 2px solid #E97313; display: inline-block; padding-bottom: 4px; margin-bottom: 12px; }
+.fld { margin: 10px 0; }
+.fld label { font-size: 13px; font-weight: 700; color: #34435a; display: block; margin-bottom: 5px; }
+input[type=text], select { width: 100%; padding: 11px 10px; font-size: 15px; border: 1.5px solid #b9c4d4; border-radius: 5px; background: #fbfcfe; }
+ol.ins { margin: 6px 0 6px 20px; font-size: 13px; line-height: 1.8; color: #33405a; }
+.chkline { font-size: 13px; margin: 10px 0 4px; color: #33405a; }
+.btn { border: 0; border-radius: 5px; padding: 12px 20px; font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.btn.prime { background: #E97313; color: #fff; }
+.btn.blue { background: #1F3864; color: #fff; }
+.btn.ghost { background: #eef1f6; color: #26364d; border: 1px solid #b9c4d4; }
+.btn.violet { background: #673ab7; color: #fff; }
+.btn:active { transform: scale(.985); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.tbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; background: #1F3864; color: #fff; border-radius: 5px; padding: 9px 12px; margin-bottom: 10px; font-size: 13px; }
+.tbar .timer { font-size: 19px; font-weight: 800; letter-spacing: 1px; }
+.tbar .timer.low { color: #ffb3b3; }
+.layout { display: flex; gap: 12px; align-items: flex-start; }
+.qcol { flex: 1.8; min-width: 300px; }
+.pcol { flex: 1; min-width: 230px; }
+@media (max-width: 720px) { .layout { flex-direction: column; } .qcol, .pcol { width: 100%; min-width: 0; } }
+.qhead { background: #f5f7fa; border: 1px solid #e2e7ee; border-radius: 5px; padding: 8px 10px; font-size: 12.5px; color: #45536b; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.qtext { font-size: 16.5px; font-weight: 700; line-height: 1.5; margin: 4px 2px 8px; }
+.qhi { font-size: 13.5px; color: #4d5a6e; line-height: 1.65; margin: 0 2px 12px; }
+.opt { display: block; width: 100%; text-align: left; background: #fff; border: 1.5px solid #c4cddc; border-radius: 5px; padding: 12px 12px; font-size: 14.5px; margin-bottom: 8px; cursor: pointer; line-height: 1.5; }
+.opt:hover { border-color: #E97313; background: #fff8f1; }
+.opt .oh { color: #5d6b80; font-size: 12.5px; }
+.opt.sel { border-color: #1F3864; background: #eaf0f9; }
+.opt.correct { border-color: #1b7a3d; background: #e7f5ec; }
+.opt.wrong { border-color: #c0392b; background: #fdecea; }
+.opt.dim { opacity: .5; }
+.fb { border-radius: 5px; padding: 11px 12px; margin: 8px 0 2px; font-size: 13.5px; line-height: 1.6; border: 1px solid; }
+.fb.ok { background: #e9f6ee; border-color: #1b7a3d; color: #14532d; }
+.fb.no { background: #fdecea; border-color: #c0392b; color: #7b1f14; }
+.fb .exp { margin-top: 6px; color: #2b3646; }
+.fb .exp .hi { color: #55617a; font-size: 12.5px; margin-top: 3px; }
+.fb .src { margin-top: 6px; font-size: 11px; color: #7b8798; }
+.legend { font-size: 11.5px; color: #45536b; margin: 8px 0 10px; line-height: 2; }
+.legend .sw { display: inline-block; width: 13px; height: 13px; border-radius: 3px; margin: 0 5px 0 8px; vertical-align: -2px; border: 1px solid #99a; }
+.palette { display: flex; flex-wrap: wrap; gap: 6px; }
+.pq { width: 38px; height: 34px; border-radius: 4px; border: 1.5px solid #b9c4d4; background: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; color: #2b3646; position: relative; }
+.pq.nv { background: #fff; }
+.pq.vis { background: #f6c9c2; border-color: #d98a7d; color: #7b2718; }
+.pq.ans { background: #b7e2c3; border-color: #4ca36a; color: #14532d; }
+.pq.mk { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
+.pq.mkans { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
+.pq.mkans::after { content: '\2713'; position: absolute; right: 2px; bottom: 0px; font-size: 10px; color: #1b7a3d; }
+.pq.cur { outline: 2.5px solid #1F3864; outline-offset: 1px; }
+.summary { margin-top: 10px; border-top: 1px solid #e2e7ee; padding-top: 9px; font-size: 12px; color: #45536b; line-height: 1.9; }
+.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+.stat { border: 1px solid #d7dde6; border-radius: 6px; padding: 12px 8px; text-align: center; background: #fff; }
+.stat .v { font-size: 22px; font-weight: 800; }
+.stat .l { font-size: 11px; color: #66708a; font-weight: 700; letter-spacing: .6px; margin-top: 3px; }
+.stat.c .v { color: #1b7a3d; } .stat.w .v { color: #c0392b; } .stat.s .v { color: #7a8494; } .stat.t .v { color: #1F3864; }
+table.tt { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0; }
+table.tt td, table.tt th { border: 1px solid #dfe5ec; padding: 6px 8px; text-align: left; }
+table.tt th { background: #eef2f7; color: #2b3646; }
+.rev { border-top: 1px solid #e2e7ee; padding: 13px 2px 10px; }
+.rev .st { font-size: 11px; font-weight: 800; border-radius: 4px; padding: 2px 8px; margin-right: 6px; }
+.st.c { background: #e7f5ec; color: #14532d; border: 1px solid #4ca36a; }
+.st.w { background: #fdecea; color: #7b1f14; border: 1px solid #d98a7d; }
+.st.s { background: #eef1f5; color: #4a5468; border: 1px solid #aab4c2; }
+.rev .qh { font-weight: 700; font-size: 14.5px; line-height: 1.5; margin: 6px 0 4px; }
+.rev .qhm { color: #4d5a6e; font-size: 12.5px; line-height: 1.6; margin-bottom: 7px; }
+.rev .line { font-size: 13px; margin: 3px 0; line-height: 1.55; }
+.rev .okc { color: #1b7a3d; font-weight: 700; }
+.rev .noc { color: #c0392b; font-weight: 700; }
+.rev .exp { background: #f5f8fc; border-left: 3.5px solid #1F3864; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; line-height: 1.6; }
+.rev .exp .hi { color: #55617a; margin-top: 4px; }
+.rev .meta { font-size: 11px; color: #7b8798; margin-top: 6px; }
+.foot { text-align: center; color: #7a8494; font-size: 11.5px; line-height: 1.8; margin: 16px 6px 4px; border-top: 1px solid #d7dde6; padding-top: 12px; }
+.foot b { color: #45536b; }
+.hint { font-size: 12px; color: #66708a; line-height: 1.65; margin-top: 8px; }
+.resTitle { font-size: 18px; color: #1F3864; font-weight: 800; margin: 4px 0 2px; }
+</style>
+</head>
+<body>
+<div class="topstrip">
+  <span>EkGuru Learning &nbsp;|&nbsp; Computer Networks (Forouzan) &nbsp;|&nbsp; Online Test Portal</span>
+  <span>Compiled &amp; updated <b>by PRAKASH</b></span>
+</div>
+<div class="nav">
+  <div class="logo"><span class="e">Ek</span><span class="g">Guru</span><small>ONLINE TEST PORTAL</small></div>
+  <div class="navtitle">Topic 4 — Networking Devices<br><span style="font-weight:400; font-size:11.5px; color:#667">Practice Questions &nbsp;•&nbsp; Quiz Mode / Exam Mode</span></div>
+</div>
+<div class="wrap">
+
+<div class="card" id="startCard">
+  <h2>Test Instructions</h2>
+  <ol class="ins">
+    <li>Test shuru karne ke liye apna naam likhein aur mode chunein.</li>
+    <li><b>Quiz Mode:</b> har question ke baad sahi uttar aur explanation turant dikhayi degi — seekhne ke liye.</li>
+    <li><b>Exam Mode:</b> sabse pehle saare questions karein, phir <b>Submit</b> karein. Result mein Correct / Wrong / Chhode hue alag gine jayenge.</li>
+    <li>Exam Mode mein <b>Mark for Review</b>, <b>Clear Response</b>, <b>Save &amp; Next</b> aur question palette milte hain — bilkul live exam jaisa.</li>
+    <li>Questions aur options har baar doosre kram mein aate hain.</li>
+    <li>Samay poora hone par test apne aap submit ho jayega.</li>
+    <li>Submit ke baad har question ka explanation (solution) diya jayega.</li>
+  </ol>
+  <div class="fld"><label>Apka naam / Candidate name</label>
+    <input type="text" id="nameIn" maxlength="40" placeholder="Naam likhein"></div>
+  <div class="fld"><label>Mode</label>
+    <select id="modeIn">
+      <option value="quiz">Quiz Mode — instant answer + explanation</option>
+      <option value="exam">Exam Mode — submit ke baad result + analysis</option>
+    </select></div>
+  <div class="fld"><label>Questions ki sankhya</label>
+    <select id="countIn">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="0">Sabhi (48)</option>
+    </select></div>
+  <div class="fld"><label>Har question ka samay (Exam Mode — total timer isi se banega)</label>
+    <select id="tpqIn">
+      <option value="45">45 second per question</option>
+      <option value="60" selected>60 second per question</option>
+      <option value="90">90 second per question</option>
+      <option value="120">2 minute per question</option>
+    </select></div>
+  <div class="chkline"><input type="checkbox" id="agreeIn"> <label for="agreeIn" style="display:inline">Maine instructions padh li hain.</label></div>
+  <button class="btn prime" onclick="startTest()">Test Shuru Karein</button>
+  <div class="hint">Questions repo exam papers, Forouzan tatha India-level PYQ banks (2011–2026) se liye gaye hain. Sabhi uttar verify kiye gaye hain.</div>
+</div>
+
+<div class="card" id="testCard" style="display:none">
+  <div class="tbar">
+    <span id="whoLine"></span>
+    <span id="timerLine" class="timer">00:00</span>
+    <span id="progLine"></span>
+  </div>
+  <div class="layout">
+    <div class="qcol">
+      <div class="qhead">
+        <span id="qNoLine"><b>Question 1</b></span>
+        <span id="secLine"></span>
+      </div>
+      <div class="qtext" id="qText"></div>
+      <div class="qhi" id="qHi"></div>
+      <div id="optBox"></div>
+      <div id="fbBox"></div>
+      <div class="btnrow" id="ctrlBox"></div>
+    </div>
+    <div class="pcol">
+      <div class="card" style="margin:0">
+        <div class="legend">
+          <span class="sw" style="background:#fff"></span> Not visited
+          <span class="sw" style="background:#f6c9c2"></span> Dekha, uttar nahi
+          <span class="sw" style="background:#b7e2c3"></span> Uttar diya
+          <span class="sw" style="background:#d9c8f2"></span> Marked for review
+          <span class="sw" style="background:#d9c8f2"></span><b style="color:#1b7a3d">&#10003;</b> Uttar + marked
+        </div>
+        <div class="palette" id="dotBox"></div>
+        <div class="summary" id="sumBox"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="resultCard" style="display:none">
+  <h2>Result Summary</h2>
+  <div class="resTitle" id="resTitle"></div>
+  <div class="hint" id="resSub"></div>
+  <div class="statgrid" id="statGrid"></div>
+  <table class="tt" id="resTable"></table>
+  <div class="btnrow">
+    <button class="btn blue" onclick="window.print()">Print / Save Result</button>
+    <button class="btn ghost" onclick="location.reload()">Naya Test</button>
+  </div>
+  <h2 style="margin-top:20px">Question-wise Solutions</h2>
+  <div id="revBox"></div>
+</div>
+
+<div class="foot">
+  <b>EkGuru Learning</b> — Computer Networks Practice Portal (Reference: Forouzan, Data Communications &amp; Networking)<br>
+  Questions: repo exam papers + India-level PYQ banks (GATE, UGC NET, RPSC, KVS, EMRS, SSC, RRB, IBPS — 2011–2026) + original practice set.<br>
+  Compiled &amp; updated <b>by PRAKASH</b> &nbsp;|&nbsp; Topic 4: Networking Devices
+</div>
+</div>
+
+<script>
+const QUESTIONS = [{"q": ["Which device operates only at the Physical layer (Layer 1) of the OSI model?", "OSI model की केवल Physical layer (Layer 1) पर कौन-सा device काम करता है?"], "opts": [["Switch", ""], ["Hub", ""], ["Router", ""], ["Bridge", ""]], "ans": 1, "exp": ["A hub is a dumb Layer-1 device — it regenerates and forwards bits to ALL ports without reading MAC addresses. | Nukta: Layer 1 = Hub, Repeater, Modem, cables. Layer 2 = Switch, Bridge, NIC. Layer 3 = Router. Gateway = all 7 (protocol converter).", "Hub एक dumb Layer-1 device है — यह bits को regenerate करके सभी ports पर भेजता है, बिना MAC addresses पढ़े। | Layer 1 = Hub, Repeater, Modem, cables। Layer 2 = Switch, Bridge, NIC। Layer 3 = Router। Gateway = सभी 7 (protocol converter)।"], "src": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) · also CN Topic Test-6", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which of the following devices operates only in the physical layer?", "निम्न में से कौन-सा device केवल physical layer पर काम करता है?"], "opts": [["Two-layer switch", ""], ["Router", ""], ["Repeater", ""], ["Bridge", ""]], "ans": 2, "exp": ["A repeater works at Layer 1 — it only regenerates (amplifies + reshapes) the signal to extend the cable distance. | Nukta: Repeater = signal regenerator (L1). Hub = multi-port repeater (L1). Both are 'dumb' devices.", "Repeater Layer 1 पर काम करता है — यह केवल signal को regenerate (amplify + reshape) करके cable distance बढ़ाता है। | Repeater = signal regenerator (L1)। Hub = multi-port repeater (L1)। दोनों 'dumb' devices हैं।"], "src": "Kerala PSC repeated PYQs (via pscarivukal)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which of the following pairs lists the network devices used at the physical layer?", "निम्न में से कौन-सी जोड़ी physical layer पर उपयोग होने वाले network devices बताती है?"], "opts": [["Gateway, Bridge", ""], ["Router, Repeater", ""], ["Hub, Switch", ""], ["Repeater, Hub", ""]], "ans": 3, "exp": ["Repeater and Hub both work at the physical layer — they regenerate/forward signals without frame intelligence. | Nukta: Rajasthan PYQ (verified key: D). Physical-layer pair = Repeater + Hub. Switch/Bridge = L2, Gateway = L7.", "Repeater और Hub दोनों physical layer पर काम करते हैं — ये signals को regenerate/forward करते हैं, बिना frame intelligence के। | Rajasthan PYQ (verified key: D)। Physical-layer जोड़ी = Repeater + Hub। Switch/Bridge = L2, Gateway = L7।"], "src": "Random Test- Rajasthan PYQ (OCR), p12 — Q93 (options reconstructed from screenshot)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which of the following are network connecting devices? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth", "निम्न में से कौन network connecting devices हैं? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth"], "opts": [["1, 2 and 3", ""], ["1, 2 and 4", ""], ["2, 3 and 4", ""], ["1, 3 and 4", ""]], "ans": 0, "exp": ["Repeater, Bridge and Hub are all network connecting DEVICES; Bluetooth is a wireless TECHNOLOGY/standard, not a connecting device. | Nukta: Devices vs technologies: repeater/bridge/hub/switch/router = devices. Bluetooth/Wi-Fi/Ethernet = technologies/standards.", "Repeater, Bridge और Hub — तीनों network connecting DEVICES हैं; Bluetooth एक wireless TECHNOLOGY/standard है, connecting device नहीं। | Devices बनाम technologies: repeater/bridge/hub/switch/router = devices। Bluetooth/Wi-Fi/Ethernet = technologies/standards।"], "src": "Unit Test -2 Solutions (OCR), p11", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which of the following statements are TRUE? 1. Switch reduces collision domain. 2. Hub creates a separate collision domain for each port. 3. Router separates broadcast domains.", "निम्न में से कौन-से कथन सही हैं? 1. Switch collision domain को कम करता है। 2. Hub हर port के लिए अलग collision domain बनाता है। 3. Router broadcast domains को अलग करता है।"], "opts": [["1 and 2 only", ""], ["2 and 3 only", ""], ["1 and 3 only", ""], ["1, 2 and 3", ""]], "ans": 2, "exp": ["Statement 1 is true (each switch port = own collision domain) and 3 is true (router = broadcast-domain boundary). Statement 2 is FALSE — a hub has ONE collision domain for all its ports. | Nukta: Switch: collision ↓ (per-port). Hub: 1 collision domain. Router: broadcast domains separated. Ye teeno golden statements hain.", "कथन 1 सही है (हर switch port = अपना collision domain) और 3 सही है (router = broadcast-domain सीमा)। कथन 2 गलत है — hub के सभी ports के लिए एक ही collision domain होता है। | Switch: collision ↓ (per-port)। Hub: 1 collision domain। Router: broadcast domains अलग। ये तीनों golden statements हैं।"], "src": "Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q26", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which device combines transmission from various I/O devices into one line?", "कौन-सा device विभिन्न I/O devices के transmission को एक line में मिलाता है?"], "opts": [["Modifier", ""], ["Multiplexer", ""], ["Concentrator", ""], ["Gateway", ""]], "ans": 1, "exp": ["A multiplexer (MUX) combines several input signals into ONE shared line (FDM/TDM) at the sending end; a demultiplexer separates them again. | Nukta: MUX = many→one line (FDM/TDM/WDM). Concentrator = statistical sharing of a line. Gateway = protocol converter.", "Multiplexer (MUX) भेजने वाली ओर कई input signals को एक shared line में मिलाता है (FDM/TDM); demultiplexer उन्हें फिर अलग करता है। | MUX = कई→एक line (FDM/TDM/WDM)। Concentrator = line का statistical sharing। Gateway = protocol converter।"], "src": "Unit Test-4 Solution (OCR), p22", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["A file server is a ______ which is used to store files received from various client machines.", "File server एक ______ है जिसका उपयोग विभिन्न client machines से प्राप्त files संग्रहित करने के लिए होता है।"], "opts": [["Specialized computer system", ""], ["Modem", ""], ["Router", ""], ["Transponder", ""]], "ans": 0, "exp": ["A file server is a specialised computer (with large storage) that stores and serves files to clients in a client-server network. | Nukta: Servers (file/print/mail/web) = specialised computers. Modem = signal converter, Router = packet forwarder, Transponder = satellite relay.", "File server एक विशेष computer (बड़े storage के साथ) है जो client-server network में clients को files संग्रहित करके देता है। | Servers (file/print/mail/web) = विशेष computers। Modem = signal converter, Router = packet forwarder, Transponder = satellite relay।"], "src": "Unit Test-4 Solution (OCR), p24", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?", "एक data-entry office में 1वीं और 4वीं मंज़िल के computer centres LAN से जुड़े हैं, पर signals में समय लगता है. बेहतर transmission के लिए कौन-सा hardware लगाएँ?"], "opts": [["Repeater", ""], ["Router", ""], ["Computer", ""], ["Modem", ""]], "ans": 0, "exp": ["Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है. | Nukta: संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.", "Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है. | संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem."], "src": "RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["A device that operates at the physical layer of the OSI model is:", "OSI model की physical layer पर काम करने वाला device है:"], "opts": [["Bridge", ""], ["Router", ""], ["Repeater", ""], ["All of these", ""]], "ans": 2, "exp": ["Repeater physical layer (Layer 1) का device है — यह signal regenerate करता है. Bridge Layer 2, Router Layer 3 पर. | Nukta: Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, L4+ = Gateway.", "Repeater physical layer (Layer 1) का device है — यह signal regenerate करता है. Bridge Layer 2, Router Layer 3 पर. | Layer-device जोड़ी: L1 = Repeater/Hub, L2 = Bridge/Switch, L3 = Router, L4+ = Gateway."], "src": "SBI/IBPS Computer Awareness Capsule 2018 (IBT India)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["All ports of a hub belong to how many collision domains?", "Hub के सभी ports कितने collision domains में आते हैं?"], "opts": [["One", "एक"], ["Equal to number of ports", "Ports की संख्या के बराबर"], ["Two", "दो"], ["Zero", "शून्य"]], "ans": 0, "exp": ["Hub ek shared medium hai — sab ports ek hi collision domain. | Nukta: Switch mein har port alag.", "Hub में सब ports एक collision domain। | Switch में हर port अलग।"], "src": "Practice — original (textbook-based)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["A device that regenerates a weak signal bit-by-bit to its original strength is a:", "कमज़ोर signal को bit-by-bit पुनः मूल शक्ति तक लाने वाला उपकरण है:"], "opts": [["Repeater", "Repeater"], ["Amplifier", "Amplifier"], ["Bridge", "Bridge"], ["Router", "Router"]], "ans": 0, "exp": ["Repeater signal copy karke regenerate karta hai — amplify nahi. | Nukta: Amplifier shor ke saath badhata hai.", "Repeater regenerate करता है — amplify नहीं। | Amplifier शोर भी बढ़ाता है।"], "src": "Practice — original (textbook-based)", "sec": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)"}, {"q": ["Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?", "कौन-सा device collision domains को कम करता है (हर port का अपना collision domain) लेकिन broadcast domains को तोड़ता नहीं?"], "opts": [["Switch", ""], ["Router", ""], ["Hub", ""], ["Gateway", ""]], "ans": 0, "exp": ["A switch gives every port a separate collision domain (full-duplex = no collisions) but ALL its ports share ONE broadcast domain (unless VLANs are used). | Nukta: Switch = collision domains many, broadcast 1. Router = broadcast domains many. Hub = 1 collision + 1 broadcast. VLAN = splits broadcast on a switch.", "Switch हर port को अलग collision domain देता है (full-duplex = कोई collision नहीं) लेकिन सभी ports एक ही broadcast domain share करते हैं (जब तक VLAN न हो)। | Switch = collision domains कई, broadcast 1। Router = broadcast domains कई। Hub = 1 collision + 1 broadcast। VLAN = switch पर broadcast तोड़ता है।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-6", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["Which device stores MAC addresses in a CAM table?", "कौन-सा device MAC addresses को CAM table में संग्रहित करता है?"], "opts": [["Hub", ""], ["Router", ""], ["Switch", ""], ["Modem", ""]], "ans": 2, "exp": ["A switch learns source MAC addresses and stores them in its CAM (Content Addressable Memory) table to forward frames only to the right port. | Nukta: Switch = MAC table (CAM). Router = routing table (IP). Hub = no table (floods). ARP cache = IP→MAC mapping (host).", "Switch source MAC addresses सीखकर उन्हें अपने CAM (Content Addressable Memory) table में रखता है ताकि frames सही port पर ही भेजे जाएँ। | Switch = MAC table (CAM)। Router = routing table (IP)। Hub = कोई table नहीं (floods)। ARP cache = IP→MAC mapping (host)।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?", "एक switch को frame मिलता है जिसका destination MAC उसके MAC table में नहीं है। Switch क्या करेगा?"], "opts": [["Send the frame to the router only", ""], ["Flood the frame out of all its ports (same broadcast domain)", ""], ["Drop the frame", ""], ["Broadcast it on the entire internet", ""]], "ans": 1, "exp": ["On an unknown unicast destination, the switch floods the frame out of every port (except the source port) within the broadcast domain — this is how it learns. | Nukta: Unknown unicast → flood. Known unicast → single port. Broadcast FF:FF:... → flood. Source MAC → learn/refresh in CAM.", "अज्ञात unicast destination पर switch frame को हर port (source port को छोड़कर) से broadcast domain के भीतर flood करता है — इसी तरह वह सीखता है। | Unknown unicast → flood। Known unicast → एक port। Broadcast FF:FF:... → flood। Source MAC → CAM में learn/refresh।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?", "दो switches के बीच एक router जुड़ा है। यदि Switch-A पर broadcast frame भेजा जाए, तो Switch-B क्या प्राप्त करेगा?"], "opts": [["The broadcast", ""], ["A unicast copy", ""], ["Nothing", ""], ["A multicast", ""]], "ans": 2, "exp": ["Routers do not forward broadcast traffic — each side of the router is a separate broadcast domain, so Switch-B receives nothing. | Nukta: Router = broadcast firewall. This is why routers split broadcast domains and switches don't.", "Router broadcast traffic को आगे नहीं भेजते — router के दोनों ओर अलग broadcast domains होते हैं, इसलिए Switch-B कुछ भी प्राप्त नहीं करेगा। | Router = broadcast firewall। इसीलिए router broadcast domains तोड़ते हैं और switches नहीं।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["A switch has 4 VLANs configured. How many broadcast domains exist?", "एक switch पर 4 VLANs configure हैं। कितने broadcast domains होंगे?"], "opts": [["1", ""], ["2", ""], ["4", ""], ["Depends on the router", ""]], "ans": 2, "exp": ["Each VLAN is its own broadcast domain — 4 VLANs = 4 broadcast domains on that switch. | Nukta: VLAN = virtual switch = its own broadcast domain. Inter-VLAN communication needs a router (or L3 switch).", "हर VLAN अपना अलग broadcast domain है — उस switch पर 4 VLANs = 4 broadcast domains। | VLAN = virtual switch = अपना broadcast domain। Inter-VLAN संचार के लिए router (या L3 switch) चाहिए।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?", "VLANs वाले router-on-a-stick setup में VLAN tagging कौन करता है और inter-VLAN routing कौन?"], "opts": [["Switch – VLAN tags, Router – routing", ""], ["Router – VLAN tags, Switch – routing", ""], ["Both switch and router do VLAN tagging", ""], ["Neither does VLAN tagging", ""]], "ans": 0, "exp": ["The switch carries VLAN-tagged (802.1Q) frames on the trunk, and the router (sub-interfaces) routes between the VLANs. | Nukta: 802.1Q tagging = switch trunk job. Inter-VLAN routing = router (router-on-a-stick) or L3 switch.", "Switch trunk पर VLAN-tagged (802.1Q) frames ले जाता है, और router (sub-interfaces) VLANs के बीच routing करता है। | 802.1Q tagging = switch trunk का काम। Inter-VLAN routing = router (router-on-a-stick) या L3 switch।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?", "एक packet यात्रा करता है: wired PC → Switch → Access Point → Wireless laptop। कौन-से devices केवल Layer 2 पर काम करते हैं?"], "opts": [["Switch only", ""], ["Access Point only", ""], ["Both switch and access point", ""], ["Neither", ""]], "ans": 2, "exp": ["A switch is a Layer-2 device and an access point acts as a wireless bridge — also Layer-2 (it bridges 802.3 frames to 802.11 frames). | Nukta: AP = wireless bridge (L2). Switch = L2. Router = L3. WAPs don't route unless configured as routers.", "Switch एक Layer-2 device है और access point एक wireless bridge की तरह काम करता है — वह भी Layer-2 (यह 802.3 frames को 802.11 frames में बदलता है)। | AP = wireless bridge (L2)। Switch = L2। Router = L3। WAPs routing नहीं करते (जब तक router mode में न हों)।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["What does a MAC address represent?", "MAC address किसका प्रतिनिधित्व करता है?"], "opts": [["The location of the device in the network", ""], ["The unique identity of the NIC", ""], ["Internet connectivity", ""], ["The routing path", ""]], "ans": 1, "exp": ["The MAC address is the unique hardware identity of the NIC (Network Interface Card) — burned in by the manufacturer. | Nukta: MAC = NIC identity (who). IP = location in network (where). Routing path = router's job.", "MAC address, NIC (Network Interface Card) की unique hardware पहचान है — manufacturer द्वारा burn की गई। | MAC = NIC identity (कौन)। IP = network में स्थान (कहाँ)। Routing path = router का काम।"], "src": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["Which of the following component is responsible for network communication in a computer system?", "कंप्यूटर सिस्टम में network communication के लिए कौन-सा component ज़िम्मेदार होता है?"], "opts": [["UPS", ""], ["Ethernet card (NIC)", ""], ["SVGA card", ""], ["SMPS", ""]], "ans": 1, "exp": ["Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता है और frames भेजने-पाने का काम करता है. | Nukta: NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.", "Ethernet card यानी NIC (Network Interface Card) ही computer को network से जोड़ता है और frames भेजने-पाने का काम करता है. | NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है."], "src": "Unit Test-4 Solution.pdf (OCR), p18", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["LANs can be connected by which of the following devices that operate on the data link layer?", "LANs को data link layer पर काम करने वाले निम्न में से किस device से जोड़ा जा सकता है?"], "opts": [["Hub", ""], ["Bridges", ""], ["HDLC", ""], ["Tunnel", ""]], "ans": 1, "exp": ["Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses देखकर frames आगे भेजते हैं. | Nukta: Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+.", "Bridges LANs को data link layer (Layer 2) पर जोड़ते हैं और MAC addresses देखकर frames आगे भेजते हैं. | Hub = L1, Bridge/Switch = L2, Router = L3, Gateway = L4+."], "src": "SBI PO Computer Awareness PYQ (via bankersadda)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["A switch learns the port for a MAC address by:", "Switch किसी MAC address का port कैसे सीखता है?"], "opts": [["Reading the source MAC of incoming frames", "आने वाले frames के source MAC से"], ["Asking the router", "Router से पूछकर"], ["Reading the IP address", "IP address पढ़कर"], ["Broadcasting every frame", "हर frame broadcast करके"]], "ans": 0, "exp": ["Switch incoming frame ka source MAC dekh kar CAM table bharta hai. | Nukta: Destination MAC se forwarding hoti hai, learning source se.", "Switch source MAC देखकर CAM table भरता है। | Learning source MAC से।"], "src": "Practice — original (textbook-based)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["VLANs on a switch are used to create:", "Switch पर VLAN बनाए जाते हैं:"], "opts": [["More collision domains", "अधिक collision domains"], ["Separate broadcast domains", "अलग-अलग broadcast domains"], ["More repeaters", "अधिक repeaters"], ["Faster cables", "तेज़ cables"]], "ans": 1, "exp": ["VLAN = ek switch par alag broadcast domains. | Nukta: Collision domain to switch pehle hi har port par deta hai.", "VLAN = अलग broadcast domains। | Collision domain हर port पर पहले से।"], "src": "Practice — original (textbook-based)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["Compared to a hub, a switch:", "Hub की तुलना में switch:"], "opts": [["Sends every frame to all ports", "हर frame सब ports पर भेजता है"], ["Sends frames only to the destination port", "Frame सिर्फ़ destination port पर भेजता है"], ["Works only at layer 3", "सिर्फ़ layer 3 पर काम करता है"], ["Does not need MAC addresses", "MAC addresses की ज़रूरत नहीं"]], "ans": 1, "exp": ["Switch MAC table se frame ko sahi port par bhejta hai. | Nukta: Hub sabko bhejta hai.", "Switch MAC table से सही port पर भेजता है। | Hub सबको भेजता है।"], "src": "Practice — original (textbook-based)", "sec": "Section B — Switch / NIC / Bridge"}, {"q": ["Which hardware forwards data packets between computer networks?", "कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?"], "opts": [["Switch", ""], ["Router", ""], ["Cable", ""], ["Nibble", ""]], "ans": 1, "exp": ["A router forwards packets between DIFFERENT networks using the routing information (IP addresses) in the packet. | Nukta: Official KVS key. Router = between networks (L3). Switch = within a network (L2). Cable = medium. Nibble = 4 bits!", "Router packet के भीतर routing information (IP addresses) का उपयोग करके विभिन्न networks के बीच packets को आगे भेजता है। | Official KVS key। Router = networks के बीच (L3)। Switch = network के भीतर (L2)। Cable = medium। Nibble = 4 bits!"], "src": "KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03", "sec": "Section C — Router / Brouter"}, {"q": ["Which device operates at Layer 3 of the OSI model?", "OSI model की Layer 3 पर कौन-सा device काम करता है?"], "opts": [["Hub", ""], ["Switch", ""], ["Router", ""], ["Repeater", ""]], "ans": 2, "exp": ["The router works at the Network layer (Layer 3) — it forwards packets using logical IP addresses and routing tables. | Nukta: Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7.", "Router Network layer (Layer 3) पर काम करता है — यह logical IP addresses और routing tables का उपयोग करके packets भेजता है। | Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7।"], "src": "SSC CGL Tier-2 repeated Qs (via Oliveboard)", "sec": "Section C — Router / Brouter"}, {"q": ["Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?", "इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?"], "opts": [["i and iv only", ""], ["i and ii only", ""], ["iii and iv only", ""], ["ii and iii only", ""]], "ans": 2, "exp": ["Switch and router are intelligent — they read addresses (MAC/IP) and make forwarding decisions; repeater and hub blindly repeat/forward signals. | Nukta: Intelligent = reads addresses + filters/forwards selectively (switch, router, bridge, gateway). Dumb = hub, repeater.", "Switch और router intelligent हैं — ये addresses (MAC/IP) पढ़कर forwarding decisions लेते हैं; repeater और hub अंधों की तरह signals दोहराते/भेजते हैं। | Intelligent = addresses पढ़ता है + selectively filter/forward करता है (switch, router, bridge, gateway)। Dumb = hub, repeater।"], "src": "Kerala PSC repeated PYQs (via pscarivukal)", "sec": "Section C — Router / Brouter"}, {"q": ["A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision", "Router निम्न में से कौन-सा कार्य करता है? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision"], "opts": [["1, 2 and 4", ""], ["2, 3 and 4", ""], ["1 and 3 only", ""], ["1, 2, 3 and 4", ""]], "ans": 0, "exp": ["A router forwards packets, uses logical (IP) addressing and makes routing decisions — but collision detection is a Layer-2 (CSMA/CD) function, not a router's. | Nukta: Router = forward + route + logical addressing. NOT collision detection (that's Ethernet L2 on switches/NICs).", "Router packets भेजता है, logical (IP) addressing उपयोग करता है और routing decisions लेता है — लेकिन collision detection Layer-2 (CSMA/CD) का काम है, router का नहीं। | Router = forward + route + logical addressing। Collision detection नहीं (वह switches/NICs पर Ethernet L2 का काम है)।"], "src": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28", "sec": "Section C — Router / Brouter"}, {"q": ["Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?", "देखिए: S1: TTL field हर router पर घटती है। S2: MAC address हर hop पर बदलता है। कौन-सा सही है?"], "opts": [["Only S1", ""], ["Only S2", ""], ["Both S1 and S2", ""], ["Neither S1 nor S2", ""]], "ans": 2, "exp": ["At every router hop the TTL is decremented (and header checksum recomputed) AND a new frame with new source/destination MAC addresses is built. Both statements are true. | Nukta: Per-hop changes: TTL↓ + MAC rewritten. End-to-end: IP addresses unchanged (except NAT).", "हर router hop पर TTL घटती है (और header checksum फिर से बनता है) और नए source/destination MAC addresses वाला नया frame बनता है। दोनों कथन सही हैं। | Per-hop बदलाव: TTL↓ + MAC फिर से लिखा जाता है। End-to-end: IP addresses अपरिवर्तित (NAP को छोड़कर)।"], "src": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)", "sec": "Section C — Router / Brouter"}, {"q": ["A router drops some packets deliberately due to congestion. What is this technique called?", "Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?"], "opts": [["Delay policing", ""], ["Redundancy", ""], ["Random Early Detection (RED)", ""], ["Reverse flooding", ""]], "ans": 2, "exp": ["Random Early Detection (RED) proactively drops (or marks) packets before the queue is full, signalling senders to slow down — a congestion-avoidance technique. | Nukta: Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping. Dropping ALL at overflow = tail drop.", "Random Early Detection (RED) queue भरने से पहले ही packets छोड़ (या mark) देता है, जिससे senders धीमे हो जाएँ — यह एक congestion-avoidance तकनीक है। | Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping। Overflow पर सब छोड़ना = tail drop।"], "src": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)", "sec": "Section C — Router / Brouter"}, {"q": ["Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?", "IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?"], "opts": [["I and II only", ""], ["I only", ""], ["II and III only", ""], ["II only", ""]], "ans": 3, "exp": ["Only II is true: a router can use static routes (no routing protocol). I is false — the router decrements TTL and updates the checksum. III is false — reassembly is done only by the destination, not routers. | Nukta: Advanced but classic: routers modify IP header (TTL/checksum), may run static-only, never reassemble fragments (destination does).", "केवल II सही है: router static routes उपयोग कर सकता है (कोई routing protocol नहीं)। I गलत है — router TTL घटाता है और checksum अपडेट करता है। III गलत है — reassembly केवल destination करता है, routers नहीं। | उन्नत लेकिन classic: router IP header बदलता है (TTL/checksum), केवल static चला सकता है, fragments कभी नहीं जोड़ता (destination जोड़ता है)।"], "src": "Unit Test-4 Solution (OCR), p15", "sec": "Section C — Router / Brouter"}, {"q": ["Which device creates a separate broadcast domain?", "कौन-सा device अलग broadcast domain बनाता है?"], "opts": [["Switch", ""], ["Bridge", ""], ["Router", ""], ["Repeater", ""]], "ans": 2, "exp": ["Each router interface belongs to a different broadcast domain — the router is the boundary between them. | Nukta: Broadcast domain boundary = router (or VLAN). Collision domain boundary = switch port/bridge.", "हर router interface अलग broadcast domain से संबंधित होता है — router उनके बीच की सीमा है। | Broadcast domain सीमा = router (या VLAN)। Collision domain सीमा = switch port/bridge।"], "src": "Repo: BCI Subject Test-8 (BCI/SCI Batch)", "sec": "Section C — Router / Brouter"}, {"q": ["When a router forwards a packet, which header field does NOT change?", "Router के packet forward करने पर कौन-सा header field नहीं बदलता?"], "opts": [["TTL", "TTL"], ["Header checksum", "Header checksum"], ["Source IP address", "Source IP address"], ["Both TTL and checksum", "TTL और checksum दोनों"]], "ans": 2, "exp": ["TTL ghat-ta hai, checksum naya hota hai; source IP same. | Nukta: TTL/checksum dono badalte hain.", "TTL घटता है, checksum नया; source IP same। | TTL/checksum दोनों बदलते हैं।"], "src": "Practice — original (textbook-based)", "sec": "Section C — Router / Brouter"}, {"q": ["A brouter is a device that can act as:", "Brouter वह उपकरण है जो बन सकता है:"], "opts": [["Hub + repeater", "Hub + repeater"], ["Bridge + router", "Bridge + router"], ["Switch + modem", "Switch + modem"], ["Firewall + gateway", "Firewall + gateway"]], "ans": 1, "exp": ["Brouter = bridge + router dono ki functionality. | Nukta: Baaki combos asli devices nahi.", "Brouter = bridge + router। | बाक़ी combos नहीं।"], "src": "Practice — original (textbook-based)", "sec": "Section C — Router / Brouter"}, {"q": ["If two systems use DIFFERENT protocols, which device is used to link them?", "यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?"], "opts": [["Repeater", ""], ["Gateway", ""], ["Bridge", ""], ["Hub", ""]], "ans": 1, "exp": ["A gateway is a protocol converter — it translates between different protocols/architectures so dissimilar systems can communicate. | Nukta: Gateway = protocol converter (L7). Bridge = similar LANs, same protocols (L2). Repeater/Hub = signal level (L1).", "Gateway एक protocol converter है — यह विभिन्न protocols/architectures के बीच अनुवाद करता है ताकि भिन्न systems संवाद कर सकें। | Gateway = protocol converter (L7)। Bridge = समान LANs, समान protocols (L2)। Repeater/Hub = signal level (L1)।"], "src": "Repo: CN Topic Test-01 (UNIT TEST-1)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which device can operate across all 7 layers of the OSI model?", "कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?"], "opts": [["Router", ""], ["Hub", ""], ["Gateway", ""], ["Switch", ""]], "ans": 2, "exp": ["A gateway (protocol converter) works at the application layer and may involve all layers to translate between different protocol stacks. | Nukta: Gateway = 'all 7 layers' device. Hub 1, switch/bridge 2, router 3 — exam one-liner.", "Gateway (protocol converter) application layer पर काम करता है और भिन्न protocol stacks के बीच अनुवाद के लिए सभी layers को शामिल कर सकता है। | Gateway = 'सभी 7 layers' वाला device। Hub 1, switch/bridge 2, router 3 — exam one-liner।"], "src": "Repo: CN Topic Test 6 (UNIT TEST-6)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Devices on one network can communicate with devices on another network via:", "एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?"], "opts": [["File server", ""], ["Utility server", ""], ["Printer server", ""], ["Gateway", ""]], "ans": 3, "exp": ["A gateway connects different networks (often with different protocols) and lets their devices communicate — the entry/exit point between networks. | Nukta: Gateway = network-to-network doorway (also default gateway = router IP used to exit the LAN).", "Gateway विभिन्न networks (अक्सर भिन्न protocols वाले) को जोड़ता है और उनके devices को संवाद करने देता है — networks के बीच प्रवेश/निकास बिंदु। | Gateway = network-to-network दरवाज़ा (default gateway भी = LAN से बाहर निकलने के लिए router IP)।"], "src": "SSC CGL Internet & Networking (via EduRev bank)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which type of firewall inspects packets at the network layer and decides based on IP addresses?", "कौन-सी firewall network layer पर packets की जाँच करके IP addresses के आधार पर निर्णय लेती है?"], "opts": [["Packet Filtering Firewall", ""], ["Stateful Firewall", ""], ["Proxy Firewall", ""], ["Application Firewall", ""]], "ans": 0, "exp": ["A packet-filtering firewall works at the network layer — it allows/denies packets by source/destination IP (and ports) using ACL rules. | Nukta: Firewall types: Packet filtering (L3/L4, stateless) → Stateful (tracks sessions) → Proxy/Application gateway (L7) → Circuit-level gateway (L5).", "Packet-filtering firewall network layer पर काम करती है — यह ACL rules से source/destination IP (और ports) के आधार पर packets को allow/deny करती है। | Firewall types: Packet filtering (L3/L4, stateless) → Stateful (sessions याद रखती है) → Proxy/Application gateway (L7) → Circuit-level gateway (L5)।"], "src": "Repo: BCI Subject Test-9 (BCI/SCI Batch)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which firewall acts as an intermediary between the client and server at the application layer?", "कौन-सी firewall application layer पर client और server के बीच मध्यस्थ (intermediary) के रूप में काम करती है?"], "opts": [["Packet Filtering Firewall", ""], ["Stateful Firewall", ""], ["Proxy Firewall", ""], ["Circuit-level Gateway", ""]], "ans": 2, "exp": ["A proxy (application) firewall terminates the client connection and opens a separate connection to the server — hiding the internal client completely. | Nukta: Proxy = L7 intermediary (deep inspection, hides internals). Circuit gateway = L5 (session/relay).", "Proxy (application) firewall client connection समाप्त करके server के लिए अलग connection खोलती है — internal client को पूरी तरह छिपाती है। | Proxy = L7 intermediary (गहरी जाँच, internals छिपाती है)। Circuit gateway = L5 (session/relay)।"], "src": "Repo: BCI Subject Test-9 (BCI/SCI Batch)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["What is the role of a firewall in computer networks?", "Computer networks में firewall की भूमिका क्या है?"], "opts": [["Managing IP addresses", ""], ["Filtering and controlling network traffic", ""], ["Resolving domain names", ""], ["Assigning MAC addresses dynamically", ""]], "ans": 1, "exp": ["A firewall monitors and filters incoming/outgoing traffic according to security rules — protecting the trusted network from unauthorised access. | Nukta: Firewall = traffic filter between trusted & untrusted networks (screening router, DMZ...). DHCP = IP management; DNS = names.", "Firewall security rules के अनुसार आने-जाने वाले traffic की निगरानी और छँटनी करता है — trusted network को unauthorised access से बचाता है। | Firewall = trusted और untrusted networks के बीच traffic filter (screening router, DMZ...)। DHCP = IP management; DNS = names।"], "src": "30 important CN MCQs (Medium blog bank)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["What is the purpose of a proxy server in networking?", "Networking में proxy server का उद्देश्य क्या है?"], "opts": [["Managing IP addresses", ""], ["Filtering and forwarding network traffic", ""], ["Assigning MAC addresses dynamically", ""], ["Encrypting network communication", ""]], "ans": 1, "exp": ["A proxy server sits between clients and the internet — it filters requests (policy, caching) and forwards them, hiding the client's identity. | Nukta: Proxy = filter + forward + cache + hide client. Firewall = block/allow by rules. Both are security/traffic devices.", "Proxy server clients और internet के बीच बैठता है — यह requests को filter (policy, caching) करके आगे भेजता है, client की पहचान छिपाता है। | Proxy = filter + forward + cache + client छिपाना। Firewall = rules से block/allow। दोनों security/traffic devices हैं।"], "src": "30 important CN MCQs (Medium blog bank)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?", "कौन-सी network security system trusted private network को उस जुड़े हुए untrusted outside network से बचाने के लिए बनी है?"], "opts": [["Bridge", ""], ["Cookies", ""], ["Firewall", ""], ["SSL", ""]], "ans": 2, "exp": ["A firewall is the security system placed between a trusted internal network and an untrusted external network (like the Internet). | Nukta: Rajasthan PYQ (verified key: C) — the classic firewall definition. Compare: bridge = L2 link, cookie = web state, SSL = encryption.", "Firewall एक security system है जो trusted internal network और untrusted external network (जैसे Internet) के बीच लगाया जाता है। | Rajasthan PYQ (verified key: C) — firewall की classic परिभाषा। तुलना: bridge = L2 link, cookie = web state, SSL = encryption।"], "src": "Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["What kind of NAT maps one private IP to exactly one public IP?", "किस प्रकार का NAT एक private IP को ठीक एक public IP से जोड़ता है?"], "opts": [["Dynamic NAT", ""], ["Static NAT", ""], ["PAT (Port Address Translation)", ""], ["Port Forwarding", ""]], "ans": 1, "exp": ["Static NAT creates a permanent one-to-one mapping between a private and a public IP address (used for servers). | Nukta: NAT types: Static = 1↔1 permanent. Dynamic = pool mapping. PAT/NAT-overload = many↔1 using ports.", "Static NAT एक private और एक public IP address के बीच स्थायी one-to-one mapping बनाता है (servers के लिए उपयोग)। | NAT types: Static = 1↔1 स्थायी। Dynamic = pool mapping। PAT/NAT-overload = ports से many↔1।"], "src": "Repo: CN Topic Test 6 (UNIT TEST-6)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which of the following is NOT a networking device?", "निम्न में से कौन-सा networking device नहीं है?"], "opts": [["Gateway", ""], ["Linux", ""], ["Router", ""], ["Firewall", ""]], "ans": 1, "exp": ["Linux is an operating system, not a networking device — gateway, router and firewall are all network devices/functions. | Nukta: Device vs OS: hardware devices (hub/switch/router) vs software (OS, antivirus) vs firmware-based security devices (firewall).", "Linux एक operating system है, networking device नहीं — gateway, router और firewall सब network devices/functions हैं। | Device बनाम OS: hardware devices (hub/switch/router) बनाम software (OS, antivirus) बनाम firmware-based security devices (firewall)।"], "src": "InstrumentationTools 150 CN MCQs", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)", "निम्न में से कौन-सा networking device नहीं है? (Hub / Switch / Bridge / इनमें से कोई नहीं)"], "opts": [["Hub", ""], ["Switch", ""], ["Bridge", ""], ["None of these", ""]], "ans": 3, "exp": ["Hub, switch and bridge are ALL networking devices — so the answer is 'None of these'. | Nukta: Mirror question of the 'Linux' variant — read the option SET carefully: here everything listed IS a device.", "Hub, switch और bridge — तीनों networking devices हैं — इसलिए उत्तर 'इनमें से कोई नहीं' है। | 'Linux' वाले प्रश्न का दर्पण — option SET ध्यान से पढ़ें: यहाँ सूचीबद्ध सब devices हैं।"], "src": "Repo: CN Topic Test-01 (UNIT TEST-1)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["A firewall that keeps track of the state of live connections is called:", "वह firewall जो चालू connections की state याद रखता है, कहलाता है:"], "opts": [["Packet-filter firewall", "Packet-filter firewall"], ["Stateful firewall", "Stateful firewall"], ["Repeater", "Repeater"], ["Modem", "Modem"]], "ans": 1, "exp": ["Stateful firewall connection ka state table rakhta hai. | Nukta: Packet filter sirf headers dekhta hai.", "Stateful firewall state table रखता है। | Packet filter सिर्फ़ headers।"], "src": "Practice — original (textbook-based)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["The area where public-facing servers (web, mail) are placed for security is called:", "जहाँ public servers (web, mail) सुरक्षा हेतु रखे जाते हैं, वह क्षेत्र है:"], "opts": [["LAN", "LAN"], ["VLAN", "VLAN"], ["DMZ", "DMZ"], ["SAN", "SAN"]], "ans": 2, "exp": ["DMZ = Demilitarized Zone — firewall ke beech ka public area. | Nukta: VLAN switch ki virtual LAN hai.", "DMZ = Demilitarized Zone। | VLAN virtual LAN है।"], "src": "Practice — original (textbook-based)", "sec": "Section D — Gateway, Firewall & NAT Devices"}, {"q": ["Which NAT type uses a single public IP for many internal hosts?", "कौन-सी NAT कई internal hosts के लिए एक ही public IP प्रयोग करती है?"], "opts": [["Static NAT", "Static NAT"], ["Dynamic NAT", "Dynamic NAT"], ["Overload / PAT", "Overload / PAT"], ["No NAT", "No NAT"]], "ans": 2, "exp": ["PAT ports se differentiate karta hai. | Nukta: Static mein fixed 1-1.", "PAT ports से भेद करता है। | Static में 1-1।"], "src": "Practice — original (textbook-based)", "sec": "Section D — Gateway, Firewall & NAT Devices"}];
+const L = ["A","B","C","D"];
+let S = { qs: [], idx: 0, mode: "quiz", name: "", t0: 0, endAt: 0, tick: null,
+        answers: {}, marks: {}, visited: {}, spent: [], enter: 0, locked: false };
+
+function shuffle(a) { for (let i=a.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function esc(s) { const d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }
+function fmt(sec) { sec=Math.max(0,sec); const m=Math.floor(sec/60), s=sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
+
+function startTest() {
+  const name = document.getElementById('nameIn').value.trim();
+  if (!name) { alert('Kripya apna naam likhein.'); return; }
+  if (!document.getElementById('agreeIn').checked) { alert('Kripya instructions padhkar checkbox tik karein.'); return; }
+  S.name = name;
+  S.mode = document.getElementById('modeIn').value;
+  let count = parseInt(document.getElementById('countIn').value, 10) || QUESTIONS.length;
+  count = Math.min(count, QUESTIONS.length);
+  const tpq = parseInt(document.getElementById('tpqIn').value, 10) || 60;
+  S.qs = shuffle(QUESTIONS.slice()).slice(0, count).map(q => {
+    const ix = [0,1,2,3]; shuffle(ix);
+    return { q: q.q, opts: ix.map(i => q.opts[i]), ans: ix.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec };
+  });
+  S.idx = 0; S.answers = {}; S.marks = {}; S.visited = {}; S.locked = false;
+  S.spent = new Array(S.qs.length).fill(0);
+  S.t0 = Date.now();
+  S.endAt = S.mode === 'exam' ? S.t0 + count * tpq * 1000 : 0;
+  document.getElementById('startCard').style.display = 'none';
+  document.getElementById('testCard').style.display = '';
+  document.getElementById('resultCard').style.display = 'none';
+  document.getElementById('whoLine').innerHTML = '<b>' + esc(S.name) + '</b> &nbsp;|&nbsp; ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode');
+  clearInterval(S.tick);
+  S.tick = setInterval(tickTimer, 500);
+  tickTimer();
+  renderPalette(); renderQ();
+}
+
+function tickTimer() {
+  const el = document.getElementById('timerLine');
+  if (S.mode === 'exam') {
+    const left = Math.round((S.endAt - Date.now())/1000);
+    el.textContent = fmt(left);
+    el.className = 'timer' + (left <= 60 ? ' low' : '');
+    if (left <= 0) { clearInterval(S.tick); submitTest(true); }
+  } else {
+    el.textContent = fmt(Math.floor((Date.now()-S.t0)/1000));
+    el.className = 'timer';
+  }
+}
+
+function paletteClass(i) {
+  if (S.marks[i]) return (S.answers[i] !== undefined) ? 'pq mkans' : 'pq mk';
+  if (S.answers[i] !== undefined) return 'pq ans';
+  if (S.visited[i]) return 'pq vis';
+  return 'pq nv';
+}
+function renderPalette() {
+  const b = document.getElementById('dotBox'); b.innerHTML = '';
+  S.qs.forEach((q,i) => {
+    const d = document.createElement('button');
+    d.className = paletteClass(i) + (i === S.idx ? ' cur' : '');
+    d.textContent = i+1;
+    d.onclick = () => jumpTo(i);
+    b.appendChild(d);
+  });
+  let a=0, m=0, v=0;
+  S.qs.forEach((q,i) => {
+    if (S.answers[i] !== undefined) a++;
+    if (S.marks[i]) m++;
+    if (S.visited[i]) v++;
+  });
+  const notAns = v - a < 0 ? 0 : v - a;
+  document.getElementById('sumBox').innerHTML =
+    'Questions: <b>' + S.qs.length + '</b> &nbsp;|&nbsp; Uttar diye: <b style="color:#1b7a3d">' + a + '</b><br>' +
+    'Uttar nahi diye (dekhe hue): <b style="color:#c0392b">' + notAns + '</b> &nbsp;|&nbsp; Marked: <b style="color:#673ab7">' + m + '</b><br>' +
+    'Bina dekhe: <b>' + (S.qs.length - v) + '</b>';
+  document.getElementById('progLine').textContent = a + ' / ' + S.qs.length + ' answered';
+}
+
+function saveTime() {
+  const now = Date.now();
+  if (S.enter) { S.spent[S.idx] += (now - S.enter)/1000; }
+  S.enter = now;
+}
+
+function renderQ() {
+  const q = S.qs[S.idx];
+  S.visited[S.idx] = true;
+  S.enter = Date.now();
+  document.getElementById('qNoLine').innerHTML = '<b>Question ' + (S.idx+1) + '</b> / ' + S.qs.length;
+  document.getElementById('secLine').textContent = q.sec;
+  document.getElementById('qText').innerHTML = esc(q.q[0]);
+  document.getElementById('qHi').textContent = q.q[1] || '';
+  const box = document.getElementById('optBox'); box.innerHTML = '';
+  q.opts.forEach((o,i) => {
+    const b = document.createElement('button');
+    b.className = 'opt' + (S.answers[S.idx] === i ? ' sel' : '');
+    b.innerHTML = '<b>(' + L[i] + ')</b> ' + esc(o[0]) + (o[1] && o[1].toLowerCase() !== o[0].toLowerCase() ? ' <span class="oh">/ ' + esc(o[1]) + '</span>' : '');
+    b.onclick = () => onPick(i);
+    box.appendChild(b);
+  });
+  document.getElementById('fbBox').innerHTML = '';
+  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
+  function addBtn(txt, cls, fn) {
+    const b = document.createElement('button'); b.className = 'btn ' + cls; b.innerHTML = txt; b.onclick = fn; cb.appendChild(b);
+  }
+  if (S.mode === 'exam') {
+    addBtn('Clear Response', 'ghost', clearResp);
+    addBtn('Mark for Review &amp; Next', 'violet', markNext);
+    addBtn('Save &amp; Next', 'blue', saveNext);
+    addBtn('Submit Test', 'prime', () => submitTest(false));
+    if (S.answers[S.idx] !== undefined) showAnsweredOnly();
+  } else {
+    if (S.answers[S.idx] !== undefined) {
+      showFeedback(S.answers[S.idx]);
+    } else {
+      addBtn('Chhod kar agla', 'ghost', () => { saveTime(); S.idx = Math.min(S.idx+1, S.qs.length-1); renderPalette(); renderQ(); });
+    }
+    addBtn('Submit &amp; Result', 'prime', () => submitTest(false));
+  }
+  renderPalette();
+}
+
+function showAnsweredOnly() {
+  const i = S.answers[S.idx];
+  document.querySelectorAll('#optBox .opt').forEach((el,k) => el.classList.toggle('sel', k === i));
+}
+
+function onPick(i) {
+  if (S.mode === 'quiz') {
+    if (S.locked) return;
+    if (S.answers[S.idx] !== undefined) return;
+    S.answers[S.idx] = i; S.locked = true;
+    showFeedback(i);
+    renderPalette();
+  } else {
+    S.answers[S.idx] = i;
+    showAnsweredOnly();
+    renderPalette();
+  }
+}
+
+function showFeedback(picked) {
+  const q = S.qs[S.idx];
+  const ok = picked === q.ans;
+  document.querySelectorAll('#optBox .opt').forEach((el,k) => {
+    if (k === q.ans) el.classList.add('correct');
+    else if (k === picked) el.classList.add('wrong');
+    else el.classList.add('dim');
+  });
+  document.getElementById('fbBox').innerHTML =
+    '<div class="fb ' + (ok ? 'ok' : 'no') + '">' +
+    (ok ? '<b>Sahi uttar.</b>' : '<b>Galat uttar.</b> Sahi uttar: <b>(' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</b>') +
+    '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
+    '<div class="src">Source: ' + esc(q.src) + '</div></div>';
+  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
+  const b = document.createElement('button'); b.className = 'btn blue';
+  b.innerHTML = S.idx < S.qs.length-1 ? 'Agla Question' : 'Result Dekhein';
+  b.onclick = () => { saveTime(); if (S.idx < S.qs.length-1) { S.idx++; S.locked = (S.answers[S.idx] !== undefined); renderQ(); } else submitTest(false); };
+  cb.appendChild(b);
+}
+
+function clearResp() { delete S.answers[S.idx]; renderQ(); }
+function markNext() { S.marks[S.idx] = true; saveTime(); nextQ(); }
+function saveNext() { saveTime(); nextQ(); }
+function nextQ() {
+  let n = -1;
+  for (let i = S.idx+1; i < S.qs.length; i++) if (S.visited[i] === undefined) { n = i; break; }
+  if (n === -1) n = Math.min(S.idx+1, S.qs.length-1);
+  S.idx = n; S.locked = false;
+  renderQ();
+}
+function jumpTo(i) { saveTime(); S.idx = i; S.locked = false; renderQ(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function submitTest(auto) {
+  saveTime();
+  const a = Object.keys(S.answers).length;
+  const un = S.qs.length - a;
+  if (!auto && un > 0 && !confirm(un + ' questions ka uttar nahi diya gaya hai (ye galat nahi gine jayenge, bas chhode hue rahenge). Submit karein?')) return;
+  if (!auto && un === 0 && !confirm('Saare questions answered hain. Submit karein?')) return;
+  clearInterval(S.tick);
+  const secs = Math.floor((Date.now()-S.t0)/1000);
+  let correct = 0, wrong = 0;
+  S.qs.forEach((q,i) => {
+    if (S.answers[i] === undefined) return;
+    if (S.answers[i] === q.ans) correct++; else wrong++;
+  });
+  const skipped = S.qs.length - correct - wrong;
+  const attempted = correct + wrong;
+  const acc = attempted ? Math.round(correct*100/attempted) : 0;
+  const avgT = attempted ? (secs/attempted).toFixed(1) : '—';
+  let slow = 0;
+  S.spent.forEach((t,i) => { if (t > S.spent[slow]) slow = i; });
+  document.getElementById('testCard').style.display = 'none';
+  document.getElementById('resultCard').style.display = '';
+  document.getElementById('resTitle').textContent = S.name + ' — ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode') + ' Result';
+  document.getElementById('resSub').innerHTML = 'Topic 4: Networking Devices • Questions: ' + S.qs.length + ' • Unattempted questions galat nahi gine gaye.';
+  document.getElementById('statGrid').innerHTML =
+    '<div class="stat t"><div class="v">' + correct + ' / ' + S.qs.length + '</div><div class="l">SCORE</div></div>' +
+    '<div class="stat c"><div class="v">' + correct + '</div><div class="l">SAHI (CORRECT)</div></div>' +
+    '<div class="stat w"><div class="v">' + wrong + '</div><div class="l">GALAT (WRONG)</div></div>' +
+    '<div class="stat s"><div class="v">' + skipped + '</div><div class="l">CHHODE HUE (SKIPPED)</div></div>' +
+    '<div class="stat t"><div class="v">' + acc + '%</div><div class="l">ACCURACY (attempted)</div></div>' +
+    '<div class="stat t"><div class="v">' + fmt(secs) + '</div><div class="l">SAMAY (TIME)</div></div>' +
+    '<div class="stat t"><div class="v">' + avgT + 's</div><div class="l">AVG TIME / QUESTION</div></div>' +
+    '<div class="stat t"><div class="v">' + (attempted ? (slow+1) : '—') + '</div><div class="l">SABSE ZYADA SAMAY (Q.no)</div></div>';
+  let marked = 0; for (const k in S.marks) if (S.marks[k]) marked++;
+  document.getElementById('resTable').innerHTML =
+    '<tr><th>Candidate</th><td>' + esc(S.name) + '</td><th>Mode</th><td>' + (S.mode === 'quiz' ? 'Quiz' : 'Exam') + '</td></tr>' +
+    '<tr><th>Total Questions</th><td>' + S.qs.length + '</td><th>Attempted</th><td>' + attempted + '</td></tr>' +
+    '<tr><th>Correct / Wrong</th><td>' + correct + ' / ' + wrong + '</td><th>Skipped (chhode hue)</th><td>' + skipped + '</td></tr>' +
+    '<tr><th>Accuracy</th><td>' + acc + '% (attempted par)</td><th>Marked for review</th><td>' + marked + '</td></tr>' +
+    '<tr><th>Time taken</th><td>' + fmt(secs) + '</td><th>Avg time/question</th><td>' + avgT + 's</td></tr>';
+  const rb = document.getElementById('revBox'); rb.innerHTML = '';
+  S.qs.forEach((q,i) => {
+    const picked = S.answers[i];
+    let chip, line;
+    if (picked === undefined) {
+      chip = '<span class="st s">CHHODA (SKIPPED)</span>';
+      line = '<div class="line">Is question ka uttar nahi diya gaya.</div>';
+    } else if (picked === q.ans) {
+      chip = '<span class="st c">SAHI</span>';
+      line = '<div class="line"><span class="okc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>';
+    } else {
+      chip = '<span class="st w">GALAT</span>';
+      line = '<div class="line"><span class="noc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>' +
+             '<div class="line"><span class="okc">Sahi uttar: (' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</span></div>';
+    }
+    const div = document.createElement('div');
+    div.className = 'rev';
+    div.innerHTML = chip + (S.marks[i] ? '<span class="st" style="background:#d9c8f2;color:#3d2472;border:1px solid #8a63c9">MARKED</span>' : '') +
+      '<div class="qh">Q' + (i+1) + '. ' + esc(q.q[0]) + '</div>' +
+      '<div class="qhm">' + esc(q.q[1] || '') + '</div>' +
+      q.opts.map((o,k) => '<div class="line">' + (k === q.ans ? '<span class="okc">(' + L[k] + ') ' + esc(o[0]) + '</span>' : '(' + L[k] + ') ' + esc(o[0])) + '</div>').join('') +
+      line +
+      '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '—') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
+      '<div class="meta">Samay: ' + (S.spent[i] || 0).toFixed(0) + ' second &nbsp;|&nbsp; Source: ' + esc(q.src) + ' &nbsp;|&nbsp; ' + esc(q.sec) + '</div>';
+    rb.appendChild(div);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.getElementById('nameIn').addEventListener('keyup', e => { if (e.key === 'Enter') startTest(); });
+</script>
+</body>
+</html>

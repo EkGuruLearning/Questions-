@@ -153,7 +153,7 @@ def build_booklet(n, title):
     qno = 0
     for stitle, qs in sec_blocks:
         flush_rows()
-        chunks.append(("sec", f'<div class="akband">{esc(stitle)}</div>'))
+        sec_prefix = f'<div class="akband">{esc(stitle)}</div>'
         for i in range(0, len(qs), 2):
             pair = qs[i:i+2]
             qno += 1
@@ -164,8 +164,9 @@ def build_booklet(n, title):
             else:
                 cells += '<td class="pc"></td>'
             row_html.append(f'<tr>{cells}</tr>')
-            if len(row_html) >= 1:
-                flush_rows()
+            chunks.append(("rows", (sec_prefix if i == 0 else "") +
+                           '<table class="pt">' + "".join(row_html) + '</table>'))
+            row_html.clear()
     flush_rows()
 
     # answer key

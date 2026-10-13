@@ -228,6 +228,24 @@ Theory + 631 MCQs (Answers + Nukte).pdf/.md"** (216 pages):
 - Practice booklets blank-page fix: section/page forced breaks hataye, row-level
   flow — **108 -> 75 pages, 0 sparse pages** (751 Qs intact).
 
+
+## 13. Quiz app v2 — live-exam features, fixed analysis, all topics — Oct 2026
+
+- **Analysis fix (user-reported bug):** unattempted questions ab WRONG nahi
+  gine jaate — result mein **Correct / Wrong / Skipped (chhode hue)** alag-alag
+  + accuracy (attempted par) + time + avg time/question + sabse zyada samay wala
+  question + har question par samay (per-question time tracking).
+- **Live-exam (CBT) features:** Mark for Review & Next, Clear Response,
+  Save & Next, question palette (not visited / visited-not-answered / answered /
+  marked / answered+marked colours), countdown timer (time-per-question select,
+  auto-submit), exam-style instructions page, submit confirm summary.
+- **All 7 topics** ke quiz HTML (751 Qs total) — `Computer Network/Online Quiz/`.
+- **Theme redesign:** hand-made coaching-portal look (Testbook/IBPS style),
+  bekaar headings/emojis hataye, proper title + footer ("Compiled & updated
+  by PRAKASH • EkGuru Learning"), candidate name + result table.
+- **Practice PDFs:** section band + first question ek chunk mein (lonely section
+  headers khatam) — 75 pages, 0 sparse, 0 lonely sections.
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2

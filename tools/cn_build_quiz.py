@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-cn_build_quiz.py — Online Quiz/Exam HTML generator (single-file, offline, mobile).
+cn_build_quiz.py — EkGuru Online Test Portal (Quiz + Exam) generator.
 
-Per user spec:
-  * Quiz mode  : click -> turant right/wrong + correct answer + explanation
-  * Exam mode  : pehle solve -> Submit -> score + accuracy + time + analysis
-                 (har question ka explanation solution submit ke baad)
-  * Name entry before start; branding "by PRAKASH" + "EkGuru"
-  * Questions + options shuffle EVERY time (aage-peechhe, upar-neeche)
-  * Responsive (phone par bhi chale), single HTML file, offline
-  * Topic-wise separate files (abhi Topic 1 & 2; baaki baad mein)
-Usage: python tools/cn_build_quiz.py 1 2
+Design goals (user spec):
+  * Looks hand-made (coaching-portal style), NOT AI-generated — clean headings,
+    proper title/footer, no decorative junk
+  * LIVE-EXAM features (CBT style): Mark for Review & Next, Clear Response,
+    Save & Next, question palette with colour codes, countdown timer, summary
+  * Quiz mode: click -> instant ✔/✗ + answer + explanation
+  * Exam mode: submit -> Correct / Wrong / SKIPPED (separate!) + accuracy +
+    time taken + time-per-question + full solutions after submit
+  * Name entry; branding EkGuru + by PRAKASH; questions+options shuffle every run
+  * Mobile-friendly, single-file offline HTML
+Usage: python tools/cn_build_quiz.py            (all 7 topics)
+       python tools/cn_build_quiz.py 3 5
 """
-import os, sys, json, html as _html
+import os, sys, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
@@ -71,10 +74,10 @@ def collect(n):
             exp_hi = (q["wr"][1] or "").strip()
             nk = (q["nk"][0] or "").strip()
             if nk:
-                exp_en = (exp_en + "  ★ " + nk) if exp_en else ("★ " + nk)
+                exp_en = (exp_en + " | Nukta: " + nk) if exp_en else ("Nukta: " + nk)
             nkh = (q["nk"][1] or "").strip()
             if nkh:
-                exp_hi = (exp_hi + "  ★ " + nkh) if exp_hi else ("★ " + nkh)
+                exp_hi = (exp_hi + " | " + nkh) if exp_hi else nkh
             items.append({
                 "q": [q["q"][0], q["q"][1] or ""],
                 "opts": opts,
@@ -86,6 +89,94 @@ def collect(n):
     return items
 
 
+CSS = """
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Roboto, Arial, 'Noto Sans Devanagari', sans-serif; background: #f0f2f5; color: #1c2733; font-size: 15px; }
+.topstrip { background: #1F3864; color: #fff; padding: 7px 14px; font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.topstrip b { color: #ffd580; }
+.nav { background: #fff; border-bottom: 3px solid #E97313; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.logo { font-size: 24px; font-weight: 800; letter-spacing: .3px; }
+.logo .e { color: #E97313; } .logo .g { color: #1F3864; }
+.logo small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 2.2px; color: #667; }
+.navtitle { font-size: 14.5px; font-weight: 700; color: #1F3864; text-align: right; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 12px 10px 26px; }
+.card { background: #fff; border: 1px solid #d7dde6; border-radius: 6px; padding: 16px 16px; margin-bottom: 12px; }
+h2 { font-size: 17px; color: #1F3864; border-bottom: 2px solid #E97313; display: inline-block; padding-bottom: 4px; margin-bottom: 12px; }
+.fld { margin: 10px 0; }
+.fld label { font-size: 13px; font-weight: 700; color: #34435a; display: block; margin-bottom: 5px; }
+input[type=text], select { width: 100%; padding: 11px 10px; font-size: 15px; border: 1.5px solid #b9c4d4; border-radius: 5px; background: #fbfcfe; }
+ol.ins { margin: 6px 0 6px 20px; font-size: 13px; line-height: 1.8; color: #33405a; }
+.chkline { font-size: 13px; margin: 10px 0 4px; color: #33405a; }
+.btn { border: 0; border-radius: 5px; padding: 12px 20px; font-size: 14.5px; font-weight: 700; cursor: pointer; }
+.btn.prime { background: #E97313; color: #fff; }
+.btn.blue { background: #1F3864; color: #fff; }
+.btn.ghost { background: #eef1f6; color: #26364d; border: 1px solid #b9c4d4; }
+.btn.violet { background: #673ab7; color: #fff; }
+.btn:active { transform: scale(.985); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.tbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; background: #1F3864; color: #fff; border-radius: 5px; padding: 9px 12px; margin-bottom: 10px; font-size: 13px; }
+.tbar .timer { font-size: 19px; font-weight: 800; letter-spacing: 1px; }
+.tbar .timer.low { color: #ffb3b3; }
+.layout { display: flex; gap: 12px; align-items: flex-start; }
+.qcol { flex: 1.8; min-width: 300px; }
+.pcol { flex: 1; min-width: 230px; }
+@media (max-width: 720px) { .layout { flex-direction: column; } .qcol, .pcol { width: 100%; min-width: 0; } }
+.qhead { background: #f5f7fa; border: 1px solid #e2e7ee; border-radius: 5px; padding: 8px 10px; font-size: 12.5px; color: #45536b; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.qtext { font-size: 16.5px; font-weight: 700; line-height: 1.5; margin: 4px 2px 8px; }
+.qhi { font-size: 13.5px; color: #4d5a6e; line-height: 1.65; margin: 0 2px 12px; }
+.opt { display: block; width: 100%; text-align: left; background: #fff; border: 1.5px solid #c4cddc; border-radius: 5px; padding: 12px 12px; font-size: 14.5px; margin-bottom: 8px; cursor: pointer; line-height: 1.5; }
+.opt:hover { border-color: #E97313; background: #fff8f1; }
+.opt .oh { color: #5d6b80; font-size: 12.5px; }
+.opt.sel { border-color: #1F3864; background: #eaf0f9; }
+.opt.correct { border-color: #1b7a3d; background: #e7f5ec; }
+.opt.wrong { border-color: #c0392b; background: #fdecea; }
+.opt.dim { opacity: .5; }
+.fb { border-radius: 5px; padding: 11px 12px; margin: 8px 0 2px; font-size: 13.5px; line-height: 1.6; border: 1px solid; }
+.fb.ok { background: #e9f6ee; border-color: #1b7a3d; color: #14532d; }
+.fb.no { background: #fdecea; border-color: #c0392b; color: #7b1f14; }
+.fb .exp { margin-top: 6px; color: #2b3646; }
+.fb .exp .hi { color: #55617a; font-size: 12.5px; margin-top: 3px; }
+.fb .src { margin-top: 6px; font-size: 11px; color: #7b8798; }
+.legend { font-size: 11.5px; color: #45536b; margin: 8px 0 10px; line-height: 2; }
+.legend .sw { display: inline-block; width: 13px; height: 13px; border-radius: 3px; margin: 0 5px 0 8px; vertical-align: -2px; border: 1px solid #99a; }
+.palette { display: flex; flex-wrap: wrap; gap: 6px; }
+.pq { width: 38px; height: 34px; border-radius: 4px; border: 1.5px solid #b9c4d4; background: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; color: #2b3646; position: relative; }
+.pq.nv { background: #fff; }
+.pq.vis { background: #f6c9c2; border-color: #d98a7d; color: #7b2718; }
+.pq.ans { background: #b7e2c3; border-color: #4ca36a; color: #14532d; }
+.pq.mk { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
+.pq.mkans { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
+.pq.mkans::after { content: '\\2713'; position: absolute; right: 2px; bottom: 0px; font-size: 10px; color: #1b7a3d; }
+.pq.cur { outline: 2.5px solid #1F3864; outline-offset: 1px; }
+.summary { margin-top: 10px; border-top: 1px solid #e2e7ee; padding-top: 9px; font-size: 12px; color: #45536b; line-height: 1.9; }
+.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; margin: 12px 0 4px; }
+.stat { border: 1px solid #d7dde6; border-radius: 6px; padding: 12px 8px; text-align: center; background: #fff; }
+.stat .v { font-size: 22px; font-weight: 800; }
+.stat .l { font-size: 11px; color: #66708a; font-weight: 700; letter-spacing: .6px; margin-top: 3px; }
+.stat.c .v { color: #1b7a3d; } .stat.w .v { color: #c0392b; } .stat.s .v { color: #7a8494; } .stat.t .v { color: #1F3864; }
+table.tt { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0; }
+table.tt td, table.tt th { border: 1px solid #dfe5ec; padding: 6px 8px; text-align: left; }
+table.tt th { background: #eef2f7; color: #2b3646; }
+.rev { border-top: 1px solid #e2e7ee; padding: 13px 2px 10px; }
+.rev .st { font-size: 11px; font-weight: 800; border-radius: 4px; padding: 2px 8px; margin-right: 6px; }
+.st.c { background: #e7f5ec; color: #14532d; border: 1px solid #4ca36a; }
+.st.w { background: #fdecea; color: #7b1f14; border: 1px solid #d98a7d; }
+.st.s { background: #eef1f5; color: #4a5468; border: 1px solid #aab4c2; }
+.rev .qh { font-weight: 700; font-size: 14.5px; line-height: 1.5; margin: 6px 0 4px; }
+.rev .qhm { color: #4d5a6e; font-size: 12.5px; line-height: 1.6; margin-bottom: 7px; }
+.rev .line { font-size: 13px; margin: 3px 0; line-height: 1.55; }
+.rev .okc { color: #1b7a3d; font-weight: 700; }
+.rev .noc { color: #c0392b; font-weight: 700; }
+.rev .exp { background: #f5f8fc; border-left: 3.5px solid #1F3864; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; line-height: 1.6; }
+.rev .exp .hi { color: #55617a; margin-top: 4px; }
+.rev .meta { font-size: 11px; color: #7b8798; margin-top: 6px; }
+.foot { text-align: center; color: #7a8494; font-size: 11.5px; line-height: 1.8; margin: 16px 6px 4px; border-top: 1px solid #d7dde6; padding-top: 12px; }
+.foot b { color: #45536b; }
+.hint { font-size: 12px; color: #66708a; line-height: 1.65; margin-top: 8px; }
+.resTitle { font-size: 18px; color: #1F3864; font-weight: 800; margin: 4px 0 2px; }
+"""
+
+
 def build_html(n, items):
     title = TOPICS[n]
     data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
@@ -94,288 +185,352 @@ def build_html(n, items):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EkGuru — Topic {n} Online Quiz &amp; Exam (by PRAKASH)</title>
-<style>
-* {{ box-sizing: border-box; margin: 0; padding: 0; }}
-body {{ font-family: -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Noto Sans Devanagari', sans-serif; background: #eef2f8; color: #16213a; }}
-.hd {{ background: linear-gradient(135deg, #1F3864 0%, #2E5C9A 100%); color: #fff; padding: 14px 16px 12px; }}
-.hd .brand {{ font-size: 13px; letter-spacing: 2px; opacity: .9; font-weight: 700; }}
-.hd h1 {{ font-size: 19px; margin: 4px 0 2px; line-height: 1.3; }}
-.hd .by {{ font-size: 12px; opacity: .92; }}
-.wrap {{ max-width: 860px; margin: 0 auto; padding: 14px 12px 30px; }}
-.card {{ background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(20,40,80,.10); padding: 18px 16px; margin-bottom: 14px; }}
-label {{ font-size: 13px; font-weight: 700; color: #1F3864; display: block; margin: 10px 0 5px; }}
-input[type=text], select {{ width: 100%; padding: 12px; font-size: 16px; border: 1.6px solid #c6d2e4; border-radius: 10px; }}
-.btn {{ display: inline-block; border: 0; border-radius: 11px; padding: 13px 22px; font-size: 16px; font-weight: 800; cursor: pointer; margin: 8px 6px 2px 0; }}
-.btn.main {{ background: #1F3864; color: #fff; width: 100%; }}
-.btn.alt {{ background: #E8EEF8; color: #1F3864; }}
-.btn.green {{ background: #0B6623; color: #fff; }}
-.btn:active {{ transform: scale(.98); }}
-.hint {{ font-size: 12.5px; color: #5b6b84; margin-top: 6px; line-height: 1.5; }}
-.topbar {{ display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 700; color: #1F3864; margin-bottom: 10px; flex-wrap: wrap; gap: 6px; }}
-.progress {{ height: 8px; background: #dfe7f2; border-radius: 6px; overflow: hidden; margin-bottom: 12px; }}
-.progress > div {{ height: 100%; background: linear-gradient(90deg,#0B6623,#3E9E58); width: 0%; transition: width .25s; }}
-.qtext {{ font-size: 17px; font-weight: 800; line-height: 1.45; margin-bottom: 6px; }}
-.qhi {{ font-size: 14.5px; color: #444; line-height: 1.55; margin-bottom: 12px; }}
-.opt {{ display: block; width: 100%; text-align: left; background: #f6f8fc; border: 1.8px solid #cfd9ea; border-radius: 11px; padding: 12px 13px; font-size: 15px; margin-bottom: 9px; cursor: pointer; line-height: 1.45; }}
-.opt .oh {{ color: #555; font-size: 13px; }}
-.opt.sel {{ border-color: #1F3864; background: #e5ecf8; }}
-.opt.correct {{ border-color: #0B6623; background: #e3f4e8; }}
-.opt.wrong {{ border-color: #b3261e; background: #fbe6e4; }}
-.opt.dim {{ opacity: .55; }}
-.fb {{ border-radius: 11px; padding: 12px 13px; margin: 10px 0 4px; font-size: 14px; line-height: 1.55; }}
-.fb.ok {{ background: #e3f4e8; border: 1.5px solid #0B6623; color: #0B4418; }}
-.fb.no {{ background: #fbe6e4; border: 1.5px solid #b3261e; color: #7a1a14; }}
-.fb .lbl {{ font-weight: 800; }}
-.fb .hi {{ color: #333; font-size: 13px; margin-top: 5px; }}
-.navrow {{ display: flex; justify-content: space-between; gap: 8px; margin-top: 12px; flex-wrap: wrap; }}
-.dots {{ display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }}
-.dot {{ width: 34px; height: 32px; border-radius: 8px; border: 1.5px solid #c6d2e4; background: #fff; font-size: 12px; font-weight: 700; cursor: pointer; color: #33415c; }}
-.dot.done {{ background: #d8e6f7; border-color: #1F3864; color: #1F3864; }}
-.dot.cur {{ background: #1F3864; color: #fff; border-color: #1F3864; }}
-.statgrid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 12px 0; }}
-.stat {{ background: #f2f6fc; border-radius: 12px; padding: 13px 10px; text-align: center; }}
-.stat .v {{ font-size: 23px; font-weight: 800; color: #1F3864; }}
-.stat .l {{ font-size: 11.5px; color: #5b6b84; font-weight: 700; margin-top: 3px; }}
-.rev {{ border-top: 1.4px solid #dde5f0; padding: 13px 2px; }}
-.rev .qh {{ font-weight: 800; font-size: 15px; line-height: 1.45; }}
-.rev .qhm {{ color: #444; font-size: 13px; margin: 4px 0 7px; line-height: 1.5; }}
-.rev .line {{ font-size: 13.5px; margin: 3px 0; line-height: 1.5; }}
-.rev .okc {{ color: #0B6623; font-weight: 700; }}
-.rev .noc {{ color: #b3261e; font-weight: 700; }}
-.rev .exp {{ background: #f2f6fc; border-left: 4px solid #1F3864; border-radius: 8px; padding: 9px 11px; font-size: 13px; margin-top: 8px; line-height: 1.55; }}
-.rev .exp .hi {{ color: #444; margin-top: 4px; }}
-.rev .meta {{ font-size: 11px; color: #8592a8; margin-top: 6px; }}
-.badge {{ display: inline-block; background: #1F3864; color: #fff; border-radius: 6px; font-size: 10.5px; padding: 2px 8px; font-weight: 700; margin-right: 5px; }}
-.foot {{ text-align: center; color: #7b8aa3; font-size: 11.5px; margin: 18px 0 8px; line-height: 1.6; }}
-.titleSec {{ color: #1F3864; font-size: 13px; font-weight: 800; margin-bottom: 6px; }}
-@media (max-width: 520px) {{
-  .hd h1 {{ font-size: 16.5px; }}
-  .qtext {{ font-size: 15.5px; }}
-  .opt {{ font-size: 14px; padding: 11px 11px; }}
-  .btn {{ padding: 12px 16px; font-size: 15px; }}
-}}
-</style>
+<title>EkGuru Online Test — Topic {n}: {title}</title>
+<style>{CSS}</style>
 </head>
 <body>
-<div class="hd">
-  <div class="brand">EK GURU &nbsp;•&nbsp; COMPUTER NETWORKS</div>
-  <h1>Topic {n} — {title}</h1>
-  <div class="by">Online Quiz &amp; Exam &nbsp;|&nbsp; <b>by PRAKASH</b> &nbsp;•&nbsp; EkGuru Learning</div>
+<div class="topstrip">
+  <span>EkGuru Learning &nbsp;|&nbsp; Computer Networks (Forouzan) &nbsp;|&nbsp; Online Test Portal</span>
+  <span>Compiled &amp; updated <b>by PRAKASH</b></span>
+</div>
+<div class="nav">
+  <div class="logo"><span class="e">Ek</span><span class="g">Guru</span><small>ONLINE TEST PORTAL</small></div>
+  <div class="navtitle">Topic {n} — {title}<br><span style="font-weight:400; font-size:11.5px; color:#667">Practice Questions &nbsp;•&nbsp; Quiz Mode / Exam Mode</span></div>
 </div>
 <div class="wrap">
 
 <div class="card" id="startCard">
-  <div class="titleSec">📝 TEST SHURU KARNE SE PEHLE</div>
-  <label>Apna naam likho / Your name</label>
-  <input type="text" id="nameIn" placeholder="Jaise: Rahul Sharma" maxlength="40">
-  <label>Mode chuno / Choose mode</label>
-  <select id="modeIn">
-    <option value="quiz">Quiz Mode — click karte hi answer + explanation (seekhne ke liye)</option>
-    <option value="exam">Exam Mode — submit ke baad score, accuracy, time + analysis</option>
-  </select>
-  <label>Kitne questions? / Number of questions</label>
-  <select id="countIn">
-    <option value="10">10 (Quick test)</option>
-    <option value="25">25</option>
-    <option value="50">50</option>
-    <option value="0">Saare ({len(items)})</option>
-  </select>
-  <button class="btn main" onclick="startTest()">🚀 START TEST</button>
-  <div class="hint">✅ Questions aur options <b>har baar shuffle</b> hote hain (upar-neeche, aage-peechhe) — ratna nahi chalega! ✅ Answers verified hain. ✅ Phone / laptop / kahin bhi chalega (offline bhi).</div>
+  <h2>Test Instructions</h2>
+  <ol class="ins">
+    <li>Test shuru karne ke liye apna naam likhein aur mode chunein.</li>
+    <li><b>Quiz Mode:</b> har question ke baad sahi uttar aur explanation turant dikhayi degi — seekhne ke liye.</li>
+    <li><b>Exam Mode:</b> sabse pehle saare questions karein, phir <b>Submit</b> karein. Result mein Correct / Wrong / Chhode hue alag gine jayenge.</li>
+    <li>Exam Mode mein <b>Mark for Review</b>, <b>Clear Response</b>, <b>Save &amp; Next</b> aur question palette milte hain — bilkul live exam jaisa.</li>
+    <li>Questions aur options har baar doosre kram mein aate hain.</li>
+    <li>Samay poora hone par test apne aap submit ho jayega.</li>
+    <li>Submit ke baad har question ka explanation (solution) diya jayega.</li>
+  </ol>
+  <div class="fld"><label>Apka naam / Candidate name</label>
+    <input type="text" id="nameIn" maxlength="40" placeholder="Naam likhein"></div>
+  <div class="fld"><label>Mode</label>
+    <select id="modeIn">
+      <option value="quiz">Quiz Mode — instant answer + explanation</option>
+      <option value="exam">Exam Mode — submit ke baad result + analysis</option>
+    </select></div>
+  <div class="fld"><label>Questions ki sankhya</label>
+    <select id="countIn">
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="0">Sabhi ({len(items)})</option>
+    </select></div>
+  <div class="fld"><label>Har question ka samay (Exam Mode — total timer isi se banega)</label>
+    <select id="tpqIn">
+      <option value="45">45 second per question</option>
+      <option value="60" selected>60 second per question</option>
+      <option value="90">90 second per question</option>
+      <option value="120">2 minute per question</option>
+    </select></div>
+  <div class="chkline"><input type="checkbox" id="agreeIn"> <label for="agreeIn" style="display:inline">Maine instructions padh li hain.</label></div>
+  <button class="btn prime" onclick="startTest()">Test Shuru Karein</button>
+  <div class="hint">Questions repo exam papers, Forouzan tatha India-level PYQ banks (2011–2026) se liye gaye hain. Sabhi uttar verify kiye gaye hain.</div>
 </div>
 
 <div class="card" id="testCard" style="display:none">
-  <div class="topbar">
+  <div class="tbar">
     <span id="whoLine"></span>
-    <span id="timerLine">⏱ 00:00</span>
-    <span id="scoreLine"></span>
+    <span id="timerLine" class="timer">00:00</span>
+    <span id="progLine"></span>
   </div>
-  <div class="progress"><div id="progBar"></div></div>
-  <div id="dotBox" class="dots"></div>
-  <div class="titleSec" id="secLine"></div>
-  <div class="qtext" id="qText"></div>
-  <div class="qhi" id="qHi"></div>
-  <div id="optBox"></div>
-  <div id="fbBox"></div>
-  <div class="navrow">
-    <button class="btn alt" id="prevBtn" onclick="move(-1)">← Pichhla</button>
-    <button class="btn green" id="nextBtn" onclick="move(1)">Agla →</button>
-    <button class="btn main" id="submitBtn" onclick="submitTest()" style="display:none; width:auto">✅ TEST SUBMIT KARO</button>
+  <div class="layout">
+    <div class="qcol">
+      <div class="qhead">
+        <span id="qNoLine"><b>Question 1</b></span>
+        <span id="secLine"></span>
+      </div>
+      <div class="qtext" id="qText"></div>
+      <div class="qhi" id="qHi"></div>
+      <div id="optBox"></div>
+      <div id="fbBox"></div>
+      <div class="btnrow" id="ctrlBox"></div>
+    </div>
+    <div class="pcol">
+      <div class="card" style="margin:0">
+        <div class="legend">
+          <span class="sw" style="background:#fff"></span> Not visited
+          <span class="sw" style="background:#f6c9c2"></span> Dekha, uttar nahi
+          <span class="sw" style="background:#b7e2c3"></span> Uttar diya
+          <span class="sw" style="background:#d9c8f2"></span> Marked for review
+          <span class="sw" style="background:#d9c8f2"></span><b style="color:#1b7a3d">&#10003;</b> Uttar + marked
+        </div>
+        <div class="palette" id="dotBox"></div>
+        <div class="summary" id="sumBox"></div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="card" id="resultCard" style="display:none">
-  <div class="titleSec">📊 RESULT &amp; ANALYSIS</div>
-  <h2 id="resTitle" style="color:#1F3864; margin: 6px 0 2px;"></h2>
+  <h2>Result Summary</h2>
+  <div class="resTitle" id="resTitle"></div>
   <div class="hint" id="resSub"></div>
   <div class="statgrid" id="statGrid"></div>
-  <button class="btn alt" onclick="location.reload()">🔁 Naya Test (shuffle ke saath)</button>
-  <div class="titleSec" style="margin-top:16px">📖 HAR QUESTION KA EXPLANATION (submit ke baad)</div>
+  <table class="tt" id="resTable"></table>
+  <div class="btnrow">
+    <button class="btn blue" onclick="window.print()">Print / Save Result</button>
+    <button class="btn ghost" onclick="location.reload()">Naya Test</button>
+  </div>
+  <h2 style="margin-top:20px">Question-wise Solutions</h2>
   <div id="revBox"></div>
 </div>
 
 <div class="foot">
-  © <b>EkGuru Learning</b> &nbsp;|&nbsp; Computer Networks (Forouzan) Practice &nbsp;|&nbsp; Updated &amp; designed <b>by PRAKASH</b><br>
-  Questions: repo exam papers + Forouzan + India-level PYQ banks (2011–2026) + original practice set — sab verified.
+  <b>EkGuru Learning</b> — Computer Networks Practice Portal (Reference: Forouzan, Data Communications &amp; Networking)<br>
+  Questions: repo exam papers + India-level PYQ banks (GATE, UGC NET, RPSC, KVS, EMRS, SSC, RRB, IBPS — 2011–2026) + original practice set.<br>
+  Compiled &amp; updated <b>by PRAKASH</b> &nbsp;|&nbsp; Topic {n}: {title}
 </div>
 </div>
 
 <script>
 const QUESTIONS = {data};
-const LETTERS = ["A","B","C","D"];
-let S = {{ qs: [], idx: 0, mode: "quiz", name: "", t0: 0, timerId: null, locked: false, answered: {{}} }};
+const L = ["A","B","C","D"];
+let S = {{ qs: [], idx: 0, mode: "quiz", name: "", t0: 0, endAt: 0, tick: null,
+        answers: {{}}, marks: {{}}, visited: {{}}, spent: [], enter: 0, locked: false }};
 
-function shuffle(a) {{ for (let i = a.length - 1; i > 0; i--) {{ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }} return a; }}
-function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
-function fmtTime(sec) {{ const m = Math.floor(sec/60), s = sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }}
+function shuffle(a) {{ for (let i=a.length-1;i>0;i--) {{ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; }} return a; }}
+function esc(s) {{ const d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }}
+function fmt(sec) {{ sec=Math.max(0,sec); const m=Math.floor(sec/60), s=sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }}
 
 function startTest() {{
   const name = document.getElementById('nameIn').value.trim();
-  if (!name) {{ alert('Pehle apna naam likho ✍️'); return; }}
+  if (!name) {{ alert('Kripya apna naam likhein.'); return; }}
+  if (!document.getElementById('agreeIn').checked) {{ alert('Kripya instructions padhkar checkbox tik karein.'); return; }}
   S.name = name;
   S.mode = document.getElementById('modeIn').value;
   let count = parseInt(document.getElementById('countIn').value, 10) || QUESTIONS.length;
   count = Math.min(count, QUESTIONS.length);
+  const tpq = parseInt(document.getElementById('tpqIn').value, 10) || 60;
   S.qs = shuffle(QUESTIONS.slice()).slice(0, count).map(q => {{
-    const idx = [0,1,2,3]; shuffle(idx);
-    return {{ q: q.q, opts: idx.map(i => q.opts[i]), ans: idx.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec }};
+    const ix = [0,1,2,3]; shuffle(ix);
+    return {{ q: q.q, opts: ix.map(i => q.opts[i]), ans: ix.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec }};
   }});
-  S.idx = 0; S.answered = {{}}; S.locked = false;
+  S.idx = 0; S.answers = {{}}; S.marks = {{}}; S.visited = {{}}; S.locked = false;
+  S.spent = new Array(S.qs.length).fill(0);
   S.t0 = Date.now();
+  S.endAt = S.mode === 'exam' ? S.t0 + count * tpq * 1000 : 0;
   document.getElementById('startCard').style.display = 'none';
   document.getElementById('testCard').style.display = '';
   document.getElementById('resultCard').style.display = 'none';
-  document.getElementById('whoLine').textContent = '👤 ' + S.name + '  •  ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode');
-  clearInterval(S.timerId);
-  S.timerId = setInterval(() => {{
-    document.getElementById('timerLine').textContent = '⏱ ' + fmtTime(Math.floor((Date.now()-S.t0)/1000));
-  }}, 1000);
-  renderDots();
-  renderQ();
+  document.getElementById('whoLine').innerHTML = '<b>' + esc(S.name) + '</b> &nbsp;|&nbsp; ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode');
+  clearInterval(S.tick);
+  S.tick = setInterval(tickTimer, 500);
+  tickTimer();
+  renderPalette(); renderQ();
 }}
 
-function renderDots() {{
+function tickTimer() {{
+  const el = document.getElementById('timerLine');
+  if (S.mode === 'exam') {{
+    const left = Math.round((S.endAt - Date.now())/1000);
+    el.textContent = fmt(left);
+    el.className = 'timer' + (left <= 60 ? ' low' : '');
+    if (left <= 0) {{ clearInterval(S.tick); submitTest(true); }}
+  }} else {{
+    el.textContent = fmt(Math.floor((Date.now()-S.t0)/1000));
+    el.className = 'timer';
+  }}
+}}
+
+function paletteClass(i) {{
+  if (S.marks[i]) return (S.answers[i] !== undefined) ? 'pq mkans' : 'pq mk';
+  if (S.answers[i] !== undefined) return 'pq ans';
+  if (S.visited[i]) return 'pq vis';
+  return 'pq nv';
+}}
+function renderPalette() {{
   const b = document.getElementById('dotBox'); b.innerHTML = '';
-  S.qs.forEach((q, i) => {{
+  S.qs.forEach((q,i) => {{
     const d = document.createElement('button');
-    d.className = 'dot' + (S.answered[i] !== undefined ? ' done' : '') + (i === S.idx ? ' cur' : '');
-    d.textContent = i + 1;
-    d.onclick = () => {{ S.idx = i; S.locked = (S.mode === 'quiz' && S.answered[i] !== undefined); renderDots(); renderQ(); }};
+    d.className = paletteClass(i) + (i === S.idx ? ' cur' : '');
+    d.textContent = i+1;
+    d.onclick = () => jumpTo(i);
     b.appendChild(d);
   }});
+  let a=0, m=0, v=0;
+  S.qs.forEach((q,i) => {{
+    if (S.answers[i] !== undefined) a++;
+    if (S.marks[i]) m++;
+    if (S.visited[i]) v++;
+  }});
+  const notAns = v - a < 0 ? 0 : v - a;
+  document.getElementById('sumBox').innerHTML =
+    'Questions: <b>' + S.qs.length + '</b> &nbsp;|&nbsp; Uttar diye: <b style="color:#1b7a3d">' + a + '</b><br>' +
+    'Uttar nahi diye (dekhe hue): <b style="color:#c0392b">' + notAns + '</b> &nbsp;|&nbsp; Marked: <b style="color:#673ab7">' + m + '</b><br>' +
+    'Bina dekhe: <b>' + (S.qs.length - v) + '</b>';
+  document.getElementById('progLine').textContent = a + ' / ' + S.qs.length + ' answered';
+}}
+
+function saveTime() {{
+  const now = Date.now();
+  if (S.enter) {{ S.spent[S.idx] += (now - S.enter)/1000; }}
+  S.enter = now;
 }}
 
 function renderQ() {{
   const q = S.qs[S.idx];
+  S.visited[S.idx] = true;
+  S.enter = Date.now();
+  document.getElementById('qNoLine').innerHTML = '<b>Question ' + (S.idx+1) + '</b> / ' + S.qs.length;
   document.getElementById('secLine').textContent = q.sec;
-  document.getElementById('qText').innerHTML = '<b>Q' + (S.idx+1) + '.</b> ' + esc(q.q[0]);
+  document.getElementById('qText').innerHTML = esc(q.q[0]);
   document.getElementById('qHi').textContent = q.q[1] || '';
   const box = document.getElementById('optBox'); box.innerHTML = '';
-  q.opts.forEach((o, i) => {{
+  q.opts.forEach((o,i) => {{
     const b = document.createElement('button');
-    b.className = 'opt';
-    b.innerHTML = '<b>(' + LETTERS[i] + ')</b> ' + esc(o[0]) + (o[1] && o[1].toLowerCase() !== o[0].toLowerCase() ? ' <span class="oh">/ ' + esc(o[1]) + '</span>' : '');
+    b.className = 'opt' + (S.answers[S.idx] === i ? ' sel' : '');
+    b.innerHTML = '<b>(' + L[i] + ')</b> ' + esc(o[0]) + (o[1] && o[1].toLowerCase() !== o[0].toLowerCase() ? ' <span class="oh">/ ' + esc(o[1]) + '</span>' : '');
     b.onclick = () => onPick(i);
     box.appendChild(b);
   }});
   document.getElementById('fbBox').innerHTML = '';
-  document.getElementById('prevBtn').style.visibility = S.idx === 0 ? 'hidden' : 'visible';
-  const isLast = S.idx === S.qs.length - 1;
-  document.getElementById('nextBtn').style.display = isLast ? 'none' : '';
-  document.getElementById('submitBtn').style.display = isLast && S.mode === 'exam' ? '' : (isLast && S.mode === 'quiz' ? '' : 'none');
-  if (S.mode === 'quiz' && S.answered[S.idx] !== undefined) {{
-    showFeedback(S.answered[S.idx], true);
-  }} else if (S.mode === 'exam' && S.answered[S.idx] !== undefined) {{
-    markExamSel(S.answered[S.idx]);
+  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
+  function addBtn(txt, cls, fn) {{
+    const b = document.createElement('button'); b.className = 'btn ' + cls; b.innerHTML = txt; b.onclick = fn; cb.appendChild(b);
   }}
-  const pct = (Object.keys(S.answered).length / S.qs.length) * 100;
-  document.getElementById('progBar').style.width = pct + '%';
-  document.getElementById('scoreLine').textContent = S.mode === 'quiz'
-    ? ('✅ ' + scoreNow().c + ' / ' + S.qs.length) : (Object.keys(S.answered).length + '/' + S.qs.length + ' answered');
+  if (S.mode === 'exam') {{
+    addBtn('Clear Response', 'ghost', clearResp);
+    addBtn('Mark for Review &amp; Next', 'violet', markNext);
+    addBtn('Save &amp; Next', 'blue', saveNext);
+    addBtn('Submit Test', 'prime', () => submitTest(false));
+    if (S.answers[S.idx] !== undefined) showAnsweredOnly();
+  }} else {{
+    if (S.answers[S.idx] !== undefined) {{
+      showFeedback(S.answers[S.idx]);
+    }} else {{
+      addBtn('Chhod kar agla', 'ghost', () => {{ saveTime(); S.idx = Math.min(S.idx+1, S.qs.length-1); renderPalette(); renderQ(); }});
+    }}
+    addBtn('Submit &amp; Result', 'prime', () => submitTest(false));
+  }}
+  renderPalette();
 }}
 
-function markExamSel(i) {{
-  document.querySelectorAll('#optBox .opt').forEach((el, k) => el.classList.toggle('sel', k === i));
+function showAnsweredOnly() {{
+  const i = S.answers[S.idx];
+  document.querySelectorAll('#optBox .opt').forEach((el,k) => el.classList.toggle('sel', k === i));
 }}
 
 function onPick(i) {{
   if (S.mode === 'quiz') {{
-    if (S.locked || S.answered[S.idx] !== undefined) return;
-    S.answered[S.idx] = i; S.locked = true;
-    showFeedback(i, false);
-    document.getElementById('scoreLine').textContent = '✅ ' + scoreNow().c + ' / ' + S.qs.length;
-    renderDots();
+    if (S.locked) return;
+    if (S.answers[S.idx] !== undefined) return;
+    S.answers[S.idx] = i; S.locked = true;
+    showFeedback(i);
+    renderPalette();
   }} else {{
-    S.answered[S.idx] = i;
-    markExamSel(i);
-    document.getElementById('scoreLine').textContent = Object.keys(S.answered).length + '/' + S.qs.length + ' answered';
-    renderDots();
+    S.answers[S.idx] = i;
+    showAnsweredOnly();
+    renderPalette();
   }}
 }}
 
-function showFeedback(picked, replay) {{
+function showFeedback(picked) {{
   const q = S.qs[S.idx];
   const ok = picked === q.ans;
-  document.querySelectorAll('#optBox .opt').forEach((el, k) => {{
+  document.querySelectorAll('#optBox .opt').forEach((el,k) => {{
     if (k === q.ans) el.classList.add('correct');
     else if (k === picked) el.classList.add('wrong');
     else el.classList.add('dim');
   }});
-  const fb = document.getElementById('fbBox');
-  fb.innerHTML = '<div class="fb ' + (ok ? 'ok' : 'no') + '">' +
-    '<span class="lbl">' + (ok ? '✅ SAHI!' : '❌ GALAT') + '</span> &nbsp; Sahi uttar: <b>(' + LETTERS[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</b>' +
-    (q.exp[0] ? '<div class="hi">💡 ' + esc(q.exp[0]) + (q.exp[1] ? '<br>' + esc(q.exp[1]) : '') + '</div>' : '') +
-    '<div class="hi" style="margin-top:5px">📚 Source: ' + esc(q.src) + '</div></div>';
-  if (!replay && S.idx < S.qs.length - 1) {{
-    setTimeout(() => {{ S.idx++; S.locked = false; renderDots(); renderQ(); }}, ok ? 650 : 1400);
-  }}
+  document.getElementById('fbBox').innerHTML =
+    '<div class="fb ' + (ok ? 'ok' : 'no') + '">' +
+    (ok ? '<b>Sahi uttar.</b>' : '<b>Galat uttar.</b> Sahi uttar: <b>(' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</b>') +
+    '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
+    '<div class="src">Source: ' + esc(q.src) + '</div></div>';
+  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
+  const b = document.createElement('button'); b.className = 'btn blue';
+  b.innerHTML = S.idx < S.qs.length-1 ? 'Agla Question' : 'Result Dekhein';
+  b.onclick = () => {{ saveTime(); if (S.idx < S.qs.length-1) {{ S.idx++; S.locked = (S.answers[S.idx] !== undefined); renderQ(); }} else submitTest(false); }};
+  cb.appendChild(b);
 }}
 
-function scoreNow() {{
-  let c = 0;
-  for (const i in S.answered) {{ if (S.answered[i] === S.qs[i].ans) c++; }}
-  return {{ c: c }};
+function clearResp() {{ delete S.answers[S.idx]; renderQ(); }}
+function markNext() {{ S.marks[S.idx] = true; saveTime(); nextQ(); }}
+function saveNext() {{ saveTime(); nextQ(); }}
+function nextQ() {{
+  let n = -1;
+  for (let i = S.idx+1; i < S.qs.length; i++) if (S.visited[i] === undefined) {{ n = i; break; }}
+  if (n === -1) n = Math.min(S.idx+1, S.qs.length-1);
+  S.idx = n; S.locked = false;
+  renderQ();
 }}
+function jumpTo(i) {{ saveTime(); S.idx = i; S.locked = false; renderQ(); window.scrollTo({{top:0,behavior:'smooth'}}); }}
 
-function move(d) {{
-  const n = S.idx + d;
-  if (n < 0 || n >= S.qs.length) return;
-  S.idx = n; S.locked = (S.mode === 'quiz' && S.answered[n] !== undefined);
-  renderDots(); renderQ();
-  window.scrollTo({{ top: 0, behavior: 'smooth' }});
-}}
-
-function submitTest() {{
-  const unanswered = S.qs.length - Object.keys(S.answered).length;
-  if (unanswered > 0 && !confirm(unanswered + ' questions chhoote hain. Phir bhi submit karein?')) return;
-  clearInterval(S.timerId);
-  const secs = Math.floor((Date.now() - S.t0) / 1000);
-  const sc = scoreNow().c, tot = S.qs.length;
-  const acc = tot ? Math.round(sc * 100 / tot) : 0;
+function submitTest(auto) {{
+  saveTime();
+  const a = Object.keys(S.answers).length;
+  const un = S.qs.length - a;
+  if (!auto && un > 0 && !confirm(un + ' questions ka uttar nahi diya gaya hai (ye galat nahi gine jayenge, bas chhode hue rahenge). Submit karein?')) return;
+  if (!auto && un === 0 && !confirm('Saare questions answered hain. Submit karein?')) return;
+  clearInterval(S.tick);
+  const secs = Math.floor((Date.now()-S.t0)/1000);
+  let correct = 0, wrong = 0;
+  S.qs.forEach((q,i) => {{
+    if (S.answers[i] === undefined) return;
+    if (S.answers[i] === q.ans) correct++; else wrong++;
+  }});
+  const skipped = S.qs.length - correct - wrong;
+  const attempted = correct + wrong;
+  const acc = attempted ? Math.round(correct*100/attempted) : 0;
+  const avgT = attempted ? (secs/attempted).toFixed(1) : '—';
+  let slow = 0;
+  S.spent.forEach((t,i) => {{ if (t > S.spent[slow]) slow = i; }});
   document.getElementById('testCard').style.display = 'none';
   document.getElementById('resultCard').style.display = '';
-  document.getElementById('resTitle').textContent = 'Well done, ' + S.name + '! 🎯';
-  document.getElementById('resSub').innerHTML = (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode') + ' • ' + tot + ' questions • Answers verified (Forouzan + official keys)';
+  document.getElementById('resTitle').textContent = S.name + ' — ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode') + ' Result';
+  document.getElementById('resSub').innerHTML = 'Topic {n}: {title} • Questions: ' + S.qs.length + ' • Unattempted questions galat nahi gine gaye.';
   document.getElementById('statGrid').innerHTML =
-    '<div class="stat"><div class="v">' + sc + '/' + tot + '</div><div class="l">SCORE</div></div>' +
-    '<div class="stat"><div class="v">' + acc + '%</div><div class="l">ACCURACY</div></div>' +
-    '<div class="stat"><div class="v">' + fmtTime(secs) + '</div><div class="l">TIME TAKEN</div></div>' +
-    '<div class="stat"><div class="v">' + (tot - sc) + '</div><div class="l">GALAT</div></div>';
+    '<div class="stat t"><div class="v">' + correct + ' / ' + S.qs.length + '</div><div class="l">SCORE</div></div>' +
+    '<div class="stat c"><div class="v">' + correct + '</div><div class="l">SAHI (CORRECT)</div></div>' +
+    '<div class="stat w"><div class="v">' + wrong + '</div><div class="l">GALAT (WRONG)</div></div>' +
+    '<div class="stat s"><div class="v">' + skipped + '</div><div class="l">CHHODE HUE (SKIPPED)</div></div>' +
+    '<div class="stat t"><div class="v">' + acc + '%</div><div class="l">ACCURACY (attempted)</div></div>' +
+    '<div class="stat t"><div class="v">' + fmt(secs) + '</div><div class="l">SAMAY (TIME)</div></div>' +
+    '<div class="stat t"><div class="v">' + avgT + 's</div><div class="l">AVG TIME / QUESTION</div></div>' +
+    '<div class="stat t"><div class="v">' + (attempted ? (slow+1) : '—') + '</div><div class="l">SABSE ZYADA SAMAY (Q.no)</div></div>';
+  let marked = 0; for (const k in S.marks) if (S.marks[k]) marked++;
+  document.getElementById('resTable').innerHTML =
+    '<tr><th>Candidate</th><td>' + esc(S.name) + '</td><th>Mode</th><td>' + (S.mode === 'quiz' ? 'Quiz' : 'Exam') + '</td></tr>' +
+    '<tr><th>Total Questions</th><td>' + S.qs.length + '</td><th>Attempted</th><td>' + attempted + '</td></tr>' +
+    '<tr><th>Correct / Wrong</th><td>' + correct + ' / ' + wrong + '</td><th>Skipped (chhode hue)</th><td>' + skipped + '</td></tr>' +
+    '<tr><th>Accuracy</th><td>' + acc + '% (attempted par)</td><th>Marked for review</th><td>' + marked + '</td></tr>' +
+    '<tr><th>Time taken</th><td>' + fmt(secs) + '</td><th>Avg time/question</th><td>' + avgT + 's</td></tr>';
   const rb = document.getElementById('revBox'); rb.innerHTML = '';
-  S.qs.forEach((q, i) => {{
-    const picked = S.answered[i];
-    const ok = picked === q.ans;
+  S.qs.forEach((q,i) => {{
+    const picked = S.answers[i];
+    let chip, line;
+    if (picked === undefined) {{
+      chip = '<span class="st s">CHHODA (SKIPPED)</span>';
+      line = '<div class="line">Is question ka uttar nahi diya gaya.</div>';
+    }} else if (picked === q.ans) {{
+      chip = '<span class="st c">SAHI</span>';
+      line = '<div class="line"><span class="okc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>';
+    }} else {{
+      chip = '<span class="st w">GALAT</span>';
+      line = '<div class="line"><span class="noc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>' +
+             '<div class="line"><span class="okc">Sahi uttar: (' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</span></div>';
+    }}
     const div = document.createElement('div');
     div.className = 'rev';
-    div.innerHTML = '<div class="qh">' + (ok ? '✅' : (picked === undefined ? '⬜' : '❌')) + ' Q' + (i+1) + '. ' + esc(q.q[0]) + '</div>' +
+    div.innerHTML = chip + (S.marks[i] ? '<span class="st" style="background:#d9c8f2;color:#3d2472;border:1px solid #8a63c9">MARKED</span>' : '') +
+      '<div class="qh">Q' + (i+1) + '. ' + esc(q.q[0]) + '</div>' +
       '<div class="qhm">' + esc(q.q[1] || '') + '</div>' +
-      q.opts.map((o, k) => '<div class="line">' + (k === q.ans ? '<span class="okc">✔ (' + LETTERS[k] + ') ' + esc(o[0]) + '</span>' : (k === picked ? '<span class="noc">✗ (' + LETTERS[k] + ') ' + esc(o[0]) + ' — aapka jawab</span>' : '(' + LETTERS[k] + ') ' + esc(o[0]))) + '</div>').join('') +
-      '<div class="exp">💡 <b>Explanation:</b> ' + esc(q.exp[0] || '—') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
-      '<div class="meta"><span class="badge">' + esc(q.sec) + '</span>📚 ' + esc(q.src) + '</div>';
+      q.opts.map((o,k) => '<div class="line">' + (k === q.ans ? '<span class="okc">(' + L[k] + ') ' + esc(o[0]) + '</span>' : '(' + L[k] + ') ' + esc(o[0])) + '</div>').join('') +
+      line +
+      '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '—') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
+      '<div class="meta">Samay: ' + (S.spent[i] || 0).toFixed(0) + ' second &nbsp;|&nbsp; Source: ' + esc(q.src) + ' &nbsp;|&nbsp; ' + esc(q.sec) + '</div>';
     rb.appendChild(div);
   }});
-  window.scrollTo({{ top: 0, behavior: 'smooth' }});
+  window.scrollTo({{top:0,behavior:'smooth'}});
 }}
 
 document.getElementById('nameIn').addEventListener('keyup', e => {{ if (e.key === 'Enter') startTest(); }});
@@ -387,7 +542,7 @@ document.getElementById('nameIn').addEventListener('keyup', e => {{ if (e.key ==
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-    nums = [int(a) for a in sys.argv[1:]] or [1, 2]
+    nums = [int(a) for a in sys.argv[1:]] or list(TOPICS)
     for n in nums:
         items = collect(n)
         out = os.path.join(OUT_DIR, f"Topic {n} - Online Quiz & Exam (by PRAKASH - EkGuru).html")
