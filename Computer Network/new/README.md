@@ -62,7 +62,7 @@ Official starting points (verify the current notification on every release):
 - GATE 2026 question papers and answer keys: https://gate2026.iitg.ac.in/QPs-answer-keys.html
 - UGC-NET official portal and answer keys: https://ugcnet.nta.ac.in/AnswerKey.html
 - UGC-NET Computer Science & Applications (subject code 087) final key examples: https://ugcnet.nta.ac.in/images/UGC_JUNE_2025_FINALKEY/087.pdf
-
+   and also https://www.indiabix.com/networking/questions-and-answers/.  check and add 
 The official RPSC Programmer syllabus includes Data Communication and Computer Networks subjects such as network architecture, switching, network structure, physical/data-link topics, topologies, TCP/IP, DNS/firewalls and related content. Map actual profile coverage from the specific notification rather than assuming that all exams cover all seven CN booklets.
 
 ## 4. Topic map and scope control
