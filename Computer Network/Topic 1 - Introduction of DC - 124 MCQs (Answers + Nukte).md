@@ -298,7 +298,7 @@
 
 *ARPANET = Advanced Research Projects Agency Network — अमेरिकी रक्षा विभाग की ARPA द्वारा बनाया गया विश्व का पहला packet-switching network.*
 
-**★ Nukta (Key Point):** यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.
+**★ Nukta (Key Point):** This is the network on which TCP/IP was later installed — the grandmother of the Internet.
 
 *यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.*
 
@@ -679,7 +679,7 @@
 - **(C)** Volume / Volume
 - **(D)** Noise / Noise
 
-**✔ Correct Answer: (A) Bandwidth** — Channel की क्षमता यानी bandwidth मापी जाती है — कितनी आवृत्तियाँ/bits प्रति सेकंड संभव हैं.
+**✔ Correct Answer: (A) Bandwidth** — A channel's capacity is measured as bandwidth — how many frequencies/bits per second are possible.
 
 *Channel की क्षमता यानी bandwidth मापी जाती है — कितनी आवृत्तियाँ/bits प्रति सेकंड संभव हैं.*
 
@@ -1504,7 +1504,7 @@
 
 *Size के hisaab से badhta kram: PAN (एक person के around, सबसे छोटा) < LAN (building/campus) < MAN (city) < WAN (देश/दुनिया, सबसे बड़ा).*
 
-**★ Nukta (Key Point):** याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).
+**★ Nukta (Key Point):** Remember: PAN < LAN < MAN < WAN (smallest to largest).
 
 *याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).*
 
@@ -1924,7 +1924,7 @@
 
 *VoIP आवाज़ को digital packets में बदलकर Internet जैसी lines पर भेजता है — Skype/WhatsApp call इसी के उदाहरण हैं.*
 
-**★ Nukta (Key Point):** VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.
+**★ Nukta (Key Point):** VoIP = the new Internet form of the old telephone voice.
 
 *VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.*
 

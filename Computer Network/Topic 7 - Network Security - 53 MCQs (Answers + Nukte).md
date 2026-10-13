@@ -270,7 +270,7 @@
 - **(C)** Sniffer
 - **(D)** Spool
 
-**✔ Correct Answer: (A) Spam** — अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार धोखाधड़ी का ज़रिया होती है.
+**✔ Correct Answer: (A) Spam** — Unwanted bulk email = Spam. It fills the inbox and is often a vehicle for fraud.
 
 *अवांछित भारी-भरकम email = Spam. यह inbox भर देती है और कई बार धोखाधड़ी का ज़रिया होती है.*
 
@@ -350,7 +350,7 @@
 - **(C)** Trojan
 - **(D)** Spyware
 
-**✔ Correct Answer: (B) Worm** — Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory खा जाता है — सीधा डेटा नष्ट नहीं करता.
+**✔ Correct Answer: (B) Worm** — A worm spreads through the network making copies of itself and eats bandwidth/memory — it does not directly destroy data.
 
 *Worm अपनी प्रतियाँ बनाकर network में फैलता है और bandwidth/memory खा जाता है — सीधा डेटा नष्ट नहीं करता.*
 
@@ -775,7 +775,7 @@
 - **(C)** N(N − 1)/2 ✅ **(CORRECT)**
 - **(D)** (N − 1)²
 
-**✔ Correct Answer: (C) N(N − 1)/2** — Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के जोड़े = N(N−1)/2.
+**✔ Correct Answer: (C) N(N − 1)/2** — Symmetric keys are shared in pairs — one key per pair. N people need N(N−1)/2 pairs.
 
 *Symmetric keys जोड़ों में बँटती हैं — हर जोड़े की एक key. N लोगों के जोड़े = N(N−1)/2.*
 
@@ -980,11 +980,11 @@
 - **(C)** Time bomb ✅ **(CORRECT)**
 - **(D)** Trojan horse
 
-**✔ Correct Answer: (C) Time bomb** — समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस).
+**✔ Correct Answer: (C) Time bomb** — A logic bomb driven by date/time is a Time bomb (like the Friday-13 virus).
 
 *समय/तारीख़ से चलने वाला logic bomb = Time bomb (जैसे शुक्रवार-13 वायरस).*
 
-**★ Nukta (Key Point):** Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.
+**★ Nukta (Key Point):** Logic bomb = code that explodes on a condition; if the condition is time, it is a Time bomb.
 
 *Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.*
 
@@ -1000,7 +1000,7 @@
 - **(C)** Authentication ✅ **(CORRECT)**
 - **(D)** Confidentiality
 
-**✔ Correct Answer: (C) Authentication** — पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला दरवाज़ा है.
+**✔ Correct Answer: (C) Authentication** — Checking identity (ID + password) = Authentication. This is the first door of security.
 
 *पहचान (ID+password) की जाँच = Authentication. यही सुरक्षा का पहला दरवाज़ा है.*
 
@@ -1020,11 +1020,11 @@
 - **(C)** Encryption
 - **(D)** Logistics
 
-**✔ Correct Answer: (A) Biometric identification** — उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं.
+**✔ Correct Answer: (A) Biometric identification** — Fingerprints, iris, face — these are all biometric identification.
 
 *उंगली-छाप, आँख की पुतली, चेहरा — ये सब biometric identification हैं.*
 
-**★ Nukta (Key Point):** ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).
+**★ Nukta (Key Point):** Physical identity (biometric) is stronger than something known (password).
 
 *ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).*
 
@@ -1044,7 +1044,7 @@
 
 *VPN (Virtual Private Network) tunneling और encryption से public Internet पर एक सुरक्षित private रास्ता बनाता है.*
 
-**★ Nukta (Key Point):** BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.
+**★ Nukta (Key Point):** BPSC 2024 official key (a). VPN = a private limousine on the public road.
 
 *BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.*
 
@@ -1060,11 +1060,11 @@
 - **(C)** Deleting
 - **(D)** Moving
 
-**✔ Correct Answer: (A) Monitoring** — Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.
+**✔ Correct Answer: (A) Monitoring** — A firewall monitors incoming and outgoing traffic and blocks unauthorised access.
 
 *Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.*
 
-**★ Nukta (Key Point):** Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.
+**★ Nukta (Key Point):** Firewall = the network's gatekeeper — it watches, checks, stops.
 
 *Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.*
 

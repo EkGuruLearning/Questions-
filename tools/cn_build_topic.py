@@ -29,6 +29,11 @@ def _load_module(path, name):
     spec = importlib.util.spec_from_file_location(name, path)
     m = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(m)
+    try:
+        import cn_textfix
+        cn_textfix.normalize_module(m)
+    except Exception:
+        pass
     return m
 
 def _slug(title):

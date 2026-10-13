@@ -84,6 +84,11 @@ def load(name):
     import importlib.util
     spec = importlib.util.spec_from_file_location(name, os.path.join(DATA, f"{name}.py"))
     m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    try:
+        import cn_textfix
+        cn_textfix.normalize_module(m)
+    except Exception:
+        pass
     return m
 
 

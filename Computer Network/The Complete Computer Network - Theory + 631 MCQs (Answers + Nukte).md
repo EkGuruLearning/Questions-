@@ -192,7 +192,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 - **(C)** American Research Projects Agency Network
 - **(D)** Advanced Research Protocol Agency Network
 ✔ **(A) Advanced Research Projects Agency Network**
-★ **Nukta:** यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.
+★ **Nukta:** This is the network on which TCP/IP was later installed — the grandmother of the Internet.
 *यही वह network है जिस पर TCP/IP बाद में लगाया गया — Internet की दादी.*
 *[Source: IBPS/SBI computer-awareness banks (via tpointtech & meritnotes)] · Medium*
 
@@ -969,7 +969,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 - **(C)** PAN, LAN, MAN, WAN
 - **(D)** LAN, PAN, MAN, WAN
 ✔ **(C) PAN, LAN, MAN, WAN**
-★ **Nukta:** याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).
+★ **Nukta:** Remember: PAN < LAN < MAN < WAN (smallest to largest).
 *याद रखें: PAN < LAN < MAN < WAN (छोटा से बड़ा).*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2), Q42] · Medium*
 
@@ -1200,7 +1200,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 - **(C)** Website
 - **(D)** Video conferencing
 ✔ **(A) VoIP (Voice over Internet Protocol)**
-★ **Nukta:** VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.
+★ **Nukta:** VoIP = the new Internet form of the old telephone voice.
 *VoIP = पुरानी फ़ोन-आवाज़ का नया internet-रूप.*
 *[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)] · Medium*
 
@@ -4600,7 +4600,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Microwaves
 - **(D)** Hertz
 ✔ **(D) Hertz**
-★ **Nukta:** Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.
+★ **Nukta:** Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.
 *Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
@@ -5149,7 +5149,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Session control, Flow control
 - **(D)** OSI Control, Data control
 ✔ **(A) Error control, Flow control**
-★ **Nukta:** Error = सही करना; Flow = संतुलन बनाना. दोनों अलग-अलग काम हैं.
+★ **Nukta:** Error = putting right; Flow = maintaining balance. Both are separate jobs.
 *Error = सही करना; Flow = संतुलन बनाना. दोनों अलग-अलग काम हैं.*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
@@ -5160,7 +5160,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Transmission
 - **(D)** Access control
 ✔ **(A) Flow**
-★ **Nukta:** Flow control = sender↔receiver के बीच का संतुलन; यही definition परीक्षा में बार-बार आती है.
+★ **Nukta:** Flow control = the balance between sender and receiver; this definition is asked again and again in exams.
 *Flow control = sender↔receiver के बीच का संतुलन; यही definition परीक्षा में बार-बार आती है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p17] · Medium*
 
@@ -5193,7 +5193,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Stops transmission permanently
 - **(D)** Sends a NAK
 ✔ **(A) Waits for acknowledgment**
-★ **Nukta:** इसी waiting के कारण इसका नाम 'Stop-and-Wait' पड़ा.
+★ **Nukta:** Because of this waiting, its name became 'Stop-and-Wait'.
 *इसी waiting के कारण इसका नाम 'Stop-and-Wait' पड़ा.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
@@ -5248,7 +5248,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** That frame and all subsequent outstanding frames are retransmitted
 - **(D)** No frame is retransmitted
 ✔ **(C) That frame and all subsequent outstanding frames are retransmitted**
-★ **Nukta:** GBN = 'जहाँ चूक, वहाँ से फिर से' — Selective Repeat में सिर्फ गलत frame दोबारा जाता है.
+★ **Nukta:** GBN = 'from where you slipped, start again' — in Selective Repeat only the wrong frame is resent.
 *GBN = 'जहाँ चूक, वहाँ से फिर से' — Selective Repeat में सिर्फ गलत frame दोबारा जाता है.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
@@ -5259,7 +5259,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** 7
 - **(D)** 8
 ✔ **(B) 6**
-★ **Nukta:** उपर वाले प्रश्न का उल्टा — यही formula दोनों तरफ से याद रखो.
+★ **Nukta:** The reverse of the question above — memorise the formula both ways.
 *उपर वाले प्रश्न का उल्टा — यही formula दोनों तरफ से याद रखो.*
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
@@ -5314,7 +5314,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** detection
 - **(D)** parity
 ✔ **(A) redundancy**
-★ **Nukta:** Redundancy = 'जान-बूझकर भेजा अतिरिक्त' — इसी से error control संभव है.
+★ **Nukta:** Redundancy = 'extra bits sent on purpose' — this is what makes error control possible.
 *Redundancy = 'जान-बूझकर भेजा अतिरिक्त' — इसी से error control संभव है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p36] · Medium*
 
@@ -5347,7 +5347,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** positive number of errors
 - **(D)** negative number of errors
 ✔ **(A) odd number of errors**
-★ **Nukta:** Parity = odd errors पकड़ता है; even छोड़ देता है — यही इसकी सीमा है.
+★ **Nukta:** Parity catches odd errors and misses even ones — that is its limit.
 *Parity = odd errors पकड़ता है; even छोड़ देता है — यही इसकी सीमा है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p34] · Medium*
 
@@ -5435,7 +5435,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Selective-Repeat ARQ
 - **(D)** Both B and C
 ✔ **(B) Go-Back-N ARQ**
-★ **Nukta:** GBN = Go Back N — Nवें तक सब दोबारा; SR = सिर्फ गलत वाला.
+★ **Nukta:** GBN = Go Back N — everything up to N is resent; SR = only the wrong one.
 *GBN = Go Back N — Nवें तक सब दोबारा; SR = सिर्फ गलत वाला.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p8] · Hard*
 
@@ -5578,7 +5578,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** 16000
 - **(D)** 20000
 ✔ **(D) 20000**
-★ **Nukta:** GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही इस प्रश्न का खेल है.
+★ **Nukta:** GATE 2015 key (d) 20000 km/s. Getting the speed by inverting the formula — that is the trick of this question.
 *GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही इस प्रश्न का खेल है.*
 *[Source: GATE CSE 2015 Set 3] · Hard*
 
@@ -5656,7 +5656,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Source MAC → Destination MAC → Data → CRC → Type
 - **(D)** Preamble → Source MAC → Destination MAC → Data
 ✔ **(A) Preamble → Destination MAC → Source MAC → Type/Length → Data → FCS**
-★ **Nukta:** याद रखो: Preamble के बाद पहले RECEIVER का पता (Destination), फिर भेजने वाले का — बाकी बाद में.
+★ **Nukta:** Remember: after the Preamble come the RECEIVER's address (Destination) first, then the sender's — the rest later.
 *याद रखो: Preamble के बाद पहले RECEIVER का पता (Destination), फिर भेजने वाले का — बाकी बाद में.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
@@ -5678,7 +5678,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** CSMA
 - **(D)** CSMA/CD
 ✔ **(B) Slotted ALOHA**
-★ **Nukta:** Pure ALOHA = जब मन चाहे भेजो; Slotted = slot की घड़ी देखकर भेजो.
+★ **Nukta:** Pure ALOHA = send whenever you like; Slotted = send only when the slot clock says so.
 *Pure ALOHA = जब मन चाहे भेजो; Slotted = slot की घड़ी देखकर भेजो.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
@@ -5733,7 +5733,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Appending a nibble to the flag sequence
 - **(D)** Appending a nibble to the user data stream
 ✔ **(A) Inserting a '0' in the user stream to differentiate it from the flag**
-★ **Nukta:** Stuffing हमेशा DATA में होती है, flag में नहीं; byte stuffing में 0x7E के बाद 0x7D जुड़ता है.
+★ **Nukta:** Stuffing is always done in DATA, never in the flag; in byte stuffing 0x7D follows 0x7E.
 *Stuffing हमेशा DATA में होती है, flag में नहीं; byte stuffing में 0x7E के बाद 0x7D जुड़ता है.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p26] · Medium*
 
@@ -5744,7 +5744,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Jam signal
 - **(D)** None of these
 ✔ **(C) Jam signal**
-★ **Nukta:** Jam = 'टकराव हो गया!' का सायरन. Preamble = frame शुरू होने की घोषणा.
+★ **Nukta:** Jam = the siren shouting 'a collision happened!'. Preamble = announcement that a frame is starting.
 *Jam = 'टकराव हो गया!' का सायरन. Preamble = frame शुरू होने की घोषणा.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p28] · Medium*
 
@@ -5766,7 +5766,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** 40–1480 bytes
 - **(D)** 32–1500 bytes
 ✔ **(B) 46–1500 bytes**
-★ **Nukta:** पूरे frame का range 64–1518; data का 46–1500. यह जोड़ी अक्सर पूछी जाती है.
+★ **Nukta:** The whole frame ranges 64–1518 bytes; the data 46–1500. This pair is asked often.
 *पूरे frame का range 64–1518; data का 46–1500. यह जोड़ी अक्सर पूछी जाती है.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
@@ -5854,7 +5854,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** 512 bytes
 - **(D)** 2048 bytes
 ✔ **(B) 1500 bytes**
-★ **Nukta:** MTU = data की सीमा; 1518 = पूरे frame की सीमा. भ्रम में मत आना.
+★ **Nukta:** MTU = the data limit; 1518 = the whole frame limit. Don't confuse the two.
 *MTU = data की सीमा; 1518 = पूरे frame की सीमा. भ्रम में मत आना.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
@@ -5898,7 +5898,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Can't say
 - **(D)** None of the above
 ✔ **(A) should reserve**
-★ **Nukta:** Reservation = पहले बुकिंग, फिर यात्रा — contention (ALOHA/CSMA) में बुकिंग नहीं.
+★ **Nukta:** Reservation = book first, travel later — contention (ALOHA/CSMA) has no booking.
 *Reservation = पहले बुकिंग, फिर यात्रा — contention (ALOHA/CSMA) में बुकिंग नहीं.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p25] · Hard*
 
@@ -6019,7 +6019,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Packet lifespan control
 - **(D)** Encryption
 ✔ **(C) Packet lifespan control**
-★ **Nukta:** TTL = loop-रोधक. यही traceroute को भी चलाता है (अलग-अलग TTL से path बनता है).
+★ **Nukta:** TTL = loop-stopper. It is also what runs traceroute (different TTLs map the path).
 *TTL = loop-रोधक. यही traceroute को भी चलाता है (अलग-अलग TTL से path बनता है).*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
@@ -6074,7 +6074,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 - **(C)** Slow convergence
 - **(D)** Lack of security
 ✔ **(B) Count-to-infinity problem**
-★ **Nukta:** DV की पहचान ही count-to-infinity; link-state इससे मुक्त है (पर ज़्यादा memory लेता है).
+★ **Nukta:** Count-to-infinity is the signature of DV; link-state is free of it (but uses more memory).
 *DV की पहचान ही count-to-infinity; link-state इससे मुक्त है (पर ज़्यादा memory लेता है).*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
@@ -6473,7 +6473,7 @@ Which one of the following is correct?
 - **(C)** To reset a connection
 - **(D)** For data transmission
 ✔ **(B) To initiate (open) a connection**
-★ **Nukta:** Flags याद रखो: SYN = शुरुआत; FIN = अंत; RST = रद्द; ACK = पुष्टि.
+★ **Nukta:** Remember the flags: SYN = start; FIN = end; RST = abort; ACK = confirmation.
 *Flags याद रखो: SYN = शुरुआत; FIN = अंत; RST = रद्द; ACK = पुष्टि.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
@@ -6484,7 +6484,7 @@ Which one of the following is correct?
 - **(C)** ACK is slightly delayed
 - **(D)** Server is busy
 ✔ **(A) Firewall blocks the SYN-ACK**
-★ **Nukta:** Handshake टूटने का सीधा कारण: संदेशों का न पहुँचना (firewall/filter).
+★ **Nukta:** The immediate cause of a failed handshake: the messages are not getting through (firewall/filter).
 *Handshake टूटने का सीधा कारण: संदेशों का न पहुँचना (firewall/filter).*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
@@ -6660,7 +6660,7 @@ Which one of the following is correct?
 - **(C)** Sequence Number
 - **(D)** Port Number
 ✔ **(C) Sequence Number**
-★ **Nukta:** UDP में sequence नहीं होता — इसीलिए वहाँ क्रम की guarantee नहीं.
+★ **Nukta:** UDP has no sequence numbers — that is why it gives no ordering guarantee.
 *UDP में sequence नहीं होता — इसीलिए वहाँ क्रम की guarantee नहीं.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
@@ -6902,7 +6902,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 - **(C)** Semantic
 - **(D)** None of the above
 ✔ **(A) Syntax**
-★ **Nukta:** नियम: Syntax = कैसा दिखे; Semantics = क्या अर्थ हो. Communication में दोनों तय होने चाहिए.
+★ **Nukta:** Rule: Syntax = how it looks; Semantics = what it means. Both must be agreed for communication.
 *नियम: Syntax = कैसा दिखे; Semantics = क्या अर्थ हो. Communication में दोनों तय होने चाहिए.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p14] · Medium*
 
@@ -6924,7 +6924,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 - **(C)** Layer 7 protocols
 - **(D)** Layer 10 protocols
 ✔ **(C) Layer 7 protocols**
-★ **Nukta:** OSI में 7 layers ही हैं — 'Layer 10' तो हो ही नहीं सकती.
+★ **Nukta:** OSI has exactly 7 layers — there can be no 'Layer 10'.
 *OSI में 7 layers ही हैं — 'Layer 10' तो हो ही नहीं सकती.*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
@@ -6968,7 +6968,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 - **(C)** HTTPS
 - **(D)** SMTP
 ✔ **(B) SSH**
-★ **Nukta:** Port पहचानो, सेवा पहचानो — यही इस प्रश्न का खेल है.
+★ **Nukta:** Identify the port, identify the service — that is the trick of this question.
 *Port पहचानो, सेवा पहचानो — यही इस प्रश्न का खेल है.*
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
@@ -7067,7 +7067,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 - **(C)** Obtaining an IP address
 - **(D)** Domain name resolving
 ✔ **(B) Authentication and directory access**
-★ **Nukta:** LDAP = network का 'पता-पुस्तिका + पहचान-पत्र काउंटर'.
+★ **Nukta:** LDAP = the network's 'address book + identity-desk counter'.
 *LDAP = network का 'पता-पुस्तिका + पहचान-पत्र काउंटर'.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p29] · Medium*
 
@@ -7100,7 +7100,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 - **(C)** Information Control Manage Protocol
 - **(D)** Internet Control Message Protocol
 ✔ **(D) Internet Control Message Protocol**
-★ **Nukta:** बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.
+★ **Nukta:** The other names are made up — the real name contains 'Control Message'.
 *बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.*
 *[Source: IBPS PO Computer Awareness PYQ (via Testbook solved)] · Medium*
 
@@ -7958,7 +7958,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 - **(C)** Time bomb
 - **(D)** Trojan horse
 ✔ **(C) Time bomb**
-★ **Nukta:** Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.
+★ **Nukta:** Logic bomb = code that explodes on a condition; if the condition is time, it is a Time bomb.
 *Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
@@ -7980,7 +7980,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 - **(C)** Encryption
 - **(D)** Logistics
 ✔ **(A) Biometric identification**
-★ **Nukta:** ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).
+★ **Nukta:** Physical identity (biometric) is stronger than something known (password).
 *ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
@@ -7991,7 +7991,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 - **(C)** Enterprise private network
 - **(D)** None of these
 ✔ **(A) Virtual private network (VPN)**
-★ **Nukta:** BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.
+★ **Nukta:** BPSC 2024 official key (a). VPN = a private limousine on the public road.
 *BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.*
 *[Source: BPSC TRE 2024 (via KnowledgeGate solved PYQ bank)] · Medium*
 
@@ -8002,7 +8002,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 - **(C)** Deleting
 - **(D)** Moving
 ✔ **(A) Monitoring**
-★ **Nukta:** Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.
+★ **Nukta:** Firewall = the network's gatekeeper — it watches, checks, stops.
 *Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 

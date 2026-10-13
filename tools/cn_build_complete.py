@@ -131,6 +131,11 @@ def build(out_pdf, out_md):
     def load(name):
         spec = importlib.util.spec_from_file_location(name, os.path.join(DATA, f"{name}.py"))
         m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        try:
+            import cn_textfix
+            cn_textfix.normalize_module(m)
+        except Exception:
+            pass
         return m
 
     topics = []
@@ -245,6 +250,11 @@ def build_md(out_md):
     def load(name):
         spec = importlib.util.spec_from_file_location(name, os.path.join(DATA, f"{name}.py"))
         m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        try:
+            import cn_textfix
+            cn_textfix.normalize_module(m)
+        except Exception:
+            pass
         return m
     topics = []
     for n, title in TOPICS:

@@ -621,3 +621,246 @@ P7_C_X = [
    "Transport mode = host-to-host security।"),
   {}),
 ]
+
+# ================= WAVE 4 — SSC + RPSC Programmer/ACP/DD exam-pattern =================
+# Difficulty via SRC labels: MTS/CHSL -> Easy, CGL/IBPS -> Medium, Programmer/ACP -> Hard.
+# Explanations carry the exam-pattern note (user spec: explanation must say
+# which exam/year style the question belongs to).
+SRC_SSC_E = "Practice — original (SSC MTS/CHSL exam-pattern, textbook-based)"
+SRC_SSC_M = "Practice — original (SSC CGL/IBPS exam-pattern, textbook-based)"
+SRC_RPSC  = "Practice — original (RPSC Programmer/ACP/DD exam-pattern, textbook-based)"
+
+P3_C_X2 = [
+ (SRC_RPSC,
+  "An organization has the block 192.168.10.0/24 and needs subnets for 50, 25 and 10 hosts. Which set of prefix lengths wastes the LEAST address space?",
+  "एक संस्था के पास block 192.168.10.0/24 है और उसे 50, 25 और 10 hosts के लिए subnets चाहिए। कौन-सी prefix lengths की जोड़ी सबसे कम address space व्यर्थ करेगी?",
+  [("/26, /27 and /28", "/26, /27 और /28"), ("/26, /26 and /26", "/26, /26 और /26"),
+   ("/27, /27 and /27", "/27, /27 और /27"), ("/25, /26 and /27", "/25, /26 और /27")],
+  0,
+  ("50 hosts → /26 (62 usable), 25 → /27 (30), 10 → /28 (14). Har subnet ko "
+   "sabse chhota fitting power-of-2 block do. Pattern: RPSC Programmer/ACP/DD "
+   "jaise Rajasthan technical exams mein VLSM sizing aksar aata hai.",
+   "50 → /26 (62), 25 → /27 (30), 10 → /28 (14)। Pattern: RPSC Programmer/ACP/DD में VLSM sizing अक्सर आता है।"),
+  ("VLSM rule: hosts + 2 ≤ block size, aur block size = 2^(32−prefix).",
+   "VLSM: hosts + 2 ≤ block size; block size = 2^(32−prefix)।"),
+  {1: ("Sare /26 karne par 25 aur 10 wale subnets par 62−25 aur 62−10 "
+       "addresses waste honge.", "सभी /26 से 25 और 10 वालों में बहुत waste।"),
+   3: ("/25 (126 hosts) 50 ke liye bada; /27 (30) 50 hosts sambhalti hi nahi.",
+       "/25 बड़ा; /27 50 hosts नहीं संभालती।")}),
+ (SRC_RPSC,
+  "The Cisco IOS command 'ip classless' makes a router:",
+  "Cisco IOS का आदेश 'ip classless' router को क्या बनाता है?",
+  [("Forward packets to the default route even when the destination subnet is not in the routing table",
+    "तब भी default route पर packets भेजे जब destination subnet routing table में न हो"),
+   ("Drop all packets for classful networks", "Classful networks के सभी packets गिराए"),
+   ("Advertise only classful routes", "सिर्फ classful routes advertise करे"),
+   ("Disable subnetting on all interfaces", "सभी interfaces पर subnetting बंद करे")],
+  0,
+  ("Classless forwarding: routing table mein koi specific subnet na mile to "
+   "packet default route par jaata hai (supernetting/CDR ke saath zaroori). "
+   "Pattern: RPSC Programmer/ACP/DD + CCNA.",
+   "Classless forwarding: विशेष subnet न मिले तो packet default route पर जाता है। Pattern: RPSC Programmer/ACP/DD।"),
+  ("'Classless' ka matlab subnet masks ko ignore karke longest-match karna.",
+   "'Classless' = subnet masks के साथ longest-match।"),
+  {}),
+]
+
+P6_C_X2 = [
+ (SRC_RPSC,
+  "A router receives a datagram whose TTL becomes 0 after it decrements the field. The router will:",
+  "एक router को datagram मिला जिसका TTL घटाने पर 0 हो गया। router क्या करेगा?",
+  [("Discard the datagram and send an ICMP Time Exceeded message to the source",
+    "Datagram नष्ट करके source को ICMP Time Exceeded भेजेगा"),
+   ("Forward it with TTL 0", "TTL 0 के साथ आगे भेजेगा"),
+   ("Send it back to the previous router", "पिछले router को वापस भेजेगा"),
+   ("Change TTL to 255 and forward", "TTL 255 करके आगे भेजेगा")],
+  0,
+  ("TTL = routing loops rokne ke liye; har hop par −1, zero hote hi packet "
+   "gira kar ICMP Time Exceeded (type 11) source ko jaata hai — traceroute isi "
+   "par chalta hai. Pattern: GATE + RPSC Programmer dono ka favourite.",
+   "TTL हर hop पर −1; 0 होते ही packet गिरकर ICMP Time Exceeded (type 11) जाता है — traceroute इसी पर। Pattern: GATE + RPSC Programmer।"),
+  ("traceroute = TTL 1, 2, 3... karke Time Exceeded ke source routers ka pata.",
+   "traceroute = TTL 1,2,3... से Time Exceeded से routers का पता।"),
+  {}),
+ (SRC_RPSC,
+  "In OSPF, on a multiaccess network the Designated Router (DR) is the router with:",
+  "OSPF में multiaccess network पर Designated Router (DR) होता है वह router जिसके पास:",
+  [("The highest OSPF interface priority (tie → highest router ID)",
+    "सबसे अधिक OSPF interface priority (बराबरी पर → सबसे बड़ा router ID)"),
+   ("The lowest IP address", "सबसे कम IP address"),
+   ("The highest bandwidth link", "सबसे अधिक bandwidth वाला link"),
+   ("The oldest OSPF process", "सबसे पुराना OSPF process")],
+  0,
+  ("DR election: pehle highest priority (default 1; 0 = kabhi DR nahi), tie "
+   "par highest router ID. DR adjacency kam karke flooding reduce karta hai. "
+   "Pattern: CCNA + RPSC ACP/Programmer level.",
+   "DR election: सर्वोच्च priority (default 1), बराबरी पर सबसे बड़ा router ID। Pattern: CCNA + RPSC ACP/Programmer।"),
+  ("OSPF mein 2-way state ke baad DR/BDR election hoti hai.",
+   "OSPF में 2-way के बाद DR/BDR election।"),
+  {}),
+ (SRC_RPSC,
+  "Two OSPF routers are stuck in the EXSTART/EXCHANGE neighbour state. The most likely cause is:",
+  "दो OSPF routers EXSTART/EXCHANGE neighbour state में अटके हैं। सबसे संभावित कारण है:",
+  [("An MTU mismatch on the connecting interfaces",
+    "जोड़ने वाले interfaces पर MTU का अंतर"),
+   ("Different OSPF process IDs", "भिन्न OSPF process IDs"),
+   ("Different hostnames", "भिन्न hostnames"),
+   ("Different IOS/OS versions", "भिन्न IOS/OS versions")],
+  0,
+  ("Database description (DBD) exchange mein MTU mismatch ke routers "
+   "EXSTART/EXCHANGE se aage nahi badhte. Process IDs locally significant "
+   "hote hain — match karne ki zaroorat nahi. Pattern: CCNA troubleshooting + RPSC ACP.",
+   "MTU mismatch से routers EXSTART/EXCHANGE में अटकते हैं। Process IDs locally significant होते हैं। Pattern: CCNA + RPSC ACP।"),
+  ("OSPF states: Down → Init → 2-Way → ExStart → Exchange → Loading → Full.",
+   "OSPF states: Down → Init → 2-Way → ExStart → Exchange → Loading → Full।"),
+  {}),
+ (SRC_RPSC,
+  "The administrative distance of a static route, an EIGRP route and an OSPF route are respectively:",
+  "Static route, EIGRP route और OSPF route का administrative distance क्रमशः होता है:",
+  [("1, 90 and 110", "1, 90 और 110"), ("0, 110 and 120", "0, 110 और 120"),
+   ("1, 110 and 120", "1, 110 और 120"), ("10, 90 and 100", "10, 90 और 100")],
+  0,
+  ("AD = route ki 'trustworthiness' (kam = zyada trusted): connected 0, "
+   "static 1, EIGRP 90, OSPF 110, RIP 120. Pattern: CCNA 200-301 + RPSC ACP/DD.",
+   "AD (कम = अधिक trusted): connected 0, static 1, EIGRP 90, OSPF 110, RIP 120। Pattern: CCNA + RPSC ACP/DD।"),
+  ("AD aur metric alag cheez hain — AD protocols ko compare karti hai.",
+   "AD और metric अलग हैं — AD protocols की तुलना करती है।"),
+  {1: ("120 = RIP ka AD; 0 = connected.", "120 = RIP; 0 = connected।"),
+   2: ("OSPF 110 hai, 120 nahi.", "OSPF 110 है, 120 नहीं।")}),
+]
+
+P5_A_X2 = [
+ (SRC_RPSC,
+  "A noiseless channel has a bandwidth of 4 kHz and uses 16 signal levels. Per Nyquist's theorem, the maximum bit rate is:",
+  "एक noiseless channel की bandwidth 4 kHz है और वह 16 signal levels प्रयोग करती है। Nyquist के अनुसार अधिकतम bit rate होगी:",
+  [("32 kbps", "32 kbps"), ("16 kbps", "16 kbps"), ("64 kbps", "64 kbps"), ("8 kbps", "8 kbps")],
+  0,
+  ("Nyquist: C = 2 × B × log2(L) = 2 × 4000 × log2(16) = 2 × 4000 × 4 = 32 kbps. "
+   "Pattern: RPSC Programmer/DD + GATE-style signal numerics.",
+   "Nyquist: C = 2 × 4000 × log2(16) = 32 kbps। Pattern: RPSC Programmer/DD + GATE-style।"),
+  ("Shannon (noise wala) = B log2(1+SNR); Nyquist (noiseless) = 2B log2(L) — "
+   "mix mat karna.",
+   "Shannon = B log2(1+SNR); Nyquist = 2B log2(L)।"),
+  {}),
+ (SRC_SSC_M,
+  "An analog voice signal is sampled 8000 times per second with 8 bits per sample. The resulting digital bit rate is:",
+  "एक analog voice signal को प्रति सेकंड 8000 बार sample किया जाता है, हर sample 8 bits का। बनी digital bit rate होगी:",
+  [("64 kbps", "64 kbps"), ("8 kbps", "8 kbps"), ("56 kbps", "56 kbps"), ("128 kbps", "128 kbps")],
+  0,
+  ("8000 samples/s × 8 bits = 64,000 bps = 64 kbps — yahi classic PCM/DS0 voice "
+   "channel hai (telephony standard). Pattern: SSC CGL/IBPS + technical exams.",
+   "8000 × 8 = 64 kbps — यही PCM/DS0 voice channel है। Pattern: SSC CGL/IBPS।"),
+  ("Nyquist: voice ke liye 8 kHz sampling enough (4 kHz bandwidth × 2).",
+   "Voice के लिए 8 kHz sampling पर्याप्त (4 kHz × 2)।"),
+  {1: ("8 bits/sample; rate = samples × bits.", "8 bits/sample; rate = samples × bits।"),
+   2: ("56 kbps = T1 mein control bits ke baad per channel.", "56 kbps = T1 में control bits के बाद।")}),
+]
+
+P4_B_X2 = [
+ (SRC_SSC_M,
+  "On a managed switch, which feature restricts a port to specific MAC addresses so that unauthorized hosts cannot connect?",
+  "Managed switch पर कौन-सी सुविधा एक port को तय MAC addresses तक सीमित करती है ताकि अनधिकित host न जुड़ सकें?",
+  [("Port Security", "Port Security"), ("VTP pruning", "VTP pruning"),
+   ("Spanning Tree", "Spanning Tree"), ("Port mirroring", "Port mirroring")],
+  0,
+  ("Port Security: ek port par allowed MAC addresses (sticky/static) fix karo; "
+   "adhik aane par port err-disable ho jaata hai. Pattern: SSC CGL + CCNA/Network+.",
+   "Port Security: port पर allowed MAC तय; उल्लंघन पर port बंद। Pattern: SSC CGL + CCNA।"),
+  ("VTP = VLAN config distribute; STP = loops roke; mirroring = traffic copy.",
+   "VTP = VLAN config; STP = loop रोके; mirroring = traffic copy।"),
+  {}),
+]
+
+P6_B_X2 = [
+ (SRC_SSC_M,
+  "CSMA/CD (collision detection) can be used only when the link operates in:",
+  "CSMA/CD (collision detection) तभी प्रयोग हो सकता है जब link चलती हो:",
+  [("Half-duplex mode", "Half-duplex mode"), ("Full-duplex mode", "Full-duplex mode"),
+   ("Simplex mode", "Simplex mode"), ("Both half and full duplex", "Half और full duplex दोनों")],
+  0,
+  ("Collision tabhi detect hoti hai jab ek shared medium par dono taraf se "
+   "traffic aa sake (half-duplex). Full-duplex (alag pairs) mein collisions "
+   "hote hi nahi — modern Ethernet mein CSMA/CD off hota hai. Pattern: SSC CGL/IBPS + CCNA.",
+   "Collision shared medium (half-duplex) पर ही होती है। Full-duplex में CSMA/CD बंद। Pattern: SSC CGL + CCNA।"),
+  ("Full-duplex = collision-free, isliye minimum frame size ka constraint bhi nahi.",
+   "Full-duplex = collision-free।"),
+  {}),
+]
+
+P6_D_X2 = [
+ (SRC_RPSC,
+  "TCP provides a byte-stream service. This means that:",
+  "TCP byte-stream service देता है — इसका अर्थ है कि:",
+  [("Message boundaries are NOT preserved — a record may be split across segments or two records merged into one",
+    "Message boundaries नहीं बनतीं — एक record कई segments में बँट सकता है या दो records एक में मिल सकते हैं"),
+   ("Each send() call arrives as one segment", "हर send() एक segment के रूप में पहुँचता है"),
+   ("Bytes arrive in fixed 512-byte blocks", "Bytes 512-byte के तय blocks में आते हैं"),
+   ("The receiver delivers bytes in the order they were received, even if reordered on the way",
+    "Receiver bytes उसी क्रम में देता है जिसमें प्राप्त हुए, भले रास्ते में बदले हों")],
+  0,
+  ("TCP sirf reliable ordered BYTE stream deta hai — application ki record "
+   "boundaries TCP ki zimmedari nahi (isliye application khud length/delimiter "
+   "bhejti hai). Pattern: RPSC Programmer/ACP/DD + GATE.",
+   "TCP सिर्फ विश्वसनीय क्रमबद्ध BYTE stream देता है — record boundaries की ज़िम्मेदारी नहीं। Pattern: RPSC Programmer/ACP/DD।"),
+  ("UDP message-oriented hai — wahan ek datagram = ek message.",
+   "UDP message-oriented है — एक datagram = एक message।"),
+  {}),
+ (SRC_RPSC,
+  "The TCP Maximum Segment Size (MSS) is typically the path MTU minus ______ bytes of headers:",
+  "TCP Maximum Segment Size (MSS) सामान्यतः path MTU में से ______ bytes के headers घटाने पर मिलती है:",
+  [("40", "40"), ("20", "20"), ("64", "64"), ("54", "54")],
+  0,
+  ("MSS = MTU − (20-byte IP header + 20-byte TCP header) = MTU − 40. Ethernet "
+   "par 1500 − 40 = 1460 bytes. Pattern: RPSC Programmer/ACP/DD + GATE.",
+   "MSS = MTU − (20 IP + 20 TCP) = MTU − 40; Ethernet पर 1460 bytes। Pattern: RPSC Programmer/ACP/DD।"),
+  ("MSS sirf TCP data ka size hai — headers alag.",
+   "MSS सिर्फ TCP data का size है।"),
+  {}),
+]
+
+P6_E_X2 = [
+ (SRC_SSC_M,
+  "In the DHCP DORA process, if two DHCP servers send OFFERs, the client usually accepts:",
+  "DHCP DORA process में यदि दो DHCP servers OFFER भेजें, तो client सामान्यतः स्वीकार करता है:",
+  [("The first OFFER received", "सबसे पहले प्राप्त OFFER"),
+   ("The OFFER with the longest lease", "सबसे लंबी lease वाला OFFER"),
+   ("Both and merges them", "दोनों, उन्हें मिलाकर"),
+   ("Neither — it uses a static IP", "कोई नहीं — static IP लेता है")],
+  0,
+  ("DORA = Discover → Offer → Request → Acknowledge. Client pehli Offer "
+   "leta hai aur Request broadcast karta hai (baaki servers ko pata chalta "
+   "hai ki unka offer nahi liya). Pattern: SSC CGL/IBPS + Network+.",
+   "DORA = Discover → Offer → Request → Ack. Client पहली Offer लेता है। Pattern: SSC CGL + Network+।"),
+  ("Do OFFERs ke beech 'race' hoti hai — jo pehle pahunche.",
+   "दो OFFERs में race — जो पहले पहुँचे।"),
+  {}),
+]
+
+P7_C_X2 = [
+ (SRC_SSC_M,
+  "Which wireless security standard uses AES-CCMP encryption (the replacement for the weaker WEP/TKIP)?",
+  "कौन-सी wireless security standard AES-CCMP encryption प्रयोग करती है (कमज़ोर WEP/TKIP की जगह)?",
+  [("WPA2", "WPA2"), ("WEP", "WEP"), ("WPA", "WPA"), ("Open authentication", "Open authentication")],
+  0,
+  ("WPA2 (802.11i) = AES-CCMP encryption; WEP = RC4 (tuta hua); WPA = TKIP "
+   "(temporary). WPA3 ab SAE + AES-GCMP. Pattern: SSC CGL/IBPS + Network+.",
+   "WPA2 = AES-CCMP; WEP = RC4 (टूटा); WPA = TKIP; WPA3 = SAE। Pattern: SSC CGL + Network+।"),
+  ("Wireless security ka evolution: WEP → WPA → WPA2 → WPA3.",
+   "Wireless security: WEP → WPA → WPA2 → WPA3।"),
+  {}),
+]
+
+P5_C_X2 = [
+ (SRC_SSC_E,
+  "The name of a wireless network (Wi-Fi) that devices see while connecting is called:",
+  "वह नाम जो devices को Wi-Fi जोड़ते समय दिखता है, कहलाता है:",
+  [("SSID", "SSID"), ("BSSID", "BSSID"), ("MAC ID", "MAC ID"), ("IPX", "IPX")],
+  0,
+  ("SSID = Service Set Identifier — wireless network ka naam (jo access point "
+   "broadcast karta hai). Pattern: SSC MTS/CHSL — computer awareness level.",
+   "SSID = Service Set Identifier — wireless network का नाम। Pattern: SSC MTS/CHSL।"),
+  ("BSSID = access point ka MAC address; SSID = network ka naam.",
+   "BSSID = AP का MAC; SSID = network का नाम।"),
+  {1: ("BSSID MAC address hai, naam nahi.", "BSSID MAC address है।"),
+   3: ("IPX purana Novell protocol hai.", "IPX पुराना Novell protocol है।")}),
+]

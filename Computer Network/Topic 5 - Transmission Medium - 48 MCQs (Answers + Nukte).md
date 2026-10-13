@@ -374,7 +374,7 @@
 
 *Optical fibre, Twisted pair और Microwaves — तीनों transmission media हैं; Hertz आवृत्ति की इकाई है — medium नहीं.*
 
-**★ Nukta (Key Point):** Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.
+**★ Nukta (Key Point):** Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.
 
 *Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.*
 

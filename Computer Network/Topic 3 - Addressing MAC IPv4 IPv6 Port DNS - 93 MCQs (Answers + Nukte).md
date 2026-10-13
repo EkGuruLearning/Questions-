@@ -817,7 +817,7 @@
 - **(C)** 192.168.1.10
 - **(D)** 11.0.0.1 / 11.0.0.1 ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) 11.0.0.1** — RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. 11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं.
+**✔ Correct Answer: (D) 11.0.0.1** — The RFC-1918 private blocks are 10.0.0.0/8, 172.16.0.0/12 and 192.168.0.0/16. 11.0.0.1 falls in none of these blocks, so it is a public IP — not private.
 
 *RFC-1918 के private blocks हैं — 10.0.0.0/8, 172.16.0.0/12 और 192.168.0.0/16. 11.0.0.1 इनमें से किसी भी block में नहीं आता, इसलिए यह public IP है — private नहीं.*
 
@@ -1527,7 +1527,7 @@
 - **(C)** 16
 - **(D)** 128 ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) 128** — IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए IPv6 में पतों की कमी नहीं.
+**✔ Correct Answer: (D) 128** — Unlike IPv4's 32 bits, IPv6 addresses are 128 bits long — that is why IPv6 has no address shortage.
 
 *IPv4 के 32 bits के उलट IPv6 addresses 128 bits के होते हैं — इसीलिए IPv6 में पतों की कमी नहीं.*
 

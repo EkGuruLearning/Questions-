@@ -22,17 +22,36 @@ body { font-family: 'Segoe UI', Roboto, Arial, 'Noto Sans Devanagari', sans-seri
 .tbox .lbl { font-size: 8.5px; letter-spacing: 1.4px; color: #9fb2c8; font-weight: 700; }
 .tbox .val { font-size: 18px; font-weight: 800; letter-spacing: 1px; }
 .tbox .val.low { color: #ff7b7b; }
-/* ===== section tabs ===== */
-.secbar { background: #fff; border-bottom: 2px solid #d3dae4; display: flex; flex-wrap: wrap; gap: 2px; padding: 0 10px; position: sticky; top: 52px; z-index: 40; }
-.stab { padding: 9px 13px; font-size: 11.5px; font-weight: 700; color: #44546a; cursor: pointer; border-bottom: 3px solid transparent; }
-.stab:hover { color: #E97313; }
-.stab.cur { color: #16283f; border-bottom-color: #E97313; background: #f7f9fc; }
+/* ---------- source chip ---------- */
+.srcchip { font-size: 10.5px; color: #7b8798; font-weight: 700; background: #eef1f6; border: 1px solid #d5dce7; border-radius: 10px; padding: 2px 9px; max-width: 46%; }
 /* ===== layout ===== */
 .layout { display: flex; gap: 10px; align-items: flex-start; padding: 10px; max-width: 1280px; margin: 0 auto; }
 .qcol { flex: 1; min-width: 300px; }
 .pcol { width: 292px; flex-shrink: 0; position: sticky; top: 100px; }
 .pcol.hidden { display: none; }
-@media (max-width: 860px) { .pcol { position: static; width: 100%; } .layout { flex-direction: column; } }
+@media (max-width: 980px) { .pcol { position: static; width: 100%; } .layout { flex-direction: column; } .qcol { min-width: 0; width: 100%; } }
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .brand { font-size: 17px; } .brand small { letter-spacing: 1.5px; }
+  .testname { font-size: 11.5px; width: 100%; text-align: left; }
+  .topp { width: 100%; gap: 5px; }
+  .tbtn { padding: 9px 9px; font-size: 11px; min-height: 40px; }
+  .tbox { padding: 3px 8px; } .tbox .val { font-size: 15px; }
+  .qhead { padding: 7px 10px; }
+  .langsel button { padding: 9px 11px; font-size: 12px; min-height: 40px; }
+  .actionbar { padding: 8px 10px; }
+  .abtn { flex: 1 1 46%; min-height: 46px; padding: 11px 8px; font-size: 12.5px; text-align: center; }
+  .qbody { padding: 11px 11px 4px; } .qtext { font-size: 15.5px; }
+  .optrow { padding: 13px 11px; margin-bottom: 9px; } .otext { font-size: 14px; }
+  .pq { width: 42px; height: 40px; font-size: 13px; }
+  .palToggle { width: 44px; height: 44px; font-size: 19px; }
+  .srcchip { max-width: 100%; }
+}
+@media (max-width: 420px) {
+  .tbtn { padding: 7px 7px; font-size: 10px; min-height: 36px; }
+  .abtn { flex: 1 1 100%; }
+  .qtext { font-size: 15px; }
+}
 /* ===== question panel ===== */
 .qpanel { background: #fff; border: 1px solid #cfd7e2; border-radius: 5px; }
 .qhead { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; background: #f3f6fa; border-bottom: 1px solid #dde4ec; padding: 8px 12px; font-size: 12px; color: #44546a; }
@@ -152,14 +171,13 @@ table.tt th { background: #eef2f7; color: #2b3646; }
       <button class="tbtn" onclick="toggleFull()">Full Screen</button>
     </div>
   </div>
-  <div class="secbar" id="secTabs"></div>
   <button class="palToggle" id="palToggle" onclick="togglePalette()" title="Palette chhupayein/dikhayein">&#187;</button>
   <div class="layout">
     <div class="qcol">
       <div class="qpanel">
         <div class="qhead">
           <span id="qNoLine"></span>
-          <span id="secLine"></span>
+          <span id="srcLine" class="srcchip"></span>
           <span class="langsel">
             <button id="langE" onclick="setLang('en')">English</button>
             <button id="langH" onclick="setLang('hi')">Hindi</button>
@@ -193,7 +211,7 @@ table.tt th { background: #eef2f7; color: #2b3646; }
           <div class="row"><span class="sw ma"></span> Answered &amp; Marked (evaluation ke liye mana jayega)</div>
         </div>
         <div class="palette" id="dotBox"></div>
-        <div class="sumtitle">SECTION SUMMARY</div>
+        <div class="sumtitle">TEST SUMMARY</div>
         <table class="sumtab">
           <tr><td>Answered</td><td class="n" id="sumAns">0</td></tr>
           <tr><td>Not Answered (dekhe hue)</td><td class="n" id="sumNotAns">0</td></tr>
@@ -216,8 +234,8 @@ table.tt th { background: #eef2f7; color: #2b3646; }
       <li><b>Quiz Mode:</b> har question par uttar chunte hi sahi/galat + explanation turant dikhta hai (seekhne ke liye).</li>
       <li><b>Exam Mode:</b> live exam jaisa — option chunne ke baad <b>Save &amp; Next</b> dabakar jawab save karein. Sirf option chunne se jawab save nahi hota.</li>
       <li><b>Clear Response</b> — chuna hua jawab hataata hai. <b>Mark for Review &amp; Next</b> — baad mein dekhne ke liye mark karta hai.</li>
-      <li><b>Question Palette</b> (dayiin taraf): har question ka rang batata hai ki uska kya status hai. Neeche <b>Section Summary</b> bhi hai.</li>
-      <li>Upar <b>section tabs</b> se kisi bhi section mein ja sakte hain. <b>Language</b> button se English/Hindi/Both kar sakte hain. <b>A+/A-</b> se text bada-chhota.</li>
+      <li><b>Question Palette</b> (dayiin taraf): har question ka rang batata hai ki uska kya status hai. Neeche <b>Test Summary</b> bhi hai. Upar wale <b>&#187;</b> button se palette chhupa bhi sakte hain.</li>
+      <li>Har question ke saath uska <b>Source (exam/year)</b> likha hota hai. <b>Language</b> buttons se English/Hindi/Both kar sakte hain. <b>A+/A-</b> se text bada-chhota, mobile par bhi sab kuch set rehta hai.</li>
       <li>Samay poora hone par test apne aap submit hoga.</li>
       <li>Submit ke baad <b>Correct / Wrong / Chhode hue</b> alag gine jayenge; unattempted questions galat nahi gine jaate.</li>
       <li>Result ke baad <b>har question ka explanation</b> (solution) diya jayega.</li>
@@ -305,7 +323,7 @@ function startTest() {
   clearInterval(S.tick);
   S.tick = setInterval(tickTimer, 500);
   tickTimer();
-  renderTabs(); renderPalette(); renderQ();
+  renderPalette(); renderQ();
 }
 function tickTimer() {
   const el = document.getElementById('timerLine');
@@ -352,26 +370,6 @@ function toggleFull() {
   else document.exitFullscreen && document.exitFullscreen();
 }
 
-/* ---------- sections ---------- */
-function sectionList() {
-  const out = [];
-  S.qs.forEach((q,i) => { if (out.indexOf(q.sec) === -1) out.push(q.sec); });
-  return out;
-}
-function renderTabs() {
-  const b = document.getElementById('secTabs'); b.innerHTML = '';
-  sectionList().forEach(sec => {
-    const t = document.createElement('div');
-    t.className = 'stab' + (S.qs[S.idx] && S.qs[S.idx].sec === sec ? ' cur' : '');
-    t.textContent = sec;
-    t.onclick = () => {
-      const first = S.qs.findIndex(q => q.sec === sec);
-      if (first >= 0) { saveTime(false); S.idx = first; S.pending = undefined; renderQ(); }
-    };
-    b.appendChild(t);
-  });
-}
-
 /* ---------- palette ---------- */
 function paletteClass(i) {
   if (S.marks[i]) return (S.answers[i] !== undefined) ? 'pq mkans' : 'pq mk';
@@ -415,7 +413,7 @@ function renderQ() {
   S.visited[S.idx] = true;
   S.enter = Date.now();
   document.getElementById('qNoLine').innerHTML = '<span class="qno">Question ' + (S.idx+1) + ' of ' + S.qs.length + '</span>';
-  document.getElementById('secLine').textContent = q.sec;
+  document.getElementById('srcLine').innerHTML = 'Source: ' + esc(q.src);
   const showEN = (S.lang === 'en' || S.lang === 'both');
   const showHI = (S.lang === 'hi' || S.lang === 'both');
   document.getElementById('qText').innerHTML = showEN ? esc(q.q[0]) : '';
@@ -435,7 +433,7 @@ function renderQ() {
     box.appendChild(lab);
   });
   document.getElementById('fbBox').innerHTML = '';
-  renderTabs(); renderPalette();
+  renderPalette();
 }
 function onPick(i) {
   if (S.mode === 'exam') {
@@ -465,16 +463,11 @@ function saveNext() {
   nextQ();
 }
 function sectionEndNext() {
-  /* TCS iON: last question of a section -> first question of next section */
-  const sec = S.qs[S.idx].sec;
-  let n = -1;
-  for (let i = S.idx+1; i < S.qs.length; i++) if (S.qs[i].sec !== sec) { n = i; break; }
-  return n;
+  /* sections removed (topic-wise file = one continuous test) */
+  return Math.min(S.idx+1, S.qs.length-1);
 }
 function nextQ() {
-  let n = sectionEndNext();
-  if (n === -1) n = Math.min(S.idx+1, S.qs.length-1);
-  S.idx = n;
+  S.idx = sectionEndNext();
   renderQ();
 }
 function moveQ(d) {
@@ -498,7 +491,7 @@ function showFeedback(picked) {
     '<div class="fb ' + (ok ? 'ok' : 'no') + '">' +
     (ok ? '<b>Sahi uttar.</b>' : '<b>Galat uttar.</b> Sahi uttar: <b>(' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</b>') +
     '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
-    '<div class="src">Source: ' + esc(q.src) + '</div></div>';
+    '<div class="src">Source (exam/year): ' + esc(q.src) + '</div></div>';
   const cb = document.getElementById('quizNav');
   cb.innerHTML = '';
   const b = document.createElement('button'); b.className = 'abtn next';
@@ -571,7 +564,7 @@ function submitTest(auto) {
       q.opts.map((o,k) => '<div class="line">' + (k === q.ans ? '<span class="okc">(' + L[k] + ') ' + esc(o[0]) + '</span>' : '(' + L[k] + ') ' + esc(o[0])) + '</div>').join('') +
       line +
       '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '—') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
-      '<div class="meta">Samay: ' + (S.spent[i] || 0).toFixed(0) + ' second &nbsp;|&nbsp; Source: ' + esc(q.src) + ' &nbsp;|&nbsp; ' + esc(q.sec) + '</div>';
+      '<div class="meta">Samay: ' + (S.spent[i] || 0).toFixed(0) + ' second &nbsp;|&nbsp; Source (exam/year): ' + esc(q.src) + '</div>';
     rb.appendChild(div);
   });
   window.scrollTo({top:0,behavior:'smooth'});

@@ -112,7 +112,7 @@
 - **(C)** Receiver discards frames 3 and 4 / Receiver discards frames 3 and 4 ✅ **(CORRECT)**
 - **(D)** Receiver acts like Selective Repeat / Receiver acts like Selective Repeat
 
-**✔ Correct Answer: (C) Receiver discards frames 3 and 4** — GBN receiver सिर्फ अगली in-order frame चाहता है — frame 2 खोने पर 3 और 4 out-of-order हैं, इसलिए उन्हें discard कर दिया जाता है.
+**✔ Correct Answer: (C) Receiver discards frames 3 and 4** — A GBN receiver wants only the next in-order frame — when frame 2 is lost, 3 and 4 are out-of-order, so they are discarded.
 
 *GBN receiver सिर्फ अगली in-order frame चाहता है — frame 2 खोने पर 3 और 4 out-of-order हैं, इसलिए उन्हें discard कर दिया जाता है.*
 
@@ -236,7 +236,7 @@
 
 *पहला blank Error control (errors detect+correct), दूसरा Flow control (sender की speed receiver के हिसाब से) — दोनों Data Link/Transport layers में मिलते हैं.*
 
-**★ Nukta (Key Point):** Error = सही करना; Flow = संतुलन बनाना. दोनों अलग-अलग काम हैं.
+**★ Nukta (Key Point):** Error = putting right; Flow = maintaining balance. Both are separate jobs.
 
 *Error = सही करना; Flow = संतुलन बनाना. दोनों अलग-अलग काम हैं.*
 
@@ -256,7 +256,7 @@
 
 *Flow control sender को रोकता है ताकि receiver का buffer न भरे — इसलिए acknowledgment आने तक data सीमित रहता है.*
 
-**★ Nukta (Key Point):** Flow control = sender↔receiver के बीच का संतुलन; यही definition परीक्षा में बार-बार आती है.
+**★ Nukta (Key Point):** Flow control = the balance between sender and receiver; this definition is asked again and again in exams.
 
 *Flow control = sender↔receiver के बीच का संतुलन; यही definition परीक्षा में बार-बार आती है.*
 
@@ -316,7 +316,7 @@
 
 *Stop-and-Wait में sender एक frame भेजकर उसके acknowledgment का इंतज़ार करता है.*
 
-**★ Nukta (Key Point):** इसी waiting के कारण इसका नाम 'Stop-and-Wait' पड़ा.
+**★ Nukta (Key Point):** Because of this waiting, its name became 'Stop-and-Wait'.
 
 *इसी waiting के कारण इसका नाम 'Stop-and-Wait' पड़ा.*
 
@@ -352,7 +352,7 @@
 - **(C)** N / N
 - **(D)** 2 / 2
 
-**✔ Correct Answer: (B) 1** — Stop-and-Wait की window size 1 होती है — एक ही frame बिना ACK के भेजा जा सकता है.
+**✔ Correct Answer: (B) 1** — Stop-and-Wait has window size 1 — only one frame can be out without an ACK.
 
 *Stop-and-Wait की window size 1 होती है — एक ही frame बिना ACK के भेजा जा सकता है.*
 
@@ -372,7 +372,7 @@
 - **(C)** High memory usage / High memory usage
 - **(D)** Frame loss / Frame loss
 
-**✔ Correct Answer: (B) Low efficiency due to waiting** — हर frame के बाद इंतज़ार करने से line बेकार खाली रहती है — खासकर long-distance links पर efficiency बहुत गिर जाती है.
+**✔ Correct Answer: (B) Low efficiency due to waiting** — Waiting after every frame leaves the line idle — efficiency drops sharply, especially on long-distance links.
 
 *हर frame के बाद इंतज़ार करने से line बेकार खाली रहती है — खासकर long-distance links पर efficiency बहुत गिर जाती है.*
 
@@ -392,7 +392,7 @@
 - **(C)** Receiver retransmits / Receiver retransmits
 - **(D)** No retransmission / No retransmission
 
-**✔ Correct Answer: (B) Sender retransmits after timeout** — ACK न आने पर sender का timeout timer बजता है और वह frame दोबारा भेजता है.
+**✔ Correct Answer: (B) Sender retransmits after timeout** — If the ACK does not arrive, the sender's timeout timer fires and it retransmits that frame.
 
 *ACK न आने पर sender का timeout timer बजता है और वह frame दोबारा भेजता है.*
 
@@ -416,7 +416,7 @@
 
 *Go-Back-N में receiver केवल in-order frames रखता है; गलत frame के बाद के सारे frames छोड़ देता है और sender उस frame से आगे के सभी outstanding frames दोबारा भेजता है.*
 
-**★ Nukta (Key Point):** GBN = 'जहाँ चूक, वहाँ से फिर से' — Selective Repeat में सिर्फ गलत frame दोबारा जाता है.
+**★ Nukta (Key Point):** GBN = 'from where you slipped, start again' — in Selective Repeat only the wrong frame is resent.
 
 *GBN = 'जहाँ चूक, वहाँ से फिर से' — Selective Repeat में सिर्फ गलत frame दोबारा जाता है.*
 
@@ -436,7 +436,7 @@
 
 *Window = 2ⁿ − 1 → 63 = 2⁶ − 1, इसलिए n = 6 bits.*
 
-**★ Nukta (Key Point):** उपर वाले प्रश्न का उल्टा — यही formula दोनों तरफ से याद रखो.
+**★ Nukta (Key Point):** The reverse of the question above — memorise the formula both ways.
 
 *उपर वाले प्रश्न का उल्टा — यही formula दोनों तरफ से याद रखो.*
 
@@ -472,7 +472,7 @@
 - **(C)** Go-Back-N / Go-Back-N
 - **(D)** None of the above / None of the above
 
-**✔ Correct Answer: (B) Selective Repeat** — Selective Repeat सिर्फ खोए frames दोबारा भेजता है और out-of-order frames भी buffer कर लेता है — bandwidth सबसे ज़्यादा उपयोग होती है.
+**✔ Correct Answer: (B) Selective Repeat** — Selective Repeat resends only the lost frames and also buffers out-of-order frames — bandwidth utilisation is the highest.
 
 *Selective Repeat सिर्फ खोए frames दोबारा भेजता है और out-of-order frames भी buffer कर लेता है — bandwidth सबसे ज़्यादा उपयोग होती है.*
 
@@ -492,7 +492,7 @@
 - **(C)** 6 / 6
 - **(D)** 2 / 2
 
-**✔ Correct Answer: (B) 4** — दोनों codes को align करके अलग-अलग bits गिनो: positions 2, 5, 7 और 8 बदलती हैं — कुल 4 अंतर. Hamming distance = अलग bits की संख्या = 4.
+**✔ Correct Answer: (B) 4** — Align the two codes and count differing bits: positions 2, 5, 7 and 8 differ — 4 differences in all. Hamming distance = number of differing bits = 4.
 
 *दोनों codes को align करके अलग-अलग bits गिनो: positions 2, 5, 7 और 8 बदलती हैं — कुल 4 अंतर. Hamming distance = अलग bits की संख्या = 4.*
 
@@ -512,7 +512,7 @@
 - **(C)** OR / OR
 - **(D)** AND / AND
 
-**✔ Correct Answer: (A) XOR** — XOR करने पर जहाँ bits अलग होती हैं वहाँ 1 आता है — 1s की गिनती ही Hamming distance है.
+**✔ Correct Answer: (A) XOR** — XOR gives 1 where the bits differ — counting the 1s gives the Hamming distance.
 
 *XOR करने पर जहाँ bits अलग होती हैं वहाँ 1 आता है — 1s की गिनती ही Hamming distance है.*
 
@@ -532,11 +532,11 @@
 - **(C)** detection / detection
 - **(D)** parity / parity
 
-**✔ Correct Answer: (A) redundancy** — अतिरिक्त bits redundancy कहलाते हैं — यानी data के ऊपर डाला गया भार जो errors पकड़ने में मदद करता है.
+**✔ Correct Answer: (A) redundancy** — The extra bits are called redundancy — overhead added on top of the data that helps catch errors.
 
 *अतिरिक्त bits redundancy कहलाते हैं — यानी data के ऊपर डाला गया भार जो errors पकड़ने में मदद करता है.*
 
-**★ Nukta (Key Point):** Redundancy = 'जान-बूझकर भेजा अतिरिक्त' — इसी से error control संभव है.
+**★ Nukta (Key Point):** Redundancy = 'extra bits sent on purpose' — this is what makes error control possible.
 
 *Redundancy = 'जान-बूझकर भेजा अतिरिक्त' — इसी से error control संभव है.*
 
@@ -552,7 +552,7 @@
 - **(C)** Hamming code / Hamming code
 - **(D)** Parity bit / Parity bit ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) Parity bit** — Parity bit हर byte के साथ एक extra bit जोड़ता है ताकि 1s की गिनती even/odd बनी रहे.
+**✔ Correct Answer: (D) Parity bit** — A parity bit adds one extra bit with every byte so that the count of 1s stays even/odd.
 
 *Parity bit हर byte के साथ एक extra bit जोड़ता है ताकि 1s की गिनती even/odd बनी रहे.*
 
@@ -592,11 +592,11 @@
 - **(C)** positive number of errors / positive number of errors
 - **(D)** negative number of errors / negative number of errors
 
-**✔ Correct Answer: (A) odd number of errors** — Simple parity में odd संख्या में bit errors पलटने पर parity बदल जाती है और error पकड़ में आता है; even errors छिप जाते हैं.
+**✔ Correct Answer: (A) odd number of errors** — In simple parity, when an odd number of bits flip, the parity changes and the error is caught; an even number of errors stays hidden.
 
 *Simple parity में odd संख्या में bit errors पलटने पर parity बदल जाती है और error पकड़ में आता है; even errors छिप जाते हैं.*
 
-**★ Nukta (Key Point):** Parity = odd errors पकड़ता है; even छोड़ देता है — यही इसकी सीमा है.
+**★ Nukta (Key Point):** Parity catches odd errors and misses even ones — that is its limit.
 
 *Parity = odd errors पकड़ता है; even छोड़ देता है — यही इसकी सीमा है.*
 
@@ -756,7 +756,7 @@
 
 *'सभी outstanding frames दोबारा भेजना' Go-Back-N की पहचान है.*
 
-**★ Nukta (Key Point):** GBN = Go Back N — Nवें तक सब दोबारा; SR = सिर्फ गलत वाला.
+**★ Nukta (Key Point):** GBN = Go Back N — everything up to N is resent; SR = only the wrong one.
 
 *GBN = Go Back N — Nवें तक सब दोबारा; SR = सिर्फ गलत वाला.*
 
@@ -932,7 +932,7 @@
 - **(C)** 1 + x is a factor of G(x) / 1 + x is a factor of G(x) ✅ **(CORRECT)**
 - **(D)** G(x) has an odd number of terms / G(x) has an odd number of terms
 
-**✔ Correct Answer: (C) 1 + x is a factor of G(x)** — यदि (1 + x) यानी x + 1, G(x) का factor हो, तो code की सभी codewords में 1s की संख्या even होती है — इसलिए odd त्रुटियाँ पकड़ में आ जाती हैं.
+**✔ Correct Answer: (C) 1 + x is a factor of G(x)** — If (1 + x), i.e. x + 1, is a factor of G(x), then every codeword has an even number of 1s — so odd errors are caught.
 
 *यदि (1 + x) यानी x + 1, G(x) का factor हो, तो code की सभी codewords में 1s की संख्या even होती है — इसलिए odd त्रुटियाँ पकड़ में आ जाती हैं.*
 
@@ -1016,7 +1016,7 @@
 
 *Min frame = 2dR/v → v = 2dR/L = 2 × 1 km × 10⁸ bps / (1250×8 bits) = 2×10⁸/10⁴ = 20000 km/sec.*
 
-**★ Nukta (Key Point):** GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही इस प्रश्न का खेल है.
+**★ Nukta (Key Point):** GATE 2015 key (d) 20000 km/s. Getting the speed by inverting the formula — that is the trick of this question.
 
 *GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही इस प्रश्न का खेल है.*
 
@@ -1077,7 +1077,7 @@
 - **(C)** To reduce collisions / To reduce collisions
 - **(D)** To detect errors / To detect errors
 
-**✔ Correct Answer: (B) To prevent confusion between data and the flag** — Flag pattern (जैसे HDLC की 01111110) data में भी आ सकती है — confusion रोकने के लिए data में हर पाँच 1s के बाद एक 0 ठूँस दिया जाता है (bit stuffing).
+**✔ Correct Answer: (B) To prevent confusion between data and the flag** — The flag pattern (e.g. HDLC's 01111110) can also appear inside data — to prevent confusion, a 0 is stuffed after every five 1s in the data (bit stuffing).
 
 *Flag pattern (जैसे HDLC की 01111110) data में भी आ सकती है — confusion रोकने के लिए data में हर पाँच 1s के बाद एक 0 ठूँस दिया जाता है (bit stuffing).*
 
@@ -1101,7 +1101,7 @@
 
 *Ethernet frame: Preamble+SFD, फिर Destination MAC, Source MAC, Type/Length, Data (46–1500 bytes), और अंत में FCS (CRC).*
 
-**★ Nukta (Key Point):** याद रखो: Preamble के बाद पहले RECEIVER का पता (Destination), फिर भेजने वाले का — बाकी बाद में.
+**★ Nukta (Key Point):** Remember: after the Preamble come the RECEIVER's address (Destination) first, then the sender's — the rest later.
 
 *याद रखो: Preamble के बाद पहले RECEIVER का पता (Destination), फिर भेजने वाले का — बाकी बाद में.*
 
@@ -1137,11 +1137,11 @@
 - **(C)** CSMA / CSMA
 - **(D)** CSMA/CD / CSMA/CD
 
-**✔ Correct Answer: (B) Slotted ALOHA** — Slotted ALOHA में time को slots में बाँटा जाता है और transmission सिर्फ slot की शुरुआत में होती है — इसलिए सभी nodes synchronized होने चाहिए.
+**✔ Correct Answer: (B) Slotted ALOHA** — In Slotted ALOHA, time is divided into slots and transmission starts only at a slot boundary — so all nodes must be synchronised.
 
 *Slotted ALOHA में time को slots में बाँटा जाता है और transmission सिर्फ slot की शुरुआत में होती है — इसलिए सभी nodes synchronized होने चाहिए.*
 
-**★ Nukta (Key Point):** Pure ALOHA = जब मन चाहे भेजो; Slotted = slot की घड़ी देखकर भेजो.
+**★ Nukta (Key Point):** Pure ALOHA = send whenever you like; Slotted = send only when the slot clock says so.
 
 *Pure ALOHA = जब मन चाहे भेजो; Slotted = slot की घड़ी देखकर भेजो.*
 
@@ -1237,11 +1237,11 @@
 - **(C)** Appending a nibble to the flag sequence / Appending a nibble to the flag sequence
 - **(D)** Appending a nibble to the user data stream / Appending a nibble to the user data stream
 
-**✔ Correct Answer: (A) Inserting a '0' in the user stream to differentiate it from the flag** — User (data) stream में पाँच लगातार 1s के बाद एक 0 जोड़ा जाता है ताकि data, flag से अलग पहचाना जा सके.
+**✔ Correct Answer: (A) Inserting a '0' in the user stream to differentiate it from the flag** — In the user (data) stream, after five consecutive 1s a 0 is inserted so that the data can be told apart from the flag.
 
 *User (data) stream में पाँच लगातार 1s के बाद एक 0 जोड़ा जाता है ताकि data, flag से अलग पहचाना जा सके.*
 
-**★ Nukta (Key Point):** Stuffing हमेशा DATA में होती है, flag में नहीं; byte stuffing में 0x7E के बाद 0x7D जुड़ता है.
+**★ Nukta (Key Point):** Stuffing is always done in DATA, never in the flag; in byte stuffing 0x7D follows 0x7E.
 
 *Stuffing हमेशा DATA में होती है, flag में नहीं; byte stuffing में 0x7E के बाद 0x7D जुड़ता है.*
 
@@ -1257,11 +1257,11 @@
 - **(C)** Jam signal / Jam signal ✅ **(CORRECT)**
 - **(D)** None of these / None of these
 
-**✔ Correct Answer: (C) Jam signal** — Collision detect होते ही सभी stations एक Jam signal भेजते हैं ताकि बाकी stations तुरंत जान जाएँ और line खाली हो.
+**✔ Correct Answer: (C) Jam signal** — As soon as a collision is detected, all stations send a Jam signal so that the others know at once and the line clears.
 
 *Collision detect होते ही सभी stations एक Jam signal भेजते हैं ताकि बाकी stations तुरंत जान जाएँ और line खाली हो.*
 
-**★ Nukta (Key Point):** Jam = 'टकराव हो गया!' का सायरन. Preamble = frame शुरू होने की घोषणा.
+**★ Nukta (Key Point):** Jam = the siren shouting 'a collision happened!'. Preamble = announcement that a frame is starting.
 
 *Jam = 'टकराव हो गया!' का सायरन. Preamble = frame शुरू होने की घोषणा.*
 
@@ -1301,7 +1301,7 @@
 
 *Data field 46 bytes से 1500 bytes तक होता है (1500 = Ethernet MTU).*
 
-**★ Nukta (Key Point):** पूरे frame का range 64–1518; data का 46–1500. यह जोड़ी अक्सर पूछी जाती है.
+**★ Nukta (Key Point):** The whole frame ranges 64–1518 bytes; the data 46–1500. This pair is asked often.
 
 *पूरे frame का range 64–1518; data का 46–1500. यह जोड़ी अक्सर पूछी जाती है.*
 
@@ -1317,7 +1317,7 @@
 - **(C)** Detect collisions using CSMA/CD / Detect collisions using CSMA/CD ✅ **(CORRECT)**
 - **(D)** Increase security / Increase security
 
-**✔ Correct Answer: (C) Detect collisions using CSMA/CD** — CSMA/CD में sender को transmission के दौरान collision detect करना होता है — इसलिए frame इतना बड़ा होना चाहिए कि signal round-trip पूरा कर सके. 64 bytes की यही सीमा है.
+**✔ Correct Answer: (C) Detect collisions using CSMA/CD** — In CSMA/CD the sender must detect collisions while transmitting — so the frame must be long enough for the signal to complete a round trip. That is the 64-byte limit.
 
 *CSMA/CD में sender को transmission के दौरान collision detect करना होता है — इसलिए frame इतना बड़ा होना चाहिए कि signal round-trip पूरा कर सके. 64 bytes की यही सीमा है.*
 
@@ -1337,7 +1337,7 @@
 - **(C)** Addressing / Addressing
 - **(D)** Channel access / Channel access ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) Channel access** — MAC sub-layer का मुख्य काम channel (medium) तक पहुँच नियंत्रित करना है — कब कौन भेजेगा.
+**✔ Correct Answer: (D) Channel access** — The MAC sub-layer's main job is controlling access to the channel (medium) — who transmits when.
 
 *MAC sub-layer का मुख्य काम channel (medium) तक पहुँच नियंत्रित करना है — कब कौन भेजेगा.*
 
@@ -1357,7 +1357,7 @@
 - **(C)** Address resolution / Address resolution
 - **(D)** Flow control / Flow control
 
-**✔ Correct Answer: (B) Collision detection** — CSMA/CD का काम collisions का पता लगाकर उन्हें संभालना है — ताकि shared medium पर frames टकराएँ नहीं या टकराने पर दोबारा भेजे जाएँ.
+**✔ Correct Answer: (B) Collision detection** — CSMA/CD's job is to detect collisions and handle them — so frames on a shared medium either avoid collisions or are resent after one.
 
 *CSMA/CD का काम collisions का पता लगाकर उन्हें संभालना है — ताकि shared medium पर frames टकराएँ नहीं या टकराने पर दोबारा भेजे जाएँ.*
 
@@ -1417,7 +1417,7 @@
 - **(C)** Round Robin / Round Robin ✅ **(CORRECT)**
 - **(D)** None of the above / None of the above
 
-**✔ Correct Answer: (C) Round Robin** — Token Ring में token एक-एक station तक घूमता है और जिसके पास token हो वही भेजता है — यह Round Robin (बारी-बारी) तरीका है.
+**✔ Correct Answer: (C) Round Robin** — In Token Ring the token circles station to station and only its holder transmits — this is a Round Robin (turn-by-turn) method.
 
 *Token Ring में token एक-एक station तक घूमता है और जिसके पास token हो वही भेजता है — यह Round Robin (बारी-बारी) तरीका है.*
 
@@ -1461,7 +1461,7 @@
 
 *Ethernet की MTU (Maximum Transmission Unit) 1500 bytes होती है — यानी data field में अधिकतम इतना data.*
 
-**★ Nukta (Key Point):** MTU = data की सीमा; 1518 = पूरे frame की सीमा. भ्रम में मत आना.
+**★ Nukta (Key Point):** MTU = the data limit; 1518 = the whole frame limit. Don't confuse the two.
 
 *MTU = data की सीमा; 1518 = पूरे frame की सीमा. भ्रम में मत आना.*
 
@@ -1517,7 +1517,7 @@
 - **(C)** Bluetooth / Bluetooth
 - **(D)** Ethernet / Ethernet
 
-**✔ Correct Answer: (A) Wi-Fi (CSMA/CA)** — NAV — Wi-Fi (802.11 CSMA/CA) की वह टाइमर है जो बताती है कि medium कितनी देर busy रहेगा; बाकी stations इतनी देर चुप रहते हैं.
+**✔ Correct Answer: (A) Wi-Fi (CSMA/CA)** — NAV — the Wi-Fi (802.11 CSMA/CA) timer that tells how long the medium will stay busy; other stations keep quiet that long.
 
 *NAV — Wi-Fi (802.11 CSMA/CA) की वह टाइमर है जो बताती है कि medium कितनी देर busy रहेगा; बाकी stations इतनी देर चुप रहते हैं.*
 
@@ -1537,11 +1537,11 @@
 - **(C)** Can't say / Can't say
 - **(D)** None of the above / None of the above
 
-**✔ Correct Answer: (A) should reserve** — Reservation protocols में stations पहले अपना slot reserve करती हैं, फिर बारी आने पर बिना टकराव के भेजती हैं.
+**✔ Correct Answer: (A) should reserve** — In reservation protocols, stations first reserve their slot, then transmit in turn without collisions.
 
 *Reservation protocols में stations पहले अपना slot reserve करती हैं, फिर बारी आने पर बिना टकराव के भेजती हैं.*
 
-**★ Nukta (Key Point):** Reservation = पहले बुकिंग, फिर यात्रा — contention (ALOHA/CSMA) में बुकिंग नहीं.
+**★ Nukta (Key Point):** Reservation = book first, travel later — contention (ALOHA/CSMA) has no booking.
 
 *Reservation = पहले बुकिंग, फिर यात्रा — contention (ALOHA/CSMA) में बुकिंग नहीं.*
 
@@ -1577,7 +1577,7 @@
 - **(C)** A bridge builds its table by inspecting incoming packets / A bridge builds its table by inspecting incoming packets
 - **(D)** A router can connect between a LAN and a WAN / A router can connect between a LAN and a WAN
 
-**✔ Correct Answer: (B) A bridge uses IP addresses while a router uses MAC addresses** — यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.
+**✔ Correct Answer: (B) A bridge uses IP addresses while a router uses MAC addresses** — This statement is reversed — a Bridge uses MAC addresses and a Router uses IP addresses. So this is the 'not correct' option.
 
 *यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.*
 
@@ -1597,7 +1597,7 @@
 - **(C)** Handling of cell delay variation / Handling of cell delay variation
 - **(D)** Segmentation and reassembly of user information / Segmentation and reassembly of user information
 
-**✔ Correct Answer: (A) Cell header generation** — Cell header बनाना ATM layer का काम है — AAL user data को cells में तोड़ने-जोड़ने और error/delay संभालने का काम करती है.
+**✔ Correct Answer: (A) Cell header generation** — Building the cell header is the ATM layer's job — the AAL splits/joins user data into cells and handles error/delay.
 
 *Cell header बनाना ATM layer का काम है — AAL user data को cells में तोड़ने-जोड़ने और error/delay संभालने का काम करती है.*
 
@@ -1702,11 +1702,11 @@
 - **(C)** Packet lifespan control / Packet lifespan control ✅ **(CORRECT)**
 - **(D)** Encryption / Encryption
 
-**✔ Correct Answer: (C) Packet lifespan control** — TTL (Time To Live) packet का जीवन-काल है — हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है. इसी से routing loops रुकते हैं.
+**✔ Correct Answer: (C) Packet lifespan control** — TTL (Time To Live) is the packet's lifetime — it drops by 1 at every hop; at 0 the packet is discarded. This is what stops routing loops.
 
 *TTL (Time To Live) packet का जीवन-काल है — हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है. इसी से routing loops रुकते हैं.*
 
-**★ Nukta (Key Point):** TTL = loop-रोधक. यही traceroute को भी चलाता है (अलग-अलग TTL से path बनता है).
+**★ Nukta (Key Point):** TTL = loop-stopper. It is also what runs traceroute (different TTLs map the path).
 
 *TTL = loop-रोधक. यही traceroute को भी चलाता है (अलग-अलग TTL से path बनता है).*
 
@@ -1762,7 +1762,7 @@
 - **(C)** A* / A*
 - **(D)** Kruskal / Kruskal
 
-**✔ Correct Answer: (B) Dijkstra** — OSPF (link-state protocol) हर router का पूरा नक्शा रखता है और Dijkstra algorithm से सबसे छोटा रास्ता निकालता है.
+**✔ Correct Answer: (B) Dijkstra** — OSPF (a link-state protocol) keeps a full map of every router and runs Dijkstra's algorithm for the shortest path.
 
 *OSPF (link-state protocol) हर router का पूरा नक्शा रखता है और Dijkstra algorithm से सबसे छोटा रास्ता निकालता है.*
 
@@ -1802,11 +1802,11 @@
 - **(C)** Slow convergence / Slow convergence
 - **(D)** Lack of security / Lack of security
 
-**✔ Correct Answer: (B) Count-to-infinity problem** — Distance vector protocols में गलत जानकारी पड़ोसियों से गोल-गोल घूमती रहती है और hop counts बढ़ते जाते हैं — यही count-to-infinity समस्या है.
+**✔ Correct Answer: (B) Count-to-infinity problem** — In distance vector protocols, bad news keeps circulating among neighbours and hop counts keep rising — this is the count-to-infinity problem.
 
 *Distance vector protocols में गलत जानकारी पड़ोसियों से गोल-गोल घूमती रहती है और hop counts बढ़ते जाते हैं — यही count-to-infinity समस्या है.*
 
-**★ Nukta (Key Point):** DV की पहचान ही count-to-infinity; link-state इससे मुक्त है (पर ज़्यादा memory लेता है).
+**★ Nukta (Key Point):** Count-to-infinity is the signature of DV; link-state is free of it (but uses more memory).
 
 *DV की पहचान ही count-to-infinity; link-state इससे मुक्त है (पर ज़्यादा memory लेता है).*
 
@@ -1902,7 +1902,7 @@
 - **(C)** Resolves domain names / Resolves domain names
 - **(D)** Opens ports on the firewall / Opens ports on the firewall
 
-**✔ Correct Answer: (B) Tracks the path a packet takes to the destination** — Traceroute रास्ते के हर router (hop) का पता और delay दिखाता है — अलग-अलग TTL वाले packets भेजकर.
+**✔ Correct Answer: (B) Tracks the path a packet takes to the destination** — Traceroute shows every router (hop) on the path and its delay — by sending packets with different TTLs.
 
 *Traceroute रास्ते के हर router (hop) का पता और delay दिखाता है — अलग-अलग TTL वाले packets भेजकर.*
 
@@ -2042,7 +2042,7 @@
 - **(C)** 13 bits / 13 bits ✅ **(CORRECT)**
 - **(D)** 32 bits / 32 bits
 
-**✔ Correct Answer: (C) 13 bits** — Fragment Offset 13 bits का होता है — यह बताता है कि टुकड़ा original datagram में कहाँ बैठेगा.
+**✔ Correct Answer: (C) 13 bits** — Fragment Offset is 13 bits — it tells where the fragment sits inside the original datagram.
 
 *Fragment Offset 13 bits का होता है — यह बताता है कि टुकड़ा original datagram में कहाँ बैठेगा.*
 
@@ -2062,7 +2062,7 @@
 - **(C)** the Header Checksum / the Header Checksum
 - **(D)** encapsulating packets in larger frames / encapsulating packets in larger frames
 
-**✔ Correct Answer: (A) the More Fragments flag and Fragment Offset field** — More Fragments (MF) flag बताता है कि और टुकड़े आने हैं और Fragment Offset बताता है कि टुकड़ा कहाँ रखना है — इन्हीं से reassembly होता है.
+**✔ Correct Answer: (A) the More Fragments flag and Fragment Offset field** — The More Fragments (MF) flag says more fragments are coming, and the Fragment Offset says where to place this one — reassembly uses these two.
 
 *More Fragments (MF) flag बताता है कि और टुकड़े आने हैं और Fragment Offset बताता है कि टुकड़ा कहाँ रखना है — इन्हीं से reassembly होता है.*
 
@@ -2082,7 +2082,7 @@
 - **(C)** Combining multiple packets / Combining multiple packets
 - **(D)** Encrypting packets / Encrypting packets
 
-**✔ Correct Answer: (B) Splitting large packets so they fit a smaller MTU link** — Fragmentation का अर्थ है बड़े packet के छोटे-छोटे टुकड़े करना ताकि वे रास्ते की छोटी MTU वाली link से गुज़र सकें.
+**✔ Correct Answer: (B) Splitting large packets so they fit a smaller MTU link** — Fragmentation means breaking a large packet into small pieces so they can pass over a link with a small MTU on the way.
 
 *Fragmentation का अर्थ है बड़े packet के छोटे-छोटे टुकड़े करना ताकि वे रास्ते की छोटी MTU वाली link से गुज़र सकें.*
 
@@ -2162,7 +2162,7 @@
 - **(C)** 15 / 15 ✅ **(CORRECT)**
 - **(D)** 32 / 32
 
-**✔ Correct Answer: (C) 15** — RIP में hop count 15 तक मान्य है — 16 का अर्थ 'पहुँच से बाहर'. इसीलिए RIP बड़े networks के लिए नहीं.
+**✔ Correct Answer: (C) 15** — In RIP, hop count is valid up to 15 — 16 means 'unreachable'. That is why RIP does not suit large networks.
 
 *RIP में hop count 15 तक मान्य है — 16 का अर्थ 'पहुँच से बाहर'. इसीलिए RIP बड़े networks के लिए नहीं.*
 
@@ -2182,7 +2182,7 @@
 - **(C)** B only / B only
 - **(D)** Both A and C / Both A and C ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) Both A and C** — Split horizon (जहाँ से सीखा, वहाँ वापस न बताना) और poison reverse (रास्ते को 16 hops घोषित कर देना) — दोनों loop-रोधक तकनीकें हैं.
+**✔ Correct Answer: (D) Both A and C** — Split horizon (don't advertise a route back where you learned it) and poison reverse (declare the route as 16 hops) — both are loop-stopping techniques.
 
 *Split horizon (जहाँ से सीखा, वहाँ वापस न बताना) और poison reverse (रास्ते को 16 hops घोषित कर देना) — दोनों loop-रोधक तकनीकें हैं.*
 
@@ -2202,7 +2202,7 @@
 - **(C)** Reach agreement with other routers about network topology / Reach agreement with other routers about network topology
 - **(D)** All of the above / All of the above ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) All of the above** — Dynamic routing protocols रास्ते खुद ढूँढते हैं, updates बाँटते हैं और topology पर सहमति बनाते हैं — तीनों काम होते हैं.
+**✔ Correct Answer: (D) All of the above** — Dynamic routing protocols find paths themselves, share updates and agree on the topology — all three jobs are done.
 
 *Dynamic routing protocols रास्ते खुद ढूँढते हैं, updates बाँटते हैं और topology पर सहमति बनाते हैं — तीनों काम होते हैं.*
 
@@ -2242,7 +2242,7 @@
 - **(C)** 1 − (1 − p)ⁿ⁻¹ / 1 − (1 − p)ⁿ⁻¹
 - **(D)** (1 − p)ⁿ⁻¹ / (1 − p)ⁿ⁻¹
 
-**✔ Correct Answer: (A) n × p × (1 − p)ⁿ⁻¹** — कोई एक station transmit करे (p) और बाकी n−1 न करें (1−p)ⁿ⁻¹; ऐसे n तरीके हैं — इसलिए n·p·(1−p)ⁿ⁻¹.
+**✔ Correct Answer: (A) n × p × (1 − p)ⁿ⁻¹** — One station transmits (p) while the other n−1 stay silent (1−p)ⁿ⁻¹; there are n such ways — hence n·p·(1−p)ⁿ⁻¹.
 
 *कोई एक station transmit करे (p) और बाकी n−1 न करें (1−p)ⁿ⁻¹; ऐसे n तरीके हैं — इसलिए n·p·(1−p)ⁿ⁻¹.*
 
@@ -2262,7 +2262,7 @@
 - **(C)** It can be used to optimize throughput / It can be used to optimize throughput
 - **(D)** It can be used to prevent packet looping / It can be used to prevent packet looping ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) It can be used to prevent packet looping** — TTL हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है — इसी से routing loops में packet घूमते नहीं रहते.
+**✔ Correct Answer: (D) It can be used to prevent packet looping** — TTL drops by 1 at each hop; at 0 the packet is discarded — this is why packets don't circle forever in routing loops.
 
 *TTL हर hop पर 1 घटता है; 0 पर packet छोड़ दिया जाता है — इसी से routing loops में packet घूमते नहीं रहते.*
 
@@ -2461,7 +2461,7 @@ Which one of the following is correct?
 
 *TCP connection शुरू करने के लिए तीन-तरफ़ा handshake (SYN → SYN-ACK → ACK) होता है — SYN यही connection request है.*
 
-**★ Nukta (Key Point):** Flags याद रखो: SYN = शुरुआत; FIN = अंत; RST = रद्द; ACK = पुष्टि.
+**★ Nukta (Key Point):** Remember the flags: SYN = start; FIN = end; RST = abort; ACK = confirmation.
 
 *Flags याद रखो: SYN = शुरुआत; FIN = अंत; RST = रद्द; ACK = पुष्टि.*
 
@@ -2477,11 +2477,11 @@ Which one of the following is correct?
 - **(C)** ACK is slightly delayed / ACK is slightly delayed
 - **(D)** Server is busy / Server is busy
 
-**✔ Correct Answer: (A) Firewall blocks the SYN-ACK** — यदि firewall SYN-ACK को रोक दे तो handshake पूरा नहीं होता और connection नहीं बनती.
+**✔ Correct Answer: (A) Firewall blocks the SYN-ACK** — If a firewall blocks the SYN-ACK, the handshake never completes and no connection is made.
 
 *यदि firewall SYN-ACK को रोक दे तो handshake पूरा नहीं होता और connection नहीं बनती.*
 
-**★ Nukta (Key Point):** Handshake टूटने का सीधा कारण: संदेशों का न पहुँचना (firewall/filter).
+**★ Nukta (Key Point):** The immediate cause of a failed handshake: the messages are not getting through (firewall/filter).
 
 *Handshake टूटने का सीधा कारण: संदेशों का न पहुँचना (firewall/filter).*
 
@@ -2537,7 +2537,7 @@ Which one of the following is correct?
 - **(C)** Slow start / Slow start ✅ **(CORRECT)**
 - **(D)** Leaky bucket / Leaky bucket
 
-**✔ Correct Answer: (C) Slow start** — Connection शुरू में TCP Slow start उपयोग करता है — congestion window छोटा रखकर धीरे-धीरे बढ़ाया जाता है.
+**✔ Correct Answer: (C) Slow start** — At connection start TCP uses Slow Start — the congestion window is kept small and increased gradually.
 
 *Connection शुरू में TCP Slow start उपयोग करता है — congestion window छोटा रखकर धीरे-धीरे बढ़ाया जाता है.*
 
@@ -2557,7 +2557,7 @@ Which one of the following is correct?
 - **(C)** Handle encryption / Handle encryption
 - **(D)** Prioritize packets / Prioritize packets
 
-**✔ Correct Answer: (B) Control the sending rate to avoid network congestion** — cwnd network की क्षमता के हिसाब से sender की गति नियंत्रित करता है — ज़्यादा loss हो तो घटता है, सब ठीक हो तो बढ़ता है.
+**✔ Correct Answer: (B) Control the sending rate to avoid network congestion** — cwnd controls the sender's speed according to network capacity — it shrinks on loss and grows when all is well.
 
 *cwnd network की क्षमता के हिसाब से sender की गति नियंत्रित करता है — ज़्यादा loss हो तो घटता है, सब ठीक हो तो बढ़ता है.*
 
@@ -2577,7 +2577,7 @@ Which one of the following is correct?
 - **(C)** Propagation delay / Propagation delay
 - **(D)** Bandwidth-delay product / Bandwidth-delay product ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) Bandwidth-delay product** — Bandwidth × Delay (BDP) जितना बड़ा हो, window उतनी बड़ी चाहिए — तभी पूरी pipe भरी रहती है और propagation delay छिप जाता है.
+**✔ Correct Answer: (D) Bandwidth-delay product** — The bigger the Bandwidth × Delay (BDP), the bigger the window must be — only then is the pipe full and propagation delay hidden.
 
 *Bandwidth × Delay (BDP) जितना बड़ा हो, window उतनी बड़ी चाहिए — तभी पूरी pipe भरी रहती है और propagation delay छिप जाता है.*
 
@@ -2597,7 +2597,7 @@ Which one of the following is correct?
 - **(C)** SSH / SSH ✅ **(CORRECT)**
 - **(D)** IP / IP
 
-**✔ Correct Answer: (C) SSH** — Port knocking में बंद ports पर तय क्रम से connection attempts किए जाते हैं, जिसके बाद firewall SSH जैसी सेवा खोल देता है — यह अक्सर SSH servers के साथ उपयोग होता है.
+**✔ Correct Answer: (C) SSH** — In port knocking, connection attempts hit closed ports in a fixed sequence, after which the firewall opens a service like SSH — often used with SSH servers.
 
 *Port knocking में बंद ports पर तय क्रम से connection attempts किए जाते हैं, जिसके बाद firewall SSH जैसी सेवा खोल देता है — यह अक्सर SSH servers के साथ उपयोग होता है.*
 
@@ -2617,7 +2617,7 @@ Which one of the following is correct?
 - **(C)** MPLS / MPLS ✅ **(CORRECT)**
 - **(D)** ARP / ARP
 
-**✔ Correct Answer: (C) MPLS** — MPLS labels के ज़रिए traffic को classes में बाँटकर QoS देता है — routers बार-बार पूरा IP header नहीं देखते.
+**✔ Correct Answer: (C) MPLS** — MPLS divides traffic into classes using labels and provides QoS — routers don't repeatedly inspect the full IP header.
 
 *MPLS labels के ज़रिए traffic को classes में बाँटकर QoS देता है — routers बार-बार पूरा IP header नहीं देखते.*
 
@@ -2677,7 +2677,7 @@ Which one of the following is correct?
 - **(C)** POP3 / POP3
 - **(D)** Telnet / Telnet
 
-**✔ Correct Answer: (A) DNS** — DNS queries आमतौर पर UDP (port 53) पर जाती हैं, पर बड़े transfers और zone transfers TCP पर — इसलिए DNS दोनों उपयोग करता है.
+**✔ Correct Answer: (A) DNS** — DNS queries usually travel on UDP (port 53), but large transfers and zone transfers use TCP — so DNS uses both.
 
 *DNS queries आमतौर पर UDP (port 53) पर जाती हैं, पर बड़े transfers और zone transfers TCP पर — इसलिए DNS दोनों उपयोग करता है.*
 
@@ -2717,7 +2717,7 @@ Which one of the following is correct?
 - **(C)** 16 / 16 ✅ **(CORRECT)**
 - **(D)** 32 / 32
 
-**✔ Correct Answer: (C) 16** — Port numbers 16 bits के होते हैं — इसीलिए 0 से 65535 तक ports बनते हैं.
+**✔ Correct Answer: (C) 16** — Port numbers are 16 bits — that is why ports range from 0 to 65535.
 
 *Port numbers 16 bits के होते हैं — इसीलिए 0 से 65535 तक ports बनते हैं.*
 
@@ -2737,7 +2737,7 @@ Which one of the following is correct?
 - **(C)** Perform error detection and correction / Perform error detection and correction
 - **(D)** Establish a connection and synchronize sequence numbers / Establish a connection and synchronize sequence numbers ✅ **(CORRECT)**
 
-**✔ Correct Answer: (D) Establish a connection and synchronize sequence numbers** — तीन-तरफ़ा handshake से दोनों तरफ़ connection बनती है और sequence numbers का आदान-प्रदान होता है (सिंक्रोनाइज़ेशन).
+**✔ Correct Answer: (D) Establish a connection and synchronize sequence numbers** — The three-way handshake sets up the connection at both ends and exchanges sequence numbers (synchronisation).
 
 *तीन-तरफ़ा handshake से दोनों तरफ़ connection बनती है और sequence numbers का आदान-प्रदान होता है (सिंक्रोनाइज़ेशन).*
 
@@ -2797,11 +2797,11 @@ Which one of the following is correct?
 - **(C)** Sequence Number / Sequence Number ✅ **(CORRECT)**
 - **(D)** Port Number / Port Number
 
-**✔ Correct Answer: (C) Sequence Number** — हर byte का sequence number होता है — receiver इन्हीं से bytes को सही क्रम में जोड़ता है.
+**✔ Correct Answer: (C) Sequence Number** — Every byte has a sequence number — the receiver uses them to put the bytes back in the correct order.
 
 *हर byte का sequence number होता है — receiver इन्हीं से bytes को सही क्रम में जोड़ता है.*
 
-**★ Nukta (Key Point):** UDP में sequence नहीं होता — इसीलिए वहाँ क्रम की guarantee नहीं.
+**★ Nukta (Key Point):** UDP has no sequence numbers — that is why it gives no ordering guarantee.
 
 *UDP में sequence नहीं होता — इसीलिए वहाँ क्रम की guarantee नहीं.*
 
@@ -2817,7 +2817,7 @@ Which one of the following is correct?
 - **(C)** Checksum / Checksum ✅ **(CORRECT)**
 - **(D)** Acknowledgment Number / Acknowledgment Number
 
-**✔ Correct Answer: (C) Checksum** — Checksum पूरे segment का जोड़ निकालकर integrity जाँचता है — रास्ते में कुछ बदला तो packet छोड़ दिया जाता है.
+**✔ Correct Answer: (C) Checksum** — The checksum sums the whole segment to verify integrity — if anything changed on the way, the packet is dropped.
 
 *Checksum पूरे segment का जोड़ निकालकर integrity जाँचता है — रास्ते में कुछ बदला तो packet छोड़ दिया जाता है.*
 
@@ -2877,7 +2877,7 @@ Which one of the following is correct?
 - **(C)** TCP is used by Secure Shell (SSH) / TCP is used by Secure Shell (SSH)
 - **(D)** TCP/IP uses checksums to check errors / TCP/IP uses checksums to check errors
 
-**✔ Correct Answer: (B) Data packets sent over TCP/IP are private** — TCP/IP पर भेजे packets स्वाभाविक रूप से private नहीं होते — रास्ते में देखे जा सकते हैं; गोपनीयता के लिए TLS/SSH/VPN लगाना पड़ता है.
+**✔ Correct Answer: (B) Data packets sent over TCP/IP are private** — Packets on TCP/IP are not private by nature — they can be seen on the way; for confidentiality you must add TLS/SSH/VPN.
 
 *TCP/IP पर भेजे packets स्वाभाविक रूप से private नहीं होते — रास्ते में देखे जा सकते हैं; गोपनीयता के लिए TLS/SSH/VPN लगाना पड़ता है.*
 
@@ -3164,7 +3164,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 
 *Forouzan के अनुसार: Syntax = data का structure/format; Semantics = sections का अर्थ.*
 
-**★ Nukta (Key Point):** नियम: Syntax = कैसा दिखे; Semantics = क्या अर्थ हो. Communication में दोनों तय होने चाहिए.
+**★ Nukta (Key Point):** Rule: Syntax = how it looks; Semantics = what it means. Both must be agreed for communication.
 
 *नियम: Syntax = कैसा दिखे; Semantics = क्या अर्थ हो. Communication में दोनों तय होने चाहिए.*
 
@@ -3204,7 +3204,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 
 *Layer 7 (Application) ही users की सेवाएँ संभालती है — passwords, file transfer, resource sharing आदि.*
 
-**★ Nukta (Key Point):** OSI में 7 layers ही हैं — 'Layer 10' तो हो ही नहीं सकती.
+**★ Nukta (Key Point):** OSI has exactly 7 layers — there can be no 'Layer 10'.
 
 *OSI में 7 layers ही हैं — 'Layer 10' तो हो ही नहीं सकती.*
 
@@ -3280,11 +3280,11 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 - **(C)** HTTPS / HTTPS
 - **(D)** SMTP / SMTP
 
-**✔ Correct Answer: (B) SSH** — Port 22 SSH का है — इसलिए SSH सेवा ही खुली रहेगी.
+**✔ Correct Answer: (B) SSH** — Port 22 belongs to SSH — so the SSH service is the one that will be open.
 
 *Port 22 SSH का है — इसलिए SSH सेवा ही खुली रहेगी.*
 
-**★ Nukta (Key Point):** Port पहचानो, सेवा पहचानो — यही इस प्रश्न का खेल है.
+**★ Nukta (Key Point):** Identify the port, identify the service — that is the trick of this question.
 
 *Port पहचानो, सेवा पहचानो — यही इस प्रश्न का खेल है.*
 
@@ -3420,7 +3420,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 - **(C)** DNS resolution / DNS resolution
 - **(D)** Port scanning / Port scanning
 
-**✔ Correct Answer: (B) Host reachability** — Ping ICMP Echo भेजकर जाँचता है कि दूसरा host पहुँच में है या नहीं और कितनी देर लगी.
+**✔ Correct Answer: (B) Host reachability** — Ping checks with ICMP Echo whether the other host is reachable and how long it takes.
 
 *Ping ICMP Echo भेजकर जाँचता है कि दूसरा host पहुँच में है या नहीं और कितनी देर लगी.*
 
@@ -3440,7 +3440,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 - **(C)** 403 / 403 ✅ **(CORRECT)**
 - **(D)** 404 / 404
 
-**✔ Correct Answer: (C) 403** — HTTP 403 का अर्थ है server ने request समझी, पर access की अनुमति नहीं है.
+**✔ Correct Answer: (C) 403** — HTTP 403 means the server understood the request but permission for access is denied.
 
 *HTTP 403 का अर्थ है server ने request समझी, पर access की अनुमति नहीं है.*
 
@@ -3464,7 +3464,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 
 *LDAP directory services (users, groups, permissions की सूची) तक पहुँच देता है और authentication के लिए उपयोग होता है.*
 
-**★ Nukta (Key Point):** LDAP = network का 'पता-पुस्तिका + पहचान-पत्र काउंटर'.
+**★ Nukta (Key Point):** LDAP = the network's 'address book + identity-desk counter'.
 
 *LDAP = network का 'पता-पुस्तिका + पहचान-पत्र काउंटर'.*
 
@@ -3524,7 +3524,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 
 *ICMP = Internet Control Message Protocol — ping और error messages इसी से जाते हैं.*
 
-**★ Nukta (Key Point):** बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.
+**★ Nukta (Key Point):** The other names are made up — the real name contains 'Control Message'.
 
 *बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.*
 
@@ -3600,7 +3600,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 - **(C)** SSH / SSH
 - **(D)** SFTP / SFTP
 
-**✔ Correct Answer: (B) FTP** — सादा FTP data और passwords सादे रूप में भेजता है — यह असुरक्षित है. इसके सुरक्षित रूप SFTP/FTPS हैं.
+**✔ Correct Answer: (B) FTP** — Plain FTP sends data and passwords in cleartext — that is insecure. Its secure forms are SFTP/FTPS.
 
 *सादा FTP data और passwords सादे रूप में भेजता है — यह असुरक्षित है. इसके सुरक्षित रूप SFTP/FTPS हैं.*
 
@@ -3700,7 +3700,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 - **(C)** TFTP relies on TCP / TFTP relies on TCP ✅ **(CORRECT)**
 - **(D)** SMTP is used to send mail messages / SMTP is used to send mail messages
 
-**✔ Correct Answer: (C) TFTP relies on TCP** — TFTP (Trivial FTP) UDP पर चलता है, TCP पर नहीं — यही कथन गलत है.
+**✔ Correct Answer: (C) TFTP relies on TCP** — TFTP (Trivial FTP) runs on UDP, not TCP — this is the statement that is wrong.
 
 *TFTP (Trivial FTP) UDP पर चलता है, TCP पर नहीं — यही कथन गलत है.*
 

@@ -306,3 +306,40 @@ topic6_data.py. Build: `_X` wave lists auto-attach to their NEW_MAP section.
 
 Totals after wave 3: **790 practice questions** (631 sourced + 159 originals),
 78 booklet pages, 7 quiz HTMLs regenerated. Future waves use `*_X2`, `*_X3`…
+
+## 16. Round-4 fixes: mobile layout, sections removed, exam-year citations, explanation language pass (Oct 2026)
+
+**User spec:** HTML mobile-friendly too; sections not needed (topic-wise files);
+explanations must say which exam/year a question is from; SSC-level +
+RPSC Programmer/ACP/DD-level questions in the HTML too; fix every Hindi/English
+explanation problem.
+
+* **Sections removed** from quiz apps (topic file = one continuous test):
+  section tabs, section-end auto-advance and Section Summary are gone; palette
+  legend + **Test Summary** (overall counts) remain. All other CBT navigation
+  retained (palette right + »/« hide-show, action bar, language, zoom,
+  fullscreen, countdown, authentic Exam-Mode save).
+* **Mobile-first responsive CSS**: breakpoints at 980/640/420 px — palette goes
+  below question panel, action buttons full-width with ≥44 px touch targets,
+  compact top bar, bigger option rows; verified viewport + media queries in all
+  7 HTMLs (JS `node --check` clean).
+* **Exam/year citation**: every question now shows a **Source chip** under the
+  question header, plus "Source (exam/year)" in Quiz-mode feedback and result
+  solutions (e.g. "RPSC Programmer 2024 Paper-1 (with official key)",
+  "GATE-2015", "Kerala PSC repeated PYQs").
+* **Explanation language pass (`tools/cn_textfix.py`)**: 97 explanation strings
+  had Hindi script duplicated into BOTH language slots (English readers saw
+  Hindi). All 97 now have authored English in the EN slot (Hindi kept);
+  wired into every builder via `normalize_module()` (quiz, practice, topic
+  books, complete book — all rebuilt). Audit: 0 remaining.
+* **Wave 4 — 15 exam-pattern originals** (`practice_new_p4.py` `*_X2` lists):
+  SSC MTS/CHSL pattern (Easy: SSID), SSC CGL/IBPS (Medium: Nyquist 4kHz/16L =
+  32 kbps, PCM 64 kbps, WPA2 AES-CCMP, CSMA/CD half-duplex, DHCP first-OFFER,
+  Port Security), RPSC Programmer/ACP/DD (Hard: VLSM 50/25/10 → /26,/27,/28,
+  TTL=0 → ICMP Time Exceeded, OSPF DR election, OSPF EXSTART = MTU mismatch,
+  AD 1/90/110, MSS = MTU−40, ip classless, TCP byte-stream no message
+  boundaries). 3 near-duplicates caught by the dedupe audit and REPLACED
+  (unknown-unicast flooding, TCP window field, /29 usable hosts).
+
+Totals: **805 practice questions** (631 sourced + 174 originals), 81 booklet
+pages, 7 quiz HTMLs, books rebuilt with English explanations.

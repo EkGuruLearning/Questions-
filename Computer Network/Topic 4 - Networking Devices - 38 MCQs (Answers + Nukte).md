@@ -151,7 +151,7 @@
 - **(C)** Computer
 - **(D)** Modem
 
-**✔ Correct Answer: (A) Repeater** — Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है.
+**✔ Correct Answer: (A) Repeater** — A repeater regenerates (amplifies and reshapes) the weakening signal — that is why it is what we install for distance problems.
 
 *Repeater कमज़ोर होते signal को दोबारा ताक़तवर बनाता (regenerate करता) है — इसलिए दूरी की समस्या में यही लगता है.*
 
