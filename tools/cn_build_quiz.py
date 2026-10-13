@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-cn_build_quiz.py — EkGuru Online Test Portal (Quiz + Exam) generator.
+cn_build_quiz.py — EkGuru Online Test Portal (CBT-style) generator.
 
-Design goals (user spec):
-  * Looks hand-made (coaching-portal style), NOT AI-generated — clean headings,
-    proper title/footer, no decorative junk
-  * LIVE-EXAM features (CBT style): Mark for Review & Next, Clear Response,
-    Save & Next, question palette with colour codes, countdown timer, summary
-  * Quiz mode: click -> instant ✔/✗ + answer + explanation
-  * Exam mode: submit -> Correct / Wrong / SKIPPED (separate!) + accuracy +
-    time taken + time-per-question + full solutions after submit
-  * Name entry; branding EkGuru + by PRAKASH; questions+options shuffle every run
-  * Mobile-friendly, single-file offline HTML
-Usage: python tools/cn_build_quiz.py            (all 7 topics)
+Layout = standard Indian online-exam interface, studied from real platforms:
+  * TCS iON (IBPS/SBI/NTA) — question palette RIGHT + collapse arrow, Save & Next /
+    Mark for Review & Next / Clear Response behaviour, section tabs on top bar,
+    palette legend + summary above palette
+  * SSC CBT 2025 new interface — action buttons at TOP of question area (above
+    options), language selector just above the question, zoom in/out, answered
+    count at top
+  * NTA advisory — palette status colours, answered+marked considered for
+    evaluation, ">" collapse of palette
+Authentic exam behaviour (Exam Mode): option select = pending; answer SAVE hota
+hai only on "Save & Next" / "Mark for Review & Next"; palette jump does NOT save.
+Quiz Mode: instant feedback (learning mode).
+
+Usage: python tools/cn_build_quiz.py            (all 7 topics, separate files)
        python tools/cn_build_quiz.py 3 5
 """
 import os, sys, json
@@ -91,74 +94,121 @@ def collect(n):
 
 CSS = """
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Roboto, Arial, 'Noto Sans Devanagari', sans-serif; background: #f0f2f5; color: #1c2733; font-size: 15px; }
-.topstrip { background: #1F3864; color: #fff; padding: 7px 14px; font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
-.topstrip b { color: #ffd580; }
-.nav { background: #fff; border-bottom: 3px solid #E97313; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-.logo { font-size: 24px; font-weight: 800; letter-spacing: .3px; }
-.logo .e { color: #E97313; } .logo .g { color: #1F3864; }
-.logo small { display: block; font-size: 10px; font-weight: 600; letter-spacing: 2.2px; color: #667; }
-.navtitle { font-size: 14.5px; font-weight: 700; color: #1F3864; text-align: right; }
-.wrap { max-width: 980px; margin: 0 auto; padding: 12px 10px 26px; }
-.card { background: #fff; border: 1px solid #d7dde6; border-radius: 6px; padding: 16px 16px; margin-bottom: 12px; }
-h2 { font-size: 17px; color: #1F3864; border-bottom: 2px solid #E97313; display: inline-block; padding-bottom: 4px; margin-bottom: 12px; }
-.fld { margin: 10px 0; }
-.fld label { font-size: 13px; font-weight: 700; color: #34435a; display: block; margin-bottom: 5px; }
-input[type=text], select { width: 100%; padding: 11px 10px; font-size: 15px; border: 1.5px solid #b9c4d4; border-radius: 5px; background: #fbfcfe; }
-ol.ins { margin: 6px 0 6px 20px; font-size: 13px; line-height: 1.8; color: #33405a; }
-.chkline { font-size: 13px; margin: 10px 0 4px; color: #33405a; }
-.btn { border: 0; border-radius: 5px; padding: 12px 20px; font-size: 14.5px; font-weight: 700; cursor: pointer; }
-.btn.prime { background: #E97313; color: #fff; }
-.btn.blue { background: #1F3864; color: #fff; }
-.btn.ghost { background: #eef1f6; color: #26364d; border: 1px solid #b9c4d4; }
-.btn.violet { background: #673ab7; color: #fff; }
-.btn:active { transform: scale(.985); }
-.btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-.tbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; background: #1F3864; color: #fff; border-radius: 5px; padding: 9px 12px; margin-bottom: 10px; font-size: 13px; }
-.tbar .timer { font-size: 19px; font-weight: 800; letter-spacing: 1px; }
-.tbar .timer.low { color: #ffb3b3; }
-.layout { display: flex; gap: 12px; align-items: flex-start; }
-.qcol { flex: 1.8; min-width: 300px; }
-.pcol { flex: 1; min-width: 230px; }
-@media (max-width: 720px) { .layout { flex-direction: column; } .qcol, .pcol { width: 100%; min-width: 0; } }
-.qhead { background: #f5f7fa; border: 1px solid #e2e7ee; border-radius: 5px; padding: 8px 10px; font-size: 12.5px; color: #45536b; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-.qtext { font-size: 16.5px; font-weight: 700; line-height: 1.5; margin: 4px 2px 8px; }
-.qhi { font-size: 13.5px; color: #4d5a6e; line-height: 1.65; margin: 0 2px 12px; }
-.opt { display: block; width: 100%; text-align: left; background: #fff; border: 1.5px solid #c4cddc; border-radius: 5px; padding: 12px 12px; font-size: 14.5px; margin-bottom: 8px; cursor: pointer; line-height: 1.5; }
-.opt:hover { border-color: #E97313; background: #fff8f1; }
-.opt .oh { color: #5d6b80; font-size: 12.5px; }
-.opt.sel { border-color: #1F3864; background: #eaf0f9; }
-.opt.correct { border-color: #1b7a3d; background: #e7f5ec; }
-.opt.wrong { border-color: #c0392b; background: #fdecea; }
-.opt.dim { opacity: .5; }
-.fb { border-radius: 5px; padding: 11px 12px; margin: 8px 0 2px; font-size: 13.5px; line-height: 1.6; border: 1px solid; }
+body { font-family: 'Segoe UI', Roboto, Arial, 'Noto Sans Devanagari', sans-serif; background: #e9edf2; color: #1b2733; font-size: 15px; }
+/* ===== top bar ===== */
+.topbar { background: #16283f; color: #fff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 8px 12px; position: sticky; top: 0; z-index: 50; }
+.brand { font-size: 20px; font-weight: 800; }
+.brand .e { color: #ff9d2e; } .brand .g { color: #fff; }
+.brand small { display: block; font-size: 8.5px; letter-spacing: 2.4px; color: #9fb2c8; font-weight: 600; }
+.testname { font-size: 13px; text-align: center; line-height: 1.5; }
+.testname b { color: #ffd580; }
+.topp { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.tbtn { background: #24405e; color: #fff; border: 1px solid #3d5d80; border-radius: 4px; padding: 7px 10px; font-size: 11.5px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.tbtn:hover { background: #2f527a; }
+.tbtn.on { background: #E97313; border-color: #E97313; }
+.tbox { background: #0e1c2d; border: 1px solid #3d5d80; border-radius: 4px; padding: 4px 12px; text-align: center; }
+.tbox .lbl { font-size: 8.5px; letter-spacing: 1.4px; color: #9fb2c8; font-weight: 700; }
+.tbox .val { font-size: 18px; font-weight: 800; letter-spacing: 1px; }
+.tbox .val.low { color: #ff7b7b; }
+/* ===== section tabs ===== */
+.secbar { background: #fff; border-bottom: 2px solid #d3dae4; display: flex; flex-wrap: wrap; gap: 2px; padding: 0 10px; position: sticky; top: 52px; z-index: 40; }
+.stab { padding: 9px 13px; font-size: 11.5px; font-weight: 700; color: #44546a; cursor: pointer; border-bottom: 3px solid transparent; }
+.stab:hover { color: #E97313; }
+.stab.cur { color: #16283f; border-bottom-color: #E97313; background: #f7f9fc; }
+/* ===== layout ===== */
+.layout { display: flex; gap: 10px; align-items: flex-start; padding: 10px; max-width: 1280px; margin: 0 auto; }
+.qcol { flex: 1; min-width: 300px; }
+.pcol { width: 292px; flex-shrink: 0; position: sticky; top: 100px; }
+.pcol.hidden { display: none; }
+@media (max-width: 860px) { .pcol { position: static; width: 100%; } .layout { flex-direction: column; } }
+/* ===== question panel ===== */
+.qpanel { background: #fff; border: 1px solid #cfd7e2; border-radius: 5px; }
+.qhead { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; background: #f3f6fa; border-bottom: 1px solid #dde4ec; padding: 8px 12px; font-size: 12px; color: #44546a; }
+.qhead .qno { font-size: 13.5px; font-weight: 800; color: #16283f; }
+.langsel { display: flex; gap: 0; border: 1px solid #b9c4d4; border-radius: 4px; overflow: hidden; }
+.langsel button { border: 0; background: #fff; padding: 5px 10px; font-size: 11px; font-weight: 700; cursor: pointer; color: #44546a; }
+.langsel button.on { background: #16283f; color: #fff; }
+.actionbar { display: flex; flex-wrap: wrap; gap: 7px; padding: 9px 12px; border-bottom: 1px solid #dde4ec; background: #fafbfd; }
+.abtn { border: 0; border-radius: 4px; padding: 8px 13px; font-size: 12px; font-weight: 800; cursor: pointer; }
+.abtn.clear { background: #e8ebf0; color: #33405a; border: 1px solid #b9c4d4; }
+.abtn.mark { background: #673ab7; color: #fff; }
+.abtn.save { background: #1f6fb2; color: #fff; }
+.abtn.prev { background: #eef1f6; color: #26364d; border: 1px solid #b9c4d4; }
+.abtn.next { background: #16283f; color: #fff; }
+.abtn:active { transform: scale(.98); }
+.qbody { padding: 13px 14px 6px; }
+.qtext { font-size: 16px; font-weight: 700; line-height: 1.55; margin-bottom: 4px; }
+.qhi { font-size: 13px; color: #4d5a6e; line-height: 1.7; margin-bottom: 10px; }
+.optrow { display: flex; align-items: flex-start; gap: 9px; border: 1.5px solid #c8d1de; border-radius: 5px; padding: 11px 12px; margin-bottom: 8px; cursor: pointer; background: #fff; line-height: 1.5; }
+.optrow:hover { border-color: #E97313; background: #fff9f3; }
+.optrow input { margin-top: 3px; }
+.optrow.sel { border-color: #1f6fb2; background: #eaf2fa; }
+.optrow.correct { border-color: #1b7a3d; background: #e7f5ec; }
+.optrow.wrong { border-color: #c0392b; background: #fdecea; }
+.optrow.dim { opacity: .55; }
+.oidx { font-weight: 800; color: #2b3646; }
+.otext { font-size: 14.5px; }
+.oh { color: #5d6b80; font-size: 12.5px; }
+.note { font-size: 11.5px; color: #7a8494; padding: 2px 14px 12px; }
+.fb { margin: 6px 14px 12px; padding: 11px 12px; border: 1px solid; border-radius: 5px; font-size: 13.5px; line-height: 1.6; }
 .fb.ok { background: #e9f6ee; border-color: #1b7a3d; color: #14532d; }
 .fb.no { background: #fdecea; border-color: #c0392b; color: #7b1f14; }
 .fb .exp { margin-top: 6px; color: #2b3646; }
 .fb .exp .hi { color: #55617a; font-size: 12.5px; margin-top: 3px; }
 .fb .src { margin-top: 6px; font-size: 11px; color: #7b8798; }
-.legend { font-size: 11.5px; color: #45536b; margin: 8px 0 10px; line-height: 2; }
-.legend .sw { display: inline-block; width: 13px; height: 13px; border-radius: 3px; margin: 0 5px 0 8px; vertical-align: -2px; border: 1px solid #99a; }
-.palette { display: flex; flex-wrap: wrap; gap: 6px; }
-.pq { width: 38px; height: 34px; border-radius: 4px; border: 1.5px solid #b9c4d4; background: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; color: #2b3646; position: relative; }
+/* ===== palette ===== */
+.ppanel { background: #fff; border: 1px solid #cfd7e2; border-radius: 5px; overflow: hidden; }
+.ptitle { background: #16283f; color: #fff; font-size: 12px; font-weight: 800; letter-spacing: 1px; padding: 8px 11px; }
+.legend { padding: 9px 11px 4px; font-size: 11px; color: #33405a; line-height: 1.65; }
+.legend .row { display: flex; align-items: center; gap: 7px; margin-bottom: 3px; }
+.sw { width: 15px; height: 15px; border-radius: 3px; border: 1.2px solid #99a; flex-shrink: 0; }
+.sw.nv { background: #fff; } .sw.vis { background: #f19c8f; border-color: #d98a7d; }
+.sw.ans { background: #8fd4a2; border-color: #4ca36a; } .sw.mk { background: #c6aeee; border-color: #8a63c9; }
+.sw.ma { background: #c6aeee; border-color: #8a63c9; position: relative; }
+.palette { display: flex; flex-wrap: wrap; gap: 6px; padding: 9px 11px; }
+.pq { width: 40px; height: 35px; border-radius: 4px; border: 1.5px solid #b9c4d4; background: #fff; font-size: 12.5px; font-weight: 700; cursor: pointer; color: #2b3646; position: relative; }
 .pq.nv { background: #fff; }
-.pq.vis { background: #f6c9c2; border-color: #d98a7d; color: #7b2718; }
-.pq.ans { background: #b7e2c3; border-color: #4ca36a; color: #14532d; }
-.pq.mk { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
-.pq.mkans { background: #d9c8f2; border-color: #8a63c9; color: #3d2472; }
-.pq.mkans::after { content: '\\2713'; position: absolute; right: 2px; bottom: 0px; font-size: 10px; color: #1b7a3d; }
-.pq.cur { outline: 2.5px solid #1F3864; outline-offset: 1px; }
-.summary { margin-top: 10px; border-top: 1px solid #e2e7ee; padding-top: 9px; font-size: 12px; color: #45536b; line-height: 1.9; }
-.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; margin: 12px 0 4px; }
-.stat { border: 1px solid #d7dde6; border-radius: 6px; padding: 12px 8px; text-align: center; background: #fff; }
+.pq.vis { background: #f19c8f; border-color: #d98a7d; color: #5e1a0e; }
+.pq.ans { background: #8fd4a2; border-color: #4ca36a; color: #0f3d1e; }
+.pq.mk { background: #c6aeee; border-color: #8a63c9; color: #2f1a5e; }
+.pq.mkans { background: #c6aeee; border-color: #8a63c9; color: #2f1a5e; }
+.pq.mkans::after { content: '\\2713'; position: absolute; right: 2px; bottom: 1px; font-size: 10px; color: #0f3d1e; font-weight: 900; }
+.pq.cur { outline: 2.5px solid #E97313; outline-offset: 1px; }
+.sumtitle { background: #eef2f7; border-top: 1px solid #dde4ec; border-bottom: 1px solid #dde4ec; padding: 6px 11px; font-size: 11px; font-weight: 800; letter-spacing: 1px; color: #33405a; }
+.sumtab { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+.sumtab td { padding: 5px 11px; border-bottom: 1px solid #eef1f5; color: #44546a; }
+.sumtab td.n { text-align: right; font-weight: 800; color: #16283f; }
+.submitwrap { padding: 11px; }
+.submitbtn { width: 100%; background: #1b7a3d; color: #fff; border: 0; border-radius: 5px; padding: 12px; font-size: 14.5px; font-weight: 800; cursor: pointer; }
+.submitbtn:hover { background: #14632f; }
+.palToggle { position: fixed; right: 0; top: 120px; z-index: 60; background: #16283f; color: #fff; border: 0; border-radius: 5px 0 0 5px; padding: 12px 7px; font-size: 13px; font-weight: 800; cursor: pointer; }
+/* ===== overlays ===== */
+.overlay { position: fixed; inset: 0; background: rgba(16,28,44,.55); z-index: 100; display: flex; align-items: flex-start; justify-content: center; padding: 18px 10px; overflow: auto; }
+.sheet { background: #fff; border-radius: 7px; max-width: 780px; width: 100%; padding: 20px 20px 16px; }
+.sheet h2 { font-size: 18px; color: #16283f; border-bottom: 2.5px solid #E97313; display: inline-block; padding-bottom: 5px; margin-bottom: 12px; }
+ol.ins { margin: 4px 0 8px 22px; font-size: 12.5px; line-height: 1.85; color: #33405a; }
+.fld { margin: 9px 0; }
+.fld label { font-size: 12.5px; font-weight: 700; color: #33405a; display: block; margin-bottom: 4px; }
+input[type=text], select { width: 100%; padding: 11px 10px; font-size: 15px; border: 1.5px solid #b9c4d4; border-radius: 5px; background: #fbfcfe; }
+.btn { border: 0; border-radius: 5px; padding: 12px 22px; font-size: 14.5px; font-weight: 800; cursor: pointer; }
+.btn.prime { background: #E97313; color: #fff; width: 100%; margin-top: 8px; }
+.btn.blue { background: #16283f; color: #fff; }
+.btn.ghost { background: #eef1f6; color: #26364d; border: 1px solid #b9c4d4; }
+.chkline { font-size: 12.5px; margin: 10px 0 2px; color: #33405a; }
+.hint { font-size: 11.5px; color: #66708a; line-height: 1.7; margin-top: 8px; }
+/* ===== result ===== */
+.resWrap { background: #fff; border: 1px solid #cfd7e2; border-radius: 5px; padding: 18px 18px; max-width: 1000px; margin: 12px auto; }
+.resTitle { font-size: 18px; color: #16283f; font-weight: 800; margin: 2px 0 3px; }
+.statgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 10px; margin: 12px 0; }
+.stat { border: 1px solid #d7dde6; border-radius: 6px; padding: 12px 8px; text-align: center; }
 .stat .v { font-size: 22px; font-weight: 800; }
-.stat .l { font-size: 11px; color: #66708a; font-weight: 700; letter-spacing: .6px; margin-top: 3px; }
-.stat.c .v { color: #1b7a3d; } .stat.w .v { color: #c0392b; } .stat.s .v { color: #7a8494; } .stat.t .v { color: #1F3864; }
-table.tt { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0; }
-table.tt td, table.tt th { border: 1px solid #dfe5ec; padding: 6px 8px; text-align: left; }
+.stat .l { font-size: 10.5px; color: #66708a; font-weight: 700; letter-spacing: .5px; margin-top: 3px; }
+.stat.c .v { color: #1b7a3d; } .stat.w .v { color: #c0392b; } .stat.s .v { color: #7a8494; } .stat.t .v { color: #16283f; }
+table.tt { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 8px 0 12px; }
+table.tt td, table.tt th { border: 1px solid #dfe5ec; padding: 6px 9px; text-align: left; }
 table.tt th { background: #eef2f7; color: #2b3646; }
 .rev { border-top: 1px solid #e2e7ee; padding: 13px 2px 10px; }
-.rev .st { font-size: 11px; font-weight: 800; border-radius: 4px; padding: 2px 8px; margin-right: 6px; }
+.st { font-size: 10.5px; font-weight: 800; border-radius: 4px; padding: 2px 8px; margin-right: 5px; }
 .st.c { background: #e7f5ec; color: #14532d; border: 1px solid #4ca36a; }
 .st.w { background: #fdecea; color: #7b1f14; border: 1px solid #d98a7d; }
 .st.s { background: #eef1f5; color: #4a5468; border: 1px solid #aab4c2; }
@@ -167,327 +217,270 @@ table.tt th { background: #eef2f7; color: #2b3646; }
 .rev .line { font-size: 13px; margin: 3px 0; line-height: 1.55; }
 .rev .okc { color: #1b7a3d; font-weight: 700; }
 .rev .noc { color: #c0392b; font-weight: 700; }
-.rev .exp { background: #f5f8fc; border-left: 3.5px solid #1F3864; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; line-height: 1.6; }
+.rev .exp { background: #f5f8fc; border-left: 3.5px solid #16283f; padding: 9px 11px; font-size: 12.5px; margin-top: 8px; line-height: 1.6; }
 .rev .exp .hi { color: #55617a; margin-top: 4px; }
 .rev .meta { font-size: 11px; color: #7b8798; margin-top: 6px; }
-.foot { text-align: center; color: #7a8494; font-size: 11.5px; line-height: 1.8; margin: 16px 6px 4px; border-top: 1px solid #d7dde6; padding-top: 12px; }
+.foot { text-align: center; color: #7a8494; font-size: 11px; line-height: 1.8; margin: 10px 8px 6px; }
 .foot b { color: #45536b; }
-.hint { font-size: 12px; color: #66708a; line-height: 1.65; margin-top: 8px; }
-.resTitle { font-size: 18px; color: #1F3864; font-weight: 800; margin: 4px 0 2px; }
+.btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 """
 
 
-def build_html(n, items):
-    title = TOPICS[n]
-    data = json.dumps(items, ensure_ascii=False).replace("</", "<\\/")
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EkGuru Online Test — Topic {n}: {title}</title>
-<style>{CSS}</style>
-</head>
-<body>
-<div class="topstrip">
-  <span>EkGuru Learning &nbsp;|&nbsp; Computer Networks (Forouzan) &nbsp;|&nbsp; Online Test Portal</span>
-  <span>Compiled &amp; updated <b>by PRAKASH</b></span>
-</div>
-<div class="nav">
-  <div class="logo"><span class="e">Ek</span><span class="g">Guru</span><small>ONLINE TEST PORTAL</small></div>
-  <div class="navtitle">Topic {n} — {title}<br><span style="font-weight:400; font-size:11.5px; color:#667">Practice Questions &nbsp;•&nbsp; Quiz Mode / Exam Mode</span></div>
-</div>
-<div class="wrap">
-
-<div class="card" id="startCard">
-  <h2>Test Instructions</h2>
-  <ol class="ins">
-    <li>Test shuru karne ke liye apna naam likhein aur mode chunein.</li>
-    <li><b>Quiz Mode:</b> har question ke baad sahi uttar aur explanation turant dikhayi degi — seekhne ke liye.</li>
-    <li><b>Exam Mode:</b> sabse pehle saare questions karein, phir <b>Submit</b> karein. Result mein Correct / Wrong / Chhode hue alag gine jayenge.</li>
-    <li>Exam Mode mein <b>Mark for Review</b>, <b>Clear Response</b>, <b>Save &amp; Next</b> aur question palette milte hain — bilkul live exam jaisa.</li>
-    <li>Questions aur options har baar doosre kram mein aate hain.</li>
-    <li>Samay poora hone par test apne aap submit ho jayega.</li>
-    <li>Submit ke baad har question ka explanation (solution) diya jayega.</li>
-  </ol>
-  <div class="fld"><label>Apka naam / Candidate name</label>
-    <input type="text" id="nameIn" maxlength="40" placeholder="Naam likhein"></div>
-  <div class="fld"><label>Mode</label>
-    <select id="modeIn">
-      <option value="quiz">Quiz Mode — instant answer + explanation</option>
-      <option value="exam">Exam Mode — submit ke baad result + analysis</option>
-    </select></div>
-  <div class="fld"><label>Questions ki sankhya</label>
-    <select id="countIn">
-      <option value="10">10</option>
-      <option value="25">25</option>
-      <option value="50">50</option>
-      <option value="0">Sabhi ({len(items)})</option>
-    </select></div>
-  <div class="fld"><label>Har question ka samay (Exam Mode — total timer isi se banega)</label>
-    <select id="tpqIn">
-      <option value="45">45 second per question</option>
-      <option value="60" selected>60 second per question</option>
-      <option value="90">90 second per question</option>
-      <option value="120">2 minute per question</option>
-    </select></div>
-  <div class="chkline"><input type="checkbox" id="agreeIn"> <label for="agreeIn" style="display:inline">Maine instructions padh li hain.</label></div>
-  <button class="btn prime" onclick="startTest()">Test Shuru Karein</button>
-  <div class="hint">Questions repo exam papers, Forouzan tatha India-level PYQ banks (2011–2026) se liye gaye hain. Sabhi uttar verify kiye gaye hain.</div>
-</div>
-
-<div class="card" id="testCard" style="display:none">
-  <div class="tbar">
-    <span id="whoLine"></span>
-    <span id="timerLine" class="timer">00:00</span>
-    <span id="progLine"></span>
-  </div>
-  <div class="layout">
-    <div class="qcol">
-      <div class="qhead">
-        <span id="qNoLine"><b>Question 1</b></span>
-        <span id="secLine"></span>
-      </div>
-      <div class="qtext" id="qText"></div>
-      <div class="qhi" id="qHi"></div>
-      <div id="optBox"></div>
-      <div id="fbBox"></div>
-      <div class="btnrow" id="ctrlBox"></div>
-    </div>
-    <div class="pcol">
-      <div class="card" style="margin:0">
-        <div class="legend">
-          <span class="sw" style="background:#fff"></span> Not visited
-          <span class="sw" style="background:#f6c9c2"></span> Dekha, uttar nahi
-          <span class="sw" style="background:#b7e2c3"></span> Uttar diya
-          <span class="sw" style="background:#d9c8f2"></span> Marked for review
-          <span class="sw" style="background:#d9c8f2"></span><b style="color:#1b7a3d">&#10003;</b> Uttar + marked
-        </div>
-        <div class="palette" id="dotBox"></div>
-        <div class="summary" id="sumBox"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card" id="resultCard" style="display:none">
-  <h2>Result Summary</h2>
-  <div class="resTitle" id="resTitle"></div>
-  <div class="hint" id="resSub"></div>
-  <div class="statgrid" id="statGrid"></div>
-  <table class="tt" id="resTable"></table>
-  <div class="btnrow">
-    <button class="btn blue" onclick="window.print()">Print / Save Result</button>
-    <button class="btn ghost" onclick="location.reload()">Naya Test</button>
-  </div>
-  <h2 style="margin-top:20px">Question-wise Solutions</h2>
-  <div id="revBox"></div>
-</div>
-
-<div class="foot">
-  <b>EkGuru Learning</b> — Computer Networks Practice Portal (Reference: Forouzan, Data Communications &amp; Networking)<br>
-  Questions: repo exam papers + India-level PYQ banks (GATE, UGC NET, RPSC, KVS, EMRS, SSC, RRB, IBPS — 2011–2026) + original practice set.<br>
-  Compiled &amp; updated <b>by PRAKASH</b> &nbsp;|&nbsp; Topic {n}: {title}
-</div>
-</div>
-
-<script>
-const QUESTIONS = {data};
+JS = r"""
+const QUESTIONS = __DATA__;
 const L = ["A","B","C","D"];
-let S = {{ qs: [], idx: 0, mode: "quiz", name: "", t0: 0, endAt: 0, tick: null,
-        answers: {{}}, marks: {{}}, visited: {{}}, spent: [], enter: 0, locked: false }};
+let S = { qs: [], idx: 0, mode: "quiz", name: "", t0: 0, endAt: 0, tick: null,
+        pending: undefined, answers: {}, marks: {}, visited: {}, spent: [],
+        enter: 0, lang: "both", palHidden: false };
 
-function shuffle(a) {{ for (let i=a.length-1;i>0;i--) {{ const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; }} return a; }}
-function esc(s) {{ const d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }}
-function fmt(sec) {{ sec=Math.max(0,sec); const m=Math.floor(sec/60), s=sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }}
+function shuffle(a) { for (let i=a.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function esc(s) { const d=document.createElement('div'); d.textContent = s==null?'':String(s); return d.innerHTML; }
+function fmt(sec) { sec=Math.max(0,sec); const m=Math.floor(sec/60), s=sec%60; return (m<10?'0':'')+m+':'+(s<10?'0':'')+s; }
 
-function startTest() {{
+/* ---------- start ---------- */
+function startTest() {
   const name = document.getElementById('nameIn').value.trim();
-  if (!name) {{ alert('Kripya apna naam likhein.'); return; }}
-  if (!document.getElementById('agreeIn').checked) {{ alert('Kripya instructions padhkar checkbox tik karein.'); return; }}
+  if (!name) { alert('Kripya apna naam likhein.'); return; }
+  if (!document.getElementById('agreeIn').checked) { alert('Kripya instructions padhkar checkbox tik karein.'); return; }
   S.name = name;
   S.mode = document.getElementById('modeIn').value;
   let count = parseInt(document.getElementById('countIn').value, 10) || QUESTIONS.length;
   count = Math.min(count, QUESTIONS.length);
   const tpq = parseInt(document.getElementById('tpqIn').value, 10) || 60;
-  S.qs = shuffle(QUESTIONS.slice()).slice(0, count).map(q => {{
+  S.qs = shuffle(QUESTIONS.slice()).slice(0, count).map(q => {
     const ix = [0,1,2,3]; shuffle(ix);
-    return {{ q: q.q, opts: ix.map(i => q.opts[i]), ans: ix.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec }};
-  }});
-  S.idx = 0; S.answers = {{}}; S.marks = {{}}; S.visited = {{}}; S.locked = false;
+    return { q: q.q, opts: ix.map(i => q.opts[i]), ans: ix.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec };
+  });
+  S.idx = 0; S.pending = undefined; S.answers = {}; S.marks = {}; S.visited = {};
   S.spent = new Array(S.qs.length).fill(0);
   S.t0 = Date.now();
   S.endAt = S.mode === 'exam' ? S.t0 + count * tpq * 1000 : 0;
   document.getElementById('startCard').style.display = 'none';
-  document.getElementById('testCard').style.display = '';
   document.getElementById('resultCard').style.display = 'none';
-  document.getElementById('whoLine').innerHTML = '<b>' + esc(S.name) + '</b> &nbsp;|&nbsp; ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode');
+  document.getElementById('examRoot').style.display = '';
+  document.getElementById('whoLine').innerHTML = '<b>' + esc(S.name) + '</b> &nbsp;|&nbsp; ' + (S.mode==='quiz'?'Quiz Mode':'Exam Mode');
   clearInterval(S.tick);
   S.tick = setInterval(tickTimer, 500);
   tickTimer();
-  renderPalette(); renderQ();
-}}
-
-function tickTimer() {{
+  renderTabs(); renderPalette(); renderQ();
+}
+function tickTimer() {
   const el = document.getElementById('timerLine');
-  if (S.mode === 'exam') {{
+  if (S.mode === 'exam') {
     const left = Math.round((S.endAt - Date.now())/1000);
     el.textContent = fmt(left);
-    el.className = 'timer' + (left <= 60 ? ' low' : '');
-    if (left <= 0) {{ clearInterval(S.tick); submitTest(true); }}
-  }} else {{
+    el.className = 'val' + (left <= 60 ? ' low' : '');
+    if (left <= 0) { clearInterval(S.tick); submitTest(true); }
+  } else {
     el.textContent = fmt(Math.floor((Date.now()-S.t0)/1000));
-    el.className = 'timer';
-  }}
-}}
+    el.className = 'val';
+  }
+}
 
-function paletteClass(i) {{
+/* ---------- language / zoom / palette toggle / fullscreen ---------- */
+function toggleLang() {
+  S.lang = S.lang === 'both' ? 'en' : (S.lang === 'en' ? 'hi' : 'both');
+  document.getElementById('langBtn').textContent =
+    S.lang === 'en' ? 'Language: English' : (S.lang === 'hi' ? 'Language: Hindi' : 'Language: Both');
+  renderQ();
+}
+function zoom(d) {
+  const b = document.body;
+  let z = parseFloat(b.style.fontSize || '15');
+  z = Math.min(22, Math.max(12, z + d));
+  b.style.fontSize = z + 'px';
+}
+function togglePalette() {
+  S.palHidden = !S.palHidden;
+  document.getElementById('palettePanel').classList.toggle('hidden', S.palHidden);
+  document.getElementById('palToggle').textContent = S.palHidden ? '«' : '»';
+  document.getElementById('palToggle').title = S.palHidden ? 'Palette dikhayein' : 'Palette chhupayein';
+}
+function toggleFull() {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+  else document.exitFullscreen && document.exitFullscreen();
+}
+
+/* ---------- sections ---------- */
+function sectionList() {
+  const out = [];
+  S.qs.forEach((q,i) => { if (out.indexOf(q.sec) === -1) out.push(q.sec); });
+  return out;
+}
+function renderTabs() {
+  const b = document.getElementById('secTabs'); b.innerHTML = '';
+  sectionList().forEach(sec => {
+    const t = document.createElement('div');
+    t.className = 'stab' + (S.qs[S.idx] && S.qs[S.idx].sec === sec ? ' cur' : '');
+    t.textContent = sec;
+    t.onclick = () => {
+      const first = S.qs.findIndex(q => q.sec === sec);
+      if (first >= 0) { saveTime(false); S.idx = first; S.pending = undefined; renderQ(); }
+    };
+    b.appendChild(t);
+  });
+}
+
+/* ---------- palette ---------- */
+function paletteClass(i) {
   if (S.marks[i]) return (S.answers[i] !== undefined) ? 'pq mkans' : 'pq mk';
   if (S.answers[i] !== undefined) return 'pq ans';
   if (S.visited[i]) return 'pq vis';
   return 'pq nv';
-}}
-function renderPalette() {{
+}
+function renderPalette() {
   const b = document.getElementById('dotBox'); b.innerHTML = '';
-  S.qs.forEach((q,i) => {{
+  S.qs.forEach((q,i) => {
     const d = document.createElement('button');
     d.className = paletteClass(i) + (i === S.idx ? ' cur' : '');
     d.textContent = i+1;
-    d.onclick = () => jumpTo(i);
+    d.onclick = () => { saveTime(false); S.idx = i; S.pending = undefined; renderQ(); };
     b.appendChild(d);
-  }});
-  let a=0, m=0, v=0;
-  S.qs.forEach((q,i) => {{
-    if (S.answers[i] !== undefined) a++;
-    if (S.marks[i]) m++;
-    if (S.visited[i]) v++;
-  }});
-  const notAns = v - a < 0 ? 0 : v - a;
-  document.getElementById('sumBox').innerHTML =
-    'Questions: <b>' + S.qs.length + '</b> &nbsp;|&nbsp; Uttar diye: <b style="color:#1b7a3d">' + a + '</b><br>' +
-    'Uttar nahi diye (dekhe hue): <b style="color:#c0392b">' + notAns + '</b> &nbsp;|&nbsp; Marked: <b style="color:#673ab7">' + m + '</b><br>' +
-    'Bina dekhe: <b>' + (S.qs.length - v) + '</b>';
-  document.getElementById('progLine').textContent = a + ' / ' + S.qs.length + ' answered';
-}}
+  });
+  let ans=0, mk=0, ma=0, vis=0;
+  S.qs.forEach((q,i) => {
+    if (S.answers[i] !== undefined) ans++;
+    if (S.marks[i]) { if (S.answers[i] !== undefined) ma++; else mk++; }
+    if (S.visited[i]) vis++;
+  });
+  const notAns = Math.max(0, vis - ans);
+  const notVis = S.qs.length - vis;
+  document.getElementById('sumAns').textContent = ans;
+  document.getElementById('sumNotAns').textContent = notAns;
+  document.getElementById('sumMk').textContent = mk;
+  document.getElementById('sumMa').textContent = ma;
+  document.getElementById('sumNv').textContent = notVis;
+  document.getElementById('topAns').textContent = 'Answered: ' + ans + ' / ' + S.qs.length;
+}
 
-function saveTime() {{
+/* ---------- question render ---------- */
+function saveTime() {
   const now = Date.now();
-  if (S.enter) {{ S.spent[S.idx] += (now - S.enter)/1000; }}
+  if (S.enter) S.spent[S.idx] += (now - S.enter)/1000;
   S.enter = now;
-}}
-
-function renderQ() {{
+}
+function renderQ() {
   const q = S.qs[S.idx];
   S.visited[S.idx] = true;
   S.enter = Date.now();
-  document.getElementById('qNoLine').innerHTML = '<b>Question ' + (S.idx+1) + '</b> / ' + S.qs.length;
+  document.getElementById('qNoLine').innerHTML = '<span class="qno">Question ' + (S.idx+1) + ' of ' + S.qs.length + '</span>';
   document.getElementById('secLine').textContent = q.sec;
-  document.getElementById('qText').innerHTML = esc(q.q[0]);
+  const showEN = (S.lang === 'en' || S.lang === 'both');
+  const showHI = (S.lang === 'hi' || S.lang === 'both');
+  document.getElementById('qText').innerHTML = showEN ? esc(q.q[0]) : '';
+  document.getElementById('qHi').style.display = (showHI && q.q[1]) ? '' : 'none';
   document.getElementById('qHi').textContent = q.q[1] || '';
   const box = document.getElementById('optBox'); box.innerHTML = '';
-  q.opts.forEach((o,i) => {{
-    const b = document.createElement('button');
-    b.className = 'opt' + (S.answers[S.idx] === i ? ' sel' : '');
-    b.innerHTML = '<b>(' + L[i] + ')</b> ' + esc(o[0]) + (o[1] && o[1].toLowerCase() !== o[0].toLowerCase() ? ' <span class="oh">/ ' + esc(o[1]) + '</span>' : '');
-    b.onclick = () => onPick(i);
-    box.appendChild(b);
-  }});
+  const curSel = (S.pending !== undefined) ? S.pending : S.answers[S.idx];
+  q.opts.forEach((o,i) => {
+    const lab = document.createElement('label');
+    lab.className = 'optrow' + (curSel === i ? ' sel' : '');
+    const hin = (o[1] && o[1].toLowerCase() !== o[0].toLowerCase()) ?
+      (showHI ? ' <span class="oh">/ ' + esc(o[1]) + '</span>' : '') : '';
+    const txt = showEN ? esc(o[0]) + hin : (o[1] ? esc(o[1]) : esc(o[0]));
+    lab.innerHTML = '<input type="radio" name="qopt"' + (curSel === i ? ' checked' : '') + '>' +
+      '<span class="oidx">(' + L[i] + ')</span><span class="otext">' + txt + '</span>';
+    lab.onclick = () => onPick(i);
+    box.appendChild(lab);
+  });
   document.getElementById('fbBox').innerHTML = '';
-  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
-  function addBtn(txt, cls, fn) {{
-    const b = document.createElement('button'); b.className = 'btn ' + cls; b.innerHTML = txt; b.onclick = fn; cb.appendChild(b);
-  }}
-  if (S.mode === 'exam') {{
-    addBtn('Clear Response', 'ghost', clearResp);
-    addBtn('Mark for Review &amp; Next', 'violet', markNext);
-    addBtn('Save &amp; Next', 'blue', saveNext);
-    addBtn('Submit Test', 'prime', () => submitTest(false));
-    if (S.answers[S.idx] !== undefined) showAnsweredOnly();
-  }} else {{
-    if (S.answers[S.idx] !== undefined) {{
-      showFeedback(S.answers[S.idx]);
-    }} else {{
-      addBtn('Chhod kar agla', 'ghost', () => {{ saveTime(); S.idx = Math.min(S.idx+1, S.qs.length-1); renderPalette(); renderQ(); }});
-    }}
-    addBtn('Submit &amp; Result', 'prime', () => submitTest(false));
-  }}
-  renderPalette();
-}}
-
-function showAnsweredOnly() {{
-  const i = S.answers[S.idx];
-  document.querySelectorAll('#optBox .opt').forEach((el,k) => el.classList.toggle('sel', k === i));
-}}
-
-function onPick(i) {{
-  if (S.mode === 'quiz') {{
-    if (S.locked) return;
+  renderTabs(); renderPalette();
+}
+function onPick(i) {
+  if (S.mode === 'exam') {
+    S.pending = i;
+    renderQ();
+  } else {
     if (S.answers[S.idx] !== undefined) return;
-    S.answers[S.idx] = i; S.locked = true;
+    S.answers[S.idx] = i;
     showFeedback(i);
     renderPalette();
-  }} else {{
-    S.answers[S.idx] = i;
-    showAnsweredOnly();
-    renderPalette();
-  }}
-}}
+  }
+}
 
-function showFeedback(picked) {{
+/* ---------- exam actions (TCS iON behaviour) ---------- */
+function clearResp() { S.pending = undefined; delete S.answers[S.idx]; renderQ(); }
+function markNext() {
+  if (S.pending !== undefined) S.answers[S.idx] = S.pending;
+  S.pending = undefined;
+  S.marks[S.idx] = true;
+  saveTime();
+  nextQ();
+}
+function saveNext() {
+  if (S.pending !== undefined) S.answers[S.idx] = S.pending;
+  S.pending = undefined;
+  saveTime();
+  nextQ();
+}
+function sectionEndNext() {
+  /* TCS iON: last question of a section -> first question of next section */
+  const sec = S.qs[S.idx].sec;
+  let n = -1;
+  for (let i = S.idx+1; i < S.qs.length; i++) if (S.qs[i].sec !== sec) { n = i; break; }
+  return n;
+}
+function nextQ() {
+  let n = sectionEndNext();
+  if (n === -1) n = Math.min(S.idx+1, S.qs.length-1);
+  S.idx = n;
+  renderQ();
+}
+function moveQ(d) {
+  saveTime(false);
+  const n = S.idx + d;
+  if (n < 0 || n >= S.qs.length) return;
+  S.idx = n; S.pending = undefined;
+  renderQ();
+}
+
+/* ---------- quiz feedback ---------- */
+function showFeedback(picked) {
   const q = S.qs[S.idx];
   const ok = picked === q.ans;
-  document.querySelectorAll('#optBox .opt').forEach((el,k) => {{
+  document.querySelectorAll('#optBox .optrow').forEach((el,k) => {
     if (k === q.ans) el.classList.add('correct');
     else if (k === picked) el.classList.add('wrong');
     else el.classList.add('dim');
-  }});
+  });
   document.getElementById('fbBox').innerHTML =
     '<div class="fb ' + (ok ? 'ok' : 'no') + '">' +
     (ok ? '<b>Sahi uttar.</b>' : '<b>Galat uttar.</b> Sahi uttar: <b>(' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</b>') +
     '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
     '<div class="src">Source: ' + esc(q.src) + '</div></div>';
-  const cb = document.getElementById('ctrlBox'); cb.innerHTML = '';
-  const b = document.createElement('button'); b.className = 'btn blue';
-  b.innerHTML = S.idx < S.qs.length-1 ? 'Agla Question' : 'Result Dekhein';
-  b.onclick = () => {{ saveTime(); if (S.idx < S.qs.length-1) {{ S.idx++; S.locked = (S.answers[S.idx] !== undefined); renderQ(); }} else submitTest(false); }};
+  const cb = document.getElementById('quizNav');
+  cb.innerHTML = '';
+  const b = document.createElement('button'); b.className = 'abtn next';
+  b.innerHTML = S.idx < S.qs.length-1 ? 'Agla Question  »' : 'Result Dekhein  »';
+  b.onclick = () => { saveTime(false); if (S.idx < S.qs.length-1) { S.idx++; renderQ(); } else submitTest(false); };
   cb.appendChild(b);
-}}
+}
 
-function clearResp() {{ delete S.answers[S.idx]; renderQ(); }}
-function markNext() {{ S.marks[S.idx] = true; saveTime(); nextQ(); }}
-function saveNext() {{ saveTime(); nextQ(); }}
-function nextQ() {{
-  let n = -1;
-  for (let i = S.idx+1; i < S.qs.length; i++) if (S.visited[i] === undefined) {{ n = i; break; }}
-  if (n === -1) n = Math.min(S.idx+1, S.qs.length-1);
-  S.idx = n; S.locked = false;
-  renderQ();
-}}
-function jumpTo(i) {{ saveTime(); S.idx = i; S.locked = false; renderQ(); window.scrollTo({{top:0,behavior:'smooth'}}); }}
-
-function submitTest(auto) {{
-  saveTime();
+/* ---------- submit + analysis ---------- */
+function submitTest(auto) {
+  saveTime(false);
+  if (S.pending !== undefined) S.answers[S.idx] = S.pending;
   const a = Object.keys(S.answers).length;
   const un = S.qs.length - a;
-  if (!auto && un > 0 && !confirm(un + ' questions ka uttar nahi diya gaya hai (ye galat nahi gine jayenge, bas chhode hue rahenge). Submit karein?')) return;
+  if (!auto && un > 0 && !confirm(un + ' questions ka uttar save nahi hua hai (ye SKIPPED gine jayenge, galat nahi). Submit karein?')) return;
   if (!auto && un === 0 && !confirm('Saare questions answered hain. Submit karein?')) return;
   clearInterval(S.tick);
   const secs = Math.floor((Date.now()-S.t0)/1000);
   let correct = 0, wrong = 0;
-  S.qs.forEach((q,i) => {{
+  S.qs.forEach((q,i) => {
     if (S.answers[i] === undefined) return;
     if (S.answers[i] === q.ans) correct++; else wrong++;
-  }});
+  });
   const skipped = S.qs.length - correct - wrong;
   const attempted = correct + wrong;
   const acc = attempted ? Math.round(correct*100/attempted) : 0;
   const avgT = attempted ? (secs/attempted).toFixed(1) : '—';
   let slow = 0;
-  S.spent.forEach((t,i) => {{ if (t > S.spent[slow]) slow = i; }});
-  document.getElementById('testCard').style.display = 'none';
+  S.spent.forEach((t,i) => { if (t > S.spent[slow]) slow = i; });
+  document.getElementById('examRoot').style.display = 'none';
   document.getElementById('resultCard').style.display = '';
-  document.getElementById('resTitle').textContent = S.name + ' — ' + (S.mode === 'quiz' ? 'Quiz Mode' : 'Exam Mode') + ' Result';
-  document.getElementById('resSub').innerHTML = 'Topic {n}: {title} • Questions: ' + S.qs.length + ' • Unattempted questions galat nahi gine gaye.';
+  document.getElementById('resTitle').textContent = S.name + ' — ' + (S.mode==='quiz'?'Quiz Mode':'Exam Mode') + ' Result';
+  document.getElementById('resSub').innerHTML = 'Topic __N__: __TITLE__ • Questions: ' + S.qs.length + ' • Unattempted questions ko SKIPPED mana gaya hai (galat nahi).';
   document.getElementById('statGrid').innerHTML =
     '<div class="stat t"><div class="v">' + correct + ' / ' + S.qs.length + '</div><div class="l">SCORE</div></div>' +
     '<div class="stat c"><div class="v">' + correct + '</div><div class="l">SAHI (CORRECT)</div></div>' +
@@ -499,29 +492,29 @@ function submitTest(auto) {{
     '<div class="stat t"><div class="v">' + (attempted ? (slow+1) : '—') + '</div><div class="l">SABSE ZYADA SAMAY (Q.no)</div></div>';
   let marked = 0; for (const k in S.marks) if (S.marks[k]) marked++;
   document.getElementById('resTable').innerHTML =
-    '<tr><th>Candidate</th><td>' + esc(S.name) + '</td><th>Mode</th><td>' + (S.mode === 'quiz' ? 'Quiz' : 'Exam') + '</td></tr>' +
+    '<tr><th>Candidate</th><td>' + esc(S.name) + '</td><th>Mode</th><td>' + (S.mode==='quiz'?'Quiz':'Exam') + '</td></tr>' +
     '<tr><th>Total Questions</th><td>' + S.qs.length + '</td><th>Attempted</th><td>' + attempted + '</td></tr>' +
     '<tr><th>Correct / Wrong</th><td>' + correct + ' / ' + wrong + '</td><th>Skipped (chhode hue)</th><td>' + skipped + '</td></tr>' +
     '<tr><th>Accuracy</th><td>' + acc + '% (attempted par)</td><th>Marked for review</th><td>' + marked + '</td></tr>' +
     '<tr><th>Time taken</th><td>' + fmt(secs) + '</td><th>Avg time/question</th><td>' + avgT + 's</td></tr>';
   const rb = document.getElementById('revBox'); rb.innerHTML = '';
-  S.qs.forEach((q,i) => {{
+  S.qs.forEach((q,i) => {
     const picked = S.answers[i];
     let chip, line;
-    if (picked === undefined) {{
+    if (picked === undefined) {
       chip = '<span class="st s">CHHODA (SKIPPED)</span>';
-      line = '<div class="line">Is question ka uttar nahi diya gaya.</div>';
-    }} else if (picked === q.ans) {{
+      line = '<div class="line">Is question ka uttar save nahi hua.</div>';
+    } else if (picked === q.ans) {
       chip = '<span class="st c">SAHI</span>';
       line = '<div class="line"><span class="okc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>';
-    }} else {{
+    } else {
       chip = '<span class="st w">GALAT</span>';
       line = '<div class="line"><span class="noc">Aapka uttar: (' + L[picked] + ') ' + esc(q.opts[picked][0]) + '</span></div>' +
              '<div class="line"><span class="okc">Sahi uttar: (' + L[q.ans] + ') ' + esc(q.opts[q.ans][0]) + '</span></div>';
-    }}
+    }
     const div = document.createElement('div');
     div.className = 'rev';
-    div.innerHTML = chip + (S.marks[i] ? '<span class="st" style="background:#d9c8f2;color:#3d2472;border:1px solid #8a63c9">MARKED</span>' : '') +
+    div.innerHTML = chip + (S.marks[i] ? '<span class="st" style="background:#c6aeee;color:#2f1a5e;border:1px solid #8a63c9">MARKED</span>' : '') +
       '<div class="qh">Q' + (i+1) + '. ' + esc(q.q[0]) + '</div>' +
       '<div class="qhm">' + esc(q.q[1] || '') + '</div>' +
       q.opts.map((o,k) => '<div class="line">' + (k === q.ans ? '<span class="okc">(' + L[k] + ') ' + esc(o[0]) + '</span>' : '(' + L[k] + ') ' + esc(o[0])) + '</div>').join('') +
@@ -529,15 +522,177 @@ function submitTest(auto) {{
       '<div class="exp"><b>Explanation:</b> ' + esc(q.exp[0] || '—') + (q.exp[1] ? '<div class="hi">' + esc(q.exp[1]) + '</div>' : '') + '</div>' +
       '<div class="meta">Samay: ' + (S.spent[i] || 0).toFixed(0) + ' second &nbsp;|&nbsp; Source: ' + esc(q.src) + ' &nbsp;|&nbsp; ' + esc(q.sec) + '</div>';
     rb.appendChild(div);
-  }});
-  window.scrollTo({{top:0,behavior:'smooth'}});
-}}
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.getElementById('nameIn').addEventListener('keyup', e => { if (e.key === 'Enter') startTest(); });
+"""
 
-document.getElementById('nameIn').addEventListener('keyup', e => {{ if (e.key === 'Enter') startTest(); }});
-</script>
+HTML = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EkGuru Online Test — Topic __N__: __TITLE__</title>
+<style>__CSS__</style>
+</head>
+<body>
+
+<div id="examRoot" style="display:none">
+  <div class="topbar">
+    <div class="brand"><span class="e">Ek</span><span class="g">Guru</span><small>ONLINE TEST PORTAL</small></div>
+    <div class="testname">Topic __N__ — __TITLE__<br><span id="whoLine"></span></div>
+    <div class="topp">
+      <div class="tbox"><div class="lbl">ANSWERED</div><div class="val" id="topAns" style="font-size:12px; letter-spacing:0">—</div></div>
+      <div class="tbox"><div class="lbl">TIME LEFT</div><div class="val" id="timerLine">00:00</div></div>
+      <button class="tbtn" id="langBtn" onclick="toggleLang()">Language: Both</button>
+      <button class="tbtn" onclick="zoom(1)">A+</button>
+      <button class="tbtn" onclick="zoom(-1)">A-</button>
+      <button class="tbtn" onclick="toggleFull()">Full Screen</button>
+    </div>
+  </div>
+  <div class="secbar" id="secTabs"></div>
+  <button class="palToggle" id="palToggle" onclick="togglePalette()" title="Palette chhupayein/dikhayein">&#187;</button>
+  <div class="layout">
+    <div class="qcol">
+      <div class="qpanel">
+        <div class="qhead">
+          <span id="qNoLine"></span>
+          <span id="secLine"></span>
+          <span class="langsel">
+            <button id="langE" onclick="setLang('en')">English</button>
+            <button id="langH" onclick="setLang('hi')">Hindi</button>
+            <button id="langB" onclick="setLang('both')" class="on">Both</button>
+          </span>
+        </div>
+        <div class="actionbar">
+          <button class="abtn clear" onclick="clearResp()">Clear Response</button>
+          <button class="abtn prev" onclick="moveQ(-1)">« Previous</button>
+          <button class="abtn mark" onclick="markNext()">Mark for Review &amp; Next</button>
+          <button class="abtn save" onclick="saveNext()">Save &amp; Next &#187;</button>
+          <span id="quizNav" style="display:flex; gap:7px;"></span>
+        </div>
+        <div class="qbody">
+          <div class="qtext" id="qText"></div>
+          <div class="qhi" id="qHi"></div>
+          <div id="optBox"></div>
+        </div>
+        <div id="fbBox"></div>
+        <div class="note" id="noteLine">Exam Mode: option chunne ke baad jawab "Save &amp; Next" dabakar hi save hota hai (live exam jaisa). Palette jump jawab save nahi karta.</div>
+      </div>
+    </div>
+    <aside class="pcol" id="palettePanel">
+      <div class="ppanel">
+        <div class="ptitle">QUESTION PALETTE</div>
+        <div class="legend">
+          <div class="row"><span class="sw nv"></span> Aapne question nahi dekha (Not Visited)</div>
+          <div class="row"><span class="sw vis"></span> Dekha, uttar nahi diya (Not Answered)</div>
+          <div class="row"><span class="sw ans"></span> Uttar diya (Answered)</div>
+          <div class="row"><span class="sw mk"></span> Marked for Review</div>
+          <div class="row"><span class="sw ma"></span> Answered &amp; Marked (evaluation ke liye mana jayega)</div>
+        </div>
+        <div class="palette" id="dotBox"></div>
+        <div class="sumtitle">SECTION SUMMARY</div>
+        <table class="sumtab">
+          <tr><td>Answered</td><td class="n" id="sumAns">0</td></tr>
+          <tr><td>Not Answered (dekhe hue)</td><td class="n" id="sumNotAns">0</td></tr>
+          <tr><td>Marked for Review</td><td class="n" id="sumMk">0</td></tr>
+          <tr><td>Answered &amp; Marked</td><td class="n" id="sumMa">0</td></tr>
+          <tr><td>Not Visited</td><td class="n" id="sumNv">0</td></tr>
+        </table>
+        <div class="submitwrap"><button class="submitbtn" onclick="submitTest(false)">Submit Test</button></div>
+      </div>
+    </aside>
+  </div>
+  <div class="foot"><b>EkGuru Learning</b> — Compiled &amp; updated by <b>PRAKASH</b> | Reference: Forouzan + India-level PYQ banks (2011–2026)</div>
+</div>
+
+<div class="overlay" id="startCard">
+  <div class="sheet">
+    <h2>Test Instructions</h2>
+    <ol class="ins">
+      <li>Apna naam likhein, mode chunein aur <b>Test Shuru Karein</b> dabayein.</li>
+      <li><b>Quiz Mode:</b> har question par uttar chunte hi sahi/galat + explanation turant dikhta hai (seekhne ke liye).</li>
+      <li><b>Exam Mode:</b> live exam jaisa — option chunne ke baad <b>Save &amp; Next</b> dabakar jawab save karein. Sirf option chunne se jawab save nahi hota.</li>
+      <li><b>Clear Response</b> — chuna hua jawab hataata hai. <b>Mark for Review &amp; Next</b> — baad mein dekhne ke liye mark karta hai.</li>
+      <li><b>Question Palette</b> (dayiin taraf): har question ka rang batata hai ki uska kya status hai. Neeche <b>Section Summary</b> bhi hai.</li>
+      <li>Upar <b>section tabs</b> se kisi bhi section mein ja sakte hain. <b>Language</b> button se English/Hindi/Both kar sakte hain. <b>A+/A-</b> se text bada-chhota.</li>
+      <li>Samay poora hone par test apne aap submit hoga.</li>
+      <li>Submit ke baad <b>Correct / Wrong / Chhode hue</b> alag gine jayenge; unattempted questions galat nahi gine jaate.</li>
+      <li>Result ke baad <b>har question ka explanation</b> (solution) diya jayega.</li>
+      <li>Questions aur options har baar kram badal kar aate hain.</li>
+    </ol>
+    <div class="fld"><label>Apka naam / Candidate name</label>
+      <input type="text" id="nameIn" maxlength="40" placeholder="Naam likhein"></div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <div class="fld" style="flex:1; min-width:180px"><label>Mode</label>
+        <select id="modeIn">
+          <option value="quiz">Quiz Mode — instant answer + explanation</option>
+          <option value="exam">Exam Mode — live CBT style</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:150px"><label>Questions</label>
+        <select id="countIn">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="0">Sabhi (__COUNT__)</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:170px"><label>Har question ka samay (Exam)</label>
+        <select id="tpqIn">
+          <option value="45">45 second</option>
+          <option value="60" selected>60 second</option>
+          <option value="90">90 second</option>
+          <option value="120">2 minute</option>
+        </select></div>
+    </div>
+    <div class="chkline"><input type="checkbox" id="agreeIn"> <label for="agreeIn" style="display:inline">Maine instructions padh li hain.</label></div>
+    <button class="btn prime" onclick="startTest()">Test Shuru Karein</button>
+    <div class="hint">Questions: repo exam papers + Forouzan + India-level PYQ banks (GATE, UGC NET, RPSC, KVS, EMRS, SSC, RRB, IBPS — 2011–2026) + original practice set. Sabhi uttar verify kiye gaye hain.</div>
+  </div>
+</div>
+
+<div id="resultCard" style="display:none">
+  <div class="resWrap">
+    <h2 style="font-size:18px; color:#16283f; border-bottom:2.5px solid #E97313; display:inline-block; padding-bottom:5px; margin-bottom:10px;">Result &amp; Analysis</h2>
+    <div class="resTitle" id="resTitle"></div>
+    <div class="hint" id="resSub"></div>
+    <div class="statgrid" id="statGrid"></div>
+    <table class="tt" id="resTable"></table>
+    <div class="btnrow">
+      <button class="btn blue" onclick="window.print()">Print / Save Result</button>
+      <button class="btn ghost" onclick="location.reload()">Naya Test</button>
+    </div>
+    <h2 style="font-size:18px; color:#16283f; border-bottom:2.5px solid #E97313; display:inline-block; padding-bottom:5px; margin:20px 0 10px;">Question-wise Solutions</h2>
+    <div id="revBox"></div>
+  </div>
+  <div class="foot"><b>EkGuru Learning</b> — Compiled &amp; updated by <b>PRAKASH</b> | Topic __N__: __TITLE__</div>
+</div>
+
+<script>__JS__</script>
 </body>
 </html>
 """
+
+
+def build_html(n, items):
+    js = JS.replace("__DATA__", json.dumps(items, ensure_ascii=False).replace("</", "<\\/"))
+    html = (HTML.replace("__CSS__", CSS)
+                .replace("__JS__", js)
+                .replace("__N__", str(n))
+                .replace("__TITLE__", TOPICS[n])
+                .replace("__COUNT__", str(len(items))))
+    # per-question language buttons need setLang()
+    html = html.replace("function toggleLang() {",
+        "function setLang(v) {\n"
+        "  S.lang = v;\n"
+        "  document.getElementById('langE').classList.toggle('on', v==='en');\n"
+        "  document.getElementById('langH').classList.toggle('on', v==='hi');\n"
+        "  document.getElementById('langB').classList.toggle('on', v==='both');\n"
+        "  document.getElementById('langBtn').textContent = v==='en'?'Language: English':(v==='hi'?'Language: Hindi':'Language: Both');\n"
+        "  renderQ();\n"
+        "}\n"
+        "function toggleLang() {")
+    return html
 
 
 def main():

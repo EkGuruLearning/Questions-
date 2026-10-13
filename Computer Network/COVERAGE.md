@@ -246,6 +246,27 @@ Theory + 631 MCQs (Answers + Nukte).pdf/.md"** (216 pages):
 - **Practice PDFs:** section band + first question ek chunk mein (lonely section
   headers khatam) — 75 pages, 0 sparse, 0 lonely sections.
 
+
+## 14. Quiz app v3 — real CBT layout (SSC 2025 + TCS iON/NTA standard) — Oct 2026
+
+Layout real online-exam interfaces se study kiya (Oliveboard SSC-mock-interface
+articles; TCS iON IBPS/SBI examinee instructions; NTA Mains advisory):
+
+- **Question palette RIGHT** + collapse arrow (»/«) — TCS iON/NTA standard
+- **Action bar question ke upar** (options se pehle) — Clear Response | « Previous |
+  Mark for Review & Next | Save & Next — SSC 2025 new interface placement
+- **Authentic save behaviour (Exam Mode):** option select = pending; jawab
+  "Save & Next"/"Mark for Review & Next" par hi save; palette jump save nahi
+  karta (TCS iON rule); last question of section -> next section auto
+- **Section tabs** top bar par (current highlighted) — TCS iON
+- **Language selector** question ke upar (English / Hindi / Both) — SSC 2025
+- **Zoom A+/A-**, **Full Screen**, answered-count top par — SSC 2025
+- **Palette legend** (Not Visited / Not Answered / Answered / Marked /
+  Answered+Marked=evaluation) + **Section Summary** table — TCS iON/NTA
+- Countdown timer + auto-submit; result = Correct/Wrong/Skipped alag + accuracy
+  + time + per-question solutions
+- 7 alag-alag topic HTML files (751 Qs).
+
 ## 7. Open items (nothing lost — all staged)
 
 1. **T1/T2 holding (53)** — new finds (web + OCR + banks) merge into the T1/T2
