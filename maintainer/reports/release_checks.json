@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T16:35:56+00:00",
+  "generated_at": "2026-10-14T16:36:18+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 15,
@@ -86,7 +86,7 @@
         "test_published_route_list_covers_every_html_page (test_site_data.SiteDataTests.test_published_route_list_covers_every_html_page) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 9 tests in 0.207s",
+        "Ran 9 tests in 0.187s",
         "",
         "OK"
       ]
@@ -128,7 +128,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.055s",
+        "Ran 8 tests in 0.056s",
         "",
         "OK"
       ]
@@ -151,7 +151,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 63.580874"
+        "# duration_ms 62.925372"
       ]
     },
     {
@@ -174,7 +174,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (31 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (0 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],
