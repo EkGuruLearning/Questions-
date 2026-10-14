@@ -109,6 +109,18 @@ tools/
   fonts/                         # bundled fonts
 ```
 
+## Current website add-file paths
+
+The existing source PDFs and topic books remain at their original paths; this section defines the consistent location for **new** website resources.
+
+- New topic-specific study PDFs: `Topics/T01/` through `Topics/T07/` under this folder. Register each PDF in `data/catalog/books.json`, add its ID to the CN `book_ids` list in `data/catalog/subjects.json`, then rebuild site catalogues. See `Topics/README.md` for the exact commands and file format.
+- New question-source PDFs: `Incoming/` only. Ingestion/review must finish before question content can enter the website's canonical bank; incoming files are not approved website questions.
+- Curated question records: `tools/data/topicN_data.py`; generated canonical/chunk files are rebuilt by the CN data pipeline, not hand-edited.
+- Website route: `subjects/computer-network/index.html`. The browser reads generated `assets/catalog/resources.json` for topic resources and `assets/banks/cn/manifest.json` plus selected topic chunks for practice.
+- Generated catalogues under `assets/catalog/` and `assets/catalog.min.json` are outputs. Do not copy another repository's stale generated versions over them.
+
+For the whole site and future-repository merge steps, open `guides/repository-structure/index.html` or run `python3 tools/read_structure.py --check` from the repository root.
+
 ---
 
 # 📦 Release R1 — 2026-10-14 (master execution prompt follow-up)

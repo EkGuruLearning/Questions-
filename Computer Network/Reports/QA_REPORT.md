@@ -4,6 +4,8 @@
 **Canonical SHA-256:** `014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0`<br>
 **Snapshot date:** 2026-10-14
 
+> **Scope note:** This report preserves the earlier Computer Network bank/release QA record. Its `data/reports/browser_visual_qa.json` and rendered-browser section cover the pre-catalog portal UI, not the new subject/map routes. Current portal validation is recorded separately in [`data/reports/portal_qa_report.md`](../../data/reports/portal_qa_report.md) and [`data/reports/portal_browser_visual_qa.json`](../../data/reports/portal_browser_visual_qa.json). Neither report claims a deployment check.
+
 ## Recorded automated results
 
 | Check | Result | Command | Notes |
@@ -21,15 +23,15 @@
 | JavaScript syntax | **PASS** | `bash -lc 'node --check assets/js/engine.mjs && node --check assets/js/app.mjs && node --check tests/engine/engine.test.mjs && node --check tests/navigation/app_dom_smoke.cjs && node --check tests/visual/browser_visual_qa.cjs'` | Engine, application module and Node tests parse. |
 | Portal interaction smoke (optional JSDOM) | **PASS** | `node tests/navigation/app_dom_smoke.cjs` | Catalog-first loading, topic-only fetch, nav, answer feedback, bookmark, source dialog, scoring/review and filters; exit 77 means jsdom is not installed. JSDOM was available in this test environment; the production portal has no npm runtime dependency. |
 | Engine unit tests | **PASS** | `node --test tests/engine/engine.test.mjs` | Filtering, opt-in status, deterministic sampling, scoring and language fallbacks. |
-| Rendered browser visual and accessibility QA (optional) | **PASS** | `node tests/visual/browser_visual_qa.cjs` | Headless Chromium screenshots, viewport overflow, 44px controls and axe checks; exit 77 means browser packages are unavailable. Chromium 153.0.8010.0 (headless); viewports: 320×780, 375×812, 768×1024, 1365×900; axe violations=0. |
+| Rendered browser visual and accessibility QA (pre-catalog UI snapshot) | **PASS · HISTORICAL SCOPE** | Recorded in `data/reports/browser_visual_qa.json` | The 320×780, 375×812, 768×1024 and 1365×900 run predates the new subject/map routes. It is not current route QA; see `data/reports/portal_qa_report.md` for the current 15-viewport/135-route run. |
 | PDF validity and rendering audit (optional PyMuPDF) | **PASS** | `python3 tools/audit_pdfs.py` | Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable. PyMuPDF 1.28.2; PDFs=55; pages rendered=2029/2029; repaired=0; hashes unchanged=True. |
 | Whitespace/conflict check | **PASS** | `bash -lc 'git diff --check && git diff --cached --check && python3 tools/check_whitespace.py'` | Tracked diffs and changed/untracked text files are checked; preserved archive bytes are excluded. |
 
-## Rendered-browser visual and accessibility QA
+## Earlier rendered-browser result — historical UI only
 
-**PASS** — Chromium 153.0.8010.0 (headless) at emulated viewports 320×780, 375×812, 768×1024, 1365×900. Landing and quiz layouts had no horizontal overflow; source dialogs fit their viewports; mobile navigation was exercised; all measured visible controls were at least 44 px high; axe reported 0 violations across landing, quiz and source-dialog states; browser/runtime and failed-response errors: 0.
+**Historical pass** — Chromium 153.0.8010.0 (headless) at 320×780, 375×812, 768×1024 and 1365×900. This is retained as a record for the pre-catalog UI. It is not evidence about the new subject, map, study-material or source routes; current checks are in `data/reports/portal_qa_report.md`.
 
-Rendered screenshots were captured and visually reviewed. These are headless viewport emulations, not tests on physical devices.
+The earlier screenshots were headless viewport emulations, not tests on physical devices.
 
 ## Original PDF validity and rendering QA
 
@@ -39,6 +41,6 @@ This validates file opening, page-tree loading and rendering—not question/answ
 
 ## Scope and limitations
 
-- Current root portal data loads from a small catalog and content-hashed topic chunks.
+- The shared Computer Network practice app loads a small catalog and content-hashed topic chunks; the new subject catalogue is documented and checked separately.
 - Legacy topic HTML snapshots were inspected separately; they are retained as historical artifacts and must not be presented as current verification-gated apps.
-- The pre-change GitHub Pages source was fetched during this audit. This local QA run contains no post-merge or post-deployment live smoke test.
+- The pre-change GitHub Pages source was fetched during the earlier bank audit, before this catalogue redesign. No current deployment or post-deployment live smoke test was performed.

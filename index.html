@@ -3,286 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#16283f">
-  <meta name="description" content="EkGuru Learning: source-labelled Computer Networks practice, honest answer-verification status, local progress, and a data-driven subject catalog.">
-  <title>EkGuru Learning — Computer Networks Practice</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2316283f'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23ff9d2e' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/css/portal.css">
-  <script type="module" src="assets/js/app.mjs"></script>
+  <meta name="theme-color" content="#142d3f">
+  <meta name="description" content="EkGuru Learning by PRAKASH: explore Computer Network practice, Rajasthan Geography maps, study material and source notes.">
+  <title>EkGuru Learning — Subjects, Study Material &amp; Maps</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/app.js"></script>
 </head>
-<body>
+<body class="catalog-page" data-page="home">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <div class="wrap header-row">
-      <a class="brand" href="#home">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html">
         <span class="brand-mark" aria-hidden="true">e</span>
-        <span><span class="brand-name">Ek<span>Guru</span></span><span class="brand-caption">LEARNING · PRACTICE PORTAL</span></span>
+        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">BY PRAKASH · STUDY PORTAL</span></span>
       </a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
-      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
-        <a href="#subjects">Subjects</a>
-        <a href="#practice">Practice</a>
-        <a href="#savedItems">Saved</a>
-        <a href="#library">Library</a>
-        <a href="#sources">Sources &amp; status</a>
-        <a href="#about">About</a>
-        <a class="nav-cta" href="#practice">Start practice</a>
-      </nav>
+      <details class="site-menu">
+        <summary class="site-menu-toggle">Menu</summary>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="subjects/index.html">All Subjects</a>
+          <a href="subjects/computer-network/index.html">Computer Network</a>
+          <a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a>
+          <a href="maps/index.html">Maps &amp; Atlases</a>
+          <a href="practice/index.html">Practice Tests</a>
+          <a href="study-material/index.html">Study Material</a>
+          <a href="sources/index.html">Sources &amp; Verification</a>
+          <a href="guides/repository-structure/index.html">File Guide</a>
+        </nav>
+      </details>
     </div>
   </header>
 
-  <section class="hero" id="home" aria-labelledby="heroTitle">
-    <div class="wrap hero-inner">
-      <div>
-        <span class="eyebrow">Free · No sign-up · Local progress only</span>
-        <h1 id="heroTitle">Learn the network.<br><em>Know the source.</em></h1>
-        <p>EkGuru Learning currently publishes one practice bank: Computer Networks. Each question carries its own answer-verification and source label. Official paper-and-final-key evidence is counted separately; a source claim is never presented as proof.</p>
+  <section class="hero" aria-labelledby="homeTitle">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">EkGuru Learning · By PRAKASH</span>
+        <h1 id="homeTitle">Learn by subject.<br><em>Find the source.</em></h1>
+        <p class="lead">A practical learning portal built from the materials already in this repository. Explore the source-labelled Computer Network question bank, or open the existing Rajasthan Geography map and data collection.</p>
+        <p class="muted">Computer Network has a question bank. Rajasthan Geography currently publishes maps, boundary data and audits—not a question bank. Map source and boundary claims have open verification notes.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#practice">Choose a practice set</a>
-          <a class="button secondary" href="#sources">See verification coverage</a>
+          <a class="button accent" href="subjects/index.html">Explore all subjects</a>
+          <a class="button secondary" href="subjects/computer-network/index.html">Computer Network</a>
         </div>
-        <p class="hero-note">No accounts, push/email notifications, analytics, ads or cloud sync. Saved attempts and bookmarks stay in this browser.</p>
       </div>
-      <aside class="summary-card" aria-labelledby="summaryTitle">
-        <h2 id="summaryTitle">Current bank snapshot</h2>
-        <dl class="summary-list">
-          <div><dt>Published subjects</dt><dd id="publishedSubjects">Loading…</dd></div>
-          <div><dt>CN records</dt><dd id="totalQuestions">Loading…</dd></div>
-          <div><dt>Topics</dt><dd id="totalTopics">Loading…</dd></div>
-          <div><dt>Official paper + final key</dt><dd id="officialCount">Loading…</dd></div>
-          <div><dt>Answer checked</dt><dd id="answerCheckedCount">Loading…</dd></div>
-          <div><dt>Your local sessions</dt><dd id="localAttemptCount">0</dd></div>
-          <div><dt>Best local score</dt><dd id="localBestScore">—</dd></div>
-          <div><dt>Saved questions</dt><dd id="localBookmarkCount">0</dd></div>
-        </dl>
-        <p class="summary-foot" id="buildInfo">Bank build ID and source totals load from generated data.</p>
+      <aside class="hero-map" aria-label="Rajasthan map preview">
+        <a href="maps/rajasthan/index.html" aria-label="Open Rajasthan map and atlas details">
+          <img id="mapPreviewImage" src="assets/catalog/rajasthan-border-atlas-preview.webp" width="1600" height="1130" fetchpriority="high" alt="Preview of the repository's Rajasthan border-district atlas with Hindi labels and highlighted borders. This is a study preview; source and boundary details still need verification.">
+        </a>
+        <p class="image-caption" id="mapImageCaption">Existing Rajasthan border-district atlas preview. It is not an official or fully verified map; read the linked source audit.</p>
+        <div class="card-actions">
+          <a class="button secondary small" href="maps/rajasthan/index.html">Maps &amp; Atlases</a>
+          <a id="fullSizeMapLink" class="button secondary small" href="Rajasthan%20Geography%20Maps/exports/Rajasthan_Border_District_Atlas_A1.png" >Open full-size A1 PNG</a>
+        </div>
       </aside>
     </div>
   </section>
 
-  <aside class="status-banner" aria-label="Verification status">
-    <div class="wrap"><strong>Verification note:</strong> “Answer checked” does not mean “official paper + final key checked.” Unverified claimed answers are opt-in; disputed and pending items are excluded from tests.</div>
-  </aside>
-
-  <main id="main" class="wrap">
-    <section class="section" id="subjects" aria-labelledby="subjectsTitle">
-      <h2 class="section-heading" id="subjectsTitle">Subjects</h2>
-      <p class="section-intro">Cards and counts are generated from the subject catalog and canonical bank. Subjects without a reviewed, published bank remain unavailable—no estimated progress bars or empty tests.</p>
-      <div class="card-grid" id="subjectGrid" aria-live="polite">
-        <p class="empty-state">Loading the current subject catalog…</p>
+  <main id="main" class="shell">
+    <section class="section" aria-labelledby="exploreTitle">
+      <div class="section-heading-row">
+        <div>
+          <span class="eyebrow">Start here</span>
+          <h2 id="exploreTitle">Explore Subjects</h2>
+        </div>
+        <a href="subjects/index.html">Browse all subjects →</a>
+      </div>
+      <p class="section-intro">Each subject opens a dedicated page with its real, available material. A live resource page does not imply a question bank or verified exam claims.</p>
+      <p id="catalogStatus" class="status-line" role="status" aria-live="polite">Subject catalogue is shown below. Resource details are enhanced from the checked-in catalogue when JavaScript is available.</p>
+      <div id="subjectGrid" class="subject-grid" aria-live="polite">
+        <article class="card subject-card">
+          <span class="status-chip">Live question bank</span><span class="subject-mark" aria-hidden="true">01</span>
+          <h3>Computer Network</h3><p class="muted">कंप्यूटर नेटवर्क</p>
+          <p>Seven topics, interactive practice, booklets, theory and question-level source/answer-status notes.</p>
+          <a class="button accent" href="subjects/computer-network/index.html">Explore Computer Network</a>
+        </article>
+        <article class="card subject-card">
+          <span class="status-chip warning">Live resources · no quiz bank</span><span class="subject-mark" aria-hidden="true">02</span>
+          <h3>Rajasthan Geography</h3><p class="muted">राजस्थान भूगोल</p>
+          <p>Existing map previews, border-district CSVs, metadata, source registers and open audit findings.</p>
+          <a class="button accent" href="subjects/rajasthan-geography/index.html">Explore Rajasthan Geography</a>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="practice" aria-labelledby="practiceTitle">
-      <h2 class="section-heading" id="practiceTitle">Build a practice set</h2>
-      <p class="section-intro">Use answer-checked questions by default. You can opt into unverified answer claims, but those questions are labelled in the player and results. This is user-configured practice, not an exact exam simulation.</p>
-      <div class="panel" id="setupPanel">
-        <div class="form-grid">
-          <div class="field">
-            <label for="subjectSelect">Subject</label>
-            <select id="subjectSelect"><option value="cn">Loading catalog…</option></select>
-            <p class="field-help">Only subjects with an available bank can be started.</p>
-          </div>
-          <div class="field">
-            <label for="topicSelect">Topic</label>
-            <select id="topicSelect"><option value="all">All topics</option></select>
-            <p class="field-help">Selecting one topic loads only its question chunk.</p>
-          </div>
-          <div class="field">
-            <label for="examSelect">Exam / practice fit tag</label>
-            <select id="examSelect"><option value="all">All tags</option></select>
-            <p class="field-help">Tags are suggested/source labels, not proof a question appeared in an exam.</p>
-          </div>
-          <div class="field">
-            <label for="verificationSelect">Answer-verification status</label>
-            <select id="verificationSelect">
-              <option value="reviewed_answers">Answer-checked + official-evidence records only</option>
-              <option value="all_practice">Include unverified claimed answers (opt-in)</option>
-              <option value="claimed_answer_unverified">Unverified claimed answers only</option>
-              <option value="paper_and_key_checked">Official paper + final key checked only</option>
-              <option value="disputed">Disputed — review only, not test-eligible</option>
-              <option value="pending_review">Pending review — not test-eligible</option>
-            </select>
-            <p class="field-help" id="verificationHelp">Official-evidence records require a question-level paper and final/corrected key match.</p>
-          </div>
-          <div class="field">
-            <label for="sourceTypeSelect">Source type</label>
-            <select id="sourceTypeSelect"><option value="all">All source types</option></select>
-          </div>
-          <div class="field">
-            <label for="difficultySelect">Difficulty estimate</label>
-            <select id="difficultySelect">
-              <option value="all">Any estimate</option>
-              <option value="easy">Easy (heuristic)</option>
-              <option value="medium">Medium (heuristic)</option>
-              <option value="hard">Hard (heuristic)</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="questionCountSelect">Questions</label>
-            <select id="questionCountSelect">
-              <option value="10">10 questions</option>
-              <option value="20" selected>20 questions</option>
-              <option value="50">50 questions</option>
-              <option value="100">100 questions</option>
-              <option value="all">All matching questions</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="languageSelect">Question language</label>
-            <select id="languageSelect">
-              <option value="both" selected>English + Hindi where supplied</option>
-              <option value="en">English</option>
-              <option value="hi">Hindi (English fallback is labelled)</option>
-            </select>
-          </div>
-          <fieldset class="field">
-            <legend class="fieldset-legend">Session type</legend>
-            <div class="radio-row">
-              <span class="radio-card"><input type="radio" name="sessionMode" id="modeLearn" value="learn" checked><label for="modeLearn">Learn (feedback now)</label></span>
-              <span class="radio-card"><input type="radio" name="sessionMode" id="modeTimed" value="timed"><label for="modeTimed">Timed practice</label></span>
-            </div>
-            <p class="field-help">Timed practice is not an official exam timing or marking scheme.</p>
-          </fieldset>
-          <div class="field" id="timeLimitField" hidden>
-            <label for="timeLimit">Your timer (minutes)</label>
-            <input id="timeLimit" type="number" min="1" max="180" step="1" value="15" inputmode="numeric">
-            <p class="field-help">A personal timer only; no official pattern is implied.</p>
-          </div>
-        </div>
-        <div class="disclosure" id="poolDisclosure">Loading the canonical bank and generated topic manifest…</div>
-        <div class="form-footer">
-          <span class="pool-status" id="poolStatus" role="status" aria-live="polite">Loading practice pool…</span>
-          <button class="button primary" id="startButton" type="button" disabled>Start practice</button>
-          <button class="button secondary" id="randomButton" type="button" disabled>Random 20 from these filters</button>
-        </div>
-        <div class="form-footer" id="resumeRow" hidden>
-          <span class="pool-status" id="resumeMessage">A saved local session is available.</span>
-          <button class="button secondary" id="resumeButton" type="button">Resume saved session</button>
-          <button class="button secondary small" id="discardResumeButton" type="button">Discard saved session</button>
-        </div>
+    <section class="section" aria-labelledby="shortcutsTitle">
+      <div class="section-heading-row">
+        <div><span class="eyebrow">Browse by resource</span><h2 id="shortcutsTitle">Study tools and material</h2></div>
       </div>
-
-      <div class="panel quiz-panel" id="playerPanel" hidden aria-labelledby="playerTitle">
-        <div class="quiz-topline">
-          <strong id="playerTitle">Practice session</strong>
-          <span class="quiz-status" id="questionProgress" aria-live="polite"></span>
-          <span class="spacer"></span>
-          <span class="meta-chip" id="timerDisplay" hidden></span>
-          <button class="button secondary small" id="paletteToggle" type="button" aria-expanded="true" aria-controls="palette">Hide question list</button>
-          <button class="button secondary small" id="exitSession" type="button">Exit session</button>
-        </div>
-        <progress id="answerProgress" max="100" value="0" aria-label="Answered questions progress"></progress>
-        <div class="quiz-layout">
-          <article class="question-card" aria-labelledby="questionNumber">
-            <header class="question-header">
-              <strong id="questionNumber">Question</strong>
-              <span class="meta-chip" id="questionTopic"></span>
-              <span class="meta-chip" id="questionDifficulty"></span>
-              <span class="verification-chip" id="questionVerification"></span>
-              <button class="button secondary small" id="sourceDetailsButton" type="button">Source details</button>
-            </header>
-            <div class="question-body">
-              <p class="muted" id="questionId"></p>
-              <p class="question-stem" id="questionStem"></p>
-              <p class="translation-note" id="translationNote" hidden></p>
-              <div class="option-list" id="optionList" role="group" aria-label="Answer options"></div>
-              <div class="explanation" id="feedbackPanel" hidden aria-live="polite">
-                <h3 id="feedbackTitle">Feedback</h3>
-                <div id="feedbackContent"></div>
-              </div>
-            </div>
-            <div class="question-actions">
-              <button class="button secondary small" id="previousButton" type="button">Previous</button>
-              <button class="button secondary small" id="clearAnswerButton" type="button">Clear answer</button>
-              <button class="button secondary small" id="markButton" type="button" aria-pressed="false">Mark for review</button>
-              <button class="button secondary small" id="bookmarkButton" type="button" aria-pressed="false">Save for later</button>
-              <button class="button primary small push-right" id="nextButton" type="button">Next</button>
-              <button class="button small" id="finishButton" type="button">Finish session</button>
-            </div>
-          </article>
-          <aside class="palette" id="palette" aria-label="Question list">
-            <h3>Question list</h3>
-            <div class="palette-grid" id="paletteGrid"></div>
-            <p class="palette-legend">Green: answered · red: seen, unanswered · violet: marked for review</p>
-          </aside>
-        </div>
+      <div class="shortcut-grid">
+        <article class="card"><span class="subject-mark" aria-hidden="true">M</span><h3>Maps &amp; Atlases</h3><p>See the existing Rajasthan map preview, full-size PNG exports, border data and the limitations recorded in the audits.</p><a href="maps/index.html">Open Maps &amp; Atlases →</a></article>
+        <article class="card"><span class="subject-mark" aria-hidden="true">P</span><h3>Practice Tests</h3><p>Build a source-labelled Computer Network practice set. Topic filters and answer status are explicit.</p><a href="practice/index.html">Open Practice Tests →</a></article>
+        <article class="card"><span class="subject-mark" aria-hidden="true">S</span><h3>Study Material</h3><p>Find existing topic notes, practice booklets, solutions and reference material without confusing historical PDF counts with live-bank totals.</p><a href="study-material/index.html">Open Study Material →</a></article>
+        <article class="card"><span class="subject-mark" aria-hidden="true">V</span><h3>Sources &amp; Verification</h3><p>Review question-source policy, answer-check reports, geography source registers, QA and unresolved discrepancies.</p><a href="sources/index.html">Open Sources &amp; Verification →</a></article>
+        <article class="card"><span class="subject-mark" aria-hidden="true">G</span><h3>Repository File Guide</h3><p>Find the right folder for topic files, see what the website reads, and run the safe merge preflight.</p><a href="guides/repository-structure/index.html">Open the File Guide →</a></article>
       </div>
-
-      <section class="panel results" id="resultsPanel" hidden aria-labelledby="resultsTitle">
-        <h3 id="resultsTitle">Session result</h3>
-        <p class="muted" id="resultsIntro"></p>
-        <div class="result-grid" id="resultStats"></div>
-        <h4>Topic breakdown</h4>
-        <div class="table-wrap"><table id="topicResultsTable"><thead><tr><th>Topic</th><th>Correct</th><th>Wrong</th><th>Unanswered</th></tr></thead><tbody></tbody></table></div>
-        <div class="review-actions">
-          <button class="button primary" id="reviewAnswersButton" type="button" aria-expanded="false" aria-controls="reviewList">Review answers</button>
-          <button class="button secondary" id="retryWrongButton" type="button">Retry incorrect answers</button>
-          <button class="button secondary" id="copySummaryButton" type="button">Copy session summary</button>
-          <button class="button secondary" id="backToSetupButton" type="button">Build another set</button>
-        </div>
-        <div id="reviewList" hidden></div>
-      </section>
     </section>
 
-    <section class="section" id="savedItems" aria-labelledby="savedItemsTitle">
-      <h2 class="section-heading" id="savedItemsTitle">Saved in this browser</h2>
-      <p class="section-intro">Saved questions and recent attempts are local-only. Nothing is sent to a server. Saving a question is a study bookmark—not a push or email notification.</p>
-      <div class="card-grid">
-        <article class="card"><h3>Saved questions</h3><p id="bookmarkSummary">No questions saved yet.</p><div class="review-actions"><button class="button primary" id="practiceSavedButton" type="button" disabled>Practice saved questions</button><button class="button secondary" id="clearBookmarksButton" type="button" disabled>Clear saved questions</button></div></article>
-        <article class="card"><h3>Recent local sessions</h3><div id="historyList"><p class="muted">No sessions saved yet.</p></div><div class="review-actions"><button class="button secondary" id="clearHistoryButton" type="button" disabled>Clear session history</button></div></article>
-      </div>
-      <div id="bookmarkList" class="card" style="margin-top:1rem" hidden></div>
-    </section>
-
-    <section class="section" id="library" aria-labelledby="libraryTitle">
-      <h2 class="section-heading" id="libraryTitle">Topic library</h2>
-      <p class="section-intro">The PDFs below are retained repository materials and may represent older subsets or releases. Their filenames are not the live canonical question count. No PDF has been rebuilt by this portal.</p>
-      <div id="libraryContent" aria-live="polite"><p class="empty-state">Loading the catalog library…</p></div>
-    </section>
-
-    <section class="section" id="sources" aria-labelledby="sourcesTitle">
-      <h2 class="section-heading" id="sourcesTitle">Sources &amp; verification</h2>
-      <p class="section-intro">Counts are derived from the current canonical bank. Read the question-level label and citation before treating an item as a past question or an answer as officially keyed.</p>
-      <div class="card" id="verificationSummary" aria-live="polite"><p>Loading source and verification counts…</p></div>
-      <details class="card" id="sourceRegisterDetails">
-        <summary><strong>Browse source citations</strong></summary>
-        <div class="source-tools">
-          <label class="field" for="sourceSearch"><span class="fieldset-legend">Filter citations</span><input type="search" id="sourceSearch" placeholder="Search citation text or source ID"></label>
-        </div>
-        <div id="sourceRegister" aria-live="polite"><p class="empty-state">Open this section to load the public source register.</p></div>
-      </details>
-      <p class="field-help">The public citation register omits raw OCR, internal reviewer notes and bulky source material. Local source files remain unchanged.</p>
-    </section>
-
-    <section class="section" id="about" aria-labelledby="aboutTitle">
-      <h2 class="section-heading" id="aboutTitle">About this portal</h2>
-      <div class="card-grid">
-        <article class="card"><h3>One live subject</h3><p>Only Computer Networks has a published question bank. Planned subjects are visible in the catalog but cannot be started.</p></article>
-        <article class="card"><h3>Local-only study records</h3><p>Attempts and saved questions use this browser’s local storage. They are not uploaded or sent as push, email or SMS notifications.</p></article>
-        <article class="card"><h3>Transparent limitations</h3><p>Exam tags and difficulty are practice aids, not official pattern verification. A complete GATE, UGC-NET, RPSC, SSC or other exam simulation is not offered.</p></article>
-      </div>
+    <section class="section" aria-labelledby="recentTitle">
+      <div class="section-heading-row"><div><span class="eyebrow">Checked-in data only</span><h2 id="recentTitle">Recently updated</h2></div></div>
+      <p class="section-intro">Dates are read from the repository build metadata, not guessed from page timestamps. A map build date is not a deployment date or a verification claim.</p>
+      <div id="recentUpdates" aria-live="polite"><p class="empty-state">No release note is shown until a dated build record is available.</p></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div><h2>EkGuru Learning</h2><p>Source-labelled, free practice material. Counts and coverage are generated from checked-in canonical data.</p></div>
-        <div><h3>Explore</h3><p><a href="#subjects">Subjects</a></p><p><a href="#practice">Practice</a></p><p><a href="#library">Library</a></p></div>
-        <div><h3>Trust &amp; privacy</h3><p><a href="#sources">Sources and verification</a></p><p><a href="#about">Privacy and limitations</a></p></div>
-      </div>
-      <div class="footer-bottom">© 2026 EkGuru Learning · No account or cloud service required. This feature-branch build is not a deployment.</div>
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><h2>EkGuru Learning</h2><p>By PRAKASH. Static learning resources from the existing repository; no account or external runtime service is required.</p></div>
+      <div><h3>Explore</h3><p><a href="subjects/index.html">All Subjects</a></p><p><a href="maps/index.html">Maps &amp; Atlases</a></p><p><a href="practice/index.html">Practice Tests</a></p></div>
+      <div><h3>Read before use</h3><p><a href="README.md">Repository README</a></p><p><a href="SITE_GUIDE.md">Site guide &amp; source policy</a></p><p><a href="guides/repository-structure/index.html">Repository File Guide</a></p><p><a href="sources/index.html">Sources &amp; verification</a></p></div>
     </div>
+    <div class="shell footer-bottom">Internal links stay in this tab. PDF, official external-source and full-size map actions are labelled when they open separately. Geography audit issues remain visible and linked.</div>
   </footer>
-
-  <dialog id="sourceDialog" aria-labelledby="sourceDialogTitle">
-    <div class="panel">
-      <h2 id="sourceDialogTitle">Source details</h2>
-      <div id="sourceDialogContent"></div>
-      <button class="button secondary" id="closeSourceDialog" type="button">Close</button>
-    </div>
-  </dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

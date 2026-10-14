@@ -54,8 +54,8 @@
   "assets": {
     "catalog": {
       "file": "assets/catalog.min.json",
-      "sha256": "f85d0e381129e1d0ad321c65aff5481a0a0457569f42fbe0d3be79128b5e9186",
-      "bytes": 29961
+      "sha256": "2f90b58bd1a1c36cbffcddc0f814f1ec8e2878f7b65ecf882045bdf785474d20",
+      "bytes": 30003
     },
     "cn_manifest": {
       "file": "assets/banks/cn/manifest.json",

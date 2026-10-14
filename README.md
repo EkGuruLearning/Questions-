@@ -1,69 +1,80 @@
-# EkGuru Learning — source-labelled practice portal
+# EkGuru Learning — repository-backed subject portal
 
-**Production site:** https://ekgurulearning.github.io/Questions-/
-**Branch status:** this implementation is on `arena/bc406676-questions`; it has not been merged or deployed. The production link above still serves the pre-audit site until a reviewed release is published.
+**Work status:** feature branch `arena/cfe67f95-questions`; this change has not been merged or deployed.
 
-EkGuru currently has one published subject bank: **Computer Networks**. The canonical bank contains 1,556 records across seven topics. The portal separates question source type from answer-verification status and does not claim that the whole bank is official, fully bilingual, or fully verified.
+**GitHub Pages project URL:** <https://ekgurulearning.github.io/Questions-/> — the live deployment was **not checked** as part of this work. All checked-in internal routes are project-base-safe for `/Questions-/`.
 
-## Current data snapshot
+EkGuru presents existing study material as a source-labelled catalogue. The portal distinguishes a live resource collection from a live question bank, and does not promote unresolved source or boundary claims as verified facts.
 
-- Canonical records: **1,556** — T01 375, T02 144, T03 231, T04 99, T05 174, T06 387, T07 146.
-- Practice payload: **1,554**. Two incomplete records have blank options, are labelled `pending_review`, and remain in the canonical file but are omitted from test chunks.
-- Official paper + final-key checked: **0**. The question-level evidence register is empty.
-- Answer checked: **847** (answer review, not official-key matching).
-- Claimed answer unverified: **707**; disputed: **0**; pending review: **2**.
-- Source types: 112 claimed PYQs (unverified), 1,205 repository/internal, 42 textbook paraphrases, 197 original practice, 0 verified official PYQs.
-- **817 records** meet the field-based full-bilingual condition. Missing Hindi fields are shown with an explicit English-fallback notice.
-- Exact normalized English-stem duplicate groups: **0**. **748 near-duplicate candidates remain pending manual concept review**; none was auto-merged or deleted by this audit.
+## Portal routes
 
-Counts and the current SHA-256 / build ID are in `Computer Network/Reports/INVENTORY.md` and `data/reports/build_manifest.json`.
+- `index.html` — subject catalogue and map preview.
+- `subjects/index.html` — all published subjects.
+- `subjects/computer-network/index.html` — Computer Network bank, topics, CBTs, booklets, theory, source notes and audit material.
+- `subjects/rajasthan-geography/index.html` — existing map, district CSV, metadata and audit resources; **no question bank is published**.
+- `maps/index.html` and `maps/rajasthan/index.html` — map catalogue, same-tab full-size PNG action, CSV data and verification notes.
+- `practice/index.html` — existing shared Computer Network practice app.
+- `study-material/index.html` and `sources/index.html` — resource and source/audit catalogues.
+- `guides/repository-structure/index.html` — website-readable English/Hindi file map, topic folder guide and safe repository-merge checklist.
 
-## What the portal does
+Internal links stay in the current tab. PDFs and external official-source links open a new tab only with a visible label and `rel="noopener noreferrer"`. Full-size map PNGs stay in the current tab so browser Back returns to the previous page.
 
-- Loads a small generated catalog and then only the selected, content-hashed topic chunk(s); it does not fetch the monolithic compatibility bank on page load.
-- Supports topic, exam/practice-tag, answer-verification, source-type, heuristic-difficulty, question-count and language filters.
-- Defaults to answer-checked records. Unverified claimed-answer practice requires an explicit opt-in filter; disputed and pending records cannot start a test.
-- Provides learn feedback, user-configured timed practice, question navigation, marking, local bookmarks, answer review, retry of incorrect answers, and a local copyable result summary.
-- Keeps attempt history and saved questions in browser local storage only. No sign-in, analytics, ads, cloud sync, push or email notifications are added.
-- Shows planned subjects as unavailable. No unfinished subject is marked live.
+## Published data snapshot
 
-Exam labels are sources or practice-fit suggestions, not proof of an exam appearance. No exact exam simulation or official timing/marking claim is enabled. The UGC-NET draft no longer uses an answer-key page as a pattern URL; current-cycle pattern verification remains open.
+### Computer Network
 
-## Repository map
+- Canonical bank: **1,556** records across seven topics; **1,554** are in the current practice payload.
+- Two incomplete pending-review records remain in canonical data and are excluded from practice.
+- The official paper + final-key evidence count is **0**. “Answer checked” is not an official-key match; unverified claims stay separately labelled.
+- Counts, build ID and SHA-256 are generated from the canonical bank and recorded in `data/reports/build_manifest.json` and the CN reports.
 
-```text
-index.html                              accessible data-driven portal shell
-assets/css/portal.css                   responsive site styles
-assets/js/app.mjs                       client UI, local state and lazy chunk loading
-assets/js/engine.mjs                    pure filtering, sampling, localization and scoring
-Computer Network/data/cn_questions.json canonical CN source, schema v2
-assets/catalog.min.json                 generated subject/exam/library catalog
-assets/banks/cn/manifest.json           generated counts and topic chunk manifest
-assets/banks/cn/Tnn.<hash>.min.json     generated public topic chunks
-assets/source-register.min.json         generated public citation register
-assets/cn-questions.min.json             generated compatibility payload; not fetched by portal
- data/catalog/                           subject, exam, mapping and book drafts
- data/sources/official_paper_key_evidence.json  question-level official evidence gate
- data/schemas/                           canonical/public/evidence JSON schemas
-tools/cn_export_json.py                 rebuild canonical bank and downstream data
- tools/build_site_data.py                generate catalog, assets and build manifest
- tools/build_reports.py                  regenerate reports and duplicate queue
-tests/                                   data, engine, navigation and responsive checks
-archive/pre-audit-2026-10-14/            preserved pre-change page, asset and report snapshots
-```
+### Rajasthan Geography
 
-All original PDFs remain in their original paths. The seven legacy HTML snapshots are preserved byte-for-byte as inert `.html.snapshot` files under `archive/pre-audit-2026-10-14/Computer Network/Online Quiz/`; their former public paths now redirect to the shared portal because their embedded official labels predate the evidence correction. New `Online Quiz/v6/` links are topic launchers into the shared portal.
+- Published as a **resource library**, not a question bank; the catalogue intentionally contains no geography question count or practice-test button.
+- `Rajasthan Geography Maps/` and `Geography/Map/Rajasthan/` are distinct source trees with separate READMEs/audits. They have not been merged, moved or rewritten.
+- Existing previews, raster exports, CSVs and audit files are linked in place. Boundary, source-vintage and review conflicts stay marked **Needs verification**; see each source audit and `UNRESOLVED_DISCREPANCIES.md` before relying on a map or CSV value.
+- `assets/catalog/rajasthan-border-atlas-preview.webp` is an optimized derivative; the original PNG remains unchanged. The source atlas PDFs/GeoPackage are not claimed as included when absent from the tracked repository.
 
-## Rebuild and release checks
+## Catalogue build and validation
 
-From the repository root, after editing the source question modules or catalog drafts:
+The catalogue builder reads real repository files and checked-in manifests. It is read-only with respect to original question banks, PDFs, maps, CSVs and CBT files.
 
 ```bash
-python3 tools/cn_export_json.py
-python3 tools/run_release_checks.py
-python3 tools/build_reports.py  # refresh QA_REPORT.md from the recorded test results
+python3 tools/build_catalog.py
+python3 tools/build_catalog.py --check
+python3 tools/validate_links.py       # project-base links and new-tab policy
+python3 tools/validate_assets.py      # existence, SHA-256, sizes, image metadata
+python3 tools/validate_subjects.py   # publication gates and required resources
 ```
 
-`cn_export_json.py` regenerates the canonical JSON, topic chunks, catalog, source register, manifest and report set. Do not hand-edit generated `assets/` files. The migration tool `tools/reconcile_cn_bank.py` is for schema/provenance normalization; it is not a substitute for reviewing source content.
+The builder writes `assets/catalog/{subjects,resources,maps}.json`, `data/reports/portal_repository_inventory.csv`, and `Rajasthan Geography Maps/STRUCTURE_AND_ASSET_INVENTORY.md`. Review and regenerate those outputs whenever their source data or tracked resource paths change; do not hand-edit generated catalogue JSON. Editable catalog inputs and add-file examples are documented in [`data/catalog/README.md`](data/catalog/README.md).
 
-The published PDFs are preserved historical materials. No PDF is regenerated by the portal build. Before deployment, repeat the data/link/test checks, perform rendered phone/tablet/laptop and keyboard checks in a real browser, inspect any PDF that is intentionally changed, and verify the production site after release. See `Computer Network/Reports/QA_REPORT.md` for actual recorded results and limitations.
+To print the repository/site folder map or run the read-only merge preflight, use:
+
+```bash
+python3 tools/read_structure.py
+python3 tools/read_structure.py --check
+```
+
+The website version of this guide is linked in the main navigation at `guides/repository-structure/index.html`.
+
+**Quick placement rule:** new CN study PDFs go in `Computer Network/Topics/TNN/` and must be registered in `data/catalog/books.json` plus the CN `book_ids` list; question-source PDFs go to `Computer Network/Incoming/` for review and are not published automatically. Geography files stay in one of their two audited source trees and new documents/CSVs are registered through `data/catalog/portal_resources.json`. Do not hand-edit files under `assets/catalog/` or combine the geography roots.
+
+To rebuild the existing Computer Network data pipeline after question-source changes, follow `SITE_GUIDE.md` and `Computer Network/README.md`. Do not hand-edit the generated bank chunks or compatibility catalog.
+
+## Tests and release report
+
+Run each Python test group explicitly (the repository does not package `tests/` as a single unittest package):
+
+```bash
+python3 -m unittest discover -s tests/data -p 'test_*.py' -v
+python3 -m unittest discover -s tests/navigation -p 'test_*.py' -v
+python3 -m unittest discover -s tests/responsive -p 'test_*.py' -v
+python3 tools/read_structure.py --check
+node --test tests/engine/engine.test.mjs
+node tests/navigation/app_dom_smoke.cjs  # optional; exit 77 if jsdom is absent
+```
+
+Rendered browser QA is optional and has no production/runtime dependency. It requires temporary `playwright-core`, `@sparticuz/chromium`, and `axe-core` packages; see `tests/visual/browser_visual_qa.cjs`. The run recorded for this branch is summarized in `data/reports/portal_qa_report.md`, with machine-readable results in `data/reports/portal_browser_visual_qa.json`. It is headless viewport emulation, not a test on physical devices or a post-deployment smoke test.
+
+The report lists actual checks, scope and anything **NOT TESTED**. This branch has not been merged, and no deployment or live-site behavior is claimed as verified.

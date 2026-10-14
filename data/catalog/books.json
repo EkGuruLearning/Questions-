@@ -2,26 +2,215 @@
   "schema_version": 1,
   "books_version": "cn-library-v1",
   "books": [
-    {"id":"cn-t01-theory","subject_id":"cn","topic_id":"T01","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 1 - Introduction of DC - 123 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t01-practice","subject_id":"cn","topic_id":"T01","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 1 - Practice Questions - 375Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t01-cbt","subject_id":"cn","topic_id":"T01","kind":"standalone_cbt","label":"Open Topic 1 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 1 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t02-theory","subject_id":"cn","topic_id":"T02","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 2 - Network Models OSI TCP IP - 82 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t02-practice","subject_id":"cn","topic_id":"T02","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 2 - Practice Questions - 144Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t02-cbt","subject_id":"cn","topic_id":"T02","kind":"standalone_cbt","label":"Open Topic 2 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 2 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t03-theory","subject_id":"cn","topic_id":"T03","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 3 - Addressing MAC IPv4 IPv6 Port DNS - 92 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t03-practice","subject_id":"cn","topic_id":"T03","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 3 - Practice Questions - 231Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t03-cbt","subject_id":"cn","topic_id":"T03","kind":"standalone_cbt","label":"Open Topic 3 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 3 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t04-theory","subject_id":"cn","topic_id":"T04","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 4 - Networking Devices - 38 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t04-practice","subject_id":"cn","topic_id":"T04","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 4 - Practice Questions - 99Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t04-cbt","subject_id":"cn","topic_id":"T04","kind":"standalone_cbt","label":"Open Topic 4 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 4 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t05-theory","subject_id":"cn","topic_id":"T05","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 5 - Transmission Medium - 47 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t05-practice","subject_id":"cn","topic_id":"T05","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 5 - Practice Questions - 174Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t05-cbt","subject_id":"cn","topic_id":"T05","kind":"standalone_cbt","label":"Open Topic 5 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 5 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t06-theory","subject_id":"cn","topic_id":"T06","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 6 - OSI Layers in Detail - 192 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t06-practice","subject_id":"cn","topic_id":"T06","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 6 - Practice Questions - 387Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t06-cbt","subject_id":"cn","topic_id":"T06","kind":"standalone_cbt","label":"Open Topic 6 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 6 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."},
-    {"id":"cn-t07-theory","subject_id":"cn","topic_id":"T07","kind":"theory_mcq_pdf","label":"Theory + selected MCQs (historical subset)","file":"Computer Network/Topic 7 - Network Security - 53 MCQs (Answers + Nukte).pdf","status":"historical_subset","note":"The MCQ total in this older filename is not the current live-bank count."},
-    {"id":"cn-t07-practice","subject_id":"cn","topic_id":"T07","kind":"practice_pdf","label":"Practice booklet PDF","file":"Computer Network/Practice/Topic 7 - Practice Questions - 146Q (Test Booklet).pdf","status":"existing_pdf","note":"A downloadable practice booklet; current-bank counts are shown separately from the PDF label."},
-    {"id":"cn-t07-cbt","subject_id":"cn","topic_id":"T07","kind":"standalone_cbt","label":"Open Topic 7 CBT in a new tab (optional)","file":"Computer Network/Online Quiz/v6/Topic 7 - EkGuru v6 CBT.html","status":"generated_v6","note":"Uses the shared source-gated CBT engine; the main portal remains available in the original tab."}
+    {
+      "id": "cn-t01-theory",
+      "subject_id": "cn",
+      "topic_id": "T01",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 1 - Introduction of DC - 123 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t01-practice",
+      "subject_id": "cn",
+      "topic_id": "T01",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 1 - Practice Questions - 375Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t01-cbt",
+      "subject_id": "cn",
+      "topic_id": "T01",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 1 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 1 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t02-theory",
+      "subject_id": "cn",
+      "topic_id": "T02",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 2 - Network Models OSI TCP IP - 82 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t02-practice",
+      "subject_id": "cn",
+      "topic_id": "T02",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 2 - Practice Questions - 144Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t02-cbt",
+      "subject_id": "cn",
+      "topic_id": "T02",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 2 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 2 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t03-theory",
+      "subject_id": "cn",
+      "topic_id": "T03",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 3 - Addressing MAC IPv4 IPv6 Port DNS - 92 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t03-practice",
+      "subject_id": "cn",
+      "topic_id": "T03",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 3 - Practice Questions - 231Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t03-cbt",
+      "subject_id": "cn",
+      "topic_id": "T03",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 3 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 3 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t04-theory",
+      "subject_id": "cn",
+      "topic_id": "T04",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 4 - Networking Devices - 38 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t04-practice",
+      "subject_id": "cn",
+      "topic_id": "T04",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 4 - Practice Questions - 99Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t04-cbt",
+      "subject_id": "cn",
+      "topic_id": "T04",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 4 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 4 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t05-theory",
+      "subject_id": "cn",
+      "topic_id": "T05",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 5 - Transmission Medium - 47 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t05-practice",
+      "subject_id": "cn",
+      "topic_id": "T05",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 5 - Practice Questions - 174Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t05-cbt",
+      "subject_id": "cn",
+      "topic_id": "T05",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 5 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 5 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t06-theory",
+      "subject_id": "cn",
+      "topic_id": "T06",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 6 - OSI Layers in Detail - 192 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t06-practice",
+      "subject_id": "cn",
+      "topic_id": "T06",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 6 - Practice Questions - 387Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t06-cbt",
+      "subject_id": "cn",
+      "topic_id": "T06",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 6 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 6 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    },
+    {
+      "id": "cn-t07-theory",
+      "subject_id": "cn",
+      "topic_id": "T07",
+      "kind": "theory_mcq_pdf",
+      "label": "Theory + selected MCQs (historical subset)",
+      "file": "Computer Network/Topic 7 - Network Security - 53 MCQs (Answers + Nukte).pdf",
+      "status": "historical_subset",
+      "note": "The MCQ total in this older filename is not the current live-bank count."
+    },
+    {
+      "id": "cn-t07-practice",
+      "subject_id": "cn",
+      "topic_id": "T07",
+      "kind": "practice_pdf",
+      "label": "Practice booklet PDF",
+      "file": "Computer Network/Practice/Topic 7 - Practice Questions - 146Q (Test Booklet).pdf",
+      "status": "existing_pdf",
+      "note": "A downloadable practice booklet; current-bank counts are shown separately from the PDF label."
+    },
+    {
+      "id": "cn-t07-cbt",
+      "subject_id": "cn",
+      "topic_id": "T07",
+      "kind": "standalone_cbt",
+      "label": "Open Topic 7 CBT in this tab",
+      "file": "Computer Network/Online Quiz/v6/Topic 7 - EkGuru v6 CBT.html",
+      "status": "generated_v6",
+      "note": "Topic launcher into the shared source-gated practice engine; it preselects this topic and stays in the same tab."
+    }
   ]
 }

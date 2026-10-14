@@ -395,7 +395,9 @@ def main() -> None:
         book["href"] = urllib.parse.quote(path.as_posix(), safe="/")
         book["sha256"] = sha256_bytes(full_path.read_bytes())
         book["bytes"] = full_path.stat().st_size
-        book["opens_in_new_tab"] = True
+        # PDF resources open separately with safe rel attributes; interactive CBT
+        # launchers remain in the same tab by default as required by site navigation.
+        book["opens_in_new_tab"] = book["kind"] in ("theory_mcq_pdf", "practice_pdf")
         book["download_available"] = book["kind"] in ("theory_mcq_pdf", "practice_pdf")
     for subject in subjects_doc.get("subjects", []):
         missing_books = set(subject.get("book_ids", [])) - books_by_id.keys()

@@ -11,8 +11,8 @@ try {
 }
 
 const ROOT = path.resolve(__dirname, "../..");
-const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-const dom = new JSDOM(html, { url: "http://localhost/Questions-/index.html", pretendToBeVisual: true });
+const html = fs.readFileSync(path.join(ROOT, "practice/index.html"), "utf8");
+const dom = new JSDOM(html, { url: "http://localhost/Questions-/practice/index.html?subject=cn&topic=T01&mode=practice#practice", pretendToBeVisual: true });
 const { window } = dom;
 globalThis.window = window;
 globalThis.document = window.document;
@@ -30,9 +30,10 @@ globalThis.fetch = async (url) => {
   const target = new URL(url, window.location.href);
   fetches.push(target.pathname);
   const prefix = "/Questions-/";
-  const relative = decodeURIComponent(target.pathname.startsWith(prefix) ? target.pathname.slice(prefix.length) : target.pathname.slice(1));
-  const file = path.resolve(ROOT, relative);
-  if (!file.startsWith(ROOT + path.sep) && file !== path.join(ROOT, "index.html")) throw new Error("fetch path escapes repository");
+  const file = target.protocol === "file:"
+    ? path.resolve(decodeURIComponent(target.pathname))
+    : path.resolve(ROOT, decodeURIComponent(target.pathname.startsWith(prefix) ? target.pathname.slice(prefix.length) : target.pathname.slice(1)));
+  if (!file.startsWith(ROOT + path.sep) && ![path.join(ROOT, "index.html"), path.join(ROOT, "practice/index.html")].includes(file)) throw new Error("fetch path escapes repository");
   if (!fs.existsSync(file)) return { ok: false, status: 404, json: async () => ({}) };
   return { ok: true, status: 200, json: async () => JSON.parse(fs.readFileSync(file, "utf8")) };
 };
@@ -46,14 +47,20 @@ function wait(ms = 30) { return new Promise((resolve) => setTimeout(resolve, ms)
   assert.equal(document.getElementById("publishedSubjects").textContent, "1");
   assert.equal(document.getElementById("officialCount").textContent, "0");
   assert.equal(document.getElementById("startButton").disabled, false);
-  assert.match(document.getElementById("poolStatus").textContent, /847/);
+  assert.equal(document.getElementById("topicSelect").value, "T01", "the topic query parameter is applied on the shared practice route");
+  assert.match(document.getElementById("poolStatus").textContent, /At least \d+ records match this topic/);
   assert.deepEqual(fetches.map((item) => item.split("/").pop()).filter((name) => name.endsWith(".json")), ["catalog.min.json", "manifest.json"]);
+  const libraryNewTabs = [...document.querySelectorAll('#libraryContent a[target="_blank"]')];
+  assert.ok(libraryNewTabs.length > 0, "the existing topic library should expose its real PDF resources");
+  assert.ok(libraryNewTabs.every((anchor) => /opens in new tab/i.test(anchor.textContent)), "every PDF new-tab action must be visibly labelled");
 
   const navToggle = document.getElementById("navToggle");
   navToggle.click();
   assert.equal(navToggle.getAttribute("aria-expanded"), "true");
   assert.equal(document.getElementById("siteNav").classList.contains("open"), true);
-  document.querySelector('#siteNav a[href="#subjects"]').click();
+  const homeLink = document.querySelector('#siteNav a[href="../index.html"]');
+  homeLink.addEventListener("click", (event) => event.preventDefault(), { once: true });
+  homeLink.click();
   assert.equal(navToggle.getAttribute("aria-expanded"), "false");
 
   document.getElementById("topicSelect").value = "T01";

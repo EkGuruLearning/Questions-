@@ -1,0 +1,1261 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "checked_at_utc": "2026-10-14T12:52:57.175Z",
+  "project_base": "/Questions-/",
+  "bank_build_id": "cn-014b0aa51c0651e7",
+  "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
+  "ui_sha256": "d9fce61a577779f3d686a1b5b8fc3bcad24a9a84758094fa976b313712c8b021",
+  "browser": "Chromium 153.0.8010.0 (headless)",
+  "zoom_equivalence_note": "The 640 CSS-pixel viewport models a 200% reflow width on a 1280-pixel-wide baseline. Browser chrome/OS zoom controls were not automated.",
+  "viewports": [
+    {
+      "name": "phone-320",
+      "width": 320,
+      "height": 780,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 320,
+          "body_width": 320,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "phone-360",
+      "width": 360,
+      "height": 800,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 360,
+          "body_width": 360,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "phone-390",
+      "width": 390,
+      "height": 844,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 390,
+          "body_width": 390,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "phone-430",
+      "width": 430,
+      "height": 932,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 430,
+          "body_width": 430,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "small-mobile-520",
+      "width": 520,
+      "height": 844,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 520,
+          "body_width": 520,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "zoom-200-css-640",
+      "width": 640,
+      "height": 900,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 640,
+          "body_width": 640,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "tablet-720",
+      "width": 720,
+      "height": 960,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 720,
+          "body_width": 720,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "tablet-768",
+      "width": 768,
+      "height": 1024,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 768,
+          "body_width": 768,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "tablet-950",
+      "width": 950,
+      "height": 900,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 950,
+          "body_width": 950,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "laptop-1024",
+      "width": 1024,
+      "height": 768,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 1024,
+          "body_width": 1024,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "laptop-1280",
+      "width": 1280,
+      "height": 800,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 1280,
+          "body_width": 1280,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "desktop-1440",
+      "width": 1440,
+      "height": 900,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 1440,
+          "body_width": 1440,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "desktop-1920",
+      "width": 1920,
+      "height": 1080,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 1920,
+          "body_width": 1920,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "phone-landscape",
+      "width": 844,
+      "height": 390,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 844,
+          "body_width": 844,
+          "image_count": 0
+        }
+      ]
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1180,
+      "height": 820,
+      "routes": [
+        {
+          "id": "home",
+          "title": "EkGuru Learning",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 1
+        },
+        {
+          "id": "subjects",
+          "title": "All Subjects",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        },
+        {
+          "id": "computer-network",
+          "title": "Computer Network",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        },
+        {
+          "id": "rajasthan-geography",
+          "title": "Rajasthan Geography",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 3
+        },
+        {
+          "id": "maps",
+          "title": "Maps & Atlases",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 2
+        },
+        {
+          "id": "map-detail",
+          "title": "Rajasthan Map & Atlas Resources",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 1
+        },
+        {
+          "id": "practice",
+          "title": "Computer Network Practice",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        },
+        {
+          "id": "study-material",
+          "title": "Study Material",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        },
+        {
+          "id": "sources",
+          "title": "Sources & Verification",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        },
+        {
+          "id": "repository-guide",
+          "title": "Repository & Website File Guide",
+          "document_width": 1180,
+          "body_width": 1180,
+          "image_count": 0
+        }
+      ]
+    }
+  ],
+  "navigation_flows": [
+    "home → Computer Network",
+    "Computer Network → topic CBT (same tab, topic preselected)",
+    "Back → Computer Network",
+    "home → Rajasthan Geography",
+    "Rajasthan Geography → full-size PNG",
+    "Back → Rajasthan Geography",
+    "Maps catalogue → map details",
+    "Back → maps catalogue",
+    "home → Repository File Guide (same tab)",
+    "Back → home catalogue"
+  ],
+  "browser_errors": [],
+  "total_axe_violations": 0,
+  "accessibility": [
+    {
+      "viewport": "phone-320",
+      "route": "home",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "phone-320",
+      "route": "computer-network",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "phone-320",
+      "route": "rajasthan-geography",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "phone-320",
+      "route": "map-detail",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "phone-320",
+      "route": "practice-active-quiz",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "phone-320",
+      "route": "repository-guide",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "laptop-1280",
+      "route": "home",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "laptop-1280",
+      "route": "computer-network",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "laptop-1280",
+      "route": "rajasthan-geography",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "laptop-1280",
+      "route": "map-detail",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    },
+    {
+      "viewport": "laptop-1280",
+      "route": "repository-guide",
+      "violations": [],
+      "incomplete_checks": 0,
+      "incomplete": []
+    }
+  ]
+}
