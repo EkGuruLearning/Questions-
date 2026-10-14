@@ -8,7 +8,8 @@ Checks
 3. No published page links to a `.md` file and no published page links into
    `maintainer/` (audits, scripts and source registers stay off the website).
 4. Every download in `data/site.json` exists, matches its recorded SHA-256 and
-   byte size, and every published file is inside `content/`.
+   byte size, and every published file is inside `content/<subject>/<folder>/`.
+   Every `?folder=` link on a page must name a folder that exists in the tree.
 5. `data/site.json` is current (same as `tools/build_catalog.py --check`).
 6. Download links on the pages only point at registered files.
 
@@ -20,6 +21,7 @@ import hashlib
 import html.parser
 import json
 import pathlib
+import re
 import sys
 import urllib.parse
 
@@ -144,31 +146,50 @@ def main() -> int:
         problems.append("data/site.json is missing; run python3 tools/build_catalog.py")
     else:
         site = json.loads(SITE_JSON.read_text(encoding="utf-8"))
+        folder_paths = {"": None}
         for subject in site["subjects"]:
-            for group in subject["groups"]:
-                for item in group["items"]:
-                    path = ROOT / item["repo_path"]
-                    if not path.is_file():
-                        problems.append(f"registered download is missing: {item['repo_path']}")
-                        continue
-                    if not item["repo_path"].startswith("content/"):
-                        problems.append(f"published download must live under content/: {item['repo_path']}")
-                    raw = path.read_bytes()
-                    if len(raw) != item["bytes"]:
-                        problems.append(f"size drift for {item['repo_path']}: register says {item['bytes']}, file has {len(raw)}")
-                    if hashlib.sha256(raw).hexdigest() != item["sha256"]:
-                        problems.append(f"hash drift for {item['repo_path']}: rebuild data/site.json")
+
+            def walk(node):
+                folder_paths[node["path"]] = subject["id"]
+                for child in node["folders"]:
+                    walk(child)
+
+            walk(subject["tree"])
+            for item in subject["files"]:
+                path = ROOT / item["repo_path"]
+                if not path.is_file():
+                    problems.append(f"registered download is missing: {item['repo_path']}")
+                    continue
+                if not item["repo_path"].startswith(f"content/{subject['id']}/"):
+                    problems.append(
+                        f"published download must live under content/{subject['id']}/<folder>/: {item['repo_path']}"
+                    )
+                raw = path.read_bytes()
+                if len(raw) != item["bytes"]:
+                    problems.append(f"size drift for {item['repo_path']}: register says {item['bytes']}, file has {len(raw)}")
+                if hashlib.sha256(raw).hexdigest() != item["sha256"]:
+                    problems.append(f"hash drift for {item['repo_path']}: rebuild data/site.json")
             if subject.get("test"):
                 manifest = ROOT / subject["test"]["manifest_url"]
                 if not manifest.is_file():
                     problems.append(f"test bank manifest missing: {subject['test']['manifest_url']}")
 
+        for page in pages:
+            page_path = ROOT / page
+            if not page_path.is_file():
+                continue
+            for match in re.findall(r"[?&]folder=([^\"'&#]+)", page_path.read_text(encoding="utf-8")):
+                folder = urllib.parse.unquote(match)
+                if folder not in folder_paths:
+                    problems.append(f"{page}: ?folder={folder} is not a folder in the published tree")
+
     if problems:
         return fail(problems)
 
-    downloads = sum(len(group["items"]) for subject in json.loads(SITE_JSON.read_text(encoding="utf-8"))["subjects"]
-                    for group in subject["groups"])
-    print(f"PASS: {len(pages)} route(s), {link_count} link(s) and {downloads} download(s) checked")
+    payload = json.loads(SITE_JSON.read_text(encoding="utf-8"))
+    downloads = sum(len(subject["files"]) for subject in payload["subjects"])
+    folders = sum(subject["folder_count"] for subject in payload["subjects"])
+    print(f"PASS: {len(pages)} route(s), {link_count} link(s), {downloads} download(s) and {folders} folder(s) checked")
     print("PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json")
     return 0
 

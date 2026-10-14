@@ -4,7 +4,7 @@
     "name": "EkGuru Learning",
     "short": "EkGuru",
     "by": "PRAKASH",
-    "tagline_en": "Study material and topic-wise practice tests.",
+    "tagline_en": "Study material aur topic-wise practice tests.",
     "tagline_hi": "स्टडी मटेरियल और टॉपिक-वाइज़ प्रैक्टिस टेस्ट।"
   },
   "subjects": [
@@ -13,14 +13,56 @@
       "slug": "computer-network",
       "title_en": "Computer Network",
       "title_hi": "कंप्यूटर नेटवर्क",
-      "tagline_en": "7 topics · theory PDFs · practice booklets · online tests",
-      "tagline_hi": "7 टॉपिक · थ्योरी PDF · प्रैक्टिस बुकलेट · ऑनलाइन टेस्ट",
-      "intro_en": "Read the topic theory, download the practice booklet, then give a topic-wise or full mixed online test.",
-      "intro_hi": "टॉपिक की थ्योरी पढ़ें, प्रैक्टिस बुकलेट डाउनलोड करें, फिर टॉपिक-वाइज़ या पूरा मिक्स ऑनलाइन टेस्ट दें।",
+      "tagline_en": "7 topics · theory · practice · answers · tests",
+      "tagline_hi": "7 टॉपिक · थ्योरी · प्रैक्टिस · उत्तर · टेस्ट",
+      "intro_en": "Folder kholo, PDF dekho ya download karo — ya seedha online test do.",
+      "intro_hi": "फोल्डर खोलें, PDF देखें या डाउनलोड करें — या सीधे ऑनलाइन टेस्ट दें।",
       "has_material": true,
       "has_test": true,
       "has_maps": false,
       "test_bank": "cn",
+      "folders": {
+        "theory": {
+          "title_en": "Theory",
+          "title_hi": "थ्योरी",
+          "note_en": "Topic-wise theory notes with solved MCQs (answers + nukte).",
+          "note_hi": "टॉपिक-वाइज़ थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।",
+          "icon": "📘",
+          "order": 1
+        },
+        "practice": {
+          "title_en": "Practice questions",
+          "title_hi": "प्रैक्टिस प्रश्न",
+          "note_en": "Topic-wise practice booklets — pehle khud solve karo.",
+          "note_hi": "टॉपिक-वाइज़ प्रैक्टिस बुकलेट — पहले खुद हल करें।",
+          "icon": "✍️",
+          "order": 2
+        },
+        "answers": {
+          "title_en": "Answers & explanations",
+          "title_hi": "उत्तर और व्याख्या",
+          "note_en": "Answer key aur full solutions — practice ke baad check karo.",
+          "note_hi": "उत्तर कुंजी और पूरे हल — प्रैक्टिस के बाद मिलाएँ।",
+          "icon": "✅",
+          "order": 3
+        },
+        "tests": {
+          "title_en": "Tests",
+          "title_hi": "टेस्ट",
+          "note_en": "Topic test, unit test aur subject test papers.",
+          "note_hi": "टॉपिक टेस्ट, यूनिट टेस्ट और सब्जेक्ट टेस्ट पेपर।",
+          "icon": "🧾",
+          "order": 4
+        },
+        "reference": {
+          "title_en": "Reference book",
+          "title_hi": "रेफरेंस बुक",
+          "note_en": "Standard textbook for deep reading.",
+          "note_hi": "गहरी पढ़ाई के लिए स्टैंडर्ड टेक्स्टबुक।",
+          "icon": "📚",
+          "order": 5
+        }
+      },
       "topics": [
         {
           "id": "T01",
@@ -64,13 +106,31 @@
       "slug": "rajasthan-geography",
       "title_en": "Rajasthan Geography",
       "title_hi": "राजस्थान भूगोल",
-      "tagline_en": "Map atlas — border districts, A1 to A4 print sizes",
-      "tagline_hi": "मैप एटलस — सीमावर्ती जिले, A1 से A4 प्रिंट साइज़",
-      "intro_en": "Download or open the Rajasthan border-district map atlas in the print size you need.",
-      "intro_hi": "राजस्थान सीमावर्ती जिला मैप एटलस अपने ज़रूरत के प्रिंट साइज़ में डाउनलोड या खोलें।",
+      "tagline_en": "Map folder · Rajasthan ke maps",
+      "tagline_hi": "मैप फोल्डर · राजस्थान के मैप",
+      "intro_en": "Map folder kholo, Rajasthan ke maps dekho ya download karo.",
+      "intro_hi": "मैप फोल्डर खोलें, राजस्थान के मैप देखें या डाउनलोड करें।",
       "has_material": false,
       "has_test": false,
       "has_maps": true,
+      "folders": {
+        "map": {
+          "title_en": "Map",
+          "title_hi": "मैप",
+          "note_en": "Saare maps is folder me — pehle state, aage district aur city maps.",
+          "note_hi": "सारे मैप इस फोल्डर में — पहले राज्य, आगे जिला और शहर के मैप।",
+          "icon": "🗂️",
+          "order": 1
+        },
+        "map/rajasthan": {
+          "title_en": "Rajasthan",
+          "title_hi": "राजस्थान",
+          "note_en": "Rajasthan ke maps — border district atlas, A1 se A4 print size.",
+          "note_hi": "राजस्थान के मैप — सीमावर्ती जिला एटलस, A1 से A4 प्रिंट साइज़।",
+          "icon": "🗺️",
+          "order": 1
+        }
+      },
       "topics": []
     }
   ]

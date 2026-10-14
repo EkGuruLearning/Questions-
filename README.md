@@ -12,22 +12,28 @@ Wo sab `maintainer/` me hai (dekhne ke liye [`maintainer/README.md`](maintainer/
 
 ## Folder structure
 
+Website par wahi folders dikhte hain jo repository me hain — `content/` ka tree hi site ka tree hai.
+
 ```
-index.html                                  home
+index.html                                  home (subject cards + folder tiles)
 subjects/                                   subject pages
   index.html                                  saare subjects
-  computer-network/index.html                 CN home — "Material" ya "Test"
-  computer-network/material/index.html        study material (downloads)
+  computer-network/index.html                 CN home — folders + topic list
+  computer-network/material/index.html        folder browser (folder kholo → files)
   computer-network/test/index.html            online test (topic-wise + full mix)
-  rajasthan-geography/index.html              map gallery + downloads
+  rajasthan-geography/index.html              Map folder → Rajasthan → maps
 404.html                                     purane link ke liye friendly page
 
 content/                                    STUDENT CONTENT (yahi publish hota hai)
-  computer-network/theory/                     T01..T07 theory + complete book (PDF)
-  computer-network/practice/                   practice booklets + answer key (PDF)
-  computer-network/tests/                      topic/unit/subject tests (PDF)
-  computer-network/reference/                  reference book (PDF)
-  rajasthan-geography/maps/                    A1..A4 atlas + preview (PNG)
+  computer-network/
+    theory/        📘 Theory — T01..T07 + complete book (8 PDF)
+    practice/      ✍️ Practice questions — T01..T07 booklets (7 PDF)
+    answers/       ✅ Answers & explanations — key + solutions (5 PDF)
+    tests/         🧾 Tests — topic/unit/subject papers (11 PDF)
+    reference/     📚 Reference book (1 PDF)
+  rajasthan-geography/
+    map/           🗂️ Map
+      rajasthan/   🗺️ Rajasthan ke maps — A1/A2/A3/A4 + preview (6 PNG)
 
 assets/                                     site code
   css/ekguru.css                               ek hi stylesheet (light + dark)
@@ -51,10 +57,11 @@ tools/ tests/                               builders, validators, tests
 ## Naya material add karna
 
 ```bash
-# 1. file rakho
+# 1. file rakho — jis folder me rakhoge, wahi folder website par banega
 content/computer-network/theory/T08-...-Theory-MCQ.pdf
 
-# 2. data/catalog/materials.json me entry likho (subject, topic, kind, title_en, title_hi, note)
+# 2. data/catalog/materials.json me entry likho (subject, topic, title_en, title_hi, note)
+#    naya folder ho to data/catalog/subjects.json ke `folders` me uska label (icon + EN/HI naam) likho
 
 # 3. rebuild + validate
 python3 tools/build_catalog.py

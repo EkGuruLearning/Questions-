@@ -34,8 +34,10 @@ REQUIRED_PATHS = (
     # student content roots
     "content/computer-network/theory",
     "content/computer-network/practice",
+    "content/computer-network/answers",
     "content/computer-network/tests",
-    "content/rajasthan-geography/maps",
+    "content/computer-network/reference",
+    "content/rajasthan-geography/map/rajasthan",
     # builders and validators
     "tools/build_catalog.py",
     "tools/build_site_data.py",
@@ -65,12 +67,14 @@ STUDENTS JO DEKHTE HAIN (website routes):
   subjects/rajasthan-geography/index.html           Rajasthan map atlas
   404.html                                          purane link ke liye friendly page
 
-STUDENT FILES (only these get published):
-  content/computer-network/theory/     T01..T07 theory + complete book (PDF)
-  content/computer-network/practice/   practice booklets + answer key (PDF)
-  content/computer-network/tests/      topic/unit/subject tests (PDF)
-  content/computer-network/reference/  reference book (PDF)
-  content/rajasthan-geography/maps/    A1..A4 atlas + preview (PNG)
+STUDENT FILES (only these get published) — folder structure = website structure:
+  content/computer-network/theory/     📘 Theory: T01..T07 + complete book (PDF)
+  content/computer-network/practice/   ✍️ Practice questions: T01..T07 booklets (PDF)
+  content/computer-network/answers/    ✅ Answers & explanations: answer key + solutions (PDF)
+  content/computer-network/tests/      🧾 Tests: topic/unit/subject test papers (PDF)
+  content/computer-network/reference/  📚 Reference book (PDF)
+  content/rajasthan-geography/map/     🗂️ Map folder
+    rajasthan/                           🗺️ Rajasthan ke maps (PNG: A1..A4 + preview)
 
 SITE CODE AND DATA:
   assets/css/ekguru.css                one stylesheet for every page
@@ -83,7 +87,7 @@ SITE CODE AND DATA:
   data/banks/cn/T0N.<hash>.min.json    generated topic chunks (test page fetches one at a time)
 
 EDITABLE CATALOGUE INPUTS (yahan likho, phir rebuild karo):
-  data/catalog/subjects.json           subject + topic titles (English/Hindi), routes
+  data/catalog/subjects.json           subject/topic titles + folder labels (icon, English/Hindi note)
   data/catalog/materials.json          har downloadable file ka record + label
   data/catalog/site-routes.txt         published page list used by the link validator
 
@@ -96,8 +100,10 @@ SAFELY HIDDEN (never linked from the website):
 
 HOW TO ADD A FILE (e.g. a new topic PDF):
   1. File rakho:          content/computer-network/theory/T08-...-Theory-MCQ.pdf
-  2. Entry add karo:      data/catalog/materials.json (subject, topic, kind, title_en, title_hi)
+  2. Entry add karo:      data/catalog/materials.json (subject, topic, title_en, title_hi)
   3. Rebuild + validate:  python3 tools/build_catalog.py && python3 tools/validate_site.py
+  (Naya folder banao to uska label data/catalog/subjects.json ke `folders` me likhna zaroori hai,
+   warna website par wahi folder card apne aap ban jayega — bina page code chhue.)
   (Registry check: agar file register nahi hui ya registered file gayab hai, build fail ho jayega.)
 
 HOW TO REBUILD THE QUESTION BANK:

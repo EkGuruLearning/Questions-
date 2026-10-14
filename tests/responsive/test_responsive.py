@@ -55,6 +55,15 @@ class ResponsiveStructuralTests(unittest.TestCase):
         self.assertIn("position: absolute", self.css)
         self.assertRegex(self.css, r"@media\s*\(min-width:\s*951px\)\s*\{[^@]*site-menu-toggle\s*\{\s*display:\s*none")
 
+    def test_folder_tiles_and_breadcrumbs_are_responsive(self):
+        self.assertIn(".folder-grid", self.css)
+        self.assertIn(".folder-card", self.css)
+        self.assertIn(".folder-open", self.css)
+        self.assertIn(".crumbs", self.css)
+        self.assertIn(".file-thumb", self.css)
+        self.assertRegex(self.css, r"\.file-thumb\s+img\s*\{[^}]*object-fit:\s*cover")
+        self.assertRegex(self.css, r"@media\s*\(min-width:\s*720px\)\s*\{[^@]*folder-grid\s*\{\s*grid-template-columns:\s*repeat\(2")
+
     def test_test_app_keeps_its_mobile_quiz_states(self):
         self.assertIn(".option[aria-pressed=\"true\"]", self.css)
         self.assertIn(".option.correct", self.css)

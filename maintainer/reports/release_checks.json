@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T16:22:14+00:00",
+  "generated_at": "2026-10-14T16:35:56+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 15,
@@ -41,7 +41,7 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 7 route(s), 103 link(s) and 38 download(s) checked",
+        "PASS: 7 route(s), 97 link(s), 38 download(s) and 6 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
       ]
     },
@@ -86,7 +86,7 @@
         "test_published_route_list_covers_every_html_page (test_site_data.SiteDataTests.test_published_route_list_covers_every_html_page) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 7 tests in 0.187s",
+        "Ran 9 tests in 0.207s",
         "",
         "OK"
       ]
@@ -100,7 +100,7 @@
         "test_subject_cards_use_real_subject_ids (test_navigation.NavigationTests.test_subject_cards_use_real_subject_ids) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 12 tests in 0.014s",
+        "Ran 14 tests in 0.011s",
         "",
         "OK"
       ]
@@ -114,7 +114,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 7 tests in 0.002s",
+        "Ran 8 tests in 0.002s",
         "",
         "OK"
       ]
@@ -151,7 +151,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 61.106416"
+        "# duration_ms 63.580874"
       ]
     },
     {
@@ -160,11 +160,12 @@
       "exit_code": 0,
       "note": "Renders the real pages and asserts topic/material/map lists; exit 77 means jsdom is not installed.",
       "output_tail": [
-        "PASS: rendered DOM smoke test",
-        "  - home: 2 subject cards, 1,554 questions, 38 downloads",
-        "  - CN hub: 7 topic cards with test deep links",
-        "  - material page: 32 files, 8 filters",
-        "  - map page: 6 map cards"
+        "  - CN hub: 5 folder tiles + 7 topic cards with deep links",
+        "  - material page: 5 folder tiles, files hidden until a folder is opened",
+        "  - answers folder: 5 files with working download links",
+        "  - map page: Map folder tile",
+        "  - Map folder: Rajasthan subfolder tile",
+        "  - Rajasthan folder: 6 map files with previews and downloads"
       ]
     },
     {
@@ -173,7 +174,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (2 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (31 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],

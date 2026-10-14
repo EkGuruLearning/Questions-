@@ -7,9 +7,9 @@
 | `index.html` | Home — do subject cards + link counts + map preview |
 | `subjects/index.html` | Saare subjects ki list |
 | `subjects/computer-network/index.html` | CN home: **Material kholo** ya **Test shuru karo**, phir 7 topic cards |
-| `subjects/computer-network/material/index.html` | Topic filter + saari PDF files (open/download) |
+| `subjects/computer-network/material/index.html` | Folder browser: folder tile kholo → files dikhte hain (open/download) |
 | `subjects/computer-network/test/index.html` | Test setup + player + result + review |
-| `subjects/rajasthan-geography/index.html` | Map preview + A1/A2/A3/A4 downloads |
+| `subjects/rajasthan-geography/index.html` | Map folder → Rajasthan folder → A1/A2/A3/A4 map files |
 | `404.html` | Purane/unknown link ke liye friendly page |
 
 `data/catalog/site-routes.txt` published page list rakhta hai; `tools/validate_site.py` isi list se
@@ -38,9 +38,21 @@ data/catalog/materials.json (file registry + labels)  ▼
 
 ## 3. Folder responsibilities
 
+Website ka folder view `content/` ke asli folders se banta hai:
+
+| `content/` folder | Website par |
+|---|---|
+| `computer-network/theory/` | 📘 Theory |
+| `computer-network/practice/` | ✍️ Practice questions |
+| `computer-network/answers/` | ✅ Answers & explanations |
+| `computer-network/tests/` | 🧾 Tests |
+| `computer-network/reference/` | 📚 Reference book |
+| `rajasthan-geography/map/` | 🗂️ Map |
+| `rajasthan-geography/map/rajasthan/` | 🗺️ Rajasthan (map files) |
+
 | Folder | Kya rakhna hai | Website par? |
 |---|---|---|
-| `content/<subject>/...` | Student PDF/PNG files (bas yahi publish hota hai) | Haan — download/open links |
+| `content/<subject>/<folder>/...` | Student PDF/PNG files (bas yahi publish hota hai) | Haan — folder view + download/open links |
 | `assets/` | CSS, JS, images | Haan (code) |
 | `data/banks/cn/` | Canonical bank + generated chunks | Haan (test data) |
 | `data/catalog/` | Editable catalogue inputs | Nahi (build input) |
@@ -53,19 +65,22 @@ data/catalog/materials.json (file registry + labels)  ▼
 ## 4. Recipes
 
 ### Nayi PDF student ko dena hai
-1. File `content/<subject>/<group>/` me rakho (naam me topic prefix, e.g. `T03-...`).
-2. `data/catalog/materials.json` me entry: `file`, `subject`, `topic` (ya `null`), `kind`
-   (`theory`/`practice`/`test`/`reference`/`map`), `order`, `title_en`, `title_hi`, `note_en`, `note_hi`.
-3. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
+1. File `content/<subject>/<folder>/` me rakho (naam me topic prefix, e.g. `T03-...`).
+2. `data/catalog/materials.json` me entry: `file`, `subject`, `topic` (ya `null`),
+   `order`, `title_en`, `title_hi`, `note_en`, `note_hi`.
+3. Naya folder banaya? `data/catalog/subjects.json` ke `folders` me uska label likho
+   (`title_en`, `title_hi`, `note_en`, `note_hi`, `icon`, `order`) — site par folder card apne aap ban jayega.
+4. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
 
 ### Nayi quiz/test file (HTML) banani hai?
 Zaroorat nahi — topic-wise aur full-mix test site ke andar hi hai. Naya topic add karne ke liye
 `tools/data/topicN_data.py` me questions likho, `python3 tools/cn_export_json.py` chalao, phir
 `tools/build_site_data.py` + `tools/build_catalog.py`.
 
-### Naya subject
-`data/catalog/subjects.json` me subject add karo (`has_material`, `has_test`, `has_maps`), uske
-routes banao, `data/catalog/site-routes.txt` me pages likho, phir builder + validator chalao.
+### Naya subject / naya map folder
+`data/catalog/subjects.json` me subject (aur uske `folders`) add karo, `content/<subject>/...` me
+files rakho, routes banao, `data/catalog/site-routes.txt` me pages likho, phir builder + validator
+chalao. Map ke liye jaise `content/rajasthan-geography/map/<state>/` — folder khud site par aa jayega.
 
 ### Question bank ke sections
 Test page section filter topic ke `subtopic` se banata hai (canonical bank ke sections). Section ka

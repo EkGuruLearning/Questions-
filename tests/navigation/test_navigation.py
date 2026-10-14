@@ -114,11 +114,12 @@ class NavigationTests(unittest.TestCase):
     def test_site_renderer_targets_exist_on_the_pages_it_serves(self):
         source = (ROOT / "assets/js/site.js").read_text(encoding="utf-8")
         wanted = set(re.findall(r'getElementById\("([A-Za-z0-9_-]+)"\)', source))
-        self.assertEqual(wanted, {"topicGrid", "materialGroups", "materialFilters", "mapGrid"})
+        self.assertEqual(wanted, {"folderCrumbs", "folderBrowser", "cnFolders", "geoFolderPath", "topicGrid", "subjectFolders"})
         for rel, expected in (
-            ("subjects/computer-network/index.html", {"topicGrid"}),
-            ("subjects/computer-network/material/index.html", {"materialGroups", "materialFilters"}),
-            ("subjects/rajasthan-geography/index.html", {"mapGrid"}),
+            ("index.html", {"cnFolders", "geoFolderPath"}),
+            ("subjects/computer-network/index.html", {"subjectFolders", "topicGrid"}),
+            ("subjects/computer-network/material/index.html", {"folderCrumbs", "folderBrowser"}),
+            ("subjects/rajasthan-geography/index.html", {"folderCrumbs", "folderBrowser"}),
         ):
             ids = set(self.pages[rel][1].ids)
             self.assertTrue(expected.issubset(ids), f"{rel} is missing {expected - ids}")
@@ -130,6 +131,37 @@ class NavigationTests(unittest.TestCase):
             found.update(re.findall(r'data-subject-card="([a-z-]+)"', source))
         self.assertTrue(found)
         self.assertEqual(found - ids, set(), "a subject card points at an unknown subject")
+
+    def test_browser_pages_declare_their_subject_and_labels(self):
+        for rel, subject, label in (
+            ("subjects/computer-network/material/index.html", "computer-network", "Saare folders"),
+            ("subjects/rajasthan-geography/index.html", "rajasthan-geography", "Saare folders"),
+        ):
+            source, _ = self.pages[rel]
+            with self.subTest(page=rel):
+                self.assertIn(f'data-browser-subject="{subject}"', source)
+                self.assertIn(f'data-browser-label="{label}"', source)
+
+    def test_folder_links_point_at_real_tree_paths(self):
+        paths = set()
+        for subject in self.site["subjects"]:
+            def walk(node):
+                paths.add((subject["id"], node["path"]))
+                for child in node["folders"]:
+                    walk(child)
+            walk(subject["tree"])
+        found = 0
+        for rel, (source, parser) in self.pages.items():
+            for link in parser.links:
+                href = link.get("href", "")
+                if "?folder=" not in href:
+                    continue
+                found += 1
+                folder = unquote(href.split("?folder=", 1)[1])
+                subject = "rajasthan-geography" if "rajasthan" in rel else "computer-network"
+                with self.subTest(page=rel, folder=folder):
+                    self.assertIn((subject, folder), paths)
+        self.assertGreater(found, 0, "the map page should link into a folder")
 
     def test_home_page_links_to_every_main_area(self):
         source, parser = self.pages["index.html"]

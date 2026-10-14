@@ -1,6 +1,14 @@
 /* EkGuru Learning — page renderer.
-   Every page carries <body data-root="..."> so the same file works from any folder
-   depth under the GitHub Pages project path. All content comes from data/site.json. */
+ *
+ * Every page carries <body data-root="..."> so the same file works from any folder
+ * depth under the GitHub Pages project path. All content comes from data/site.json.
+ *
+ * The website shows the real folder tree of `content/`:
+ *   subject -> folder -> subfolder -> files
+ * So a new PDF in `content/computer-network/theory/` appears inside the "Theory"
+ * folder, and a new map tree in `content/rajasthan-geography/map/<name>/` becomes
+ * its own subfolder on the page.
+ */
 (function () {
   "use strict";
 
@@ -28,64 +36,146 @@
         if (!response.ok) throw new Error("site data " + response.status);
         return response.json();
       })
-      .then(function (data) {
-        cache = data;
-        return data;
-      });
+      .then(function (data) { cache = data; return data; });
   }
+
+  function number(value) { return Number(value || 0).toLocaleString("en-IN"); }
 
   function subjectOf(data, id) {
     return (data.subjects || []).filter(function (subject) { return subject.id === id; })[0];
   }
 
-  function number(value) {
-    return Number(value || 0).toLocaleString("en-IN");
+  function fileHref(item) { return root + item.url; }
+  function isImage(item) { return ["PNG", "JPG", "JPEG", "WEBP", "SVG"].indexOf(item.file_type) >= 0; }
+
+  /* ------------------------------------------------------------ folders ---- */
+  function findNode(node, path) {
+    if ((node.path || "") === (path || "")) return node;
+    for (var index = 0; index < node.folders.length; index += 1) {
+      var found = findNode(node.folders[index], path);
+      if (found) return found;
+    }
+    return null;
   }
 
-  function topicLabel(topic) {
-    return topic.id + " · " + topic.title_en;
+  function folderHref(subject, path) {
+    var base = root + (subject.material_route || subject.route);
+    return path ? base + "?folder=" + encodeURIComponent(path) : base;
   }
 
-  function materialHref(item) {
-    return root + item.url;
+  function renderFolderTiles(mount, subject, node) {
+    var grid = el("div", "folder-grid");
+    node.folders.forEach(function (folder) {
+      var tile = el("a", "folder-card");
+      tile.href = folderHref(subject, folder.path);
+      var meta = [];
+      if (folder.folder_count) meta.push(folder.folder_count + (folder.folder_count === 1 ? " subfolder" : " subfolders"));
+      if (folder.file_count) meta.push(folder.file_count + (folder.file_count === 1 ? " file" : " files"));
+      if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
+      tile.innerHTML =
+        '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
+        '<span class="folder-body">' +
+          '<strong>' + esc(folder.title_en) + "</strong>" +
+          '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
+          (folder.note_en ? '<span class="folder-note">' + esc(folder.note_en) + "</span>" : "") +
+          '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span>" +
+        "</span>" +
+        '<span class="folder-open">Kholo →</span>';
+      grid.appendChild(tile);
+    });
+    mount.appendChild(grid);
   }
 
-  function materialRow(item, options) {
-    var opts = options || {};
-    var topicChip = item.topic_id ? '<span class="chip neutral">' + esc(item.topic_id) + "</span>" : "";
+  /* -------------------------------------------------------------- files ---- */
+  function fileRow(item) {
     var row = el("li", "material-item");
+    var topicChip = item.topic_id ? '<span class="chip neutral">' + esc(item.topic_id) + "</span>" : "";
+    var thumb = isImage(item)
+      ? '<a class="file-thumb" href="' + esc(fileHref(item)) + '" target="_blank" rel="noopener noreferrer">' +
+        '<img src="' + esc(fileHref(item)) + '" alt="' + esc(item.title_en) + '" loading="lazy"></a>'
+      : "";
     row.innerHTML =
+      thumb +
       '<div class="material-main">' +
         "<h4>" + esc(item.title_en) + "</h4>" +
         '<p class="muted small" style="margin:0">' + esc(item.title_hi) + "</p>" +
-        (item.note_en ? '<p class="small" style="margin:0.25rem 0 0">' + esc(item.note_en) + "</p>" : "") +
+        (item.note_en ? '<p class="small" style="margin:0.2rem 0 0">' + esc(item.note_en) + "</p>" : "") +
         '<div class="material-meta">' + topicChip +
           '<span class="chip neutral">' + esc(item.file_type) + "</span>" +
           '<span class="chip neutral">' + esc(item.size_label) + "</span>" +
         "</div>" +
       "</div>" +
       '<div class="material-actions">' +
-        '<a class="button secondary small" href="' + esc(materialHref(item)) + '" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>' +
-        '<a class="button primary small" href="' + esc(materialHref(item)) + '" download>Download</a>' +
+        '<a class="button secondary small" href="' + esc(fileHref(item)) + '" target="_blank" rel="noopener noreferrer">' +
+          (isImage(item) ? "Poora dekho ↗" : "PDF kholo ↗") + "</a>" +
+        '<a class="button primary small" href="' + esc(fileHref(item)) + '" download>Download</a>' +
       "</div>";
-    if (opts.hideTopic) row.querySelector(".chip.neutral").remove();
     return row;
   }
 
+  function renderFiles(mount, files, emptyText) {
+    if (!files.length) {
+      mount.appendChild(el("p", "empty-state", emptyText || "Is folder me abhi koi file nahi hai."));
+      return;
+    }
+    var list = el("ul", "material-list");
+    files.forEach(function (item) { list.appendChild(fileRow(item)); });
+    mount.appendChild(list);
+  }
+
+  /* --------------------------------------------------------- breadcrumbs --- */
+  function renderCrumbs(mount, subject, node, label) {
+    var parts = (node.path || "").split("/").filter(Boolean);
+    var html = '<a href="' + esc(folderHref(subject, "")) + '">' + esc(label || "Saare folders") + "</a>";
+    var walked = "";
+    parts.forEach(function (part, index) {
+      walked = walked ? walked + "/" + part : part;
+      var child = findNode(subject.tree, walked);
+      var name = child ? child.title_en : part;
+      html += '<span class="crumb-sep" aria-hidden="true">›</span>';
+      html += index === parts.length - 1
+        ? '<span class="crumb-current">' + esc(name) + "</span>"
+        : '<a href="' + esc(folderHref(subject, walked)) + '">' + esc(name) + "</a>";
+    });
+    mount.innerHTML = html;
+  }
+
+  /* ------------------------------------------------- folder page browser -- */
+  function renderBrowser(subject, folderPath, label) {
+    var crumbs = document.getElementById("folderCrumbs");
+    var mount = document.getElementById("folderBrowser");
+    if (!crumbs || !mount) return;
+    var node = findNode(subject.tree, folderPath || "") || subject.tree;
+    mount.innerHTML = "";
+    renderCrumbs(crumbs, subject, node, label);
+
+    var head = el("div", "folder-head");
+    head.innerHTML =
+      '<h2 style="margin:0">' + esc(node.icon || "📁") + " " + esc(node.title_en) + "</h2>" +
+      '<p class="muted" style="margin:0">' + esc(node.title_hi) + (node.note_en ? " — " + esc(node.note_en) : "") + "</p>";
+    mount.appendChild(head);
+
+    if (node.folders.length) renderFolderTiles(mount, subject, node);
+    if (node.files.length) renderFiles(mount, node.files, "Is folder me abhi koi file nahi hai.");
+    if (!node.folders.length && !node.files.length) mount.appendChild(el("p", "empty-state", "Ye folder khaali hai."));
+  }
+
+  /* ----------------------------------------------------------- topic grid -- */
   function renderTopicGrid(container, subject) {
     container.innerHTML = "";
     subject.topics.forEach(function (topic) {
       var card = el("article", "card topic-card");
-      var sectionChips = topic.sections.slice(0, 4).map(function (section) {
+      var sectionChips = topic.sections.slice(0, 3).map(function (section) {
         return '<span class="chip neutral">' + esc(section.short) + " · " + section.count + "</span>";
       }).join("");
-      var more = topic.sections.length > 4
-        ? '<span class="chip neutral">+' + (topic.sections.length - 4) + " more</span>"
+      var more = topic.sections.length > 3
+        ? '<span class="chip neutral">+' + (topic.sections.length - 3) + " more</span>"
         : "";
+      var theory = topic.material.theory[0];
       card.innerHTML =
         '<div class="topic-head">' +
           '<span class="topic-badge">' + esc(topic.id) + "</span>" +
-          "<div><h3 style=\"margin:0\">" + esc(topic.title_en) + "</h3>" +
+          '<div><h3 style="margin:0">' + esc(topic.title_en) + "</h3>" +
           '<p class="muted small" style="margin:0">' + esc(topic.title_hi) + "</p></div>" +
         "</div>" +
         '<div class="topic-meta">' +
@@ -94,81 +184,34 @@
         "</div>" +
         '<div class="topic-meta">' + sectionChips + more + "</div>" +
         '<div class="topic-actions">' +
-          '<a class="button primary small" href="' + root + "subjects/computer-network/test/index.html?topic=" + esc(topic.id) + '">Start topic test</a>' +
-          (topic.material.theory[0]
-            ? '<a class="button secondary small" href="' + esc(materialHref(topic.material.theory[0])) + '" download>Theory PDF (' + esc(topic.material.theory[0].size_label) + ")</a>"
-            : "") +
-          (topic.material.practice[0]
-            ? '<a class="button secondary small" href="' + esc(materialHref(topic.material.practice[0])) + '" download>Practice PDF</a>'
-            : "") +
+          '<a class="button primary small" href="' + root + "subjects/computer-network/test/index.html?topic=" + esc(topic.id) + '">Test do</a>' +
+          (theory ? '<a class="button secondary small" href="' + esc(fileHref(theory)) + '" download>Theory PDF</a>' : "") +
         "</div>";
       container.appendChild(card);
     });
   }
 
-  function renderMaterialGroups(container, subject, filterTopic) {
+  /* ----------------------------------------------------------- home rows --- */
+  function renderHomeFolders(container, subject) {
     container.innerHTML = "";
-    subject.groups.forEach(function (group) {
-      var items = group.items.filter(function (item) {
-        return !filterTopic || filterTopic === "all" || item.topic_id === filterTopic;
-      });
-      if (!items.length) return;
-      var block = el("section", "card");
-      block.innerHTML = '<div class="section-head"><h2 style="margin:0;font-size:1.25rem">' + esc(group.title_en) +
-        '</h2><span class="muted small">' + esc(group.title_hi) + "</span></div>";
-      var list = el("ul", "material-list");
-      items.forEach(function (item) { list.appendChild(materialRow(item)); });
-      block.appendChild(list);
-      container.appendChild(block);
+    var grid = el("div", "folder-grid");
+    subject.tree.folders.forEach(function (folder) {
+      var tile = el("a", "folder-card compact");
+      tile.href = folderHref(subject, folder.path);
+      var meta = [];
+      if (folder.file_count) meta.push(folder.file_count + " file");
+      if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
+      tile.innerHTML =
+        '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
+        '<span class="folder-body"><strong>' + esc(folder.title_en) + "</strong>" +
+        '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
+        '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span></span>";
+      grid.appendChild(tile);
     });
-    if (!container.children.length) {
-      container.appendChild(el("p", "empty-state", "Is topic/section ke liye koi file registered nahi hai."));
-    }
+    container.appendChild(grid);
   }
 
-  function renderFilters(container, subject, active) {
-    var topics = [{ id: "all", title_en: "All files" }].concat(
-      subject.topics.map(function (topic) { return { id: topic.id, title_en: topic.id + " " + topic.title_en }; })
-    );
-    container.innerHTML = "";
-    topics.forEach(function (topic) {
-      var button = el("button", "chip", esc(topic.title_en));
-      button.type = "button";
-      button.setAttribute("aria-pressed", String(active === topic.id));
-      button.addEventListener("click", function () {
-        renderFilters(container, subject, topic.id);
-        renderMaterialGroups(document.getElementById("materialGroups"), subject, topic.id);
-        if (history.replaceState) {
-          var url = new URL(window.location.href);
-          if (topic.id === "all") url.searchParams.delete("topic");
-          else url.searchParams.set("topic", topic.id);
-          history.replaceState({}, "", url);
-        }
-      });
-      container.appendChild(button);
-    });
-  }
-
-  function renderMapGrid(container, subject) {
-    var maps = subject.groups.reduce(function (all, group) { return all.concat(group.items); }, []);
-    container.innerHTML = "";
-    maps.forEach(function (item) {
-      var card = el("article", "card");
-      card.innerHTML =
-        "<h3>" + esc(item.title_en) + "</h3>" +
-        '<p class="muted small" style="margin-top:-0.3rem">' + esc(item.title_hi) + "</p>" +
-        "<p>" + esc(item.note_en) + "</p>" +
-        '<div class="material-meta"><span class="chip neutral">' + esc(item.file_type) + "</span>" +
-        '<span class="chip neutral">' + esc(item.size_label) + "</span>" +
-        '<span class="chip neutral">' + esc(item.file_name) + "</span></div>" +
-        '<div class="material-actions" style="margin-top:0.7rem">' +
-          '<a class="button secondary small" href="' + esc(materialHref(item)) + '" target="_blank" rel="noopener noreferrer">View full size ↗</a>' +
-          '<a class="button primary small" href="' + esc(materialHref(item)) + '" download>Download</a>' +
-        "</div>";
-      container.appendChild(card);
-    });
-  }
-
+  /* --------------------------------------------------------------- misc ---- */
   function setText(selector, value) {
     document.querySelectorAll(selector).forEach(function (node) { node.textContent = value; });
   }
@@ -180,15 +223,16 @@
       var downloads = data.subjects.reduce(function (total, subject) { return total + subject.file_count; }, 0);
 
       setText("[data-count='topics']", cn && cn.test ? cn.test.topic_count : 7);
-      setText("[data-count='questions']", cn && cn.test ? number(cn.test.question_count) : "1,554");
+      setText("[data-count='questions']", cn && cn.test ? number(cn.test.question_count) : "0");
       setText("[data-count='downloads']", number(downloads));
-      setText("[data-count='maps']", geo ? geo.file_count : 6);
+      setText("[data-count='maps']", geo ? geo.file_count : 0);
       setText("[data-build]", data.bank_build_id || "");
 
       document.querySelectorAll("[data-subject-card]").forEach(function (card) {
         var subject = subjectOf(data, card.getAttribute("data-subject-card"));
         if (!subject) return;
         card.querySelectorAll("[data-count='subject-files']").forEach(function (node) { node.textContent = subject.file_count; });
+        card.querySelectorAll("[data-count='subject-folders']").forEach(function (node) { node.textContent = subject.folder_count; });
         if (subject.test) {
           card.querySelectorAll("[data-count='subject-questions']").forEach(function (node) {
             node.textContent = number(subject.test.question_count);
@@ -196,31 +240,46 @@
         }
       });
 
+      var homeFolders = document.getElementById("cnFolders");
+      if (homeFolders && cn) renderHomeFolders(homeFolders, cn);
+
+      var homeMapPath = document.getElementById("geoFolderPath");
+      if (homeMapPath && geo) {
+        homeMapPath.textContent = geo.tree.folders.map(function (folder) { return folder.title_en; }).join(" › ")
+          + " › " + (findNode(geo.tree, "map") || { folders: [] }).folders.map(function (f) { return f.title_en; }).join("");
+      }
+
       var topicGrid = document.getElementById("topicGrid");
       if (topicGrid && cn) renderTopicGrid(topicGrid, cn);
 
-      var materialGroups = document.getElementById("materialGroups");
-      if (materialGroups && cn) {
-        var params = new URLSearchParams(window.location.search);
-        var initial = params.get("topic") || "all";
-        renderFilters(document.getElementById("materialFilters"), cn, initial);
-        renderMaterialGroups(materialGroups, cn, initial);
+      var cnFolders = document.getElementById("subjectFolders");
+      if (cnFolders && cn) {
+        var grid = el("div", "folder-grid");
+        cn.tree.folders.forEach(function (folder) {
+          var tile = el("a", "folder-card");
+          tile.href = folderHref(cn, folder.path);
+          var meta = [folder.file_count + " file" + (folder.file_count === 1 ? "" : "s")];
+          if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
+          tile.innerHTML =
+            '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
+            '<span class="folder-body"><strong>' + esc(folder.title_en) + "</strong>" +
+            '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
+            '<span class="folder-note">' + esc(folder.note_en) + "</span>" +
+            '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span></span>" +
+            '<span class="folder-open">Kholo →</span>';
+          grid.appendChild(tile);
+        });
+        cnFolders.appendChild(grid);
       }
 
-      var mapGrid = document.getElementById("mapGrid");
-      if (mapGrid && geo) renderMapGrid(mapGrid, geo);
-
-      var plainLists = document.querySelectorAll("[data-material-group]");
-      plainLists.forEach(function (list) {
-        var subject = subjectOf(data, list.getAttribute("data-subject"));
-        var kind = list.getAttribute("data-material-group");
-        if (!subject) return;
-        var group = subject.groups.filter(function (item) { return item.id === kind; })[0];
-        if (!group) return;
-        var wrapper = el("ul", "material-list");
-        group.items.forEach(function (item) { wrapper.appendChild(materialRow(item)); });
-        list.appendChild(wrapper);
-      });
+      var browserSubject = document.body.getAttribute("data-browser-subject");
+      if (browserSubject) {
+        var subject = subjectOf(data, browserSubject);
+        if (subject) {
+          var params = new URLSearchParams(window.location.search);
+          renderBrowser(subject, params.get("folder") || "", document.body.getAttribute("data-browser-label"));
+        }
+      }
     }).catch(function (error) {
       document.querySelectorAll("[data-loading]").forEach(function (node) {
         node.textContent = "List load nahi ho payi. Page refresh karein. (" + error.message + ")";
