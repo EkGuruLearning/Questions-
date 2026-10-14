@@ -119,6 +119,78 @@ class ResponsiveStructuralTests(unittest.TestCase):
         self.assertRegex(self.css, r"\.palette-grid\s+button\s*\{[^}]*min-height:\s*44px")
         self.assertRegex(self.css, r"\.mode-switch\s*\{[^}]*flex-wrap:\s*wrap")
 
+    def test_nav_rule_has_enough_specificity_for_phones(self):
+        """`.site-nav { display:flex }` ki wajah se phone par desktop nav dikh raha tha —
+        isliye hide rule `.site-nav.desktop-nav` hona chahiye (dono jagah)."""
+        self.assertRegex(self.css, r"\.site-nav\.desktop-nav\s*\{\s*display:\s*none")
+        self.assertRegex(
+            self.css,
+            r"@media\s*\(min-width:\s*951px\)\s*\{[^@]*\.site-nav\.desktop-nav\s*\{[^}]*display:\s*flex")
+        self.assertNotRegex(self.css, r"(?<![\.\w])\.desktop-nav\s*\{\s*display:\s*none")
+
+    def test_every_published_image_reserves_its_box(self):
+        """Image par width/height — load hone se pehle bhi layout theek rehta hai."""
+        import html.parser
+
+        class Images(html.parser.HTMLParser):
+            def __init__(self):
+                super().__init__(convert_charrefs=True)
+                self.items = []
+
+            def handle_starttag(self, tag, attrs):
+                if tag == "img":
+                    self.items.append(dict(attrs))
+
+        routes = [line.strip() for line in ROUTES_FILE.read_text(encoding="utf-8").splitlines()
+                  if line.strip() and not line.strip().startswith("#")]
+        checked = 0
+        for rel in routes:
+            parser = Images()
+            parser.feed((ROOT / rel).read_text(encoding="utf-8"))
+            for image in parser.items:
+                with self.subTest(page=rel, src=image.get("src")):
+                    self.assertTrue(image.get("width") and image.get("height"),
+                                    "image needs width and height attributes")
+                    self.assertTrue((image.get("alt") or "").strip(), "alt text")
+                    self.assertNotIn("http://", image.get("src", ""))
+                checked += 1
+        self.assertGreater(checked, 0, "kuch image to publish hoti hai")
+
+    def test_no_page_ships_a_fixed_wide_element(self):
+        """360px phone par kuch bhi screen se bahar ya fixed chaudi width ka nahi."""
+        routes = [line.strip() for line in ROUTES_FILE.read_text(encoding="utf-8").splitlines()
+                  if line.strip() and not line.strip().startswith("#")]
+        for rel in routes:
+            source = (ROOT / rel).read_text(encoding="utf-8")
+            for style in re.findall(r'style="([^"]*)"', source):
+                with self.subTest(page=rel, style=style):
+                    self.assertNotRegex(style, r"width:\s*(?:3[6-9]\d|[4-9]\d\d|\d{4,})px")
+                    self.assertNotRegex(style, r"min-width:\s*(?:2[8-9]\d|[3-9]\d\d|\d{4,})px")
+                    self.assertNotIn("position: fixed", style)
+            with self.subTest(page=rel):
+                self.assertNotIn("<pre", source, "pre blocks phones par overflow karte hain")
+
+    def test_phone_breakpoints_cover_620_and_400(self):
+        self.assertRegex(self.css, r"@media\s*\(max-width:\s*620px\)")
+        self.assertRegex(self.css, r"@media\s*\(max-width:\s*400px\)|@media\s*\(max-width:\s*380px\)")
+
+    def test_row_cards_do_not_keep_a_height_basis_on_phones(self):
+        """`.material-item` column ban jata hai — `flex: 1 1 260px` (width basis) wahan
+        height basis ban ke khali jagah chhod deta hai, isliye reset zaroori hai."""
+        block = re.search(r"@media\s*\(max-width:\s*720px\)\s*\{(.*?)\n\}", self.css, flags=re.S)
+        self.assertIsNotNone(block, "720px block missing")
+        self.assertIn(".material-main", block.group(1))
+        self.assertRegex(block.group(1), r"\.material-main\s*\{\s*flex:\s*0 0 auto")
+
+    def test_map_previews_go_full_width_on_phones(self):
+        """620px se neeche map ka preview poori chaudai leta hai (kata hua nahi)."""
+        blocks = re.findall(r"@media\s*\(max-width:\s*620px\)\s*\{(.*?)\n\}", self.css, flags=re.S)
+        self.assertTrue(blocks, "620px block missing")
+        joined = "\n".join(blocks)
+        self.assertIn(".material-item.is-image", joined)
+        self.assertIn("aspect-ratio", joined)
+
+
     def test_question_text_and_options_wrap_on_small_screens(self):
         self.assertRegex(self.css, r"\.question-stem\s*\{[^}]*white-space:\s*pre-line")
         self.assertRegex(self.css, r"\.option\s*\.opt-text\s*\{[^}]*overflow-wrap:\s*anywhere")

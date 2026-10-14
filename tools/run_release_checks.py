@@ -86,6 +86,11 @@ CHECKS = [
      "Filtering, sampling, scoring and language fallbacks."),
     ("Site page smoke test", ["node", "tests/navigation/site_dom_smoke.cjs"],
      "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer."),
+    ("Mobile / responsive browser check (optional)", ["node", "tests/mobile/mobile_check.cjs"],
+     "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, "
+     "tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me."),
+    ("Reasoning sample PDFs", [PY, "tools/reasoning_samples.py", "--check"],
+     "Reasoning ke sample chapter/practice/test/answer-key PDFs maujood hain."),
     ("Whitespace/conflict check", ["bash", "-lc", "git diff --check && git diff --cached --check && python3 tools/check_whitespace.py"],
      "Tracked diffs and changed/untracked text files are checked."),
 ]

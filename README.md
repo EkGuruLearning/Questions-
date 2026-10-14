@@ -128,6 +128,20 @@ apne aap ban jata hai.
 python3 tools/serve_site.py          # http://localhost:8000 — sirf public pages
 ```
 
+## Mobile check (asli browser me)
+
+```bash
+# ek baar setup (browser puppeteer ke saath)
+mkdir -p /tmp/mcheck && cd /tmp/mcheck && npm init -y && npm i puppeteer-core @sparticuz/chromium
+
+node tests/mobile/mobile_check.cjs   # 360/390/768/1280 widths par saare important pages
+```
+
+Ye check pakka karta hai: koi page sideways scroll nahi karta, phone par "Menu" dikhta hai
+(desktop nav 951px ke baad), tap targets chhote nahi, console me error nahi. Screenshots
+`/tmp/ekguru-mobile-shots` me aate hain. `run_release_checks.py` ise bhi chalata hai aur
+browser na milne par skip (exit 77) kar deta hai.
+
 ## Checks
 
 ```bash

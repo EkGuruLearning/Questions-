@@ -14,6 +14,9 @@
 | `python3 tools/read_structure.py` | Structure ka map; `--check` par poora preflight |
 | `python3 tools/run_release_checks.py` | Saare checks ek saath + `maintainer/reports/release_checks.json` |
 | `python3 tools/check_whitespace.py` | Badli hui text files me trailing whitespace |
+| `python3 tools/reasoning_samples.py [--check]` | Reasoning ke sample chapter/practice/test/answer-key PDFs banao (source: `maintainer/reasoning/samples/`) |
+| `python3 tools/scaffold_exam_years.py [--check\|--prune]` | Previous Year Papers me har exam ke 2000–2026 saal folders |
+| `node tests/mobile/mobile_check.cjs` | Asli browser me phone/tablet/desktop widths — overflow, nav, tap targets, console errors (browser na ho to skip 77) |
 
 ## Question bank pipeline (source → site)
 

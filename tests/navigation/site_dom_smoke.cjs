@@ -159,6 +159,23 @@ section("reasoning folder pages", () => {
   return `${tiles} folder pages, empty ones explained`;
 });
 
+/* saal-wise chips -------------------------------------------------------- */
+section("year-wise exam pages", () => {
+  const exam = read("subjects/previous-year-papers/dsssb/index.html");
+  const chips = all(exam, /class="[^"]*year-chip[^"]*"[^>]*>(\d{4})/g).map((match) => Number(match[1]));
+  assert(chips.length === 27, `expected 27 year chips (2000–2026), saw ${chips.length}`);
+  for (const year of [2000, 2013, 2019, 2026]) assert(chips.includes(year), `missing year ${year}`);
+  const ready = all(exam, /<a class="[^"]*year-chip ready[^"]*" href="([^"]+)"/g).map((m) => m[1]);
+  assert(ready.length === 0, "DSSSB me abhi koi paper nahi, koi chip 'ready' nahi hona chahiye");
+  const rpsc = read("subjects/previous-year-papers/rpsc/index.html");
+  const rpscReady = all(rpsc, /<a class="[^"]*year-chip ready[^"]*" href="([^"]+)"/g).map((m) => m[1]);
+  assert(rpscReady.some((href) => href.includes("2024/index.html")),
+    "RPSC 2024 ke papers hain — uska chip link hona chahiye");
+  const yearPage = read("subjects/previous-year-papers/rpsc/2024/index.html");
+  assert(/doosre saal/.test(yearPage), "year page par doosre saal ke chips hone chahiye");
+  return `${chips.length} year chips, ready chips sirf jahan papers hain`;
+});
+
 /* maps ------------------------------------------------------------------- */
 section("map folder pages", () => {
   const hub = read("subjects/rajasthan-geography/index.html");
@@ -168,6 +185,12 @@ section("map folder pages", () => {
   assert(rows === 8, `expected 8 map files (PNG prints + PDF prints), saw ${rows}`);
   assert(/A3-Print\.pdf/.test(rajasthan), "the A3 print PDF should be listed");
   assert(/data\/thumbs\//.test(rajasthan), "map rows should show the light preview image");
+  const thumbs = all(rajasthan, /<img src="[^"]*data\/thumbs\/[^"]*"[^>]*>/g).map((match) => match[0]);
+  assert(thumbs.length > 0, "map previews missing");
+  for (const tag of thumbs) {
+    assert(/(^|\s)width="\d+"/.test(tag) && /(^|\s)height="\d+"/.test(tag),
+      `preview needs width/height so the page does not jump: ${tag.slice(0, 70)}`);
+  }
   assert(/content\/rajasthan-geography\/map\/rajasthan\//.test(rajasthan), "map download links are missing");
   return `${rows} map rows with previews and downloads`;
 });

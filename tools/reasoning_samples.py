@@ -203,7 +203,19 @@ def sample_cover(doc: dict) -> str:
 
 
 def main() -> int:
-    wanted = sys.argv[1:] or [doc["id"] for doc in DOCS]
+    args = sys.argv[1:]
+    if "--check" in args:
+        args.remove("--check")
+        missing = [doc["out"] for doc in DOCS
+                   if not os.path.isfile(os.path.join(OUT_DIR, doc["out"]))]
+        if missing:
+            print("FAIL: reasoning sample PDFs missing — run python3 tools/reasoning_samples.py")
+            for item in missing:
+                print(f"  - content/reasoning/{item}")
+            return 1
+        print(f"PASS: {len(DOCS)} reasoning sample PDF(s) maujood hain")
+        return 0
+    wanted = args or [doc["id"] for doc in DOCS]
     for doc in DOCS:
         if doc["id"] not in wanted:
             continue

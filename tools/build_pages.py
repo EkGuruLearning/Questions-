@@ -34,6 +34,7 @@ import html
 import json
 import pathlib
 import posixpath
+import struct
 import sys
 import urllib.parse
 
@@ -132,6 +133,34 @@ SUBJECT_EXTRAS = {
 }
 
 
+def image_size(rel_path: str) -> tuple[int, int] | None:
+    """Pixel size of a PNG/JPG file, so <img> can reserve its box (koi layout jump nahi)."""
+    path = ROOT / rel_path
+    try:
+        head = path.read_bytes()[:4096]
+    except OSError:
+        return None
+    if head[:8] == b"\x89PNG\r\n\x1a\n":
+        width, height = struct.unpack(">II", head[16:24])
+        return int(width), int(height)
+    if head[:2] == b"\xff\xd8":  # JPEG: frame header tak segments scan karo
+        index = 2
+        while index + 9 < len(head):
+            if head[index] != 0xFF:
+                index += 1
+                continue
+            marker = head[index + 1]
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3):
+                height, width = struct.unpack(">HH", head[index + 5:index + 9])
+                return int(width), int(height)
+            if marker in (0xD8, 0xD9) or 0xD0 <= marker <= 0xD7:
+                index += 2
+                continue
+            index += 2 + struct.unpack(">H", head[index + 2:index + 4])[0]
+    return None
+
+
+
 def head(title: str, description: str, depth: int, extra_head: str = "", extra_body: str = "",
          keywords: str = "", structured_data: str = "") -> str:
     prefix = rel(depth)
@@ -208,8 +237,10 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
     thumb = ""
     if is_picture and item.get("thumb_url"):
         thumb_src = url_for(href_from(from_page, item["thumb_url"])) if from_page else prefix + url_for(item["thumb_url"])
+        size = image_size(item["thumb_url"])
+        size_attrs = f' width="{size[0]}" height="{size[1]}"' if size else ""
         thumb = (f'<a class="file-thumb" href="{esc(href)}" target="_blank" rel="noopener noreferrer">'
-                 f'<img src="{esc(thumb_src)}" alt="{esc(item["alt_en"] or item["title_en"])}" '
+                 f'<img src="{esc(thumb_src)}" alt="{esc(item["alt_en"] or item["title_en"])}"{size_attrs} '
                  f'loading="lazy" decoding="async"><span class="file-thumb-open">Poora dekho</span></a>')
     description = ""
     if is_picture and item.get("description_en"):

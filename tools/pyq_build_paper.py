@@ -98,13 +98,25 @@ def parse_questions(md: str) -> list[dict]:
 
 
 def parse_answers(md: str) -> dict[int, int]:
-    """The key is printed as a wide table with four Q/A pairs on one row, so read
-    every `| 12 | 3 |` cell pair in the line, not just the first one."""
+    """Answer key (`| Q | Ans | Q | Ans |` rows) -> {question: option}.
+
+    Ek row me kai jodi hoti hai aur beech me khali cell bhi — isliye cells todo aur
+    ek-ek (number, option) jodi padho. Regex se overlapping jodiyan chhoot jati hain
+    (jaise `| 1 | 2 | | 26 | 3 |` me doosri jodi).
+    """
     answers: dict[int, int] = {}
-    cells = re.compile(r"\|\s*(\d{1,3})\s*\|\s*([1-5])\s*\|")
     for line in md.splitlines():
-        for number, option in cells.findall(line):
-            answers[int(number)] = int(option)
+        if "|" not in line:
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        index = 0
+        while index < len(cells) - 1:
+            number, option = cells[index], cells[index + 1]
+            if number.isdigit() and option in {"1", "2", "3", "4", "5"}:
+                answers[int(number)] = int(option)
+                index += 2
+                continue
+            index += 1
     return answers
 
 

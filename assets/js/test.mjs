@@ -600,7 +600,9 @@ async function init() {
     });
     state.saved = new Map(readLocal(STORAGE.saved, []));
     state.sessions = readLocal(STORAGE.sessions, []);
-    $("bankInfo").textContent = `${number(manifest.published_question_count)} questions · 7 topics · build ${manifest.bank_build_id}`;
+    /* student-facing line: sirf numbers — koi internal build id/version nahi */
+    $("bankInfo").textContent =
+      `${number(manifest.published_question_count)} questions · ${manifest.topics.length} topics`;
     bind();
     const params = new URLSearchParams(window.location.search);
     const topicParam = params.get("topic");

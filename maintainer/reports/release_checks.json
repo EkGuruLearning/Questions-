@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-14T18:21:22+00:00",
+  "generated_at": "2026-10-14T18:58:01+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
-    "pass": 16,
+    "pass": 18,
     "skip": 0,
     "fail": 0
   },
@@ -95,7 +95,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 15 tests in 0.719s",
+        "Ran 15 tests in 0.791s",
         "",
         "OK"
       ]
@@ -109,7 +109,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 21 tests in 0.129s",
+        "Ran 21 tests in 0.121s",
         "",
         "OK"
       ]
@@ -123,7 +123,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 13 tests in 0.005s",
+        "Ran 19 tests in 0.029s",
         "",
         "OK"
       ]
@@ -137,7 +137,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.055s",
+        "Ran 8 tests in 0.049s",
         "",
         "OK"
       ]
@@ -160,7 +160,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 55.358186"
+        "# duration_ms 55.229663"
       ]
     },
     {
@@ -169,12 +169,36 @@
       "exit_code": 0,
       "note": "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer.",
       "output_tail": [
-        "  - computer-network subject page: 5 folder tiles + 7 topic cards",
         "  - folder page (files + breadcrumb back up): 5 files, breadcrumb back to the subject page",
         "  - previous year papers page: 8 exam folders, RPSC 2024 page with 2 files and a full breadcrumb",
         "  - reasoning folder pages: 4 folder pages, empty ones explained",
+        "  - year-wise exam pages: 27 year chips, ready chips sirf jahan papers hain",
         "  - map folder pages: 8 map rows with previews and downloads",
         "  - nav + footer on every published page: 30 pages carry the full nav + footer"
+      ]
+    },
+    {
+      "name": "Mobile / responsive browser check (optional)",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me.",
+      "output_tail": [
+        "ok   desktop-1280 /subjects/reasoning/practice/Calendar/index.html   scrollW=1280",
+        "ok   desktop-1280 /subjects/reasoning/theory/index.html              scrollW=1280",
+        "ok   desktop-1280 /subjects/previous-year-papers/rpsc/2024/index.html scrollW=1280",
+        "ok   desktop-1280 /404.html                                          scrollW=1280",
+        "",
+        "PASS: 68 page/viewport checks, 0 problem(s). Screenshots: /tmp/ekguru-mobile-shots"
+      ]
+    },
+    {
+      "name": "Reasoning sample PDFs",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Reasoning ke sample chapter/practice/test/answer-key PDFs maujood hain.",
+      "output_tail": [
+        "warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.",
+        "PASS: 4 reasoning sample PDF(s) maujood hain"
       ]
     },
     {
@@ -183,7 +207,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (49 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (13 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],

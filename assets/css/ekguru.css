@@ -147,8 +147,11 @@ code { background: var(--primary-soft); border-radius: 6px; padding: 0.1rem 0.35
 .brand-name { display: block; font-weight: 800; line-height: 1.1; }
 .brand-caption { display: block; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 
-/* Desktop nav row (small screens use the <details> menu instead). */
-.desktop-nav { display: none; }
+/* Desktop nav row (small screens use the <details> menu instead).
+   `.site-nav` par bhi wahi class hai, isliye specificity badhani padti hai — warna
+   `.site-nav { display: flex }` is rule ko override kar deta hai aur phone par bhi
+   desktop nav dikhne lagta hai. */
+.site-nav.desktop-nav { display: none; }
 .site-menu { position: relative; }
 .site-menu-toggle {
   list-style: none;
@@ -409,6 +412,12 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .material-item.is-image { align-items: flex-start; }
 .material-item.is-image .file-thumb { width: 168px; }
 .material-item.is-image .file-thumb img { width: 168px; height: 120px; }
+@media (max-width: 620px) {
+  /* phone par map ka preview poora dikhe, kata hua nahi */
+  .material-item.is-image .file-thumb,
+  .material-item.is-image .file-thumb img { width: 100%; }
+  .material-item.is-image .file-thumb img { height: auto; aspect-ratio: 4 / 3; }
+}
 .file-thumb { flex: none; width: 128px; position: relative; display: block; text-decoration: none; }
 .file-thumb img {
   width: 128px;
@@ -618,6 +627,10 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .footer-grid h3 { font-size: 0.95rem; }
 .footer-grid p { margin: 0 0 0.35rem; font-size: 0.9rem; color: var(--muted); }
 .footer-grid a { text-decoration: none; }
+/* Footer aur section ke text links bhi thumb se aaram se tap ho jayein. */
+.footer-grid p > a { display: inline-flex; align-items: center; min-height: 40px; }
+.section-head a { display: inline-flex; align-items: center; min-height: 40px; }
+.muted a, .small a, .footer-bottom a { min-height: 34px; }
 .footer-bottom { border-top: 1px solid var(--line); padding: 0.85rem 0 1.4rem; color: var(--muted); font-size: 0.84rem; }
 .footer-bottom { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: space-between; }
 .footer-stats { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.85rem; }
@@ -678,7 +691,7 @@ a.year-chip:hover { border-color: var(--primary); color: var(--primary-dark); }
 
 @media (min-width: 951px) {
   /* Desktop: the nav row is always visible, the "Menu" toggle disappears. */
-  .desktop-nav { display: flex; gap: 0.25rem; flex: 1 1 auto; justify-content: flex-end; }
+  .site-nav.desktop-nav { display: flex; gap: 0.25rem; flex: 1 1 auto; justify-content: flex-end; }
   .site-menu { display: none; }
 }
 
@@ -691,6 +704,9 @@ a.year-chip:hover { border-color: var(--primary); color: var(--primary-dark); }
   body { font-size: 15.5px; }
   .hero-stats { gap: 0.7rem 1.1rem; }
   .material-item { flex-direction: column; align-items: stretch; }
+  /* column layout me `flex: 1 1 260px` height ki basis ban jata hai — usse reset karo,
+     warna row ke andar 260px ki khali jagah bach jati hai */
+  .material-main { flex: 0 0 auto; }
   .material-actions .button { flex: 1 1 auto; }
   .score-ring { width: 108px; height: 108px; }
   .score-ring > div { width: 84px; height: 84px; }
