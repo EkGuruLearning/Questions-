@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "status": "PASS",
-  "checked_at_utc": "2026-10-14T10:26:43.291Z",
+  "checked_at_utc": "2026-10-14T10:31:46.411Z",
   "bank_build_id": "cn-014b0aa51c0651e7",
   "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
   "ui_sha256": "99c5929dfad95f32f6b1402811020eb02382d3a5357d6384b29c7714dfe27e09",
@@ -25,7 +25,7 @@
         "body_width": 320,
         "panel_width": 302,
         "panel_client_width": 302,
-        "stem_height": 217,
+        "stem_height": 453,
         "options_width": 236,
         "options_client_width": 236
       },
@@ -40,9 +40,9 @@
         "landing_violations": [],
         "quiz_violations": [],
         "source_dialog_violations": [],
-        "landing_incomplete_checks": 1,
+        "landing_incomplete_checks": 0,
         "quiz_incomplete_checks": 1,
-        "source_dialog_incomplete_checks": 1
+        "source_dialog_incomplete_checks": 0
       }
     },
     {
@@ -63,7 +63,7 @@
         "body_width": 375,
         "panel_width": 357,
         "panel_client_width": 357,
-        "stem_height": 112,
+        "stem_height": 191,
         "options_width": 291,
         "options_client_width": 291
       },
@@ -101,7 +101,7 @@
         "body_width": 768,
         "panel_width": 734,
         "panel_client_width": 734,
-        "stem_height": 117,
+        "stem_height": 62,
         "options_width": 414,
         "options_client_width": 414
       },
@@ -116,7 +116,7 @@
         "landing_violations": [],
         "quiz_violations": [],
         "source_dialog_violations": [],
-        "landing_incomplete_checks": 1,
+        "landing_incomplete_checks": 0,
         "quiz_incomplete_checks": 1,
         "source_dialog_incomplete_checks": 0
       }

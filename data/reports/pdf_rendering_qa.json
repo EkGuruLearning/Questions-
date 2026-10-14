@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "checked_at_utc": "2026-10-14T10:27:09+00:00",
+  "checked_at_utc": "2026-10-14T10:32:14+00:00",
   "status": "PASS",
   "tool": "PyMuPDF 1.28.2",
   "scope": "Git-tracked PDFs; page-tree load and raster render of every page; first, middle and last page previews per file.",

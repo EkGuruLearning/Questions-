@@ -318,7 +318,7 @@ def write_qa_report(build_id, sha, date, qa_results=None, browser_qa=None, pdf_q
         "## Scope and limitations\n\n"
         "- Current root portal data loads from a small catalog and content-hashed topic chunks.\n"
         "- Legacy topic HTML snapshots were inspected separately; they are retained as historical artifacts and must not be presented as current verification-gated apps.\n"
-        "- The pre-change GitHub Pages source was fetched during this audit. No merge/deployment has occurred, so no post-change live smoke test exists.\n"
+        "- The pre-change GitHub Pages source was fetched during this audit. This local QA run contains no post-merge or post-deployment live smoke test.\n"
     )
     (REPORTS / "QA_REPORT.md").write_text(text, encoding="utf-8")
 

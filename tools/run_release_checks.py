@@ -74,7 +74,7 @@ def main():
         "checks": checks,
         "browser_visual_qa": next((check["notes"] for check in checks if check["name"] == "Rendered browser visual and accessibility QA (optional)"), "NOT_RUN"),
         "pdf_rendering": next((check["notes"] for check in checks if check["name"] == "PDF validity and rendering audit (optional PyMuPDF)"), "NOT_RUN"),
-        "deployment": "NOT_DEPLOYED: work remains on a feature branch; no merge or release command was run.",
+        "deployment": "NOT_PART_OF_LOCAL_QA_RUN: checks ran on the feature branch; this report does not include a deployment or post-deployment smoke test.",
     }
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
     RESULTS_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
