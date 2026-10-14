@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ekgurulearning.github.io/Questions-/data/schemas/public-question-v1.schema.json",
+  "title": "EkGuru public question payload v1",
+  "type": "object",
+  "required": [
+    "id", "subject_id", "topic_id", "topic_name", "stem_en", "stem_hi", "options",
+    "answer_option_id", "explanation_en", "explanation_hi", "nukta_en", "nukta_hi",
+    "question_type", "question_style", "difficulty", "difficulty_basis", "source_type",
+    "verification_status", "source_id", "exam_name_status", "exam_tags", "exam_tag_basis"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^CN-T0[1-7]-[0-9]{4}$" },
+    "subject_id": { "const": "cn" },
+    "topic_id": { "type": "string", "pattern": "^T0[1-7]$" },
+    "topic_name": { "type": "string" },
+    "subtopic": { "type": "string" },
+    "stem_en": { "type": "string", "minLength": 1 },
+    "stem_hi": { "type": "string" },
+    "options": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "text_en", "text_hi"],
+        "properties": {
+          "id": { "enum": ["A", "B", "C", "D"] },
+          "text_en": { "type": "string", "minLength": 1 },
+          "text_hi": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "answer_option_id": { "enum": ["A", "B", "C", "D"] },
+    "explanation_en": { "type": "string" },
+    "explanation_hi": { "type": "string" },
+    "nukta_en": { "type": "string" },
+    "nukta_hi": { "type": "string" },
+    "question_type": { "const": "single_select_mcq" },
+    "question_style": { "enum": ["concept", "scenario", "statement", "numerical", "match"] },
+    "difficulty": { "enum": ["easy", "medium", "hard"] },
+    "difficulty_basis": { "type": "string" },
+    "source_type": { "enum": ["verified_official_pyq", "claimed_pyq_unverified", "repository_internal", "textbook_paraphrase", "original_practice"] },
+    "verification_status": { "enum": ["paper_and_key_checked", "answer_checked", "claimed_answer_unverified", "disputed", "pending_review"] },
+    "source_id": { "type": "string", "pattern": "^src-[a-f0-9]{12}$" },
+    "exam_name": { "type": ["string", "null"] },
+    "exam_year": { "type": ["string", "integer", "null"] },
+    "paper_or_shift": { "type": ["string", "null"] },
+    "exam_name_status": { "enum": ["none", "official_evidence", "source_claim_unverified", "source_label_unverified"] },
+    "exam_tags": { "type": "array", "items": { "type": "string" } },
+    "exam_tag_basis": { "type": "string" },
+    "official_evidence_id": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}

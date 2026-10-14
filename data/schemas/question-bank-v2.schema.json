@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ekgurulearning.github.io/Questions-/data/schemas/question-bank-v2.schema.json",
+  "title": "EkGuru canonical question bank schema v2",
+  "type": "object",
+  "required": ["schema_version", "project", "generated", "counts", "questions"],
+  "properties": {
+    "schema_version": { "const": 2 },
+    "project": { "type": "string" },
+    "brand": { "type": "string" },
+    "compiler": { "type": "string" },
+    "generated": { "type": "string" },
+    "schema_note": { "type": "string" },
+    "counts": { "type": "object" },
+    "questions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/question" }
+    }
+  },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "required": [
+        "id", "subject_id", "topic_id", "topic", "subtopic", "question_type",
+        "option_ids", "answer_option_id", "stem_en", "stem_hi", "options_en",
+        "options_hi", "correct_option", "explanation_en", "explanation_hi",
+        "nukte_en", "nukte_hi", "question_style", "difficulty", "difficulty_basis",
+        "exam_tags", "exam_tag_basis", "source_type", "source_id", "source_url_or_file",
+        "verification_status"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^CN-T0[1-7]-[0-9]{4}$" },
+        "subject_id": { "const": "cn" },
+        "topic_id": { "type": "string", "pattern": "^T0[1-7]$" },
+        "topic": { "type": "string", "minLength": 1 },
+        "subtopic": { "type": "string" },
+        "question_type": { "const": "single_select_mcq" },
+        "option_ids": { "const": ["A", "B", "C", "D"] },
+        "answer_option_id": { "enum": ["A", "B", "C", "D"] },
+        "stem_en": { "type": "string", "minLength": 1 },
+        "stem_hi": { "type": "string" },
+        "options_en": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "string" } },
+        "options_hi": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "string" } },
+        "correct_option": { "enum": ["A", "B", "C", "D"] },
+        "explanation_en": { "type": "string" },
+        "explanation_hi": { "type": "string" },
+        "nukte_en": { "type": "string" },
+        "nukte_hi": { "type": "string" },
+        "question_style": { "enum": ["concept", "scenario", "statement", "numerical", "match"] },
+        "difficulty": { "enum": ["easy", "medium", "hard"] },
+        "difficulty_basis": { "type": "string" },
+        "exam_tags": { "type": "array", "items": { "type": "string" } },
+        "exam_tag_basis": { "type": "string" },
+        "source_type": { "enum": ["verified_official_pyq", "claimed_pyq_unverified", "repository_internal", "textbook_paraphrase", "original_practice"] },
+        "source_id": { "type": "string", "pattern": "^src-[a-f0-9]{12}$" },
+        "source_url_or_file": { "type": "string", "minLength": 1 },
+        "verification_status": { "enum": ["paper_and_key_checked", "answer_checked", "claimed_answer_unverified", "disputed", "pending_review"] },
+        "exam_name": { "type": ["string", "null"] },
+        "exam_year": { "type": ["string", "integer", "null"] },
+        "paper_or_shift": { "type": ["string", "null"] },
+        "question_id_in_official_key": { "type": ["string", "null"] },
+        "provenance_note": { "type": ["string", "null"] },
+        "answer_verified_by": { "type": "string" },
+        "last_reviewed": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "verification_status": { "const": "pending_review" } }, "required": ["verification_status"] },
+          "then": {},
+          "else": { "properties": { "options_en": { "items": { "type": "string", "minLength": 1 } } } }
+        }
+      ],
+      "additionalProperties": true
+    }
+  }
+}

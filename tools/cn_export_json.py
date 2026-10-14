@@ -17,7 +17,8 @@ import json
 import os
 import re
 import sys
-from collections import Counter, defaultdict
+import hashlib
+from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -28,6 +29,7 @@ OUT_REP = os.path.join(CN, "Reports")
 sys.path.insert(0, HERE)
 import cn_textfix  # noqa: E402
 import cn_difficulty  # noqa: E402
+import audit_duplicates  # noqa: E402
 
 TOPICS = {
     1: ("T01", "Introduction of Data Communication"),
@@ -41,10 +43,32 @@ TOPICS = {
 LETTERS = "ABCD"
 
 # ---- evidence files actually present in the repo (paper + key) ----
-EVIDENCE_DIRS = [
-    os.path.join(CN, "Past Papers", "RPSC Programmer 2024 Paper-1"),
-    os.path.join(CN, "Past Papers"),
-]
+OFFICIAL_EVIDENCE_PATH = os.path.join(ROOT, "data", "sources", "official_paper_key_evidence.json")
+
+
+def load_official_evidence_ids():
+    """Only explicitly audited, question-level official paper+final-key links count."""
+    if not os.path.exists(OFFICIAL_EVIDENCE_PATH):
+        return set()
+    with open(OFFICIAL_EVIDENCE_PATH, encoding="utf-8") as f:
+        evidence = json.load(f)
+    ids = set()
+    for record in evidence.get("records", []):
+        paper = record.get("official_paper") or {}
+        key = record.get("official_final_key") or {}
+        if not (paper.get("url") or paper.get("file")):
+            continue
+        if not (key.get("url") or key.get("file")):
+            continue
+        ids.update(record.get("question_ids", []))
+    return ids
+
+
+OFFICIAL_EVIDENCE_IDS = load_official_evidence_ids()
+
+
+def stable_source_id(value):
+    return "src-" + hashlib.sha256((value or "").encode("utf-8")).hexdigest()[:12]
 
 
 def load(name):
@@ -62,10 +86,6 @@ def load_tuple_module(name):
     return m
 
 
-def norm(s):
-    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9 ]+", " ", (s or "").lower())).strip()
-
-
 # ---------------- source classification (spec §8) ----------------
 REPO_LABEL = re.compile(
     r"(Repo:|Random Test|Unit Test|CN Topic Test|Subject Test|BCI|OCR|"
@@ -73,48 +93,99 @@ REPO_LABEL = re.compile(
     r"compsciedu|byjus|geeksforgeeks|indiabix|sanfoundry|tutorialspoint)", re.I)
 ORIGINAL_LABEL = re.compile(r"Practice — original", re.I)
 TEXTBOOK_LABEL = re.compile(r"Forouzan|textbook|Tanenbaum|Kurose|Stallings", re.I)
-KEYED_LABEL = re.compile(r"(official key|verified key|with key)", re.I)
+UNSUPPORTED_RPSC_KEY_LABEL = re.compile(r"RPSC\s+Programmer\s+2024\s+Paper[- ]?1", re.I)
 EXAM_YEAR = re.compile(
     r"\b(GATE|NET|UGC[- ]NET|KVS|EMRS|DSSSB|JNV|RPSC|BPSC|TNPSC|OSSC|Kerala PSC|"
     r"SSC|MTS|CHSL|CGL|RRB|IBPS|SBI|RSMSSB|HTET|PGT|Lecturer|UPSC|NIELIT|"
     r"Assistant Professor|Informatics Assistant|Programmer|ACP|Deputy Director|"
     r"TCS|Wipro|Infosys)\b(?:[- ]?(20\d{2}))?", re.I)
 
-EVIDENCE_OK = False
-_evi = []
-for d in EVIDENCE_DIRS:
-    if os.path.isdir(d):
-        for f in os.listdir(d):
-            _evi.append(f)
-EVIDENCE_FILES = _evi
-HAS_RPSC_2024 = any("QUESTIONS" in f.upper() or "ANSWER" in f.upper() for f in _evi)
 
+def classify_source(src, nk=None, question_id=None):
+    """Return (source_type, exam_name, exam_year, verification_status).
 
-def classify_source(src, nk=None):
-    """Return (source_type, exam_name, exam_year, verification_status)."""
+    A filename or the words “official key” are not evidence. Only a stable
+    question ID listed in the audited paper+final-key evidence register may be
+    classified as an official PYQ.
+    """
     s = src or ""
     exam_m = EXAM_YEAR.search(s)
     exam_name = exam_m.group(1) if exam_m else None
     exam_year = exam_m.group(2) if (exam_m and exam_m.group(2)) else None
-    if ORIGINAL_LABEL.search(s):
-        st = "original_practice"
+    if re.search(r"RPSC\s+Programmer\s+2024", s, re.I):
+        exam_name, exam_year = "RPSC Programmer", "2024"
+
+    if question_id and question_id in OFFICIAL_EVIDENCE_IDS:
+        st, vs = "verified_official_pyq", "paper_and_key_checked"
+    elif UNSUPPORTED_RPSC_KEY_LABEL.search(s):
+        st, vs = "claimed_pyq_unverified", "claimed_answer_unverified"
+    elif ORIGINAL_LABEL.search(s):
+        st, vs = "original_practice", "answer_checked"
     elif TEXTBOOK_LABEL.search(s) and not REPO_LABEL.search(s):
-        st = "textbook_paraphrase"
-    elif KEYED_LABEL.search(s) and re.search(r"RPSC Programmer 2024", s, re.I) and HAS_RPSC_2024:
-        st = "verified_official_pyq"
+        st, vs = "textbook_paraphrase", "answer_checked"
     elif REPO_LABEL.search(s):
         st = "repository_internal"
+        vs = ("claimed_answer_unverified" if nk and isinstance(nk, (list, tuple))
+              and nk and nk[0] and "NOT verified" in nk[0] else "answer_checked")
     elif exam_name:
         st = "claimed_pyq_unverified"
+        vs = ("claimed_answer_unverified" if nk and isinstance(nk, (list, tuple))
+              and nk and nk[0] and "NOT verified" in nk[0] else "answer_checked")
     else:
         st = "repository_internal"
-    if st == "verified_official_pyq":
-        vs = "paper_and_key_checked"
-    elif nk and isinstance(nk, (list, tuple)) and nk and nk[0] and "NOT verified" in nk[0]:
-        vs = "claimed_answer_unverified"   # bulk-imported source key, agent-verification pending
-    else:
-        vs = "answer_checked"
+        vs = ("claimed_answer_unverified" if nk and isinstance(nk, (list, tuple))
+              and nk and nk[0] and "NOT verified" in nk[0] else "answer_checked")
     return st, exam_name, exam_year, vs
+
+
+def scrub_unverified_source_key_text(value):
+    text = value or ""
+    patterns = (
+        r"(?i)matches?\s+the\s+official\s+RPSC(?:\s+2024)?\s+key(?:\s*\([a-d]\))?",
+        r"(?i)official\s+RPSC(?:\s+2024)?\s+key(?:\s*\([a-d]\))?",
+        r"(?i)RPSC(?:\s+2024)?\s+official\s+key(?:\s*\([a-d]\))?",
+        r"(?i)official\s+key(?:\s*\([a-d]\))?",
+    )
+    for pattern in patterns:
+        text = re.sub(pattern, "unverified supplied answer-table claim", text)
+    return text
+
+
+def public_source_reference(src):
+    if UNSUPPORTED_RPSC_KEY_LABEL.search(src or ""):
+        return (
+            "Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/"
+            "2024 Programmer Paper-1 QUESTIONS.md; "
+            "2024 Programmer Paper-1 ANSWERS.md (community-maintained; "
+            "not an official final answer key)"
+        )
+    return src
+
+
+def provenance_note(src, opts):
+    if any(not (option[0] or "").strip() for option in opts):
+        return "Question content is incomplete because at least one answer option is blank; do not use in practice until a source-backed correction is reviewed."
+    if UNSUPPORTED_RPSC_KEY_LABEL.search(src or ""):
+        return "Community-maintained RPSC 2024 source; answer table is not an official final key."
+    return None
+
+
+def verification_note(status):
+    if status == "paper_and_key_checked":
+        return "Question-level official paper and final-key evidence recorded in data/sources/official_paper_key_evidence.json"
+    if status == "answer_checked":
+        return "EkGuru curation pipeline — cross-checked concept answer; not official-key matching"
+    if status == "pending_review":
+        return "Pending review: one or more answer options are blank; source wording is preserved and the item is excluded from practice."
+    return "NOT independently verified — source answer only; review required"
+
+
+def exam_tag_basis(source_type, exam_name):
+    if source_type == "claimed_pyq_unverified":
+        return "source_claim_unverified"
+    if exam_name and source_type != "original_practice":
+        return "source_label_unverified"
+    return "suggested_practice_fit"
 
 
 def infer_style(qen):
@@ -182,7 +253,6 @@ def main():
     by_style = Counter()
     by_diff = Counter()
     by_ver = Counter()
-    exact = defaultdict(list)
 
     for n in range(1, 8):
         tid, tname = TOPICS[n]
@@ -199,14 +269,24 @@ def main():
                 ans = q["ans"]
                 wr, nk = q["wr"], q["nk"]
                 src = q["src"]
-                st, exam_name, exam_year, vs = classify_source(src, nk)
-                diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
+                if UNSUPPORTED_RPSC_KEY_LABEL.search(src):
+                    wr = [scrub_unverified_source_key_text(x) for x in wr]
+                    nk = [scrub_unverified_source_key_text(x) for x in nk]
                 rid = f"CN-{tid}-{seq:04d}"
+                st, exam_name, exam_year, vs = classify_source(src, nk, rid)
+                if any(not (option[0] or "").strip() for option in opts):
+                    vs = "pending_review"
+                diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
                 style = infer_style(qen)
                 ww = {str(k): [v[0], (v[1] or v[0])] for k, v in (q.get("ww") or {}).items()}
                 rec = {
                     "id": rid,
+                    "subject_id": "cn",
                     "topic_id": tid,
+                    "question_type": "single_select_mcq",
+                    "option_ids": list(LETTERS),
+                    "answer_option_id": LETTERS[ans],
+                    "source_id": stable_source_id(public_source_reference(src)),
                     "topic": tname,
                     "subtopic": sub,
                     "stem_en": qen,
@@ -221,25 +301,23 @@ def main():
                     "why_wrong": {LETTERS[int(k)]: [v[0], v[1]] for k, v in ww.items()},
                     "question_style": style,
                     "difficulty": ["easy", "medium", "hard"][diff],
+                    "difficulty_basis": "heuristic_classifier_estimate",
                     "exam_tags": exam_tags_for(src, diff, st),
+                    "exam_tag_basis": exam_tag_basis(st, exam_name),
                     "source_type": st,
                     "exam_name": exam_name,
                     "exam_year": exam_year,
                     "paper_or_shift": None,
                     "question_id_in_official_key": None,
-                    "source_url_or_file": src,
-                    "answer_verified_by": ("EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)"
-                                           if vs == "answer_checked" else
-                                           "Official paper + key matched (Past Papers/RPSC Programmer 2024 Paper-1)"
-                                           if vs == "paper_and_key_checked" else
-                                           "NOT verified — compiled-bank source key only (agent review pending)"),
+                    "source_url_or_file": public_source_reference(src),
+                    "provenance_note": provenance_note(src, opts),
+                    "answer_verified_by": verification_note(vs),
                     "verification_status": vs,
                     "duplicate_group": None,
                     "concept_tags": [sub.split("—")[0].strip()[:60]] if "—" in sub else [tname],
                     "last_reviewed": "2026-10-14",
                 }
                 records.append(rec)
-                exact[norm(qen)].append(rid)
                 inv[tid] += 1
                 by_src[st] += 1
                 by_style[style] += 1
@@ -278,12 +356,22 @@ def main():
                         seq += 1
                         src, qen, qhi, opts, ans, wr, nk, ww = t
                         opts = [[o[0], (o[1] or o[0])] for o in opts]
-                        st, exam_name, exam_year, vs = classify_source(src, nk)
-                        diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
+                        if UNSUPPORTED_RPSC_KEY_LABEL.search(src):
+                            wr = [scrub_unverified_source_key_text(x) for x in wr]
+                            nk = [scrub_unverified_source_key_text(x) for x in nk]
                         rid = f"CN-{tid}-{seq:04d}"
+                        st, exam_name, exam_year, vs = classify_source(src, nk, rid)
+                        if any(not (option[0] or "").strip() for option in opts):
+                            vs = "pending_review"
+                        diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
                         rec = {
                             "id": rid,
+                            "subject_id": "cn",
                             "topic_id": tid,
+                            "question_type": "single_select_mcq",
+                            "option_ids": list(LETTERS),
+                            "answer_option_id": LETTERS[ans],
+                            "source_id": stable_source_id(public_source_reference(src)),
                             "topic": tname,
                             "subtopic": s3["title"],
                             "stem_en": qen,
@@ -298,56 +386,41 @@ def main():
                             "why_wrong": {LETTERS[k]: [v[0], (v[1] or v[0])] for k, v in (ww or {}).items()},
                             "question_style": infer_style(qen),
                             "difficulty": ["easy", "medium", "hard"][diff],
+                            "difficulty_basis": "heuristic_classifier_estimate",
                             "exam_tags": exam_tags_for(src, diff, st),
+                            "exam_tag_basis": exam_tag_basis(st, exam_name),
                             "source_type": st,
                             "exam_name": exam_name,
                             "exam_year": exam_year,
                             "paper_or_shift": None,
                             "question_id_in_official_key": None,
-                            "source_url_or_file": src,
-                            "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+                            "source_url_or_file": public_source_reference(src),
+                            "provenance_note": provenance_note(src, opts),
+                            "answer_verified_by": verification_note(vs),
                             "verification_status": vs,
                             "duplicate_group": None,
                             "concept_tags": [s3["title"].split("—")[0].strip()[:60]],
                             "last_reviewed": "2026-10-14",
                         }
                         records.append(rec)
-                        exact[norm(qen)].append(rid)
                         inv[tid] += 1
                         by_src[st] += 1
                         by_style[rec["question_style"]] += 1
                         by_diff[rec["difficulty"]] += 1
                         by_ver[vs] += 1
 
-    # ---- duplicate audit (exact normalized) ----
-    dup_groups = {k: v for k, v in exact.items() if len(v) > 1}
-    g = 0
-    for k, ids in dup_groups.items():
-        g += 1
-        gid = f"DUP-{g:03d}"
-        for rec in records:
-            if rec["id"] in ids:
-                rec["duplicate_group"] = gid
-
-    # ---- near-duplicate candidates (token overlap, filler removed) ----
-    FILL = set("which of the following is a an in are and to or be its with for that it the is of a".split())
-    near = []
-    norms = [(r["id"], norm(r["stem_en"])) for r in records]
-    toks = [(i, set(t.split()) - FILL) for i, t in norms]
-    for a in range(len(toks)):
-        ia, ta = toks[a]
-        if len(ta) < 3:
-            continue
-        for b in range(a + 1, len(toks)):
-            ib, tb = toks[b]
-            if len(tb) < 3:
-                continue
-            ov = ta & tb
-            if len(ov) >= 3 and len(ov) >= 0.6 * min(len(ta), len(tb)):
-                near.append((ia, ib, len(ov)))
-    near.sort(key=lambda x: -x[2])
+    # Use the same Unicode-normalized exact/near-duplicate audit as the release reports.
+    dup_groups, near = audit_duplicates.audit(records)
+    duplicate_ids = {}
+    for index, group in enumerate(dup_groups, 1):
+        group_id = f"DUP-{index:03d}"
+        for question_id in group["question_ids"]:
+            duplicate_ids[question_id] = group_id
+    for rec in records:
+        rec["duplicate_group"] = duplicate_ids.get(rec["id"])
 
     payload = {
+        "schema_version": 2,
         "project": "EkGuru CN Question Bank",
         "brand": "EkGuru Learning",
         "compiler": "PRAKASH",
@@ -356,10 +429,10 @@ def main():
         "counts": {
             "total": len(records),
             "per_topic": dict(inv),
-            "by_source_type": dict(by_src),
+            "by_source_type": {k: by_src.get(k, 0) for k in ("verified_official_pyq", "claimed_pyq_unverified", "repository_internal", "textbook_paraphrase", "original_practice")},
             "by_difficulty": dict(by_diff),
             "by_style": dict(by_style),
-            "by_verification": dict(by_ver),
+            "by_verification": {k: by_ver.get(k, 0) for k in ("paper_and_key_checked", "answer_checked", "claimed_answer_unverified", "disputed", "pending_review")},
             "exact_duplicate_groups": len(dup_groups),
             "near_duplicate_candidates": len(near),
         },
@@ -368,96 +441,10 @@ def main():
     with open(os.path.join(OUT_DATA, "cn_questions.json"), "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=1)
 
-    # ---- INVENTORY ----
-    with open(os.path.join(OUT_REP, "INVENTORY.md"), "w", encoding="utf-8") as f:
-        f.write("# CN Question Bank — Inventory (generated 2026-10-14)\n\n")
-        f.write(f"Total normalized records: **{len(records)}**\n\n")
-        f.write("| Topic | Records |\n|---|---|\n")
-        for n in range(1, 8):
-            tid = TOPICS[n][0]
-            f.write(f"| {tid} — {TOPICS[n][1]} | {inv[tid]} |\n")
-        f.write("\n## By source type\n\n| source_type | count |\n|---|---|\n")
-        for k, v in by_src.items():
-            f.write(f"| {k} | {v} |\n")
-        f.write("\n## By difficulty (classifier, ±1 band)\n\n| difficulty | count |\n|---|---|\n")
-        for k, v in by_diff.items():
-            f.write(f"| {k} | {v} |\n")
-        f.write("\n## By question style (heuristic)\n\n| style | count |\n|---|---|\n")
-        for k, v in by_style.items():
-            f.write(f"| {k} | {v} |\n")
-        f.write("\n## By verification status\n\n| status | count |\n|---|---|\n")
-        for k, v in by_ver.items():
-            f.write(f"| {k} | {v} |\n")
-
-    # ---- DUPLICATE AUDIT ----
-    with open(os.path.join(OUT_REP, "DUPLICATE_AUDIT.md"), "w", encoding="utf-8") as f:
-        f.write("# Duplicate Audit (generated 2026-10-14)\n\n")
-        f.write("Method: (1) exact match after Unicode/whitespace/punctuation normalisation; "
-                "(2) near-duplicate CANDIDATES by token overlap ≥60% (filler words removed) — "
-                "listed for manual concept-level review, not auto-deleted "
-                "(spec §9: concept repetition for spaced practice is allowed when reasoning differs).\n\n")
-        f.write(f"## Exact duplicate groups: {len(dup_groups)}\n\n")
-        if not dup_groups:
-            f.write("No exact stem duplicates found across the normalized bank.\n\n")
-        for k, ids in list(dup_groups.items())[:50]:
-            f.write(f"- `{k[:70]}…` → {ids}\n")
-        f.write(f"\n## Near-duplicate candidates: {len(near)} (top 60 shown)\n\n")
-        f.write("| id A | id B | shared key-words |\n|---|---|---|\n")
-        for ia, ib, ov in near[:60]:
-            f.write(f"| {ia} | {ib} | {ov} |\n")
-        f.write("\nCandidates require manual judgement (distinct numeric variants are different "
-                "questions; same fact + same demand = near-duplicate). See records for stems.\n")
-
-    # ---- ANSWER VERIFICATION ----
-    with open(os.path.join(OUT_REP, "ANSWER_VERIFICATION.md"), "w", encoding="utf-8") as f:
-        f.write("# Answer Verification Report (generated 2026-10-14)\n\n")
-        f.write("This report is deliberately conservative (spec §10): "
-                "**\"answer_checked\" means the curation pipeline solved and cross-checked each answer "
-                "(Forouzan concepts + computed numerics); it is NOT the same as official paper+key matching.** "
-                "A second-pass human review is still pending. We do NOT claim 100% official verification.\n\n")
-        f.write("| verification_status | count | meaning |\n|---|---|---|\n")
-        f.write(f"| paper_and_key_checked | {by_ver.get('paper_and_key_checked', 0)} | "
-                "RPSC Programmer 2024 Paper-1 items whose paper + official key are in `Past Papers/` |\n")
-        f.write(f"| answer_checked | {by_ver.get('answer_checked', 0)} | "
-                "solved + cross-checked in the curation pipeline; official key not attached |\n")
-        f.write(f"| pending_review | 0 | none outstanding at export time |\n\n")
-        f.write("## Evidence files present\n\n")
-        for efn in EVIDENCE_FILES:
-            f.write(f"- `{efn}`\n")
-        f.write("\n## Known limits\n\n")
-        f.write("- Claimed-PYQ labels (exam+year strings in source) are exported as "
-                "`claimed_pyq_unverified` unless a paper+key pair exists in `Past Papers/`.\n")
-        f.write("- Third-party compilations (OCR tests, coaching banks, web banks) are "
-                "`repository_internal`.\n")
-        f.write("- Practice originals are `original_practice` (textbook-based; not PYQs).\n")
-
-    # ---- SOURCE REGISTER ----
-    with open(os.path.join(OUT_REP, "SOURCE_REGISTER.md"), "w", encoding="utf-8") as f:
-        f.write("# Source Register & Classification Rules (generated 2026-10-14)\n\n")
-        f.write("## Classification rules (applied by `tools/cn_export_json.py`)\n\n")
-        f.write("| source_type | rule |\n|---|---|\n")
-        f.write("| verified_official_pyq | source names the exam paper AND `Past Papers/` holds the paper + official key (currently: RPSC Programmer 2024 Paper-1) |\n")
-        f.write("| claimed_pyq_unverified | source string names an exam/year but no paper+key evidence is attached |\n")
-        f.write("| repository_internal | repo unit/subject tests, OCR solutions, coaching/web banks (labels like `Repo:`, `Unit Test`, `InstrumentationTools`, blog banks) |\n")
-        f.write("| textbook_paraphrase | Forouzan/Tanenbaum-style textbook concept labels |\n")
-        f.write("| original_practice | `Practice — original (…)` — newly written, textbook-based |\n\n")
-        f.write("## Exam-tag rules\n\nTags come from exam names found in the source string (mapped to profile names). "
-                "When a source carries no exam name, syllabus-fit default tags are applied by difficulty band: "
-                "hard → GATE CS / UGC-NET 087 / RPSC Programmer / RPSC ACP-DD; "
-                "medium → RSMSSB IA / SSC / RPSC Programmer; easy → SSC / RSMSSB IA / JNV TAT. "
-                "Default tags are a practice-fit suggestion, not an exam-authority claim.\n\n")
-        f.write("## Primary source families\n\n")
-        f.write("1. Repo papers in `Computer Network/` (15 Rajasthan exam PDFs — BCI/SCI/RPSC-style; classified by content) — see `Past Papers/SOURCES.md`.\n")
-        f.write("2. `Past Papers/RPSC Programmer 2024 Paper-1/` — questions + official answers + syllabus (evidence for verified labels).\n")
-        f.write("3. `Computer Network/new/` — audit starter pack (20 `computer-networks [set N].pdf` compilations, DCN/Computer-Network-MCQ/networkmcq PDFs, Topic-1 audit CSV, portal HTML, starter ZIP).\n")
-        f.write("4. Forouzan *Data Communications and Networking* — concept verification.\n")
-        f.write("5. Original practice questions (textbook-based) — waves 1–4, `tools/data/practice_new_p*.py`.\n\n")
-        f.write("## Blocked / not auto-fetchable in this environment\n\n")
-        f.write("rpsc.rajasthan.gov.in, rssb.rajasthan.gov.in, indiabix.com, testbook, jagranjosh, scribd and most "
-                "edu sites are not reachable here (allowlist: github/pypi/npm). Papers for those sources must be "
-                "dropped into `Computer Network/Incoming/` by hand. The master README's link "
-                "`indiabix.com/networking/questions-and-answers/` is therefore **recorded but not imported**.\n")
-
+    # Keep all derived public assets and reports in their deterministic builders.
+    import subprocess
+    for script in ("build_site_data.py", "build_reports.py"):
+        subprocess.run([sys.executable, os.path.join(HERE, script)], check=True)
     print("records:", len(records))
     print("exact dup groups:", len(dup_groups))
     print("near candidates:", len(near))

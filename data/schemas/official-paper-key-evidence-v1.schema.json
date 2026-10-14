@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ekgurulearning.github.io/Questions-/data/schemas/official-paper-key-evidence-v1.schema.json",
+  "title": "Question-level official paper and final-key evidence register",
+  "type": "object",
+  "required": ["schema_version", "policy", "records"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "policy": { "type": "string", "minLength": 1 },
+    "audit_note": { "type": "string" },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["question_ids", "official_paper", "official_final_key", "reviewer", "reviewed_at"],
+        "properties": {
+          "question_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^CN-T0[1-7]-[0-9]{4}$" } },
+          "official_paper": { "$ref": "#/$defs/reference" },
+          "official_final_key": { "$ref": "#/$defs/reference" },
+          "reviewer": { "type": "string", "minLength": 1 },
+          "reviewed_at": { "type": "string", "format": "date" },
+          "key_version": { "type": ["string", "null"] },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "reference": {
+      "type": "object",
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "file": { "type": "string" },
+        "page_or_question_range": { "type": "string" }
+      },
+      "anyOf": [{ "required": ["url"] }, { "required": ["file"] }],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

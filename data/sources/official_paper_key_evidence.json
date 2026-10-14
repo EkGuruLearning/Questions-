@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "policy": "Only question IDs with an exact official paper and final/corrected official answer-key reference can be listed. A source label or a third-party solution is not sufficient.",
+  "records": [],
+  "audit_note": "No CN record currently meets the official-paper-and-final-key gate. The RPSC Programmer 2024 community-maintained answer table in Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/2024 Programmer Paper-1 ANSWERS.md states that its answers are based on standard solutions and recommends verification against the official key. It is not an official final key. The 26 records previously labelled paper_and_key_checked were downgraded pending primary evidence."
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EkGuru Learning — Online Test Portal | by Prakash</title>
+<meta name="description" content="EkGuru Learning by Prakash — Rajasthan Govt. exam ke liye free online test. Computer Network ke 1,556 bilingual MCQ, topic-wise practice, mock exam, Nukte aur PDF books.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2316283f'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23ff9d2e' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+<style>
+/* EkGuru Learning - Online Test Portal | Design: Prakash | Navy #16283f + kesariya #E97313 | koi framework nahi, ek hi file */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#16283f;--navy2:#0e1c2d;--navy3:#24405e;--line:#d8dfe9;--bg:#eef1f5;--paper:#fff;--org:#E97313;--org2:#ff9d2e;--ink:#1b2733;--mut:#67758a;--grn:#177245;--grnbg:#e7f5ec;--red:#b3261e;--redbg:#fdecea;--blu:#175cd3;--blubg:#eaf1fe;--pur:#6941c6;--purbg:#f1edfd;--r:8px}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Roboto,Arial,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.55}
+a{color:var(--blu);text-decoration:none}button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1220px;margin:0 auto;padding:0 14px}
+.Strip{background:var(--navy2);color:#ffd580;font-size:12.5px;overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--org)}
+.Strip div{display:inline-block;padding:6px 0;animation:slide 34s linear infinite}
+@keyframes slide{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:60;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.hrow{display:flex;align-items:center;gap:16px;padding:10px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:11px;color:#fff}
+.logo .buddi{background:var(--org);color:#fff;font-weight:900;font-size:25px;width:46px;height:46px;border-radius:9px;display:grid;place-items:center;border:2px solid #ffb37a}
+.logo b{font-size:23px}.logo b i{font-style:normal;color:var(--org2)}
+.logo small{display:block;font-size:8.5px;letter-spacing:3.2px;color:#9fb2c8;font-weight:700}
+.byline{font-size:11px;color:#c8d6e8;border-left:1px solid #33517a;padding-left:14px;line-height:1.45}
+.byline b{color:#ffd580;font-size:13px}
+nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:#d6e2f0;font-size:13px;font-weight:600;padding:8px 11px;border-radius:6px}
+nav a:hover{background:var(--navy3);color:#fff}nav a.cta{background:var(--org);color:#fff}nav a.cta:hover{background:#cf6207}
+.hero{background:var(--navy);color:#fff;border-top:1px solid #33517a;background-image:radial-gradient(#28466b 1px,transparent 1px);background-size:22px 22px}
+.hero .wrap{padding:38px 14px 30px;display:grid;grid-template-columns:1.25fr .85fr;gap:26px;align-items:start}
+.kicker{display:inline-block;background:#0e1c2d;border:1px solid #3d5d80;color:#ffd580;font-size:11px;font-weight:700;letter-spacing:1.6px;padding:5px 11px;border-radius:20px;text-transform:uppercase}
+.hero h1{font-size:37px;line-height:1.18;margin:14px 0 10px;font-weight:800}
+.hero h1 .o{color:var(--org2)}.hero h1 .u{border-bottom:4px solid var(--org)}
+.hero p{color:#c8d6e8;font-size:15.5px;max-width:640px}.hero p b{color:#fff}
+.hbtns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn{border:0;border-radius:7px;padding:13px 20px;font-size:14.5px;font-weight:800;display:inline-block}
+.btn-o{background:var(--org);color:#fff}.btn-o:hover{background:#cf6207}
+.btn-g{background:transparent;color:#fff;border:1.5px solid #5b7ca3}.btn-g:hover{background:var(--navy3)}
+.btn-n{background:var(--navy);color:#fff}.btn-n:hover{background:var(--navy3)}
+.btn-w{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.btn-w:hover{border-color:var(--navy)}
+.btn:disabled{opacity:.55;cursor:wait}
+.reg{background:#fff;color:var(--ink);border-radius:10px;border-top:5px solid var(--org);padding:18px 18px 14px;box-shadow:0 10px 26px rgba(0,0,0,.3)}
+.reg h3{font-size:15px;border-bottom:1px dashed var(--line);padding-bottom:8px}.reg h3 span{color:var(--org);font-size:11px}
+.reg table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+.reg td{padding:6.5px 2px;border-bottom:1px dotted #e4e9f0}.reg td:last-child{text-align:right;font-weight:800;color:var(--navy)}
+.reg .foot{font-size:11.5px;color:var(--mut);padding-top:9px}
+section.blk{padding:34px 0 6px}
+.shead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.shead h2{font-size:24px;color:var(--navy)}
+.shead h2:before{content:"";display:inline-block;width:9px;height:22px;background:var(--org);border-radius:3px;margin-right:10px;vertical-align:-3px}
+.shead .hindi{color:var(--mut);font-size:13.5px}
+.ssub{color:var(--mut);font-size:14px;margin-bottom:16px;max-width:820px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:14px}
+.subj{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;position:relative;display:flex;flex-direction:column;gap:8px}
+.subj:hover{border-color:#a9bccf;box-shadow:0 4px 16px rgba(22,40,63,.08)}
+.subj .nm{font-size:17.5px;font-weight:800;color:var(--navy)}.subj .hi{color:var(--mut);font-size:12.5px;margin-top:-6px}
+.subj p{font-size:13px;color:#43536a;flex:1}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:700;background:#f0f3f8;border:1px solid #e0e6ee;color:#52627a;border-radius:11px;padding:2px 8px}
+.tag{position:absolute;top:12px;right:12px;font-size:10px;font-weight:800;letter-spacing:.8px;padding:3px 9px;border-radius:11px;text-transform:uppercase}
+.tag.live{background:var(--grnbg);color:var(--grn);border:1px solid #a9dbc0}
+.tag.soon{background:#fff4e0;color:#9a5b00;border:1px solid #ffd9a0}
+.tag.make{background:var(--blubg);color:var(--blu);border:1px solid #bcd3fa}
+.subj .row{display:flex;gap:8px;align-items:center;margin-top:2px}
+.mini{font-size:12.5px;font-weight:800;padding:9px 13px;border-radius:6px;border:0}
+.mini.o{background:var(--org);color:#fff}.mini.o:hover{background:#cf6207}
+.mini.w{background:#fff;border:1.5px solid var(--line);color:var(--navy)}
+.bar{height:7px;background:#edf0f4;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:var(--org)}
+.pct{font-size:11px;color:var(--mut);font-weight:700}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px}
+.setup{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:16px}
+.fld label{display:block;font-size:11px;font-weight:800;letter-spacing:1px;color:var(--mut);text-transform:uppercase;margin-bottom:7px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{background:#fff;border:1.5px solid var(--line);border-radius:6px;padding:9px 12px;font-size:13px;font-weight:700;color:var(--navy)}
+.seg button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+select{width:100%;padding:10px;border:1.5px solid var(--line);border-radius:6px;font-size:14px;font-family:inherit;background:#fff}
+.note{background:#fff8ec;border:1px solid #ffe1b3;border-left:4px solid var(--org);padding:11px 14px;border-radius:6px;font-size:13px;color:#6b4a12;margin-top:16px}
+.startrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:18px}
+.pool{font-size:12.5px;color:var(--mut)}.pool b{color:var(--navy)}
+#player{display:none}
+.qtop{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch;margin-bottom:12px}
+.tbox{background:var(--navy);color:#fff;border-radius:7px;padding:6px 14px;text-align:center;min-width:96px}
+.tbox .l{font-size:8.5px;letter-spacing:1.5px;color:#9fb2c8;font-weight:800}
+.tbox .v{font-size:18px;font-weight:800}.tbox .v.low{color:#ff8a7a}
+.tbox.light{background:#fff;color:var(--navy);border:1px solid var(--line)}.tbox.light .l{color:var(--mut)}
+.pbar{height:9px;background:#e2e8f0;border-radius:5px;overflow:hidden;margin-bottom:12px}.pbar i{display:block;height:100%;background:var(--org);transition:width .25s}
+.qlay{display:grid;grid-template-columns:1fr 288px;gap:12px;align-items:start}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qhead{background:#f4f6fa;border-bottom:1px solid var(--line);padding:10px 15px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:12.5px}
+.qno{font-weight:800;color:var(--navy);font-size:14px}
+.bdg{font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;text-transform:uppercase}
+.bdg.easy{background:var(--grnbg);color:var(--grn)}.bdg.medium{background:#fff4e0;color:#9a5b00}.bdg.hard{background:var(--redbg);color:var(--red)}.bdg.topic{background:var(--blubg);color:var(--blu)}
+.qbody{padding:17px 17px 6px}.qtext{font-size:16.5px;font-weight:600;line-height:1.6}
+.qtext .hi,.opt .hi{display:block;font-weight:500;color:#52627a;margin-top:3px;font-size:14px}
+.opt{display:flex;gap:11px;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:8px;padding:12px 13px;margin:0 0 9px;font-size:14.5px;align-items:flex-start}
+.opt:hover{border-color:#93a9c4}
+.opt .ab{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid #b7c5d6;display:grid;place-items:center;font-weight:800;font-size:12.5px;color:var(--navy)}
+.opt.sel{border-color:var(--navy);background:#eef3fa}.opt.sel .ab{background:var(--navy);color:#fff;border-color:var(--navy)}
+.opt.right{border-color:var(--grn);background:var(--grnbg)}.opt.right .ab{background:var(--grn);color:#fff;border-color:var(--grn)}
+.opt.wrong{border-color:var(--red);background:var(--redbg)}.opt.wrong .ab{background:var(--red);color:#fff;border-color:var(--red)}
+.expl{display:none;background:#f7faf7;border:1px solid #cfe6d6;border-left:4px solid var(--grn);border-radius:6px;padding:12px 14px;margin:4px 0 14px;font-size:13.5px}
+.expl.show{display:block}.expl b.t{color:var(--grn)}
+.expl .nuk{margin-top:8px;background:#fffbe9;border:1px dashed #e3cf7e;border-radius:5px;padding:8px 10px}.expl .nuk b{color:#8a6d00}
+.abar{display:flex;gap:8px;flex-wrap:wrap;padding:13px 15px;border-top:1px solid var(--line);background:#fbfcfe}
+.abtn{border-radius:6px;padding:11px 15px;font-size:13px;font-weight:800;border:1.5px solid var(--line);background:#fff;color:var(--navy)}
+.abtn:hover{border-color:var(--navy)}.abtn.pri{background:var(--org);border-color:var(--org);color:#fff}.abtn.pri:hover{background:#cf6207}
+.abtn.dgr{background:#fff;color:var(--red);border-color:#f0c4c0}.abtn.dgr:hover{background:var(--redbg)}
+.abtn.markon{background:var(--purbg);border-color:var(--pur);color:var(--pur)}
+.pal{background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px;position:sticky;top:76px}
+.pal h4{font-size:12px;letter-spacing:1px;color:var(--mut);text-transform:uppercase;margin-bottom:9px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,34px);gap:5px;max-height:264px;overflow:auto}
+.pn{width:34px;height:32px;border-radius:5px;border:1.5px solid var(--line);background:#fff;font-size:11.5px;font-weight:700;color:var(--navy)}
+.pn.done{background:var(--grn);border-color:var(--grn);color:#fff}.pn.seen{background:var(--red);border-color:var(--red);color:#fff}
+.pn.mark{background:var(--pur);border-color:var(--pur);color:#fff}.pn.dm{background:var(--pur);border-color:var(--pur);color:#fff;box-shadow:inset 0 -6px 0 var(--grn)}
+.pn.cur{outline:3px solid var(--org2);outline-offset:1px}
+.lgd{font-size:11px;color:var(--mut);margin-top:10px;line-height:2}.lgd i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+#result{display:none}
+.scoreband{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:14px}
+.sc{background:#fff;border:1px solid var(--line);border-radius:9px;padding:15px;text-align:center}
+.sc .v{font-size:27px;font-weight:900;color:var(--navy)}.sc .l{font-size:10.5px;letter-spacing:1.2px;color:var(--mut);font-weight:800;text-transform:uppercase}
+table.an{width:100%;border-collapse:collapse;font-size:13.5px;background:#fff}
+table.an th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-size:12px}table.an td{padding:8px 11px;border-bottom:1px solid #e7ecf2}
+.rev{border:1px solid var(--line);border-radius:8px;padding:13px 15px;margin-bottom:10px;background:#fff;font-size:13.5px}
+.rev .ok{color:var(--grn);font-weight:800}.rev .bad{color:var(--red);font-weight:800}
+table.bk{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);font-size:13.5px}
+table.bk th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:12px}table.bk td{padding:9px 12px;border-bottom:1px solid #e7ecf2;vertical-align:top}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px}
+.step{background:#fff;border:1px solid var(--line);border-radius:9px;padding:16px}
+.step .n{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:9px}
+.step b{color:var(--navy);display:block;margin-bottom:4px}.step p{font-size:13px;color:#43536a}
+.examline{display:flex;gap:7px;flex-wrap:wrap}
+footer{background:var(--navy2);color:#9fb2c8;margin-top:44px;padding:30px 0 22px;font-size:13px}
+footer b{color:#fff}footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+footer a{color:#c8d6e8;display:block;padding:3px 0}footer a:hover{color:#ffd580}
+.copyright{border-top:1px solid #24405e;margin-top:20px;padding-top:14px;font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:8px;font-size:13.5px;font-weight:700;z-index:99;transition:transform .3s;box-shadow:0 8px 24px rgba(0,0,0,.3);max-width:92vw;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+dialog{border:0;border-radius:12px;padding:0;max-width:520px;width:93vw;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(10,22,38,.62)}.dlg{padding:22px}.dlg h3{color:var(--navy);margin-bottom:5px}.dlg p{font-size:13.5px;color:#43536a}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero h1{font-size:29px}.qlay{grid-template-columns:1fr}.pal{position:static}.byline{display:none}}
+@media(max-width:560px){nav a{padding:7px 8px;font-size:12px}.abtn{flex:1 1 44%;text-align:center}.logo b{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="Strip"><div>📢 &nbsp; Computer Network ka poora test LIVE hai — 1,556 bilingual MCQ &nbsp;•&nbsp; DBMS, Java, SAD aur Geography ka content tayyar ho raha hai &nbsp;•&nbsp; Har question ke saath Answer + Nukta (exam point) &nbsp;•&nbsp; Koi sign-up nahi, koi paisa nahi — seedha test shuru karo &nbsp;•&nbsp; EkGuru Learning • by Prakash &nbsp;&nbsp;📢 &nbsp; Computer Network LIVE — 1,556 MCQ &nbsp;•&nbsp; EkGuru Learning • by Prakash</div></div>
+
+<header><div class="wrap hrow">
+  <a class="logo" href="#top"><span class="buddi">e</span><span><b>Ek<i>Guru</i></b><small>LEARNING • ONLINE TEST</small></span></a>
+  <div class="byline">Curated &amp; compiled by<br><b>Prakash</b> — EkGuru Learning</div>
+  <nav><a href="#subjects">Subjects</a><a href="#test">Test Centre</a><a href="#books">Books &amp; PDF</a><a href="#kaise">Kaise Kaam Karta Hai</a><a class="cta" href="#test">▶ Test Shuru Karo</a></nav>
+</div></header>
+
+<div class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="kicker">Rajasthan Govt. Exams • Free Online Test</span>
+    <h1>Ghar baithe <span class="o">Online Test</span> do,<br>har answer ke saath <span class="u">Nukta</span> samjho.</h1>
+    <p><b>EkGuru Learning</b> par pehla subject — <b>Computer Network</b> — pura live hai: <b>1,556 bilingual (EN + हिंदी) MCQ</b>, 7 topics, asli exam papers aur Forouzan se cross-checked answers. Baaki subjects ki kitaabein ban rahi hain — jaise hi tayyar, yahi par test khul jayega.</p>
+    <div class="hbtns"><a class="btn btn-o" href="#test">▶ &nbsp;Abhi Test Do — Free</a><a class="btn btn-g" href="#subjects">Saare Subjects Dekho</a></div>
+    <p style="margin-top:14px;font-size:12.5px">✓ No sign-up &nbsp; ✓ Mobile par bhi chalega &nbsp; ✓ Result turant &nbsp; ✓ Galti par turant samjhaya jayega</p>
+  </div>
+  <div class="reg">
+    <h3>📋 Aaj ka Register <span>— EKGURU RECORD</span></h3>
+    <table>
+      <tr><td>Live Subject</td><td>Computer Network</td></tr>
+      <tr><td>Total Questions</td><td id="rTotal">1,556</td></tr>
+      <tr><td>Topics</td><td>7 (Topic-wise Test)</td></tr>
+      <tr><td>Language</td><td>English + हिंदी</td></tr>
+      <tr><td>Har Question me</td><td>Answer + ★ Nukta</td></tr>
+      <tr><td>Aapke diye Tests</td><td id="rMine">0</td></tr>
+      <tr><td>Aapka Best Score</td><td id="rBest">—</td></tr>
+    </table>
+    <div class="foot">Ye register aapke hi phone/browser me rehta hai (local record). Kahin upload nahi hota.</div>
+  </div>
+</div></div>
+
+<section class="blk" id="subjects"><div class="wrap">
+  <div class="shead"><h2>Saare Subjects</h2><span class="hindi">सभी विषय — jo tayyar hai woh live, jo ban raha hai woh saaf likha hai</span></div>
+  <p class="ssub">Jhootha vaada nahi karte. Jis subject ka question bank verify ho gaya, uska test <b style="color:var(--grn)">LIVE</b> hai. Baaki par kaam chal raha hai — progress bhi neeche dikh raha hai.</p>
+  <div class="grid" id="subGrid"></div>
+</div></section>
+
+<section class="blk" id="test"><div class="wrap">
+  <div class="shead"><h2>Test Centre</h2><span class="hindi">परीक्षा केंद्र — apna test khud banao</span></div>
+  <p class="ssub">Topic chuno, mode chuno, kitne question chahiye wo chuno — bas. <b>Practice Mode</b> me har question ke turant baad sahi jawab aur Nukta milega. <b>Exam Mode</b> me asli paper jaisa mahaul — timer, palette, negative marking aur aakhir me pura result.</p>
+
+  <div class="panel" id="setupPanel">
+    <div class="setup">
+      <div class="fld"><label>1 · Subject</label>
+        <select id="fSubject"><option value="cn">🖧 Computer Network — LIVE (1,556 Q)</option></select>
+        <div class="pool" style="margin-top:6px">Baaki subjects upar wale Cards se dekho — tayyar hote hi yahan jud jayenge.</div></div>
+      <div class="fld"><label>2 · Topic</label><div class="seg" id="fTopic"></div></div>
+      <div class="fld"><label>3 · Mode</label><div class="seg" id="fMode">
+        <button data-v="practice" class="on">✎ Practice</button><button data-v="exam">⏱ Exam</button></div>
+        <div class="pool" id="modeNote" style="margin-top:6px">Practice: jawab dete hi sahi/galti + Nukta dikhega.</div></div>
+      <div class="fld"><label>4 · Kitne Question?</label><div class="seg" id="fCount">
+        <button data-v="10">10</button><button data-v="20" class="on">20</button><button data-v="30">30</button><button data-v="50">50</button><button data-v="100">100</button></div></div>
+      <div class="fld"><label>5 · Difficulty</label><div class="seg" id="fDiff">
+        <button data-v="all" class="on">Sab</button><button data-v="easy">Easy</button><button data-v="medium">Medium</button><button data-v="hard">Hard</button></div></div>
+      <div class="fld"><label>6 · Bhasha / Language</label><div class="seg" id="fLang">
+        <button data-v="both" class="on">EN + हिंदी</button><button data-v="en">English</button><button data-v="hi">हिंदी</button></div></div>
+      <div class="fld" id="negWrap" style="display:none"><label>7 · Negative Marking (Exam)</label><div class="seg" id="fNeg">
+        <button data-v="0" class="on">Nahi</button><button data-v="0.25">−0.25</button><button data-v="0.5">−0.50</button></div></div>
+      <div class="fld"><label>Question Pool</label><div class="pool" id="poolInfo" style="font-size:14px;padding-top:8px">Bank load ho raha hai…</div></div>
+    </div>
+    <div class="note">📌 <b>Sach baat:</b> is bank ke questions Rajasthan ke asli papers (RPSC Programmer, BCI/SCI, IA…) aur Forouzan ki kitab se liye gaye hain, answers cross-check kiye gaye hain. Phir bhi kahin galti dikhe to wahi question ka <b>Question ID</b> note karke batao — agle update me sudhar jayega.</div>
+    <div class="startrow">
+      <button class="btn btn-o" id="btnStart" disabled>Bank load ho raha hai…</button>
+      <button class="btn btn-w" id="btnRandom">🎲 Surprise Test (Random 20)</button>
+      <span class="pool">Question har baar shuffle hote hain — do baar ek jaisa paper nahi milega.</span>
+    </div>
+  </div>
+
+  <div id="player">
+    <div class="qtop">
+      <div class="tbox light"><div class="l">QUESTION</div><div class="v" id="tQno">1 / 20</div></div>
+      <div class="tbox light"><div class="l">ANSWERED</div><div class="v" id="tAns">0</div></div>
+      <div class="tbox light"><div class="l">SCORE (LIVE)</div><div class="v" id="tScore">0</div></div>
+      <div class="tbox" id="timerBox"><div class="l">⏱ SAMAY BACHAA</div><div class="v" id="tTime">--:--</div></div>
+      <button class="abtn" id="btnPalette" style="margin-left:auto">☷ Palette</button>
+      <button class="abtn dgr" id="btnFinishTop">✔ Test Khatm Karo</button>
+    </div>
+    <div class="pbar"><i id="pFill" style="width:0%"></i></div>
+    <div class="qlay">
+      <div class="qcard">
+        <div class="qhead"><span class="qno" id="qNo">Q.1</span><span class="bdg topic" id="qTopic">Topic</span><span class="bdg medium" id="qDiff">Medium</span><span style="color:var(--mut)" id="qId"></span><span style="margin-left:auto;color:var(--mut)" id="qSrc"></span></div>
+        <div class="qbody"><div class="qtext" id="qText"></div><div id="optBox" style="margin-top:14px"></div><div class="expl" id="explBox"></div></div>
+        <div class="abar">
+          <button class="abtn" id="btnPrev">← Pichhla</button>
+          <button class="abtn" id="btnClear">✕ Jawab Hatao</button>
+          <button class="abtn" id="btnMark">⚑ Mark for Review</button>
+          <button class="abtn pri" id="btnNext">Agla →</button>
+          <button class="abtn dgr" id="btnFinish" style="margin-left:auto">✔ Submit Test</button>
+        </div>
+      </div>
+      <aside class="pal" id="palBox"><h4>Question Palette</h4><div class="pgrid" id="pGrid"></div>
+        <div class="lgd"><i style="background:var(--grn)"></i>Jawab diya &nbsp;<i style="background:var(--red)"></i>Dekha, jawab nahi<br><i style="background:var(--pur)"></i>Review ke liye mark &nbsp;<i style="background:#fff;border:1px solid var(--line)"></i>Abhi dekha nahi</div>
+      </aside>
+    </div>
+  </div>
+
+  <div id="result">
+    <div class="scoreband" id="scoreBand"></div>
+    <div class="panel" style="margin-bottom:14px">
+      <div class="shead"><h2 style="font-size:19px">Topic-wise Haal</h2><span class="hindi">कहाँ galti hui, saaf dikhega</span></div>
+      <div style="overflow:auto"><table class="an" id="anTable"></table></div>
+      <div class="startrow"><button class="btn btn-o" id="btnAgain">↻ Ek Aur Test</button>
+      <button class="btn btn-w" id="btnWrong">Sirf Galat Wale Dobara (<span id="wrongN">0</span>)</button>
+      <button class="btn btn-n" id="btnReview">Saare Jawab Dekho ↓</button></div>
+    </div>
+    <div id="revBox"></div>
+  </div>
+</div></section>
+
+<section class="blk" id="books"><div class="wrap">
+  <div class="shead"><h2>Books &amp; PDF</h2><span class="hindi">किताबें — padhna ho to PDF, test dena ho to upar</span></div>
+  <p class="ssub">Har topic ki alag kitab hai — left side question, right side sahi jawab aur ★ Nukta. Neeche se seedha download karo. Practice booklet me poora bank hai, theory book me pehle padhai phir sawaal.</p>
+  <div style="overflow:auto"><table class="bk"><thead><tr><th>#</th><th>Topic</th><th>Kya-kya hai isme</th><th>Online</th><th>Theory + MCQ Book</th><th>Practice Booklet</th></tr></thead><tbody id="bkBody"></tbody></table></div>
+  <div class="note">📘 Ek hi file me sab chahiye? <a href="Computer%20Network/The%20Complete%20Computer%20Network%20-%20Theory%20%2B%20631%20MCQs%20(Answers%20%2B%20Nukte).pdf" target="_blank"><b>The Complete Computer Network — Theory + 631 MCQs (PDF)</b></a></div>
+</div></section>
+
+<section class="blk" id="kaise"><div class="wrap">
+  <div class="shead"><h2>Kaise Kaam Karta Hai</h2><span class="hindi">तरीका — chaar kadam, bas</span></div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><b>Topic chuno</b><p>OSI Model kamzor hai? Sirf Topic 2 ka test do. Poora CN ek saath bhi de sakte ho — "Sab Topics" chuno.</p></div>
+    <div class="step"><div class="n">2</div><b>Practice se shuru karo</b><p>Galti karna hi seekhna hai. Practice mode me har sawaal ke turant baad sahi jawab, wajah aur ★ Nukta milta hai.</p></div>
+    <div class="step"><div class="n">3</div><b>Phir Exam mode</b><p>Timer ke saath, bina turant jawab dekhe. Ye bilkul asli paper ka rehearsal hai — negative marking bhi laga sakte ho.</p></div>
+    <div class="step"><div class="n">4</div><b>Galtiyan dobara do</b><p>Result ke baad "Sirf Galat Wale Dobara" dabao. Jo sawaal galat hue, wahi phir se — jab tak pakke na ho jayein.</p></div>
+  </div>
+  <div class="panel" style="margin-top:14px">
+    <div class="shead"><h2 style="font-size:18px">Kin Exams ke Kaam ka Hai</h2></div>
+    <div class="examline"><span class="chip">RPSC Programmer</span><span class="chip">RSMSSB Informatics Assistant (IA)</span><span class="chip">BCI — Basic Computer Instructor</span><span class="chip">SCI — Senior Computer Instructor</span><span class="chip">School Administrator (SA)</span><span class="chip">Data Entry / Computer Operator</span><span class="chip">REET (Computer)</span><span class="chip">RAS &amp; anya Rajasthan Govt. Exams</span></div>
+    <p style="font-size:13px;color:var(--mut);margin-top:10px">Reference book: <b>Behrouz A. Forouzan — Data Communications and Networking</b>. Sawaal repo me rakhe asli exam papers se liye gaye hain.</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="cols">
+    <div><b style="font-size:18px">Ek<span style="color:var(--org2)">Guru</span> Learning</b>
+      <p style="margin-top:7px">by <b style="color:#ffd580">Prakash</b><br>Rajasthan Govt. exams ke liye imaandari se banaya gaya free study material. Jo hai woh live hai, jo nahi hai woh saaf likha hai.</p></div>
+    <div><b>Jaldi ke Link</b><a href="#subjects">Saare Subjects</a><a href="#test">Test Centre</a><a href="#books">Books &amp; PDF</a><a href="#kaise">Kaise Kaam Karta Hai</a></div>
+    <div><b>Computer Network</b><a href="#test" data-topic="T01">Topic 1 — Introduction of DC</a><a href="#test" data-topic="T02">Topic 2 — OSI &amp; TCP/IP Models</a><a href="#test" data-topic="T06">Topic 6 — OSI Layers in Detail</a><a href="#test" data-topic="T07">Topic 7 — Network Security</a></div>
+    <div><b>Aage Kya Aayega</b><a href="#subjects">DBMS — Coming Soon</a><a href="#subjects">Java — Coming Soon</a><a href="#subjects">SAD — Coming Soon</a><a href="#subjects">Geography (Rajasthan Map) — Coming Soon</a></div>
+  </div>
+  <div class="copyright"><span>© 2026 EkGuru Learning • by Prakash. Padho, test do, aage badho.</span><span>Made with mehnat in Rajasthan 🇮🇳</span></div>
+</div></footer>
+
+<dialog id="soonDlg"><div class="dlg">
+  <h3 id="dlgTitle">Subject</h3><p id="dlgBody"></p>
+  <p style="margin-top:10px"><b style="color:var(--navy)">Isme kya-kya aayega:</b></p><div class="chips" id="dlgChips" style="margin-top:7px"></div>
+  <div class="startrow"><button class="btn btn-o" id="dlgNotify">🔔 Tayyar ho to batao</button><button class="btn btn-w" id="dlgClose">Band Karo</button></div>
+  <p style="font-size:11.5px;color:var(--mut);margin-top:9px">Notify dabane par ye subject aapke browser me note ho jayega. Hum koi email/SMS nahi mangte.</p>
+</div></dialog>
+<div class="toast" id="toast"></div>
+
+<script>
+/* EkGuru Test Engine - Prakash (EkGuru Learning) | vanilla JS | data: assets/cn-questions.min.json | dubara banana: python3 tools/build_site_data.py */
+"use strict";
+var $=function(id){return document.getElementById(id)};
+var TOPICS=[
+ {id:"T01",n:"Introduction of DC",s:"DC ke 5 hisse, topology, LAN/MAN/WAN",q:375,book:"Topic%201%20-%20Introduction%20of%20DC%20-%20123%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%201%20-%20Practice%20Questions%20-%20375Q%20(Test%20Booklet).pdf"},
+ {id:"T02",n:"Network Models — OSI & TCP/IP",s:"7 layers, TCP/IP, encapsulation, PDU",q:144,book:"Topic%202%20-%20Network%20Models%20OSI%20TCP%20IP%20-%2082%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%202%20-%20Practice%20Questions%20-%20144Q%20(Test%20Booklet).pdf"},
+ {id:"T03",n:"Addressing — MAC, IPv4, IPv6, DNS",s:"IP classes, subnetting, CIDR, port, DNS",q:231,book:"Topic%203%20-%20Addressing%20MAC%20IPv4%20IPv6%20Port%20DNS%20-%2092%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%203%20-%20Practice%20Questions%20-%20231Q%20(Test%20Booklet).pdf"},
+ {id:"T04",n:"Networking Devices",s:"Hub, Switch, Router, Gateway, Firewall",q:99,book:"Topic%204%20-%20Networking%20Devices%20-%2038%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%204%20-%20Practice%20Questions%20-%2099Q%20(Test%20Booklet).pdf"},
+ {id:"T05",n:"Transmission Medium",s:"Twisted pair, Fiber, Radio, Shannon",q:174,book:"Topic%205%20-%20Transmission%20Medium%20-%2047%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%205%20-%20Practice%20Questions%20-%20174Q%20(Test%20Booklet).pdf"},
+ {id:"T06",n:"OSI Layers in Detail",s:"har layer gehrai se — TCP/UDP, Routing, HTTP",q:387,book:"Topic%206%20-%20OSI%20Layers%20in%20Detail%20-%20192%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%206%20-%20Practice%20Questions%20-%20387Q%20(Test%20Booklet).pdf"},
+ {id:"T07",n:"Network Security",s:"Cryptography, Firewall, VPN, TLS, WPA2",q:146,book:"Topic%207%20-%20Network%20Security%20-%2053%20MCQs%20(Answers%20%2B%20Nukte).pdf",prac:"Topic%207%20-%20Practice%20Questions%20-%20146Q%20(Test%20Booklet).pdf"}];
+var SUBJECTS=[
+ {nm:"Computer Network",hi:"कंप्यूटर नेटवर्क (Data Communication)",st:"live",pct:100,txt:"Poora bank live hai — 7 topics, 1,556 bilingual MCQ, asli Rajasthan papers + Forouzan se verified.",chips:["1,556 Questions","7 Topics","EN + हिंदी","Answer + Nukta"]},
+ {nm:"DBMS",hi:"Database Management System",st:"soon",pct:35,txt:"Material jama ho raha hai. ER model se lekar Normalization aur SQL tak — pehle verify, phir live.",chips:["ER Model","Normalization","SQL","Transactions","Indexing"]},
+ {nm:"Java Programming",hi:"जावा प्रोग्रामिंग",st:"soon",pct:25,txt:"Core Java ke sawaal ban rahe hain — OOP, Collection, Exception sab kuch exam pattern par.",chips:["OOP","Collection","Exception","Multithreading","JDBC"]},
+ {nm:"SAD",hi:"System Analysis & Design",st:"soon",pct:20,txt:"SDLC, DFD aur UML wale sawaal tayyar ho rahe hain. IA/SA exams me ye bada hissa hai.",chips:["SDLC","DFD","UML","Feasibility","Testing"]},
+ {nm:"Operating System",hi:"ऑपरेटिंग सिस्टम",st:"soon",pct:15,txt:"Process, Memory aur Scheduling — CN ke baad iski baari hai. Syllabus map ban gaya hai.",chips:["Process","Scheduling","Memory","Deadlock","File System"]},
+ {nm:"Data Structures",hi:"डेटा स्ट्रक्चर",st:"soon",pct:10,txt:"Stack-Queue se Graph tak. Pehle CN jaisa pakka bank banega, phir test khulega.",chips:["Stack & Queue","Tree","Graph","Sorting","Hashing"]},
+ {nm:"C Programming",hi:"C भाषा",st:"soon",pct:10,txt:"Pointers aur output-wale sawaal — programmer exam ki jaan. List tayyar hai.",chips:["Pointers","Array","Functions","Output Questions"]},
+ {nm:"Computer Fundamentals",hi:"कंप्यूटर परिचय",st:"soon",pct:30,txt:"Har exam ka pehla darwaza. Hardware, Software, Number System — basic se shuru.",chips:["Hardware","Number System","MS Office","Shortcut Keys"]},
+ {nm:"Geography — Rajasthan Map",hi:"राजस्थान का भूगोल (Map)",st:"make",pct:45,txt:"Map-based padhai ban rahi hai — jile, nadiyaan, khanij. Tasveer dekh kar seekhne wala hissa.",chips:["Rajasthan Map","Nadiyaan","Khanij","Jile"]}];
+function goEl(e){if(e&&e.scrollIntoView)e.scrollIntoView({behavior:"smooth"})}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove("show")},3400)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+function store(k,v){try{localStorage.setItem("ekguru_"+k,JSON.stringify(v))}catch(e){}}
+function read(k,d){try{var v=localStorage.getItem("ekguru_"+k);return v?JSON.parse(v):d}catch(e){return d}}
+(function(){var g=$("subGrid"),h="";
+ SUBJECTS.forEach(function(s,i){
+  var tag=s.st==="live"?'<span class="tag live">● Live</span>':s.st==="make"?'<span class="tag make">✎ Ban Raha Hai</span>':'<span class="tag soon">⏳ Coming Soon</span>';
+  var btns=s.st==="live"?'<a class="mini o" href="#test">▶ Test Do</a><a class="mini w" href="#books">PDF Books</a>'
+    :'<button class="mini o" data-soon="'+i+'">Kya Aayega?</button><button class="mini w" data-notify="'+i+'">🔔 Notify Me</button>';
+  h+='<div class="subj">'+tag+'<div class="nm">'+esc(s.nm)+'</div><div class="hi">'+esc(s.hi)+'</div><p>'+esc(s.txt)+'</p><div class="chips">'
+    +s.chips.map(function(c){return '<span class="chip">'+esc(c)+"</span>"}).join("")+'</div><div class="bar"><i style="width:'+s.pct+'%"></i></div><span class="pct">Tayyari: '+s.pct+'%</span><div class="row">'+btns+"</div></div>"});
+ g.innerHTML=h;
+ g.addEventListener("click",function(e){var a=e.target.closest("[data-soon]"),b=e.target.closest("[data-notify]");
+   if(a)openSoon(+a.getAttribute("data-soon"));if(b)notify(+b.getAttribute("data-notify"))})})();
+function openSoon(i){var s=SUBJECTS[i];$("dlgTitle").textContent=s.nm+" — Coming Soon";
+ $("dlgBody").textContent=s.txt;$("dlgChips").innerHTML=s.chips.map(function(c){return '<span class="chip">'+esc(c)+"</span>"}).join("");
+ $("dlgNotify").onclick=function(){notify(i);$("soonDlg").close()};$("soonDlg").showModal()}
+function notify(i){var list=read("notify",[]);if(list.indexOf(SUBJECTS[i].nm)<0)list.push(SUBJECTS[i].nm);store("notify",list);
+ toast("🔔 Note ho gaya! "+SUBJECTS[i].nm+" tayyar hote hi is page par LIVE dikhega.")}
+$("dlgClose").onclick=function(){$("soonDlg").close()};
+function drawRegister(){var h=read("history",[]);$("rMine").textContent=h.length;
+ if(h.length){$("rBest").textContent=Math.max.apply(null,h.map(function(x){return x.pct}))+"%"}}
+(function(){var h="";TOPICS.forEach(function(t,i){
+ h+="<tr><td><b>"+(i+1)+"</b></td><td><b style='color:var(--navy)'>"+esc(t.n)+"</b></td><td>"+esc(t.s)+"</td>"
+  +'<td><button class="mini o" data-tstart="'+t.id+'">▶ Test ('+t.q+' Q)</button><br><a target="_blank" href="Computer%20Network/Online%20Quiz/Topic%20'+(i+1)+'%20-%20Online%20Quiz%20%26%20Exam%20(by%20PRAKASH%20-%20EkGuru).html">Full CBT Page ↗</a></td>'
+  +'<td><a target="_blank" href="Computer%20Network/'+t.book+'">⬇ PDF</a></td>'
+  +'<td><a target="_blank" href="Computer%20Network/Practice/'+t.prac+'">⬇ PDF ('+t.q+' Q)</a></td></tr>'});$("bkBody").innerHTML=h;
+ $("bkBody").addEventListener("click",function(e){var b=e.target.closest("[data-tstart]");if(!b)return;
+   setSeg("fTopic",b.getAttribute("data-tstart"));goEl(document.getElementById("test"));startTest()})})();
+var BANK=null,SET={topic:"ALL",mode:"practice",count:20,diff:"all",lang:"both",neg:0};
+var PLAY={on:false,list:[],cur:0,ans:{},seen:{},mark:{},mode:"practice",lang:"both",neg:0,secs:0,timer:null,started:0};
+function segInit(id,key,fn){var box=$(id);box.addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;
+ box.querySelectorAll("button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");
+ SET[key]=isNaN(+b.dataset.v)?b.dataset.v:+b.dataset.v;if(fn)fn()})}
+function setSeg(id,val){$(id).querySelectorAll("button").forEach(function(b){b.classList.toggle("on",b.dataset.v==String(val))});
+ var k={fTopic:"topic",fMode:"mode",fCount:"count",fDiff:"diff",fLang:"lang",fNeg:"neg"}[id];if(k)SET[k]=isNaN(+val)?val:+val;refreshPool()}
+(function(){var h='<button data-v="ALL" class="on">Sab Topics</button>';TOPICS.forEach(function(t){h+='<button data-v="'+t.id+'">T'+t.id.slice(1)+" · "+esc(t.n.split("—")[0].trim())+"</button>"});$("fTopic").innerHTML=h})();
+segInit("fTopic","topic",refreshPool);segInit("fCount","count",refreshPool);segInit("fDiff","diff",refreshPool);
+segInit("fLang","lang",function(){if(PLAY.on)drawQ()});segInit("fNeg","neg");
+segInit("fMode","mode",function(){var ex=SET.mode==="exam";$("negWrap").style.display=ex?"":"none";
+ $("modeNote").textContent=ex?"Exam: timer chalega, jawab submit ke baad hi dikhega. Asli paper jaisa.":"Practice: jawab dete hi sahi/galti + Nukta dikhega.";if(PLAY.on)drawQ()});
+function pool(){if(!BANK)return[];return BANK.filter(function(q){return(SET.topic==="ALL"||q.t===SET.topic)&&(SET.diff==="all"||q.d===SET.diff)})}
+function refreshPool(){if(!BANK)return;var p=pool();
+ $("poolInfo").innerHTML="Is selection me <b>"+p.length+"</b> question mile. Test me <b>"+Math.min(SET.count,p.length)+"</b> aayenge, har baar alag (shuffle).";
+ $("btnStart").disabled=!p.length;$("btnStart").textContent=p.length?"▶ Test Shuru Karo ("+Math.min(SET.count,p.length)+" Question)":"Is selection me question nahi hai"}
+function loadBank(){ /* naye browser me fetch, purane me XHR — dono chalega */
+ function ok(d){BANK=d;$("rTotal").textContent=d.length.toLocaleString("en-IN");refreshPool();drawRegister()}
+ function fail(){$("poolInfo").innerHTML="<b style='color:var(--red)'>Bank load nahi hua.</b> Page refresh karo.";toast("⚠ Question bank load nahi hua — page refresh karke dekho.")}
+ if(window.fetch){fetch("assets/cn-questions.min.json").then(function(r){if(!r.ok)throw 0;return r.json()}).then(ok).catch(fail)}
+ else{var x=new XMLHttpRequest();x.open("GET","assets/cn-questions.min.json",true);
+  x.onload=function(){try{ok(JSON.parse(x.responseText))}catch(e){fail()}};x.onerror=fail;x.send()}}
+loadBank();
+function begin(list,mode){
+ if(!list.length){toast("Is selection me question nahi mile — Topic/Difficulty badal kar dekho.");return}
+ PLAY={on:true,list:shuffle(list.slice()),cur:0,ans:{},seen:{},mark:{},mode:mode,lang:SET.lang,neg:mode==="exam"?+SET.neg:0,secs:mode==="exam"?list.length*60:0,timer:null,started:Date.now()};
+ $("setupPanel").style.display="none";$("result").style.display="none";$("player").style.display="block";
+ if(mode==="exam")PLAY.timer=setInterval(tick,1000);
+ $("timerBox").style.visibility=mode==="exam"?"visible":"hidden";
+ drawPal();drawQ();goEl(document.getElementById("test"))}
+function tick(){PLAY.secs--;if(PLAY.secs<=0){clearInterval(PLAY.timer);toast("⏰ Samay khatm! Test khud submit ho gaya.");finish(true);return}drawTime()}
+function drawTime(){var s=Math.max(0,PLAY.secs),m=Math.floor(s/60),r=s%60;$("tTime").textContent=(m<10?"0":"")+m+":"+(r<10?"0":"")+r;$("tTime").className="v"+(s<60?" low":"")}
+function startTest(){begin(shuffle(pool().slice()).slice(0,SET.count),SET.mode)}
+$("btnStart").onclick=startTest;
+$("btnRandom").onclick=function(){if(!BANK){toast("Bank abhi load ho raha hai…");return}setSeg("fTopic","ALL");begin(shuffle(BANK.slice()).slice(0,20),Math.random()<.5?"practice":"exam")};
+function langTxt(en,hi){if(PLAY.lang==="en")return esc(en);if(PLAY.lang==="hi")return esc(hi||en);
+ return esc(en)+(hi&&hi!==en?'<span class="hi">'+esc(hi)+"</span>":"")}
+function drawQ(){var q=PLAY.list[PLAY.cur];if(!q)return;PLAY.seen[PLAY.cur]=1;
+ $("qNo").textContent="Q."+(PLAY.cur+1);$("tQno").textContent=(PLAY.cur+1)+" / "+PLAY.list.length;
+ var t=TOPICS.filter(function(x){return x.id===q.t})[0];
+ $("qTopic").textContent=q.t+" · "+(t?t.n:"CN");$("qDiff").textContent=q.d;$("qDiff").className="bdg "+q.d;
+ $("qId").textContent=q.i;$("qSrc").textContent=q.src||"";
+ $("qText").innerHTML=langTxt(q.q,q.qh);
+ var picked=PLAY.ans[PLAY.cur],show=PLAY.mode==="practice"&&picked!==undefined,h="";
+ q.o.forEach(function(op,i){var cls="opt";if(picked===i)cls+=" sel";
+   if(show&&i===q.a)cls+=" right";if(show&&picked===i&&i!==q.a)cls+=" wrong";
+   var hi=q.oh&&q.oh[i]?q.oh[i]:"";
+   h+='<button class="opt" data-opt="'+i+'"><span class="ab">'+"ABCD"[i]+'</span><span>'+(PLAY.lang==="hi"?esc(hi||op):PLAY.lang==="en"?esc(op):esc(op)+(hi&&hi!==op?'<span class="hi">'+esc(hi)+"</span>":""))+"</span></button>"});
+ $("optBox").innerHTML=h;
+ var ex=$("explBox");
+ if(show){ex.innerHTML=(picked===q.a?'<b class="t">✔ Sahi jawab!</b>':'<b style="color:var(--red)">✘ Galat.</b> Sahi jawab: <b>'+"ABCD"[q.a]+"</b>")
+   +"<br>"+langTxt(q.e,q.eh)+(q.n?'<div class="nuk">★ <b>Nukta (exam point):</b> '+langTxt(q.n,q.nh)+"</div>":"");ex.classList.add("show")}
+ else{ex.classList.remove("show");ex.innerHTML=""}
+ $("btnMark").classList.toggle("markon",!!PLAY.mark[PLAY.cur]);
+ $("btnMark").textContent=PLAY.mark[PLAY.cur]?"⚑ Marked (hatane ke liye dabao)":"⚑ Mark for Review";
+ $("btnPrev").disabled=PLAY.cur===0;$("btnNext").textContent=PLAY.cur===PLAY.list.length-1?"Aakhri Question":"Agla →";
+ var done=Object.keys(PLAY.ans).length;$("tAns").textContent=done;$("tScore").textContent=liveScore();
+ $("pFill").style.width=Math.round(done/PLAY.list.length*100)+"%";
+ if(PLAY.mode==="exam")drawTime();drawPal()}
+function liveScore(){var s=0;PLAY.list.forEach(function(q,i){if(PLAY.ans[i]===q.a)s++;else if(PLAY.ans[i]!==undefined)s-=PLAY.neg});return Math.round(s*100)/100}
+$("optBox").addEventListener("click",function(e){var b=e.target.closest("[data-opt]");if(!b)return;PLAY.ans[PLAY.cur]=+b.getAttribute("data-opt");drawQ()});
+$("btnClear").onclick=function(){delete PLAY.ans[PLAY.cur];drawQ()};
+$("btnMark").onclick=function(){PLAY.mark[PLAY.cur]=!PLAY.mark[PLAY.cur];drawQ()};
+$("btnPrev").onclick=function(){if(PLAY.cur>0){PLAY.cur--;drawQ()}};
+$("btnNext").onclick=function(){if(PLAY.cur<PLAY.list.length-1){PLAY.cur++;drawQ()}else toast("Ye aakhri question hai. Submit karna ho to ✔ Submit Test dabao.")};
+$("btnPalette").onclick=function(){var p=$("palBox");p.style.display=p.style.display==="none"?"":"none"};
+function drawPal(){var h="";PLAY.list.forEach(function(q,i){var c="pn";var a=PLAY.ans[i]!==undefined,m=PLAY.mark[i];
+ if(a&&m)c+=" dm";else if(a)c+=" done";else if(m)c+=" mark";else if(PLAY.seen[i])c+=" seen";if(i===PLAY.cur)c+=" cur";
+ h+='<button class="'+c+'" data-go="'+i+'">'+(i+1)+"</button>"});$("pGrid").innerHTML=h}
+$("pGrid").addEventListener("click",function(e){var b=e.target.closest("[data-go]");if(b){PLAY.cur=+b.getAttribute("data-go");drawQ()}});
+function finish(auto){if(!PLAY.on)return;
+ var left=PLAY.list.length-Object.keys(PLAY.ans).length;
+ if(!auto&&left>0&&!confirm(left+" question bina jawab ke hain. Phir bhi submit karna hai?"))return;
+ clearInterval(PLAY.timer);PLAY.on=false;
+ var right=0,wrong=0,per={};
+ PLAY.list.forEach(function(q,i){per[q.t]=per[q.t]||{r:0,w:0,s:0};
+   if(PLAY.ans[i]===undefined)per[q.t].s++;else if(PLAY.ans[i]===q.a){right++;per[q.t].r++}else{wrong++;per[q.t].w++}});
+ var score=Math.round((right-wrong*PLAY.neg)*100)/100,total=PLAY.list.length,pct=Math.max(0,Math.round(score/total*100));
+ var mins=Math.round((Date.now()-PLAY.started)/60000*10)/10;
+ $("scoreBand").innerHTML=[["Score",score+" / "+total],["Sahi ✔",right],["Galat ✘",wrong],["Chhode",total-right-wrong],["Percentage",pct+"%"],["Samay",mins+" min"]]
+   .map(function(x){return '<div class="sc"><div class="v">'+x[1]+'</div><div class="l">'+x[0]+"</div></div>"}).join("");
+ var ah="<thead><tr><th>Topic</th><th>Sahi</th><th>Galat</th><th>Chhode</th><th>Haal</th></tr></thead><tbody>";
+ Object.keys(per).sort().forEach(function(t){var p=per[t],tt=TOPICS.filter(function(x){return x.id===t})[0];
+   ah+="<tr><td><b>"+t+"</b> "+(tt?esc(tt.n):"")+"</td><td>"+p.r+"</td><td>"+p.w+"</td><td>"+p.s+"</td><td>"+(p.w===0&&p.s===0?"🌟 Pakka hai":p.r>=p.w?"👍 Thik-thaak, thoda aur":"📌 Yahi topic dobara padho")+"</td></tr>"});
+ $("anTable").innerHTML=ah+"</tbody>";$("wrongN").textContent=wrong;
+ var hist=read("history",[]);hist.push({d:new Date().toLocaleDateString("en-IN"),pct:pct,score:score,total:total,mode:PLAY.mode});if(hist.length>30)hist=hist.slice(-30);store("history",hist);drawRegister();
+ window._wrongList=PLAY.list.filter(function(q,i){return PLAY.ans[i]!==undefined&&PLAY.ans[i]!==q.a});
+ window._lastList=PLAY.list;window._lastAns=PLAY.ans;
+ $("player").style.display="none";$("result").style.display="block";$("setupPanel").style.display="";
+ goEl(document.getElementById("result"));
+ toast(pct>=70?"🎉 Badhai ho! "+pct+"% — aise hi lage raho.":pct>=40?"👍 "+pct+"% — galat wale dobara do, pakka ho jayega.":"📌 "+pct+"% — pehle Practice mode me Nukte padho, phir exam do.")}
+$("btnFinish").onclick=function(){finish(false)};$("btnFinishTop").onclick=function(){finish(false)};
+$("btnAgain").onclick=function(){$("result").style.display="none";goEl(document.getElementById("test"))};
+$("btnWrong").onclick=function(){if(!window._wrongList||!window._wrongList.length){toast("koi galat question nahi hai — kamaal! 🎉");return}begin(window._wrongList,"practice")};
+$("btnReview").onclick=function(){var box=$("revBox");if(box.innerHTML){box.innerHTML="";return}
+ var h='<div class="shead" style="margin-top:6px"><h2 style="font-size:19px">Saare Jawab — Review</h2></div>';
+ window._lastList.forEach(function(q,i){var a=window._lastAns[i],ok=a===q.a;
+  h+='<div class="rev"><b>Q.'+(i+1)+'</b> <span style="color:var(--mut)">'+q.i+" · "+q.t+'</span> '+(a===undefined?'<span class="bad">— jawab nahi diya</span>':ok?'<span class="ok">✔ Sahi</span>':'<span class="bad">✘ Galat</span>')
+   +'<div style="margin-top:5px;font-weight:600">'+esc(q.q)+'</div><div>Aapka jawab: <b>'+(a===undefined?"—":"ABCD"[a]+") "+esc(q.o[a]))+'</b> &nbsp;|&nbsp; Sahi: <b style="color:var(--grn)">'+"ABCD"[q.a]+") "+esc(q.o[q.a])+"</b></div>"
+   +(q.e?'<div style="color:#43536a;margin-top:4px">'+esc(q.e)+"</div>":"")+(q.n?'<div style="margin-top:4px">★ <b>Nukta:</b> '+esc(q.n)+"</div>":"")+"</div>"});
+ box.innerHTML=h;goEl(box)};
+document.querySelectorAll("[data-topic]").forEach(function(a){a.addEventListener("click",function(){setSeg("fTopic",a.getAttribute("data-topic"))})});
+drawRegister();
+window.addEventListener("beforeunload",function(e){if(PLAY.on){e.preventDefault();e.returnValue=""}});
+</script>
+</body>
+</html>

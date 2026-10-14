@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "canonical_build_id": "cn-014b0aa51c0651e7",
+  "legacy_topic_pages": [
+    {
+      "topic_id": "T01",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 1 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 1 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "a42ee73bb5932ef9be7685012e1e09ab4deebd47bc507ede1ca1c597e5886f0b",
+      "record_count": 375,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 5,
+        "original_practice": 29,
+        "repository_internal": 304,
+        "textbook_paraphrase": 35,
+        "verified_official_pyq": 2
+      },
+      "stale_official_labels": 2,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T02",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 2 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 2 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "445512be1ac9d4ff03d2f469b87701c487e1f72d22b457203fcb64b59524ad08",
+      "record_count": 144,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 8,
+        "original_practice": 19,
+        "repository_internal": 109,
+        "textbook_paraphrase": 6,
+        "verified_official_pyq": 2
+      },
+      "stale_official_labels": 2,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T03",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 3 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 3 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "0bbda38ebcefe8d8a3ae48e9ab1fe5a8ab94e639d351a387657c1d69426e60b0",
+      "record_count": 231,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 9,
+        "original_practice": 31,
+        "repository_internal": 183,
+        "textbook_paraphrase": 1,
+        "verified_official_pyq": 7
+      },
+      "stale_official_labels": 7,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T04",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 4 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 4 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "f4eaa5e11ced7c6bce5fbc00dbf2adcae0e396915a276da93ad3dcb896612fb8",
+      "record_count": 99,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 4,
+        "original_practice": 15,
+        "repository_internal": 80
+      },
+      "stale_official_labels": 0,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T05",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 5 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 5 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "b244e33cb70106e3bb970b3881938072341d553a4727c9ef62adbdf81180e7cd",
+      "record_count": 174,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 5,
+        "original_practice": 27,
+        "repository_internal": 141,
+        "verified_official_pyq": 1
+      },
+      "stale_official_labels": 1,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T06",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 6 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 6 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "e38bc504e53ffa73d24905450162d08f2a56808af5da3ee8eef46c63e6949f5c",
+      "record_count": 387,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 47,
+        "original_practice": 55,
+        "repository_internal": 272,
+        "verified_official_pyq": 13
+      },
+      "stale_official_labels": 13,
+      "redirect_verified": true
+    },
+    {
+      "topic_id": "T07",
+      "archive_file": "archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 7 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot",
+      "redirect_file": "Computer Network/Online Quiz/Topic 7 - Online Quiz & Exam (by PRAKASH - EkGuru).html",
+      "sha256_preserved_original": "be2f16e7f7259eae9c05e3be231a003e46aadf999ec8fe4bd76c63e066b7d859",
+      "record_count": 146,
+      "source_type_counts": {
+        "claimed_pyq_unverified": 8,
+        "original_practice": 21,
+        "repository_internal": 116,
+        "verified_official_pyq": 1
+      },
+      "stale_official_labels": 1,
+      "redirect_verified": true
+    }
+  ],
+  "legacy_record_total": 1556,
+  "preserved_legacy_verified_official_labels": 26,
+  "canonical_question_level_official_evidence_records": 0,
+  "legacy_records_with_incomplete_options": 2,
+  "legacy_source_type_counts": {
+    "claimed_pyq_unverified": 86,
+    "original_practice": 197,
+    "repository_internal": 1205,
+    "textbook_paraphrase": 42,
+    "verified_official_pyq": 26
+  },
+  "finding": "The preserved snapshots embed historical source-status labels and standalone data; they are not the current canonical bank. Original bytes are archived and the former public paths now redirect to the shared provenance-aware portal."
+}

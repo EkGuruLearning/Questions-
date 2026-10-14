@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "bank_build_id": "cn-014b0aa51c0651e7",
+  "generated_on": "2026-10-14",
+  "canonical_file": "Computer Network/data/cn_questions.json",
+  "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
+  "question_count": 1556,
+  "published_question_count": 1554,
+  "review_only_excluded_count": 2,
+  "topic_counts": {
+    "T01": 375,
+    "T02": 144,
+    "T03": 231,
+    "T04": 99,
+    "T05": 174,
+    "T06": 387,
+    "T07": 146
+  },
+  "published_topic_counts": {
+    "T01": 374,
+    "T02": 144,
+    "T03": 231,
+    "T04": 99,
+    "T05": 174,
+    "T06": 386,
+    "T07": 146
+  },
+  "source_type_counts": {
+    "verified_official_pyq": 0,
+    "claimed_pyq_unverified": 112,
+    "repository_internal": 1205,
+    "textbook_paraphrase": 42,
+    "original_practice": 197
+  },
+  "verification_counts": {
+    "paper_and_key_checked": 0,
+    "answer_checked": 847,
+    "claimed_answer_unverified": 707,
+    "disputed": 0,
+    "pending_review": 2
+  },
+  "language_coverage": {
+    "records": 1556,
+    "stem_en": 1556,
+    "stem_hi": 817,
+    "options_en_complete": 1554,
+    "options_hi_complete": 1554,
+    "explanation_en": 817,
+    "explanation_hi": 817,
+    "nukta_en": 1556,
+    "nukta_hi": 1556,
+    "full_bilingual_records": 817
+  },
+  "assets": {
+    "catalog": {
+      "file": "assets/catalog.min.json",
+      "sha256": "f85d0e381129e1d0ad321c65aff5481a0a0457569f42fbe0d3be79128b5e9186",
+      "bytes": 29961
+    },
+    "cn_manifest": {
+      "file": "assets/banks/cn/manifest.json",
+      "sha256": "dfe6d035fea6d96deb47ac56928a09378618049daa4fbe74ab9437fbda17640c",
+      "bytes": 7440
+    },
+    "source_register": {
+      "file": "assets/source-register.min.json",
+      "sha256": "54096c51bd53144a74c98ccb2221b1d2cdbe329ad95b196e6002998cda280e3b",
+      "bytes": 128939
+    },
+    "compatibility_bank": {
+      "file": "assets/cn-questions.min.json",
+      "sha256": "9d09a84e260a512e346c39cc337a73937f54b0b6ce7c2117ec083494d14dc8a6",
+      "bytes": 2480036
+    },
+    "topic_chunks": [
+      {
+        "file": "assets/banks/cn/T01.f0a0f1ea5452.min.json",
+        "sha256": "f0a0f1ea5452c25d0be9cfef9a880576ae5ee175605142166e879530c5beb69e",
+        "bytes": 605615,
+        "record_count": 374,
+        "canonical_record_count": 375
+      },
+      {
+        "file": "assets/banks/cn/T02.9b7ebdf1e6e5.min.json",
+        "sha256": "9b7ebdf1e6e58ecda7cf68c254f6a0ac7e7204005594cce668301e276059749c",
+        "bytes": 228216,
+        "record_count": 144,
+        "canonical_record_count": 144
+      },
+      {
+        "file": "assets/banks/cn/T03.2e3759fec5dc.min.json",
+        "sha256": "2e3759fec5dc9fb18ef43f0480d2e55216b4f7b5a5ce8b6444e889d4a12207c2",
+        "bytes": 362279,
+        "record_count": 231,
+        "canonical_record_count": 231
+      },
+      {
+        "file": "assets/banks/cn/T04.58b6d8c68eaf.min.json",
+        "sha256": "58b6d8c68eaf846fce6e89b335ec403b980ecb099d4bb5470268c825ff6c0910",
+        "bytes": 156795,
+        "record_count": 99,
+        "canonical_record_count": 99
+      },
+      {
+        "file": "assets/banks/cn/T05.d029708e1caa.min.json",
+        "sha256": "d029708e1caa81ce6846dfde3a5cc935623cf0b23cda54cc6197bfc3405f77b4",
+        "bytes": 269135,
+        "record_count": 174,
+        "canonical_record_count": 174
+      },
+      {
+        "file": "assets/banks/cn/T06.191ac61ee876.min.json",
+        "sha256": "191ac61ee87657ec04882913050c9238bc0507c8f929791658c37650f74df0a0",
+        "bytes": 628428,
+        "record_count": 386,
+        "canonical_record_count": 387
+      },
+      {
+        "file": "assets/banks/cn/T07.f9f76a3c3aaf.min.json",
+        "sha256": "f9f76a3c3aafd645754a6dbb44ae47600663ce478e8cedce069b1533d8228605",
+        "bytes": 229574,
+        "record_count": 146,
+        "canonical_record_count": 146
+      }
+    ]
+  },
+  "subject_statuses": {
+    "cn": "live",
+    "computer-fundamentals": "planned",
+    "dbms": "planned",
+    "programming": "planned",
+    "data-structures-algorithms": "planned",
+    "operating-systems": "planned",
+    "computer-architecture": "planned",
+    "software-engineering": "planned",
+    "cybersecurity": "planned",
+    "rajasthan-geography": "planned"
+  },
+  "exam_blueprint_statuses": {
+    "general-cn-practice": "not_an_exam_blueprint",
+    "gate-cs": "official_pattern_not_reverified_in_this_build",
+    "ugc-net-cs-087": "current_cycle_pattern_not_reverified",
+    "rpsc-programmer": "official_notice_and_pattern_not_reverified_in_this_build",
+    "rsmssb-informatics-assistant": "authority_and_current_pattern_not_reverified_in_this_build",
+    "ssc-computer-awareness": "exam_and_year_specific_pattern_not_reverified_in_this_build"
+  }
+}
