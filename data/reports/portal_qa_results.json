@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-14T12:54:55+00:00",
+  "bank_build_id": "cn-014b0aa51c0651e7",
+  "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
+  "checks": [
+    {
+      "name": "Python syntax",
+      "command": "python3 -m py_compile tools/cn_export_json.py tools/reconcile_cn_bank.py tools/build_site_data.py tools/build_reports.py tools/audit_duplicates.py tools/audit_links.py tools/audit_blueprints.py tools/validate_question_bank.py tools/build_v6_launchers.py tools/retire_legacy_apps.py tools/audit_legacy_apps.py tools/inert_archived_html.py tools/audit_pdfs.py tools/check_whitespace.py tools/run_release_checks.py tools/build_catalog.py tools/validate_links.py tools/validate_assets.py tools/validate_subjects.py tools/read_structure.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "All release/build/audit Python scripts compile.",
+      "output_tail": ""
+    },
+    {
+      "name": "Catalog and schema JSON",
+      "command": "bash -lc 'for f in data/catalog/*.json data/sources/*.json data/schemas/*.json assets/catalog.min.json assets/catalog/*.json assets/banks/cn/manifest.json assets/source-register.min.json data/reports/build_manifest.json data/reports/browser_visual_qa.json data/reports/portal_browser_visual_qa.json data/reports/pdf_rendering_qa.json data/reports/portal_pdf_rendering_qa.json; do [ -f \"$f\" ] || continue; python3 -m json.tool \"$f\" >/dev/null || exit 1; done'",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Catalog, evidence, schemas and generated manifests parse as JSON.",
+      "output_tail": ""
+    },
+    {
+      "name": "Canonical and generated-data validation",
+      "command": "python3 tools/validate_question_bank.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Canonical v2, hashes, official evidence gate, chunks and source references.",
+      "output_tail": "PASS: canonical schema v2 and public exports are consistent\nbank_build_id=cn-014b0aa51c0651e7\ncanonical_sha256=014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0\nquestion_count=1556\ntopic_counts={\"T01\": 375, \"T02\": 144, \"T03\": 231, \"T04\": 99, \"T05\": 174, \"T06\": 387, \"T07\": 146}\nsource_type_counts={\"claimed_pyq_unverified\": 112, \"original_practice\": 197, \"repository_internal\": 1205, \"textbook_paraphrase\": 42, \"verified_official_pyq\": 0}\nverification_counts={\"answer_checked\": 847, \"claimed_answer_unverified\": 707, \"disputed\": 0, \"paper_and_key_checked\": 0, \"pending_review\": 2}\npublic_source_records=279\npublic_topic_chunks=7"
+    },
+    {
+      "name": "Exam profile and mapping audit",
+      "command": "python3 tools/audit_blueprints.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Profiles/mappings validated; none claims an exact simulation.",
+      "output_tail": "PASS: 6 exam profiles and 6 mappings; none claims an exact simulation."
+    },
+    {
+      "name": "Legacy app provenance audit",
+      "command": "python3 tools/audit_legacy_apps.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Seven archived snapshots checked for embedded stale official labels; public paths must redirect.",
+      "output_tail": "PASS: archived pages=7 records=1556 stale_official_labels=26 incomplete=2 evidence=0"
+    },
+    {
+      "name": "Static links and new-tab safety",
+      "command": "python3 tools/audit_links.py --strict",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Root page, legacy pages, v6 launchers, catalog book files and topic chunks.",
+      "output_tail": "PASS: local links and new-tab rel attributes\n{\"catalog_links\": 21, \"html_files\": 15, \"local_files\": 47, \"references\": 48, \"topic_chunks\": 7}"
+    },
+    {
+      "name": "Duplicate scan",
+      "command": "python3 tools/audit_duplicates.py --check",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Exact and near-duplicate scan; reports candidates without auto-merging.",
+      "output_tail": "records=1556 exact_groups=0 near_candidates=748 reviewed=0 pending=748"
+    },
+    {
+      "name": "Data unit tests",
+      "command": "python3 -m unittest discover -s tests/data -p 'test_*.py' -v",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Canonical integrity, source gates, payloads, catalog and preserved files.",
+      "output_tail": "test_canonical_build_identity_and_counts_are_current (test_data_pipeline.GeneratedDataTests.test_canonical_build_identity_and_counts_are_current) ... ok\ntest_legacy_source_and_pre_audit_snapshot_are_preserved (test_data_pipeline.GeneratedDataTests.test_legacy_source_and_pre_audit_snapshot_are_preserved) ... ok\ntest_official_evidence_gate_has_no_unsupported_records (test_data_pipeline.GeneratedDataTests.test_official_evidence_gate_has_no_unsupported_records) ... ok\ntest_only_cn_is_live_and_catalog_books_resolve (test_data_pipeline.GeneratedDataTests.test_only_cn_is_live_and_catalog_books_resolve) ... ok\ntest_public_chunks_are_hashed_and_partition_canonical_ids (test_data_pipeline.GeneratedDataTests.test_public_chunks_are_hashed_and_partition_canonical_ids) ... ok\ntest_public_payloads_omit_internal_notes_and_preserve_source_references (test_data_pipeline.GeneratedDataTests.test_public_payloads_omit_internal_notes_and_preserve_source_references) ... ok\ntest_question_ids_options_keys_and_source_ids_are_stable (test_data_pipeline.GeneratedDataTests.test_question_ids_options_keys_and_source_ids_are_stable) ... ok\ntest_bad_paths_subjects_and_duplicate_ids_are_rejected (test_portal_resources.PortalResourceSourceTests.test_bad_paths_subjects_and_duplicate_ids_are_rejected) ... ok\ntest_empty_checked_in_registry_is_a_valid_source (test_portal_resources.PortalResourceSourceTests.test_empty_checked_in_registry_is_a_valid_source) ... ok\ntest_geography_registry_keeps_the_two_audited_roots_distinct (test_portal_resources.PortalResourceSourceTests.test_geography_registry_keeps_the_two_audited_roots_distinct) ... ok\ntest_new_geography_map_requires_explicit_alt_and_warning_status (test_portal_resources.PortalResourceSourceTests.test_new_geography_map_requires_explicit_alt_and_warning_status) ... ok\ntest_registered_resource_receives_repository_hash_and_encoded_url (test_portal_resources.PortalResourceSourceTests.test_registered_resource_receives_repository_hash_and_encoded_url) ... ok\ntest_terminal_reader_explains_website_paths_and_merge_check (test_portal_resources.PortalResourceSourceTests.test_terminal_reader_explains_website_paths_and_merge_check) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.093s\n\nOK"
+    },
+    {
+      "name": "Navigation unit tests",
+      "command": "python3 -m unittest discover -s tests/navigation -p 'test_*.py' -v",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Anchors, explicit buttons, mobile navigation semantics and safe links.",
+      "output_tail": "test_all_buttons_have_explicit_types (test_navigation.NavigationTests.test_all_buttons_have_explicit_types) ... ok\ntest_breadcrumb_fragments_and_page_ids_resolve (test_navigation.NavigationTests.test_breadcrumb_fragments_and_page_ids_resolve) ... ok\ntest_every_public_route_has_mobile_semantic_navigation (test_navigation.NavigationTests.test_every_public_route_has_mobile_semantic_navigation) ... ok\ntest_external_and_pdf_new_tabs_are_explicit_and_safe (test_navigation.NavigationTests.test_external_and_pdf_new_tabs_are_explicit_and_safe) ... ok\ntest_internal_subject_cards_and_breadcrumbs_do_not_force_new_tabs (test_navigation.NavigationTests.test_internal_subject_cards_and_breadcrumbs_do_not_force_new_tabs) ... ok\ntest_main_routes_are_real_same_tab_anchors (test_navigation.NavigationTests.test_main_routes_are_real_same_tab_anchors) ... ok\ntest_manifest_new_tab_resources_and_official_sources_are_labelled (test_navigation.NavigationTests.test_manifest_new_tab_resources_and_official_sources_are_labelled) ... ok\ntest_practice_portal_preserves_real_interactive_controls (test_navigation.NavigationTests.test_practice_portal_preserves_real_interactive_controls) ... ok\ntest_real_map_previews_have_alt_and_same_tab_detail_actions (test_navigation.NavigationTests.test_real_map_previews_have_alt_and_same_tab_detail_actions) ... ok\ntest_repository_structure_guide_is_public_and_actionable (test_navigation.NavigationTests.test_repository_structure_guide_is_public_and_actionable) ... ok\ntest_static_fallbacks_and_truthful_subject_statuses (test_navigation.NavigationTests.test_static_fallbacks_and_truthful_subject_statuses) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.010s\n\nOK"
+    },
+    {
+      "name": "Responsive structural tests",
+      "command": "python3 -m unittest discover -s tests/responsive -p 'test_*.py' -v",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Viewport, breakpoint and touch-target CSS checks; not rendered visual QA.",
+      "output_tail": "test_every_route_has_viewport_and_shared_site_css (test_responsive.ResponsiveStructuralTests.test_every_route_has_viewport_and_shared_site_css) ... ok\ntest_maps_keep_aspect_ratio_and_tables_scroll_inside_their_wrapper (test_responsive.ResponsiveStructuralTests.test_maps_keep_aspect_ratio_and_tables_scroll_inside_their_wrapper) ... ok\ntest_mobile_breakpoints_and_fluid_columns_are_present (test_responsive.ResponsiveStructuralTests.test_mobile_breakpoints_and_fluid_columns_are_present) ... ok\ntest_practice_app_retains_its_mobile_quiz_states (test_responsive.ResponsiveStructuralTests.test_practice_app_retains_its_mobile_quiz_states) ... ok\ntest_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok\ntest_wide_tables_are_not_wide_pages_and_long_names_can_wrap (test_responsive.ResponsiveStructuralTests.test_wide_tables_are_not_wide_pages_and_long_names_can_wrap) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nOK"
+    },
+    {
+      "name": "Portal catalogue reproducibility",
+      "command": "python3 tools/build_catalog.py --check",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Generated subjects, resource and map manifests plus repository inventories match checked-in sources.",
+      "output_tail": "PASS: built 2 subject entries, 173 real resource records, 2 map records, and 366 repository inventory rows.\nOutputs: assets/catalog/{subjects,resources,maps}.json; data/reports/portal_repository_inventory.csv; Rajasthan Geography Maps/STRUCTURE_AND_ASSET_INVENTORY.md"
+    },
+    {
+      "name": "Portal project-base links",
+      "command": "python3 tools/validate_links.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Route and fragment resolution under /Questions-/; PDF/external new-tab safety and manifest URL checks.",
+      "output_tail": "GitHub Pages local-link validation base: /Questions-/\n{\"catalog_manifests\": 3, \"external_links\": 3, \"html_pages\": 25, \"html_references\": 324, \"local_links\": 320, \"manifest_new_tab_resources\": 55, \"manifest_resource_paths\": 173, \"map_asset_paths\": 6, \"pdf_new_tab_links\": 2, \"recorded_external_sources\": 3}\nPASS: HTML, catalog, project-base URLs and new-tab safety are valid."
+    },
+    {
+      "name": "Portal asset integrity",
+      "command": "python3 tools/validate_assets.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Resource hashes/sizes, image metadata, alternative text and responsive map aspect ratios.",
+      "output_tail": "Checked resources=173, map images=8, total referenced bytes=190,917,242, map entries=2, live subjects=2.\nPASS: resource hashes, path availability, image dimensions/alt text and responsive map aspect ratios."
+    },
+    {
+      "name": "Portal publication gates",
+      "command": "python3 tools/validate_subjects.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "CN topic/resource availability and Rajasthan Geography resource-library status.",
+      "output_tail": "{\"computer_network_topics\": 7, \"geography_border_groups\": 7, \"geography_map_entries\": 2, \"practice_pdfs\": 7, \"resources\": 173, \"same_tab_current_cbt_routes\": 7, \"subjects\": 2, \"theory_pdfs\": 7, \"v6_launchers\": 7}\nPASS: both live routes and all required CN/geography resources meet their publication gates."
+    },
+    {
+      "name": "Repository structure merge preflight",
+      "command": "python3 tools/read_structure.py --check",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Read-only merge safety, source/catalogue layout, generated paths and project-base checks; not a deployment test.",
+      "output_tail": "EkGuru structure / merge preflight — read-only\nRepository: /home/user/Questions-\nPASS: git index has no unresolved merge-conflict entries.\nPASS: all 25 required website, catalogue, source and validator paths exist.\n\n--- Generated catalogues and inventories ---\nPASS: built 2 subject entries, 173 real resource records, 2 map records, and 366 repository inventory rows.\nOutputs: assets/catalog/{subjects,resources,maps}.json; data/reports/portal_repository_inventory.csv; Rajasthan Geography Maps/STRUCTURE_AND_ASSET_INVENTORY.md\nPASS: Generated catalogues and inventories\n\n--- GitHub Pages links and project-base paths ---\nGitHub Pages local-link validation base: /Questions-/\n{\"catalog_manifests\": 3, \"external_links\": 3, \"html_pages\": 25, \"html_references\": 324, \"local_links\": 320, \"manifest_new_tab_resources\": 55, \"manifest_resource_paths\": 173, \"map_asset_paths\": 6, \"pdf_new_tab_links\": 2, \"recorded_external_sources\": 3}\nPASS: HTML, catalog, project-base URLs and new-tab safety are valid.\nPASS: GitHub Pages links and project-base paths\n\n--- Resource files, hashes and map metadata ---\nChecked resources=173, map images=8, total referenced bytes=190,917,242, map entries=2, live subjects=2.\nPASS: resource hashes, path availability, image dimensions/alt text and responsive map aspect ratios.\nPASS: Resource files, hashes and map metadata\n\n--- Subject/topic publication gates ---\n{\"computer_network_topics\": 7, \"geography_border_groups\": 7, \"geography_map_entries\": 2, \"practice_pdfs\": 7, \"resources\": 173, \"same_tab_current_cbt_routes\": 7, \"subjects\": 2, \"theory_pdfs\": 7, \"v6_launchers\": 7}\nPASS: both live routes and all required CN/geography resources meet their publication gates.\nPASS: Subject/topic publication gates\n\n--- Whitespace and conflict markers ---\nPASS: changed text files contain no trailing whitespace (65 paths inspected; archive originals excluded).\nPASS: Whitespace and conflict markers\n\n--- Git diff whitespace ---\nPASS: Git diff whitespace\n\n--- Staged diff whitespace ---\nPASS: Staged diff whitespace\n\nREADY: repository structure, project-base links, generated catalogues and publication gates are consistent.\nThis preflight does not run all data, browser, PDF, deployment or post-deployment tests; use tools/run_release_checks.py for release QA."
+    },
+    {
+      "name": "JavaScript syntax",
+      "command": "bash -lc 'node --check assets/js/engine.mjs && node --check assets/js/app.mjs && node --check assets/js/app.js && node --check tests/engine/engine.test.mjs && node --check tests/navigation/app_dom_smoke.cjs && node --check tests/visual/browser_visual_qa.cjs'",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Engine, application modules and Node tests parse.",
+      "output_tail": ""
+    },
+    {
+      "name": "Portal interaction smoke (optional JSDOM)",
+      "command": "node tests/navigation/app_dom_smoke.cjs",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Catalog-first loading, topic-only fetch, nav, answer feedback, bookmark, source dialog, scoring/review and filters; exit 77 means jsdom is not installed. JSDOM was available in this test environment; the production portal has no npm runtime dependency.",
+      "output_tail": "PASS: JSDOM portal smoke — catalog-first loading, topic-only fetch, nav, answer feedback, bookmark, source dialog, scoring/review and verification filters."
+    },
+    {
+      "name": "Engine unit tests",
+      "command": "node --test tests/engine/engine.test.mjs",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Filtering, opt-in status, deterministic sampling, scoring and language fallbacks.",
+      "output_tail": "TAP version 13\n# Subtest: default practice eligibility excludes claimed, disputed and pending records\nok 1 - default practice eligibility excludes claimed, disputed and pending records\n  ---\n  duration_ms: 1.021037\n  type: 'test'\n  ...\n# Subtest: topic, difficulty, source type and exam tag filters compose\nok 2 - topic, difficulty, source type and exam tag filters compose\n  ---\n  duration_ms: 0.2044\n  type: 'test'\n  ...\n# Subtest: sampling is stable for a supplied RNG and never mutates the input\nok 3 - sampling is stable for a supplied RNG and never mutates the input\n  ---\n  duration_ms: 0.269879\n  type: 'test'\n  ...\n# Subtest: grading counts correct, incorrect and unanswered without negative scoring\nok 4 - grading counts correct, incorrect and unanswered without negative scoring\n  ---\n  duration_ms: 0.169895\n  type: 'test'\n  ...\n# Subtest: Hindi fallback is explicit and verification labels stay distinct\nok 5 - Hindi fallback is explicit and verification labels stay distinct\n  ---\n  duration_ms: 0.244386\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 64.788298"
+    },
+    {
+      "name": "Rendered portal browser visual and accessibility QA (optional)",
+      "command": "node tests/visual/browser_visual_qa.cjs",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Headless Chromium route/viewport checks, navigation-back flows, mobile menu, keyboard skip-link, 44px controls and axe checks; exit 77 means browser packages are unavailable. Chromium 153.0.8010.0 (headless); viewports=15; rendered routes=150; navigation flows=10; axe violations=0.",
+      "output_tail": "phone-320: routes=10, max document width=320/320px, browser/network errors=0\nphone-360: routes=10, max document width=360/360px, browser/network errors=0\nphone-390: routes=10, max document width=390/390px, browser/network errors=0\nphone-430: routes=10, max document width=430/430px, browser/network errors=0\nsmall-mobile-520: routes=10, max document width=520/520px, browser/network errors=0\nzoom-200-css-640: routes=10, max document width=640/640px, browser/network errors=0\ntablet-720: routes=10, max document width=720/720px, browser/network errors=0\ntablet-768: routes=10, max document width=768/768px, browser/network errors=0\ntablet-950: routes=10, max document width=950/950px, browser/network errors=0\nlaptop-1024: routes=10, max document width=1024/1024px, browser/network errors=0\nlaptop-1280: routes=10, max document width=1280/1280px, browser/network errors=0\ndesktop-1440: routes=10, max document width=1440/1440px, browser/network errors=0\ndesktop-1920: routes=10, max document width=1920/1920px, browser/network errors=0\nphone-landscape: routes=10, max document width=844/844px, browser/network errors=0\ntablet-landscape: routes=10, max document width=1180/1180px, browser/network errors=0\nPASS: rendered viewports=15, routes=150, axe violations=0, browser/network errors=0; report=data/reports/portal_browser_visual_qa.json"
+    },
+    {
+      "name": "PDF validity and rendering audit (optional PyMuPDF)",
+      "command": "python3 tools/audit_pdfs.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable. PyMuPDF 1.28.2; PDFs=55; pages rendered=2029/2029; repaired=0; hashes unchanged=True.",
+      "output_tail": "PASS: PDFs=55, pages=2029, rendered=2029, repaired=0, failures=0, unchanged=True; report=data/reports/portal_pdf_rendering_qa.json"
+    },
+    {
+      "name": "Whitespace/conflict check",
+      "command": "bash -lc 'git diff --check && git diff --cached --check && python3 tools/check_whitespace.py'",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Tracked diffs and changed/untracked text files are checked; preserved archive bytes are excluded.",
+      "output_tail": "PASS: changed text files contain no trailing whitespace (65 paths inspected; archive originals excluded)."
+    }
+  ],
+  "browser_visual_qa": "Headless Chromium route/viewport checks, navigation-back flows, mobile menu, keyboard skip-link, 44px controls and axe checks; exit 77 means browser packages are unavailable. Chromium 153.0.8010.0 (headless); viewports=15; rendered routes=150; navigation flows=10; axe violations=0.",
+  "pdf_rendering": "Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable. PyMuPDF 1.28.2; PDFs=55; pages rendered=2029/2029; repaired=0; hashes unchanged=True.",
+  "deployment": "NOT_PART_OF_LOCAL_QA_RUN: checks ran on the feature branch; this report does not include a deployment or post-deployment smoke test."
+}

@@ -47,8 +47,10 @@ const state = {
   toastTimer: null,
 };
 
+const SITE_ROOT = new URL("../../", import.meta.url);
 const $ = (id) => document.getElementById(id);
 const clone = (value) => JSON.parse(JSON.stringify(value));
+const resolveSitePath = (path) => new URL(path, SITE_ROOT).href;
 
 function element(tag, className = "", text = null) {
   const node = document.createElement(tag);
@@ -98,7 +100,7 @@ function showToast(message) {
 }
 
 async function fetchJSON(path) {
-  const response = await fetch(path, { cache: "no-cache" });
+  const response = await fetch(resolveSitePath(path), { cache: "no-cache" });
   if (!response.ok) throw new Error(`Request failed (${response.status}) for ${path}`);
   return response.json();
 }
@@ -244,11 +246,12 @@ function buildLibrary() {
     const books = cnBooks.filter((book) => book.topic_id === topic.id);
     for (const book of books) {
       const anchor = element("a", "library-link");
-      anchor.href = book.href;
+      anchor.href = resolveSitePath(book.href);
       anchor.textContent = book.label;
       if (book.opens_in_new_tab) {
         anchor.target = "_blank";
         anchor.rel = "noopener noreferrer";
+        anchor.append(document.createTextNode(" (opens in new tab)"));
       }
       const note = book.note || "Repository material.";
       const small = element("small", "", `${book.status}: ${note}`);
@@ -952,7 +955,7 @@ function renderSourceRegister(search = "") {
           if (normalized.origin === window.location.origin) href = normalized.href;
         }
         if (!href) continue;
-        const anchor = element("a", "", link.external ? `Open external source · ${link.label}` : `Open local file · ${link.label}`);
+        const anchor = element("a", "", link.external ? `Open external source · ${link.label} (opens in new tab)` : `Open local file · ${link.label} (opens in new tab)`);
         anchor.href = href;
         anchor.target = "_blank";
         anchor.rel = "noopener noreferrer";
@@ -990,7 +993,7 @@ async function openSourceDialog(sourceId) {
           if (normalized.origin === window.location.origin) href = normalized.href;
         }
         if (!href) continue;
-        const anchor = element("a", "", `Open ${link.external ? "external" : "local"} reference · ${link.label}`);
+        const anchor = element("a", "", `Open ${link.external ? "external" : "local"} reference · ${link.label} (opens in new tab)`);
         anchor.href = href;
         anchor.target = "_blank";
         anchor.rel = "noopener noreferrer";

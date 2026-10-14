@@ -14,7 +14,7 @@ import sys
 from datetime import datetime, timezone
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-REPORT = ROOT / "data/reports/pdf_rendering_qa.json"
+REPORT = ROOT / "data/reports/portal_pdf_rendering_qa.json"
 PREVIEW_DIR = ROOT / ".arena/pdf-qa/previews"
 OPTIONAL_PACKAGES = ROOT / ".arena/pdf-qa/packages"
 if OPTIONAL_PACKAGES.is_dir():

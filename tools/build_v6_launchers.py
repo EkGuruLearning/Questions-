@@ -21,8 +21,10 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for topic_id, name in TOPICS.items():
         number = int(topic_id[1:])
-        target = f"../../../index.html?subject=cn%26topic={topic_id}%26mode=practice"
-        # Build the query with JS instead of HTML-escaping nested URL delimiters.
+        # Each versioned route is a same-tab launcher into the shared practice app.
+        target = f"../../../practice/index.html?subject=cn&topic={topic_id}&mode=practice#practice"
+        # Build the query with JS as well, so the fallback and redirect stay in sync.
+        fallback = html.escape(target, quote=True)
         document = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -48,13 +50,13 @@ def main():
   <main>
     <div class="brand">EkGuru Learning</div>
     <h1>Topic {number}: {html.escape(name)}</h1>
-    <p>This versioned link opens the shared, source-labelled Computer Networks practice portal. It does not use the older standalone quiz snapshot.</p>
+    <p>This versioned link opens the shared, source-labelled Computer Network practice portal in this tab. It does not use the older standalone quiz snapshot.</p>
     <p class="notice" role="status">Opening the shared portal… If it does not open automatically, use the button below.</p>
-    <a class="fallback" id="openPortal" href="../../../index.html">Open Topic {number} practice</a>
+    <a class="fallback" id="openPortal" href="{fallback}">Open Topic {number} practice</a>
   </main>
   <script>
     (function () {{
-      var target = new URL("../../../index.html", window.location.href);
+      var target = new URL("../../../practice/index.html", window.location.href);
       target.searchParams.set("subject", "cn");
       target.searchParams.set("topic", "{topic_id}");
       target.searchParams.set("mode", "practice");

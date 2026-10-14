@@ -37,7 +37,7 @@ def preserve_original(page: pathlib.Path) -> pathlib.Path:
 
 
 def redirect_document(number: int, topic_id: str) -> str:
-    fallback = f"../../index.html?subject=cn&amp;topic={topic_id}&amp;mode=practice#practice"
+    fallback = f"../../practice/index.html?subject=cn&amp;topic={topic_id}&amp;mode=practice#practice"
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -67,7 +67,7 @@ def redirect_document(number: int, topic_id: str) -> str:
   </main>
   <script>
     (function () {{
-      var target = new URL("../../index.html", window.location.href);
+      var target = new URL("../../practice/index.html", window.location.href);
       target.searchParams.set("subject", "cn");
       target.searchParams.set("topic", "{topic_id}");
       target.searchParams.set("mode", "practice");

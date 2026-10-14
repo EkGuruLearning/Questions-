@@ -1,0 +1,1888 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-14T12:54:55+00:00",
+  "status": "PASS",
+  "tool": "PyMuPDF 1.28.2",
+  "scope": "Git-tracked PDFs; page-tree load and raster render of every page; first, middle and last page previews per file.",
+  "rendering": "Every page rendered to an in-memory RGB pixmap (max 1200 px dimension for page samples; 0.45 scale for others). This checks parsing/renderability, not document content, answer correctness, print quality, or archival PDF/A conformance.",
+  "tracked_pdf_count": 55,
+  "total_source_bytes": 170152508,
+  "total_pages": 2029,
+  "total_pages_rendered": 2029,
+  "all_source_hashes_unchanged": true,
+  "mupdf_repaired_files": 0,
+  "files_with_warnings": 0,
+  "failed_files": 0,
+  "files": [
+    {
+      "path": "Computer Network/BCI Subject Test-8.pdf",
+      "size_bytes": 637595,
+      "sha256_before": "bfa8c9e077ef0841dbd6e59cff1a64229290e5ed01d3b4cd8ca169f740a1e612",
+      "page_count": 6,
+      "pages_rendered": 6,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "bfa8c9e077ef0841dbd6e59cff1a64229290e5ed01d3b4cd8ca169f740a1e612",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/BCI Subject Test-9.pdf",
+      "size_bytes": 484209,
+      "sha256_before": "11a190a856946c7c681a89117a2d2dcc71711a4d7e1cacd47acb57059f149899",
+      "page_count": 7,
+      "pages_rendered": 7,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 7,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "11a190a856946c7c681a89117a2d2dcc71711a4d7e1cacd47acb57059f149899",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/BCI_SCI Subject Test-01 (CN and Security).pdf",
+      "size_bytes": 289359,
+      "sha256_before": "efa35866b00ae457e7a793a1f384f243b4e7d5e8fbf29ed0497561b7173856f3",
+      "page_count": 6,
+      "pages_rendered": 6,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "efa35866b00ae457e7a793a1f384f243b4e7d5e8fbf29ed0497561b7173856f3",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/BCI_SCI Subject Test-7.pdf",
+      "size_bytes": 314041,
+      "sha256_before": "be17d1ab44bdb721952f45d63defa327b80468b3cfb398a0d1aca3aeac7f329d",
+      "page_count": 5,
+      "pages_rendered": 5,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 3,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 5,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "be17d1ab44bdb721952f45d63defa327b80468b3cfb398a0d1aca3aeac7f329d",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test  6.pdf",
+      "size_bytes": 621012,
+      "sha256_before": "af028b4d58c4f66101e7b16cbd7bf52a71c0e987f0cb517bb3dc7c2b965b7c78",
+      "page_count": 4,
+      "pages_rendered": 4,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 3,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "af028b4d58c4f66101e7b16cbd7bf52a71c0e987f0cb517bb3dc7c2b965b7c78",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test 5.pdf",
+      "size_bytes": 1082443,
+      "sha256_before": "065c0aef9eb98a16eef4b3f04e77a4a9353c311f88f86973c85dec124c663991",
+      "page_count": 4,
+      "pages_rendered": 4,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 3,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "065c0aef9eb98a16eef4b3f04e77a4a9353c311f88f86973c85dec124c663991",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test-01.pdf",
+      "size_bytes": 834460,
+      "sha256_before": "fb804630d9e68a79af6972589b1199f4e14e881bf6799ca70abbc65338dc932f",
+      "page_count": 6,
+      "pages_rendered": 6,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "fb804630d9e68a79af6972589b1199f4e14e881bf6799ca70abbc65338dc932f",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test-02.pdf",
+      "size_bytes": 876893,
+      "sha256_before": "1c1f6241e68baf8018366afcf0ce9bc80ca347a8e2b1ed594774902c5b1e811a",
+      "page_count": 6,
+      "pages_rendered": 6,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "1c1f6241e68baf8018366afcf0ce9bc80ca347a8e2b1ed594774902c5b1e811a",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test-03.pdf",
+      "size_bytes": 1107418,
+      "sha256_before": "59c9a417c5b580dbc8edd9bf1602cf06eb3102b71ef0261e3d78e2ff9b6072b5",
+      "page_count": 7,
+      "pages_rendered": 7,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 7,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "59c9a417c5b580dbc8edd9bf1602cf06eb3102b71ef0261e3d78e2ff9b6072b5",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/CN Topic Test-04.pdf",
+      "size_bytes": 1044956,
+      "sha256_before": "ed9a46947afe1cdd2b6d2b36a5eade6ae090e5be9cf79bf124b14217bc53400d",
+      "page_count": 6,
+      "pages_rendered": 6,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 4,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "ed9a46947afe1cdd2b6d2b36a5eade6ae090e5be9cf79bf124b14217bc53400d",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Past Papers/Reference Books/Forouzan - Data Communications and Networking with TCP-IP Protocol Suite.pdf",
+      "size_bytes": 33719680,
+      "sha256_before": "fec3e7c7d583018633cbba69510cdb9bba01622f4eed6ef894f571b909c59f25",
+      "page_count": 861,
+      "pages_rendered": 861,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 330,
+          "render_height_px": 408,
+          "scale": 1.0
+        },
+        {
+          "page_number": 431,
+          "render_width_px": 531,
+          "render_height_px": 655,
+          "scale": 1.0
+        },
+        {
+          "page_number": 861,
+          "render_width_px": 531,
+          "render_height_px": 655,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "fec3e7c7d583018633cbba69510cdb9bba01622f4eed6ef894f571b909c59f25",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/ANSWER KEY - Added Questions (197) (Verification).pdf",
+      "size_bytes": 3748424,
+      "sha256_before": "5f1491631e1b1918ab37b3c58ce587756fc3b839c3b46f38b6e15c10cbc01a72",
+      "page_count": 60,
+      "pages_rendered": 60,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 31,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 60,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "5f1491631e1b1918ab37b3c58ce587756fc3b839c3b46f38b6e15c10cbc01a72",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 1 - Practice Questions - 375Q (Test Booklet).pdf",
+      "size_bytes": 3347631,
+      "sha256_before": "077ffe7cf36f7a045010381c2c7d915fa36f74f6dee5284084c573e7d736def5",
+      "page_count": 32,
+      "pages_rendered": 32,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 17,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 32,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "077ffe7cf36f7a045010381c2c7d915fa36f74f6dee5284084c573e7d736def5",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 2 - Practice Questions - 144Q (Test Booklet).pdf",
+      "size_bytes": 2594124,
+      "sha256_before": "3e4a011534980930cd2fbf77bc8c6fc689ab9ef54353ce70f63f53f57cd3a4fd",
+      "page_count": 13,
+      "pages_rendered": 13,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 7,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 13,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "3e4a011534980930cd2fbf77bc8c6fc689ab9ef54353ce70f63f53f57cd3a4fd",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 3 - Practice Questions - 231Q (Test Booklet).pdf",
+      "size_bytes": 3088799,
+      "sha256_before": "19c29d40b4a3bb731282af199fa9ebb54b2c60aa06294d490260a6c5aaaebdca",
+      "page_count": 19,
+      "pages_rendered": 19,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 10,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 19,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "19c29d40b4a3bb731282af199fa9ebb54b2c60aa06294d490260a6c5aaaebdca",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 4 - Practice Questions - 99Q (Test Booklet).pdf",
+      "size_bytes": 2765285,
+      "sha256_before": "a0afe28306dbe34fd2deda32a18515e0f6aebbfa1107a0a04ebd53a5413119d2",
+      "page_count": 9,
+      "pages_rendered": 9,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 5,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 9,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "a0afe28306dbe34fd2deda32a18515e0f6aebbfa1107a0a04ebd53a5413119d2",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 5 - Practice Questions - 174Q (Test Booklet).pdf",
+      "size_bytes": 2639451,
+      "sha256_before": "a2f8af78389a99abec9e7f234b80b15ddb64376f88992a54a7a16b86b4862735",
+      "page_count": 14,
+      "pages_rendered": 14,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 8,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 14,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "a2f8af78389a99abec9e7f234b80b15ddb64376f88992a54a7a16b86b4862735",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 6 - Practice Questions - 387Q (Test Booklet).pdf",
+      "size_bytes": 3585928,
+      "sha256_before": "01b37d998e315b1acce8182a71d452c69cbc50a91924d23ed8a186c1fb56be73",
+      "page_count": 34,
+      "pages_rendered": 34,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 18,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 34,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "01b37d998e315b1acce8182a71d452c69cbc50a91924d23ed8a186c1fb56be73",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Practice/Topic 7 - Practice Questions - 146Q (Test Booklet).pdf",
+      "size_bytes": 2874933,
+      "sha256_before": "41ec79fccedbf20a9698ba6fc4987b96d496644e5d114417b901768075b9003c",
+      "page_count": 13,
+      "pages_rendered": 13,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 7,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 13,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "41ec79fccedbf20a9698ba6fc4987b96d496644e5d114417b901768075b9003c",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Random Test- Rajasthan PYQ.pdf",
+      "size_bytes": 15969499,
+      "sha256_before": "37fdbae3129707bc6cdbb59be1e56ea84b284b4ad8fd769c003e0492389c9846",
+      "page_count": 30,
+      "pages_rendered": 30,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 16,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 30,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "37fdbae3129707bc6cdbb59be1e56ea84b284b4ad8fd769c003e0492389c9846",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Subject Test Solution -1 (CN & Security) Part-2.pdf",
+      "size_bytes": 9966531,
+      "sha256_before": "7cc0b05bd479e73adfd9c8f97956886e96c015b83e71eae512432fcb91f27147",
+      "page_count": 25,
+      "pages_rendered": 25,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 13,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 25,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "7cc0b05bd479e73adfd9c8f97956886e96c015b83e71eae512432fcb91f27147",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Subject Test Solution -1 (CN & Security).pdf",
+      "size_bytes": 12875930,
+      "sha256_before": "27a911f10c2a6d5573a54217548cd4ed03a1354708a19816824910513026355b",
+      "page_count": 25,
+      "pages_rendered": 25,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 13,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 25,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "27a911f10c2a6d5573a54217548cd4ed03a1354708a19816824910513026355b",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/The Complete Computer Network - Theory + 631 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 8111681,
+      "sha256_before": "debf4af0380e02dd7b42d8ce02671e4f1913f3e7c73db90997d7b55c67cd1e57",
+      "page_count": 216,
+      "pages_rendered": 216,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 109,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 216,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "debf4af0380e02dd7b42d8ce02671e4f1913f3e7c73db90997d7b55c67cd1e57",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 1 - Introduction of DC - 123 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 3853434,
+      "sha256_before": "86a4f1799f6d8c51327f02e609753fb7916180d8ac7508fca08526607dc64545",
+      "page_count": 45,
+      "pages_rendered": 45,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 23,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 45,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "86a4f1799f6d8c51327f02e609753fb7916180d8ac7508fca08526607dc64545",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 2 - Network Models OSI TCP IP - 82 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 3181973,
+      "sha256_before": "1de929f008217ca852be64407dff7a6ae790bdb4468145492ac0af8eb7b643dc",
+      "page_count": 27,
+      "pages_rendered": 27,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 14,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 27,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "1de929f008217ca852be64407dff7a6ae790bdb4468145492ac0af8eb7b643dc",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 3 - Addressing MAC IPv4 IPv6 Port DNS - 92 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 3332622,
+      "sha256_before": "4a8c2ed777110da90f46fc54bd920576596901651b3dad700bede84be5148c73",
+      "page_count": 32,
+      "pages_rendered": 32,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 17,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 32,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "4a8c2ed777110da90f46fc54bd920576596901651b3dad700bede84be5148c73",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 4 - Networking Devices - 38 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 2900719,
+      "sha256_before": "7b4e41eb0b644110406d1fe002946c55b182de40fab351cf6f5f293e2d394079",
+      "page_count": 17,
+      "pages_rendered": 17,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 9,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 17,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "7b4e41eb0b644110406d1fe002946c55b182de40fab351cf6f5f293e2d394079",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 5 - Transmission Medium - 47 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 2965242,
+      "sha256_before": "5e9c919ceaedfa5f8fdd32c6a844f7df534ae5567a9cac50972eb5cef811aee5",
+      "page_count": 19,
+      "pages_rendered": 19,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 10,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 19,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "5e9c919ceaedfa5f8fdd32c6a844f7df534ae5567a9cac50972eb5cef811aee5",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 6 - OSI Layers in Detail - 192 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 4197851,
+      "sha256_before": "9fca3cf1398cba26209f42c75a6773225b732f5d1e9a7033c0852e6fb03349ca",
+      "page_count": 59,
+      "pages_rendered": 59,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 30,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 59,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "9fca3cf1398cba26209f42c75a6773225b732f5d1e9a7033c0852e6fb03349ca",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Topic 7 - Network Security - 53 MCQs (Answers + Nukte).pdf",
+      "size_bytes": 3385638,
+      "sha256_before": "40dfc866804985e598db3b59d131882a2fb83d3761acd6c0b0efcfc3aba24eed",
+      "page_count": 21,
+      "pages_rendered": 21,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 21,
+          "render_width_px": 595,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "40dfc866804985e598db3b59d131882a2fb83d3761acd6c0b0efcfc3aba24eed",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Unit Test -2 Solutions.pdf",
+      "size_bytes": 17794476,
+      "sha256_before": "a960fe03741eeb63dd97ca9b2c6d1186362abb416693fc78b466abcb074919d6",
+      "page_count": 54,
+      "pages_rendered": 54,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 28,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 54,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "a960fe03741eeb63dd97ca9b2c6d1186362abb416693fc78b466abcb074919d6",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/Unit Test-4 Solution.pdf",
+      "size_bytes": 13653322,
+      "sha256_before": "c0af04044aa7de8a3330ce544470beede8491511832f0014cfa6d74ff7cbf1ce",
+      "page_count": 52,
+      "pages_rendered": 52,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 27,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        },
+        {
+          "page_number": 52,
+          "render_width_px": 1200,
+          "render_height_px": 675,
+          "scale": 0.9375
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "c0af04044aa7de8a3330ce544470beede8491511832f0014cfa6d74ff7cbf1ce",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/Computer-Network-MCQ.pdf",
+      "size_bytes": 184618,
+      "sha256_before": "7dce315ab77ac43895fec7611b54eeed48152b50863e60f11539d70646713617",
+      "page_count": 14,
+      "pages_rendered": 14,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 8,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 14,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "7dce315ab77ac43895fec7611b54eeed48152b50863e60f11539d70646713617",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/DCN_MCQ-Ashwini-.pdf",
+      "size_bytes": 379013,
+      "sha256_before": "274a6d60983dbc665fbc63ecba16a3f5a567225e0b6ac943128b86bdaab6908a",
+      "page_count": 46,
+      "pages_rendered": 46,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 24,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 46,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "274a6d60983dbc665fbc63ecba16a3f5a567225e0b6ac943128b86bdaab6908a",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 10].pdf",
+      "size_bytes": 40568,
+      "sha256_before": "6506667a8453c7e57ed57fce19e3c0d80d98638e8b31aaa66da6dfb875886dc3",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "6506667a8453c7e57ed57fce19e3c0d80d98638e8b31aaa66da6dfb875886dc3",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 11].pdf",
+      "size_bytes": 41260,
+      "sha256_before": "2a392b84cbaac9263df1d6f40d917e2f708c85f2f48fa450b6c89da49b3218d6",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "2a392b84cbaac9263df1d6f40d917e2f708c85f2f48fa450b6c89da49b3218d6",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 12].pdf",
+      "size_bytes": 43511,
+      "sha256_before": "fc5e78cba36e4d9ef836a720347f962d74460024c9909a5f16192c0866ad25d9",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "fc5e78cba36e4d9ef836a720347f962d74460024c9909a5f16192c0866ad25d9",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 13].pdf",
+      "size_bytes": 40512,
+      "sha256_before": "9a7a5bbb532eb189d47d050727585a2f2cfdf389503a69bae499b114c9eaa5e3",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "9a7a5bbb532eb189d47d050727585a2f2cfdf389503a69bae499b114c9eaa5e3",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 14].pdf",
+      "size_bytes": 40228,
+      "sha256_before": "e38608193b50e5f563f519f42c83f5ee8805563fb8a4571fa64abf4d058eb25f",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "e38608193b50e5f563f519f42c83f5ee8805563fb8a4571fa64abf4d058eb25f",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 15].pdf",
+      "size_bytes": 41580,
+      "sha256_before": "a9acc499ef717fbea3ecf5d00995556a7f0f2fe4d241379c6980b2c89f5f6bd1",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "a9acc499ef717fbea3ecf5d00995556a7f0f2fe4d241379c6980b2c89f5f6bd1",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 16].pdf",
+      "size_bytes": 46824,
+      "sha256_before": "b88832433a6f69d6e9a0cc807f9e65b299bdfe70d70a33f62c4518c8fb0d4ca1",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "b88832433a6f69d6e9a0cc807f9e65b299bdfe70d70a33f62c4518c8fb0d4ca1",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 17].pdf",
+      "size_bytes": 49264,
+      "sha256_before": "3e5643b6cacd03b61468086912537dc204280c0614109d785449e79bf6de0b11",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "3e5643b6cacd03b61468086912537dc204280c0614109d785449e79bf6de0b11",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 18].pdf",
+      "size_bytes": 56264,
+      "sha256_before": "b147449dafb966cc0bbe38b817755d919ca805f108fefebae585345e94ddc30f",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "b147449dafb966cc0bbe38b817755d919ca805f108fefebae585345e94ddc30f",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 19].pdf",
+      "size_bytes": 51251,
+      "sha256_before": "54f19b7297ee07d3733393081629eaa662dc69bac5f82ac7f0ed0760c093d714",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "54f19b7297ee07d3733393081629eaa662dc69bac5f82ac7f0ed0760c093d714",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 1].pdf",
+      "size_bytes": 45716,
+      "sha256_before": "5abb88cd2307c5e9d1509abe6e2aff86008edf46471ab1f3574daa415f7a6cb9",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "5abb88cd2307c5e9d1509abe6e2aff86008edf46471ab1f3574daa415f7a6cb9",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 20].pdf",
+      "size_bytes": 56174,
+      "sha256_before": "8d874429aecf17e025a8e356bfd052510b42bc047e8515e326b76aceb07d4120",
+      "page_count": 9,
+      "pages_rendered": 9,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 5,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 9,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "8d874429aecf17e025a8e356bfd052510b42bc047e8515e326b76aceb07d4120",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 2].pdf",
+      "size_bytes": 42956,
+      "sha256_before": "de99ce9345477452d8d89d3a3c1418e8f159b6094d7e019e4a4067c6930d3b77",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "de99ce9345477452d8d89d3a3c1418e8f159b6094d7e019e4a4067c6930d3b77",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 3].pdf",
+      "size_bytes": 43466,
+      "sha256_before": "3332a23162f79f2b69c836c474a75bbebc6246ae6a756fb87200271d0c81ec35",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "3332a23162f79f2b69c836c474a75bbebc6246ae6a756fb87200271d0c81ec35",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 4].pdf",
+      "size_bytes": 43520,
+      "sha256_before": "2b5af0277f4efc0f641742c2671f6338da80f74a4b37ee024e3abda5b754975e",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "2b5af0277f4efc0f641742c2671f6338da80f74a4b37ee024e3abda5b754975e",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 5].pdf",
+      "size_bytes": 45131,
+      "sha256_before": "6a7be49bfb96d50c1e0224ee03de28434620ad1cd25a571971bda49a8d9f67eb",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "6a7be49bfb96d50c1e0224ee03de28434620ad1cd25a571971bda49a8d9f67eb",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 6].pdf",
+      "size_bytes": 43871,
+      "sha256_before": "f3d1f25534acf286784ccc464a4822a0f16d18ad1c91efe23bf2f3a664d6d573",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "f3d1f25534acf286784ccc464a4822a0f16d18ad1c91efe23bf2f3a664d6d573",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 7].pdf",
+      "size_bytes": 41580,
+      "sha256_before": "c62e814ae1c4fa0748fef78af910ef596b8096a14137eabaf538187917a1285b",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "c62e814ae1c4fa0748fef78af910ef596b8096a14137eabaf538187917a1285b",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 8].pdf",
+      "size_bytes": 40195,
+      "sha256_before": "2ffeeb543d056094a786a7274b108da43c4a4fdc53bb8065506e4ef5f91943eb",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "2ffeeb543d056094a786a7274b108da43c4a4fdc53bb8065506e4ef5f91943eb",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/computer-networks [set 9].pdf",
+      "size_bytes": 40345,
+      "sha256_before": "4621aba107a55350fce3e241a6178164402b8e8612159d3aed1c72b7ade0e68e",
+      "page_count": 11,
+      "pages_rendered": 11,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 6,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        },
+        {
+          "page_number": 11,
+          "render_width_px": 596,
+          "render_height_px": 842,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "4621aba107a55350fce3e241a6178164402b8e8612159d3aed1c72b7ade0e68e",
+      "sha256_unchanged": true
+    },
+    {
+      "path": "Computer Network/new/networkmcq.pdf",
+      "size_bytes": 849102,
+      "sha256_before": "3ffaa05388508d4a24eacf6d93222af4ea8829fd35de80d5b0598c30009eb17f",
+      "page_count": 17,
+      "pages_rendered": 17,
+      "samples": [
+        {
+          "page_number": 1,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 9,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        },
+        {
+          "page_number": 17,
+          "render_width_px": 612,
+          "render_height_px": 792,
+          "scale": 1.0
+        }
+      ],
+      "repaired_by_mupdf": false,
+      "warnings": [],
+      "errors": [],
+      "status": "PASS",
+      "size_unchanged": true,
+      "sha256_after": "3ffaa05388508d4a24eacf6d93222af4ea8829fd35de80d5b0598c30009eb17f",
+      "sha256_unchanged": true
+    }
+  ]
+}

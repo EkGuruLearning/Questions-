@@ -35,7 +35,7 @@ def main():
         original_sha = hashlib.sha256(original_path.read_bytes()).hexdigest()
         current_redirect = "legacy CBT snapshot has been retired" in current and "window.location.replace" in current
         fallback_target = f"topic=T{number:02d}"
-        if not current_redirect or fallback_target not in current:
+        if not current_redirect or fallback_target not in current or "../../practice/index.html" not in current:
             raise SystemExit(f"Old public path does not redirect to its topic: {redirect_path}")
         source_by_type = collections.Counter(q.get("stype", "unknown") for q in questions)
         old_official += source_by_type.get("verified_official_pyq", 0)
