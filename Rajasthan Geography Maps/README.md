@@ -103,10 +103,43 @@ involves opening an image editor.**
 | Purpose | CRS |
 |---|---|
 | Master storage | EPSG:4326 (WGS 84) — retained for traceability |
-| Map rendering | `+proj=lcc +lat_1=25 +lat_2=30 +lat_0=27 +lon_0=71 +datum=WGS84 +units=m` — conformal, standard parallels bracket the 23 N–31 N mapped band |
+| Map rendering | `+proj=lcc +lat_1=24.4333333 +lat_2=29.7666667 +lat_0=27.05 +lon_0=73.4 +datum=WGS84 +units=m` — conformal; parallels placed by the 1/6 rule on the mapped band (see §4.1) |
 | Locator inset | EPSG:32644 |
 | Lengths | geodesic on the WGS 84 ellipsoid (`pyproj.Geod`) — free of projection scale error |
 | Areas | geodesic (`Geod.geometry_area_perimeter`) |
+
+### 4.1 Why these standard parallels — the "not one inch out" requirement
+
+The requirement was that no point on the printed sheet should be measurably
+displaced. Lambert Conformal Conic is *conformal*: it cannot be made exact
+everywhere at once, but the residual can be driven down by placing the two
+standard parallels at the one-sixth and five-sixths points of the mapped
+latitude band:
+
+```
+mapped band (sheet frame)      = 23.10 N  to  31.10 N        (8.00 deg)
+lat_1 = 23.10 + 8.00/6         = 24.433333 N
+lat_2 = 31.10 - 8.00/6         = 29.766667 N
+lat_0 = band midpoint          = 27.05    N
+lon_0 = longitude of the frame centre = 73.4 E
+```
+
+Measured over a 0.5° lattice across the whole sheet (the projection's own
+scale factor against the geodesic scale factor):
+
+| Candidate parallels | Max scale error | Max error at 1:1 on paper |
+|---|---|---|
+| `25 / 30` (earlier edition) | 0.197 % | 0.050 mm per inch |
+| **`24.4333 / 29.7667` (current)** | **0.137 %** | **0.035 mm per inch** |
+
+Mean error across the sheet is 0.074 %. At the atlas's own nominal scale
+(~1:1 500 000) that is well under the width of the printed 0.25 mm line —
+i.e. the drawing error is smaller than the ink it is drawn with, and far
+below anything measurable with a ruler on an A1 sheet. This figure is
+printed on the sheet itself so the claim can be checked.
+
+All **lengths and areas** quoted anywhere in the project are computed
+geodesically on the WGS 84 ellipsoid and carry **no** projection error at all.
 
 **Adjacency method.** The Indian and Pakistani layers are independent sources,
 so `A.boundary ∩ B.boundary` undercounts badly. Instead, for each pair:
@@ -207,3 +240,36 @@ matter most:
 2. **The Pakistani snapshot is dated 2022-09-09.**
 3. **No human has looked at the printed sheet.** Open the A1 PDF at 100 % before
    printing.
+
+
+---
+
+## 9. Study edition — what is on the sheet and why
+
+The atlas is built to be *studied from*, not just looked at, so the sheet
+carries reference apparatus that a decorative map would leave off:
+
+| Element | Purpose |
+|---|---|
+| **1° graticule** with edge labels | lets a student read any district's latitude/longitude directly off the sheet |
+| **Panel A** — Rajasthan's 36 border-sharing neighbours, listed state by state | the core exam fact: *which* districts touch Rajasthan |
+| **Panel B** — the 4 international-border districts with their GIS-measured border lengths, plus the GIS-vs-published comparison | the contested numbers are shown side by side rather than hidden |
+| **Panel C** — all 41 districts grouped under the 7 divisions | divisional grouping is the standard way the syllabus is taught |
+| **Right-hand reference column** | India locator inset, 9-row legend, division colour swatches, north arrow, km scale bar, and the projection-accuracy note |
+| **Accuracy note** | states the maximum geometric error in mm-per-inch so the "no one-inch difference" claim is falsifiable |
+
+**Legibility.** District outlines are drawn at 0.45 pt in `#8E8778` — a
+deliberately darker, finer edge than the pale river-lake blue used before —
+so that small districts in the densely packed east (Bharatpur, Dholpur,
+Deeg, Karauli) still resolve as separate shapes at A1. Hindi district
+labels were raised to 9.5 pt (Rajasthan), 7.6 pt (neighbours) and
+6.0 pt (the rest), with the collision engine moving any label that would
+overlap another and drawing a leader line back to its district.
+
+**Recommended sheet for study:** A1 (or A2 at a push). A3 is supplied for
+handout use but its Rajasthan labels fall to ~4.8 pt, which is at the
+legibility floor.
+
+**Reproducing it.** Nothing above is hand-drawn into the PNG. Every element
+is generated from the master GeoPackage by `scripts/03_render.py`; editing
+the data and re-running the script regenerates the sheet.

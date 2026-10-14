@@ -33,12 +33,15 @@ from shapely.geometry import MultiPolygon
 from shapely.ops import unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from atlas_lib import PROCESSED, METADATA, ROOT, MAP_PROJ, WGS84  # noqa: E402
+from atlas_lib import (PROCESSED, METADATA, ROOT, MAP_PROJ, WGS84,  # noqa: E402
+                      MAX_SCALE_ERROR_PCT)
 from atlas_style import (  # noqa: E402
     PAGES, FRAME, BG, PAGE_BG, INTL_RED, INTER_YELLOW, DIST_EDGE,
     NEIGH_EDGE, TEXT_HI, LEADER, RAJASTHAN_DIVISIONS, DIVISION_ORDER,
     DIVISION_FILL, DIVISION_HI, NEIGHBOUR_STYLE, PROVINCE_HI,
-    CHECKLIST_NOT_TOUCHING, PK_SUFFIX,
+    CHECKLIST_NOT_TOUCHING, PK_SUFFIX, FS_RAJASTHAN, FS_TOUCHING,
+    FS_OTHER, FS_REGION, FS_PROVINCE, GRATICULE_STEP, GRATICULE_COLOR,
+    GRATICULE_LW, DIST_EDGE_STUDY, DIST_EDGE_LW, PANEL_COLS,
 )
 
 EXPORTS = ROOT / "exports"
@@ -128,6 +131,51 @@ def draw_line(ax, geom, **kw):
         elif g.geom_type == "MultiLineString":
             for l in g.geoms:
                 ax.plot(*l.xy, **kw)
+
+
+def draw_graticule(ax, sf):
+    """1-degree graticule, projected (so the curves are geometrically true),
+    with edge labels.  Lets the reader verify position and spot any
+    distortion, instead of having to trust the drawing."""
+    import numpy as np
+    from shapely.geometry import LineString
+    fx0, fy0, fx1, fy1 = FRAME
+    lons = np.arange(np.ceil(fx0), np.floor(fx1) + 1e-9, GRATICULE_STEP)
+    lats = np.arange(np.ceil(fy0), np.floor(fy1) + 1e-9, GRATICULE_STEP)
+    kw = dict(color=GRATICULE_COLOR, lw=GRATICULE_LW * sf, zorder=4,
+              solid_capstyle="butt")
+    for lo in lons:
+        ln = LineString([(lo, y) for y in
+                         np.linspace(fy0, fy1, 241)])
+        g = gpd.GeoSeries([ln], crs=WGS84).to_crs(MAP_PROJ).iloc[0]
+        ax.plot(*g.xy, **kw)
+        x, y = g.coords[0]
+        ax.text(x, y + 0.012 * (fy1 - fy0) * 111000, f"{lo:.0f}°E",
+                fontsize=5.2 * sf, color="#7C7568", ha="center", va="bottom",
+                zorder=6)
+    for la in lats:
+        ln = LineString([(x, la) for x in
+                         np.linspace(fx0, fx1, 241)])
+        g = gpd.GeoSeries([ln], crs=WGS84).to_crs(MAP_PROJ).iloc[0]
+        ax.plot(*g.xy, **kw)
+        x, y = g.coords[0]
+        ax.text(x + 0.010 * (fx1 - fx0) * 99000, y, f"{la:.0f}°N",
+                fontsize=5.2 * sf, color="#7C7568", ha="left", va="center",
+                zorder=6)
+
+
+def wrap_hi(text, width):
+    """Wrap Hindi text on spaces/commas without breaking words."""
+    out, cur = [], ""
+    for tok in text.replace(", ", " , ").split(" "):
+        if len(cur) + len(tok) + 1 > width and cur:
+            out.append(cur.strip())
+            cur = tok
+        else:
+            cur = (cur + " " + tok).strip()
+    if cur:
+        out.append(cur.strip())
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -232,7 +280,10 @@ def render(page="A1", dpi=200, preview=False):
     # ------------------------------------------------------------------
     fig = plt.figure(figsize=(Wmm / 25.4, Hmm / 25.4), dpi=dpi,
                      facecolor=PAGE_BG)
-    left, right, bottom, top = 0.010, 0.990, 0.022, 0.950
+    left, right, bottom, top = 0.008, 0.992, 0.250, 0.945
+    # right-hand reference column and bottom study strip are
+    # reserved, so the map box is narrower than the page.
+    right = 0.780
     axw, axh = right - left, top - bottom
     fr = gpd.GeoSeries([__import__("shapely").geometry.box(*FRAME)],
                        crs=WGS84).to_crs(MAP_PROJ).iloc[0]
@@ -268,8 +319,9 @@ def render(page="A1", dpi=200, preview=False):
     for div in DIVISION_ORDER:
         grp = raj[raj.division == div]
         if len(grp):
-            grp.plot(ax=ax, color=DIVISION_FILL[div], edgecolor=DIST_EDGE,
-                     linewidth=0.40 * sf, zorder=2)
+            grp.plot(ax=ax, color=DIVISION_FILL[div],
+                     edgecolor=DIST_EDGE_STUDY, linewidth=DIST_EDGE_LW * sf,
+                     zorder=2)
     for (c, s, d) in CHECKLIST_NOT_TOUCHING:
         row = gdf[(gdf.country == c) & (gdf.state_province == s)
                   & (gdf.district_en == d)]
@@ -302,7 +354,7 @@ def render(page="A1", dpi=200, preview=False):
             region_geoms[st] = u
     for st, u in region_geoms.items():
         p = label_point(u)
-        add_label(p.x, p.y, NEIGHBOUR_STYLE[st]["label"], 30 * sf, FP_HI_B,
+        add_label(p.x, p.y, NEIGHBOUR_STYLE[st]["label"], FS_REGION * sf, FP_HI_B,
                   "#2B2620", priority=-3, zorder=16)
 
     # (b) Pakistani province labels
@@ -312,13 +364,13 @@ def render(page="A1", dpi=200, preview=False):
         if not len(grp):
             continue
         p = label_point(unary_union(grp.geometry))
-        add_label(p.x, p.y, hi, 13 * sf, FP_HI_B, "#5A5348",
+        add_label(p.x, p.y, hi, FS_PROVINCE * sf, FP_HI_B, "#5A5348",
                   priority=-2, zorder=15)
 
     # (c) Rajasthan districts
     for _, row in raj.iterrows():
         p = label_point(row.geometry)
-        add_label(p.x, p.y, row.district_hi, 8.6 * sf, FP_HI_B, TEXT_HI,
+        add_label(p.x, p.y, row.district_hi, FS_RAJASTHAN * sf, FP_HI_B, TEXT_HI,
                   priority=0, zorder=12)
 
     # (d) neighbouring districts that genuinely touch, then the rest
@@ -329,13 +381,13 @@ def render(page="A1", dpi=200, preview=False):
         key = (row.country, row.state_province, row.district_en)
         if key in touching:
             p = label_point(row.geometry)
-            add_label(p.x, p.y, row.district_hi, 7.0 * sf, FP_HI, "#4B463E",
+            add_label(p.x, p.y, row.district_hi, FS_TOUCHING * sf, FP_HI, "#3F3A33",
                       priority=1, zorder=11)
     for _, row in others.iterrows():
         key = (row.country, row.state_province, row.district_en)
         if key not in touching:
             p = label_point(row.geometry)
-            add_label(p.x, p.y, row.district_hi, 5.6 * sf, FP_HI, "#6D675E",
+            add_label(p.x, p.y, row.district_hi, FS_OTHER * sf, FP_HI, "#6D675E",
                       priority=3, zorder=10)
 
     placed, dropped = place_labels(ax, cands, fig)
@@ -395,56 +447,16 @@ def render(page="A1", dpi=200, preview=False):
              ha="center", va="top", fontproperties=FP_HI,
              fontsize=8.6 * sf, color="#7A7367")
 
-    # ------------------------------------------------------------- legend
-    lax = fig.add_axes([0.012, 0.026, 0.176, 0.300], facecolor="#FFFFFF")
-    lax.set_xticks([])
-    lax.set_yticks([])
-    for s in lax.spines.values():
-        s.set_visible(True)
-        s.set_edgecolor("#C9C2B4")
-        s.set_linewidth(0.6)
-    lax.set_xlim(0, 1)
-    lax.set_ylim(0, 1)
-    rows = [
-        ("line", "अंतरराष्ट्रीय सीमा (भारत–पाकिस्तान)",
-         dict(color=INTL_RED, lw=2.8, solid_capstyle="round")),
-        ("line", "राजस्थान की अंतर्राज्यीय सीमा",
-         dict(color=INTER_YELLOW, lw=2.6, solid_capstyle="round")),
-        ("line", "राज्य / प्रांत सीमा", dict(color="#6E6A63", lw=0.9)),
-        ("line", "ज़िला सीमा (आंतरिक)", dict(color=DIST_EDGE, lw=0.5)),
-        ("patch", "राजस्थान के ज़िले (7 संभाग रंग)",
-         dict(facecolor=DIVISION_FILL["Jaipur"], edgecolor=DIST_EDGE, lw=0.4)),
-        ("patch", "पड़ोसी राज्यों के ज़िले",
-         dict(facecolor=NEIGHBOUR_STYLE["Haryana"]["fill"],
-              edgecolor=NEIGH_EDGE, lw=0.35)),
-        ("patch", "पाकिस्तान के ज़िले",
-         dict(facecolor=NEIGHBOUR_STYLE["Pakistan"]["fill"],
-              edgecolor=NEIGH_EDGE, lw=0.35)),
-        ("patch", "सूचीबद्ध, परंतु सीमा को न छूने वाले",
-         dict(facecolor="#FFFFFF", edgecolor=INTL_RED, hatch="////", lw=0.7)),
-    ]
-    y = 0.950
-    for kind, lab, kw in rows:
-        y -= 0.075
-        if kind == "line":
-            lax.plot([0.035, 0.185], [y, y], **kw)
-        else:
-            lax.add_patch(Rectangle((0.035, y - 0.024), 0.150, 0.048, **kw))
-        lax.text(0.225, y, lab, fontproperties=FP_HI, fontsize=7.6 * sf,
-                 va="center", color="#332F28")
-    y -= 0.070
-    lax.text(0.035, y, "राजस्थान के 7 संभाग:", fontproperties=FP_HI_B,
-             fontsize=7.4 * sf, va="center", color="#332F28")
-    for div in DIVISION_ORDER:
-        y -= 0.042
-        lax.add_patch(Rectangle((0.035, y - 0.014), 0.070, 0.028,
-                                facecolor=DIVISION_FILL[div],
-                                edgecolor=DIST_EDGE, lw=0.3))
-        lax.text(0.120, y, DIVISION_HI[div], fontproperties=FP_HI,
-                 fontsize=6.8 * sf, va="center", color="#332F28")
+    # ----------------------------------------------------------- graticule
+    draw_graticule(ax, sf)
 
-    # ------------------------------------------------------- locator inset
-    iax = fig.add_axes([0.800, 0.030, 0.185, 0.175], facecolor="#FBF7EE")
+    # ==================================================================
+    # RIGHT-HAND REFERENCE COLUMN
+    # ==================================================================
+    RX, RW = 0.788, 0.204
+
+    # ---- locator inset ------------------------------------------------
+    iax = fig.add_axes([RX, 0.790, RW, 0.155], facecolor="#FBF7EE")
     india = gpd.read_file(PROCESSED / "rajasthan_border_atlas.gpkg",
                           layer="india_locator_states").to_crs("EPSG:32644")
     india.plot(ax=iax, color="#EFEBE2", edgecolor="#C6BFB1", lw=0.30)
@@ -453,46 +465,243 @@ def render(page="A1", dpi=200, preview=False):
         hi.plot(ax=iax, color=INTL_RED, edgecolor="#8E1F1F", lw=0.5)
     iax.set_xticks([])
     iax.set_yticks([])
-    for s in iax.spines.values():
-        s.set_edgecolor("#C9C2B4")
-        s.set_linewidth(0.6)
-    iax.text(0.5, 1.03, "स्थान संकेत — भारत में राजस्थान",
+    for sp in iax.spines.values():
+        sp.set_edgecolor("#C9C2B4")
+        sp.set_linewidth(0.6)
+    iax.text(0.5, 1.06, "स्थान संकेत — भारत में राजस्थान",
              transform=iax.transAxes, fontproperties=FP_HI_B,
-             fontsize=7.4 * sf, ha="center", va="bottom", color="#332F28")
+             fontsize=8.0 * sf, ha="center", va="bottom", color="#332F28")
 
-    # ------------------------------------------------- north arrow + scale
-    nax = fig.add_axes([0.720, 0.030, 0.050, 0.070], facecolor="none")
+    # ---- legend -------------------------------------------------------
+    lax = fig.add_axes([RX, 0.360, RW, 0.420], facecolor="#FFFFFF")
+    lax.set_xticks([])
+    lax.set_yticks([])
+    for sp in lax.spines.values():
+        sp.set_visible(True)
+        sp.set_edgecolor("#C9C2B4")
+        sp.set_linewidth(0.6)
+    lax.set_xlim(0, 1)
+    lax.set_ylim(0, 1)
+    rows = [
+        ("line", "अंतरराष्ट्रीय सीमा\n(भारत–पाकिस्तान)",
+         dict(color=INTL_RED, lw=2.8, solid_capstyle="round"), 0.075),
+        ("line", "राजस्थान की अंतर्राज्यीय सीमा",
+         dict(color=INTER_YELLOW, lw=2.6, solid_capstyle="round"), 0.075),
+        ("line", "राज्य / प्रांत सीमा", dict(color="#6E6A63", lw=0.9), 0.050),
+        ("line", "ज़िला सीमा", dict(color=DIST_EDGE_STUDY, lw=0.5), 0.050),
+        ("line", "ग्रेटिक्यूल (1°)", dict(color=GRATICULE_COLOR, lw=0.45), 0.050),
+        ("patch", "राजस्थान के ज़िले\n(7 संभाग — रंग अलग)",
+         dict(facecolor=DIVISION_FILL["Jaipur"], edgecolor=DIST_EDGE_STUDY,
+              lw=0.4), 0.075),
+        ("patch", "पड़ोसी राज्यों के ज़िले",
+         dict(facecolor=NEIGHBOUR_STYLE["Haryana"]["fill"],
+              edgecolor=NEIGH_EDGE, lw=0.35), 0.050),
+        ("patch", "पाकिस्तान के ज़िले",
+         dict(facecolor=NEIGHBOUR_STYLE["Pakistan"]["fill"],
+              edgecolor=NEIGH_EDGE, lw=0.35), 0.050),
+        ("patch", "सूचीबद्ध, परंतु सीमा को\nन छूने वाले ज़िले",
+         dict(facecolor="#FFFFFF", edgecolor=INTL_RED, hatch="////",
+              lw=0.7), 0.075),
+    ]
+    y = 0.975
+    for kind, lab, kw, dy in rows:
+        y -= dy
+        if kind == "line":
+            lax.plot([0.035, 0.175], [y, y], **kw)
+        else:
+            lax.add_patch(Rectangle((0.035, y - 0.022), 0.140, 0.044, **kw))
+        lax.text(0.215, y, lab, fontproperties=FP_HI, fontsize=7.0 * sf,
+                 va="center", linespacing=1.25, color="#332F28")
+    y -= 0.062
+    lax.text(0.035, y, "राजस्थान के 7 संभाग:", fontproperties=FP_HI_B,
+             fontsize=7.2 * sf, va="center", color="#332F28")
+    for div in DIVISION_ORDER:
+        y -= 0.040
+        lax.add_patch(Rectangle((0.035, y - 0.013), 0.062, 0.026,
+                                facecolor=DIVISION_FILL[div],
+                                edgecolor=DIST_EDGE_STUDY, lw=0.3))
+        n_divd = int((raj.district_en.map(RAJASTHAN_DIVISIONS) == div).sum())
+        lax.text(0.115, y, f"{DIVISION_HI[div]} ({n_divd})",
+                 fontproperties=FP_HI, fontsize=6.6 * sf, va="center",
+                 color="#332F28")
+
+    # ---- north arrow + scale bar --------------------------------------
+    nax = fig.add_axes([RX, 0.255, RW, 0.095], facecolor="none")
     nax.set_xlim(0, 1)
     nax.set_ylim(0, 1)
     nax.axis("off")
-    nax.annotate("", xy=(0.5, 0.86), xytext=(0.5, 0.16),
-                 arrowprops=dict(arrowstyle="-|>", color="#332F28", lw=1.3))
-    nax.text(0.5, 0.02, "N", ha="center", va="bottom",
+    nax.annotate("", xy=(0.10, 0.86), xytext=(0.10, 0.16),
+                 arrowprops=dict(arrowstyle="-|>", color="#332F28", lw=1.4))
+    nax.text(0.10, 0.02, "N", ha="center", va="bottom",
              fontproperties=FP_HI_B, fontsize=9 * sf, color="#332F28")
-
-    target_km = 0.18 * (pw / 1000.0)
     skm = min([50, 100, 150, 200, 250, 300, 400, 500],
-              key=lambda v: abs(v - target_km))
-    sx = px0 + 0.048 * pw
-    sy = py0 + 0.048 * ph
-    ax.plot([sx, sx + skm * 1000], [sy, sy], color="#332F28",
-            lw=1.7 * sf, solid_capstyle="butt", zorder=17)
+              key=lambda v: abs(v - 0.18 * (pw / 1000.0)))
+    nax.plot([0.30, 0.95], [0.30, 0.30], color="#332F28", lw=1.7 * sf,
+             solid_capstyle="butt")
     for t in (0, 0.5, 1.0):
-        ax.plot([sx + t * skm * 1000] * 2, [sy, sy + 0.007 * ph],
-                color="#332F28", lw=1.1 * sf, zorder=17)
-    ax.text(sx, sy + 0.016 * ph, "0", ha="center", va="bottom",
-            fontsize=6.4 * sf, color="#332F28", zorder=17)
-    ax.text(sx + skm * 1000, sy + 0.016 * ph, f"{skm} कि.मी.", ha="center",
-            va="bottom", fontproperties=FP_HI, fontsize=7.2 * sf,
-            color="#332F28", zorder=17)
+        nax.plot([0.30 + t * 0.65] * 2, [0.30, 0.38], color="#332F28",
+                 lw=1.1 * sf)
+    nax.text(0.30, 0.44, "0", ha="center", va="bottom", fontsize=6.4 * sf,
+             color="#332F28")
+    nax.text(0.95, 0.44, f"{skm} कि.मी.", ha="center", va="bottom",
+             fontproperties=FP_HI, fontsize=7.2 * sf, color="#332F28")
 
-    # ------------------------------------------------------------- footnote
-    fig.text(0.012, 0.006,
+    # ---- accuracy note -------------------------------------------------
+    fig.text(RX, 0.228,
+             f"प्रक्षेप: लांबर्ट कन्फॉर्मल कोनिक, मानक समांतर "
+             f"24°26′N व 29°46′N\n"
+             f"शीट पर अधिकतम स्केल त्रुटि {MAX_SCALE_ERROR_PCT:.3f} % "
+             f"= 1 इंच पर {25.4*MAX_SCALE_ERROR_PCT/100:.3f} mm\n"
+             f"लंबाई/क्षेत्रफल: WGS 84 दीर्घवृत्त पर जियोडेसिक (बिना प्रक्षेप त्रुटि)",
+             ha="left", va="top", fontproperties=FP_HI,
+             fontsize=6.6 * sf, color="#5A5348", linespacing=1.5)
+
+    # ==================================================================
+    # BOTTOM STUDY STRIP — three panels
+    # ==================================================================
+    PY0, PH = 0.026, 0.211
+    PHmm = PH * Hmm
+    # line advance in axes-fraction, derived from the real text
+    # height (1.35 x font size) rather than a guessed fraction
+    def step(F, gap=0.55):
+        return (1.35 * F * 0.3528 + gap) / PHmm
+    OVERFLOW = []
+
+    # ---- panel A: districts of each neighbour that touch Rajasthan ----
+    axA = fig.add_axes([PANEL_COLS[0][0], PY0,
+                        PANEL_COLS[0][1] - PANEL_COLS[0][0], PH],
+                       facecolor="#FFFFFF")
+    for sp in axA.spines.values():
+        sp.set_edgecolor("#C9C2B4")
+        sp.set_linewidth(0.6)
+    axA.set_xticks([])
+    axA.set_yticks([])
+    axA.set_xlim(0, 1)
+    axA.set_ylim(0, 1)
+    axA.text(0.03, 0.955, "राजस्थान की सीमा से लगे ज़िले — पड़ोसी राज्य/देश",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             color="#1F1B16")
+    yy = 1.0 - step(9.0 * sf) * 1.25
+    for st in ["Pakistan", "Punjab", "Haryana", "Uttar Pradesh",
+               "Madhya Pradesh", "Gujarat"]:
+        sub = rel[rel.neighbour_state_province == st] \
+            if st == "Pakistan" else rel[(rel.neighbour_country == "India")
+                                         & (rel.neighbour_state_province == st)]
+        if not len(sub):
+            continue
+        grp = (sub.groupby("neighbour_district_en")["shared_border_km"].sum()
+               .sort_values(ascending=False))
+        his = []
+        for nm in grp.index:
+            m = names[(names.state_province == st) & (names.district_en == nm)]
+            if len(m):
+                his.append(m.district_hi.iloc[0])
+        label = (NEIGHBOUR_STYLE[st]["label"] if st != "Pakistan"
+                 else "पाकिस्तान")
+        head = f"● {label} — {len(grp)} ज़िले, {grp.sum():.0f} कि.मी."
+        axA.text(0.03, yy, head, fontproperties=FP_HI_B, fontsize=7.6 * sf,
+                 va="top", color="#3A352E")
+        yy -= step(7.6 * sf)
+        for ln in wrap_hi("    " + ", ".join(his), 58):
+            if yy < 0.01:
+                OVERFLOW.append(("A", st, ln))
+                break
+            axA.text(0.03, yy, ln, fontproperties=FP_HI, fontsize=6.8 * sf,
+                     va="top", color="#4A443B")
+            yy -= step(6.8 * sf)
+        yy -= step(6.8 * sf) * 0.35
+
+    # ---- panel B: the international border + length comparison --------
+    axB = fig.add_axes([PANEL_COLS[1][0], PY0,
+                        PANEL_COLS[1][1] - PANEL_COLS[1][0], PH],
+                       facecolor="#FFFFFF")
+    for sp in axB.spines.values():
+        sp.set_edgecolor("#C9C2B4")
+        sp.set_linewidth(0.6)
+    axB.set_xticks([])
+    axB.set_yticks([])
+    axB.set_xlim(0, 1)
+    axB.set_ylim(0, 1)
+    axB.text(0.03, 0.975, "अंतरराष्ट्रीय सीमा (पाकिस्तान) — राजस्थान के ज़िले",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             color="#1F1B16")
+    pkrel = rel[rel.neighbour_country == "Pakistan"]
+    yy = 1.0 - step(9.0 * sf) * 1.25
+    for nm, v in (pkrel.groupby("rajasthan_district_en")["shared_border_km"]
+                  .sum().sort_values(ascending=False).items()):
+        m = names[(names.state_province == "Rajasthan")
+                  & (names.district_en == nm)]
+        hn = m.district_hi.iloc[0] if len(m) else nm
+        if yy > 0.01:
+            axB.text(0.03, yy, f"● {hn}", fontproperties=FP_HI,
+                     fontsize=7.4 * sf, va="top", color="#3A352E")
+            axB.text(0.97, yy, f"{v:.0f} कि.मी.", fontproperties=FP_HI,
+                     fontsize=7.4 * sf, va="top", ha="right", color="#3A352E")
+        yy -= step(7.4 * sf)
+    yy -= step(7.4 * sf) * 0.8
+    for txt, fsz, col in [
+            ("सीमा लंबाई — GIS बनाम प्रकाशित", 7.6, "#8C2F1E"),
+            ("GIS    1,036 / 90 / 1,039 / 462 / 2,110 / 723 कि.मी.", 6.6, "#4A443B"),
+            ("पुस्तक 1,070 / 89 / 1,262 / 877 / 1,600 / 1,022 कि.मी.", 6.6, "#8C2F1E"),
+            ("(पाकिस्तान, पंजाब, हरियाणा, उ.प्र., म.प्र., गुजरात)", 6.0, "#7A7367"),
+            ("ज़िलों की गिनती प्रकाशित सूचियों से मेल खाती है;", 6.0, "#7A7367"),
+            ("लंबाई नहीं मिलती — विवरण UNRESOLVED में।", 6.0, "#7A7367")]:
+        if yy < 0.01:
+            OVERFLOW.append(("B", "lengths", txt))
+            break
+        axB.text(0.03, yy, txt, fontproperties=FP_HI, fontsize=fsz * sf,
+                 va="top", color=col)
+        yy -= step(fsz * sf)
+
+    # ---- panel C: 7 divisions and their districts ---------------------
+    axC = fig.add_axes([PANEL_COLS[2][0], PY0,
+                        PANEL_COLS[2][1] - PANEL_COLS[2][0], PH],
+                       facecolor="#FFFFFF")
+    for sp in axC.spines.values():
+        sp.set_edgecolor("#C9C2B4")
+        sp.set_linewidth(0.6)
+    axC.set_xticks([])
+    axC.set_yticks([])
+    axC.set_xlim(0, 1)
+    axC.set_ylim(0, 1)
+    axC.text(0.03, 0.975, "राजस्थान के 7 संभाग और उनके ज़िले (कुल 41)",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             color="#1F1B16")
+    yy = 1.0 - step(9.0 * sf) * 1.25
+    for div in DIVISION_ORDER:
+        ds = raj[raj.district_en.map(RAJASTHAN_DIVISIONS) == div]
+        his = []
+        for nm in sorted(ds.district_en):
+            m = names[(names.state_province == "Rajasthan")
+                      & (names.district_en == nm)]
+            if len(m):
+                his.append(m.district_hi.iloc[0])
+        axC.add_patch(Rectangle((0.03, yy - 0.030), 0.035, 0.030,
+                                facecolor=DIVISION_FILL[div],
+                                edgecolor=DIST_EDGE_STUDY, lw=0.3,
+                                transform=axC.transAxes))
+        axC.text(0.075, yy, f"{DIVISION_HI[div]} ({len(ds)})",
+                 fontproperties=FP_HI_B, fontsize=7.2 * sf, va="top",
+                 color="#3A352E")
+        yy -= step(7.2 * sf)
+        for ln in wrap_hi("    " + ", ".join(his), 56):
+            if yy < 0.01:
+                OVERFLOW.append(("C", div, ln))
+                break
+            axC.text(0.075, yy, ln, fontproperties=FP_HI, fontsize=6.4 * sf,
+                     va="top", color="#4A443B")
+            yy -= step(6.4 * sf)
+        yy -= step(6.4 * sf) * 0.30
+
+    # ---- footnote on the hatch ----------------------------------------
+    fig.text(0.008, 0.006,
              "* हैच किए गए ज़िले — डेरा ग़ाज़ी ख़ान, मुज़फ़्फ़रगढ़, राजनपुर — "
              "परीक्षा-सामग्री में अक्सर राजस्थान से लगे बताए जाते हैं, किन्तु "
-             "भौगोलिक ज्यामिति के अनुसार वे राजस्थान को नहीं छूते।",
+             "भौगोलिक ज्यामिति के अनुसार वे राजस्थान को नहीं छूते।  "
+             "ज्यामिति: Survey of India–व्युत्पन्न ज़िला सीमाएँ (भारत) · "
+             "WFP / OCHA COD-AB v01 (पाकिस्तान) · निर्माण " + BUILD_DATE,
              ha="left", va="bottom", fontproperties=FP_HI,
-             fontsize=7.2 * sf, color="#8C2F1E")
+             fontsize=6.6 * sf, color="#7A3020")
 
     # ---------------------------------------------------------------- save
     EXPORTS.mkdir(parents=True, exist_ok=True)
@@ -500,12 +709,16 @@ def render(page="A1", dpi=200, preview=False):
     if preview:
         out_png = PREVIEWS / "Rajasthan_Border_District_Atlas_Preview.png"
         fig.savefig(out_png, dpi=dpi, facecolor=PAGE_BG)
+        if OVERFLOW:
+            print("!! PANEL OVERFLOW:", OVERFLOW)
         print("wrote", out_png)
     else:
         out_pdf = EXPORTS / f"Rajasthan_Border_District_Atlas_{page}.pdf"
         out_png = EXPORTS / f"Rajasthan_Border_District_Atlas_{page}.png"
         fig.savefig(out_pdf, dpi=dpi, facecolor=PAGE_BG)
         fig.savefig(out_png, dpi=dpi, facecolor=PAGE_BG)
+        if OVERFLOW:
+            print("!! PANEL OVERFLOW:", OVERFLOW)
         print("wrote", out_pdf, out_png)
     plt.close(fig)
     return label_stats

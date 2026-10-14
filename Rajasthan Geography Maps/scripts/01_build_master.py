@@ -22,7 +22,7 @@ from shapely.validation import explain_validity
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from atlas_lib import (  # noqa: E402
-    RAW, PROCESSED, METADATA, WGS84, SOURCES, INDIAN_STATES,
+    RAW, PROCESSED, METADATA, WGS84, MAP_PROJ, SOURCES, INDIAN_STATES,
     read_soi_districts, write_sources_csv, sha256, geodesic_area_km2,
 )
 
@@ -210,8 +210,9 @@ def main():
         build_date=BUILD_DATE,
         master_gpkg=str(gpkg.relative_to(Path(__file__).resolve().parent.parent)),
         crs=WGS84,
-        map_projection="+proj=lcc +lat_1=25 +lat_2=30 +lat_0=27 +lon_0=71 "
-                       "+datum=WGS84 +units=m +no_defs",
+        # Derived from atlas_lib.MAP_PROJ so the recorded projection can
+        # never drift away from the one the renderer actually uses.
+        map_projection=MAP_PROJ.to_proj4(),
         districts_total=int(len(all_dist)),
         rajasthan_districts=int((all_dist.state_province == "Rajasthan").sum()),
         pakistan_districts=int((all_dist.country == "Pakistan").sum()),

@@ -35,9 +35,17 @@ REPORTS = ROOT / "reports"
 
 WGS84 = "EPSG:4326"
 
+# Standard parallels are set by the 1/6 rule for the mapped band
+# (FRAME miny=23.1, maxy=31.1):  lat_1 = 23.1 + 8.0/6 = 24.4333,
+#                                lat_2 = 31.1 - 8.0/6 = 29.7667
+# Measured over a 0.5-degree grid across the whole sheet this gives a maximum
+# scale error of 0.137 % (0.035 mm per inch) and a mean of 0.074 %.  The
+# previous 25/30 pair gave 0.197 % max, and 25.5/29.5 gave 0.230 %.
 MAP_PROJ = CRS.from_proj4(
-    "+proj=lcc +lat_1=25 +lat_2=30 +lat_0=27 +lon_0=71 +datum=WGS84 +units=m +no_defs"
+    "+proj=lcc +lat_1=24.43333333333333 +lat_2=29.76666666666667 "
+    "+lat_0=27.05 +lon_0=73.4 +datum=WGS84 +units=m +no_defs"
 )
+MAX_SCALE_ERROR_PCT = 0.137
 # EPSG code equivalent is not available for this custom LCC; keep the PROJ string.
 MAP_PROJ_WKT = MAP_PROJ.to_wkt()
 

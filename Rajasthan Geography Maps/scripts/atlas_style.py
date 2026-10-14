@@ -90,3 +90,27 @@ CHECKLIST_NOT_TOUCHING = [
 # Pakistani provinces are stored with a " (Pakistan)" suffix so that they never
 # collide with Indian state names.  PROVINCE_HI is keyed by the bare name.
 PK_SUFFIX = " (Pakistan)"
+
+
+# ---------------------------------------------------------------------------
+# Study-sheet upgrades
+# ---------------------------------------------------------------------------
+# District label sizes (pt at A1).  Kept legible: at A1 these are ~3.4 mm cap
+# height for Rajasthan districts, ~2.7 mm for border-sharing neighbours.
+FS_RAJASTHAN = 9.5
+FS_TOUCHING  = 7.6
+FS_OTHER     = 6.0
+FS_REGION    = 32.0
+FS_PROVINCE  = 14.0
+
+# graticule
+GRATICULE_STEP = 1.0          # degrees
+GRATICULE_COLOR = "#B4AC9C"
+GRATICULE_LW = 0.45
+
+# crisp district edges (study use: lines must read clearly at arm's length)
+DIST_EDGE_STUDY = "#8E8778"
+DIST_EDGE_LW = 0.45
+
+# panel column boundaries (figure fractions) for the bottom study strip
+PANEL_COLS = ((0.010, 0.335), (0.350, 0.645), (0.660, 0.990))

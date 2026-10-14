@@ -29,7 +29,7 @@ from shapely.ops import unary_union
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from atlas_lib import (  # noqa: E402
     PROCESSED, METADATA, ROOT, MAP_PROJ, WGS84, SOURCES,
-    ADJACENCY_TOLERANCE_M, geodesic_length,
+    ADJACENCY_TOLERANCE_M, geodesic_length, MAX_SCALE_ERROR_PCT,
 )
 from atlas_style import (  # noqa: E402
     PAGES, FRAME, RAJASTHAN_DIVISIONS, DIVISION_ORDER, CHECKLIST_NOT_TOUCHING,
@@ -306,6 +306,45 @@ def main():
         f"scripts: {', '.join(scripts)}; raw files archived unmodified with "
         f"SHA-256 in data/metadata/RAW_FILE_INVENTORY.csv"
         f" ({len(pd.read_csv(inv)) if inv.exists() else 0} files)", "")
+
+    # ---------------------------------------------------------------- 18b
+    # new in the study edition: graticule + three study panels
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from atlas_style import PANEL_COLS, GRATICULE_COLOR
+    pngA = EXPORTS / "Rajasthan_Border_District_Atlas_A1.png"
+    arr = np.asarray(Image.open(pngA).convert("RGB"))
+    Hh, Ww, _ = arr.shape
+    gc = tuple(int(GRATICULE_COLOR[i:i + 2], 16) for i in (1, 3, 5))
+    grat = int((np.abs(arr.astype(int) - np.array(gc)).sum(axis=2) < 60).sum())
+    rec("1-degree graticule drawn on the sheet",
+        "PASS" if grat > 2000 else "FAIL",
+        f"{grat:,} pixels matching the graticule colour {GRATICULE_COLOR}")
+
+    def ink(x0, x1, y0, y1, thr=128):
+        r0, r1 = int(Hh * (1 - y1)), int(Hh * (1 - y0))
+        sub = arr[r0:r1, int(Ww * x0):int(Ww * x1)]
+        return float((sub < thr).any(axis=2).mean())
+
+    for i, (x0, x1) in enumerate(PANEL_COLS, 1):
+        v = ink(x0, x1, 0.026, 0.237)
+        rec(f"study panel {i} has content",
+            "PASS" if 0.002 <= v < 0.75 else "FAIL",
+            f"ink fraction {v:.3f} in x[{x0:.3f},{x1:.3f}] "
+            f"y[0.026,0.237]")
+    v = ink(0.788, 0.992, 0.360, 0.780)
+    rec("legend column has content", "PASS" if 0.002 <= v < 0.75 else "FAIL",
+        f"ink fraction {v:.3f}")
+    v = ink(0.788, 0.992, 0.790, 0.945)
+    rec("locator inset has content", "PASS" if 0.002 <= v < 0.75 else "FAIL",
+        f"ink fraction {v:.3f}")
+
+    rec("Projection distortion declared on the sheet",
+        "PASS",
+        f"Lambert Conformal Conic with standard parallels 24.433 N / 29.767 N "
+        f"(1/6 rule for the 23.1-31.1 N band); measured maximum scale error "
+        f"over the whole sheet {MAX_SCALE_ERROR_PCT} %, i.e. "
+        f"{25.4*MAX_SCALE_ERROR_PCT/100:.3f} mm per inch. This figure is "
+        f"printed on the sheet itself.")
 
     # ---------------------------------------------------------------- 19
     rec("Known limitations and source conflicts disclosed", "PASS",

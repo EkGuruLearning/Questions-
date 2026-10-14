@@ -9,11 +9,11 @@
 
 | Status | Count |
 |---|---|
-| PASS | 27 |
+| PASS | 34 |
 | FAIL | 0 |
 | REVIEW (disclosed conflict) | 1 |
 | NOT TESTED (explicitly not assumed PASS) | 2 |
-| **Total** | **30** |
+| **Total** | **37** |
 
 ## Test detail
 
@@ -37,18 +37,25 @@
 | 16 | A2 PDF page size = 594.0 x 420.0 mm | **PASS** | measured 594.0 x 420.0 mm (1684 x 1191 pt) |
 | 17 | A3 PDF page size = 420.0 x 297.0 mm | **PASS** | measured 420.0 x 297.0 mm (1191 x 842 pt) |
 | 18 | Preview PNG rendered at usable resolution | **PASS** | 5297 x 3741 px |
-| 19 | A1: international red and interstate yellow are drawn | **PASS** | red-ish pixels=237,550, yellow-ish pixels=152,505 |
-| 20 | A2: international red and interstate yellow are drawn | **PASS** | red-ish pixels=118,369, yellow-ish pixels=78,543 |
-| 21 | A3: international red and interstate yellow are drawn | **PASS** | red-ish pixels=58,992, yellow-ish pixels=41,033 |
+| 19 | A1: international red and interstate yellow are drawn | **PASS** | red-ish pixels=158,433, yellow-ish pixels=114,142 |
+| 20 | A2: international red and interstate yellow are drawn | **PASS** | red-ish pixels=79,068, yellow-ish pixels=59,008 |
+| 21 | A3: international red and interstate yellow are drawn | **PASS** | red-ish pixels=38,984, yellow-ish pixels=30,906 |
 | 22 | No duplicate Hindi district labels | **PASS** | 0 duplicated Hindi names in the name table |
 | 23 | Adjacency table produced from geometry, not typed by hand | **PASS** | BOUNDARY_RELATIONS.csv holds 67 rows produced by scripts/02_adjacency.py using a bidirectional geodesic measurement with a 1000 m conflation tolerance |
 | 24 | Project reproducible from the master | **PASS** | scripts: 00_audit_uploads.py, 01_build_master.py, 02_adjacency.py, 03_render.py, 04_make_qgis_project.py, 05_review_round1.py, 06_review_round2.py, 07_review_round3.py, 99_validate.py, atlas_lib.py, atlas_style.py; raw files archived unmodified with SHA-256 in data/metadata/RAW_FILE_INVENTORY.csv (13 files) |
-| 25 | Known limitations and source conflicts disclosed | **PASS** | Reported: (a) SOI-derived GeoJSON redistribution terms unconfirmed; (b) Pakistan COD-AB snapshot valid 2022-09-09; (c) 50 m median / ~6 % > 2 km seam between the two sources; (d) exam-material border lengths (5,920 / 1,262 / 877 / 1,600 / 1,022 km) are NOT reproducible from either GIS source and are reported side by side; (e) 22 Rajasthan-Gujarat disputed slivers exist in the source and are excluded from the drawing. |
-| 26 | Visual inspection by a human at 100 % print scale | **NOT TESTED** | The rendering agent has no image-viewing capability in this environment. Label placement, colour presence, page size, glyph coverage and label-to-polygon assignment were all verified programmatically instead. A human must still open the A1 PDF at 100 % before printing. |
-| 27 | QGIS project opened in QGIS Desktop | **NOT TESTED** | QGIS is not installed in this environment. gis_project/*.qgz was written by hand as a QGIS 3.x project XML referencing the master GeoPackage; it has not been opened in QGIS to confirm. |
-| 28 | Every label anchor lies inside its own polygon | **PASS** | 228 anchors tested, 0 outside |
-| 29 | Border lengths cross-checked against published exam figures | **REVIEW** | GIS-measured vs. published: Pakistan 1036/1070 km (-3%), Punjab 90/89 km (+1%), Haryana 1039/1262 km (-18%), Uttar Pradesh 462/877 km (-47%), Madhya Pradesh 2110/1600 km (+32%), Gujarat 723/1022 km (-29%). The district COUNTS match published lists exactly; the LENGTHS do not, and the published lengths are not reproducible from two independent GIS datasets. The sheet reports the GIS lengths. |
-| 30 | Delivered files hashed | **PASS** | 7 exported files recorded in data/metadata/DELIVERED_FILE_HASHES.csv |
+| 25 | 1-degree graticule drawn on the sheet | **PASS** | 154,100 pixels matching the graticule colour #B4AC9C |
+| 26 | study panel 1 has content | **PASS** | ink fraction 0.008 in x[0.010,0.335] y[0.026,0.237] |
+| 27 | study panel 2 has content | **PASS** | ink fraction 0.008 in x[0.350,0.645] y[0.026,0.237] |
+| 28 | study panel 3 has content | **PASS** | ink fraction 0.009 in x[0.660,0.990] y[0.026,0.237] |
+| 29 | legend column has content | **PASS** | ink fraction 0.007 |
+| 30 | locator inset has content | **PASS** | ink fraction 0.015 |
+| 31 | Projection distortion declared on the sheet | **PASS** | Lambert Conformal Conic with standard parallels 24.433 N / 29.767 N (1/6 rule for the 23.1-31.1 N band); measured maximum scale error over the whole sheet 0.137 %, i.e. 0.035 mm per inch. This figure is printed on the sheet itself. |
+| 32 | Known limitations and source conflicts disclosed | **PASS** | Reported: (a) SOI-derived GeoJSON redistribution terms unconfirmed; (b) Pakistan COD-AB snapshot valid 2022-09-09; (c) 50 m median / ~6 % > 2 km seam between the two sources; (d) exam-material border lengths (5,920 / 1,262 / 877 / 1,600 / 1,022 km) are NOT reproducible from either GIS source and are reported side by side; (e) 22 Rajasthan-Gujarat disputed slivers exist in the source and are excluded from the drawing. |
+| 33 | Visual inspection by a human at 100 % print scale | **NOT TESTED** | The rendering agent has no image-viewing capability in this environment. Label placement, colour presence, page size, glyph coverage and label-to-polygon assignment were all verified programmatically instead. A human must still open the A1 PDF at 100 % before printing. |
+| 34 | QGIS project opened in QGIS Desktop | **NOT TESTED** | QGIS is not installed in this environment. gis_project/*.qgz was written by hand as a QGIS 3.x project XML referencing the master GeoPackage; it has not been opened in QGIS to confirm. |
+| 35 | Every label anchor lies inside its own polygon | **PASS** | 228 anchors tested, 0 outside |
+| 36 | Border lengths cross-checked against published exam figures | **REVIEW** | GIS-measured vs. published: Pakistan 1036/1070 km (-3%), Punjab 90/89 km (+1%), Haryana 1039/1262 km (-18%), Uttar Pradesh 462/877 km (-47%), Madhya Pradesh 2110/1600 km (+32%), Gujarat 723/1022 km (-29%). The district COUNTS match published lists exactly; the LENGTHS do not, and the published lengths are not reproducible from two independent GIS datasets. The sheet reports the GIS lengths. |
+| 37 | Delivered files hashed | **PASS** | 7 exported files recorded in data/metadata/DELIVERED_FILE_HASHES.csv |
 
 ## Measurement conventions
 

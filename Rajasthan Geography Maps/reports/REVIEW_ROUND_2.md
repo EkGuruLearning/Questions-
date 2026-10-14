@@ -13,7 +13,7 @@ Round 1 audited the *data*. This round audits the *picture*: the label manifest 
 
 | Outcome | Count |
 |---|---|
-| PASS | 19 |
+| PASS | 22 |
 | REVIEW | 2 |
 | NOT TESTED | 1 |
 
@@ -25,24 +25,27 @@ Round 1 audited the *data*. This round audits the *picture*: the label manifest 
 | 2 | all 36 border-sharing neighbour districts labelled | **PASS** | 36/36 placed |
 | 3 | no duplicate label strings drawn | **PASS** | 0 duplicated strings |
 | 4 | every district label anchored inside a real polygon | **PASS** | 237/237 anchors fall inside a district polygon |
-| 5 | leader lines used only where a label was displaced | **PASS** | 2 of 237 labels were displaced from their polygon interior point and given a leader line; the remaining 235 sit directly on their polygon |
+| 5 | leader lines used only where a label was displaced | **PASS** | 4 of 237 labels were displaced from their polygon interior point and given a leader line; the remaining 233 sit directly on their polygon |
 | 6 | every drawn glyph exists in the embedded font set | **PASS** | 237 drawn strings checked against 6155 codepoints; missing: none |
-| 7 | Devanagari font embedded in the PDF | **PASS** | font resources in the A1 PDF: ['/CQUGVR+LastResortHE-Regular', '/CRIBCK+NotoSansDevanagari-Regular', '/DRCUQC+DejaVuSans', '/FKUXSR+NotoSansDevanagari-Bold', '/GGQCAA+NotoSansDevanagari-Regular', '/HDCIEO+NotoSansDevanagari-Bold'] |
+| 7 | Devanagari font embedded in the PDF | **PASS** | font resources in the A1 PDF: ['/ELAFME+LastResortHE-Regular', '/GGWEWS+NotoSansDevanagari-Regular', '/GPQBUG+NotoSansDevanagari-Bold', '/HATSKO+DejaVuSans', '/HDQTZN+NotoSansDevanagari-Regular', '/OPLSQB+NotoSansDevanagari-Bold'] |
 | 8 | A1 page size | **PASS** | 841.0 x 594.0 mm (target 841.0 x 594.0) |
 | 9 | A2 page size | **PASS** | 594.0 x 420.0 mm (target 594.0 x 420.0) |
 | 10 | A3 page size | **PASS** | 420.0 x 297.0 mm (target 420.0 x 297.0) |
-| 11 | A1 border colours drawn | **PASS** | international red 237,550 px, interstate yellow 152,505 px |
-| 12 | A2 border colours drawn | **PASS** | international red 118,369 px, interstate yellow 78,543 px |
-| 13 | A3 border colours drawn | **PASS** | international red 58,992 px, interstate yellow 41,033 px |
+| 11 | A1 border colours drawn | **PASS** | international red 158,433 px, interstate yellow 114,142 px |
+| 12 | A2 border colours drawn | **PASS** | international red 79,068 px, interstate yellow 59,008 px |
+| 13 | A3 border colours drawn | **PASS** | international red 38,984 px, interstate yellow 30,906 px |
 | 14 | all six surrounding regions carry a large Hindi label | **PASS** | placed: ['उत्तर प्रदेश', 'गुजरात', 'पंजाब', 'पाकिस्तान', 'मध्य प्रदेश', 'हरियाणा'] |
 | 15 | Pakistani provinces labelled where present on the sheet | **PASS** | placed: ['पंजाब (पाकिस्तान)', 'बलूचिस्तान', 'सिंध'] |
 | 16 | title district count matches the verified data | **PASS** | the sheet's subtitle is generated from the layer (41 districts, 7 divisions); it is not hard-coded |
-| 17 | legend panel has content | **PASS** | ink fraction in the legend area = 0.010 |
-| 18 | locator inset has content | **PASS** | ink fraction in the inset area = 0.023 |
-| 19 | title band has content | **PASS** | ink fraction in the title band = 0.025 |
-| 20 | labels displaced off their polygon | **REVIEW** | 2 labels (0.8 %) were moved by the collision engine and are drawn with a leader line. Each leader still terminates on the correct polygon's interior point, but a human should confirm none of them crosses the international boundary confusingly. |
-| 21 | small-district legibility | **REVIEW** | Districts smaller than their label at A3 (420 mm) will be near the legibility floor: the A3 sheet uses 4.3 pt for Rajasthan districts. A1 or A2 is recommended for wall use. |
-| 22 | human visual inspection | **NOT TESTED** | I cannot view images. Colour, spacing and overall composition were measured numerically only. |
+| 17 | legend panel has content | **PASS** | ink fraction in the legend area = 0.007 |
+| 18 | locator inset has content | **PASS** | ink fraction in the inset area = 0.015 |
+| 19 | study panel 1 has content | **PASS** | ink fraction in study panel 1 = 0.008 (blank reference on this sheet = 0.000) |
+| 20 | study panel 2 has content | **PASS** | ink fraction in study panel 2 = 0.008 (blank reference on this sheet = 0.000) |
+| 21 | study panel 3 has content | **PASS** | ink fraction in study panel 3 = 0.009 (blank reference on this sheet = 0.000) |
+| 22 | title band has content | **PASS** | ink fraction in the title band = 0.025 |
+| 23 | labels displaced off their polygon | **REVIEW** | 4 labels (1.7 %) were moved by the collision engine and are drawn with a leader line. Each leader still terminates on the correct polygon's interior point, but a human should confirm none of them crosses the international boundary confusingly. |
+| 24 | small-district legibility | **REVIEW** | Districts smaller than their label at A3 (420 mm) will be near the legibility floor: the A3 sheet uses 4.8 pt for Rajasthan districts. A1 or A2 is recommended for wall use. |
+| 25 | human visual inspection | **NOT TESTED** | I cannot view images. Colour, spacing and overall composition were measured numerically only. |
 
 ## Errors found and fixed during Round 2
 

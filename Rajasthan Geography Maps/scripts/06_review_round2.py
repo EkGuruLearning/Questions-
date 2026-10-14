@@ -208,14 +208,24 @@ def main():
         # pastel fills are all above 200, so a 240 threshold would count
         # bare map as "ink".  128 isolates text, lines and borders.
         return float((sub < 128).any(axis=2).mean())
+    # The study edition moved the reference furniture out of the page
+    # footer and into a dedicated column on the right of the map, and put
+    # three study panels across the bottom.  These boxes follow that layout.
     f("legend panel has content",
-      "PASS" if 0.004 < inkbbox(0.012, 0.190, 0.026, 0.326) < 0.50 else "FAIL",
+      "PASS" if 0.004 < inkbbox(0.788, 0.992, 0.360, 0.780) < 0.50 else "FAIL",
       f"ink fraction in the legend area = "
-      f"{inkbbox(0.012, 0.190, 0.03, 0.32):.3f}")
+      f"{inkbbox(0.788, 0.992, 0.360, 0.780):.3f}")
     f("locator inset has content",
-      "PASS" if 0.004 < inkbbox(0.80, 0.985, 0.030, 0.205) < 0.50 else "FAIL",
+      "PASS" if 0.004 < inkbbox(0.788, 0.992, 0.790, 0.945) < 0.50 else "FAIL",
       f"ink fraction in the inset area = "
-      f"{inkbbox(0.80, 0.985, 0.03, 0.21):.3f}")
+      f"{inkbbox(0.788, 0.992, 0.790, 0.945):.3f}")
+    for i, (x0, x1) in enumerate(((0.010, 0.335), (0.350, 0.645),
+                                  (0.660, 0.990)), 1):
+        v = inkbbox(x0, x1, 0.026, 0.237)
+        f(f"study panel {i} has content",
+          "PASS" if 0.002 <= v < 0.50 else "FAIL",
+          f"ink fraction in study panel {i} = {v:.3f} "
+          f"(blank reference on this sheet = 0.000)")
     f("title band has content",
       "PASS" if 0.002 < inkbbox(0.15, 0.85, 0.915, 0.985) < 0.50 else "FAIL",
       f"ink fraction in the title band = "
