@@ -1,11 +1,11 @@
 # Data Communication & Computer Networks (CN)
-## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 93 MCQs (English + Hindi)
+## Topic 3 of 7 : Addressing (MAC, IPv4, IPv6, Port, DNS) — 92 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 93 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 92 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
@@ -15,7 +15,7 @@
 | 2 | Section B — IPv4 Addressing (Format, Classes & Special Addresses) | Q11 - Q43 |
 | 3 | Section C — Subnetting & CIDR | Q44 - Q70 |
 | 4 | Section D — IPv6 Addressing | Q71 - Q79 |
-| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q80 - Q93 |
+| 5 | Section E — Port Numbers, DNS/URL & Address Resolution (ARP) | Q80 - Q92 |
 
 ---
 
@@ -1881,26 +1881,6 @@
 *Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.*
 
 *[Source: GATE CS PYQ (via Computer Science Junction / examprev)] · Hard*
-
----
-### Q93. A reverse lookup in DNS means a lookup to ______ using ______ records.
-
-<span lang='hi'>DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.</span>
-
-- **(A)** map domain names to IP address, A
-- **(B)** map IP address to domain name, PTR ✅ **(CORRECT)**
-- **(C)** determine the authoritative name servers, CNAME
-- **(D)** identify mail servers, SOA
-
-**✔ Correct Answer: (B) map IP address to domain name, PTR** — Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.
-
-*Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.*
-
-**★ Nukta (Key Point):** Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.
-
-*Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.*
-
-*[Source: RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)] · Hard*
 
 ---
 

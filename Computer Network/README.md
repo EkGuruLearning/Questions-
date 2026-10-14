@@ -108,3 +108,24 @@ tools/
   data/ocr_text/                 # OCR texts of the 5 scanned source PDFs
   fonts/                         # bundled fonts
 ```
+
+---
+
+# 📦 Release R1 — 2026-10-14 (master execution prompt follow-up)
+
+Following `Computer Network/new/README.md` (master spec, from main branch):
+
+- **`data/cn_questions.json`** — normalized bank, 801 records, spec §6 schema, stable IDs.
+- **`Reports/`** — INVENTORY · DUPLICATE_AUDIT (0 exact dups; 357 near-candidates listed) ·
+  ANSWER_VERIFICATION (26 paper+key checked / 775 pipeline-checked — no overclaims) ·
+  SOURCE_REGISTER · EXAM_BLUEPRINTS (GATE-2026 / NET / RPSC Programmer / RSMSSB IA, conflicts recorded) ·
+  QA_REPORT · RELEASE_NOTES.
+- **Portal v5** (7 topic HTMLs) — exam/difficulty/source-status/question-type/language/marking
+  filters (audited tags), CBT navigation + unsaved-answer warning, net mock score, mobile-first.
+- **`EkGuru_CN_Release_2026-10-14.zip`** — release package (portal + JSON + reports).
+- Repeater/ring-topology question corrected (concept-check, not a PYQ).
+- 4 exact duplicate stems removed after audit; 97 explanation-language fixes (earlier round).
+- Books + practice booklets rebuilt: 627 topic MCQs (+165 rapid), 801 practice Qs / 80 pp.
+
+Honest limits: not every answer is officially verified (see `Reports/ANSWER_VERIFICATION.md`);
+marking presets are mock rules; near-duplicate review is partial. Never claim 100% without evidence.

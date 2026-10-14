@@ -1,6 +1,6 @@
 # Data Communication & Computer Networks (CN) — The Complete Book
 
-## Theory + 631 MCQs (English + Hindi) — Topic 1 to 7
+## Theory + 627 MCQs (English + Hindi) — Topic 1 to 7
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
@@ -665,16 +665,16 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Tree = hierarchical star. Badi sansthaon में branches के लिए -> hierarchical/tree topology.*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q2] · Medium*
 
-**Q49.** The repeater is used in _______ topology.
-*Repeater का use _______ topology में होता है।*
-- **(A)** Mesh Topology
-- **(B)** Ring Topology
-- **(C)** Bus Topology
-- **(D)** Star Topology
-✔ **(C) Bus Topology**
-★ **Nukta:** Bus = long backbone -> signal weak हो जाता है -> repeater use होता है. (Ring में भी हर device repeater की तरह काम करता है.)
-*Bus = लंबा backbone -> signal kamzor हो जाता है -> repeater use होता है। (Ring में भी हर device repeater की तरह काम करता है.)*
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q50] · Medium*
+**Q49.** In a traditional ring network, repeaters are particularly associated with which topology because each station can regenerate and forward the signal?
+*पारंपरिक ring network में repeaters किस topology से विशेष रूप से जुड़े हैं, क्योंकि हर station signal को regenerate और आगे भेज सकता है?*
+- **(A)** Ring topology
+- **(B)** Mesh topology
+- **(C)** Bus topology
+- **(D)** Star topology
+✔ **(A) Ring topology**
+★ **Nukta:** Concept-check correction of the old "repeater is used in ___ topology" stem (that wording wrongly implied repeaters are exclusive to one topology). Repeaters are Physical-layer devices usable on many links; the "traditional ring network" qualifier keeps the intended textbook answer (Ring) without the false universal claim. Not a verified PYQ.
+*पुराने "repeater किस topology में" वाले प्रश्न का सुधार — repeater Physical-layer device है, हर link पर चलता है; "पारंपरिक ring" जोड़ने से अभीष्ट उत्तर (Ring) बना रहता है। यह सत्यापित PYQ नहीं है।*
+*[Source: Practice — original (concept-check correction — not a verified PYQ)] · Medium*
 
 **Q50.** What type of topology connects each node in a closed loop?
 *कौन सी topology हर node को एक closed loop में जोड़ती है?*
@@ -1288,18 +1288,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 
 ### Questions (Easy → Medium → Hard)
 
-**Q100.** ARPANET stands for _______.
-*ARPANET का पूरा नाम है _______.*
-- **(A)** Advanced Recheck Projects Agency Internet
-- **(B)** Advanced Recheck Projects Agency Network
-- **(C)** Advanced Research Projects Agency Network
-- **(D)** Advanced Research Projects Agency Internet
-✔ **(C) Advanced Research Projects Agency Network**
-★ **Nukta:** ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).
-*ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).*
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q26] · Medium*
-
-**Q101.** The first network was:
+**Q100.** The first network was:
 *सबसे पहला network था:*
 - **(A)** CNNET
 - **(B)** NSFNET
@@ -1310,7 +1299,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *First network = ARPANET (1969). NSFNET = 1986 (backbone).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q34] · Medium*
 
-**Q102.** In the original ARPANET, _______ were directly connected together.
+**Q101.** In the original ARPANET, _______ were directly connected together.
 *Original ARPANET में, _______ आपस में directly connected the।*
 - **(A)** IMPs / IMPs (Interface Message Processors)
 - **(B)** host computers
@@ -1321,7 +1310,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Original ARPANET: IMPs (packet switches) directly connected the; hosts IMPs से attach होते the।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q43] · Medium*
 
-**Q103.** The first operational computer network in the world was the _________ for the United States Department of Defense.
+**Q102.** The first operational computer network in the world was the _________ for the United States Department of Defense.
 *दुनिया का पहला operational computer network, United States Department of Defense के लिए _________ था।*
 - **(A)** ARPANET
 - **(B)** ERNET
@@ -1332,7 +1321,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *First operational network = ARPANET (1969, U.S. DoD).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q48] · Medium*
 
-**Q104.** ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
+**Q103.** ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
 *ARPANET - aaj के Internet का purvaj - ______ में ARPA (Advanced Research Projects Agency), U.S. Department of Defense द्वारा बनाया गया था, चार nodes से shuruaat हुई (UCLA, SRI, UC Santa Barbara, University of Utah).*
 - **(A)** 1957
 - **(B)** 1969
@@ -1343,7 +1332,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *ARPANET = 1969, 4 nodes (UCLA, SRI, UCSB, Utah); पहला message 29 Oct 1969 (LOGIN का LO).*
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
-**Q105.** TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
+**Q104.** TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
 *TCP/IP (Vint Cerf और Bob Kahn द्वारा develop किया गया) को ARPANET ने apna official protocol suite बनाया था 1 January ______ को - is event को fflag day कहा जाता है।*
 - **(A)** 1969
 - **(B)** 1972
@@ -1354,7 +1343,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Fflag day = 1 Jan 1983 (ARPANET -> TCP/IP). TCP/IP Cerf & Kahn ने 1970s में develop किया (demo 1972). Syllabus का TCP/IP model 1972 = development era.*
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
-**Q106.** NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
+**Q105.** NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
 *NSFNET, U.S. National Science Foundation द्वारा ______ में बनाया गया, Internet का एक major backbone बन गया, universities और research centres को जोड़ता था।*
 - **(A)** 1969
 - **(B)** 1983
@@ -1365,7 +1354,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *NSFNET = 1986 (National Science Foundation), T1 backbone -> Internet backbone.*
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
-**Q107.** The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
+**Q106.** The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
 *World Wide Web (WWW) का invention 1991 में CERN में ______ ने किया था, और isne Internet को आम public के बीच popular बनाया।*
 - **(A)** Vint Cerf
 - **(B)** Tim Berners-Lee
@@ -1403,7 +1392,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 
 ### Questions (Easy → Medium → Hard)
 
-**Q108.** A collection of hyperlinked documents on the internet forms the?
+**Q107.** A collection of hyperlinked documents on the internet forms the?
 *Internet पर hyperlinked documents का sangrah (collection) क्या banata है?*
 - **(A)** World Wide Web (WWW)
 - **(B)** E-mail system
@@ -1414,7 +1403,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *WWW = hyperlinked documents का collection. HTML = un documents की language है (WWW नहीं).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q5] · Medium*
 
-**Q109.** Which one of the following is a valid email address?
+**Q108.** Which one of the following is a valid email address?
 *निम्नलिखित में से कौन सा एक valid email address है?*
 - **(A)** computech@academy.com
 - **(B)** gmail.com
@@ -1425,7 +1414,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Valid email = local@domain.TLD (जैसे name@site.com).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q6] · Medium*
 
-**Q110.** Which of the following best describes uploading information?
+**Q109.** Which of the following best describes uploading information?
 *निम्नलिखित में से कौन uploading information को सबसे achhe से describe करता है?*
 - **(A)** Sorting data on a disk drive / disk drive पर data को sort करना
 - **(B)** Sending information to a host computer / information को एक host computer को भेजना
@@ -1436,7 +1425,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Uploading = local से remote/host को भेजना. Downloading = remote से local को लेना.*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q7] · Medium*
 
-**Q111.** Which one of the following is the most common internet protocol?
+**Q110.** Which one of the following is the most common internet protocol?
 *Nimnlikhis में से कौन सा सबसे common internet protocol है?*
 - **(A)** HTML
 - **(B)** NetBEUI
@@ -1447,7 +1436,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Internet का core protocol = TCP/IP. HTML = language है, protocol नहीं.*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q8] · Medium*
 
-**Q112.** The dial-up connections to access the internet use ___ protocol.
+**Q111.** The dial-up connections to access the internet use ___ protocol.
 *Internet access के लिए dial-up connections ___ protocol use करते हैं।*
 - **(A)** PPP (Point to Point protocol)
 - **(B)** X.25 protocol
@@ -1458,7 +1447,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Dial-up Internet = PPP (Point-to-Point Protocol).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q18] · Medium*
 
-**Q113.** When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
+**Q112.** When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
 *जब कोई व्यक्ति Internet से जुड़ने के लिए dial-up या DSL service use करता है, तो telephone company की भूमिका क्या होती है?*
 - **(A)** It provides the switching/connection path from the user to the ISP / वह user से ISP तक switching/connection path देती है
 - **(B)** It hosts every website the user visits / वह user की हर website host करती है
@@ -1469,7 +1458,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *Telephone company सिर्फ रास्ता देती है (local loop + switching)। Website hosting/IP assignment ISP/DNS का काम है।*
 *[Source: Forouzan Ch1 (Q1-14) — Practice Set] · Medium*
 
-**Q114.** Which of the following servers allows LAN users to share data?
+**Q113.** Which of the following servers allows LAN users to share data?
 *निम्नलिखित में से कौन सा server LAN users को data share करने की अनुमति देता है?*
 - **(A)** Data server
 - **(B)** Point server
@@ -1480,7 +1469,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *File server = files store करता है + LAN users को share करने देता है।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q22] · Medium*
 
-**Q115.** EDI stands for ____.
+**Q114.** EDI stands for ____.
 *EDI का पूरा नाम है ____.*
 - **(A)** Electronic Data Interchange
 - **(B)** Electronic Digital Internet
@@ -1491,7 +1480,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *EDI = Electronic Data Interchange (business documents का e-exchange).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q25] · Medium*
 
-**Q116.** The term UPnP is a short form of:
+**Q115.** The term UPnP is a short form of:
 *UPnP term का पूरा नाम (full form) क्या है?*
 - **(A)** Uniform Plug and Play
 - **(B)** Unit Plug and Play
@@ -1502,7 +1491,7 @@ Question row: left = question + options | right = **✔ answer + ★ Nukte**.
 *UPnP = Universal Plug and Play (device auto-discovery)। तुलना: DHCP = auto IP configuration।*
 *[Source: Repo: Unit Test-4 Solution (OCR), p11] · Medium*
 
-**Q117.** Consider the switching statements:
+**Q116.** Consider the switching statements:
 1. Circuit Switching establishes a dedicated path.
 2. Packet Switching routes data in packets on different paths.
 3. Message Switching uses store-and-forward.
@@ -1521,7 +1510,7 @@ Which statements are correct?
 *3 switching types: Circuit (dedicated path), Packet (packets, अलग paths), Message (store-and-forward) — तीनों सही।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
-**Q118.** All the information on the internet is passed using _______ switching method.
+**Q117.** All the information on the internet is passed using _______ switching method.
 *Internet पर saari information _______ switching method से pass होती है।*
 - **(A)** Portable
 - **(B)** Packets
@@ -1532,7 +1521,7 @@ Which statements are correct?
 *Internet = packet switching. Circuit switching = dedicated path (पुराना telephone).*
 *[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)] · Medium*
 
-**Q119.** Which technique breaks data into packets for transmission?
+**Q118.** Which technique breaks data into packets for transmission?
 *Transmission के लिए data को packets में तोड़ने की technique कौन-सी है?*
 - **(A)** Circuit switching
 - **(B)** Packet switching
@@ -1543,7 +1532,7 @@ Which statements are correct?
 *Internet packet switching पर चलता है — data packets में टूटता है।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q120.** Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
+**Q119.** Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
 *DSL (Digital Subscriber Line) पर काम करने वाले home broadband connections ___ protocol use करते हैं।*
 - **(A)** PPPoE (PPP over Ethernet)
 - **(B)** PPPoA (PPP over ATM)
@@ -1554,7 +1543,7 @@ Which statements are correct?
 *Home DSL broadband = PPPoE (PPP over Ethernet).*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q19] · Hard*
 
-**Q121.** A computer network permits sharing of:
+**Q120.** A computer network permits sharing of:
 *एक computer network किस चीज़ की sharing की अनुमति देता है?*
 - **(A)** Resources / resources (printer, disk, etc.)
 - **(B)** Information / information (data)
@@ -1565,7 +1554,7 @@ Which statements are correct?
 *Network = resources + information sharing.*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q47 / CN Topic Test-02 (UNIT TEST-2), Q47] · Hard*
 
-**Q122.** Which of the following is a benefit of networking?
+**Q121.** Which of the following is a benefit of networking?
 *Networking का कौन-सा लाभ (benefit) है?*
 - **(A)** File sharing
 - **(B)** Easier access to resources / resources तक आसान पहुँच
@@ -1576,7 +1565,7 @@ Which statements are correct?
 *Networking के लाभ: sharing (files/resources/peripherals) + communication + backup + cost saving। Exam favourite: "All of the above"।*
 *[Source: InstrumentationTools 150 CN MCQs] · Hard*
 
-**Q123.** How many digits of the Data Network Identification Code (DNIC) identify the country?
+**Q122.** How many digits of the Data Network Identification Code (DNIC) identify the country?
 *Data Network Identification Code (DNIC) के kitne digits देश (country) की पहचान करते हैं?*
 - **(A)** first three / पहले तीन
 - **(B)** first four / पहले चार
@@ -1587,7 +1576,7 @@ Which statements are correct?
 *DNIC: पहले 3 digits = country code, चौथा digit = network code.*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q15] · Hard*
 
-**Q124.** Which of the following is true for Circuit Switching handling multiple simultaneous connections?
+**Q123.** Which of the following is true for Circuit Switching handling multiple simultaneous connections?
 *एक साथ अनेक connections संभालते समय Circuit Switching के बारे में क्या सही है?*
 - **(A)** A single path is used and shared for all data / एक ही path सभी data के लिए share होता है
 - **(B)** All connections are multiplexed into a single channel / सभी connections एक channel में multiplex होते हैं
@@ -1633,7 +1622,7 @@ Which statements are correct?
 
 ### Questions (Easy → Medium → Hard)
 
-**Q125.** The OSI model was developed by:
+**Q124.** The OSI model was developed by:
 *OSI model किसने develop किया?*
 - **(A)** IEEE
 - **(B)** ISO
@@ -1644,7 +1633,7 @@ Which statements are correct?
 *OSI = ISO का (1984)। TCP/IP = DoD/ARPA का। IEEE = 802 LAN standards। IETF = TCP/IP standards।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q126.** OSI stands for:
+**Q125.** OSI stands for:
 *OSI का पूरा नाम (full form) क्या है?*
 - **(A)** Open Systems Interconnection
 - **(B)** Operating System Interface
@@ -1655,7 +1644,7 @@ Which statements are correct?
 *OSI = Open Systems Interconnection (ISO, 1984, 7 layers)। सबसे favourite one-liner।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q127.** The OSI model has how many layers?
+**Q126.** The OSI model has how many layers?
 *OSI model में कितनी layers हैं?*
 - **(A)** 5
 - **(B)** 6
@@ -1666,7 +1655,7 @@ Which statements are correct?
 *Mnemonic: Please Do Not Throw Sausage Pizza Away (Physical, Data-link, Network, Transport, Session, Presentation, Application)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q128.** Why was the OSI model developed?
+**Q127.** Why was the OSI model developed?
 *OSI model क्यों develop किया गया?*
 - **(A)** Manufacturers disliked the TCP/IP protocol suite / Manufacturers को TCP/IP protocol suite पसंद नहीं था
 - **(B)** The rate of data transfer was increasing exponentially / Data transfer की दर तेज़ी से बढ़ रही थी
@@ -1677,7 +1666,7 @@ Which statements are correct?
 *OSI = OPEN systems — कोई भी दो systems जुड़ सकें। इसलिए 'standards were needed' सही उत्तर है।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q129.** In the OSI model, when data is sent from device A to device B, which is the 5th layer to receive data at B (counting from the bottom)?
+**Q128.** In the OSI model, when data is sent from device A to device B, which is the 5th layer to receive data at B (counting from the bottom)?
 *OSI model में जब data device A से device B को भेजा जाता है, तो B पर data पाने वाली 5वीं layer (नीचे से गिनती में) कौन-सी है?*
 - **(A)** Application layer
 - **(B)** Transport layer
@@ -1688,7 +1677,7 @@ Which statements are correct?
 *Layer क्रम (bottom-up): Physical(1), Data-link(2), Network(3), Transport(4), Session(5), Presentation(6), Application(7)।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q130.** Network support layers are:
+**Q129.** Network support layers are:
 *Network support layers कौन-सी हैं?*
 - **(A)** 1, 2, 3
 - **(B)** 4, 5
@@ -1699,7 +1688,7 @@ Which statements are correct?
 *1,2,3 = network support; 5,6,7 = user support; 4 = bridge।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q131.** Which layer connects the network support layers and the user support layers?
+**Q130.** Which layer connects the network support layers and the user support layers?
 *कौन-सी layer network support layers और user support layers को जोड़ती है?*
 - **(A)** Transport layer
 - **(B)** Network layer
@@ -1710,7 +1699,7 @@ Which statements are correct?
 *Transport = bridge layer (ऊपर और नीचे दोनों से जुड़ती है)।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q132.** In the ISO-OSI reference model, the Session layer offers dialog control, token management and ______ as services.
+**Q131.** In the ISO-OSI reference model, the Session layer offers dialog control, token management and ______ as services.
 *ISO-OSI reference model में Session layer dialog control, token management और ______ services देती है।*
 - **(A)** Synchronization
 - **(B)** Asynchronization
@@ -1721,7 +1710,7 @@ Which statements are correct?
 *Session की 3 services: Dialog control + Token management + Synchronization (checkpoint)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q133.** How many address types (identifiers) are used from sender to receiver in OSI/TCP-IP communication?
+**Q132.** How many address types (identifiers) are used from sender to receiver in OSI/TCP-IP communication?
 *OSI/TCP-IP communication में sender से receiver तक कितने address types (identifiers) use होते हैं?*
 - **(A)** 2
 - **(B)** 3
@@ -1732,7 +1721,7 @@ Which statements are correct?
 *4 addresses: Physical(48-bit) / IP(32-bit) / Port(16-bit) / Specific।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q134.** Who developed the standards for the OSI reference model?
+**Q133.** Who developed the standards for the OSI reference model?
 *OSI reference model के standards किसने develop किए?*
 - **(A)** ANSI - American National Standards Institute
 - **(B)** ISO - International Organization for Standardization
@@ -1743,7 +1732,7 @@ Which statements are correct?
 *OSI के standards = ISO के। ANSI/IEEE/ACM के अलग काम हैं।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q135.** The session, presentation, and application layers are the ______ support layers.
+**Q134.** The session, presentation, and application layers are the ______ support layers.
 *Session, Presentation और Application layers ______ support layers हैं।*
 - **(A)** user
 - **(B)** network
@@ -1754,7 +1743,7 @@ Which statements are correct?
 *User support = 5,6,7। Network support = 1,2,3। Transport(4) = दोनों का bridge।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
 
-**Q136.** Which of the following is NOT a network support layer?
+**Q135.** Which of the following is NOT a network support layer?
 *निम्नलिखित में से कौन network support layer नहीं है?*
 - **(A)** Transport Layer
 - **(B)** Network Layer
@@ -1802,7 +1791,7 @@ Which statements are correct?
 
 ### Questions (Easy → Medium → Hard)
 
-**Q137.** Fiber optic cables and coaxial cables function at which OSI layer?
+**Q136.** Fiber optic cables and coaxial cables function at which OSI layer?
 *Fiber optic cables और coaxial cables किस OSI layer पर काम करती हैं?*
 - **(A)** Data Link Layer
 - **(B)** Physical Layer
@@ -1813,7 +1802,7 @@ Which statements are correct?
 *Media (cable, fiber, radio) = Physical layer का काम।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q138.** The Physical layer deals with:
+**Q137.** The Physical layer deals with:
 *Physical layer किससे निपटती है?*
 - **(A)** Logical addressing
 - **(B)** Media, signals and binary transmission / Media, signals और binary transmission
@@ -1824,7 +1813,7 @@ Which statements are correct?
 *Physical = bits + signals + media। बाकी ऊपर की layers का काम है।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q139.** The sub-layer of the Physical layer which directly interfaces with the MAC sub-layer is called:
+**Q138.** The sub-layer of the Physical layer which directly interfaces with the MAC sub-layer is called:
 *Physical layer का वह sub-layer जो सीधे MAC sub-layer से जुड़ता है, कहलाता है:*
 - **(A)** Physical signalling sub-layer
 - **(B)** Physical data sub-layer
@@ -1835,7 +1824,7 @@ Which statements are correct?
 *PLS (Physical Layer Signalling) = Physical layer का upper sub-layer जो MAC से जुड़ता है।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q140.** Which layer creates the 'collision domain'?
+**Q139.** Which layer creates the 'collision domain'?
 *'Collision domain' कौन-सी layer बनाती है?*
 - **(A)** Physical Layer (hubs)
 - **(B)** Data Link Layer (switches/bridges)
@@ -1846,7 +1835,7 @@ Which statements are correct?
 *Hub network = एक collision domain (Physical)। Switch = per-port collision domain (Data Link)। Router = broadcast domain boundary (Network)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q141.** Data Link Layer is divided into:
+**Q140.** Data Link Layer is divided into:
 *Data Link Layer किनमें विभाजित है?*
 - **(A)** LLC and MAC
 - **(B)** Physical and Network
@@ -1857,7 +1846,7 @@ Which statements are correct?
 *Data Link = LLC (ऊपर, 802.2) + MAC (नीचे, 802.3)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q142.** Physical (hardware) addressing is added at:
+**Q141.** Physical (hardware) addressing is added at:
 *Physical (hardware) addressing किस layer पर जोड़ी जाती है?*
 - **(A)** Network
 - **(B)** Transport
@@ -1868,7 +1857,7 @@ Which statements are correct?
 *Physical/MAC address = Data Link। IP/Logical = Network। Port = Transport।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q143.** 'Transparent transmission' is the function of which layer?
+**Q142.** 'Transparent transmission' is the function of which layer?
 *'Transparent transmission' किस layer का काम है?*
 - **(A)** Data link
 - **(B)** Network
@@ -1879,7 +1868,7 @@ Which statements are correct?
 *Data Link = 'transparent service' — Network layer को नीचे की मेहनत पता नहीं चलती।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q144.** Which layer handles 'hop-to-hop' flow control?
+**Q143.** Which layer handles 'hop-to-hop' flow control?
 *'Hop-to-hop' flow control कौन-सी layer संभालती है?*
 - **(A)** Network
 - **(B)** Data Link
@@ -1890,7 +1879,7 @@ Which statements are correct?
 *Hop-to-hop = Data Link। End-to-end = Transport।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q145.** Which OSI layer is responsible for logical addressing?
+**Q144.** Which OSI layer is responsible for logical addressing?
 *Logical addressing के लिए कौन-सी OSI layer जिम्मेदार है?*
 - **(A)** Data Link
 - **(B)** Network
@@ -1901,7 +1890,7 @@ Which statements are correct?
 *Logical address = IP = Network layer (L3)। Physical address = MAC = Data Link (L2)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q146.** Which layer performs segmentation?
+**Q145.** Which layer performs segmentation?
 *Segmentation कौन-सी layer करती है?*
 - **(A)** Data link
 - **(B)** Transport
@@ -1912,7 +1901,7 @@ Which statements are correct?
 *Segmentation + Reassembly = Transport। (Packetisation Network की, Framing Data Link की।)*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q147.** Which layer provides end-to-end communication?
+**Q146.** Which layer provides end-to-end communication?
 *End-to-end communication कौन-सी layer देती है?*
 - **(A)** Network
 - **(B)** Transport
@@ -1923,7 +1912,7 @@ Which statements are correct?
 *End-to-end = Transport। Source-to-destination = Network। Hop-to-hop = Data Link। Bit-by-bit = Physical।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q148.** In the OSI model, which layer(s) participate in 'end-to-end' delivery? (1) Network (2) Transport (3) Session (4) Data link
+**Q147.** In the OSI model, which layer(s) participate in 'end-to-end' delivery? (1) Network (2) Transport (3) Session (4) Data link
 *OSI model में 'end-to-end' delivery में कौन-सी layer(s) भाग लेती हैं? (1) Network (2) Transport (3) Session (4) Data link*
 - **(A)** 1, 2 only
 - **(B)** 2 only
@@ -1934,7 +1923,7 @@ Which statements are correct?
 *End-to-end = सिर्फ Transport।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q149.** Which layer performs 'service point addressing'?
+**Q148.** Which layer performs 'service point addressing'?
 *'Service point addressing' कौन-सी layer करती है?*
 - **(A)** Network
 - **(B)** Data Link
@@ -1945,7 +1934,7 @@ Which statements are correct?
 *Service point = Port। Port addressing = Transport (16-bit port numbers)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q150.** Which OSI layer handles message boundaries (knowing where one message ends and the next begins)?
+**Q149.** Which OSI layer handles message boundaries (knowing where one message ends and the next begins)?
 *कौन-सी OSI layer message boundaries संभालती है (एक message कहाँ समाप्त होता है और अगला कहाँ शुरू)?*
 - **(A)** Presentation
 - **(B)** Session
@@ -1956,7 +1945,7 @@ Which statements are correct?
 *Message boundary = transport-level concept।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q151.** Determine the OSI layer responsible for dialogue control (half-duplex or full-duplex communication).
+**Q150.** Determine the OSI layer responsible for dialogue control (half-duplex or full-duplex communication).
 *Dialogue control (half-duplex या full-duplex communication) के लिए कौन-सी OSI layer जिम्मेदार है?*
 - **(A)** Session Layer
 - **(B)** Transport Layer
@@ -1967,7 +1956,7 @@ Which statements are correct?
 *Dialog control + Token management + Synchronization = Session layer का काम।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q152.** Which layer supports 'checkpointing' (synchronisation for recovery)?
+**Q151.** Which layer supports 'checkpointing' (synchronisation for recovery)?
 *कौन-सी layer 'checkpointing' (recovery के लिए synchronization) support करती है?*
 - **(A)** Transport
 - **(B)** Application
@@ -1978,7 +1967,7 @@ Which statements are correct?
 *Checkpointing = Session।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q153.** Which layer translates data from a format used by the application into a common format (e.g., ASCII to EBCDIC)?
+**Q152.** Which layer translates data from a format used by the application into a common format (e.g., ASCII to EBCDIC)?
 *कौन-सी layer data को application के format से common format में बदलती है (जैसे ASCII से EBCDIC)?*
 - **(A)** Application Layer
 - **(B)** Presentation Layer
@@ -1989,7 +1978,7 @@ Which statements are correct?
 *Presentation = Translation + Encryption + Compression।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q154.** Which layer is responsible for encryption?
+**Q153.** Which layer is responsible for encryption?
 *Encryption के लिए कौन-सी layer जिम्मेदार है?*
 - **(A)** Session
 - **(B)** Presentation
@@ -2000,7 +1989,7 @@ Which statements are correct?
 *Encryption + Compression + Translation = Presentation (L6)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q155.** Which OSI layer ensures interoperability between different data formats?
+**Q154.** Which OSI layer ensures interoperability between different data formats?
 *कौन-सी OSI layer अलग-अलग data formats के बीच interoperability सुनिश्चित करती है?*
 - **(A)** Presentation
 - **(B)** Application
@@ -2011,7 +2000,7 @@ Which statements are correct?
 *Common format = Presentation। इसे 'syntax layer' भी कहते हैं।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q156.** Which OSI layer decides the type of compression?
+**Q155.** Which OSI layer decides the type of compression?
 *कौन-सी OSI layer compression का प्रकार तय करती है?*
 - **(A)** Application
 - **(B)** Presentation
@@ -2022,7 +2011,7 @@ Which statements are correct?
 *Compression = Presentation।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q157.** The term 'Baud Rate' is associated with which layer?
+**Q156.** The term 'Baud Rate' is associated with which layer?
 *'Baud Rate' शब्द किस layer से जुड़ा है?*
 - **(A)** Network Layer
 - **(B)** Data Link Layer
@@ -2033,7 +2022,7 @@ Which statements are correct?
 *Baud rate = signalling rate = Physical layer। Bit rate ≠ baud rate।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q158.** The layer used to deal with mechanical and electrical specifications is:
+**Q157.** The layer used to deal with mechanical and electrical specifications is:
 *Mechanical और electrical specifications से निपटने वाली layer कौन-सी है?*
 - **(A)** Physical Layer
 - **(B)** Data Link Layer
@@ -2044,7 +2033,7 @@ Which statements are correct?
 *Mechanical + Electrical + Functional + Procedural = Physical layer की 4 specifications।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q159.** The Physical layer is responsible for which of the following operations?
+**Q158.** The Physical layer is responsible for which of the following operations?
 *Physical layer निम्नलिखित में से किन operations के लिए जिम्मेदार है?*
 - **(A)** Line coding
 - **(B)** Channel coding
@@ -2055,7 +2044,7 @@ Which statements are correct?
 *Physical layer = Line coding + Channel coding + Modulation। 'All of the above' याद रखो।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q160.** Transmission data rate is decided by:
+**Q159.** Transmission data rate is decided by:
 *Transmission data rate कौन तय करती है?*
 - **(A)** Network layer
 - **(B)** Physical layer
@@ -2066,7 +2055,7 @@ Which statements are correct?
 *Data rate = Physical layer।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
 
-**Q161.** The physical layer translates logical communication requests from the ______ into hardware-specific operations.
+**Q160.** The physical layer translates logical communication requests from the ______ into hardware-specific operations.
 *Physical layer, ______ के logical communication requests को hardware-specific operations में बदलता है।*
 - **(A)** Network layer
 - **(B)** Transport layer
@@ -2077,7 +2066,7 @@ Which statements are correct?
 *हर layer अपने ऊपर वाली layer की सेवा करती है — physical, data link की। कुछ exam banks इसे गलती से 'network layer' लिखते हैं; सही उत्तर data link layer है।*
 *[Source: InstrumentationTools 150 CN MCQs (key corrected vs Forouzan)] · Medium*
 
-**Q162.** The Application layer is implemented in:
+**Q161.** The Application layer is implemented in:
 *Application layer कहाँ implement होती है?*
 - **(A)** End system
 - **(B)** NIC
@@ -2088,7 +2077,7 @@ Which statements are correct?
 *End systems (hosts) application तक की layers implement करते हैं; switches सिर्फ Layers 1-2, routers सिर्फ Layers 1-3।*
 *[Source: Sanfoundry CN MCQs — Reference Models] · Medium*
 
-**Q163.** Which statement best describes the difference between the LLC and MAC sub-layers?
+**Q162.** Which statement best describes the difference between the LLC and MAC sub-layers?
 *LLC और MAC sub-layers के बीच अंतर सबसे अच्छा कौन बताता है?*
 - **(A)** LLC handles physical addressing, MAC handles flow control / LLC physical addressing करता है, MAC flow control करता है
 - **(B)** LLC provides the service interface to the Network layer; MAC controls access to the medium / LLC, Network layer को service interface देता है; MAC medium तक access control करता है
@@ -2099,7 +2088,7 @@ Which statements are correct?
 *LLC = ऊपर का sub-layer। MAC = नीचे का (medium access + physical address)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
-**Q164.** A frame is received at the Data Link layer with an incorrect FCS. What will happen?
+**Q163.** A frame is received at the Data Link layer with an incorrect FCS. What will happen?
 *Data Link layer पर frame गलत FCS के साथ प्राप्त होता है। क्या होगा?*
 - **(A)** Frame discarded
 - **(B)** Frame corrected
@@ -2110,7 +2099,7 @@ Which statements are correct?
 *गलत FCS = frame discard।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q165.** The ______ layer is responsible for delivering data units from one station to the next without errors.
+**Q164.** The ______ layer is responsible for delivering data units from one station to the next without errors.
 *______ layer data units को एक station से अगले station तक बिना errors पहुँचाने के लिए जिम्मेदार है।*
 - **(A)** Transport
 - **(B)** Network
@@ -2121,7 +2110,7 @@ Which statements are correct?
 *'Station to next station' = Data Link। 'Source to destination' = Network।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q166.** ______ Layer is responsible for framing, error detection and physical addressing.
+**Q165.** ______ Layer is responsible for framing, error detection and physical addressing.
 *______ Layer framing, error detection और physical addressing के लिए जिम्मेदार है।*
 - **(A)** Network
 - **(B)** Transport
@@ -2132,7 +2121,7 @@ Which statements are correct?
 *Framing + Error detection + MAC addressing = Data Link का trio।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q167.** From which layer does the Data Link layer collect packets and encapsulate them into frames for transmission?
+**Q166.** From which layer does the Data Link layer collect packets and encapsulate them into frames for transmission?
 *Data Link layer किस layer से packets लेकर उन्हें transmission के लिए frames में encapsulate करती है?*
 - **(A)** Transport layer
 - **(B)** Application layer
@@ -2143,7 +2132,7 @@ Which statements are correct?
 *Encapsulation: Network packet -> Data Link frame -> Physical bits।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q168.** IPv4 and IPv6 work at which OSI layer?
+**Q167.** IPv4 and IPv6 work at which OSI layer?
 *IPv4 और IPv6 किस OSI layer पर काम करते हैं?*
 - **(A)** Data link layer
 - **(B)** Network layer
@@ -2154,7 +2143,7 @@ Which statements are correct?
 *IP = Network/Internet layer (L3)।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q169.** The ______ layer is responsible for the source-to-destination delivery of a packet across multiple network links.
+**Q168.** The ______ layer is responsible for the source-to-destination delivery of a packet across multiple network links.
 *______ layer एक packet की multiple network links के बीच source-to-destination delivery के लिए जिम्मेदार है।*
 - **(A)** Transport
 - **(B)** Network
@@ -2165,7 +2154,7 @@ Which statements are correct?
 *Source-to-destination = Network। Process-to-process = Transport। Station-to-station = Data Link।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q170.** Which layer is responsible for reliable delivery in the OSI model?
+**Q169.** Which layer is responsible for reliable delivery in the OSI model?
 *OSI model में reliable delivery के लिए कौन-सी layer जिम्मेदार है?*
 - **(A)** Session
 - **(B)** Transport
@@ -2176,7 +2165,7 @@ Which statements are correct?
 *Reliable = Transport।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q171.** Which layer is responsible for process-to-process delivery?
+**Q170.** Which layer is responsible for process-to-process delivery?
 *Process-to-process delivery के लिए कौन-सी layer जिम्मेदार है?*
 - **(A)** Network layer
 - **(B)** Transport layer
@@ -2187,7 +2176,7 @@ Which statements are correct?
 *Process-to-process = Transport। Host-to-host = Network।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q172.** Which OSI layer is responsible for encryption and compression?
+**Q171.** Which OSI layer is responsible for encryption and compression?
 *Encryption और compression के लिए कौन-सी OSI layer जिम्मेदार है?*
 - **(A)** Presentation Layer
 - **(B)** Session Layer
@@ -2198,7 +2187,7 @@ Which statements are correct?
 *Trio: Translation, Encryption, Compression = Presentation।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q173.** Which layer helps to present data in one form on a host to another host in its native representation?
+**Q172.** Which layer helps to present data in one form on a host to another host in its native representation?
 *कौन-सी layer एक host पर किसी form में data को दूसरे host पर उसकी native representation में प्रस्तुत करने में मदद करती है?*
 - **(A)** Application Layer
 - **(B)** Presentation Layer
@@ -2209,7 +2198,7 @@ Which statements are correct?
 *Native format <-> common format = Presentation।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q174.** ______ layer defines how data is formatted, presented, encoded, and converted for use on the network.
+**Q173.** ______ layer defines how data is formatted, presented, encoded, and converted for use on the network.
 *______ layer तय करती है कि data network में उपयोग के लिए कैसे format, present, encode और convert होता है।*
 - **(A)** Transport
 - **(B)** Presentation
@@ -2220,7 +2209,7 @@ Which statements are correct?
 *'Formatted, presented, encoded, converted' = Presentation।*
 *[Source: Central exams — SSC/Bank/Insurance Computer Awareness (BYJU'S)] · Medium*
 
-**Q175.** Which layer provides services to the user?
+**Q174.** Which layer provides services to the user?
 *कौन-सी layer user को services देती है?*
 - **(A)** Application layer
 - **(B)** Session layer
@@ -2231,7 +2220,7 @@ Which statements are correct?
 *User के सबसे करीब = Application layer (L7)।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q176.** A server at a company is using TCP/IP to connect to the network and is running multiple applications. At which OSI layer is this server operating?
+**Q175.** A server at a company is using TCP/IP to connect to the network and is running multiple applications. At which OSI layer is this server operating?
 *एक company का server network से जुड़ने के लिए TCP/IP use कर रहा है और अनेक applications चला रहा है। यह server किस OSI layer पर काम कर रहा है?*
 - **(A)** Application Layer
 - **(B)** Physical Layer
@@ -2242,7 +2231,7 @@ Which statements are correct?
 *Server + applications = Application layer।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q177.** Simple Network Management Protocol (SNMP) runs on:
+**Q176.** Simple Network Management Protocol (SNMP) runs on:
 *Simple Network Management Protocol (SNMP) किस layer पर चलता है?*
 - **(A)** Application layer
 - **(B)** Transport layer
@@ -2253,7 +2242,7 @@ Which statements are correct?
 *SNMP/DNS/HTTP/FTP/SMTP = Application layer protocols।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q178.** Consider the statements:
+**Q177.** Consider the statements:
 S1: Network layer handles both logical addressing and routing.
 S2: Transport layer handles segmentation and reassembly.
 Which is correct?
@@ -2270,7 +2259,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Network = IP addressing + Routing। Transport = Segmentation + Reassembly।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q179.** Repeaters function in:
+**Q178.** Repeaters function in:
 *Repeaters किस layer पर काम करते हैं?*
 - **(A)** Physical layer
 - **(B)** Data link layer
@@ -2281,7 +2270,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Repeater/Hub = Physical (L1)। Bridge/Switch = Data Link (L2)। Router = Network (L3)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q180.** The physical layer is responsible for:
+**Q179.** The physical layer is responsible for:
 *Physical layer किसके लिए जिम्मेदार है?*
 - **(A)** Bit-by-bit delivery
 - **(B)** Port to port delivery
@@ -2292,7 +2281,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bit-by-bit = Physical। Hop-to-hop = Data Link। Source-to-destination = Network। Process-to-process = Transport।*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q181.** Which one of the following is a data link (Layer 2) protocol?
+**Q180.** Which one of the following is a data link (Layer 2) protocol?
 *निम्न में से कौन data link (Layer 2) protocol है?*
 - **(A)** Point-to-Point Protocol (PPP)
 - **(B)** HDLC
@@ -2303,7 +2292,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Layer 2 protocols = PPP, HDLC, Ethernet, Frame Relay, ATM (cell-based)। Network layer = IP, ICMP, ARP।*
 *[Source: InstrumentationTools 150 CN MCQs] · Hard*
 
-**Q182.** Which layer of the OSI model is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium?
+**Q181.** Which layer of the OSI model is responsible for the transmission and reception of unstructured raw data between a device and a physical transmission medium?
 *OSI model की कौन-सी layer device और physical transmission medium के बीच unstructured raw data के transmission और reception के लिए जिम्मेदार है?*
 - **(A)** Transport layer
 - **(B)** Data-Link layer
@@ -2314,7 +2303,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *'Raw data + physical medium' = Physical layer।*
 *[Source: Central exams — SSC/Railway/UPSC Computer Awareness (Exampundit)] · Hard*
 
-**Q183.** Bridge works in which layer of the OSI model?
+**Q182.** Bridge works in which layer of the OSI model?
 *Bridge OSI model की किस layer पर काम करता है?*
 - **(A)** Application layer
 - **(B)** Transport layer
@@ -2325,7 +2314,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bridge/Switch = L2। Router = L3। Hub/Repeater = L1। Gateway = L4+।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2) · also asked in KVS PGT CS 2018 Official Paper] · Hard*
 
-**Q184.** The reliable data transfer is implemented by:
+**Q183.** The reliable data transfer is implemented by:
 *Reliable data transfer कौन-सी layer implement करती है?*
 - **(A)** Network layer
 - **(B)** Physical layer
@@ -2336,7 +2325,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Reliable delivery = Transport (TCP)। IP (Network) unreliable है।*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q185.** If a port number is 16 bits (2 bytes), what is the MINIMUM size of the transport-layer header needed to carry the port addresses?
+**Q184.** If a port number is 16 bits (2 bytes), what is the MINIMUM size of the transport-layer header needed to carry the port addresses?
 *यदि port number 16 bits (2 bytes) का है, तो port addresses ले जाने के लिए transport-layer header की MINIMUM size कितनी होगी?*
 - **(A)** 2 bytes
 - **(B)** 4 bytes
@@ -2347,7 +2336,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Min transport header (ports only) = 4 bytes। UDP = 8, TCP = 20।*
 *[Source: Forouzan Ch1 (Q1-23) — Practice Set] · Hard*
 
-**Q186.** Application layer protocol defines:
+**Q185.** Application layer protocol defines:
 *Application layer protocol क्या define करता है?*
 - **(A)** Types of messages exchanged / कौन-से messages आदान-प्रदान होते हैं
 - **(B)** Rules for when and how processes send and respond to messages / processes messages कब और कैसे भेजें/जवाब दें — इसके rules
@@ -2358,7 +2347,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Application protocol = Message types + Rules + Format।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
 
-**Q187.** SMTP, FTP and DNS are the protocols of which layer of the OSI model?
+**Q186.** SMTP, FTP and DNS are the protocols of which layer of the OSI model?
 *SMTP, FTP और DNS OSI model की किस layer के protocols हैं?*
 - **(A)** Network layer
 - **(B)** Transport layer
@@ -2399,7 +2388,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q188.** Which is the standard protocol suite of the Internet?
+**Q187.** Which is the standard protocol suite of the Internet?
 *Internet की मानक protocol suite कौन-सी है?*
 - **(A)** TCP/IP
 - **(B)** UDP
@@ -2410,7 +2399,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *UDP/FTP इसी suite के अंदर के protocols हैं; WWW तो सेवा है, protocol नहीं.*
 *[Source: IBPS RRB PO Computer Awareness PYQ (via meritnotes) + SSC MTS computer PYQ (via Testbook)] · Easy*
 
-**Q189.** The TCP/IP model was developed ______ the OSI model.
+**Q188.** The TCP/IP model was developed ______ the OSI model.
 *TCP/IP model, OSI model के ______ develop हुआ।*
 - **(A)** prior to
 - **(B)** after
@@ -2421,7 +2410,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TCP/IP (1970s) पहले; OSI (1984) बाद में।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q190.** The TCP/IP ______ layer is equivalent to the combined Session, Presentation and Application layers of the OSI model.
+**Q189.** The TCP/IP ______ layer is equivalent to the combined Session, Presentation and Application layers of the OSI model.
 *TCP/IP की ______ layer, OSI model की Session, Presentation और Application layers के समकक्ष है।*
 - **(A)** application
 - **(B)** network
@@ -2432,7 +2421,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Mapping: TCP/IP Application = OSI 5+6+7; Internet = Network; Network Access = Data Link+Physical।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q191.** The number of layers in the Internet protocol stack (reference model) is:
+**Q190.** The number of layers in the Internet protocol stack (reference model) is:
 *Internet protocol stack (reference model) में layers की संख्या कितनी है?*
 - **(A)** 5
 - **(B)** 7
@@ -2443,7 +2432,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *5-layer Internet stack, 4-layer TCP/IP suite, 7-layer OSI — तीनों numbers याद रखो!*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q192.** The Data Link layer and Physical layer of the OSI model combine to form the ______ layer of the TCP/IP model.
+**Q191.** The Data Link layer and Physical layer of the OSI model combine to form the ______ layer of the TCP/IP model.
 *OSI model की Data Link और Physical layers मिलकर TCP/IP model की ______ layer बनाती हैं।*
 - **(A)** Network Access
 - **(B)** Internet
@@ -2454,7 +2443,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *OSI 1+2 = Network Access। OSI 5+6+7 = Application।*
 *[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Medium*
 
-**Q193.** IP (Internet Protocol) is a protocol of the ______ layer of the TCP/IP model.
+**Q192.** IP (Internet Protocol) is a protocol of the ______ layer of the TCP/IP model.
 *IP (Internet Protocol) TCP/IP model की ______ layer का protocol है.*
 - **(A)** Network Access
 - **(B)** Internet
@@ -2465,7 +2454,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IP = Internet layer। TCP/UDP = Transport। Ethernet = Network Access।*
 *[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Medium*
 
-**Q194.** In TCP/IP, which layer uses specific (user-friendly) addresses — e.g. a URL like example.com?
+**Q193.** In TCP/IP, which layer uses specific (user-friendly) addresses — e.g. a URL like example.com?
 *TCP/IP में कौन-सी layer specific (user-friendly) addresses use करती है — जैसे example.com जैसी URL?*
 - **(A)** Application layer
 - **(B)** Network layer
@@ -2476,7 +2465,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Address levels: Application = specific, Transport = port, Network = IP, Data Link = MAC।*
 *[Source: Forouzan Ch1 (Q1-24) — Practice Set] · Medium*
 
-**Q195.** In the TCP/IP model, a link-layer switch operates at which layers?
+**Q194.** In the TCP/IP model, a link-layer switch operates at which layers?
 *TCP/IP model में link-layer switch किन layers पर काम करता है?*
 - **(A)** Network and Transport layers
 - **(B)** Physical and Data Link layers
@@ -2487,7 +2476,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Switch = L1+L2। Router = L3 तक। Gateway = L4+।*
 *[Source: Forouzan Ch1 (Q1-16) — Practice Set] · Medium*
 
-**Q196.** TCP/IP model does not have ______ layer but the OSI model has it.
+**Q195.** TCP/IP model does not have ______ layer but the OSI model has it.
 *TCP/IP model में ______ layer नहीं है पर OSI model में है।*
 - **(A)** Session layer
 - **(B)** Presentation layer
@@ -2498,7 +2487,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TCP/IP में Session + Presentation नहीं होती — दोनों Application में merge होती हैं।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
 
-**Q197.** Which of the following is NOT a part of the TCP/IP model?
+**Q196.** Which of the following is NOT a part of the TCP/IP model?
 *निम्नलिखित में से कौन TCP/IP model का हिस्सा नहीं है?*
 - **(A)** Application
 - **(B)** Transport
@@ -2509,7 +2498,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TCP/IP की 4 layers: Application, Transport, Internet, Network Access। Session सिर्फ OSI में।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Hard*
 
-**Q198.** How many layers are there in the TCP/IP model (original 4-layer suite)?
+**Q197.** How many layers are there in the TCP/IP model (original 4-layer suite)?
 *TCP/IP model (मूल 4-layer suite) में कितनी layers हैं?*
 - **(A)** Seven
 - **(B)** Five
@@ -2520,7 +2509,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *4-layer TCP/IP: Network Access + Internet + Transport + Application।*
 *[Source: Central exams — SSC/Bank Computer Awareness (BYJU'S)] · Hard*
 
-**Q199.** Which of the following is NOT a layer of the TCP/IP model? (Host-to-Host / Internet / Network Access / Physical)
+**Q198.** Which of the following is NOT a layer of the TCP/IP model? (Host-to-Host / Internet / Network Access / Physical)
 *निम्नलिखित में से कौन TCP/IP model की layer नहीं है? (Host-to-Host / Internet / Network Access / Physical)*
 - **(A)** Host to Host
 - **(B)** Internet
@@ -2562,7 +2551,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q200.** Identify the correct order of data encapsulation from Layer 7 to Layer 1:
+**Q199.** Identify the correct order of data encapsulation from Layer 7 to Layer 1:
 *Layer 7 से Layer 1 तक data encapsulation का सही क्रम पहचानिए:*
 - **(A)** Data → Segment → Packet → Frame → Bits
 - **(B)** Data → Packet → Segment → Frame → Bits
@@ -2573,7 +2562,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Encapsulation: Data -> Segment -> Packet -> Frame -> Bits।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q201.** Encapsulation happens from:
+**Q200.** Encapsulation happens from:
 *Encapsulation किस दिशा में होती है?*
 - **(A)** Top to bottom
 - **(B)** Bottom to top
@@ -2584,7 +2573,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Sender = encapsulation (top->bottom)। Receiver = de-encapsulation (bottom->top)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q202.** In the layer hierarchy, as the data packet moves from the upper to the lower layers, headers are:
+**Q201.** In the layer hierarchy, as the data packet moves from the upper to the lower layers, headers are:
 *Layer hierarchy में, जब data packet ऊपर से नीचे की layers की ओर जाता है, तो headers:*
 - **(A)** Added
 - **(B)** Removed
@@ -2595,7 +2584,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *नीचे की ओर = headers ADD। ऊपर की ओर = headers REMOVE।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q203.** In TCP/IP, which data unit is encapsulated INSIDE a frame?
+**Q202.** In TCP/IP, which data unit is encapsulated INSIDE a frame?
 *TCP/IP में कौन-सा data unit frame के अंदर encapsulate होता है?*
 - **(A)** A segment
 - **(B)** A datagram
@@ -2606,7 +2595,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Frame के अंदर DATAGRAM होता है।*
 *[Source: Forouzan Ch1 (Q1-20) — Practice Set] · Medium*
 
-**Q204.** In the TCP/IP model, the unit of data at the transport layer is called a:
+**Q203.** In the TCP/IP model, the unit of data at the transport layer is called a:
 *TCP/IP model में transport layer पर data की unit कहलाती है:*
 - **(A)** Packet
 - **(B)** Segment
@@ -2617,7 +2606,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *PDU: Transport = Segment, Network = Datagram, Data Link = Frame, Physical = Bits।*
 *[Source: Forouzan Ch1 (Q1-20/21) — Practice Set] · Medium*
 
-**Q205.** A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
+**Q204.** A system uses five protocol layers. The application creates a 100-byte message and EVERY layer (including the 5th and the 1st) adds a 10-byte header. What is the efficiency (application bytes / total transmitted bytes)?
 *एक system में पाँच protocol layers हैं। Application 100-byte message बनाती है और हर layer (5वीं और 1वीं सहित) 10-byte header जोड़ती है। Efficiency कितनी होगी (application bytes / कुल transmitted bytes)?*
 - **(A)** 50%
 - **(B)** 66.7%
@@ -2628,7 +2617,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Efficiency = data / (data + headers) = 100/150 = 66.7%।*
 *[Source: Forouzan Ch1 (P1-11) — Practice Set (Problem)] · Medium*
 
-**Q206.** A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
+**Q205.** A source S and destination D are connected through ONE intermediate router R. How many times does a packet visit the Network layer and the Data Link layer during the journey?
 *Source S और destination D के बीच एक intermediate router R है। यात्रा के दौरान packet Network layer और Data Link layer को कितनी बार visit करता है?*
 - **(A)** Network layer - 4 times, Data link layer - 4 times
 - **(B)** Network layer - 4 times, Data link layer - 6 times
@@ -2671,7 +2660,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q207.** Which of the following is a static hardware address?
+**Q206.** Which of the following is a static hardware address?
 *निम्न में से कौन-सा static hardware address है?*
 - **(A)** IP address
 - **(B)** MAC address
@@ -2682,7 +2671,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Static = hardware में burned (MAC)। Dynamic/logical = configure होते हैं (IP via DHCP, port per connection, name via DNS)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q208.** A MAC address is also called a ______ address.
+**Q207.** A MAC address is also called a ______ address.
 *MAC address को ______ address भी कहा जाता है।*
 - **(A)** Physical address
 - **(B)** Logical address
@@ -2693,7 +2682,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = physical/hardware address (burned-in, 48-bit)। IP = logical address (configured)।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1) · also BCI_SCI ST-7] · Medium*
 
-**Q209.** The address used in the Data Link Layer is called:
+**Q208.** The address used in the Data Link Layer is called:
 *Data Link Layer में उपयोग होने वाले address को क्या कहते हैं?*
 - **(A)** Logical address
 - **(B)** Port address
@@ -2704,7 +2693,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Layer-address map: Data link→MAC, Network→IP, Transport→Port, Application→socket।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q210.** Which address identifies a unique device on a local network segment?
+**Q209.** Which address identifies a unique device on a local network segment?
 *Local network segment पर कौन-सा address एक unique device की पहचान करता है?*
 - **(A)** IP address
 - **(B)** MAC address
@@ -2715,7 +2704,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *L2 delivery (same network) = MAC। L3 delivery (across networks) = IP। Exam इस जोड़ी को बहुत पूछता है।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q211.** What type of MAC address is FF:FF:FF:FF:FF:FF?
+**Q210.** What type of MAC address is FF:FF:FF:FF:FF:FF?
 *FF:FF:FF:FF:FF:FF किस प्रकार का MAC address है?*
 - **(A)** Unicast
 - **(B)** Multicast
@@ -2726,7 +2715,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC broadcast = FF:FF:FF:FF:FF:FF (सभी 48 bits 1)। Unicast = first byte का अंतिम bit 0; multicast = first byte का अंतिम bit 1।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q212.** Which addresses are used in an internet employing the TCP/IP protocols?
+**Q211.** Which addresses are used in an internet employing the TCP/IP protocols?
 *TCP/IP protocols वाले internet में कौन-से addresses उपयोग होते हैं?*
 - **(A)** Physical address and logical address
 - **(B)** Port address
@@ -2737,7 +2726,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Forouzan की 4 address levels: Physical(48-bit MAC) data link पर, IP(32-bit) network पर, Port(16-bit) transport पर, Specific (socket) application पर।*
 *[Source: LMT MCQ bank (Computer Communication Networks)] · Hard*
 
-**Q213.** What is the size (length) of a MAC address?
+**Q212.** What is the size (length) of a MAC address?
 *MAC address का size (लंबाई) कितना होता है?*
 - **(A)** 42 bits
 - **(B)** 48 bits
@@ -2748,7 +2737,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = 48 bits (6 bytes / 12 hex digits)। IPv4 = 32 bits, IPv6 = 128 bits, Port = 16 bits। ये चार sizes exam में बार-बार आते हैं।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also BCI_SCI ST-7 / Sanfoundry / InstrumentationTools] · Hard*
 
-**Q214.** An Ethernet destination address 0A-01-12-03-04-05 is a:
+**Q213.** An Ethernet destination address 0A-01-12-03-04-05 is a:
 *Ethernet destination address 0A-01-12-03-04-05 कौन-सा address है?*
 - **(A)** Unicast address
 - **(B)** Multicast address
@@ -2759,7 +2748,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *I/G bit (पहले octet का अंतिम bit): 0 = unicast, 1 = multicast। All-ones (FF:FF...) = broadcast।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Hard*
 
-**Q215.** Consider the statements: S1: Every computer or Internet device has a unique MAC address. S2: Every computer or Internet device has a unique IP address. Which is correct?
+**Q214.** Consider the statements: S1: Every computer or Internet device has a unique MAC address. S2: Every computer or Internet device has a unique IP address. Which is correct?
 *कथन देखिए: S1: हर computer या Internet device का unique MAC address होता है। S2: हर computer या Internet device का unique IP address होता है। कौन-सा सही है?*
 - **(A)** S1 is true and S2 is false
 - **(B)** Both S1 and S2 are false
@@ -2770,7 +2759,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = स्थायी + globally unique। IP = logical + private networks में दोहराया जा सकता है (NAT overlap संभालता है)।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Hard*
 
-**Q216.** Which header field is rewritten (not removed) when an IP packet passes through a router?
+**Q215.** Which header field is rewritten (not removed) when an IP packet passes through a router?
 *जब एक IP packet router से गुजरता है तो कौन-सा header field बदला (rewrite) जाता है?*
 - **(A)** Source IP address
 - **(B)** Destination IP address
@@ -2814,7 +2803,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q217.** The first octet of a Class A IP address ranges from:
+**Q216.** The first octet of a Class A IP address ranges from:
 *Class A IP address का पहला octet किस range में होता है?*
 - **(A)** 0-127
 - **(B)** 128-191
@@ -2825,7 +2814,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *पहले octet से Class ranges: A 0-127, B 128-191, C 192-223, D 224-239 (multicast), E 240-255 (experimental)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q218.** Which class of IP address is used for multicasting?
+**Q217.** Which class of IP address is used for multicasting?
 *Multicasting के लिए किस class का IP address उपयोग होता है?*
 - **(A)** Class A
 - **(B)** Class B
@@ -2836,7 +2825,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *D = Multicast (one-to-group)। E = Experimental (240-255)। Broadcast (255.255.255.255) अलग है।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) · also CN Topic Test-6] · Easy*
 
-**Q219.** Which class of address is reserved for experimental purposes?
+**Q218.** Which class of address is reserved for experimental purposes?
 *प्रायोगिक (experimental) उद्देश्यों के लिए किस class का address reserved है?*
 - **(A)** Class C
 - **(B)** Class B
@@ -2847,7 +2836,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class E = Experimental (240-255)। याद रखें: A-ny (0), B-128, C-192, D-224 (multicast), E-240 (experiment)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q220.** The IP address 127.0.0.1 is used for:
+**Q219.** The IP address 127.0.0.1 is used for:
 *IP address 127.0.0.1 किस काम में आती है?*
 - **(A)** Broadcast
 - **(B)** Class D network
@@ -2858,7 +2847,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *पूरा 127.0.0.0/8 block = loopback। `ping 127.0.0.1` से local IP stack जाँचते हैं।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-03 / CN Topic Test-04] · Easy*
 
-**Q221.** What is the maximum number of unique IPv4 addresses?
+**Q220.** What is the maximum number of unique IPv4 addresses?
 *Unique IPv4 addresses की अधिकतम संख्या कितनी है?*
 - **(A)** 2^16
 - **(B)** 2^24
@@ -2869,7 +2858,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *2^32 ≈ 4.29 billion IPv4 addresses। IPv6 = 2^128 ≈ 3.4 × 10^38।*
 *[Source: IP Addressing quiz (Studocu bank, with keys)] · Medium*
 
-**Q222.** An IPv4 address is divided into how many parts?
+**Q221.** An IPv4 address is divided into how many parts?
 *IPv4 address कितने भागों में बाँटा जाता है?*
 - **(A)** 2
 - **(B)** 3
@@ -2880,7 +2869,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *2 parts = network + host। Subnetting में host bits से bits उधार लेकर sub-networks बनते हैं।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q223.** The first octet of a Class B IP address falls between:
+**Q222.** The first octet of a Class B IP address falls between:
 *Class B IP address का पहला octet किस range में आता है?*
 - **(A)** 0-127
 - **(B)** 128-191
@@ -2891,7 +2880,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *B = 128-191 (default /16)। Trick: A 0 से, B 128 से, C 192 से, D 224 से, E 240 से।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q224.** How many bits are used for the network portion in a Class C IP address?
+**Q223.** How many bits are used for the network portion in a Class C IP address?
 *Class C IP address में network भाग के लिए कितने bits उपयोग होते हैं?*
 - **(A)** 8
 - **(B)** 16
@@ -2902,7 +2891,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class C = /24 network (24 bits) + 8 host bits। Class B = /16, Class A = /8।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q225.** Which IP address class provides the largest number of hosts per network?
+**Q224.** Which IP address class provides the largest number of hosts per network?
 *कौन-सी IP address class प्रति network सबसे अधिक hosts देती है?*
 - **(A)** Class A
 - **(B)** Class B
@@ -2913,7 +2902,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *प्रति class hosts: A = 2^24−2, B = 2^16−2 (65,534), C = 2^8−2 (254)। D/E में hosts नहीं (multicast/experimental)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q226.** Which class of IP addresses supports 65,534 hosts per network?
+**Q225.** Which class of IP addresses supports 65,534 hosts per network?
 *कौन-सी IP address class प्रति network 65,534 hosts support करती है?*
 - **(A)** Class A
 - **(B)** Class B
@@ -2924,7 +2913,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *65,534 = 2^16−2 = Class B hosts। 254 = 2^8−2 = Class C। 16,777,214 = 2^24−2 = Class A।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q227.** What is the maximum number of IP addresses in a Class C network?
+**Q226.** What is the maximum number of IP addresses in a Class C network?
 *Class C network में IP addresses की अधिकतम संख्या कितनी होती है?*
 - **(A)** 254
 - **(B)** 256
@@ -2935,7 +2924,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *कुल addresses = 2^host-bits। उपयोगी hosts = कुल − 2। Exam दोनों पूछता है — 'addresses' और 'hosts' में ध्यान से फर्क पढ़ें!*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q228.** Which of the following is a Class D address?
+**Q227.** Which of the following is a Class D address?
 *निम्न में से कौन-सा Class D address है?*
 - **(A)** 224.1.1.1
 - **(B)** 233.0.0.10
@@ -2946,7 +2935,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class D = 224-239 (multicast)। इस range का कोई भी address Class D है — exam में अक्सर ऐसे मिश्रित octets दिए जाते हैं।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q229.** Which IP address is reserved for future use and experimental purposes?
+**Q228.** Which IP address is reserved for future use and experimental purposes?
 *कौन-सा IP address भविष्य के उपयोग और प्रायोगिक उद्देश्यों के लिए reserved है?*
 - **(A)** 127.0.0.1
 - **(B)** 224.0.0.1
@@ -2957,7 +2946,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *240.0.0.0/4 = Class E = future use। 127.x = loopback, 224.x = multicast, 192.168.x = private।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q230.** Which of the following is a Class B host address?
+**Q229.** Which of the following is a Class B host address?
 *निम्न में से कौन-सा Class B host address है?*
 - **(A)** 230.0.0.0
 - **(B)** 130.4.5.6
@@ -2968,7 +2957,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *230.x = Class D (multicast)। 30.x = Class A। 130.x = Class B — पहले octet को देखें।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q231.** Which of the following is a valid IPv4 address?
+**Q230.** Which of the following is a valid IPv4 address?
 *निम्न में से कौन-सा वैध IPv4 address है?*
 - **(A)** 192.256.1.1
 - **(B)** 172.31.0.1
@@ -2979,7 +2968,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Octet range check: केवल 0-255। 172.16-172.31.x private Class B range भी है (bonus!)।*
 *[Source: 30 important CN MCQs (Medium blog bank)] · Medium*
 
-**Q232.** The address 255.255.255.255 is used for:
+**Q231.** The address 255.255.255.255 is used for:
 *Address 255.255.255.255 किसके लिए उपयोग होती है?*
 - **(A)** A public IP
 - **(B)** A default gateway
@@ -2990,7 +2979,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Limited broadcast = 255.255.255.255 (केवल यह network)। Directed broadcast = subnet का अंतिम address (जैसे 192.168.1.255)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q233.** What is the purpose of the reserved IP address 0.0.0.0?
+**Q232.** What is the purpose of the reserved IP address 0.0.0.0?
 *Reserved IP address 0.0.0.0 का उद्देश्य क्या है?*
 - **(A)** Default gateway
 - **(B)** Used for DHCP servers
@@ -3001,7 +2990,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *0.0.0.0/0 = default route (gateway of last resort)। Source के रूप में = 'अभी IP नहीं मिला'।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q234.** The IP address used by a host's packets as the source while the host is being booted (before it gets an IP) is:
+**Q233.** The IP address used by a host's packets as the source while the host is being booted (before it gets an IP) is:
 *जब host boot हो रहा होता है (IP मिलने से पहले) तो उसके packets का source IP address कौन-सा होता है?*
 - **(A)** 0.0.0.0
 - **(B)** 1.0.0.0
@@ -3012,7 +3001,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Boot/DHCP चरण: source 0.0.0.0, destination 255.255.255.255 (broadcast)। यह DHCP handshake का classic pattern है।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q235.** What is the range of addresses for APIPA (Automatic Private IP Addressing)?
+**Q234.** What is the range of addresses for APIPA (Automatic Private IP Addressing)?
 *APIPA (Automatic Private IP Addressing) की address range क्या है?*
 - **(A)** 169.254.0.1 to 169.254.255.254
 - **(B)** 10.0.0.0 to 10.255.255.255
@@ -3023,7 +3012,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *APIPA = 169.254.x.x (link-local, auto)। Private blocks: 10.x / 172.16-31.x / 192.168.x (RFC 1918)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q236.** Which IP address can be used in a WAN (public network)?
+**Q235.** Which IP address can be used in a WAN (public network)?
 *कौन-सा IP address WAN (public network) में उपयोग हो सकता है?*
 - **(A)** 256.0.0.1
 - **(B)** 172.16.0.10
@@ -3034,7 +3023,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *WAN के लिए public IPs चाहिए। Private ranges (10.x, 172.16-31.x, 192.168.x) + loopback + invalid octets — सब हटाना सीखें।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q237.** Each computer connected to the internet must:
+**Q236.** Each computer connected to the internet must:
 *Internet से जुड़े प्रत्येक computer को क्या होना चाहिए?*
 - **(A)** Be an IBM PC
 - **(B)** Have a unique IP address
@@ -3045,7 +3034,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Unique IP = Internet की मूल आवश्यकता (IPv4 32-bit या IPv6 128-bit)।*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
-**Q238.** Which organization is responsible for managing IP address allocation globally?
+**Q237.** Which organization is responsible for managing IP address allocation globally?
 *वैश्विक स्तर पर IP address allocation का प्रबंधन कौन-सा संगठन करता है?*
 - **(A)** IEEE
 - **(B)** ICANN
@@ -3056,7 +3045,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ICANN/IANA = addresses + names। IETF = protocols (RFCs)। IEEE = LAN standards (802.x)। ISO = OSI model।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q239.** What is the size of each octet in an IPv4 address?
+**Q238.** What is the size of each octet in an IPv4 address?
 *IPv4 address के प्रत्येक octet का size कितना होता है?*
 - **(A)** 4 bits
 - **(B)** 8 bits
@@ -3067,7 +3056,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Octet = 8 bits (decimal में 0-255)। 4 octets = 32 bits = dotted-decimal notation।*
 *[Source: IP Addressing quiz (Studocu bank, with keys)] · Hard*
 
-**Q240.** An IPv4 address is of size:
+**Q239.** An IPv4 address is of size:
 *IPv4 address कितने bits का होता है?*
 - **(A)** 8 bit
 - **(B)** 16 bit
@@ -3078,7 +3067,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Size shortcut: MAC 48, IPv4 32, IPv6 128, Port 16 (bits)।*
 *[Source: Networking MCQ bank (MQuestions blog)] · Hard*
 
-**Q241.** If the number of networks and number of hosts in Class B are 2^m and (2^n − 2) respectively, then the relation between m and n is:
+**Q240.** If the number of networks and number of hosts in Class B are 2^m and (2^n − 2) respectively, then the relation between m and n is:
 *यदि Class B में networks और hosts की संख्या क्रमशः 2^m और (2^n − 2) है, तो m और n के बीच क्या संबंध है?*
 - **(A)** 3m = 2n
 - **(B)** 7m = 8n
@@ -3089,7 +3078,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class B classful counts: networks 2^14, hosts 2^16−2। अतः m=14, n=16 → 8m=7n। (Class A: 2^7 nets, 2^24−2 hosts; Class C: 2^21 nets, 2^8−2 hosts।)*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q242.** Which subnet mask is the default for the Class B IP address range?
+**Q241.** Which subnet mask is the default for the Class B IP address range?
 *Class B IP address range के लिए default subnet mask कौन-सा है?*
 - **(A)** 255.255.255.0
 - **(B)** 255.0.0.0
@@ -3100,7 +3089,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Default masks: A 255.0.0.0 (/8), B 255.255.0.0 (/16), C 255.255.255.0 (/24)।*
 *[Source: 30 important CN MCQs (Medium blog bank) · also CN Topic Test-6] · Hard*
 
-**Q243.** What is the primary purpose of NAT (Network Address Translation) in IPv4?
+**Q242.** What is the primary purpose of NAT (Network Address Translation) in IPv4?
 *IPv4 में NAT (Network Address Translation) का मुख्य उद्देश्य क्या है?*
 - **(A)** To map private IP addresses to a public IP address
 - **(B)** To increase the security of IP addresses
@@ -3111,7 +3100,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *NAT का core = private→public mapping। अतिरिक्त प्रभाव: internal IPs छिपती हैं (security), address exhaustion कम होती है। कुछ banks 'All of these' key करते हैं — मुख्य उद्देश्य mapping ही है।*
 *[Source: IP Addressing quiz (Studocu bank, with keys)] · Hard*
 
-**Q244.** A host is connected to a department network which is part of a university network; the university network in turn is part of the Internet. Which is the LARGEST network among these?
+**Q243.** A host is connected to a department network which is part of a university network; the university network in turn is part of the Internet. Which is the LARGEST network among these?
 *एक host department network से जुड़ा है जो university network का हिस्सा है; university network बदले में Internet का हिस्सा है। इनमें सबसे बड़ा network कौन-सा है?*
 - **(A)** The subnet to which the host belongs
 - **(B)** The department network
@@ -3122,7 +3111,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *पदानुक्रम: subnet ⊂ department LAN ⊂ university CAN ⊂ Internet। Addressing भी इसी तरह (network prefix lengths)।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Hard*
 
-**Q245.** Which IP address type is used to communicate with all devices on a subnet?
+**Q244.** Which IP address type is used to communicate with all devices on a subnet?
 *Subnet के सभी devices से संवाद करने के लिए किस type का IP address उपयोग होता है?*
 - **(A)** Unicast
 - **(B)** Broadcast
@@ -3133,7 +3122,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IP communication types: Unicast (one-to-one), Broadcast (one-to-all-on-subnet), Multicast (one-to-group), Anycast (one-to-nearest)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q246.** Which of the following is NOT a valid private (RFC-1918) IP address?
+**Q245.** Which of the following is NOT a valid private (RFC-1918) IP address?
 *निम्न में से कौन-सा वैध private (RFC-1918) IP पता नहीं है?*
 - **(A)** 10.0.0.1
 - **(B)** 172.16.5.4
@@ -3144,7 +3133,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Private ranges याद रखो: 10.x (Class A), 172.16–172.31.x (Class B), 192.168.x (Class C) — बाकी सब public.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q247.** In the IPv4 addressing format, the number of networks allowed under Class C addresses is:
+**Q246.** In the IPv4 addressing format, the number of networks allowed under Class C addresses is:
 *IPv4 addressing में Class C addresses के अंतर्गत कुल कितने networks allowed हैं?*
 - **(A)** 2¹⁴
 - **(B)** 2⁷
@@ -3155,7 +3144,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *2²⁴ poora field (3 fixed bits bhool kar); 2⁷/2¹⁴ doosre figures hain.*
 *[Source: GATE CS 2012] · Hard*
 
-**Q248.** Which one of the following CIDR prefixes exactly represents the range of IP addresses 10.12.2.0 to 10.12.3.255?
+**Q247.** Which one of the following CIDR prefixes exactly represents the range of IP addresses 10.12.2.0 to 10.12.3.255?
 *CIDR prefix में से कौन-सा 10.12.2.0 से 10.12.3.255 तक की IP range को ठीक-ठीक दर्शाता है?*
 - **(A)** 10.12.2.0/24
 - **(B)** 10.12.2.0/23
@@ -3166,7 +3155,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 */24 sirf 2.x; /22 bahut bada; /25 aadha block.*
 *[Source: GATE CS 2024 Set-2] · Hard*
 
-**Q249.** Three machines M, N and P have IP addresses 100.10.5.2, 100.10.5.5 and 100.10.5.6 respectively. The subnet mask is set to 255.255.255.252 for all three machines. Which one of the following is true?
+**Q248.** Three machines M, N and P have IP addresses 100.10.5.2, 100.10.5.5 and 100.10.5.6 respectively. The subnet mask is set to 255.255.255.252 for all three machines. Which one of the following is true?
 *तीन machines M, N, P के IP addresses क्रमशः 100.10.5.2, 100.10.5.5 और 100.10.5.6 हैं। तीनों का subnet mask 255.255.255.252 है। निम्न में से कौन-सा कथन सही है?*
 - **(A)** All three belong to the same subnet / तीनों एक ही subnet में हैं
 - **(B)** M and N belong to the same subnet / M और N एक ही subnet में हैं
@@ -3212,7 +3201,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q250.** A subnet /30 is MOST commonly used for:
+**Q249.** A subnet /30 is MOST commonly used for:
 *Subnet /30 सबसे अधिक किसके लिए उपयोग होती है?*
 - **(A)** Two-host networks
 - **(B)** Four-host networks
@@ -3223,7 +3212,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *2 routers के बीच link = /30। WAN links या tunnel endpoints के लिए standard।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q251.** Which part of the IP address 172.16.5.4/24 identifies the network?
+**Q250.** Which part of the IP address 172.16.5.4/24 identifies the network?
 *IP address 172.16.5.4/24 का कौन-सा भाग network पहचानता है?*
 - **(A)** 172
 - **(B)** 172.16
@@ -3234,7 +3223,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Visual trick: /8 → 1 octet, /16 → 2 octets, /24 → 3 octets network।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q252.** A network ID (address with all host bits = 0) cannot be assigned to:
+**Q251.** A network ID (address with all host bits = 0) cannot be assigned to:
 *Network ID (सभी host bits = 0 वाला address) किसे assign नहीं किया जा सकता?*
 - **(A)** A router
 - **(B)** A switch
@@ -3245,7 +3234,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Network ID = block का पहला address (host bits 0)। Broadcast = अंतिम (host bits 1)। दोनों reserved; उपयोगी hosts = बीच के addresses ही।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q253.** A host has IP 192.168.10.45/27. Which statement is TRUE?
+**Q252.** A host has IP 192.168.10.45/27. Which statement is TRUE?
 *एक host का IP 192.168.10.45/27 है। कौन-सा कथन सही है?*
 - **(A)** Broadcast address = 192.168.10.63
 - **(B)** Network ID = 192.168.10.32
@@ -3256,7 +3245,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Block arithmetic: 45 ÷ 32 → block 32। Network = block की शुरुआत; broadcast = अगला block − 1।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-03] · Medium*
 
-**Q254.** What does the term 'subnetting' refer to in networking?
+**Q253.** What does the term 'subnetting' refer to in networking?
 *Networking में 'subnetting' शब्द का क्या अर्थ है?*
 - **(A)** Dividing a large network into smaller logical networks
 - **(B)** Allocating IP addresses to devices
@@ -3267,7 +3256,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Subnetting = बड़ा network → छोटे networks (बेहतर performance, security, कम broadcast)।*
 *[Source: 30 important CN MCQs (Medium blog bank) · also CN Topic Test-03] · Hard*
 
-**Q255.** When IPv4 addressing is manually configured, which property identifies the network and host portions of the address?
+**Q254.** When IPv4 addressing is manually configured, which property identifies the network and host portions of the address?
 *जब IPv4 addressing manually configure होती है, तो कौन-सा property address के network और host भाग पहचानती है?*
 - **(A)** DNS server address
 - **(B)** Subnet mask
@@ -3278,7 +3267,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Mask = network और host के बीच सीमा। /24 = 255.255.255.0 = 24 network bits + 8 host bits।*
 *[Source: IP Addressing quiz (Studocu bank, with keys)] · Hard*
 
-**Q256.** In a subnet mask, the number of 1's represents:
+**Q255.** In a subnet mask, the number of 1's represents:
 *Subnet mask में 1's की संख्या किसका प्रतिनिधित्व करती है?*
 - **(A)** Host bits
 - **(B)** Network bits
@@ -3289,7 +3278,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *1s की गिनती = prefix length (/n)। उदाहरण: 255.255.255.0 में 24 ones = /24।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q257.** In CIDR notation, what does /16 represent?
+**Q256.** In CIDR notation, what does /16 represent?
 *CIDR notation में /16 का क्या अर्थ है?*
 - **(A)** 16 host bits
 - **(B)** 16 network bits
@@ -3300,7 +3289,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *CIDR /n = n network bits। Host bits = 32 − n। /16 → 2^16 − 2 hosts।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q258.** What does /24 denote in CIDR?
+**Q257.** What does /24 denote in CIDR?
 *CIDR में /24 किसे दर्शाता है?*
 - **(A)** 24 bits are used for the host portion
 - **(B)** 24 bits are used for the network portion
@@ -3311,7 +3300,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Official RPSC 2024 key: /24 = 24 network bits। वैसे ही: /27 = 27 network bits, /30 = 30।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key)] · Hard*
 
-**Q259.** How many USABLE hosts are there in a /24 subnet?
+**Q258.** How many USABLE hosts are there in a /24 subnet?
 */24 subnet में कितने उपयोगी (usable) hosts होते हैं?*
 - **(A)** 128
 - **(B)** 256
@@ -3322,7 +3311,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *सूत्र: उपयोगी hosts = 2^host_bits − 2। /24 → 254, /25 → 126, /26 → 62, /27 → 30, /28 → 14, /29 → 6, /30 → 2।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5) · also CN Topic Test-03] · Hard*
 
-**Q260.** How many usable hosts are there in a /30 subnet?
+**Q259.** How many usable hosts are there in a /30 subnet?
 */30 subnet में कितने उपयोगी hosts होते हैं?*
 - **(A)** 2
 - **(B)** 4
@@ -3333,7 +3322,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 */30 = 2 hosts (router-to-router links)। /29 = 6 hosts (छोटा office)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q261.** A subnet mask of 255.255.255.248 allows how many usable hosts?
+**Q260.** A subnet mask of 255.255.255.248 allows how many usable hosts?
 *Subnet mask 255.255.255.248 कितने उपयोगी hosts की अनुमति देता है?*
 - **(A)** 2
 - **(B)** 6
@@ -3344,7 +3333,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *.248 = /29 = 6 hosts। /30-/29-/28 ladder याद रखें: 2, 6, 14।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Hard*
 
-**Q262.** The subnet mask 255.255.255.128 provides how many subnets for a Class C network?
+**Q261.** The subnet mask 255.255.255.128 provides how many subnets for a Class C network?
 *Subnet mask 255.255.255.128, Class C network के लिए कितने subnets देता है?*
 - **(A)** 1
 - **(B)** 2
@@ -3355,7 +3344,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *उधार bits n → 2^n subnets। .128 = 1 bit उधार → 2 subnets।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q263.** A network needs 5 subnets, each with at least 16 hosts. Which subnet mask (Class C) should be used?
+**Q262.** A network needs 5 subnets, each with at least 16 hosts. Which subnet mask (Class C) should be used?
 *एक network को 5 subnets चाहिए, हर एक में कम से कम 16 hosts। कौन-सा subnet mask (Class C) उपयोग करें?*
 - **(A)** 255.255.255.192
 - **(B)** 255.255.255.248
@@ -3366,7 +3355,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Subnetting trade-off: ज़्यादा subnets → हर एक में कम hosts। बस पर्याप्त bits उधार लें (यहाँ 3)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q264.** A subnet mask for Class C can have how many 1's by default (remaining bits 0)?
+**Q263.** A subnet mask for Class C can have how many 1's by default (remaining bits 0)?
 *Class C के लिए subnet mask में डिफ़ॉल्ट रूप से कितने 1's हो सकते हैं (बाकी bits 0)?*
 - **(A)** 10
 - **(B)** 24
@@ -3377,7 +3366,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class C default = /24 = 24 ones। (Subnetting के साथ यह व्यावहारिक रूप से /30 तक जा सकता है।)*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q265.** What is the valid host range for the subnet 192.168.1.0/25?
+**Q264.** What is the valid host range for the subnet 192.168.1.0/25?
 *Subnet 192.168.1.0/25 के लिए वैध host range क्या है?*
 - **(A)** 192.168.1.0 - 192.168.1.255
 - **(B)** 192.168.1.1 - 192.168.1.126
@@ -3388,7 +3377,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Host range = network+1 से broadcast−1। /25 के लिए: .1-.126 (पहला subnet) और .129-.254 (दूसरा)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q266.** In subnetting, reducing the number of host bits does what?
+**Q265.** In subnetting, reducing the number of host bits does what?
 *Subnetting में host bits की संख्या घटाने से क्या होता है?*
 - **(A)** Increases the broadcast domain
 - **(B)** Decreases the number of subnets
@@ -3399,7 +3388,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ज़्यादा subnet bits ⇔ ज़्यादा subnets ⇔ हर एक में कम hosts। यह subnetting का मूल trade-off है।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Hard*
 
-**Q267.** In a class B subnet: IP address 125.134.112.66, mask 255.255.224.0. What is the first address (network address)?
+**Q266.** In a class B subnet: IP address 125.134.112.66, mask 255.255.224.0. What is the first address (network address)?
 *Class B subnet में: IP address 125.134.112.66, mask 255.255.224.0। पहला address (network address) क्या होगा?*
 - **(A)** 125.134.96.0
 - **(B)** 125.134.112.0
@@ -3410,7 +3399,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Block size = 256 − अंतिम गैर-255 octet (256−224 = 32)। Floor(112/32)×32 = 96।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q268.** A Class B network is to be split into subnets with a 3-bit subnet number. What is the maximum number of subnets and hosts in each subnet?
+**Q267.** A Class B network is to be split into subnets with a 3-bit subnet number. What is the maximum number of subnets and hosts in each subnet?
 *एक Class B network को 3-bit subnet number में बाँटना है। प्रत्येक subnet में subnets और hosts की अधिकतम संख्या कितनी होगी?*
 - **(A)** 8 subnets and 262141 hosts
 - **(B)** 6 subnets and 262141 hosts
@@ -3421,7 +3410,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Class B /16 + 3 subnet bits = /19: 8 subnets × 8190 hosts। विकल्प असामान्य हैं इसलिए सही विकल्प 'None of the above' है।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q269.** IP address 172.16.123.213 has subnet mask 255.255.255.240. What is its network (first) address?
+**Q268.** IP address 172.16.123.213 has subnet mask 255.255.255.240. What is its network (first) address?
 *IP address 172.16.123.213 का subnet mask 255.255.255.240 है। इसका network (पहला) address क्या है?*
 - **(A)** 172.16.123.240
 - **(B)** 172.16.123.208
@@ -3432,7 +3421,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 */28 = 16-address blocks: यहाँ .208-.223। Network = .208, broadcast = .223, hosts = .209-.222 (14 hosts)।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Hard*
 
-**Q270.** An organization has a Class B network and wishes to form subnets for 64 departments. The subnet mask would be:
+**Q269.** An organization has a Class B network and wishes to form subnets for 64 departments. The subnet mask would be:
 *एक संगठन के पास Class B network है और वह 64 departments के लिए subnets बनाना चाहता है। Subnet mask क्या होगा?*
 - **(A)** 255.255.128.0
 - **(B)** 255.255.0.0
@@ -3443,7 +3432,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *6 bits उधार: 16+6 = 22 network bits = 255.255.252.0। RPSC 2024 official key।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key)] · Hard*
 
-**Q271.** A Class B network has a subnet mask of 255.255.248.0. What is the maximum number of hosts per subnet?
+**Q270.** A Class B network has a subnet mask of 255.255.248.0. What is the maximum number of hosts per subnet?
 *एक Class B network का subnet mask 255.255.248.0 है। प्रति subnet hosts की अधिकतम संख्या कितनी है?*
 - **(A)** 2046
 - **(B)** 1022
@@ -3454,7 +3443,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Official key (RPSC 2024 + Rajasthan PYQ): 2046 hosts। /21 → 2^11−2 = 2046।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · Rajasthan PYQ Q56] · Hard*
 
-**Q272.** An IP address 156.233.42.56 is configured with a 7-bit subnet mask (7 bits borrowed from the host part of the classful network). How many hosts and subnets are possible?
+**Q271.** An IP address 156.233.42.56 is configured with a 7-bit subnet mask (7 bits borrowed from the host part of the classful network). How many hosts and subnets are possible?
 *IP address 156.233.42.56 को 7-bit subnet mask (classful network के host भाग से 7 bits उधार) के साथ configure किया गया है। कितने hosts और subnets संभव हैं?*
 - **(A)** 126 hosts, 510 subnets
 - **(B)** 128 hosts, 512 subnets
@@ -3465,7 +3454,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bank key pattern: 7 host bits → 126 hosts; 9 subnet bits → 510 उपयोगी subnets (दोनों −2)।*
 *[Source: Unit Test -2 Solutions (OCR), p5] · Hard*
 
-**Q273.** If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?
+**Q272.** If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?
 *यदि internet पर किसी Class B network की subnet mask 255.255.248.0 हो, तो हर subnet में अधिकतम hosts कितने होंगे?*
 - **(A)** 1023
 - **(B)** 1022
@@ -3476,7 +3465,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 (network और broadcast हटाकर).*
 *[Source: RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)] · Hard*
 
-**Q274.** The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?
+**Q273.** The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?
 *Class B host के पते को 6-bit subnet number से subnets में बाँटना है. अधिकतम subnets और हर subnet में अधिकतम hosts कितने होंगे?*
 - **(A)** 62 subnets and 262142 hosts
 - **(B)** 64 subnets and 262142 hosts
@@ -3487,7 +3476,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC 2011 और GATE 2005 दोनों में यही प्रश्न — official key (C) 62 subnets, 1022 hosts.*
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in) + GATE CS 2005] · Hard*
 
-**Q275.** Suppose that in an IP-over-Ethernet network, a machine X wishes to find the MAC address of another machine Y in its subnet. Which one of the following techniques can be used for this?
+**Q274.** Suppose that in an IP-over-Ethernet network, a machine X wishes to find the MAC address of another machine Y in its subnet. Which one of the following techniques can be used for this?
 *IP-over-Ethernet network में machine X को अपने ही subnet की machine Y का MAC address जानना है। इसके लिए निम्न में से कौन-सी technique प्रयोग होगी?*
 - **(A)** ARP request broadcast
 - **(B)** RARP request broadcast
@@ -3498,7 +3487,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RARP उल्टा (MAC→IP); DNS नाम→IP; ICMP error — MAC कोई नहीं देता।*
 *[Source: GATE CS 2019] · Hard*
 
-**Q276.** Node X has a TCP connection open to node Y. Packets from X to Y go through an intermediate IP router R; Ethernet switch S is the first switch on the path. For a packet sent from X, which of the following is TRUE about its destination IP and MAC addresses at the time it leaves X?
+**Q275.** Node X has a TCP connection open to node Y. Packets from X to Y go through an intermediate IP router R; Ethernet switch S is the first switch on the path. For a packet sent from X, which of the following is TRUE about its destination IP and MAC addresses at the time it leaves X?
 *Node X की node Y से TCP connection है; packets router R से होकर जाते हैं और पहला Ethernet switch S है। X से निकलते packet के destination IP और MAC addresses के बारे में क्या सही है?*
 - **(A)** Destination IP = Y's IP; destination MAC = R's MAC / Destination IP = Y का IP; destination MAC = R का MAC
 - **(B)** Destination IP = R's IP; destination MAC = R's MAC / Destination IP = R का IP; destination MAC = R का MAC
@@ -3542,7 +3531,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q277.** Which IPv6 address type is globally unique and globally routable?
+**Q276.** Which IPv6 address type is globally unique and globally routable?
 *कौन-सा IPv6 address type globally unique और globally routable होता है?*
 - **(A)** Link-Local
 - **(B)** Multicast
@@ -3553,7 +3542,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv6 unicast scopes: Link-Local (fe80::/10) = केवल यह link; Unique-Local (fc00::/7) = private जैसा; Global (2000::/3) = Internet।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q278.** IPv6 was developed by:
+**Q277.** IPv6 was developed by:
 *IPv6 किसने develop किया?*
 - **(A)** IETF
 - **(B)** ANSI
@@ -3564,7 +3553,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv4/IPv6 = IETF (RFCs)। OSI = ISO। LAN standards = IEEE (802)। ANSI = US standards body।*
 *[Source: Repo: CN Topic Test-03 (UNIT TEST-3)] · Medium*
 
-**Q279.** Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
+**Q278.** Two IPv6 nodes must interoperate but are connected through intervening IPv4 routers. The best solution is:
 *दो IPv6 nodes को interoperable होना है लेकिन वे बीच में आने वाले IPv4 routers से जुड़े हैं। सबसे अच्छा समाधान क्या है?*
 - **(A)** Use the dual-stack approach
 - **(B)** Tunneling
@@ -3575,7 +3564,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Transition mechanisms: Tunneling (IPv6 over IPv4), Dual-stack (दोनों), Translation (NAT64)।*
 *[Source: Sanfoundry CN MCQs — IPv6] · Medium*
 
-**Q280.** Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
+**Q279.** Which DNS resource record should be queried to retrieve the IPv6 address associated with a name?
 *किसी name से जुड़ा IPv6 address पाने के लिए कौन-सी DNS resource record query करनी चाहिए?*
 - **(A)** The AAAA record
 - **(B)** The A record
@@ -3586,7 +3575,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DNS records: A = name→IPv4, AAAA = name→IPv6, PTR = IP→name, MX = mail, NS = name server।*
 *[Source: cnp3 MCQ (Bonaventure CN textbook), DNS1] · Medium*
 
-**Q281.** IPv6 addresses are ______ bit addresses.
+**Q280.** IPv6 addresses are ______ bit addresses.
 *IPv6 addresses ______ bit के पते होते हैं.*
 - **(A)** 32
 - **(B)** 64
@@ -3597,7 +3586,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv4 = 32-bit (4 numbers); IPv6 = 128-bit (8 groups).*
 *[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)] · Medium*
 
-**Q282.** In IPv6, how many bits are in the address?
+**Q281.** In IPv6, how many bits are in the address?
 *IPv6 में address कितने bits का होता है?*
 - **(A)** 32
 - **(B)** 64
@@ -3608,7 +3597,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Size line: IPv4 32, IPv6 128, MAC 48, Port 16। 128 bits = 2^128 ≈ 3.4 × 10^38 addresses।*
 *[Source: Repo: CN Topic Test-6 (UNIT TEST-6) · Sanfoundry / Medium / MQuestions banks] · Hard*
 
-**Q283.** IPv6 does NOT use which type of address?
+**Q282.** IPv6 does NOT use which type of address?
 *IPv6 किस type का address उपयोग नहीं करता?*
 - **(A)** Broadcast
 - **(B)** Multicast
@@ -3619,7 +3608,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv4: unicast + broadcast + multicast। IPv6: unicast + multicast + anycast (broadcast नहीं)।*
 *[Source: Sanfoundry CN MCQs — IPv6] · Hard*
 
-**Q284.** Which features are present in IPv4 but NOT in IPv6?
+**Q283.** Which features are present in IPv4 but NOT in IPv6?
 *कौन-सी features IPv4 में हैं लेकिन IPv6 में नहीं?*
 - **(A)** Fragmentation by routers
 - **(B)** Header checksum
@@ -3630,7 +3619,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv6 header = fixed 40 bytes, 8 fields, कोई checksum नहीं / कोई router fragmentation नहीं / कोई options field नहीं।*
 *[Source: Sanfoundry CN MCQs — IPv6] · Hard*
 
-**Q285.** Which of the following is TRUE for IPv6?
+**Q284.** Which of the following is TRUE for IPv6?
 *IPv6 के लिए निम्न में से क्या सही है?*
 - **(A)** Uses 32-bit addresses
 - **(B)** Includes a header checksum
@@ -3675,7 +3664,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q286.** Which of the following sets of port numbers belongs to the 'well-known' ports category?
+**Q285.** Which of the following sets of port numbers belongs to the 'well-known' ports category?
 *निम्न में से कौन-से port numbers 'well-known' ports category में आते हैं?*
 - **(A)** 80, 443, 8080
 - **(B)** 49152, 110, 53
@@ -3686,7 +3675,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Port ranges: Well-known 0-1023, Registered 1024-49151, Ephemeral (dynamic) 49152-65535।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q287.** What is the typical range of ephemeral (dynamic) ports?
+**Q286.** What is the typical range of ephemeral (dynamic) ports?
 *Ephemeral (dynamic) ports की सामान्य range क्या है?*
 - **(A)** 0-1023
 - **(B)** 1024-49151
@@ -3697,7 +3686,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Well-known 0-1023 (services), Registered 1024-49151 (apps), Ephemeral 49152-65535 (clients)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test 5] · Easy*
 
-**Q288.** The transport layer uses which type of addressing?
+**Q287.** The transport layer uses which type of addressing?
 *Transport layer किस प्रकार की addressing उपयोग करता है?*
 - **(A)** IP address
 - **(B)** MAC address
@@ -3708,7 +3697,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Layer addressing: Data link = MAC (48), Network = IP (32), Transport = Port (16), Application = specific/socket।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q289.** A URL (like www.example.com) belongs to which layer?
+**Q288.** A URL (like www.example.com) belongs to which layer?
 *URL (जैसे www.example.com) किस layer से संबंधित है?*
 - **(A)** Presentation
 - **(B)** Application
@@ -3719,7 +3708,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Layers पर address levels: specific (app) → port (transport) → IP (network) → MAC (data link)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q290.** DNS works at which layer of the OSI model?
+**Q289.** DNS works at which layer of the OSI model?
 *DNS, OSI model की किस layer पर काम करता है?*
 - **(A)** Transport
 - **(B)** Application
@@ -3730,7 +3719,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Application layer के उदाहरण: DNS, HTTP, FTP, SMTP, SNMP, DHCP। Transport उन्हें ले जाता है (DNS के लिए UDP 53)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q291.** Which of the following uniquely identifies a process on a host?
+**Q290.** Which of the following uniquely identifies a process on a host?
 *Host पर किसी process की unique पहचान कौन करता है?*
 - **(A)** IP address only
 - **(B)** Port number only
@@ -3741,7 +3730,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IP = host (machine)। IP + Port = विशिष्ट process (socket/specific address)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
-**Q292.** What is the default port number for DNS?
+**Q291.** What is the default port number for DNS?
 *DNS का default port number क्या है?*
 - **(A)** 80
 - **(B)** 21
@@ -3752,7 +3741,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Port one-liners: DNS 53, HTTP 80, HTTPS 443, FTP 21/20, SMTP 25, POP3 110, Telnet 23, SSH 22, DHCP 67/68।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q293.** DNS is the abbreviation of:
+**Q292.** DNS is the abbreviation of:
 *DNS का पूरा नाम (full form) क्या है?*
 - **(A)** Dynamic Name System
 - **(B)** Dynamic Network System
@@ -3763,7 +3752,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DNS = Domain Name System (port 53)। पदानुक्रम: root → TLD → authoritative servers।*
 *[Source: Networking MCQ bank (MQuestions blog)] · Medium*
 
-**Q294.** Which DNS record type maps a domain name to an IPv4 address?
+**Q293.** Which DNS record type maps a domain name to an IPv4 address?
 *कौन-सी DNS record type domain name को IPv4 address से जोड़ती है?*
 - **(A)** CNAME
 - **(B)** A
@@ -3774,7 +3763,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Records quick map: A = name→IPv4, AAAA = name→IPv6, PTR = IP→name, CNAME = alias, MX = mail।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6) · also cnp3 DNS2] · Medium*
 
-**Q295.** What is the role of DNS? It is best described as:
+**Q294.** What is the role of DNS? It is best described as:
 *DNS की भूमिका क्या है? सबसे सही विवरण है:*
 - **(A)** Maps a domain name to an IP address
 - **(B)** Translates a host's private IP to a public IP
@@ -3785,7 +3774,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Official RPSC 2024 key। Reverse: PTR records IP→name map करती हैं। DHCP = auto IP config; NAT = private→public।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test-02 / Medium bank] · Hard*
 
-**Q296.** A reverse lookup in DNS means a lookup to ______ using ______ records.
+**Q295.** A reverse lookup in DNS means a lookup to ______ using ______ records.
 *DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की lookup।*
 - **(A)** Identify mail servers, SOA
 - **(B)** Map an IP address to a domain name, PTR
@@ -3796,7 +3785,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Forward: name → IP (A / AAAA)। Reverse: IP → name (PTR, in-addr.arpa)।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test 5] · Hard*
 
-**Q297.** The Address Resolution Protocol (ARP) is used for:
+**Q296.** The Address Resolution Protocol (ARP) is used for:
 *Address Resolution Protocol (ARP) किस काम में आता है?*
 - **(A)** Finding the IP address that corresponds to a MAC address
 - **(B)** Finding the MAC address that corresponds to an IP address
@@ -3807,7 +3796,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ARP = IP→MAC (Address Resolution)। RARP = MAC→IP (अप्रचलित — BOOTP/DHCP से बदला)। DNS = name→IP।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key)] · Hard*
 
-**Q298.** Which one of the following protocols is NOT used to resolve one form of address into another?
+**Q297.** Which one of the following protocols is NOT used to resolve one form of address into another?
 *निम्न में से कौन-सा protocol एक प्रकार के पते को दूसरे में बदलने के लिए उपयोग नहीं होता?*
 - **(A)** DNS
 - **(B)** ARP
@@ -3817,17 +3806,6 @@ S2: Transport layer segmentation और reassembly संभालती है�
 ★ **Nukta:** Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.
 *Address resolvers: DNS, ARP, RARP. Address distributor: DHCP.*
 *[Source: GATE CS PYQ (via Computer Science Junction / examprev)] · Hard*
-
-**Q299.** A reverse lookup in DNS means a lookup to ______ using ______ records.
-*DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.*
-- **(A)** map domain names to IP address, A
-- **(B)** map IP address to domain name, PTR
-- **(C)** determine the authoritative name servers, CNAME
-- **(D)** identify mail servers, SOA
-✔ **(B) map IP address to domain name, PTR**
-★ **Nukta:** Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.
-*Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.*
-*[Source: RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)] · Hard*
 
 # TOPIC 4 — Networking Devices
 
@@ -3863,7 +3841,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q300.** Which device operates only at the Physical layer (Layer 1) of the OSI model?
+**Q298.** Which device operates only at the Physical layer (Layer 1) of the OSI model?
 *OSI model की केवल Physical layer (Layer 1) पर कौन-सा device काम करता है?*
 - **(A)** Switch
 - **(B)** Hub
@@ -3874,7 +3852,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Layer 1 = Hub, Repeater, Modem, cables। Layer 2 = Switch, Bridge, NIC। Layer 3 = Router। Gateway = सभी 7 (protocol converter)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) · also CN Topic Test-6] · Easy*
 
-**Q301.** Which of the following pairs lists the network devices used at the physical layer?
+**Q299.** Which of the following pairs lists the network devices used at the physical layer?
 *निम्न में से कौन-सी जोड़ी physical layer पर उपयोग होने वाले network devices बताती है?*
 - **(A)** Gateway, Bridge
 - **(B)** Router, Repeater
@@ -3885,7 +3863,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Rajasthan PYQ (verified key: D)। Physical-layer जोड़ी = Repeater + Hub। Switch/Bridge = L2, Gateway = L7।*
 *[Source: Random Test- Rajasthan PYQ (OCR), p12 — Q93 (options reconstructed from screenshot)] · Medium*
 
-**Q302.** Which of the following are network connecting devices? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth
+**Q300.** Which of the following are network connecting devices? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth
 *निम्न में से कौन network connecting devices हैं? 1. Repeater  2. Bridge  3. Hub  4. Bluetooth*
 - **(A)** 1, 2 and 3
 - **(B)** 1, 2 and 4
@@ -3896,7 +3874,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Devices बनाम technologies: repeater/bridge/hub/switch/router = devices। Bluetooth/Wi-Fi/Ethernet = technologies/standards।*
 *[Source: Unit Test -2 Solutions (OCR), p11] · Medium*
 
-**Q303.** Which of the following statements are TRUE? 1. Switch reduces collision domain. 2. Hub creates a separate collision domain for each port. 3. Router separates broadcast domains.
+**Q301.** Which of the following statements are TRUE? 1. Switch reduces collision domain. 2. Hub creates a separate collision domain for each port. 3. Router separates broadcast domains.
 *निम्न में से कौन-से कथन सही हैं? 1. Switch collision domain को कम करता है। 2. Hub हर port के लिए अलग collision domain बनाता है। 3. Router broadcast domains को अलग करता है।*
 - **(A)** 1 and 2 only
 - **(B)** 2 and 3 only
@@ -3907,7 +3885,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Switch: collision ↓ (per-port)। Hub: 1 collision domain। Router: broadcast domains अलग। ये तीनों golden statements हैं।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q26] · Medium*
 
-**Q304.** Which device combines transmission from various I/O devices into one line?
+**Q302.** Which device combines transmission from various I/O devices into one line?
 *कौन-सा device विभिन्न I/O devices के transmission को एक line में मिलाता है?*
 - **(A)** Modifier
 - **(B)** Multiplexer
@@ -3918,7 +3896,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MUX = कई→एक line (FDM/TDM/WDM)। Concentrator = line का statistical sharing। Gateway = protocol converter।*
 *[Source: Unit Test-4 Solution (OCR), p22] · Medium*
 
-**Q305.** A file server is a ______ which is used to store files received from various client machines.
+**Q303.** A file server is a ______ which is used to store files received from various client machines.
 *File server एक ______ है जिसका उपयोग विभिन्न client machines से प्राप्त files संग्रहित करने के लिए होता है।*
 - **(A)** Specialized computer system
 - **(B)** Modem
@@ -3929,7 +3907,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Servers (file/print/mail/web) = विशेष computers। Modem = signal converter, Router = packet forwarder, Transponder = satellite relay।*
 *[Source: Unit Test-4 Solution (OCR), p24] · Medium*
 
-**Q306.** In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?
+**Q304.** In a data-entry office, computer centres on the 1st and 4th floors are connected by LANs, but signals take time to travel. Which hardware can improve the data transmission?
 *एक data-entry office में 1वीं और 4वीं मंज़िल के computer centres LAN से जुड़े हैं, पर signals में समय लगता है. बेहतर transmission के लिए कौन-सा hardware लगाएँ?*
 - **(A)** Repeater
 - **(B)** Router
@@ -3940,7 +3918,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *संकेत कमज़ोर → Repeater; रास्ता चाहिए → Router; analog↔digital → Modem.*
 *[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)] · Medium*
 
-**Q307.** Which of the following devices operates only in the physical layer?
+**Q305.** Which of the following devices operates only in the physical layer?
 *निम्न में से कौन-सा device केवल physical layer पर काम करता है?*
 - **(A)** Two-layer switch
 - **(B)** Router
@@ -3951,7 +3929,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Repeater = signal regenerator (L1)। Hub = multi-port repeater (L1)। दोनों 'dumb' devices हैं।*
 *[Source: Kerala PSC repeated PYQs (via pscarivukal)] · Hard*
 
-**Q308.** A device that operates at the physical layer of the OSI model is:
+**Q306.** A device that operates at the physical layer of the OSI model is:
 *OSI model की physical layer पर काम करने वाला device है:*
 - **(A)** Bridge
 - **(B)** Router
@@ -3993,7 +3971,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q309.** Which device stores MAC addresses in a CAM table?
+**Q307.** Which device stores MAC addresses in a CAM table?
 *कौन-सा device MAC addresses को CAM table में संग्रहित करता है?*
 - **(A)** Hub
 - **(B)** Router
@@ -4004,7 +3982,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Switch = MAC table (CAM)। Router = routing table (IP)। Hub = कोई table नहीं (floods)। ARP cache = IP→MAC mapping (host)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q310.** A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
+**Q308.** A router is connected between two switches. If a broadcast frame is sent on Switch-A, what will Switch-B receive?
 *दो switches के बीच एक router जुड़ा है। यदि Switch-A पर broadcast frame भेजा जाए, तो Switch-B क्या प्राप्त करेगा?*
 - **(A)** The broadcast
 - **(B)** A unicast copy
@@ -4015,7 +3993,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Router = broadcast firewall। इसीलिए router broadcast domains तोड़ते हैं और switches नहीं।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q311.** What does a MAC address represent?
+**Q309.** What does a MAC address represent?
 *MAC address किसका प्रतिनिधित्व करता है?*
 - **(A)** The location of the device in the network
 - **(B)** The unique identity of the NIC
@@ -4026,7 +4004,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = NIC identity (कौन)। IP = network में स्थान (कहाँ)। Routing path = router का काम।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q312.** Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
+**Q310.** Which device reduces collision domains (each port has its own collision domain) but does NOT break broadcast domains?
 *कौन-सा device collision domains को कम करता है (हर port का अपना collision domain) लेकिन broadcast domains को तोड़ता नहीं?*
 - **(A)** Switch
 - **(B)** Router
@@ -4037,7 +4015,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Switch = collision domains कई, broadcast 1। Router = broadcast domains कई। Hub = 1 collision + 1 broadcast। VLAN = switch पर broadcast तोड़ता है।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) · also CN Topic Test-6] · Medium*
 
-**Q313.** A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
+**Q311.** A switch receives a frame whose destination MAC is NOT in its MAC table. What does the switch do?
 *एक switch को frame मिलता है जिसका destination MAC उसके MAC table में नहीं है। Switch क्या करेगा?*
 - **(A)** Send the frame to the router only
 - **(B)** Flood the frame out of all its ports (same broadcast domain)
@@ -4048,7 +4026,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Unknown unicast → flood। Known unicast → एक port। Broadcast FF:FF:... → flood। Source MAC → CAM में learn/refresh।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q314.** A switch has 4 VLANs configured. How many broadcast domains exist?
+**Q312.** A switch has 4 VLANs configured. How many broadcast domains exist?
 *एक switch पर 4 VLANs configure हैं। कितने broadcast domains होंगे?*
 - **(A)** 1
 - **(B)** 2
@@ -4059,7 +4037,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *VLAN = virtual switch = अपना broadcast domain। Inter-VLAN संचार के लिए router (या L3 switch) चाहिए।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q315.** In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
+**Q313.** In a router-on-a-stick setup with VLANs, which device handles VLAN tagging and which handles inter-VLAN routing?
 *VLANs वाले router-on-a-stick setup में VLAN tagging कौन करता है और inter-VLAN routing कौन?*
 - **(A)** Switch – VLAN tags, Router – routing
 - **(B)** Router – VLAN tags, Switch – routing
@@ -4070,7 +4048,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *802.1Q tagging = switch trunk का काम। Inter-VLAN routing = router (router-on-a-stick) या L3 switch।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q316.** A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
+**Q314.** A packet travels: wired PC → Switch → Access Point → Wireless laptop. Which devices operate at Layer 2 only?
 *एक packet यात्रा करता है: wired PC → Switch → Access Point → Wireless laptop। कौन-से devices केवल Layer 2 पर काम करते हैं?*
 - **(A)** Switch only
 - **(B)** Access Point only
@@ -4081,7 +4059,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *AP = wireless bridge (L2)। Switch = L2। Router = L3। WAPs routing नहीं करते (जब तक router mode में न हों)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q317.** Which of the following component is responsible for network communication in a computer system?
+**Q315.** Which of the following component is responsible for network communication in a computer system?
 *कंप्यूटर सिस्टम में network communication के लिए कौन-सा component ज़िम्मेदार होता है?*
 - **(A)** UPS
 - **(B)** Ethernet card (NIC)
@@ -4092,7 +4070,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *NIC = computer का network वाला हाथ — इसी पर MAC address बसा होता है.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p18] · Medium*
 
-**Q318.** LANs can be connected by which of the following devices that operate on the data link layer?
+**Q316.** LANs can be connected by which of the following devices that operate on the data link layer?
 *LANs को data link layer पर काम करने वाले निम्न में से किस device से जोड़ा जा सकता है?*
 - **(A)** Hub
 - **(B)** Bridges
@@ -4132,7 +4110,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q319.** A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
+**Q317.** A router performs which of the following? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision
 *Router निम्न में से कौन-सा कार्य करता है? (1) Packet forwarding  (2) Logical addressing  (3) Collision detection  (4) Routing decision*
 - **(A)** 1, 2 and 4
 - **(B)** 2, 3 and 4
@@ -4143,7 +4121,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Router = forward + route + logical addressing। Collision detection नहीं (वह switches/NICs पर Ethernet L2 का काम है)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch) — Q28] · Easy*
 
-**Q320.** A router drops some packets deliberately due to congestion. What is this technique called?
+**Q318.** A router drops some packets deliberately due to congestion. What is this technique called?
 *Router congestion के कारण कुछ packets जानबूझकर छोड़ देता है। इस तकनीक को क्या कहते हैं?*
 - **(A)** Delay policing
 - **(B)** Redundancy
@@ -4154,7 +4132,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Congestion tools: RED (early random drops), Queuing (FIFO/PQ), Traffic shaping। Overflow पर सब छोड़ना = tail drop।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q321.** Which device creates a separate broadcast domain?
+**Q319.** Which device creates a separate broadcast domain?
 *कौन-सा device अलग broadcast domain बनाता है?*
 - **(A)** Switch
 - **(B)** Bridge
@@ -4165,7 +4143,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Broadcast domain सीमा = router (या VLAN)। Collision domain सीमा = switch port/bridge।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q322.** Which device operates at Layer 3 of the OSI model?
+**Q320.** Which device operates at Layer 3 of the OSI model?
 *OSI model की Layer 3 पर कौन-सा device काम करता है?*
 - **(A)** Hub
 - **(B)** Switch
@@ -4176,7 +4154,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Device-layer ladder: Repeater/Hub 1, Switch/Bridge/NIC 2, Router 3, Gateway 7।*
 *[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard)] · Medium*
 
-**Q323.** Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
+**Q321.** Consider: S1: The TTL field decreases at each router. S2: The MAC address changes at each hop. Which is correct?
 *देखिए: S1: TTL field हर router पर घटती है। S2: MAC address हर hop पर बदलता है। कौन-सा सही है?*
 - **(A)** Only S1
 - **(B)** Only S2
@@ -4187,7 +4165,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Per-hop बदलाव: TTL↓ + MAC फिर से लिखा जाता है। End-to-end: IP addresses अपरिवर्तित (NAP को छोड़कर)।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Medium*
 
-**Q324.** Which hardware forwards data packets between computer networks?
+**Q322.** Which hardware forwards data packets between computer networks?
 *कौन-सा hardware computer networks के बीच data packets को आगे भेजता है?*
 - **(A)** Switch
 - **(B)** Router
@@ -4198,7 +4176,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Official KVS key। Router = networks के बीच (L3)। Switch = network के भीतर (L2)। Cable = medium। Nibble = 4 bits!*
 *[Source: KVS Librarian 2023 Official Paper (via Testbook) · also CN Topic Test-03] · Hard*
 
-**Q325.** Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
+**Q323.** Among these network devices — i. Repeater  ii. Hub  iii. Switch  iv. Router — which are considered intelligent devices?
 *इन network devices में — i. Repeater  ii. Hub  iii. Switch  iv. Router — कौन-से intelligent devices माने जाते हैं?*
 - **(A)** i and iv only
 - **(B)** i and ii only
@@ -4209,7 +4187,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Intelligent = addresses पढ़ता है + selectively filter/forward करता है (switch, router, bridge, gateway)। Dumb = hub, repeater।*
 *[Source: Kerala PSC repeated PYQs (via pscarivukal)] · Hard*
 
-**Q326.** Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
+**Q324.** Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?
 *IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?*
 - **(A)** I and II only
 - **(B)** I only
@@ -4251,7 +4229,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q327.** Which type of firewall inspects packets at the network layer and decides based on IP addresses?
+**Q325.** Which type of firewall inspects packets at the network layer and decides based on IP addresses?
 *कौन-सी firewall network layer पर packets की जाँच करके IP addresses के आधार पर निर्णय लेती है?*
 - **(A)** Packet Filtering Firewall
 - **(B)** Stateful Firewall
@@ -4262,7 +4240,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Firewall types: Packet filtering (L3/L4, stateless) → Stateful (sessions याद रखती है) → Proxy/Application gateway (L7) → Circuit-level gateway (L5)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q328.** Which firewall acts as an intermediary between the client and server at the application layer?
+**Q326.** Which firewall acts as an intermediary between the client and server at the application layer?
 *कौन-सी firewall application layer पर client और server के बीच मध्यस्थ (intermediary) के रूप में काम करती है?*
 - **(A)** Packet Filtering Firewall
 - **(B)** Stateful Firewall
@@ -4273,7 +4251,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Proxy = L7 intermediary (गहरी जाँच, internals छिपाती है)। Circuit gateway = L5 (session/relay)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q329.** If two systems use DIFFERENT protocols, which device is used to link them?
+**Q327.** If two systems use DIFFERENT protocols, which device is used to link them?
 *यदि दो systems भिन्न protocols उपयोग करते हैं, तो उन्हें जोड़ने के लिए कौन-सा device उपयोग होता है?*
 - **(A)** Repeater
 - **(B)** Gateway
@@ -4284,7 +4262,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Gateway = protocol converter (L7)। Bridge = समान LANs, समान protocols (L2)। Repeater/Hub = signal level (L1)।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
 
-**Q330.** Which device can operate across all 7 layers of the OSI model?
+**Q328.** Which device can operate across all 7 layers of the OSI model?
 *कौन-सा device OSI model की सभी 7 layers पर काम कर सकता है?*
 - **(A)** Router
 - **(B)** Hub
@@ -4295,7 +4273,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Gateway = 'सभी 7 layers' वाला device। Hub 1, switch/bridge 2, router 3 — exam one-liner।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q331.** Devices on one network can communicate with devices on another network via:
+**Q329.** Devices on one network can communicate with devices on another network via:
 *एक network के devices दूसरे network के devices से किसके माध्यम से संवाद कर सकते हैं?*
 - **(A)** File server
 - **(B)** Utility server
@@ -4306,7 +4284,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Gateway = network-to-network दरवाज़ा (default gateway भी = LAN से बाहर निकलने के लिए router IP)।*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
-**Q332.** What is the role of a firewall in computer networks?
+**Q330.** What is the role of a firewall in computer networks?
 *Computer networks में firewall की भूमिका क्या है?*
 - **(A)** Managing IP addresses
 - **(B)** Filtering and controlling network traffic
@@ -4317,7 +4295,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Firewall = trusted और untrusted networks के बीच traffic filter (screening router, DMZ...)। DHCP = IP management; DNS = names।*
 *[Source: 30 important CN MCQs (Medium blog bank)] · Medium*
 
-**Q333.** What is the purpose of a proxy server in networking?
+**Q331.** What is the purpose of a proxy server in networking?
 *Networking में proxy server का उद्देश्य क्या है?*
 - **(A)** Managing IP addresses
 - **(B)** Filtering and forwarding network traffic
@@ -4328,7 +4306,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Proxy = filter + forward + cache + client छिपाना। Firewall = rules से block/allow। दोनों security/traffic devices हैं।*
 *[Source: 30 important CN MCQs (Medium blog bank)] · Medium*
 
-**Q334.** Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
+**Q332.** Which is a network security system designed to protect a trusted private network from an untrusted outside network to which it is connected?
 *कौन-सी network security system trusted private network को उस जुड़े हुए untrusted outside network से बचाने के लिए बनी है?*
 - **(A)** Bridge
 - **(B)** Cookies
@@ -4339,7 +4317,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Rajasthan PYQ (verified key: C) — firewall की classic परिभाषा। तुलना: bridge = L2 link, cookie = web state, SSL = encryption।*
 *[Source: Random Test- Rajasthan PYQ (OCR), p6 — Q110 (options reconstructed from screenshot)] · Medium*
 
-**Q335.** What kind of NAT maps one private IP to exactly one public IP?
+**Q333.** What kind of NAT maps one private IP to exactly one public IP?
 *किस प्रकार का NAT एक private IP को ठीक एक public IP से जोड़ता है?*
 - **(A)** Dynamic NAT
 - **(B)** Static NAT
@@ -4350,7 +4328,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *NAT types: Static = 1↔1 स्थायी। Dynamic = pool mapping। PAT/NAT-overload = ports से many↔1।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q336.** Which of the following is NOT a networking device?
+**Q334.** Which of the following is NOT a networking device?
 *निम्न में से कौन-सा networking device नहीं है?*
 - **(A)** Gateway
 - **(B)** Linux
@@ -4361,7 +4339,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Device बनाम OS: hardware devices (hub/switch/router) बनाम software (OS, antivirus) बनाम firmware-based security devices (firewall)।*
 *[Source: InstrumentationTools 150 CN MCQs] · Hard*
 
-**Q337.** Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
+**Q335.** Which of the following is NOT a networking device? (Hub / Switch / Bridge / None of these)
 *निम्न में से कौन-सा networking device नहीं है? (Hub / Switch / Bridge / इनमें से कोई नहीं)*
 - **(A)** Hub
 - **(B)** Switch
@@ -4406,7 +4384,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q338.** 'Manchester Encoding' and 'Differential Manchester Encoding' are signal encoding techniques used at which layer?
+**Q336.** 'Manchester Encoding' and 'Differential Manchester Encoding' are signal encoding techniques used at which layer?
 *'Manchester Encoding' और 'Differential Manchester Encoding' signal encoding techniques किस layer पर उपयोग होती हैं?*
 - **(A)** Physical Layer
 - **(B)** Data Link Layer
@@ -4417,7 +4395,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Physical layer = signalling और encoding (Manchester = mid-bit transition, self-clocking)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q339.** A channel has high bandwidth but suffers from high noise. Which encoding scheme gives better error resistance?
+**Q337.** A channel has high bandwidth but suffers from high noise. Which encoding scheme gives better error resistance?
 *एक channel की bandwidth अधिक है लेकिन noise बहुत है। कौन-सी encoding scheme बेहतर error resistance देगी?*
 - **(A)** NRZ
 - **(B)** Manchester
@@ -4428,7 +4406,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Manchester = self-clocking + DC-free + मज़बूत error visibility। NRZ = लंबे runs → noise में clock loss।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q340.** Reduction in signal strength over distance is called:
+**Q338.** Reduction in signal strength over distance is called:
 *दूरी के साथ signal strength में कमी को क्या कहते हैं?*
 - **(A)** Distortion
 - **(B)** Noise
@@ -4439,7 +4417,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Impairments: Attenuation (strength loss), Distortion (shape change), Noise (unwanted signals)। Attenuation ↑ distance और frequency के साथ।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) · also CN Topic Test-04] · Easy*
 
-**Q341.** In a copper cable, attenuation increases with frequency. Which change will REDUCE attenuation?
+**Q339.** In a copper cable, attenuation increases with frequency. Which change will REDUCE attenuation?
 *Copper cable में attenuation frequency के साथ बढ़ता है। कौन-सा बदलाव attenuation घटाएगा?*
 - **(A)** Increase cable length
 - **(B)** Use lower-category UTP
@@ -4450,7 +4428,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Attenuation घटाना: छोटी cable, मोटा/बेहतर copper, उच्च श्रेणी cable, कम frequency, या repeaters/amplifiers जोड़ें।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q342.** Which noise is caused by electromagnetic coupling between nearby cables?
+**Q340.** Which noise is caused by electromagnetic coupling between nearby cables?
 *पास की cables के बीच electromagnetic coupling से कौन-सा noise होता है?*
 - **(A)** Thermal noise
 - **(B)** Crosstalk
@@ -4461,7 +4439,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Noise types: Thermal (random electron motion), Crosstalk (pair-to-pair coupling), Impulse (sudden spikes), Quantization (PCM sampling)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q343.** Which impairment cannot be completely eliminated but only minimised?
+**Q341.** Which impairment cannot be completely eliminated but only minimised?
 *कौन-सा impairment पूरी तरह समाप्त नहीं किया जा सकता, केवल कम किया जा सकता है?*
 - **(A)** Attenuation
 - **(B)** Distortion
@@ -4472,7 +4450,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Attenuation/distortion repeaters/equalisers से ठीक हो सकते हैं; noise मूलभूत है (thermal floor) — केवल कम होती है।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q344.** Which parameter of an analog signal represents the number of cycles per second?
+**Q342.** Which parameter of an analog signal represents the number of cycles per second?
 *Analog signal का कौन-सा parameter प्रति सेकंड cycles की संख्या दर्शाता है?*
 - **(A)** Amplitude
 - **(B)** Phase
@@ -4483,7 +4461,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Signal parameters: Amplitude (ऊँचाई), Frequency (cycles/sec), Phase (शुरुआती स्थिति), Wavelength (दूरी/cycle = speed/frequency)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q345.** Which of the following Ethernet encodings has the highest redundancy?
+**Q343.** Which of the following Ethernet encodings has the highest redundancy?
 *निम्न में से कौन-सी Ethernet encoding की redundancy सबसे अधिक है?*
 - **(A)** 1B2B
 - **(B)** 4B5B
@@ -4494,7 +4472,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Redundancy (overhead): 1B2B 100% > 4B5B/8B10B 25% > 5B6B 20%। ज़्यादा redundancy = बेहतर clocking/error properties, ज़्यादा bandwidth।*
 *[Source: Unit Test-4 Solution (OCR), p9 (options recovered from source)] · Medium*
 
-**Q346.** Which encoding technique is used to transmit signals in Gigabit Ethernet over fiber optic medium?
+**Q344.** Which encoding technique is used to transmit signals in Gigabit Ethernet over fiber optic medium?
 *Fiber optic medium पर Gigabit Ethernet में signal भेजने के लिए कौन-सी encoding technique उपयोग होती है?*
 - **(A)** Differential Manchester encoding
 - **(B)** Non-Return-to-Zero (NRZ)
@@ -4505,7 +4483,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *100BASE-TX में 4B/5B + MLT-3; 1000BASE-X में 8B/10B; 10GBASE-R में 64B/66B। यह exam favourite ladder है।*
 *[Source: Unit Test-4 Solution (OCR), p30 (options recovered from source)] · Medium*
 
-**Q347.** ______ signals are discrete and are generated by digital modulation.
+**Q345.** ______ signals are discrete and are generated by digital modulation.
 *______ signals discrete होते हैं और digital modulation से बनते हैं।*
 - **(A)** Analog
 - **(B)** Digital
@@ -4516,7 +4494,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Rajasthan PYQ verified key (B)। Analog = continuous; Digital = discrete। यह signal का सबसे बुनियादी भेद है।*
 *[Source: Random Test- Rajasthan PYQ (OCR), p5 — Q108 (options recovered)] · Medium*
 
-**Q348.** Quantizing noise occurs in:
+**Q346.** Quantizing noise occurs in:
 *Quantizing noise किसमें होती है?*
 - **(A)** PCM (Pulse Code Modulation)
 - **(B)** TDM
@@ -4527,7 +4505,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Rajasthan PYQ verified key (A)। PCM = sampling + quantizing + encoding → quantizing error = quantization noise।*
 *[Source: Random Test- Rajasthan PYQ (OCR), p10 — Q39 (options recovered)] · Medium*
 
-**Q349.** The effective bandwidth of a communication channel is primarily limited by:
+**Q347.** The effective bandwidth of a communication channel is primarily limited by:
 *Communication channel की effective bandwidth मुख्य रूप से किससे सीमित होती है?*
 - **(A)** Protocol overhead
 - **(B)** Noise and attenuation
@@ -4538,7 +4516,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Effective bandwidth एक physics/SNR सीमा है। Protocol overhead goodput घटाता है पर channel की मूल सीमा नहीं।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q350.** What technique allows multiple signals to share the same communication channel?
+**Q348.** What technique allows multiple signals to share the same communication channel?
 *कौन-सी technique कई signals को एक ही communication channel share करने देती है?*
 - **(A)** Multiplexing
 - **(B)** Phase modulation
@@ -4549,7 +4527,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Multiplexing = कई एक channel share करें। FDM = frequency bands, TDM = time slots, WDM = light wavelengths, CDM = codes।*
 *[Source: Repo: CN Topic Test-02 (UNIT TEST-2)] · Medium*
 
-**Q351.** Communication using a modulated carrier to apply a data signal to a transmission medium in analog form is:
+**Q349.** Communication using a modulated carrier to apply a data signal to a transmission medium in analog form is:
 *Modulated carrier का उपयोग करके data signal को analog रूप में transmission medium पर डालना क्या कहलाता है?*
 - **(A)** Broadband networking
 - **(B)** Baseband networking
@@ -4560,7 +4538,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Baseband = digital signalling (Manchester आदि)। Broadband = analog carriers + modulation (FDM channels)।*
 *[Source: IBPS RRB PO Computer Awareness PYQ (via Meritnotes)] · Medium*
 
-**Q352.** The amount of data transmitted in a fixed amount of time is called:
+**Q350.** The amount of data transmitted in a fixed amount of time is called:
 *निश्चित समय में भेजे गए data की मात्रा को क्या कहते हैं?*
 - **(A)** Refresh rate
 - **(B)** Resolution
@@ -4571,18 +4549,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *कठोरता से: THROUGHPUT = वास्तव में प्रति सेकंड भेजा data; BANDWIDTH = अधिकतम capacity। Banks अक्सर throughput को 'bandwidth' कहते हैं — options ध्यान से पढ़ें।*
 *[Source: Unit Test-4 Solution (OCR), p23] · Medium*
 
-**Q353.** ______ signals are discrete and are generated by digital modulation.
-*______ signals discrete होते हैं और digital modulation से बनते हैं.*
-- **(A)** Digital
-- **(B)** Noise
-- **(C)** Bandwidth
-- **(D)** Analog
-✔ **(A) Digital**
-★ **Nukta:** Discrete = गिने जा सकें (digital); Continuous = बहती धारा (analog).
-*Discrete = गिने जा सकें (digital); Continuous = बहती धारा (analog).*
-*[Source: RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)] · Medium*
-
-**Q354.** Communication using a modulated carrier to apply a data signal to a transmission medium in analog form is called:
+**Q351.** Communication using a modulated carrier to apply a data signal to a transmission medium in analog form is called:
 *Modulated carrier का उपयोग करके data signal को analog रूप में transmission medium पर भेजना कहलाता है:*
 - **(A)** Broadband communication
 - **(B)** Baseband communication
@@ -4593,18 +4560,18 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Baseband = digital, सीधा; Broadband = analog, modulated. यह जोड़ी परीक्षा में बार-बार.*
 *[Source: IBPS RRB PO Computer Awareness PYQ (via meritnotes)] · Medium*
 
-**Q355.** Identify the odd one out: Optical fibre, Twisted pair wire, Microwaves, Hertz
+**Q352.** Identify the odd one out: Optical fibre, Twisted pair wire, Microwaves, Hertz
 *असंगत वस्तु पहचानें: Optical fibre, Twisted pair wire, Microwaves, Hertz*
 - **(A)** Optical fibre
 - **(B)** Twisted pair wire
 - **(C)** Microwaves
 - **(D)** Hertz
 ✔ **(D) Hertz**
-★ **Nukta:** Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.
+★ **Nukta:** Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.
 *Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
-**Q356.** The primary use of scramblers in line coding schemes is to:
+**Q353.** The primary use of scramblers in line coding schemes is to:
 *Line coding schemes में scramblers का मुख्य उपयोग क्या है?*
 - **(A)** Make the data look random
 - **(B)** Compress transmission data
@@ -4615,7 +4582,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Official RPSC 2024 key। Scrambler = random-looking line signal (clock recovery)। Compression नहीं, encryption नहीं।*
 *[Source: RPSC Programmer 2024 Paper-1 (official key)] · Hard*
 
-**Q357.** The period of a signal is 100 ms. What is its frequency in kilohertz?
+**Q354.** The period of a signal is 100 ms. What is its frequency in kilohertz?
 *एक signal की period 100 ms है। इसकी frequency kilohertz में कितनी होगी?*
 - **(A)** 10⁻¹ kHz
 - **(B)** 10⁻² kHz
@@ -4626,7 +4593,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *f = 1/T। 100 ms = 0.1 s → 10 Hz। Hz→kHz के लिए 1000 से भाग दें।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Hard*
 
-**Q358.** If the channel bandwidth is limited to 6 kHz and the signal-to-noise ratio is 16, what is the channel capacity?
+**Q355.** If the channel bandwidth is limited to 6 kHz and the signal-to-noise ratio is 16, what is the channel capacity?
 *यदि channel bandwidth 6 kHz सीमित है और signal-to-noise ratio 16 है, तो channel capacity कितनी होगी?*
 - **(A)** 15.15 kbps
 - **(B)** 24.74 kbps
@@ -4637,7 +4604,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Rajasthan PYQ verified key (B)। Shannon: C = B log₂(1+SNR)। Nyquist: C = 2B log₂(L) (noiseless)।*
 *[Source: Random Test- Rajasthan PYQ (OCR), p30 — Q45 (options recovered)] · Hard*
 
-**Q359.** Given a bit rate of b bits/sec, the time required to send 16 bits is:
+**Q356.** Given a bit rate of b bits/sec, the time required to send 16 bits is:
 *यदि bit rate b bits/sec है, तो 16 bits भेजने में कितना समय लगेगा?*
 - **(A)** 16 × b sec
 - **(B)** 16/b sec
@@ -4648,7 +4615,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Time = size/rate। 1000 bits at 100 bps = 10 s। Units: bits ÷ (bits/sec) = sec।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Hard*
 
-**Q360.** An analog signal carries 4 bits per signal unit. If 1000 signal units are sent per second, what are the baud rate and bit rate?
+**Q357.** An analog signal carries 4 bits per signal unit. If 1000 signal units are sent per second, what are the baud rate and bit rate?
 *एक analog signal प्रति signal unit 4 bits ले जाती है। यदि प्रति सेकंड 1000 signal units भेजे जाएँ, तो baud rate और bit rate क्या होंगे?*
 - **(A)** 1000 bauds/sec, 4000 bps
 - **(B)** 1000 bauds/sec, 500 bps
@@ -4659,7 +4626,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bit rate = Baud rate × प्रति signal unit bits। Baud = signalling speed; bps = data speed।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Hard*
 
-**Q361.** Consider a noiseless channel with a bandwidth of 5000 Hz transmitting a signal with two signal levels. The maximum bit rate is:
+**Q358.** Consider a noiseless channel with a bandwidth of 5000 Hz transmitting a signal with two signal levels. The maximum bit rate is:
 *एक noiseless channel जिसकी bandwidth 5000 Hz है, दो signal levels के साथ transmission कर रहा है. अधिकतम bit rate होगी:*
 - **(A)** 2500 bps
 - **(B)** 10000 bps
@@ -4670,14 +4637,14 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *UGC NET Jan 2025 official key (ii). याद रखो: 2B log₂L (noiseless) और B log₂(1+S/N) (noisy — Shannon).*
 *[Source: UGC NET Computer Science Jan 2025 (via samagracs solved paper)] · Hard*
 
-**Q362.** Which of the following is NOT a type of broadband internet connection?
+**Q359.** Which of the following is NOT a type of broadband internet connection?
 *निम्न में से कौन-सा broadband internet connection का प्रकार नहीं है?*
 - **(A)** Cable
 - **(B)** DSL
 - **(C)** Satellite
 - **(D)** Dial-up
 ✔ **(D) Dial-up**
-★ **Nukta:** Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.
+★ **Nukta:** Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.
 *Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Hard*
 
@@ -4711,7 +4678,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q363.** Optical fiber uses reflection to guide light through a channel. At total internal reflection, the angle of incidence is ______ the critical angle.
+**Q360.** Optical fiber uses reflection to guide light through a channel. At total internal reflection, the angle of incidence is ______ the critical angle.
 *Optical fiber प्रकाश को channel में भेजने के लिए reflection उपयोग करती है। Total internal reflection में angle of incidence, critical angle से ______ होता है।*
 - **(A)** Equal to
 - **(B)** Less than
@@ -4722,7 +4689,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TIR rule: angle of incidence > critical angle (denser → rarer medium)। यह fiber propagation का आधार है।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4) — recovered from BCI T8 Q33 options] · Easy*
 
-**Q364.** A network uses coaxial cable but suffers from signal reflection. What is the most likely cause?
+**Q361.** A network uses coaxial cable but suffers from signal reflection. What is the most likely cause?
 *एक network coaxial cable उपयोग करता है लेकिन signal reflection से पीड़ित है। सबसे संभावित कारण क्या है?*
 - **(A)** EMI
 - **(B)** Incorrect termination resistance
@@ -4733,7 +4700,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Coax rule: सही termination (BNC/terminator) reflections रोकता है। Un-terminated bus = standing waves और echoes।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q365.** Which transmission medium is primarily used in modern internet backbone networks?
+**Q362.** Which transmission medium is primarily used in modern internet backbone networks?
 *आधुनिक internet backbone networks में मुख्य रूप से कौन-सा transmission medium उपयोग होता है?*
 - **(A)** Twisted pair cable
 - **(B)** Coaxial cable
@@ -4744,7 +4711,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Backbone = single-mode fiber (undersea/terrestrial cables)। LAN = UTP। पुराना cable TV = coax। दूरस्थ क्षेत्र = microwave/satellite।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Easy*
 
-**Q366.** Which cable has the maximum bandwidth?
+**Q363.** Which cable has the maximum bandwidth?
 *किस cable की bandwidth अधिकतम होती है?*
 - **(A)** Coaxial
 - **(B)** Twisted pair
@@ -4755,7 +4722,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bandwidth क्रम: Fiber >> Coax > Twisted pair। USB peripheral bus है, यहाँ network cable type नहीं।*
 *[Source: Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)] · Easy*
 
-**Q367.** Assertion (A): Fiber optic cable is immune to electromagnetic interference (EMI). Reason (R): It transmits data in the form of light pulses rather than electrical signals. Which option is correct?
+**Q364.** Assertion (A): Fiber optic cable is immune to electromagnetic interference (EMI). Reason (R): It transmits data in the form of light pulses rather than electrical signals. Which option is correct?
 *Assertion (A): Fiber optic cable electromagnetic interference (EMI) से मुक्त है। Reason (R): यह data electrical signals के बजाय light pulses के रूप में भेजती है। कौन-सा विकल्प सही है?*
 - **(A)** Both (A) and (R) are true, and (R) is the correct explanation of (A)
 - **(B)** Both (A) and (R) are true, but (R) is NOT the correct explanation
@@ -4766,7 +4733,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fiber = light pulses → EMI-proof + tap-proof + विशाल bandwidth। Copper = electrical → EMI/crosstalk प्रवण।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) — Assertion-Reason] · Medium*
 
-**Q368.** Which statements are TRUE for fiber optic cables? I. Immune to tapping  II. High bandwidth  III. Requires electrical grounding  IV. Works using total internal reflection
+**Q365.** Which statements are TRUE for fiber optic cables? I. Immune to tapping  II. High bandwidth  III. Requires electrical grounding  IV. Works using total internal reflection
 *Fiber optic cables के लिए कौन-से कथन सही हैं? I. Tapping से मुक्त  II. उच्च bandwidth  III. Electrical grounding चाहिए  IV. Total internal reflection से काम करती है*
 - **(A)** I, II and IV
 - **(B)** II and III
@@ -4777,7 +4744,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fiber truths: tapping और EMI से मुक्त, सर्वोच्च bandwidth, TIR propagation। Myths: grounding (नहीं), lightning (नहीं)।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch) — Q33] · Medium*
 
-**Q369.** A company needs long-distance communication (5-10 km), high data rate and immunity from electromagnetic interference. Which medium is best?
+**Q366.** A company needs long-distance communication (5-10 km), high data rate and immunity from electromagnetic interference. Which medium is best?
 *एक कंपनी को लंबी दूरी (5-10 km) संचार, उच्च data rate और EMI से मुक्ति चाहिए। कौन-सा medium सर्वोत्तम है?*
 - **(A)** UTP
 - **(B)** Coaxial cable
@@ -4788,7 +4755,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fiber विकल्प: Multi-mode = छोटी दूरी (LANs, कुछ सौ m)। Single-mode = लंबी (km) + उच्चतम rate। Copper = छोटी और EMI-प्रवण।*
 *[Source: Repo: BCI Subject Test-8 (BCI/SCI Batch)] · Medium*
 
-**Q370.** A UTP cable used in Gigabit Ethernet shows high delay skew. What is the cause?
+**Q367.** A UTP cable used in Gigabit Ethernet shows high delay skew. What is the cause?
 *Gigabit Ethernet में उपयोग UTP cable में delay skew अधिक है। कारण क्या है?*
 - **(A)** Different twist rates in the cable pairs
 - **(B)** Excessive EMI
@@ -4799,7 +4766,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Delay skew = pair-to-pair propagation time अंतर (tight twist → छोटी wire → कम skew)। Cat6 में Gigabit के लिए कड़े specs हैं।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q371.** Which of the following best explains why fiber optic cables have a lower bit error rate than copper cables?
+**Q368.** Which of the following best explains why fiber optic cables have a lower bit error rate than copper cables?
 *Fiber optic cables की copper cables की तुलना में कम bit error rate की सबसे अच्छी व्याख्या कौन-सी है?*
 - **(A)** Higher signal power
 - **(B)** Immunity to electromagnetic interference
@@ -4810,7 +4777,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fiber में श्रेष्ठता: EMI immunity, कम attenuation, विशाल bandwidth, tap security।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q372.** Which transmission medium works on the principle of total internal reflection?
+**Q369.** Which transmission medium works on the principle of total internal reflection?
 *कौन-सा transmission medium total internal reflection के सिद्धांत पर काम करता है?*
 - **(A)** Optical fiber cable
 - **(B)** Shielded twisted pair
@@ -4821,7 +4788,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fiber = TIR। Copper media electrical signals (electromagnetic fields) उपयोग करते हैं, प्रकाश reflection नहीं।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q373.** Crosstalk in twisted pair cables is typically minimised by:
+**Q370.** Crosstalk in twisted pair cables is typically minimised by:
 *Twisted pair cables में crosstalk आमतौर पर किससे कम होता है?*
 - **(A)** Increasing the power level
 - **(B)** Increasing the twist rate
@@ -4832,7 +4799,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Anti-crosstalk tricks: tighter twists, pair separation, shielding (STP), कम power।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q374.** Which connector is commonly used for coaxial cable in physical networks?
+**Q371.** Which connector is commonly used for coaxial cable in physical networks?
 *Physical networks में coaxial cable के लिए सामान्यतः कौन-सा connector उपयोग होता है?*
 - **(A)** RJ-45
 - **(B)** USB-C
@@ -4843,7 +4810,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Connectors: RJ-45 (UTP Ethernet), BNC (coax/Thinnet), SC/ST/LC (fiber), RJ-11 (telephone)।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q375.** Which transmission medium is best for a network exposed to heavy electrical interference?
+**Q372.** Which transmission medium is best for a network exposed to heavy electrical interference?
 *भारी electrical interference वाले network के लिए कौन-सा transmission medium सर्वोत्तम है?*
 - **(A)** Unshielded twisted pair
 - **(B)** Optical fiber
@@ -4854,7 +4821,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *EMI-भारी क्षेत्र (कारखाने, power plants) → fiber। 'Immune to EMI' = fiber के लिए keyword।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
 
-**Q376.** Which of the following CANNOT be used as a medium for 802.3 Ethernet?
+**Q373.** Which of the following CANNOT be used as a medium for 802.3 Ethernet?
 *निम्न में से कौन-सा 802.3 Ethernet के लिए medium उपयोग नहीं किया जा सकता?*
 - **(A)** Thin coaxial cable
 - **(B)** Twisted pair cable
@@ -4865,7 +4832,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *802.3 = Ethernet (wired: 10Base2/5, 10Base-T, 100Base-TX, 1000Base-X...)। 802.11 = Wi-Fi (wireless)।*
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1)] · Medium*
 
-**Q377.** What is the typical maximum length of a UTP cable in Ethernet before signal degradation?
+**Q374.** What is the typical maximum length of a UTP cable in Ethernet before signal degradation?
 *Signal degradation से पहले Ethernet में UTP cable की सामान्य अधिकतम लंबाई कितनी होती है?*
 - **(A)** 50 meters
 - **(B)** 100 meters
@@ -4876,7 +4843,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Copper distance limits: UTP Ethernet 100 m, Thinnet 185 m, Thicknet 500 m, Fiber (multi-mode) ~550 m-2 km, (single-mode) दसियों km।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Hard*
 
-**Q378.** Which of the following is NOT a type of transmission medium?
+**Q375.** Which of the following is NOT a type of transmission medium?
 *निम्न में से कौन-सा transmission medium का प्रकार नहीं है?*
 - **(A)** Coaxial cable
 - **(B)** Fiber optics
@@ -4920,7 +4887,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q379.** Which of the following is a wireless networking technology?
+**Q376.** Which of the following is a wireless networking technology?
 *निम्न में से कौन-सी wireless networking technology है?*
 - **(A)** Ethernet
 - **(B)** Wi-Fi
@@ -4931,7 +4898,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Wireless family: Wi-Fi (802.11), Bluetooth (802.15), WiMAX (802.16), mobile (GSM/LTE/5G)।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q380.** Which wireless standard provides the highest data rate?
+**Q377.** Which wireless standard provides the highest data rate?
 *कौन-सा wireless standard सर्वोच्च data rate देता है?*
 - **(A)** 802.11b
 - **(B)** 802.11g
@@ -4942,7 +4909,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Wi-Fi rates: b = 11 Mbps, g = 54 Mbps, n = 600 Mbps, ac = multi-Gbps। क्रम: b < g < n < ac।*
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
-**Q381.** Which type of wireless transmission requires line-of-sight?
+**Q378.** Which type of wireless transmission requires line-of-sight?
 *किस प्रकार की wireless transmission के लिए line-of-sight आवश्यक है?*
 - **(A)** Wi-Fi
 - **(B)** Infrared
@@ -4953,7 +4920,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IR = line-of-sight (TV remotes, IrDA)। Radio/RF (Wi-Fi, Bluetooth) दीवारों से गुजरते हैं (loss के साथ)।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q382.** Which transmission medium is used in Bluetooth technology?
+**Q379.** Which transmission medium is used in Bluetooth technology?
 *Bluetooth technology में कौन-सा transmission medium उपयोग होता है?*
 - **(A)** Radio links
 - **(B)** Microwave links
@@ -4964,7 +4931,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bluetooth = 2.4 GHz radio, WPAN (802.15), ~10-100 m range, frequency hopping।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q383.** Which physical-layer technique allows multiple users to share the same bandwidth simultaneously?
+**Q380.** Which physical-layer technique allows multiple users to share the same bandwidth simultaneously?
 *कौन-सी physical-layer technique कई users को एक ही bandwidth साथ-साथ share करने देती है?*
 - **(A)** TDMA
 - **(B)** FDMA
@@ -4975,7 +4942,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Sharing methods: FDMA = frequency bands, TDMA = time slots, CDMA = codes (same band+time)।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4)] · Medium*
 
-**Q384.** Which of the following statements is NOT true about microwaves?
+**Q381.** Which of the following statements is NOT true about microwaves?
 *Microwaves के बारे में निम्न में से कौन-सा कथन सही नहीं है?*
 - **(A)** They are electromagnetic waves with frequencies from 300 GHz to 400 THz
 - **(B)** Propagation is line-of-sight
@@ -4986,7 +4953,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Microwaves: 300 MHz-300 GHz, line-of-sight, दीवार नहीं भेदते, licensed bands। Exam गलत range पूछता है।*
 *[Source: Repo: CN Topic Test-04 (UNIT TEST-4) — options cleaned from source] · Hard*
 
-**Q385.** Select the FALSE statement about CDMA technology: I. CDMA optimises the use of available bandwidth as it transmits over the entire frequency range. II. Each user in a CDMA system uses a different code to modulate their signal. III. CDMA offers less security compared to GSM technology. IV. A SIM card is always required for a CDMA device to work.
+**Q382.** Select the FALSE statement about CDMA technology: I. CDMA optimises the use of available bandwidth as it transmits over the entire frequency range. II. Each user in a CDMA system uses a different code to modulate their signal. III. CDMA offers less security compared to GSM technology. IV. A SIM card is always required for a CDMA device to work.
 *CDMA technology के बारे में गलत कथन चुनिए: I. CDMA उपलब्ध bandwidth के उपयोग को अनुकूलित करता है क्योंकि यह पूरी frequency range पर transmit करता है। II. CDMA system में हर user अपने signal को modulate करने के लिए अलग code उपयोग करता है। III. CDMA, GSM की तुलना में कम security देता है। IV. CDMA device के काम करने के लिए SIM card हमेशा आवश्यक है।*
 - **(A)** Only (I)
 - **(B)** Only (II)
@@ -5032,7 +4999,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q386.** Which sub-layer of the Data Link Layer is responsible for flow control and error control?
+**Q383.** Which sub-layer of the Data Link Layer is responsible for flow control and error control?
 *Data Link Layer का कौन-सा sub-layer flow control और error control के लिए ज़िम्मेदार होता है?*
 - **(A)** MAC
 - **(B)** LLC (Logical Link Control)
@@ -5043,7 +5010,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DLL = MAC + LLC — याद रखो: MAC = addressing + medium access, LLC = flow + error + interface.*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q387.** Which of the following functions are performed by the Data Link Layer? (1) Framing (2) Error Detection (3) Flow Control (4) Path Determination
+**Q384.** Which of the following functions are performed by the Data Link Layer? (1) Framing (2) Error Detection (3) Flow Control (4) Path Determination
 *निम्न में से कौन-से कार्य Data Link Layer करता है? (1) Framing (2) Error Detection (3) Flow Control (4) Path Determination*
 - **(A)** 1, 2 and 3 only
 - **(B)** 1 and 4 only
@@ -5054,7 +5021,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *याद रखो: DLL में F-E-F (Framing, Error, Flow) + addressing; रास्ता चुनना (routing) Network Layer का.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q388.** The Frame Check Sequence (FCS) field in an Ethernet frame is used for:
+**Q385.** The Frame Check Sequence (FCS) field in an Ethernet frame is used for:
 *Ethernet frame में Frame Check Sequence (FCS) field किस काम आता है?*
 - **(A)** Flow control
 - **(B)** Address resolution
@@ -5065,7 +5032,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *FCS = CRC = error detection. Ethernet error correct नहीं करता, बस detect करके frame drop करता है.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q389.** A Stop-and-Wait ARQ channel has high latency and large bandwidth. What problem occurs?
+**Q386.** A Stop-and-Wait ARQ channel has high latency and large bandwidth. What problem occurs?
 *Stop-and-Wait ARQ channel पर latency ज़्यादा और bandwidth बड़ी हो तो क्या समस्या होती है?*
 - **(A)** High throughput
 - **(B)** Low channel utilization
@@ -5076,7 +5043,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bandwidth × Delay (BDP) जितना बड़ा, Stop-and-Wait उतना बेकार.*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q390.** A Go-Back-N sender uses window size 4. Frame 2 is lost. What happens after the receiver receives frames 3 and 4?
+**Q387.** A Go-Back-N sender uses window size 4. Frame 2 is lost. What happens after the receiver receives frames 3 and 4?
 *Go-Back-N sender window size 4 उपयोग करता है. Frame 2 खो जाता है. Receiver को frames 3 और 4 मिलने के बाद क्या होता है?*
 - **(A)** Receiver stores frames 3 and 4 in buffer
 - **(B)** Receiver sends ACK for frame 4
@@ -5087,7 +5054,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GBN receiver dumb होता है (buffer नहीं रखता); SR receiver smart (buffer रखता है).*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q391.** A noisy channel uses a Hamming code with minimum distance 3. What can it guarantee?
+**Q388.** A noisy channel uses a Hamming code with minimum distance 3. What can it guarantee?
 *एक noisy channel पर minimum distance 3 वाला Hamming code क्या guarantee दे सकता है?*
 - **(A)** Detect 2-bit errors
 - **(B)** Correct 2-bit errors
@@ -5098,7 +5065,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *d=3 → detect 2 या correct 1 — 'correct 2' के लिए d ≥ 5 चाहिए.*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q392.** Which of the following verifies the integrity of a message?
+**Q389.** Which of the following verifies the integrity of a message?
 *निम्न में से कौन-सा message की integrity जाँचता है?*
 - **(A)** Message Encryption
 - **(B)** Message Checksum
@@ -5109,7 +5076,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Digest = अंगूठा-छाप; Encryption = गोपनीयता, integrity नहीं.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q393.** Which of the following statements about MAC and LLC sublayers is TRUE? (1) MAC sublayer handles physical addressing (2) LLC sublayer provides error control and flow control (3) MAC sublayer performs routing
+**Q390.** Which of the following statements about MAC and LLC sublayers is TRUE? (1) MAC sublayer handles physical addressing (2) LLC sublayer provides error control and flow control (3) MAC sublayer performs routing
 *MAC और LLC sub-layers के बारे में कौन-सा कथन सही है? (1) MAC sub-layer physical addressing संभालता है (2) LLC sub-layer error control और flow control देता है (3) MAC sub-layer routing करता है*
 - **(A)** 1 and 2 only
 - **(B)** 2 and 3 only
@@ -5120,7 +5087,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = addressing + channel access; LLC = flow + error + interface; routing = Network Layer.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q394.** Which of the following is NOT a responsibility of the LLC sublayer?
+**Q391.** Which of the following is NOT a responsibility of the LLC sublayer?
 *निम्न में से कौन-सा LLC sub-layer की ज़िम्मेदारी नहीं है?*
 - **(A)** Flow control
 - **(B)** Error control
@@ -5131,7 +5098,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = Media Access Control = addressing; LLC = Logical Link Control = flow/error.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q395.** Which of the following is NOT a function of the Data Link Layer?
+**Q392.** Which of the following is NOT a function of the Data Link Layer?
 *निम्न में से कौन-सा Data Link Layer का function नहीं है?*
 - **(A)** Framing
 - **(B)** Error detection
@@ -5142,7 +5109,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DLL = next-hop delivery (frame); Network = end-to-end delivery (packet + route).*
 *[Source: BCI Subject Test-9.pdf + CN Topic Test-04.pdf] · Medium*
 
-**Q396.** Error control is the process of detecting and correcting errors, while ______ is a mechanism to ensure the efficient delivery of data.
+**Q393.** Error control is the process of detecting and correcting errors, while ______ is a mechanism to ensure the efficient delivery of data.
 *Error control, errors को detect और correct करने की प्रक्रिया है, जबकि ______ data के कुशल delivery का mechanism है.*
 - **(A)** Error control, Flow control
 - **(B)** Process control, Network control
@@ -5153,7 +5120,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Error = सही करना; Flow = संतुलन बनाना. दोनों अलग-अलग काम हैं.*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
-**Q397.** ______ control refers to a set of procedures used to restrict the amount of data that the sender can send before waiting for acknowledgment.
+**Q394.** ______ control refers to a set of procedures used to restrict the amount of data that the sender can send before waiting for acknowledgment.
 *______ control उन procedures का समूह है जो sender द्वारा acknowledgment की प्रतीक्षा से पहले भेजे जाने वाले data की मात्रा सीमित करते हैं.*
 - **(A)** Flow
 - **(B)** Error
@@ -5164,7 +5131,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Flow control = sender↔receiver के बीच का संतुलन; यही definition परीक्षा में बार-बार आती है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p17] · Medium*
 
-**Q398.** What is the main purpose of the Sliding Window in TCP?
+**Q395.** What is the main purpose of the Sliding Window in TCP?
 *TCP में Sliding Window का मुख्य उद्देश्य क्या है?*
 - **(A)** Address resolution
 - **(B)** Flow control
@@ -5175,7 +5142,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TCP window = receiver की capacity का advertisement; इसीलिए इसे flow control कहते हैं.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q399.** Flow control prevents which of the following issues?
+**Q396.** Flow control prevents which of the following issues?
 *Flow control निम्न में से किस समस्या को रोकता है?*
 - **(A)** Deadlock
 - **(B)** Congestion collapse
@@ -5186,7 +5153,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Flow control = दोनों के बीच; Congestion control = पूरे network के लिए.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q400.** In Stop-and-Wait ARQ, after sending one frame, the sender:
+**Q397.** In Stop-and-Wait ARQ, after sending one frame, the sender:
 *Stop-and-Wait ARQ में एक frame भेजने के बाद sender:*
 - **(A)** Waits for acknowledgment
 - **(B)** Sends the next frame immediately
@@ -5197,7 +5164,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *इसी waiting के कारण इसका नाम 'Stop-and-Wait' पड़ा.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q401.** In Stop-and-Wait protocol, the sender sends:
+**Q398.** In Stop-and-Wait protocol, the sender sends:
 *Stop-and-Wait protocol में sender भेजता है:*
 - **(A)** Multiple frames at once
 - **(B)** One frame at a time
@@ -5208,7 +5175,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Window size = 1 — इसीलिए एक-एक frame.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q402.** What is the window size in Stop-and-Wait ARQ?
+**Q399.** What is the window size in Stop-and-Wait ARQ?
 *Stop-and-Wait ARQ में window size कितनी होती है?*
 - **(A)** 0
 - **(B)** 1
@@ -5219,7 +5186,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Window = 1 ↔ एक frame at a time — दोनों एक ही बात हैं.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q403.** What is the main disadvantage of Stop-and-Wait flow control?
+**Q400.** What is the main disadvantage of Stop-and-Wait flow control?
 *Stop-and-Wait flow control की मुख्य कमी क्या है?*
 - **(A)** Complexity
 - **(B)** Low efficiency due to waiting
@@ -5230,7 +5197,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Waiting = idle time = कम utilization. इसीलिए Sliding Window आया.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q404.** In Stop-and-Wait ARQ, what happens when a frame is lost?
+**Q401.** In Stop-and-Wait ARQ, what happens when a frame is lost?
 *Stop-and-Wait ARQ में frame खो जाए तो क्या होता है?*
 - **(A)** Receiver sends NAK
 - **(B)** Sender retransmits after timeout
@@ -5241,7 +5208,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Lost frame + timeout = retransmission. Receiver कभी retransmit नहीं करता.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q405.** In Go-Back-N ARQ, if an error is detected in a frame:
+**Q402.** In Go-Back-N ARQ, if an error is detected in a frame:
 *Go-Back-N ARQ में किसी frame में error मिले तो:*
 - **(A)** Only that frame is retransmitted
 - **(B)** All frames are ignored
@@ -5252,7 +5219,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GBN = 'जहाँ चूक, वहाँ से फिर से' — Selective Repeat में सिर्फ गलत frame दोबारा जाता है.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q406.** In a Go-Back-N protocol, if the window size = 63, how many sequence number bits are required?
+**Q403.** In a Go-Back-N protocol, if the window size = 63, how many sequence number bits are required?
 *Go-Back-N protocol में window size = 63 हो तो sequence number के कितने bits चाहिए?*
 - **(A)** 5
 - **(B)** 6
@@ -5263,7 +5230,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *उपर वाले प्रश्न का उल्टा — यही formula दोनों तरफ से याद रखो.*
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
-**Q407.** A Selective Repeat sliding window protocol uses a window size of 7 with 3-bit sequence numbers. Is it valid?
+**Q404.** A Selective Repeat sliding window protocol uses a window size of 7 with 3-bit sequence numbers. Is it valid?
 *Selective Repeat sliding window protocol में 3-bit sequence numbers के साथ window size 7 क्या वैध है?*
 - **(A)** Valid
 - **(B)** Invalid – violates the maximum window rule
@@ -5274,7 +5241,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *SR window ≤ 2ⁿ⁻¹; GBN window ≤ 2ⁿ − 1. यही फ़र्क याद रखो.*
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
-**Q408.** Which protocol has better bandwidth utilization?
+**Q405.** Which protocol has better bandwidth utilization?
 *किस protocol का bandwidth utilization बेहतर होता है?*
 - **(A)** Stop-and-Wait
 - **(B)** Selective Repeat
@@ -5285,7 +5252,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Efficiency क्रम: Selective Repeat > Go-Back-N > Stop-and-Wait.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q409.** What is the Hamming distance between the two codes 10010010 and 11011001?
+**Q406.** What is the Hamming distance between the two codes 10010010 and 11011001?
 *दो codes 10010010 और 11011001 के बीच Hamming distance कितनी है?*
 - **(A)** 3
 - **(B)** 4
@@ -5296,7 +5263,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Hamming distance = XOR के बाद 1s की गिनती.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p28] · Medium*
 
-**Q410.** The Hamming distance between two code words can easily be found if we apply the ______ operation.
+**Q407.** The Hamming distance between two code words can easily be found if we apply the ______ operation.
 *दो code words के बीच Hamming distance आसानी से मिल जाती है यदि हम ______ operation लगाएँ.*
 - **(A)** XOR
 - **(B)** XNOR
@@ -5307,7 +5274,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *XOR = difference counter. दूसरे operations यह नहीं बताते.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p35] · Medium*
 
-**Q411.** To detect or correct errors, we send extra bits with the data. These extra bits are called:
+**Q408.** To detect or correct errors, we send extra bits with the data. These extra bits are called:
 *Errors detect या correct करने के लिए data के साथ भेजे गए अतिरिक्त bits कहलाते हैं:*
 - **(A)** redundancy
 - **(B)** correction
@@ -5318,7 +5285,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Redundancy = 'जान-बूझकर भेजा अतिरिक्त' — इसी से error control संभव है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p36] · Medium*
 
-**Q412.** Which error detection method uses one extra bit added to the end of a byte?
+**Q409.** Which error detection method uses one extra bit added to the end of a byte?
 *कौन-सी error detection method में byte के अंत में एक अतिरिक्त bit जोड़ी जाती है?*
 - **(A)** CRC
 - **(B)** Checksum
@@ -5329,7 +5296,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Parity = 1 bit; CRC = पूरा remainder; Checksum = योग; Hamming = कई parity bits.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q413.** Which error detection method consists of a parity bit for each data unit as well as an entire data unit of parity bits?
+**Q410.** Which error detection method consists of a parity bit for each data unit as well as an entire data unit of parity bits?
 *किस error detection method में हर data unit के लिए एक parity bit के साथ-साथ parity bits का पूरा data unit भी होता है?*
 - **(A)** Simple parity check
 - **(B)** CRC
@@ -5340,7 +5307,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *2D parity = rows + columns दोनों की parity; simple parity = बस एक bit.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p7] · Medium*
 
-**Q414.** A simple parity-check code can detect:
+**Q411.** A simple parity-check code can detect:
 *एक simple parity-check code detect कर सकता है:*
 - **(A)** odd number of errors
 - **(B)** even number of errors
@@ -5351,7 +5318,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Parity = odd errors पकड़ता है; even छोड़ देता है — यही इसकी सीमा है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p34] · Medium*
 
-**Q415.** Which of the following is an error detection technique?
+**Q412.** Which of the following is an error detection technique?
 *निम्न में से कौन-सी error detection technique है?*
 - **(A)** ARQ
 - **(B)** Parity Bit
@@ -5362,7 +5329,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Detection techniques: Parity, CRC, Checksum. Control protocols: SW, GBN, SR.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q416.** High-level Data Link Control (HDLC) is a protocol for communication over point-to-point and multipoint links. HDLC is a ______ protocol.
+**Q413.** High-level Data Link Control (HDLC) is a protocol for communication over point-to-point and multipoint links. HDLC is a ______ protocol.
 *High-level Data Link Control (HDLC) point-to-point और multipoint links पर communication का protocol है. HDLC एक ______ protocol है.*
 - **(A)** byte-oriented
 - **(B)** character-oriented
@@ -5373,7 +5340,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *HDLC/SDLC = bit-oriented; PPP = byte-oriented. यह जोड़ी याद रखो.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p15] · Medium*
 
-**Q417.** The most common protocol for point-to-point access is the Point-to-Point Protocol (PPP), which is a ______ protocol.
+**Q414.** The most common protocol for point-to-point access is the Point-to-Point Protocol (PPP), which is a ______ protocol.
 *Point-to-point access का सबसे सामान्य protocol Point-to-Point Protocol (PPP) है, जो एक ______ protocol है.*
 - **(A)** bit-oriented
 - **(B)** byte-oriented
@@ -5384,7 +5351,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *PPP = byte-oriented (flag = 0x7E); HDLC = bit-oriented. परीक्षा में यह जोड़ी कई बार आ चुकी है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p16] · Medium*
 
-**Q418.** Which protocol allows the sender to transmit multiple frames before needing an acknowledgment?
+**Q415.** Which protocol allows the sender to transmit multiple frames before needing an acknowledgment?
 *कौन-सा protocol sender को acknowledgment की ज़रूरत से पहले कई frames भेजने देता है?*
 - **(A)** Stop-and-Wait
 - **(B)** Go-Back-N
@@ -5395,7 +5362,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Sliding window = कई outstanding frames; Stop-and-Wait = एक.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q419.** Which of the following techniques uses both acknowledgments and sequence numbers?
+**Q416.** Which of the following techniques uses both acknowledgments and sequence numbers?
 *निम्न में से कौन-सी technique acknowledgments और sequence numbers दोनों उपयोग करती है?*
 - **(A)** Go-Back-N
 - **(B)** Stop-and-Wait
@@ -5406,7 +5373,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ARQ = Automatic Repeat reQuest — बिना sequence/ack के कोई ARQ चल ही नहीं सकता.*
 *[Source: Unit Test -2 Solutions.pdf (OCR) + CN Topic Test-04.pdf] · Hard*
 
-**Q420.** In the TCP header, the acknowledgment field value represents:
+**Q417.** In the TCP header, the acknowledgment field value represents:
 *TCP header में acknowledgment field का मान किसे दर्शाता है?*
 - **(A)** Number of previous bytes received
 - **(B)** Total number of bytes to receive
@@ -5417,7 +5384,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TCP bytes गिनता है, packets नहीं — ACK = 'next byte भेजो'.*
 *[Source: CN Topic Test-04.pdf] · Hard*
 
-**Q421.** For Stop-and-Wait ARQ, for 10 data packets sent, ............ acknowledgements are needed.
+**Q418.** For Stop-and-Wait ARQ, for 10 data packets sent, ............ acknowledgements are needed.
 *Stop-and-Wait ARQ में 10 data packets भेजने पर ............ acknowledgements चाहिए होते हैं.*
 - **(A)** 9
 - **(B)** 20
@@ -5428,7 +5395,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (d) — Stop-and-Wait में ack:packet अनुपात 1:1.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q422.** In the ______ protocol, if no acknowledgment for a frame has arrived, we resend all outstanding frames.
+**Q419.** In the ______ protocol, if no acknowledgment for a frame has arrived, we resend all outstanding frames.
 *______ protocol में, किसी frame का acknowledgment न आए तो हम सभी outstanding frames दोबारा भेजते हैं.*
 - **(A)** Stop-and-Wait ARQ
 - **(B)** Go-Back-N ARQ
@@ -5439,7 +5406,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GBN = Go Back N — Nवें तक सब दोबारा; SR = सिर्फ गलत वाला.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p8] · Hard*
 
-**Q423.** In Go-Back-N ARQ, if 6 is the number of bits for the sequence number, then the maximum size of the send window must be:
+**Q420.** In Go-Back-N ARQ, if 6 is the number of bits for the sequence number, then the maximum size of the send window must be:
 *Go-Back-N ARQ में sequence number के 6 bits हों तो send window का अधिकतम आकार कितना होगा?*
 - **(A)** 63
 - **(B)** 61
@@ -5450,7 +5417,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GBN/SW का window formula अलग है SR से — GBN: 2ⁿ−1, SR: 2ⁿ⁻¹.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p9] · Hard*
 
-**Q424.** The maximum number of outstanding frames in Selective Repeat (with N sequence numbers) is:
+**Q421.** The maximum number of outstanding frames in Selective Repeat (with N sequence numbers) is:
 *Selective Repeat में outstanding frames की अधिकतम संख्या (N sequence numbers के साथ) होती है:*
 - **(A)** N
 - **(B)** N − 1
@@ -5461,7 +5428,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *SR: window N/2 (दो windows), GBN: window N−1 (एक window).*
 *[Source: CN Topic Test-04.pdf] · Hard*
 
-**Q425.** Any coding scheme for error control needs to have at least the parameters of:
+**Q422.** Any coding scheme for error control needs to have at least the parameters of:
 *Error control के लिए किसी भी coding scheme में कम से कम निम्न parameters होने चाहिए:*
 - **(A)** codeword size
 - **(B)** dataword size
@@ -5472,7 +5439,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Code = (n, k, d) — n = codeword, k = dataword, d = distance. तीनों से ही code की ताक़त पता चलती है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p37] · Hard*
 
-**Q426.** The message 1001 is to be transmitted using the CRC polynomial x³ + x + 1 to protect it from errors. The codeword that should be transmitted is:
+**Q423.** The message 1001 is to be transmitted using the CRC polynomial x³ + x + 1 to protect it from errors. The codeword that should be transmitted is:
 *संदेश 1001 को CRC बहुपद x³ + x + 1 से errors से बचाने के लिए भेजना है. भेजा जाने वाला codeword होगा:*
 - **(A)** 1001100
 - **(B)** 1001011
@@ -5483,7 +5450,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *CRC: degree n के polynomial पर n zeros append → भाग का remainder जोड़ो. यहाँ degree 3 → 3 zeros.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q427.** The checksum is used in the Internet by several protocols although not at the ______ layer.
+**Q424.** The checksum is used in the Internet by several protocols although not at the ______ layer.
 *Internet में checksum कई protocols उपयोग करते हैं, हालाँकि ______ layer पर नहीं.*
 - **(A)** data link
 - **(B)** transport
@@ -5494,7 +5461,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DLL = CRC; Network/Transport = checksum. यही फ़र्क पूछा जाता है.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p33] · Hard*
 
-**Q428.** Which of the following is NOT a responsibility of the network layer?
+**Q425.** Which of the following is NOT a responsibility of the network layer?
 *निम्न में से कौन-सा network layer की ज़िम्मेदारी नहीं है?*
 - **(A)** Congestion control
 - **(B)** Error control
@@ -5505,7 +5472,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Network layer = रास्ता + congestion; error control यहाँ नहीं.*
 *[Source: CN Topic Test-02.pdf] · Hard*
 
-**Q429.** The types of data services offered by an LLC (Logical Link Control) layer are:
+**Q426.** The types of data services offered by an LLC (Logical Link Control) layer are:
 *LLC (Logical Link Control) layer द्वारा दी जाने वाली data services के प्रकार हैं:*
 - **(A)** Connectionless (fast and unreliable)
 - **(B)** Connection-oriented (slow and reliable)
@@ -5516,7 +5483,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *LLC types: 1 (connectionless), 2 (connection-oriented), 3 (acknowledged connectionless).*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p32] · Hard*
 
-**Q430.** The message 11001001 is to be transmitted using the CRC polynomial x³ + 1 to protect it from errors. The codeword that should be transmitted is:
+**Q427.** The message 11001001 is to be transmitted using the CRC polynomial x³ + 1 to protect it from errors. The codeword that should be transmitted is:
 *संदेश 11001001 को CRC बहुपद x³ + 1 से errors से बचाने के लिए भेजना है. भेजा जाने वाला codeword होगा:*
 - **(A)** 11001001000
 - **(B)** 11001001011
@@ -5527,7 +5494,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GATE official key (B). यही तरीका RPSC के x³+x+1 वाले प्रश्न में भी — degree n पर n zeros, भाग का remainder जोड़ो.*
 *[Source: GATE CS 2007] · Hard*
 
-**Q431.** Let G(x) be the generator polynomial used for CRC checking. What condition must G(x) satisfy to detect an odd number of bits in error?
+**Q428.** Let G(x) be the generator polynomial used for CRC checking. What condition must G(x) satisfy to detect an odd number of bits in error?
 *मान लीजिए G(x), CRC जाँच में उपयोग होने वाला generator polynomial है. Odd संख्या में बिट-त्रुटियाँ पकड़ने के लिए G(x) पर क्या शर्त होनी चाहिए?*
 - **(A)** G(x) contains more than two terms
 - **(B)** G(x) does not divide 1 + x^k for any k within the frame length
@@ -5538,7 +5505,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GATE official key (C). x+1 factor ↔ even parity code ↔ odd errors detect.*
 *[Source: GATE CS 2009] · Hard*
 
-**Q432.** In CRC coding, if the data word is 111111, the divisor is 1010 and the remainder is 110, which of the following is the transmitted code?
+**Q429.** In CRC coding, if the data word is 111111, the divisor is 1010 and the remainder is 110, which of the following is the transmitted code?
 *CRC coding में, यदि data word 111111 है, divisor 1010 है और remainder 110 है, तो निम्न में से कौन-सा भेजा गया code है?*
 - **(A)** 011111101
 - **(B)** 001010110
@@ -5549,7 +5516,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *CRC में codeword = data के पीछे remainder. बाकी options remainder जोड़ने का हिसाब नहीं रखते.*
 *[Source: UGC NET Computer Science Dec 2022 (via samagracs)] · Hard*
 
-**Q433.** A 2 km long broadcast LAN has 10⁷ bps bandwidth and uses CSMA/CD. The signal travels along the wire at 2 × 10⁸ m/s. What is the minimum packet size that can be used on this network?
+**Q430.** A 2 km long broadcast LAN has 10⁷ bps bandwidth and uses CSMA/CD. The signal travels along the wire at 2 × 10⁸ m/s. What is the minimum packet size that can be used on this network?
 *एक 2 km लंबे broadcast LAN की bandwidth 10⁷ bps है और यह CSMA/CD उपयोग करता है. Signal तार में 2 × 10⁸ m/s से चलता है. इस network पर उपयोग होने वाला न्यूनतम packet आकार कितना है?*
 - **(A)** 50 bytes
 - **(B)** 100 bytes
@@ -5560,7 +5527,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GATE 2003 और RPSC 2011 दोनों का official key (D). याद रखो: min frame = 2 × propagation delay × bandwidth (round-trip).*
 *[Source: GATE CS 2003 + RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
-**Q434.** A network using CSMA/CD has a bandwidth of 20 Mbps. If the maximum propagation time is 25 µs, what is the minimum size of the frame?
+**Q431.** A network using CSMA/CD has a bandwidth of 20 Mbps. If the maximum propagation time is 25 µs, what is the minimum size of the frame?
 *CSMA/CD उपयोग करने वाले network की bandwidth 20 Mbps है. यदि अधिकतम propagation time 25 µs हो, तो frame का न्यूनतम आकार क्या होगा?*
 - **(A)** 500 bits
 - **(B)** 1000 bits
@@ -5571,7 +5538,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *UGC NET Jan 2025 key (ii). यही formula ऊपर वाले GATE प्रश्न में भी — बस units बदलो.*
 *[Source: UGC NET Computer Science Jan 2025 (via samagracs solved paper)] · Hard*
 
-**Q435.** A CSMA/CD network transmits data at 100 Mbps over a 1 km cable with no repeaters. If the minimum frame size required is 1250 bytes, what is the signal speed in the cable (in km/sec)?
+**Q432.** A CSMA/CD network transmits data at 100 Mbps over a 1 km cable with no repeaters. If the minimum frame size required is 1250 bytes, what is the signal speed in the cable (in km/sec)?
 *एक CSMA/CD network बिना repeaters के 1 km cable पर 100 Mbps से data भेजता है. यदि आवश्यक न्यूनतम frame आकार 1250 bytes हो, तो cable में signal की गति (km/sec में) कितनी है?*
 - **(A)** 8000
 - **(B)** 10000
@@ -5582,7 +5549,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GATE 2015 key (d) 20000 km/s. Formula को उलटकर speed निकालना — यही इस प्रश्न का खेल है.*
 *[Source: GATE CSE 2015 Set 3] · Hard*
 
-**Q436.** In the starting phase (slow start) of the TCP congestion control algorithm, the congestion window size:
+**Q433.** In the starting phase (slow start) of the TCP congestion control algorithm, the congestion window size:
 *TCP congestion control algorithm के शुरुआती चरण (slow start) में congestion window का आकार:*
 - **(A)** Increases linearly
 - **(B)** Does not increase
@@ -5593,7 +5560,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *GATE 2008 key: exponential. क्रम याद रखो: Slow start (exponential) → Congestion avoidance (linear).*
 *[Source: GATE CS 2008] · Hard*
 
-**Q437.** Consider the following statements: I. TCP connections are full duplex. II. TCP has no option for selective acknowledgment. III. TCP connections are message streams. Which of the following is correct?
+**Q434.** Consider the following statements: I. TCP connections are full duplex. II. TCP has no option for selective acknowledgment. III. TCP connections are message streams. Which of the following is correct?
 *निम्न कथनों पर विचार करें: I. TCP connections full duplex होती हैं. II. TCP में selective acknowledgment का कोई विकल्प नहीं है. III. TCP connections message streams हैं. निम्न में से क्या सही है?*
 - **(A)** Only I is correct
 - **(B)** Only I and II are correct
@@ -5638,7 +5605,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q438.** Why is bit stuffing required in bit-oriented protocols?
+**Q435.** Why is bit stuffing required in bit-oriented protocols?
 *Bit-oriented protocols में bit stuffing क्यों ज़रूरी है?*
 - **(A)** To increase bandwidth
 - **(B)** To prevent confusion between data and the flag
@@ -5649,7 +5616,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Bit stuffing = data को flag से अलग पहचान दिलाना.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q439.** The correct order of fields in an Ethernet frame is:
+**Q436.** The correct order of fields in an Ethernet frame is:
 *Ethernet frame में fields का सही क्रम है:*
 - **(A)** Preamble → Destination MAC → Source MAC → Type/Length → Data → FCS
 - **(B)** Destination MAC → Source MAC → FCS → Data → Preamble
@@ -5660,7 +5627,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *याद रखो: Preamble के बाद पहले RECEIVER का पता (Destination), फिर भेजने वाले का — बाकी बाद में.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q440.** Collision detection and avoidance mechanisms are implemented in:
+**Q437.** Collision detection and avoidance mechanisms are implemented in:
 *Collision detection और avoidance mechanisms कहाँ लागू होते हैं?*
 - **(A)** LLC Sublayer
 - **(B)** Network Layer
@@ -5671,7 +5638,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = Medium Access Control — नाम में ही 'medium access' लिखा है.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q441.** Which protocol requires time synchronization among nodes?
+**Q438.** Which protocol requires time synchronization among nodes?
 *किस protocol में nodes के बीच time synchronization चाहिए होती है?*
 - **(A)** Pure ALOHA
 - **(B)** Slotted ALOHA
@@ -5682,7 +5649,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Pure ALOHA = जब मन चाहे भेजो; Slotted = slot की घड़ी देखकर भेजो.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q442.** The vulnerable period of Pure ALOHA is:
+**Q439.** The vulnerable period of Pure ALOHA is:
 *Pure ALOHA का vulnerable period होता है:*
 - **(A)** T
 - **(B)** 2T
@@ -5693,7 +5660,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Pure ALOHA: 2T और G·e⁻²ᴳ (~18.4%); Slotted ALOHA: T और G·e⁻ᴳ (~36.8%).*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q443.** Which protocol has the highest efficiency under heavy load?
+**Q440.** Which protocol has the highest efficiency under heavy load?
 *भारी load पर किस protocol की efficiency सबसे अधिक होती है?*
 - **(A)** Pure ALOHA
 - **(B)** Slotted ALOHA
@@ -5704,7 +5671,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *क्रम: CSMA/CD > CSMA > Slotted ALOHA > Pure ALOHA.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q444.** Which protocol detects collisions while transmission is in progress?
+**Q441.** Which protocol detects collisions while transmission is in progress?
 *कौन-सा protocol transmission के दौरान ही collisions detect करता है?*
 - **(A)** CSMA
 - **(B)** Slotted ALOHA
@@ -5715,7 +5682,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *CD = detect-and-jam; CA = avoid (RTS/CTS) — wireless में.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q445.** Which mechanism is used by CSMA/CA to reduce collisions?
+**Q442.** Which mechanism is used by CSMA/CA to reduce collisions?
 *CSMA/CA collisions कम करने के लिए कौन-सा mechanism उपयोग करता है?*
 - **(A)** Collision detection
 - **(B)** Slot restriction
@@ -5726,7 +5693,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *CA = Collision Avoidance — टकराव रोकना, पकड़ना नहीं.*
 *[Source: BCI Subject Test-9.pdf] · Easy*
 
-**Q446.** Bit stuffing refers to:
+**Q443.** Bit stuffing refers to:
 *Bit stuffing का अर्थ है:*
 - **(A)** Inserting a '0' in the user stream to differentiate it from the flag
 - **(B)** Inserting a '0' in the flag stream to avoid ambiguity
@@ -5737,7 +5704,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Stuffing हमेशा DATA में होती है, flag में नहीं; byte stuffing में 0x7E के बाद 0x7D जुड़ता है.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p26] · Medium*
 
-**Q447.** In Ethernet CSMA/CD, the special sequence transmitted by media access management to handle a collision is called:
+**Q444.** In Ethernet CSMA/CD, the special sequence transmitted by media access management to handle a collision is called:
 *Ethernet CSMA/CD में collision संभालने के लिए media access management द्वारा भेजा गया विशेष sequence कहलाता है:*
 - **(A)** Preamble
 - **(B)** Postamble
@@ -5748,7 +5715,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Jam = 'टकराव हो गया!' का सायरन. Preamble = frame शुरू होने की घोषणा.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p28] · Medium*
 
-**Q448.** The minimum size of an Ethernet frame (excluding preamble) is:
+**Q445.** The minimum size of an Ethernet frame (excluding preamble) is:
 *Ethernet frame का न्यूनतम आकार (preamble को छोड़कर) होता है:*
 - **(A)** 46 bytes
 - **(B)** 64 bytes
@@ -5759,7 +5726,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *64 = minimum frame; 1518 = maximum frame; 46 = सिर्फ data का minimum.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q449.** The data field size in an Ethernet frame ranges from:
+**Q446.** The data field size in an Ethernet frame ranges from:
 *Ethernet frame में data field का आकार रहता है:*
 - **(A)** 64–1518 bytes
 - **(B)** 46–1500 bytes
@@ -5770,7 +5737,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *पूरे frame का range 64–1518; data का 46–1500. यह जोड़ी अक्सर पूछी जाती है.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q450.** In Ethernet, the minimum frame size is fixed mainly to:
+**Q447.** In Ethernet, the minimum frame size is fixed mainly to:
 *Ethernet में न्यूनतम frame आकार मुख्य रूप से किसलिए तय किया गया है?*
 - **(A)** Improve throughput
 - **(B)** Reduce overhead
@@ -5781,7 +5748,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Round-trip time (slot time) तक frame ज़िंदा रहे — तभी collision पकड़ी जाएगी.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q451.** What is the primary function of the MAC sublayer?
+**Q448.** What is the primary function of the MAC sublayer?
 *MAC sublayer का मुख्य काम क्या है?*
 - **(A)** Routing
 - **(B)** Error checking
@@ -5792,7 +5759,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = addressing + channel access; पर परीक्षा में 'primary function' = channel access.*
 *[Source: CN Topic Test-04.pdf] · Medium*
 
-**Q452.** What is the primary role of CSMA/CD in Ethernet?
+**Q449.** What is the primary role of CSMA/CD in Ethernet?
 *Ethernet में CSMA/CD की मुख्य भूमिका क्या है?*
 - **(A)** Error correction
 - **(B)** Collision detection
@@ -5803,7 +5770,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *नाम में ही Collision Detection लिखा है.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q453.** Why is CSMA/CD not suitable for wireless networks?
+**Q450.** Why is CSMA/CD not suitable for wireless networks?
 *CSMA/CD wireless networks के लिए उपयुक्त क्यों नहीं है?*
 - **(A)** No random access
 - **(B)** Collision detection is not feasible in wireless
@@ -5814,7 +5781,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Wired = CSMA/CD; Wireless = CSMA/CA. यह जोड़ी पक्की याद रखो.*
 *[Source: BCI Subject Test-9.pdf] · Medium*
 
-**Q454.** What is multiple access?
+**Q451.** What is multiple access?
 *Multiple access क्या है?*
 - **(A)** Accessing a computer from multiple locations
 - **(B)** A kind of network (MAN)
@@ -5825,7 +5792,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Shared medium को संभालने वाले protocols ही Multiple Access Protocols हैं.*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
-**Q455.** A Token Ring implementation works on the ______ mode of medium access.
+**Q452.** A Token Ring implementation works on the ______ mode of medium access.
 *Token Ring implementation medium access के ______ mode पर काम करती है.*
 - **(A)** Contention
 - **(B)** Reservation
@@ -5836,18 +5803,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC तरीके तीन: Contention (ALOHA/CSMA), Reservation, Round Robin (Token).*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p26] · Medium*
 
-**Q456.** Which of the following is an example of Client–Server architecture?
-*निम्न में से कौन-सा Client–Server architecture का उदाहरण है?*
-- **(A)** Chat between two Bluetooth devices
-- **(B)** Web browser accessing a website
-- **(C)** File transfer via USB cable
-- **(D)** Two laptops connected directly
-✔ **(B) Web browser accessing a website**
-★ **Nukta:** Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.
-*Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.*
-*[Source: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
-
-**Q457.** What is the MTU size for Ethernet?
+**Q453.** What is the MTU size for Ethernet?
 *Ethernet के लिए MTU आकार कितना है?*
 - **(A)** 1024 bytes
 - **(B)** 1500 bytes
@@ -5858,7 +5814,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MTU = data की सीमा; 1518 = पूरे frame की सीमा. भ्रम में मत आना.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q458.** In a slotted ALOHA with G stations attempting to transmit in one slot, the throughput is equal to:
+**Q454.** In a slotted ALOHA with G stations attempting to transmit in one slot, the throughput is equal to:
 *Slotted ALOHA में एक slot में G stations transmit करने का प्रयास करें तो throughput होगा:*
 - **(A)** G × e⁻ᴳ
 - **(B)** 2G × e⁻ᴳ
@@ -5869,7 +5825,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (a). Pure ALOHA का formula G·e⁻²ᴳ है — मिलाकर मत पढ़ना.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q459.** Which of the following Multiple Access Protocols is not suitable for wired networks?
+**Q455.** Which of the following Multiple Access Protocols is not suitable for wired networks?
 *निम्न में से कौन-सा Multiple Access Protocol wired networks के लिए उपयुक्त नहीं है?*
 - **(A)** CSMA/CD
 - **(B)** TDMA
@@ -5880,7 +5836,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (d) — wired = CSMA/CD, wireless = CSMA/CA.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q460.** Network Allocation Vector (NAV) is associated with which of the following MAC technologies?
+**Q456.** Network Allocation Vector (NAV) is associated with which of the following MAC technologies?
 *Network Allocation Vector (NAV) निम्न में से किस MAC technology से जुड़ा है?*
 - **(A)** Wi-Fi (CSMA/CA)
 - **(B)** CSMA/CD
@@ -5891,7 +5847,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (a) — NAV = virtual carrier sensing का हिस्सा.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q461.** In Reservation mode of MAC, each station in the network ______ a time slot for a finite or infinite amount of time to access the shared medium.
+**Q457.** In Reservation mode of MAC, each station in the network ______ a time slot for a finite or infinite amount of time to access the shared medium.
 *MAC के Reservation mode में network का हर station shared medium तक पहुँचने के लिए एक time slot ______ करता है.*
 - **(A)** should reserve
 - **(B)** need not reserve
@@ -5902,7 +5858,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Reservation = पहले बुकिंग, फिर यात्रा — contention (ALOHA/CSMA) में बुकिंग नहीं.*
 *[Source: Unit Test -2 Solutions.pdf (OCR), p25] · Hard*
 
-**Q462.** Which one of the following is not used in media access control?
+**Q458.** Which one of the following is not used in media access control?
 *निम्न में से कौन-सा media access control में उपयोग नहीं होता?*
 - **(A)** Ethernet
 - **(B)** Digital subscriber line (DSL)
@@ -5913,7 +5869,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MAC = LAN की बात; DSL = telephone line पर broadband.*
 *[Source: CN Topic Test-01.pdf] · Hard*
 
-**Q463.** Which of the following is NOT true with respect to a transparent bridge and a router?
+**Q459.** Which of the following is NOT true with respect to a transparent bridge and a router?
 *Transparent bridge और router के संबंध में निम्न में से कौन-सा सही नहीं है?*
 - **(A)** Both bridge and router selectively forward data packets
 - **(B)** A bridge uses IP addresses while a router uses MAC addresses
@@ -5924,7 +5880,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC 2011 official key (2). याद रखो: Bridge = MAC (L2), Router = IP (L3).*
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
-**Q464.** Which of the following is NOT a function of the AAL (ATM Adaptation Layer)?
+**Q460.** Which of the following is NOT a function of the AAL (ATM Adaptation Layer)?
 *निम्न में से कौन-सा AAL (ATM Adaptation Layer) का काम नहीं है?*
 - **(A)** Cell header generation
 - **(B)** Handling of lost and misinserted cells
@@ -5968,7 +5924,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 
 ### Questions (Easy → Medium → Hard)
 
-**Q465.** What is the function of ARP?
+**Q461.** What is the function of ARP?
 *ARP का काम क्या है?*
 - **(A)** Resolve IP address to MAC address
 - **(B)** Resolve domain name to IP
@@ -5979,7 +5935,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ARP = IP→MAC; DNS = name→IP; RARP = MAC→IP (obsolete).*
 *[Source: CN Topic Test 6.pdf + Unit Test -2 Solutions.pdf (OCR)] · Medium*
 
-**Q466.** Which tool is used to view the MAC address of a system?
+**Q462.** Which tool is used to view the MAC address of a system?
 *किस system का MAC address देखने के लिए कौन-सा tool उपयोग होता है?*
 - **(A)** ping
 - **(B)** ipconfig /all
@@ -5990,7 +5946,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Windows: ipconfig /all; Linux: ip link / ifconfig. दोनों अपना NIC दिखाते हैं.*
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
-**Q467.** Which protocol is used for path MTU discovery?
+**Q463.** Which protocol is used for path MTU discovery?
 *Path MTU discovery के लिए कौन-सा protocol उपयोग होता है?*
 - **(A)** TCP
 - **(B)** UDP
@@ -6001,7 +5957,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ICMP = network का संदेशवाहक — ping, traceroute, PMTU सब इसी से.*
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
-**Q468.** What is the function of IGMP in networking?
+**Q464.** What is the function of IGMP in networking?
 *Networking में IGMP का काम क्या है?*
 - **(A)** Manage IP address allocation
 - **(B)** Route datagrams
@@ -6012,7 +5968,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IGMP = multicast की member-list; Network layer protocol.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q469.** What is the role of the TTL field in an IP packet?
+**Q465.** What is the role of the TTL field in an IP packet?
 *IP packet में TTL field की भूमिका क्या है?*
 - **(A)** Authentication
 - **(B)** Packet size control
@@ -6023,7 +5979,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *TTL = loop-रोधक. यही traceroute को भी चलाता है (अलग-अलग TTL से path बनता है).*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q470.** Which field in the IPv4 header indicates the priority of the packet?
+**Q466.** Which field in the IPv4 header indicates the priority of the packet?
 *IPv4 header में कौन-सा field packet की प्राथमिकता बताता है?*
 - **(A)** Protocol
 - **(B)** TTL
@@ -6034,7 +5990,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ToS बाद में DiffServ/DSCP बना — काम वही: priority/class.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q471.** Which of the following uses a logical addressing scheme?
+**Q467.** Which of the following uses a logical addressing scheme?
 *निम्न में से कौन-सा logical addressing scheme उपयोग करता है?*
 - **(A)** MAC address
 - **(B)** IP address
@@ -6045,7 +6001,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Forouzan का नियम: Data link = physical, Network = logical, Transport = port, Application = specific (name).*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q472.** Which algorithm is used by OSPF to compute the shortest path?
+**Q468.** Which algorithm is used by OSPF to compute the shortest path?
 *OSPF shortest path निकालने के लिए कौन-सा algorithm उपयोग करता है?*
 - **(A)** Bellman-Ford
 - **(B)** Dijkstra
@@ -6056,7 +6012,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Link-state = Dijkstra; Distance-vector = Bellman-Ford. यह जोड़ी पक्की.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q473.** Which one is a distance-vector routing protocol?
+**Q469.** Which one is a distance-vector routing protocol?
 *निम्न में से कौन-सा distance-vector routing protocol है?*
 - **(A)** RIP
 - **(B)** OSPF
@@ -6067,7 +6023,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RIP = DV (Bellman-Ford); OSPF/IS-IS = Link-state (Dijkstra); BGP = Path-vector.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q474.** What is a major drawback of distance vector routing?
+**Q470.** What is a major drawback of distance vector routing?
 *Distance vector routing की एक बड़ी कमी क्या है?*
 - **(A)** High complexity
 - **(B)** Count-to-infinity problem
@@ -6078,7 +6034,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DV की पहचान ही count-to-infinity; link-state इससे मुक्त है (पर ज़्यादा memory लेता है).*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q475.** BGP is mainly used for which type of routing, and it belongs to which algorithm family?
+**Q471.** BGP is mainly used for which type of routing, and it belongs to which algorithm family?
 *BGP मुख्य रूप से किस प्रकार के routing के लिए उपयोग होता है और यह किस algorithm परिवार का है?*
 - **(A)** Intra-AS routing; link-state
 - **(B)** Inter-AS routing; path-vector (distance-vector family)
@@ -6089,7 +6045,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *AS = Autonomous System. अंदर (AS) OSPF/RIP; बीच में (Inter-AS) BGP — Internet का glue protocol.*
 *[Source: CN Topic Test 5.pdf + CN Topic Test 6.pdf] · Medium*
 
-**Q476.** In the early ARPANET, which routing method was used?
+**Q472.** In the early ARPANET, which routing method was used?
 *प्रारंभिक ARPANET में कौन-सी routing method उपयोग होती थी?*
 - **(A)** Distance vector routing
 - **(B)** Link state routing
@@ -6100,7 +6056,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *इतिहास: ARPANET = distance-vector से शुरू, फिर link-state (OSPF जैसा).*
 *[Source: Unit Test-4 Solution.pdf (OCR), p8] · Medium*
 
-**Q477.** Which of these protocols allows loop-free switching in Layer 2 networks?
+**Q473.** Which of these protocols allows loop-free switching in Layer 2 networks?
 *निम्न में से कौन-सा protocol Layer 2 networks में loop-free switching देता है?*
 - **(A)** RIP
 - **(B)** OSPF
@@ -6111,7 +6067,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *STP = Layer 2 का loop-रोधक; routing protocols Layer 3 के हैं.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q478.** MPLS operates between which two layers?
+**Q474.** MPLS operates between which two layers?
 *MPLS किन दो layers के बीच काम करता है?*
 - **(A)** Layer 1 and 2
 - **(B)** Layer 2 and 3
@@ -6122,7 +6078,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *MPLS = 'Layer 2.5' — label-based forwarding, IP header देखे बिना.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q479.** What does the 'traceroute' command do?
+**Q475.** What does the 'traceroute' command do?
 *'traceroute' command क्या करता है?*
 - **(A)** Lists all devices on a network
 - **(B)** Tracks the path a packet takes to the destination
@@ -6133,7 +6089,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *tracert (Windows) ICMP; traceroute (Linux) UDP — काम वही: रास्ता दिखाना.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q480.** Which protocol does traceroute use on UNIX/Linux systems?
+**Q476.** Which protocol does traceroute use on UNIX/Linux systems?
 *UNIX/Linux systems पर traceroute कौन-सा protocol उपयोग करता है?*
 - **(A)** TCP
 - **(B)** UDP
@@ -6144,7 +6100,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Windows tracert ICMP भेजता है; Linux traceroute UDP. दोनों का काम एक ही.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q481.** Which command is used to see the routing table in Linux?
+**Q477.** Which command is used to see the routing table in Linux?
 *Linux में routing table देखने के लिए कौन-सा command उपयोग होती है?*
 - **(A)** ifconfig
 - **(B)** netstat -r
@@ -6155,7 +6111,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Windows: route print; Linux: netstat -r / ip route.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q482.** Which protocol is used for dynamic IP address assignment?
+**Q478.** Which protocol is used for dynamic IP address assignment?
 *Dynamic IP address assignment के लिए कौन-सा protocol उपयोग होता है?*
 - **(A)** DNS
 - **(B)** ARP
@@ -6166,7 +6122,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *DHCP = 'Plug and Play' networking — zeroconf का प्रमुख tool.*
 *[Source: CN Topic Test-03.pdf + CN Topic Test 6.pdf] · Medium*
 
-**Q483.** ICMP is a ............ layer protocol.
+**Q479.** ICMP is a ............ layer protocol.
 *ICMP एक ............ layer protocol है.*
 - **(A)** Data link
 - **(B)** Transport
@@ -6177,7 +6133,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (d). ICMP/IP/ARP/IGMP सब Network layer के; TCP/UDP Transport.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key) + Random Test- Rajasthan PYQ.pdf (OCR)] · Hard*
 
-**Q484.** Which of the following is NOT a valid ICMP error message?
+**Q480.** Which of the following is NOT a valid ICMP error message?
 *निम्न में से कौन-सा वैध ICMP error message नहीं है?*
 - **(A)** Destination Unreachable
 - **(B)** Time Exceeded
@@ -6188,7 +6144,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *ICMP errors: Destination Unreachable, Time Exceeded, Source Quench, Redirect. Queries: Echo, Timestamp.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q485.** Which field in the IP header helps in fragmentation?
+**Q481.** Which field in the IP header helps in fragmentation?
 *IP header में कौन-सा field fragmentation में मदद करता है?*
 - **(A)** TTL
 - **(B)** Header Length
@@ -6199,7 +6155,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Fragmentation के तीन tool: Identification + Flags (MF) + Fragment Offset.*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q486.** How many bits are there in the 'Fragment Offset' field of the IPv4 header?
+**Q482.** How many bits are there in the 'Fragment Offset' field of the IPv4 header?
 *IPv4 header के 'Fragment Offset' field में कितने bits होते हैं?*
 - **(A)** 16 bits
 - **(B)** 10 bits
@@ -6210,7 +6166,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (c). IPv4 header: Version(4)+HLen(4)+ToS(8)+TotalLen(16)+ID(16)+Flags(3)+FragOffset(13)+TTL(8)+...*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q487.** In IPv4, packet fragmentation and reassembly is handled by:
+**Q483.** In IPv4, packet fragmentation and reassembly is handled by:
 *IPv4 में packet fragmentation और reassembly कैसे होता है?*
 - **(A)** the More Fragments flag and Fragment Offset field
 - **(B)** the MAC Header
@@ -6221,7 +6177,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (a). याद रखो: fragmentation sender/routers करते हैं, reassembly सिर्फ destination host.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q488.** What is fragmentation in IP networking?
+**Q484.** What is fragmentation in IP networking?
 *IP networking में fragmentation क्या है?*
 - **(A)** Splitting data into packets
 - **(B)** Splitting large packets so they fit a smaller MTU link
@@ -6232,7 +6188,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Packet बनाना segmentation है; बड़े packet के टुकड़े fragmentation. IPv6 में routers fragmentation नहीं करते.*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q489.** The size of the 'total length field' of an IPv4 datagram is:
+**Q485.** The size of the 'total length field' of an IPv4 datagram is:
 *IPv4 datagram के 'total length field' का आकार है:*
 - **(A)** 16 bits
 - **(B)** 32 bits
@@ -6243,7 +6199,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (a). 16 bits = 2¹⁶ − 1 = 65535.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q490.** What is the minimum header size of an IPv4 packet?
+**Q486.** What is the minimum header size of an IPv4 packet?
 *IPv4 packet का न्यूनतम header आकार कितना है?*
 - **(A)** 16 bytes
 - **(B)** 10 bytes
@@ -6254,7 +6210,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *20 bytes = 5 words × 4 bytes — यही Header Length field की न्यूनतम गिनती.*
 *[Source: Networking MCQ bank (MQuestions)] · Hard*
 
-**Q491.** In the IPv6 header, the traffic class field is similar to which field in the IPv4 header?
+**Q487.** In the IPv6 header, the traffic class field is similar to which field in the IPv4 header?
 *IPv6 header में traffic class field, IPv4 header के किस field जैसा है?*
 - **(A)** Fragmentation field
 - **(B)** Flow label
@@ -6265,7 +6221,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *IPv6 में fragmentation fields ही नहीं हैं — routers टुकड़े नहीं करते.*
 *[Source: Sanfoundry CN MCQs — IPv6] · Hard*
 
-**Q492.** How many maximum hops are allowed in RIP?
+**Q488.** How many maximum hops are allowed in RIP?
 *RIP में अधिकतम कितने hops की अनुमति है?*
 - **(A)** 8
 - **(B)** 16
@@ -6276,7 +6232,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RIP: max 15 hops, metric = hop count, हर 30 sec update.*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q493.** How does RIP prevent routing loops? (A) Poison reverse (B) Sequence numbers (C) Split horizon
+**Q489.** How does RIP prevent routing loops? (A) Poison reverse (B) Sequence numbers (C) Split horizon
 *RIP routing loops कैसे रोकता है? (A) Poison reverse (B) Sequence numbers (C) Split horizon*
 - **(A)** A only
 - **(B)** C only
@@ -6287,7 +6243,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Loop रोकने के तरीके: split horizon, poison reverse, hold-down timers.*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q494.** Dynamic routing protocols enable routers to:
+**Q490.** Dynamic routing protocols enable routers to:
 *Dynamic routing protocols routers को सक्षम बनाते हैं:*
 - **(A)** Dynamically discover and maintain routes
 - **(B)** Distribute routing updates to other routers
@@ -6298,7 +6254,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *Static vs Dynamic: static में admin लिखता है; dynamic में protocol खुद सीखता है.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p27] · Hard*
 
-**Q495.** Which of the following protocols may be used as zeroconf and plug-and-play?
+**Q491.** Which of the following protocols may be used as zeroconf and plug-and-play?
 *निम्न में से कौन-सा protocol zeroconf और plug-and-play के रूप में उपयोग हो सकता है?*
 - **(A)** TCP
 - **(B)** DHCP
@@ -6309,7 +6265,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (b). Zeroconf = बिना admin के automatic network settings.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q496.** There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. The probability that exactly one station transmits in a slot is:
+**Q492.** There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. The probability that exactly one station transmits in a slot is:
 *एक slotted LAN में n stations हैं. हर time slot में हर station p प्रायिकता से transmit करने का प्रयास करता है. किसी slot में ठीक एक station transmit करने की प्रायिकता है:*
 - **(A)** n × p × (1 − p)ⁿ⁻¹
 - **(B)** p × (1 − p)ⁿ⁻¹
@@ -6320,7 +6276,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC official key (a). यही binomial का 'exactly one success' formula है.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q497.** One of the header fields in an IP datagram is the Time to Live (TTL). Which statement best explains the need for this field?
+**Q493.** One of the header fields in an IP datagram is the Time to Live (TTL). Which statement best explains the need for this field?
 *IP datagram के header fields में से एक Time to Live (TTL) है. निम्न में से कौन-सा कथन इस field की आवश्यकता सबसे अच्छे से बताता है?*
 - **(A)** It can be used to prioritize packets
 - **(B)** It can be used to reduce delays
@@ -6331,7 +6287,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *RPSC 2011 official key (4). TTL = loop-रोधक; priority ToS से, delay/throughput इससे नहीं.*
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
-**Q498.** Suppose the stop-and-wait protocol is used on a link with a bit rate of 64 kilobits per second and 20 milliseconds propagation delay. Acknowledgement transmission time and processing times are negligible. The minimum frame size in bytes to achieve a link utilisation of at least 50% is ______.
+**Q494.** Suppose the stop-and-wait protocol is used on a link with a bit rate of 64 kilobits per second and 20 milliseconds propagation delay. Acknowledgement transmission time and processing times are negligible. The minimum frame size in bytes to achieve a link utilisation of at least 50% is ______.
 *64 kbps की link पर stop-and-wait protocol है, propagation delay 20 ms है (ACK transmission व processing नगण्य)। कम से कम 50% link utilisation के लिए न्यूनतम frame size (bytes में) कितनी हो?*
 - **(A)** 160
 - **(B)** 320
@@ -6342,7 +6298,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *160 एक Tp; 640/1280 ratio भूलने से आते हैं।*
 *[Source: GATE CS 2015 Set-1] · Hard*
 
-**Q499.** A link has a transmission speed of 10⁶ bits/sec. It uses data packets of size 1000 bytes each. Acknowledgements have negligible transmission delay and the same propagation delay as data; processing delays are negligible. The efficiency of the stop-and-wait protocol is exactly 25%. The one-way propagation delay (in milliseconds) is ______.
+**Q495.** A link has a transmission speed of 10⁶ bits/sec. It uses data packets of size 1000 bytes each. Acknowledgements have negligible transmission delay and the same propagation delay as data; processing delays are negligible. The efficiency of the stop-and-wait protocol is exactly 25%. The one-way propagation delay (in milliseconds) is ______.
 *एक link की speed 10⁶ bits/sec है और packets 1000 bytes के हैं। ACK का transmission delay नगण्य, propagation delay data के बराबर है। Stop-and-wait की efficiency ठीक 25% है। एक-तरफ़ा propagation delay (ms में) कितना है?*
 - **(A)** 8
 - **(B)** 10
@@ -6353,7 +6309,7 @@ S2: Transport layer segmentation और reassembly संभालती है�
 *8 ms Tt है; 10/20 गोल आँकड़ों के जाल।*
 *[Source: GATE CS 2015 Set-2] · Hard*
 
-**Q500.** Consider the following statements regarding the slow start phase of TCP congestion control (cwnd = congestion window, MSS = maximum segment size):
+**Q496.** Consider the following statements regarding the slow start phase of TCP congestion control (cwnd = congestion window, MSS = maximum segment size):
 (i) cwnd increases by 2 MSS on every successful acknowledgement.
 (ii) cwnd approximately doubles on every successful acknowledgement.
 (iii) cwnd increases by 1 MSS every round trip time.
@@ -6411,7 +6367,7 @@ Which one of the following is correct?
 
 ### Questions (Easy → Medium → Hard)
 
-**Q501.** A client opens a TCP connection to a web server on port 80 using source port 49152. What is the complete socket pair?
+**Q497.** A client opens a TCP connection to a web server on port 80 using source port 49152. What is the complete socket pair?
 *एक client source port 49152 से port 80 वाले web server को TCP connection खोलता है. पूरा socket pair क्या होगा?*
 - **(A)** 192.168.1.10:49152 ↔ 172.16.0.5:80
 - **(B)** 192.168.1.10:80 ↔ 172.16.0.5:49152
@@ -6422,7 +6378,7 @@ Which one of the following is correct?
 *पहचान: client का port ephemeral (बड़ा number), server का port well-known (80).*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q502.** Which port is used by a DHCP client when requesting an IP address?
+**Q498.** Which port is used by a DHCP client when requesting an IP address?
 *IP address माँगते समय DHCP client कौन-सा port उपयोग करता है?*
 - **(A)** UDP 67
 - **(B)** UDP 68
@@ -6433,7 +6389,7 @@ Which one of the following is correct?
 *जोड़ी याद रखो: server 67, client 68 — DHCP (UDP).*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q503.** Which of the following is a connectionless transport service?
+**Q499.** Which of the following is a connectionless transport service?
 *निम्न में से कौन-सी connectionless transport service है?*
 - **(A)** TCP
 - **(B)** ARP
@@ -6444,7 +6400,7 @@ Which one of the following is correct?
 *Transport layer के दो सदस्य: TCP (भरोसेमंद, connection-oriented) और UDP (तेज़, connectionless).*
 *[Source: BCI_SCI Subject Test-7.pdf + Oliveboard SSC CGL bank] · Medium*
 
-**Q504.** What is a socket in networking?
+**Q500.** What is a socket in networking?
 *Networking में socket क्या है?*
 - **(A)** IP address + MAC address
 - **(B)** IP address + Port number
@@ -6455,7 +6411,7 @@ Which one of the following is correct?
 *Socket pair = (Source IP:Port, Destination IP:Port) — TCP connection इसी से बनती है.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q505.** What term is used for an endpoint in an inter-process communication across a network?
+**Q501.** What term is used for an endpoint in an inter-process communication across a network?
 *Network पर inter-process communication में endpoint के लिए कौन-सा term उपयोग होता है?*
 - **(A)** Port
 - **(B)** Machine
@@ -6466,7 +6422,7 @@ Which one of the following is correct?
 *Port = address का हिस्सा; Socket = पूरा endpoint (IP+Port).*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
-**Q506.** What is the purpose of the SYN flag in TCP?
+**Q502.** What is the purpose of the SYN flag in TCP?
 *TCP में SYN flag का उद्देश्य क्या है?*
 - **(A)** To end a session
 - **(B)** To initiate (open) a connection
@@ -6477,7 +6433,7 @@ Which one of the following is correct?
 *Flags याद रखो: SYN = शुरुआत; FIN = अंत; RST = रद्द; ACK = पुष्टि.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q507.** In which scenario will TCP's three-way handshake fail?
+**Q503.** In which scenario will TCP's three-way handshake fail?
 *किस स्थिति में TCP का three-way handshake विफल होगा?*
 - **(A)** Firewall blocks the SYN-ACK
 - **(B)** High latency
@@ -6488,7 +6444,7 @@ Which one of the following is correct?
 *Handshake टूटने का सीधा कारण: संदेशों का न पहुँचना (firewall/filter).*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q508.** In TCP, which state follows the SYN-SENT state in the normal case?
+**Q504.** In TCP, which state follows the SYN-SENT state in the normal case?
 *TCP में सामान्य स्थिति में SYN-SENT के बाद कौन-सी state आती है?*
 - **(A)** SYN-RECEIVED
 - **(B)** LISTEN
@@ -6499,7 +6455,7 @@ Which one of the following is correct?
 *सामान्य क्रम: CLOSED → SYN-SENT → ESTABLISHED. (Simultaneous open में SYN-RECEIVED बीच में आती है.)*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q509.** Which one of the following attacks exploits TCP's three-way handshake?
+**Q505.** Which one of the following attacks exploits TCP's three-way handshake?
 *निम्न में से कौन-सा attack TCP के three-way handshake का फ़ायदा उठाती है?*
 - **(A)** SYN Flood
 - **(B)** DNS Spoofing
@@ -6510,7 +6466,7 @@ Which one of the following is correct?
 *Handshake पर हमला = SYN flood; sequence पर हमला = session hijacking.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q510.** TCP initially uses which congestion control technique when a connection starts?
+**Q506.** TCP initially uses which congestion control technique when a connection starts?
 *Connection शुरू होने पर TCP शुरू में कौन-सी congestion control technique उपयोग करता है?*
 - **(A)** Congestion avoidance
 - **(B)** Fast recovery
@@ -6521,7 +6477,7 @@ Which one of the following is correct?
 *TCP क्रम: Slow start → Congestion avoidance; loss पर → Fast recovery.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q511.** What is the purpose of TCP's congestion window (cwnd)?
+**Q507.** What is the purpose of TCP's congestion window (cwnd)?
 *TCP के congestion window (cwnd) का उद्देश्य क्या है?*
 - **(A)** Track unacknowledged packets
 - **(B)** Control the sending rate to avoid network congestion
@@ -6532,7 +6488,7 @@ Which one of the following is correct?
 *TCP की effective window = min(rwnd, cwnd) — flow और congestion दोनों का संतुलन.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q512.** What kind of delay does TCP's window size help handle on a long, high-bandwidth path?
+**Q508.** What kind of delay does TCP's window size help handle on a long, high-bandwidth path?
 *लंबी, high-bandwidth path पर TCP का window size किस प्रकार की देर संभालने में मदद करता है?*
 - **(A)** Transmission delay
 - **(B)** Queuing delay
@@ -6543,7 +6499,7 @@ Which one of the following is correct?
 *Window ≥ BDP हो तो link बेकार नहीं बैठती — यही high-speed long links का सूत्र है.*
 *[Source: CN Topic Test 5.pdf] · Medium*
 
-**Q513.** In which protocol is 'port knocking' used as a security mechanism?
+**Q509.** In which protocol is 'port knocking' used as a security mechanism?
 *किस protocol में 'port knocking' security mechanism के रूप में उपयोग होता है?*
 - **(A)** TCP
 - **(B)** UDP
@@ -6554,7 +6510,7 @@ Which one of the following is correct?
 *Port knocking = 'secret door knock' — पहचान होते ही असली दरवाज़ा (SSH) खुलता है.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q514.** Which of the following supports QoS (Quality of Service) through label switching?
+**Q510.** Which of the following supports QoS (Quality of Service) through label switching?
 *निम्न में से कौन-सा label switching के ज़रिए QoS (Quality of Service) देता है?*
 - **(A)** TCP
 - **(B)** UDP
@@ -6565,7 +6521,7 @@ Which one of the following is correct?
 *MPLS = fast path + QoS classes; DiffServ/IntServ भी QoS के तरीके हैं.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q515.** Virtual circuits are associated with which type of service?
+**Q511.** Virtual circuits are associated with which type of service?
 *Virtual circuits किस प्रकार की service से जुड़े हैं?*
 - **(A)** Connectionless service
 - **(B)** Error-free service
@@ -6576,7 +6532,7 @@ Which one of the following is correct?
 *Virtual circuit = पहले connection, फिर data (connection-oriented); Datagram = हर packet अपने-आप (connectionless).*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
-**Q516.** Transport layer multiplexing allows:
+**Q512.** Transport layer multiplexing allows:
 *Transport layer multiplexing की अनुमति देता है:*
 - **(A)** Multiple hosts to share one IP
 - **(B)** Multiple processes to share one network connection
@@ -6587,7 +6543,7 @@ Which one of the following is correct?
 *Ports ही multiplexing के हथियार हैं — browser 443, mail 25, सब एक साथ.*
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
-**Q517.** Which protocol must use both TCP and UDP for different operations?
+**Q513.** Which protocol must use both TCP and UDP for different operations?
 *कौन-सा protocol अलग-अलग कामों के लिए TCP और UDP दोनों उपयोग करता है?*
 - **(A)** DNS
 - **(B)** HTTP
@@ -6598,7 +6554,7 @@ Which one of the following is correct?
 *DNS = port 53; UDP for small queries, TCP for big/zone transfers.*
 *[Source: BCI Subject Test-8.pdf + CN Topic Test 5.pdf] · Medium*
 
-**Q518.** Which transport-layer protocol is used to support electronic mail delivery between machines?
+**Q514.** Which transport-layer protocol is used to support electronic mail delivery between machines?
 *Machines के बीच electronic mail delivery के लिए कौन-सा transport-layer protocol उपयोग होता है?*
 - **(A)** SNMP
 - **(B)** IP
@@ -6609,7 +6565,7 @@ Which one of the following is correct?
 *प्रश्न 'transport-layer protocol' पूछ रहा है — SMTP application layer का है, TCP transport का.*
 *[Source: CN Topic Test-03.pdf] · Medium*
 
-**Q519.** How many bits are used for port addressing at the transport layer?
+**Q515.** How many bits are used for port addressing at the transport layer?
 *Transport layer पर port addressing के लिए कितने bits उपयोग होते हैं?*
 - **(A)** 8
 - **(B)** 10
@@ -6620,7 +6576,7 @@ Which one of the following is correct?
 *Addresses का स्तर: Data link = 48-bit MAC; Network = 32-bit IP; Transport = 16-bit port.*
 *[Source: BCI_SCI Subject Test-7.pdf] · Hard*
 
-**Q520.** The three-way handshake mechanism in TCP aims to:
+**Q516.** The three-way handshake mechanism in TCP aims to:
 *TCP का three-way handshake mechanism किस उद्देश्य से होता है?*
 - **(A)** Secure the communication
 - **(B)** Send bits from one device to another
@@ -6631,7 +6587,7 @@ Which one of the following is correct?
 *RPSC official key (d). SYN, SYN-ACK, ACK — तीन ही संदेश.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q521.** What type of attack is prevented by using random initial sequence numbers in TCP?
+**Q517.** What type of attack is prevented by using random initial sequence numbers in TCP?
 *TCP में random initial sequence numbers उपयोग करने से किस प्रकार की attack रुकती है?*
 - **(A)** Smurf attack
 - **(B)** SYN Flooding
@@ -6642,7 +6598,7 @@ Which one of the following is correct?
 *Predictable sequence numbers = session hijacking का दरवाज़ा.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q522.** Which field in the TCP header is used for flow control?
+**Q518.** Which field in the TCP header is used for flow control?
 *TCP header में flow control के लिए कौन-सा field उपयोग होता है?*
 - **(A)** Window Size
 - **(B)** Sequence Number
@@ -6653,7 +6609,7 @@ Which one of the following is correct?
 *TCP के दो घरेलू नियंत्रण: Window (flow control) और cwnd (congestion control).*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q523.** Which TCP header field ensures that data arrives in order?
+**Q519.** Which TCP header field ensures that data arrives in order?
 *TCP header का कौन-सा field सुनिश्चित करता है कि data क्रम में पहुँचे?*
 - **(A)** Checksum
 - **(B)** Flags
@@ -6664,7 +6620,7 @@ Which one of the following is correct?
 *UDP में sequence नहीं होता — इसीलिए वहाँ क्रम की guarantee नहीं.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q524.** Which field in the TCP header ensures data integrity?
+**Q520.** Which field in the TCP header ensures data integrity?
 *TCP header का कौन-सा field data integrity सुनिश्चित करता है?*
 - **(A)** Urgent Pointer
 - **(B)** Sequence Number
@@ -6675,7 +6631,7 @@ Which one of the following is correct?
 *Integrity = Checksum (TCP/UDP/IP); reliability = ACK + retransmission.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q525.** Which of the following is NOT a property of TCP?
+**Q521.** Which of the following is NOT a property of TCP?
 *निम्न में से कौन-सा TCP का गुण नहीं है?*
 - **(A)** Reliable
 - **(B)** Ordered delivery
@@ -6686,7 +6642,7 @@ Which one of the following is correct?
 *TCP = reliable + ordered + connection-oriented; बाकी सब (broadcast) UDP की तरफ़ जाता है.*
 *[Source: CN Topic Test 5.pdf] · Hard*
 
-**Q526.** Which of the following provides reliable, connection-oriented communication?
+**Q522.** Which of the following provides reliable, connection-oriented communication?
 *निम्न में से कौन-सा भरोसेमंद, connection-oriented communication देता है?*
 - **(A)** TCP
 - **(B)** IP
@@ -6697,7 +6653,7 @@ Which one of the following is correct?
 *याद रखो: TCP = phone call (connection + guarantee); UDP = postcard (fast, no promise).*
 *[Source: MQuestions DCN bank + Oliveboard SSC CGL bank] · Hard*
 
-**Q527.** Which of the following statements about TCP/IP is INCORRECT?
+**Q523.** Which of the following statements about TCP/IP is INCORRECT?
 *TCP/IP के बारे में निम्न में से कौन-सा कथन गलत है?*
 - **(A)** TCP/IP has high latency
 - **(B)** Data packets sent over TCP/IP are private
@@ -6708,7 +6664,7 @@ Which one of the following is correct?
 *DSSSB का official key (b). याद रखो: Internet = open postcard, ताला (encryption) खुद लगाओ.*
 *[Source: DSSSB TGT CS (via Testbook solved)] · Hard*
 
-**Q528.** Why are port numbers included in the TCP header of a segment?
+**Q524.** Why are port numbers included in the TCP header of a segment?
 *Segment के TCP header में port numbers क्यों रखे जाते हैं?*
 - **(A)** To indicate the correct router interface for forwarding
 - **(B)** To identify which switch ports should receive the frame
@@ -6719,7 +6675,7 @@ Which one of the following is correct?
 *RPSC 2011 official key (4). यही transport-layer multiplexing है.*
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
-**Q529.** Which one of the following fields of an IP header is NOT modified by a typical IP router?
+**Q525.** Which one of the following fields of an IP header is NOT modified by a typical IP router?
 *IP header का कौन-सा field एक सामान्य IP router द्वारा संशोधित नहीं किया जाता?*
 - **(A)** Checksum
 - **(B)** Source address
@@ -6730,7 +6686,7 @@ Which one of the following is correct?
 *Checksum/TTL बदलते हैं; length fragmentation से बदल सकती है।*
 *[Source: GATE CS 2015 Set-1] · Hard*
 
-**Q530.** Which of the following fields of an IP header is/are ALWAYS modified by any router before it forwards the IP packet?
+**Q526.** Which of the following fields of an IP header is/are ALWAYS modified by any router before it forwards the IP packet?
 *IP packet forward करने से पहले हर router IP header के कौन-से fields हमेशा बदलता है?*
 - **(A)** TTL only / केवल TTL
 - **(B)** Checksum only / केवल Checksum
@@ -6741,7 +6697,7 @@ Which one of the following is correct?
 *Checksum optional नहीं — TTL बदलते ही checksum अमान्य हो जाता है।*
 *[Source: GATE CS 2024 Set-2] · Hard*
 
-**Q531.** Which of the following fields is/are modified in the IP header of a packet going out of a Network Address Translation (NAT) device from an internal network to an external network?
+**Q527.** Which of the following fields is/are modified in the IP header of a packet going out of a Network Address Translation (NAT) device from an internal network to an external network?
 *NAT device से internal network से external network की तरफ़ जाते packet के IP header में कौन-से fields बदले जाते हैं?*
 - **(A)** Source IP address only / केवल Source IP address
 - **(B)** Destination IP address only / केवल Destination IP address
@@ -6752,7 +6708,7 @@ Which one of the following is correct?
 *Destination वही रहता है; TTL अलग चीज़ है।*
 *[Source: GATE CS 2024 Set-1] · Hard*
 
-**Q532.** Consider sending an IP datagram of size 1420 bytes (including a 20-byte IP header) over a path of two links with a router between them. The first link has MTU 542 bytes and the second link has MTU 360 bytes. The number of fragments delivered at the receiver is ______.
+**Q528.** Consider sending an IP datagram of size 1420 bytes (including a 20-byte IP header) over a path of two links with a router between them. The first link has MTU 542 bytes and the second link has MTU 360 bytes. The number of fragments delivered at the receiver is ______.
 *1420 bytes का IP datagram (20-byte header सहित) दो links के रास्ते भेजा जा रहा है, बीच में एक router है। पहले link का MTU 542 bytes और दूसरे का 360 bytes है। Receiver पर कुल कितने fragments पहुँचेंगे?*
 - **(A)** 4
 - **(B)** 5
@@ -6763,7 +6719,7 @@ Which one of the following is correct?
 *5/8 fragmentation एक ही बार मानते हैं; 4 सीधे 360 से भाग देते हैं।*
 *[Source: GATE CS 2024 Set-1] · Hard*
 
-**Q533.** In an IPv4 datagram, the M bit is 0, the value of HLEN is 10, the value of total length is 400 and the fragment offset value is 300. The position of the datagram, and the sequence numbers of the first and the last bytes of the payload, respectively, are:
+**Q529.** In an IPv4 datagram, the M bit is 0, the value of HLEN is 10, the value of total length is 400 and the fragment offset value is 300. The position of the datagram, and the sequence numbers of the first and the last bytes of the payload, respectively, are:
 *एक IPv4 datagram में M bit = 0, HLEN = 10, total length = 400 और fragment offset = 300 है। इस datagram की स्थिति तथा payload के पहले और आख़िरी bytes के sequence numbers क्रमशः हैं:*
 - **(A)** Last fragment, 2400 and 2759 / Last fragment, 2400 और 2759
 - **(B)** First fragment, 2400 and 2759 / First fragment, 2400 और 2759
@@ -6774,7 +6730,7 @@ Which one of the following is correct?
 *Offset 8-byte units में होता है; 2779 header दो बार जोड़ता है।*
 *[Source: GATE CS 2013] · Hard*
 
-**Q534.** Consider the following three statements about link state and distance vector routing protocols for a large network with 500 nodes and 4000 links:
+**Q530.** Consider the following three statements about link state and distance vector routing protocols for a large network with 500 nodes and 4000 links:
 S1: The computational overhead in link state protocols is higher than in distance vector protocols.
 S2: A distance vector protocol (with split horizon) avoids persistent routing loops, but a link state protocol does not.
 S3: After a topology change, a link state protocol converges faster than a distance vector protocol.
@@ -6793,7 +6749,7 @@ S3: Topology बदलने पर link state, distance vector से तेज
 *S2 उल्टा — split horizon count-to-infinity से पूरा बचाता भी नहीं।*
 *[Source: GATE CS 2014 Set-1] · Hard*
 
-**Q535.** Which one of the following is TRUE about the interior gateway routing protocols RIP (Routing Information Protocol) and OSPF (Open Shortest Path First)?
+**Q531.** Which one of the following is TRUE about the interior gateway routing protocols RIP (Routing Information Protocol) and OSPF (Open Shortest Path First)?
 *Interior gateway routing protocols RIP (Routing Information Protocol) और OSPF (Open Shortest Path First) के बारे में कौन-सा कथन सही है?*
 - **(A)** RIP uses distance vector routing and OSPF uses link state routing / RIP distance vector और OSPF link state routing प्रयोग करता है
 - **(B)** OSPF uses distance vector routing and RIP uses link state routing / OSPF distance vector और RIP link state routing प्रयोग करता है
@@ -6804,7 +6760,7 @@ S3: Topology बदलने पर link state, distance vector से तेज
 *दोनों को एक श्रेणी में डालना आम गलती।*
 *[Source: GATE CS 2014 Set-2] · Hard*
 
-**Q536.** Consider the following statements about the functionality of an IP based router:
+**Q532.** Consider the following statements about the functionality of an IP based router:
 I. A router does not modify the IP packets during forwarding.
 II. It is not necessary for a router to implement any routing protocol.
 III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the size of the incoming IP packet.
@@ -6823,7 +6779,7 @@ III. यदि outgoing link का MTU आने वाले packet से ब
 *Router re-fragment कर सकता है, जोड़ता नहीं।*
 *[Source: GATE CS 2020] · Hard*
 
-**Q537.** Host A (on TCP/IPv4 network A) sends an IP datagram D to host B (on TCP/IPv4 network B) with no transmission error. When D reaches B, which of the following IP header field(s) may be different from that of the original datagram D?
+**Q533.** Host A (on TCP/IPv4 network A) sends an IP datagram D to host B (on TCP/IPv4 network B) with no transmission error. When D reaches B, which of the following IP header field(s) may be different from that of the original datagram D?
 I. TTL    II. Checksum    III. Fragment Offset
 *Host A ने (TCP/IPv4 network A से) बिना किसी त्रुटि के IP datagram D, host B को भेजा। D के B पर पहुँचने पर निम्न में से कौन-से IP header fields मूल datagram से भिन्न हो सकते हैं?
 I. TTL    II. Checksum    III. Fragment Offset*
@@ -6873,7 +6829,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 
 ### Questions (Easy → Medium → Hard)
 
-**Q538.** A server receives a packet with destination port 443. This implies:
+**Q534.** A server receives a packet with destination port 443. This implies:
 *एक server को destination port 443 वाला packet मिलता है. इसका अर्थ है:*
 - **(A)** HTTP request
 - **(B)** HTTPS traffic
@@ -6884,7 +6840,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Ports: 80=HTTP, 443=HTTPS, 21/20=FTP, 22=SSH, 23=Telnet, 25=SMTP, 53=DNS, 67/68=DHCP.*
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
-**Q539.** For what application is the HTTP protocol used?
+**Q535.** For what application is the HTTP protocol used?
 *HTTP protocol किस काम के लिए उपयोग होता है?*
 - **(A)** To increase upload speed
 - **(B)** To develop a website
@@ -6895,7 +6851,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *SSC MTS official key (3). HTTP = web की धड़कन (port 80).*
 *[Source: SSC MTS computer PYQ (via Testbook solved)] · Easy*
 
-**Q540.** The structure or format of data is called:
+**Q536.** The structure or format of data is called:
 *Data का structure या format कहलाता है:*
 - **(A)** Syntax
 - **(B)** Struct
@@ -6906,7 +6862,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *नियम: Syntax = कैसा दिखे; Semantics = क्या अर्थ हो. Communication में दोनों तय होने चाहिए.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p14] · Medium*
 
-**Q541.** Which protocol layer uses protocols such as WWW, HTTP, FTP, SMTP and e-mail?
+**Q537.** Which protocol layer uses protocols such as WWW, HTTP, FTP, SMTP and e-mail?
 *कौन-सी protocol layer WWW, HTTP, FTP, SMTP और e-mail जैसे protocols उपयोग करती है?*
 - **(A)** Application layer
 - **(B)** Transport layer
@@ -6917,7 +6873,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *याद रखो: Layer 7 = सेवाएँ (HTTP/FTP/SMTP/DNS); Layer 4 = TCP/UDP; Layer 3 = IP.*
 *[Source: CN Topic Test-02.pdf + CN Topic Test-01.pdf] · Medium*
 
-**Q542.** Which layer protocols provide user and application programme support such as passwords, resource sharing and file transfer?
+**Q538.** Which layer protocols provide user and application programme support such as passwords, resource sharing and file transfer?
 *किस layer के protocols उपयोगकर्ता और application programme को passwords, resource sharing और file transfer जैसी सहायता देते हैं?*
 - **(A)** Layer 2 protocols
 - **(B)** Layer 5 protocols
@@ -6928,7 +6884,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *OSI में 7 layers ही हैं — 'Layer 10' तो हो ही नहीं सकती.*
 *[Source: CN Topic Test-02.pdf] · Medium*
 
-**Q543.** Which of the following protocols is primarily used for secure web browsing?
+**Q539.** Which of the following protocols is primarily used for secure web browsing?
 *निम्न में से कौन-सा protocol मुख्य रूप से सुरक्षित web browsing के लिए उपयोग होता है?*
 - **(A)** FTP
 - **(B)** HTTP
@@ -6939,7 +6895,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *HTTPS का port 443; HTTP का 80. ताला (lock) वाली site = HTTPS.*
 *[Source: CN Topic Test-01.pdf] · Medium*
 
-**Q544.** Which protocol is generally used to encrypt data between a web browser and a web server?
+**Q540.** Which protocol is generally used to encrypt data between a web browser and a web server?
 *Web browser और web server के बीच data encrypt करने के लिए आमतौर पर कौन-सा protocol उपयोग होता है?*
 - **(A)** SSL/TLS
 - **(B)** Digital Signature
@@ -6950,7 +6906,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *HTTPS = HTTP over SSL/TLS. IPSec network-level VPN के लिए होता है.*
 *[Source: CN Topic Test-01.pdf] · Medium*
 
-**Q545.** Which protocol is used for secure shell (remote) login?
+**Q541.** Which protocol is used for secure shell (remote) login?
 *Secure shell (remote) login के लिए कौन-सा protocol उपयोग होता है?*
 - **(A)** FTP
 - **(B)** SSH
@@ -6961,7 +6917,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *SSH = port 22 (encrypted); Telnet = port 23 (सादा, असुरक्षित).*
 *[Source: CN Topic Test 6.pdf + Medium 30 CN MCQ bank] · Medium*
 
-**Q546.** A firewall blocks all ports except 22. What service remains accessible?
+**Q542.** A firewall blocks all ports except 22. What service remains accessible?
 *एक firewall port 22 को छोड़कर सब बंद कर देता है. कौन-सी सेवा अभी भी खुली है?*
 - **(A)** FTP
 - **(B)** SSH
@@ -6972,7 +6928,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Port पहचानो, सेवा पहचानो — यही इस प्रश्न का खेल है.*
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
-**Q547.** Which port does Telnet use by default?
+**Q543.** Which port does Telnet use by default?
 *Telnet डिफ़ॉल्ट रूप से कौन-सा port उपयोग करता है?*
 - **(A)** 21
 - **(B)** 23
@@ -6983,7 +6939,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *याद रखो: 22 = SSH, 23 = Telnet, 25 = SMTP, 21 = FTP.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q548.** Which of the following uses port number 25?
+**Q544.** Which of the following uses port number 25?
 *निम्न में से कौन-सा port number 25 उपयोग करता है?*
 - **(A)** FTP
 - **(B)** HTTP
@@ -6994,7 +6950,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Mail ports: 25 (SMTP), 110 (POP3), 143 (IMAP).*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q549.** Which protocol uses different ports for control and data connections?
+**Q545.** Which protocol uses different ports for control and data connections?
 *कौन-सा protocol control और data connections के लिए अलग-अलग ports उपयोग करता है?*
 - **(A)** FTP
 - **(B)** HTTP
@@ -7005,7 +6961,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *FTP = double connection (control + data); HTTP/SMTP/DNS में ऐसा नहीं.*
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
-**Q550.** Which protocol is used for file transfer over a network?
+**Q546.** Which protocol is used for file transfer over a network?
 *Network पर file transfer के लिए कौन-सा protocol उपयोग होता है?*
 - **(A)** FTP
 - **(B)** HTTP
@@ -7016,7 +6972,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *HTTP से भी files मिलती हैं, पर 'file transfer' का नाम protocol FTP है.*
 *[Source: CN Topic Test 6.pdf + Medium 30 CN MCQ bank] · Medium*
 
-**Q551.** Which application allows a user to access and use remote files without actually transferring them?
+**Q547.** Which application allows a user to access and use remote files without actually transferring them?
 *कौन-सा application उपयोगकर्ता को remote files को बिना वास्तव में स्थानांतरित किए उपयोग करने देता है?*
 - **(A)** DNS
 - **(B)** FTP
@@ -7027,7 +6983,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *NFS = remote files को local जैसा जोड़ना; FTP = files की असल copy भेजना.*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
-**Q552.** Which protocol translates domain names to IP addresses?
+**Q548.** Which protocol translates domain names to IP addresses?
 *कौन-सा protocol domain names को IP addresses में बदलता है?*
 - **(A)** DHCP
 - **(B)** DNS
@@ -7038,7 +6994,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *DNS = name→IP; ARP = IP→MAC; DHCP = IP बाँटना.*
 *[Source: CN Topic Test 5.pdf + CN Topic Test-01.pdf] · Medium*
 
-**Q553.** What does a 'ping' command test?
+**Q549.** What does a 'ping' command test?
 *'ping' command क्या जाँचता है?*
 - **(A)** IP configuration
 - **(B)** Host reachability
@@ -7049,7 +7005,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *ping = 'क्या तुम वहाँ हो?' — reachability + round-trip time.*
 *[Source: CN Topic Test 6.pdf] · Medium*
 
-**Q554.** Which HTTP status code means 'Forbidden'?
+**Q550.** Which HTTP status code means 'Forbidden'?
 *कौन-सा HTTP status code का अर्थ है 'Forbidden'?*
 - **(A)** 200
 - **(B)** 301
@@ -7060,7 +7016,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *याद रखो: 200 OK, 301 Moved, 403 Forbidden, 404 Not Found, 500 Server Error.*
 *[Source: Oliveboard SSC CGL Tier-2 bank] · Medium*
 
-**Q555.** Lightweight Directory Access Protocol (LDAP) is used for:
+**Q551.** Lightweight Directory Access Protocol (LDAP) is used for:
 *Lightweight Directory Access Protocol (LDAP) किस काम आता है?*
 - **(A)** Routing the packets
 - **(B)** Authentication and directory access
@@ -7071,7 +7027,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *LDAP = network का 'पता-पुस्तिका + पहचान-पत्र काउंटर'.*
 *[Source: Unit Test-4 Solution.pdf (OCR), p29] · Medium*
 
-**Q556.** Which protocol is used for receiving an email?
+**Q552.** Which protocol is used for receiving an email?
 *Email प्राप्त करने के लिए कौन-सा protocol उपयोग होता है?*
 - **(A)** HTTP
 - **(B)** FTP
@@ -7082,7 +7038,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Mail की जोड़ी: भेजो SMTP (25), लो POP3 (110) या IMAP (143).*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
-**Q557.** Which of the following is the odd one out?
+**Q553.** Which of the following is the odd one out?
 *निम्न में से असंगत कौन-सा है?*
 - **(A)** IMAP
 - **(B)** POP
@@ -7093,7 +7049,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Mail family: SMTP/POP3/IMAP; Management family: SNMP.*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
-**Q558.** ICMP is a network-layer protocol used by devices to diagnose network issues. ICMP stands for:
+**Q554.** ICMP is a network-layer protocol used by devices to diagnose network issues. ICMP stands for:
 *ICMP network-layer protocol है जो devices को network समस्याएँ जाँचने में सहायता करता है. ICMP का पूरा नाम है:*
 - **(A)** Internet Control Manage Process
 - **(B)** Internet Comfort Mass Protocol
@@ -7104,7 +7060,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *बाकी नाम बनावटी हैं — असली नाम में 'Control Message' आता है.*
 *[Source: IBPS PO Computer Awareness PYQ (via Testbook solved)] · Medium*
 
-**Q559.** POP3 stands for:
+**Q555.** POP3 stands for:
 *POP3 का पूरा नाम है:*
 - **(A)** Peer to Peer Protocol
 - **(B)** Peer to Post Protocol
@@ -7115,7 +7071,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *POP = Post Office Protocol. याद रखो: POP3 mail लाता है, SMTP भेजता है.*
 *[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)] · Medium*
 
-**Q560.** SLIP stands for:
+**Q556.** SLIP stands for:
 *SLIP का पूरा नाम है:*
 - **(A)** System Line Internet Protocol
 - **(B)** Serial Line Internet Protocol
@@ -7126,7 +7082,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *SLIP का उत्तराधिकारी PPP (byte-oriented) है — दोनों point-to-point.*
 *[Source: IBPS/banking computer banks (via tpointtech MCQ)] · Medium*
 
-**Q561.** The functionalities of the presentation layer include:
+**Q557.** The functionalities of the presentation layer include:
 *Presentation layer के कार्यों में शामिल हैं:*
 - **(A)** Data compression
 - **(B)** Data encryption
@@ -7137,7 +7093,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Presentation = data का मेकअप (रूप, रंग, सुरक्षा); Application = सेवाएँ.*
 *[Source: CN Topic Test-02.pdf] · Hard*
 
-**Q562.** Which of the following protocols is NOT secure?
+**Q558.** Which of the following protocols is NOT secure?
 *निम्न में से कौन-सा protocol सुरक्षित नहीं है?*
 - **(A)** HTTPS
 - **(B)** FTP
@@ -7148,7 +7104,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *असुरक्षित की सूची: HTTP, FTP, Telnet, SMTP (बिना TLS). सुरक्षित: HTTPS, SFTP, SSH, SMTPS.*
 *[Source: CN Topic Test 6.pdf] · Hard*
 
-**Q563.** Which of the following protocols is used for transferring email messages from one machine to another?
+**Q559.** Which of the following protocols is used for transferring email messages from one machine to another?
 *निम्न में से कौन-सा protocol email संदेशों को एक machine से दूसरी में भेजने के लिए उपयोग होता है?*
 - **(A)** SNMP
 - **(B)** FTP
@@ -7159,7 +7115,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *RPSC official key (d). भेजना = SMTP; लेना = POP3/IMAP.*
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
-**Q564.** In one of the pairs below, both protocols can use multiple TCP connections between the same client and the same server. Which pair is it?
+**Q560.** In one of the pairs below, both protocols can use multiple TCP connections between the same client and the same server. Which pair is it?
 *नीचे दिए जोड़ों में से किसमें दोनों protocols एक ही client और server के बीच कई TCP connections उपयोग कर सकते हैं?*
 - **(A)** HTTP, FTP
 - **(B)** HTTP, TELNET
@@ -7170,7 +7126,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *दोनों 'multi-connection' protocols हैं — यही जोड़ी पूछी गई है.*
 *[Source: CN Topic Test-02.pdf] · Hard*
 
-**Q565.** Identify the true statements: (1) HTTP may use different TCP connections for different objects of a webpage if non-persistent connections are used (2) FTP uses two TCP connections, one for data and another for control (3) TELNET and FTP can only use TWO connections at a time
+**Q561.** Identify the true statements: (1) HTTP may use different TCP connections for different objects of a webpage if non-persistent connections are used (2) FTP uses two TCP connections, one for data and another for control (3) TELNET and FTP can only use TWO connections at a time
 *सही कथन पहचानें: (1) non-persistent connections में HTTP webpage के अलग-अलग objects के लिए अलग TCP connections उपयोग कर सकता है (2) FTP दो TCP connections उपयोग करता है, एक data के लिए और दूसरा control के लिए (3) TELNET और FTP एक समय में केवल TWO connections ही उपयोग कर सकते हैं*
 - **(A)** (1) only
 - **(B)** (1) and (2)
@@ -7181,7 +7137,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *HTTP = multi-connection capable; FTP = दो का जोड़ा; 'only two' का नियम कहीं नहीं.*
 *[Source: CN Topic Test-03.pdf] · Hard*
 
-**Q566.** Which of the following is NOT an application layer protocol?
+**Q562.** Which of the following is NOT an application layer protocol?
 *निम्न में से कौन-सा application layer protocol नहीं है?*
 - **(A)** HTTP
 - **(B)** IP
@@ -7192,7 +7148,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Layer 7 के नाम: HTTP, FTP, SMTP, DNS, Telnet, SNMP, DHCP, TFTP...*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Hard*
 
-**Q567.** Which is the FALSE statement?
+**Q563.** Which is the FALSE statement?
 *कौन-सा कथन गलत है?*
 - **(A)** Telnet is used for remote login
 - **(B)** FTP can transfer files between two hosts
@@ -7203,7 +7159,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *TFTP = छोटा भाई (UDP, port 69); FTP = बड़ा भाई (TCP, ports 20/21).*
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Hard*
 
-**Q568.** Match TCP/IP layers and protocols — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. Which matching is correct?
+**Q564.** Match TCP/IP layers and protocols — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. Which matching is correct?
 *TCP/IP layers और protocols मिलाएँ — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. कौन-सा मिलान सही है?*
 - **(A)** P-2, Q-1, R-3
 - **(B)** P-1, Q-2, R-3
@@ -7214,7 +7170,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *Layers याद रखो: Application = FTP/HTTP/SMTP/DNS; Transport = TCP/UDP; Internet = IP/ICMP/IGMP.*
 *[Source: Random Test- Rajasthan PYQ.pdf (OCR) + answer_keys.py Q23] · Hard*
 
-**Q569.** Which one of the following is NOT a client-server application?
+**Q565.** Which one of the following is NOT a client-server application?
 *निम्न में से कौन-सा client-server application नहीं है?*
 - **(A)** Internet Chat
 - **(B)** Web browsing
@@ -7225,7 +7181,7 @@ I. TTL    II. Checksum    III. Fragment Offset*
 *RPSC 2011 official key (4). Ping = reachability जाँच, application service नहीं.*
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
-**Q570.** Which of the following is/are example(s) of stateful application layer protocols?
+**Q566.** Which of the following is/are example(s) of stateful application layer protocols?
 I. HTTP    II. FTP    III. TCP    IV. POP3
 *निम्न में से कौन-सा stateful application layer protocol का उदाहरण है?
 I. HTTP    II. FTP    III. TCP    IV. POP3*
@@ -7238,7 +7194,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *TCP application protocol नहीं; HTTP सिर्फ़ आधुनिक keep-alive में stateful लगता है।*
 *[Source: GATE CS 2016 Set-1] · Hard*
 
-**Q571.** Identify the correct sequence in which the following packets are transmitted by a host when a browser requests a web page from a remote server, assuming that the host has just been restarted:
+**Q567.** Identify the correct sequence in which the following packets are transmitted by a host when a browser requests a web page from a remote server, assuming that the host has just been restarted:
 *मान लीजिए host अभी-अभी restart हुआ है और browser एक remote server से web page माँगता है। निम्न packets सही क्रम में transmit होंगे:*
 - **(A)** HTTP GET request, DNS query, TCP SYN
 - **(B)** DNS query, HTTP GET request, TCP SYN
@@ -7249,7 +7205,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *GET पहले नहीं जा सकता; restart में DNS cache भी ख़ाली।*
 *[Source: GATE CS 2016 Set-2] · Hard*
 
-**Q572.** Which of the following protocol pairs can be used to send and retrieve e-mails (in that order)?
+**Q568.** Which of the following protocol pairs can be used to send and retrieve e-mails (in that order)?
 *ई-मेल भेजने और प्राप्त करने (इसी क्रम में) के लिए निम्न में से किस protocol जोड़ी का प्रयोग हो सकता है?*
 - **(A)** SMTP and POP3 / SMTP और POP3
 - **(B)** POP3 and SMTP / POP3 और SMTP
@@ -7260,7 +7216,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *उल्टी जोड़ी गलत; IMAP भी retrieve करता है पर सबसे सामान्य जोड़ी SMTP+POP3।*
 *[Source: GATE CS 2019] · Hard*
 
-**Q573.** Consider a long-lived TCP session with an end-to-end bandwidth of 1 Gbps (= 10⁹ bits/second). The session starts with a sequence number of 1234. The minimum time (in seconds, rounded to the closest integer) before this sequence number can be used again is ______.
+**Q569.** Consider a long-lived TCP session with an end-to-end bandwidth of 1 Gbps (= 10⁹ bits/second). The session starts with a sequence number of 1234. The minimum time (in seconds, rounded to the closest integer) before this sequence number can be used again is ______.
 *एक लंबी TCP session की bandwidth 1 Gbps (= 10⁹ bits/second) है और वह sequence number 1234 से शुरू होती है। इस sequence number के पुनः प्रयोग से पहले न्यूनतम समय (seconds में, निकटतम पूर्णांक) कितना है?*
 - **(A)** 34
 - **(B)** 35
@@ -7271,7 +7227,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Bits में हिसाब लगाना (4 s) या 2³² bits मानना गलत।*
 *[Source: GATE CS 2018] · Hard*
 
-**Q574.** In the TCP three-way handshake, host P sends a connection request to Q with SYN = 1, SEQ = X, ACK = 0. Q accepts the connection. Which of the following represents the information in the TCP segment header sent by Q to P?
+**Q570.** In the TCP three-way handshake, host P sends a connection request to Q with SYN = 1, SEQ = X, ACK = 0. Q accepts the connection. Which of the following represents the information in the TCP segment header sent by Q to P?
 *TCP three-way handshake में host P, Q को connection request भेजता है: SYN = 1, SEQ = X, ACK = 0। Q connection स्वीकार करता है। Q द्वारा P को भेजे segment header में क्या होगा?*
 - **(A)** SYN = 1, SEQ = Y, ACK = X
 - **(B)** SYN = 1, SEQ = X, ACK = Y
@@ -7282,7 +7238,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *ACK = X गलत (X+1 अपेक्षित); SYN=0 दूसरे जैसा।*
 *[Source: GATE CS 2021 Set-2] · Hard*
 
-**Q575.** Consider data transfer using TCP over a 1 Gbps link. Assuming that the maximum segment lifetime (MSL) is set to 60 seconds, the minimum number of bits required for the sequence number field of the TCP header, to prevent the sequence number space from wrapping around during the MSL, is ______.
+**Q571.** Consider data transfer using TCP over a 1 Gbps link. Assuming that the maximum segment lifetime (MSL) is set to 60 seconds, the minimum number of bits required for the sequence number field of the TCP header, to prevent the sequence number space from wrapping around during the MSL, is ______.
 *1 Gbps link पर TCP से data transfer हो रहा है। Maximum segment lifetime (MSL) 60 seconds है। MSL के दौरान sequence number space के wrap होने से बचने के लिए TCP header के sequence number field में न्यूनतम कितने bits चाहिए?*
 - **(A)** 32
 - **(B)** 33
@@ -7293,7 +7249,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *32 कम पड़ता; 34/36 ज़्यादा (न्यूनतम पूछा है)।*
 *[Source: GATE CS 2022] · Hard*
 
-**Q576.** A TCP client and server complete data transfer. The client calls close; a FIN segment is sent to the server, which responds with an ACK received by the client. As per the TCP connection state diagram (RFC 793), in which state does the client-side TCP connection wait for the FIN from the server?
+**Q572.** A TCP client and server complete data transfer. The client calls close; a FIN segment is sent to the server, which responds with an ACK received by the client. As per the TCP connection state diagram (RFC 793), in which state does the client-side TCP connection wait for the FIN from the server?
 *TCP client-server का data transfer पूरा हुआ। Client close करता है; server को FIN जाता है; server का ACK client को मिलता है। RFC 793 की state diagram के अनुसार client-side connection server के FIN की प्रतीक्षा किस state में करती है?*
 - **(A)** TIME_WAIT
 - **(B)** FIN_WAIT_2
@@ -7304,7 +7260,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *TIME_WAIT अंत में; CLOSE_WAIT server की।*
 *[Source: GATE CS 2017 Set-1] · Hard*
 
-**Q577.** In the TCP three-way handshake, let the three packets exchanged during connection establishment be P1, P2 and P3 in order. Which of the following is TRUE about the TCP header flags set in these packets?
+**Q573.** In the TCP three-way handshake, let the three packets exchanged during connection establishment be P1, P2 and P3 in order. Which of the following is TRUE about the TCP header flags set in these packets?
 *TCP three-way handshake में connection establishment के दौरान तीन packets P1, P2 और P3 (इसी क्रम में) बदले जाते हैं। इनमें सेट TCP header flags के बारे में क्या सही है?*
 - **(A)** P1: SYN; P2: SYN, ACK; P3: ACK
 - **(B)** P1: SYN, ACK; P2: ACK; P3: FIN
@@ -7315,7 +7271,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *FIN release का flag है; पहले packet पर ACK नहीं होता।*
 *[Source: GATE CS 2025 Set-1] · Hard*
 
-**Q578.** The World Wide Web (WWW) is:
+**Q574.** The World Wide Web (WWW) is:
 *World Wide Web (WWW) क्या है?*
 - **(A)** another name for the Internet / Internet का दूसरा नाम
 - **(B)** a worldwide connection of computers / कंप्यूटरों का विश्वव्यापी जुड़ाव
@@ -7362,7 +7318,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 
 ### Questions (Easy → Medium → Hard)
 
-**Q579.** In the virus life cycle, which phase actually performs the malicious activity?
+**Q575.** In the virus life cycle, which phase actually performs the malicious activity?
 *Virus life cycle में कौन-सा phase वास्तव में malicious activity करता है?*
 - **(A)** Infection Phase
 - **(B)** Triggering Phase
@@ -7373,7 +7329,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Virus phases: Dormant (idle) → Propagation (copy) → Triggering (condition met) → Execution (payload runs)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q580.** Which backup medium provides Write-Once-Read-Many (WORM) functionality?
+**Q576.** Which backup medium provides Write-Once-Read-Many (WORM) functionality?
 *कौन-सा backup medium Write-Once-Read-Many (WORM) functionality देता है?*
 - **(A)** Hard disk
 - **(B)** Magnetic tape
@@ -7384,7 +7340,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *WORM = optical write-once media (CD-R/DVD-R/BD-R)। Rewritable: HDD, tape (LTO), flash, CD-RW।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q581.** Which attack becomes possible if the SAME key is reused many times in symmetric encryption?
+**Q577.** Which attack becomes possible if the SAME key is reused many times in symmetric encryption?
 *यदि symmetric encryption में एक ही key कई बार उपयोग हो, तो कौन-सा attack संभव हो जाता है?*
 - **(A)** Replay attack
 - **(B)** Known-plaintext attack
@@ -7395,7 +7351,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *One-time pads केवल हर message पर नई key से सुरक्षित हैं। Reuse → pattern analysis। Exam favourite link: key reuse → known-plaintext।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q582.** Which of the following tools is mainly used for password cracking?
+**Q578.** Which of the following tools is mainly used for password cracking?
 *निम्न में से कौन-सा tool मुख्यतः password cracking के लिए उपयोग होता है?*
 - **(A)** Wireshark
 - **(B)** Nmap
@@ -7406,7 +7362,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Security tools: Wireshark = packet analyser, Nmap = port scanner, Cain&Abel = password cracker, Angry IP Scanner = IP scanner, Snort = IDS।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q583.** Which port and IP address scanner is most famous among users?
+**Q579.** Which port and IP address scanner is most famous among users?
 *Users के बीच सबसे प्रसिद्ध port और IP address scanner कौन-सा है?*
 - **(A)** Cain and Abel
 - **(B)** Angry IP Scanner
@@ -7417,7 +7373,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Cain&Abel = password cracking; Angry IP = IP/port scan; Snort = IDS; Ettercap = sniffing/ARP spoofing।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q584.** The term 'CIA triad' in information security refers to:
+**Q580.** The term 'CIA triad' in information security refers to:
 *Information security में 'CIA triad' शब्द किसे कहते हैं?*
 - **(A)** Cryptography, Integrity, Authentication
 - **(B)** Confidentiality, Integrity, Availability
@@ -7428,7 +7384,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *CIA = Confidentiality, Integrity, Availability। AAA (authentication, authorisation, accounting) अलग trio है।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q585.** A modification attack violates which security goal?
+**Q581.** A modification attack violates which security goal?
 *Modification attack कौन-से security लक्ष्य का उल्लंघन करता है?*
 - **(A)** Confidentiality
 - **(B)** Integrity
@@ -7439,7 +7395,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Attack→goal: Eavesdropping/Interception → Confidentiality। Modification → Integrity। DoS/Interruption → Availability। Spoofing → Authentication।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q586.** Which of the following attacks violates confidentiality?
+**Q582.** Which of the following attacks violates confidentiality?
 *निम्न में से कौन-सा attack confidentiality का उल्लंघन करता है?*
 - **(A)** Interception
 - **(B)** Modification
@@ -7450,7 +7406,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Attack map: Interception→Confidentiality, Modification→Integrity, Fabrication→Authenticity, Interruption→Availability।*
 *[Source: Subject Test Solution-1 Part-2 (CN & Security) slides] · Medium*
 
-**Q587.** A Denial of Service (DoS) attack violates which goal?
+**Q583.** A Denial of Service (DoS) attack violates which goal?
 *Denial of Service (DoS) attack कौन-से लक्ष्य का उल्लंघन करता है?*
 - **(A)** Confidentiality
 - **(B)** Integrity
@@ -7461,7 +7417,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *DoS = Availability attack। DDoS = distributed DoS। Smurf/ SYN-flood = DoS variants।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q588.** A spoofing attack targets which security aspect?
+**Q584.** A spoofing attack targets which security aspect?
 *Spoofing attack किस security पहलू को लक्षित करता है?*
 - **(A)** Authentication
 - **(B)** Integrity
@@ -7472,7 +7428,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Spoofing/impersonation → Authentication। Phishing → credentials चुराता है (auth)। Sniffing → Confidentiality।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q589.** Which of the following is an ACTIVE attack?
+**Q585.** Which of the following is an ACTIVE attack?
 *निम्न में से कौन-सा ACTIVE attack है?*
 - **(A)** Interception
 - **(B)** Modification
@@ -7483,7 +7439,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Passive = केवल देखना (eavesdropping, traffic analysis)। Active = बदलना/बाधा (modification, fabrication, interruption/DoS)।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q590.** Match the attacks with their descriptions: (a) Phishing  (b) DoS Attack  (c) Man-in-the-Middle  (d) Spoofing — (i) Flooding network traffic  (ii) Stealing user credentials  (iii) Intercepting communication  (iv) Impersonation attack
+**Q586.** Match the attacks with their descriptions: (a) Phishing  (b) DoS Attack  (c) Man-in-the-Middle  (d) Spoofing — (i) Flooding network traffic  (ii) Stealing user credentials  (iii) Intercepting communication  (iv) Impersonation attack
 *हमलों को उनके विवरण से मिलाइए: (a) Phishing  (b) DoS Attack  (c) Man-in-the-Middle  (d) Spoofing — (i) नेटवर्क ट्रैफ़िक भरना  (ii) यूज़र जानकारी चुराना  (iii) संचार में हस्तक्षेप  (iv) पहचान की नकल*
 - **(A)** a–ii, b–i, c–iii, d–iv
 - **(B)** a–i, b–ii, c–iii, d–iv
@@ -7494,7 +7450,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Attack one-liners: Phishing=fake emails/sites, DoS=flood, MitM=middle interception, Spoofing=fake identity।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q3 match (codes recovered)] · Medium*
 
-**Q591.** 'Junk email' is also known as:
+**Q587.** 'Junk email' is also known as:
 *'Junk email' को और क्या कहते हैं?*
 - **(A)** Spam
 - **(B)** Spoof
@@ -7505,7 +7461,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Spam = junk mail; Spoof = पहचान छिपाना; Sniffer = चोरी से सुनना.*
 *[Source: RRB NTPC computer banks (via practicemock PYQ set)] · Medium*
 
-**Q592.** The goal of 'Integrity' ensures that:
+**Q588.** The goal of 'Integrity' ensures that:
 *'Integrity' का लक्ष्य सुनिश्चित करता है कि:*
 - **(A)** Data can be accessed only by authorised users
 - **(B)** Data is accurate and has not been modified
@@ -7516,7 +7472,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Goal map: Confidentiality = केवल authorised access। Integrity = बिना authorisation बदलाव नहीं। Availability = हमेशा उपलब्ध।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Hard*
 
-**Q593.** Which of the following is NOT a goal of network security?
+**Q589.** Which of the following is NOT a goal of network security?
 *निम्न में से कौन-सा network security का लक्ष्य नहीं है?*
 - **(A)** Confidentiality
 - **(B)** Integrity
@@ -7527,7 +7483,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Security goals = CIA। Reliability goals = redundancy, fault tolerance, recovery।*
 *[Source: Subject Test Solution-1 Part-2 (CN & Security) slides] · Hard*
 
-**Q594.** The primary difference between active and passive attacks is:
+**Q590.** The primary difference between active and passive attacks is:
 *Active और passive attacks के बीच मुख्य अंतर क्या है?*
 - **(A)** Active attacks change data; passive attacks do not
 - **(B)** Passive attacks destroy hardware
@@ -7538,7 +7494,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Active: modification, fabrication, interruption। Passive: eavesdropping, traffic analysis। Exam one-liner: 'change बनाम observe'।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Hard*
 
-**Q595.** A ______ does not perform any destructive action directly; it only consumes system resources to bring the system down.
+**Q591.** A ______ does not perform any destructive action directly; it only consumes system resources to bring the system down.
 *एक ______ सीधे कोई विनाशकारी काम नहीं करता; वह सिस्टम को गिराने के लिए सिर्फ system resources खाता है.*
 - **(A)** Virus
 - **(B)** Worm
@@ -7584,7 +7540,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 
 ### Questions (Easy → Medium → Hard)
 
-**Q596.** The text that gets transformed using a cipher algorithm is called:
+**Q592.** The text that gets transformed using a cipher algorithm is called:
 *Cipher algorithm से जिस text को बदला जाता है उसे क्या कहते हैं?*
 - **(A)** Complex Text
 - **(B)** Transformed Text
@@ -7595,7 +7551,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Cryptography flow: Plain text --(cipher + key)--> Ciphertext --(decipher + key)--> Plain text।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q9] · Easy*
 
-**Q597.** In the digital signature technique, when the whole message is signed using an asymmetric key, the receiver uses:
+**Q593.** In the digital signature technique, when the whole message is signed using an asymmetric key, the receiver uses:
 *Digital signature technique में, जब पूरा संदेश asymmetric key से sign होता है, तो प्राप्तकर्ता उपयोग करता है:*
 - **(A)** Her or his own public key
 - **(B)** Her or his own private key
@@ -7606,7 +7562,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Signature दिशा: private से SIGN → public से VERIFY। Encryption दिशा: public से ENCRYPT → private से DECRYPT।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q598.** Which statement about plaintext, ciphertext and key is MOST accurate?
+**Q594.** Which statement about plaintext, ciphertext and key is MOST accurate?
 *Plaintext, ciphertext और key के बारे में कौन-सा कथन सबसे सही है?*
 - **(A)** Plaintext is generated after decryption using a public key
 - **(B)** Ciphertext is the original readable message
@@ -7617,7 +7573,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *3 objects याद रखें: plaintext (पढ़ने योग्य), ciphertext (scrambled), key (गुप्त parameter)। Encryption = f(plaintext, key)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q10] · Medium*
 
-**Q599.** Which of the following uses the SAME key for encryption and decryption?
+**Q595.** Which of the following uses the SAME key for encryption and decryption?
 *निम्न में से कौन-सा encryption और decryption के लिए एक ही key उपयोग करता है?*
 - **(A)** Symmetric key cipher
 - **(B)** Asymmetric key cipher
@@ -7628,7 +7584,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Symmetric = 1 key (तेज़)। Asymmetric = key pair (public+private, धीमा)। Hash = one-way digest। Signature = private-sign/public-verify।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q600.** Which of the following uses a PAIR of keys (public and private)?
+**Q596.** Which of the following uses a PAIR of keys (public and private)?
 *निम्न में से कौन-सा keys की एक जोड़ी (public और private) उपयोग करता है?*
 - **(A)** Symmetric cipher
 - **(B)** Asymmetric cipher
@@ -7639,7 +7595,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Public-key examples: RSA, Diffie-Hellman, ECC, DSA। Symmetric: DES, 3DES, AES, Blowfish, RC4।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q601.** Which is FASTER in encryption and decryption?
+**Q597.** Which is FASTER in encryption and decryption?
 *Encryption और decryption में कौन-सा तेज़ है?*
 - **(A)** Symmetric key cipher
 - **(B)** Asymmetric key cipher
@@ -7650,7 +7606,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Speed: Symmetric >> Asymmetric। Hybrid systems (TLS/PGP) asymmetric KEYS से symmetric SESSION key का आदान-प्रदान करती हैं।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q602.** What is the main disadvantage of symmetric key encryption?
+**Q598.** What is the main disadvantage of symmetric key encryption?
 *Symmetric key encryption की मुख्य कमी क्या है?*
 - **(A)** It is very slow
 - **(B)** Key distribution is difficult
@@ -7661,7 +7617,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Symmetric कमज़ोरी = key distribution (n users → n(n-1)/2 keys)। Asymmetric कमज़ोरी = धीमा + key authenticity (certificates)।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q603.** In public-key cryptography, a message encrypted with the public key can only be decrypted by:
+**Q599.** In public-key cryptography, a message encrypted with the public key can only be decrypted by:
 *Public-key cryptography में public key से encrypt किया संदेश केवल किसके द्वारा decrypt हो सकता है?*
 - **(A)** Another public key
 - **(B)** The same public key
@@ -7672,7 +7628,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Public/private गणितीय रूप से जुड़े हैं — एक ताला (public) और उसकी एकमात्र चाबी (private) की तरह।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q604.** Data Encryption Standard (DES) is a:
+**Q600.** Data Encryption Standard (DES) is a:
 *Data Encryption Standard (DES) क्या है?*
 - **(A)** Block cipher
 - **(B)** Stream cipher
@@ -7683,7 +7639,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *DES = 64-bit block, 56-bit key (symmetric)। AES = 128-bit block। RC4 = stream cipher।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q605.** Which cipher method encrypts one bit or byte at a time?
+**Q601.** Which cipher method encrypts one bit or byte at a time?
 *कौन-सी cipher method एक बार में एक bit या byte encrypt करती है?*
 - **(A)** Block cipher
 - **(B)** Stream cipher
@@ -7694,7 +7650,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Stream = 1 bit/byte at a time (RC4, A5/1)। Block = fixed-size blocks (DES/AES)। Substitution/Transposition = classical techniques।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q606.** The Caesar Cipher is an example of which cryptographic technique?
+**Q602.** The Caesar Cipher is an example of which cryptographic technique?
 *Caesar Cipher किस cryptographic technique का उदाहरण है?*
 - **(A)** Transposition cipher
 - **(B)** Substitution cipher
@@ -7705,7 +7661,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Classical types: Substitution (Caesar, Playfair) = replace; Transposition (Rail fence) = rearrange।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q607.** The process of detecting hidden data inside a file is known as:
+**Q603.** The process of detecting hidden data inside a file is known as:
 *किसी file के भीतर छिपे data का पता लगाने की प्रक्रिया को क्या कहते हैं?*
 - **(A)** Cryptanalysis
 - **(B)** Steganalysis
@@ -7716,7 +7672,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Steganography = data छिपाना (cover file)। Steganalysis = पता लगाना। Cryptography = scramblइंग।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q608.** What is the output of a steganography process called?
+**Q604.** What is the output of a steganography process called?
 *Steganography प्रक्रिया के output को क्या कहते हैं?*
 - **(A)** Ciphertext
 - **(B)** Stego-object
@@ -7727,7 +7683,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Stego terms: cover file (original carrier), secret message (hidden data), stego-object (result)।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
 
-**Q609.** In steganography, the file used to hide the secret data is called:
+**Q605.** In steganography, the file used to hide the secret data is called:
 *Steganography में secret data छिपाने के लिए जिस file का उपयोग होता है उसे क्या कहते हैं?*
 - **(A)** Secret file
 - **(B)** Cover file
@@ -7738,7 +7694,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Cover file = छद्म वेश। Secret message = छिपा data। Stego-object = embedding के बाद cover + secret।*
 *[Source: Subject Test Solution-1 Part-2 (CN & Security) slides] · Medium*
 
-**Q610.** Which of the following is an example of asymmetric encryption?
+**Q606.** Which of the following is an example of asymmetric encryption?
 *निम्न में से कौन-सा asymmetric encryption का उदाहरण है?*
 - **(A)** AES
 - **(B)** DES
@@ -7749,7 +7705,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Asymmetric = RSA, ECC, Diffie-Hellman, DSA। Symmetric = DES, 3DES, AES, Blowfish, RC4, IDEA।*
 *[Source: SSC CGL Tier-2 repeated Qs (via Oliveboard) · also BCI_SCI ST-01] · Medium*
 
-**Q611.** The data to be encrypted at the sender's site is called ______ and the data to be decrypted at the receiver's end is called ______.
+**Q607.** The data to be encrypted at the sender's site is called ______ and the data to be decrypted at the receiver's end is called ______.
 *Sender की ओर encrypt किए जाने वाले data को ______ और receiver की ओर decrypt किए जाने वाले data को ______ कहते हैं.*
 - **(A)** Secret key, public key
 - **(B)** Public key, secret key
@@ -7760,7 +7716,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *याद रखो: Plain (सादा) → encrypt → Cipher (गूँथा) → decrypt → Plain.*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
-**Q612.** Public key is used to:
+**Q608.** Public key is used to:
 *Public key का उपयोग किसके लिए होता है?*
 - **(A)** Encrypt the data
 - **(B)** Decrypt the data
@@ -7771,7 +7727,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Encrypt public से → decrypt private से। SIGN private से → verify public से। Exam दोनों दिशाएँ पूछता है!*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Hard*
 
-**Q613.** Which statement about symmetric and asymmetric cryptography is TRUE?
+**Q609.** Which statement about symmetric and asymmetric cryptography is TRUE?
 *Symmetric और asymmetric cryptography के बारे में कौन-सा कथन सही है?*
 - **(A)** Symmetric cryptography provides authentication
 - **(B)** Asymmetric cryptography is faster than symmetric
@@ -7782,7 +7738,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *सही: symmetric को secure key exchange चाहिए। गलत: symmetric स्वयं authentication नहीं देता; asymmetric धीमा; symmetric एक key उपयोग करता है।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security) — Q33] · Hard*
 
-**Q614.** What is the key length of AES-256 encryption?
+**Q610.** What is the key length of AES-256 encryption?
 *AES-256 encryption की key length कितनी है?*
 - **(A)** 128 bits
 - **(B)** 192 bits
@@ -7793,7 +7749,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *AES variants: AES-128, AES-192, AES-256 (key sizes)। Block size हमेशा 128 bits।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Hard*
 
-**Q615.** Which of the following statements is FALSE?
+**Q611.** Which of the following statements is FALSE?
 *निम्न में से कौन-सा कथन गलत है?*
 - **(A)** AES is a block cipher
 - **(B)** RSA is a symmetric cipher
@@ -7804,7 +7760,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *False-statement MCQs: हर एक जाँचें। AES=block ✓, RSA=asymmetric ✗, DH=key exchange ✓, DES=symmetric ✓।*
 *[Source: Repo: BCI_SCI Subject Test-01 (CN and Security)] · Hard*
 
-**Q616.** Suppose everyone in a group of N people wants to communicate secretly with the N−1 others using a symmetric-key cryptographic system. The number of keys required in the system as a whole is:
+**Q612.** Suppose everyone in a group of N people wants to communicate secretly with the N−1 others using a symmetric-key cryptographic system. The number of keys required in the system as a whole is:
 *मान लीजिए N लोगों के समूह में हर व्यक्ति बाकी N−1 लोगों से symmetric-key cryptographic system से गुप्त बातचीत करना चाहता है. कुल कितने keys चाहिए होंगी?*
 - **(A)** 2N
 - **(B)** N(N − 1)
@@ -7852,7 +7808,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 
 ### Questions (Easy → Medium → Hard)
 
-**Q617.** IPSec is MOST commonly used to implement:
+**Q613.** IPSec is MOST commonly used to implement:
 *IPSec मुख्यतः किसके लिए उपयोग होता है?*
 - **(A)** Secure email
 - **(B)** Secure web browsing
@@ -7863,7 +7819,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *IPSec = VPN tunneling (ESP/AH)। Secure email = PGP/SMIME। Secure web = SSL/TLS। Wireless = WPA2।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q618.** In IPSec Tunnel mode:
+**Q614.** In IPSec Tunnel mode:
 *IPSec Tunnel mode में:*
 - **(A)** Only the payload is encrypted
 - **(B)** Only the header is encrypted
@@ -7874,7 +7830,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Tunnel = पूरा packet + नया header (gateway VPN)। Transport = केवल payload (host-to-host)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q619.** The SSL/TLS handshake protocol is mainly used for:
+**Q615.** The SSL/TLS handshake protocol is mainly used for:
 *SSL/TLS handshake protocol मुख्यतः किसके लिए उपयोग होता है?*
 - **(A)** Data encryption
 - **(B)** Data compression
@@ -7885,7 +7841,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *TLS parts: Handshake = keys+authentication; Record = encryption+integrity। HTTPS = HTTP over TLS (port 443)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Easy*
 
-**Q620.** Match the security mechanisms with their OSI layers: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer
+**Q616.** Match the security mechanisms with their OSI layers: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer
 *Security mechanisms को OSI layers से मिलाइए: (a) Firewall  (b) Digital Signature  (c) MAC Filtering  (d) Port-based Filtering — (i) Network Layer  (ii) Application Layer  (iii) Data Link Layer  (iv) Transport Layer*
 - **(A)** a–i, b–ii, c–iii, d–iv
 - **(B)** a–ii, b–i, c–iii, d–iv
@@ -7896,7 +7852,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Mechanism-layers: Firewall L3/L4 (IP), Port filter L4, MAC filter L2, Digital signature L7। Packet-filtering firewall = L3/L4।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q4 match (codes recovered)] · Medium*
 
-**Q621.** Match the security protocols with their OSI layers: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)
+**Q617.** Match the security protocols with their OSI layers: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)
 *Security protocols को OSI layers से मिलाइए: (a) IPSec  (b) SSL/TLS  (c) PGP  (d) WPA2 — (i) Application Layer  (ii) Network Layer  (iii) Transport/Presentation Layer  (iv) Data Link Layer (Wi-Fi)*
 - **(A)** a–ii, b–iii, c–i, d–iv
 - **(B)** a–ii, b–i, c–iii, d–iv
@@ -7907,7 +7863,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Protocol layers: IPSec L3, SSL/TLS L4-7 (exam: transport/presentation), PGP L7, WPA2 L2, Kerberos L7।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch) — Q1 match (codes recovered)] · Medium*
 
-**Q622.** IPSec operates in which mode(s)?
+**Q618.** IPSec operates in which mode(s)?
 *IPSec किस/किन mode(s) में काम करता है?*
 - **(A)** Transport mode only
 - **(B)** Tunnel mode only
@@ -7918,7 +7874,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *IPSec modes: Transport (केवल payload, host-to-host) और Tunnel (पूरा packet, gateway-to-gateway/VPN)।*
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
-**Q623.** Which mode of IPSec provides end-to-end security between two hosts?
+**Q619.** Which mode of IPSec provides end-to-end security between two hosts?
 *IPSec का कौन-सा mode दो hosts के बीच end-to-end security देता है?*
 - **(A)** Transport mode
 - **(B)** Tunnel mode
@@ -7929,7 +7885,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *End-to-end (host↔host) = Transport mode। Gateway↔gateway (VPN) = Tunnel mode।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q624.** Which of the following is used in HTTPS for encryption?
+**Q620.** Which of the following is used in HTTPS for encryption?
 *HTTPS में encryption के लिए निम्न में से क्या उपयोग होता है?*
 - **(A)** SSL/TLS
 - **(B)** FTP
@@ -7940,7 +7896,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *HTTPS = HTTP + SSL/TLS (443)। HTTP = 80 (encryption नहीं)। FTP = 21। ARP = IP→MAC। NAT = address translation।*
 *[Source: Repo: CN Topic Test 5 (UNIT TEST-5)] · Medium*
 
-**Q625.** In which layer of the network architecture is the Secure Socket Layer (SSL) used?
+**Q621.** In which layer of the network architecture is the Secure Socket Layer (SSL) used?
 *Secure Socket Layer (SSL) network architecture की किस layer में उपयोग होती है?*
 - **(A)** Physical layer
 - **(B)** Session layer
@@ -7951,7 +7907,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Exam convention: SSL = Session layer (secure session setup + negotiation)। नोट: TLS, SSL का उत्तराधिकारी है।*
 *[Source: Unit Test-4 Solution (OCR), p6 (bank key)] · Medium*
 
-**Q626.** When a logic bomb is activated by a time-related event, it is known as a:
+**Q622.** When a logic bomb is activated by a time-related event, it is known as a:
 *जब कोई logic bomb किसी समय-संबंधी घटना से सक्रिय होता है, तो उसे कहते हैं:*
 - **(A)** Time-related bomb sequence
 - **(B)** Virus
@@ -7962,7 +7918,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Logic bomb = शर्त से फटने वाला कोड; शर्त समय हो तो Time bomb.*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
-**Q627.** Verification based on a login ID and password is called:
+**Q623.** Verification based on a login ID and password is called:
 *Login ID और password के आधार पर जाँच कहलाती है:*
 - **(A)** Logging in
 - **(B)** Configuration
@@ -7973,7 +7929,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Authentication = 'तुम कौन हो?'; Authorization = 'तुम्हें क्या अनुमति है?'.*
 *[Source: RBI/IBPS computer-awareness banks (via ixambee)] · Medium*
 
-**Q628.** Access control based on a person's fingerprints is an example of:
+**Q624.** Access control based on a person's fingerprints is an example of:
 *किसी व्यक्ति की उंगलियों के निशान पर आधारित access control का उदाहरण है:*
 - **(A)** Biometric identification
 - **(B)** Characteristic identification
@@ -7984,7 +7940,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *ज्ञात (password) से बढ़कर है शारीरिक पहचान (biometric).*
 *[Source: SBI PO Computer Awareness PYQ (via bankersadda)] · Medium*
 
-**Q629.** Which of the following networks extends a private network across public networks?
+**Q625.** Which of the following networks extends a private network across public networks?
 *निम्न में से कौन-सा network public networks के ऊपर private network का विस्तार करता है?*
 - **(A)** Virtual private network (VPN)
 - **(B)** Local area network
@@ -7995,7 +7951,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.*
 *[Source: BPSC TRE 2024 (via KnowledgeGate solved PYQ bank)] · Medium*
 
-**Q630.** Which one of the following is a key function of a firewall?
+**Q626.** Which one of the following is a key function of a firewall?
 *निम्न में से firewall का एक मुख्य काम कौन-सा है?*
 - **(A)** Monitoring
 - **(B)** Copying
@@ -8006,7 +7962,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3*
 *Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.*
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
-**Q631.** What is the advantage of setting up a DMZ (Demilitarized Zone) using a firewall?
+**Q627.** What is the advantage of setting up a DMZ (Demilitarized Zone) using a firewall?
 *Firewall का उपयोग करके DMZ (Demilitarized Zone) बनाने का क्या लाभ है?*
 - **(A)** To create multiple zones of trust
 - **(B)** Load balancing on the server

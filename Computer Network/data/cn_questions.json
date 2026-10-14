@@ -5,41 +5,41 @@
  "generated": "2026-10-14",
  "spec": "Computer Network/new/README.md (master execution prompt)",
  "counts": {
-  "total": 805,
+  "total": 801,
   "per_topic": {
-   "T01": 151,
+   "T01": 150,
    "T02": 100,
-   "T03": 122,
+   "T03": 121,
    "T04": 53,
-   "T05": 67,
-   "T06": 240,
+   "T05": 66,
+   "T06": 239,
    "T07": 72
   },
   "by_source_type": {
    "textbook_paraphrase": 42,
-   "repository_internal": 473,
-   "claimed_pyq_unverified": 89,
+   "repository_internal": 470,
+   "claimed_pyq_unverified": 88,
    "original_practice": 175,
    "verified_official_pyq": 26
   },
   "by_difficulty": {
-   "medium": 463,
-   "hard": 255,
+   "medium": 460,
+   "hard": 254,
    "easy": 87
   },
   "by_style": {
-   "concept": 700,
+   "concept": 696,
    "numerical": 65,
    "statement": 22,
    "scenario": 14,
    "match": 4
   },
   "by_verification": {
-   "answer_checked": 779,
+   "answer_checked": 775,
    "paper_and_key_checked": 26
   },
-  "exact_duplicate_groups": 4,
-  "near_duplicate_candidates": 361
+  "exact_duplicate_groups": 0,
+  "near_duplicate_candidates": 357
  },
  "questions": [
   {
@@ -1040,7 +1040,7 @@
    "source_url_or_file": "IBPS/SBI computer-awareness banks (via tpointtech & meritnotes)",
    "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
    "verification_status": "answer_checked",
-   "duplicate_group": "DUP-001",
+   "duplicate_group": null,
    "concept_tags": [
     "Introduction of Data Communication"
    ],
@@ -5551,7 +5551,7 @@
    "source_url_or_file": "Repo: BCI_SCI Subject Test-01 (UNIT TEST-1 CN & Security), Q23",
    "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
    "verification_status": "answer_checked",
-   "duplicate_group": "DUP-002",
+   "duplicate_group": null,
    "concept_tags": [
     "Introduction of Data Communication"
    ],
@@ -5854,65 +5854,6 @@
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
-   "stem_en": "ARPANET stands for _______.",
-   "stem_hi": "ARPANET का पूरा नाम है _______.",
-   "options_en": [
-    "Advanced Recheck Projects Agency Internet",
-    "Advanced Recheck Projects Agency Network",
-    "Advanced Research Projects Agency Network",
-    "Advanced Research Projects Agency Internet"
-   ],
-   "options_hi": [
-    "Advanced Recheck Projects Agency Internet",
-    "Advanced Recheck Projects Agency Network",
-    "Advanced Research Projects Agency Network",
-    "Advanced Research Projects Agency Internet"
-   ],
-   "correct_option": "C",
-   "explanation_en": "ARPANET = Advanced Research Projects Agency Network. It was created by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense.",
-   "explanation_hi": "ARPANET = Advanced Research Projects Agency Network. इसे ARPA (Advanced Research Projects Agency) of U.S. Department of Defense ने बनाया था।",
-   "nukte_en": "ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).",
-   "nukte_hi": "ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).",
-   "why_wrong": {
-    "A": [
-     "Recheck is wrong; also Internet is wrong - it is a Network.",
-     "Recheck galat hai; aur Internet bhi galat hai - ye Network hai।"
-    ],
-    "B": [
-     "Recheck is wrong (it is Research), though Network is right.",
-     "Recheck galat hai (sahi shabd Research hai), haalaanki Network sahi hai।"
-    ],
-    "D": [
-     "Internet is wrong - ARPANET is a Network.",
-     "Internet galat hai - ARPANET ek Network hai।"
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Repo: CN Topic Test-01 (UNIT TEST-1), Q26",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": "DUP-001",
-   "concept_tags": [
-    "Introduction of Data Communication"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T01-0101",
-   "topic_id": "T01",
-   "topic": "Introduction of Data Communication",
-   "subtopic": "Section F - Network History (ARPANET to Today's Network)",
    "stem_en": "The first network was:",
    "stem_hi": "सबसे पहला network था:",
    "options_en": [
@@ -5968,7 +5909,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0102",
+   "id": "CN-T01-0101",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6027,7 +5968,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0103",
+   "id": "CN-T01-0102",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6086,7 +6027,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0104",
+   "id": "CN-T01-0103",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6145,7 +6086,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0105",
+   "id": "CN-T01-0104",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6204,7 +6145,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0106",
+   "id": "CN-T01-0105",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6263,7 +6204,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0107",
+   "id": "CN-T01-0106",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6322,7 +6263,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0108",
+   "id": "CN-T01-0107",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6381,7 +6322,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0109",
+   "id": "CN-T01-0108",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6440,7 +6381,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0110",
+   "id": "CN-T01-0109",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6499,7 +6440,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0111",
+   "id": "CN-T01-0110",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6558,7 +6499,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0112",
+   "id": "CN-T01-0111",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6617,7 +6558,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0113",
+   "id": "CN-T01-0112",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6676,7 +6617,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0114",
+   "id": "CN-T01-0113",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6736,7 +6677,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0115",
+   "id": "CN-T01-0114",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6795,7 +6736,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0116",
+   "id": "CN-T01-0115",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6854,7 +6795,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0117",
+   "id": "CN-T01-0116",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6914,7 +6855,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0118",
+   "id": "CN-T01-0117",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6974,7 +6915,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0119",
+   "id": "CN-T01-0118",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7033,7 +6974,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0120",
+   "id": "CN-T01-0119",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7093,7 +7034,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0121",
+   "id": "CN-T01-0120",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7152,7 +7093,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0122",
+   "id": "CN-T01-0121",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7209,7 +7150,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0123",
+   "id": "CN-T01-0122",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7268,7 +7209,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0124",
+   "id": "CN-T01-0123",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7325,7 +7266,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0125",
+   "id": "CN-T01-0124",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7373,7 +7314,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0126",
+   "id": "CN-T01-0125",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7420,7 +7361,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0127",
+   "id": "CN-T01-0126",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7467,7 +7408,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0128",
+   "id": "CN-T01-0127",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7520,7 +7461,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0129",
+   "id": "CN-T01-0128",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7567,7 +7508,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0130",
+   "id": "CN-T01-0129",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7614,7 +7555,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0131",
+   "id": "CN-T01-0130",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7661,7 +7602,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0132",
+   "id": "CN-T01-0131",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7714,7 +7655,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0133",
+   "id": "CN-T01-0132",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7762,7 +7703,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0134",
+   "id": "CN-T01-0133",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7809,7 +7750,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0135",
+   "id": "CN-T01-0134",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7856,7 +7797,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0136",
+   "id": "CN-T01-0135",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7904,7 +7845,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0137",
+   "id": "CN-T01-0136",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7951,7 +7892,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0138",
+   "id": "CN-T01-0137",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7998,7 +7939,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0139",
+   "id": "CN-T01-0138",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -8045,7 +7986,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0140",
+   "id": "CN-T01-0139",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -8093,7 +8034,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0141",
+   "id": "CN-T01-0140",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8140,7 +8081,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0142",
+   "id": "CN-T01-0141",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8187,7 +8128,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0143",
+   "id": "CN-T01-0142",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8234,7 +8175,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0144",
+   "id": "CN-T01-0143",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8281,7 +8222,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0145",
+   "id": "CN-T01-0144",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8328,7 +8269,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0146",
+   "id": "CN-T01-0145",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8375,7 +8316,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0147",
+   "id": "CN-T01-0146",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8422,7 +8363,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0148",
+   "id": "CN-T01-0147",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8469,7 +8410,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0149",
+   "id": "CN-T01-0148",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -8516,7 +8457,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0150",
+   "id": "CN-T01-0149",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -8564,7 +8505,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0151",
+   "id": "CN-T01-0150",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -22452,7 +22393,7 @@
    "source_url_or_file": "RPSC Programmer 2024 Paper-1 (official key) · also CN Topic Test 5",
    "answer_verified_by": "Official paper + key matched (Past Papers/RPSC Programmer 2024 Paper-1)",
    "verification_status": "paper_and_key_checked",
-   "duplicate_group": "DUP-003",
+   "duplicate_group": null,
    "concept_tags": [
     "Section E"
    ],
@@ -22689,81 +22630,6 @@
    "id": "CN-T03-0093",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
-   "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
-   "stem_en": "A reverse lookup in DNS means a lookup to ______ using ______ records.",
-   "stem_hi": "DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.",
-   "options_en": [
-    "map domain names to IP address, A",
-    "map IP address to domain name, PTR",
-    "determine the authoritative name servers, CNAME",
-    "identify mail servers, SOA"
-   ],
-   "options_hi": [
-    "map domain names to IP address, A",
-    "map IP address to domain name, PTR",
-    "determine the authoritative name servers, CNAME",
-    "identify mail servers, SOA"
-   ],
-   "correct_option": "B",
-   "explanation_en": "Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.",
-   "explanation_hi": "Reverse lookup में IP address से domain name निकाला जाता है और इसमें PTR (Pointer) records उपयोग होते हैं.",
-   "nukte_en": "Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.",
-   "nukte_hi": "Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी परीक्षा में बार-बार आती है.",
-   "why_wrong": {
-    "A": [
-     [
-      "A record सामान्य (forward) lookup का है.",
-      "A record सामान्य (forward) lookup का है."
-     ],
-     [
-      "A record सामान्य (forward) lookup का है.",
-      "A record सामान्य (forward) lookup का है."
-     ]
-    ],
-    "C": [
-     [
-      "CNAME alias बनाता है.",
-      "CNAME alias बनाता है."
-     ],
-     [
-      "CNAME alias बनाता है.",
-      "CNAME alias बनाता है."
-     ]
-    ],
-    "D": [
-     [
-      "SOA zone की जानकारी देता है.",
-      "SOA zone की जानकारी देता है."
-     ],
-     [
-      "SOA zone की जानकारी देता है.",
-      "SOA zone की जानकारी देता है."
-     ]
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "hard",
-   "exam_tags": [
-    "RPSC Programmer"
-   ],
-   "source_type": "claimed_pyq_unverified",
-   "exam_name": "RPSC",
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": "DUP-003",
-   "concept_tags": [
-    "Section E"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T03-0094",
-   "topic_id": "T03",
-   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
    "stem_en": "The address used by the data link layer to deliver a frame across one link is called:",
    "stem_hi": "Data link layer द्वारा एक link पर frame पहुँचाने के लिए प्रयुक्त address है:",
@@ -22808,7 +22674,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0095",
+   "id": "CN-T03-0094",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22856,7 +22722,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0096",
+   "id": "CN-T03-0095",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22903,7 +22769,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0097",
+   "id": "CN-T03-0096",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22950,7 +22816,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0098",
+   "id": "CN-T03-0097",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22997,7 +22863,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0099",
+   "id": "CN-T03-0098",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23044,7 +22910,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0100",
+   "id": "CN-T03-0099",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23092,7 +22958,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0101",
+   "id": "CN-T03-0100",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23139,7 +23005,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0102",
+   "id": "CN-T03-0101",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23186,7 +23052,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0103",
+   "id": "CN-T03-0102",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23234,7 +23100,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0104",
+   "id": "CN-T03-0103",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23281,7 +23147,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0105",
+   "id": "CN-T03-0104",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23329,7 +23195,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0106",
+   "id": "CN-T03-0105",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23377,7 +23243,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0107",
+   "id": "CN-T03-0106",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23424,7 +23290,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0108",
+   "id": "CN-T03-0107",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23471,7 +23337,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0109",
+   "id": "CN-T03-0108",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23519,7 +23385,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0110",
+   "id": "CN-T03-0109",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23567,7 +23433,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0111",
+   "id": "CN-T03-0110",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23615,7 +23481,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0112",
+   "id": "CN-T03-0111",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23662,7 +23528,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0113",
+   "id": "CN-T03-0112",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23716,7 +23582,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0114",
+   "id": "CN-T03-0113",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23761,7 +23627,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0115",
+   "id": "CN-T03-0114",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23809,7 +23675,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0116",
+   "id": "CN-T03-0115",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23857,7 +23723,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0117",
+   "id": "CN-T03-0116",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23904,7 +23770,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0118",
+   "id": "CN-T03-0117",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23951,7 +23817,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0119",
+   "id": "CN-T03-0118",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -23998,7 +23864,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0120",
+   "id": "CN-T03-0119",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -24045,7 +23911,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0121",
+   "id": "CN-T03-0120",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -24092,7 +23958,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0122",
+   "id": "CN-T03-0121",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -28675,7 +28541,7 @@
    "source_url_or_file": "Random Test- Rajasthan PYQ (OCR), p5 — Q108 (options recovered)",
    "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
    "verification_status": "answer_checked",
-   "duplicate_group": "DUP-004",
+   "duplicate_group": null,
    "concept_tags": [
     "Section A"
    ],
@@ -29303,81 +29169,6 @@
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
-   "stem_en": "______ signals are discrete and are generated by digital modulation.",
-   "stem_hi": "______ signals discrete होते हैं और digital modulation से बनते हैं.",
-   "options_en": [
-    "Digital",
-    "Noise",
-    "Bandwidth",
-    "Analog"
-   ],
-   "options_hi": [
-    "Digital",
-    "Noise",
-    "Bandwidth",
-    "Analog"
-   ],
-   "correct_option": "A",
-   "explanation_en": "Digital signals discrete होते हैं (अलग-अलग स्तर); analog signals continuous होते हैं.",
-   "explanation_hi": "Digital signals discrete होते हैं (अलग-अलग स्तर); analog signals continuous होते हैं.",
-   "nukte_en": "Discrete = गिने जा सकें (digital); Continuous = बहती धारा (analog).",
-   "nukte_hi": "Discrete = गिने जा सकें (digital); Continuous = बहती धारा (analog).",
-   "why_wrong": {
-    "B": [
-     [
-      "Noise unwanted signal है.",
-      "Noise unwanted signal है."
-     ],
-     [
-      "Noise unwanted signal है.",
-      "Noise unwanted signal है."
-     ]
-    ],
-    "C": [
-     [
-      "Bandwidth आवृत्ति-सीमा है.",
-      "Bandwidth आवृत्ति-सीमा है."
-     ],
-     [
-      "Bandwidth आवृत्ति-सीमा है.",
-      "Bandwidth आवृत्ति-सीमा है."
-     ]
-    ],
-    "D": [
-     [
-      "Analog continuous होता है.",
-      "Analog continuous होता है."
-     ],
-     [
-      "Analog continuous होता है.",
-      "Analog continuous होता है."
-     ]
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": "RSMSSB",
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "RSMSSB Informatics Assistant 2023 (via examsmantra solved paper)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": "DUP-004",
-   "concept_tags": [
-    "Section A"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T05-0022",
-   "topic_id": "T05",
-   "topic": "Transmission Medium",
-   "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
    "stem_en": "Consider a noiseless channel with a bandwidth of 5000 Hz transmitting a signal with two signal levels. The maximum bit rate is:",
    "stem_hi": "एक noiseless channel जिसकी bandwidth 5000 Hz है, दो signal levels के साथ transmission कर रहा है. अधिकतम bit rate होगी:",
    "options_en": [
@@ -29449,7 +29240,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0023",
+   "id": "CN-T05-0022",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29524,7 +29315,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0024",
+   "id": "CN-T05-0023",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29545,7 +29336,7 @@
    "correct_option": "D",
    "explanation_en": "Optical fibre, Twisted pair और Microwaves — तीनों transmission media हैं; Hertz आवृत्ति की इकाई है — medium नहीं.",
    "explanation_hi": "Optical fibre, Twisted pair और Microwaves — तीनों transmission media हैं; Hertz आवृत्ति की इकाई है — medium नहीं.",
-   "nukte_en": "Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.",
+   "nukte_en": "Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.",
    "nukte_hi": "Media = रास्ता; Hertz = गति/आवृत्ति माप. यही अंतर पूछा गया है.",
    "why_wrong": {
     "A": [
@@ -29599,7 +29390,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0025",
+   "id": "CN-T05-0024",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29620,7 +29411,7 @@
    "correct_option": "D",
    "explanation_en": "Dial-up पुरानी सुस्त (कम bandwidth) तकनीक है — broadband नहीं. Cable, DSL और Satellite broadband हैं.",
    "explanation_hi": "Dial-up पुरानी सुस्त (कम bandwidth) तकनीक है — broadband नहीं. Cable, DSL और Satellite broadband हैं.",
-   "nukte_en": "Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.",
+   "nukte_en": "Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.",
    "nukte_hi": "Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.",
    "why_wrong": {
     "A": [
@@ -29674,7 +29465,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0026",
+   "id": "CN-T05-0025",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29751,7 +29542,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0027",
+   "id": "CN-T05-0026",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29828,7 +29619,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0028",
+   "id": "CN-T05-0027",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29905,7 +29696,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0029",
+   "id": "CN-T05-0028",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29982,7 +29773,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0030",
+   "id": "CN-T05-0029",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30059,7 +29850,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0031",
+   "id": "CN-T05-0030",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30136,7 +29927,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0032",
+   "id": "CN-T05-0031",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30213,7 +30004,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0033",
+   "id": "CN-T05-0032",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30290,7 +30081,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0034",
+   "id": "CN-T05-0033",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30367,7 +30158,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0035",
+   "id": "CN-T05-0034",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30445,7 +30236,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0036",
+   "id": "CN-T05-0035",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30522,7 +30313,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0037",
+   "id": "CN-T05-0036",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30599,7 +30390,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0038",
+   "id": "CN-T05-0037",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30676,7 +30467,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0039",
+   "id": "CN-T05-0038",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30753,7 +30544,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0040",
+   "id": "CN-T05-0039",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30831,7 +30622,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0041",
+   "id": "CN-T05-0040",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30908,7 +30699,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0042",
+   "id": "CN-T05-0041",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -30985,7 +30776,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0043",
+   "id": "CN-T05-0042",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31062,7 +30853,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0044",
+   "id": "CN-T05-0043",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31139,7 +30930,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0045",
+   "id": "CN-T05-0044",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31217,7 +31008,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0046",
+   "id": "CN-T05-0045",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31294,7 +31085,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0047",
+   "id": "CN-T05-0046",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31371,7 +31162,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0048",
+   "id": "CN-T05-0047",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31449,7 +31240,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0049",
+   "id": "CN-T05-0048",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31497,7 +31288,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0050",
+   "id": "CN-T05-0049",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31545,7 +31336,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0051",
+   "id": "CN-T05-0050",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31592,7 +31383,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0052",
+   "id": "CN-T05-0051",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31639,7 +31430,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0053",
+   "id": "CN-T05-0052",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31686,7 +31477,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0054",
+   "id": "CN-T05-0053",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31734,7 +31525,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0055",
+   "id": "CN-T05-0054",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31781,7 +31572,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0056",
+   "id": "CN-T05-0055",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31826,7 +31617,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0057",
+   "id": "CN-T05-0056",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31880,7 +31671,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0058",
+   "id": "CN-T05-0057",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31927,7 +31718,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0059",
+   "id": "CN-T05-0058",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31974,7 +31765,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0060",
+   "id": "CN-T05-0059",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -32021,7 +31812,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0061",
+   "id": "CN-T05-0060",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -32068,7 +31859,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0062",
+   "id": "CN-T05-0061",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -32116,7 +31907,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0063",
+   "id": "CN-T05-0062",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32163,7 +31954,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0064",
+   "id": "CN-T05-0063",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32210,7 +32001,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0065",
+   "id": "CN-T05-0064",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32258,7 +32049,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0066",
+   "id": "CN-T05-0065",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32305,7 +32096,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0067",
+   "id": "CN-T05-0066",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -36831,65 +36622,6 @@
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
-   "stem_en": "Which of the following is an example of Client–Server architecture?",
-   "stem_hi": "निम्न में से कौन-सा Client–Server architecture का उदाहरण है?",
-   "options_en": [
-    "Chat between two Bluetooth devices",
-    "Web browser accessing a website",
-    "File transfer via USB cable",
-    "Two laptops connected directly"
-   ],
-   "options_hi": [
-    "Chat between two Bluetooth devices",
-    "Web browser accessing a website",
-    "File transfer via USB cable",
-    "Two laptops connected directly"
-   ],
-   "correct_option": "B",
-   "explanation_en": "Web browser (client) website के server से request करता है — यही classic client–server model है.",
-   "explanation_hi": "Web browser (client) website के server से request करता है — यही classic client–server model है.",
-   "nukte_en": "Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.",
-   "nukte_hi": "Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.",
-   "why_wrong": {
-    "A": [
-     "Bluetooth chat peer-to-peer है.",
-     "Bluetooth chat peer-to-peer है."
-    ],
-    "C": [
-     "USB transfer direct connection है.",
-     "USB transfer direct connection है."
-    ],
-    "D": [
-     "दो laptops direct = peer-to-peer.",
-     "दो laptops direct = peer-to-peer."
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "BCI_SCI Subject Test-01 (CN and Security)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": "DUP-002",
-   "concept_tags": [
-    "Section B"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T06-0078",
-   "topic_id": "T06",
-   "topic": "OSI Layers in Detail",
-   "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
    "stem_en": "Which of the following is NOT true with respect to a transparent bridge and a router?",
    "stem_hi": "Transparent bridge और router के संबंध में निम्न में से कौन-सा सही नहीं है?",
    "options_en": [
@@ -36905,7 +36637,7 @@
     "A router can connect between a LAN and a WAN"
    ],
    "correct_option": "B",
-   "explanation_en": "This statement is reversed — a Bridge uses MAC addresses and a Router uses IP addresses. So this is the 'not correct' option.",
+   "explanation_en": "यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.",
    "explanation_hi": "यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.",
    "nukte_en": "RPSC 2011 official key (2). याद रखो: Bridge = MAC (L2), Router = IP (L3).",
    "nukte_hi": "RPSC 2011 official key (2). याद रखो: Bridge = MAC (L2), Router = IP (L3).",
@@ -36943,7 +36675,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0079",
+   "id": "CN-T06-0078",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -36962,7 +36694,7 @@
     "Segmentation and reassembly of user information"
    ],
    "correct_option": "A",
-   "explanation_en": "Building the cell header is the ATM layer's job — the AAL splits/joins user data into cells and handles error/delay.",
+   "explanation_en": "This statement is reversed — a Bridge uses MAC addresses and a Router uses IP addresses. So this is the 'not correct' option.",
    "explanation_hi": "Cell header बनाना ATM layer का काम है — AAL user data को cells में तोड़ने-जोड़ने और error/delay संभालने का काम करती है.",
    "nukte_en": "RPSC 2011 official key (1). ATM में: ATM layer = cell header/switching; AAL = segmentation+reassembly.",
    "nukte_hi": "RPSC 2011 official key (1). ATM में: ATM layer = cell header/switching; AAL = segmentation+reassembly.",
@@ -37000,7 +36732,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0080",
+   "id": "CN-T06-0079",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37059,7 +36791,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0081",
+   "id": "CN-T06-0080",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37118,7 +36850,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0082",
+   "id": "CN-T06-0081",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37175,7 +36907,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0083",
+   "id": "CN-T06-0082",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37234,7 +36966,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0084",
+   "id": "CN-T06-0083",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37294,7 +37026,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0085",
+   "id": "CN-T06-0084",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37353,7 +37085,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0086",
+   "id": "CN-T06-0085",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37413,7 +37145,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0087",
+   "id": "CN-T06-0086",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37470,7 +37202,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0088",
+   "id": "CN-T06-0087",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37527,7 +37259,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0089",
+   "id": "CN-T06-0088",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37587,7 +37319,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0090",
+   "id": "CN-T06-0089",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37644,7 +37376,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0091",
+   "id": "CN-T06-0090",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37704,7 +37436,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0092",
+   "id": "CN-T06-0091",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37763,7 +37495,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0093",
+   "id": "CN-T06-0092",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37822,7 +37554,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0094",
+   "id": "CN-T06-0093",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37882,7 +37614,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0095",
+   "id": "CN-T06-0094",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -37941,7 +37673,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0096",
+   "id": "CN-T06-0095",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38000,7 +37732,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0097",
+   "id": "CN-T06-0096",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38059,7 +37791,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0098",
+   "id": "CN-T06-0097",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38119,7 +37851,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0099",
+   "id": "CN-T06-0098",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38179,7 +37911,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0100",
+   "id": "CN-T06-0099",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38238,7 +37970,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0101",
+   "id": "CN-T06-0100",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38297,7 +38029,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0102",
+   "id": "CN-T06-0101",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38356,7 +38088,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0103",
+   "id": "CN-T06-0102",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38416,7 +38148,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0104",
+   "id": "CN-T06-0103",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38475,7 +38207,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0105",
+   "id": "CN-T06-0104",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38534,7 +38266,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0106",
+   "id": "CN-T06-0105",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38593,7 +38325,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0107",
+   "id": "CN-T06-0106",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38652,7 +38384,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0108",
+   "id": "CN-T06-0107",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38711,7 +38443,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0109",
+   "id": "CN-T06-0108",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38770,7 +38502,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0110",
+   "id": "CN-T06-0109",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38827,7 +38559,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0111",
+   "id": "CN-T06-0110",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38884,7 +38616,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0112",
+   "id": "CN-T06-0111",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38941,7 +38673,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0113",
+   "id": "CN-T06-0112",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -38985,7 +38717,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0114",
+   "id": "CN-T06-0113",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -39029,7 +38761,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0115",
+   "id": "CN-T06-0114",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -39073,7 +38805,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0116",
+   "id": "CN-T06-0115",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39130,7 +38862,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0117",
+   "id": "CN-T06-0116",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39190,7 +38922,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0118",
+   "id": "CN-T06-0117",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39249,7 +38981,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0119",
+   "id": "CN-T06-0118",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39308,7 +39040,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0120",
+   "id": "CN-T06-0119",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39367,7 +39099,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0121",
+   "id": "CN-T06-0120",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39426,7 +39158,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0122",
+   "id": "CN-T06-0121",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39483,7 +39215,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0123",
+   "id": "CN-T06-0122",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39542,7 +39274,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0124",
+   "id": "CN-T06-0123",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39601,7 +39333,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0125",
+   "id": "CN-T06-0124",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39660,7 +39392,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0126",
+   "id": "CN-T06-0125",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39720,7 +39452,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0127",
+   "id": "CN-T06-0126",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39780,7 +39512,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0128",
+   "id": "CN-T06-0127",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39840,7 +39572,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0129",
+   "id": "CN-T06-0128",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39900,7 +39632,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0130",
+   "id": "CN-T06-0129",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -39960,7 +39692,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0131",
+   "id": "CN-T06-0130",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40017,7 +39749,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0132",
+   "id": "CN-T06-0131",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40076,7 +39808,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0133",
+   "id": "CN-T06-0132",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40135,7 +39867,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0134",
+   "id": "CN-T06-0133",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40194,7 +39926,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0135",
+   "id": "CN-T06-0134",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40253,7 +39985,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0136",
+   "id": "CN-T06-0135",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40312,7 +40044,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0137",
+   "id": "CN-T06-0136",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40371,7 +40103,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0138",
+   "id": "CN-T06-0137",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40430,7 +40162,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0139",
+   "id": "CN-T06-0138",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40489,7 +40221,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0140",
+   "id": "CN-T06-0139",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40548,7 +40280,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0141",
+   "id": "CN-T06-0140",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40607,7 +40339,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0142",
+   "id": "CN-T06-0141",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40664,7 +40396,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0143",
+   "id": "CN-T06-0142",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40721,7 +40453,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0144",
+   "id": "CN-T06-0143",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40765,7 +40497,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0145",
+   "id": "CN-T06-0144",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40809,7 +40541,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0146",
+   "id": "CN-T06-0145",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40853,7 +40585,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0147",
+   "id": "CN-T06-0146",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40897,7 +40629,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0148",
+   "id": "CN-T06-0147",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40941,7 +40673,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0149",
+   "id": "CN-T06-0148",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -40985,7 +40717,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0150",
+   "id": "CN-T06-0149",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -41029,7 +40761,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0151",
+   "id": "CN-T06-0150",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -41073,7 +40805,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0152",
+   "id": "CN-T06-0151",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -41117,7 +40849,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0153",
+   "id": "CN-T06-0152",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41177,7 +40909,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0154",
+   "id": "CN-T06-0153",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41236,7 +40968,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0155",
+   "id": "CN-T06-0154",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41295,7 +41027,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0156",
+   "id": "CN-T06-0155",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41354,7 +41086,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0157",
+   "id": "CN-T06-0156",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41413,7 +41145,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0158",
+   "id": "CN-T06-0157",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41472,7 +41204,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0159",
+   "id": "CN-T06-0158",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41531,7 +41263,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0160",
+   "id": "CN-T06-0159",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41591,7 +41323,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0161",
+   "id": "CN-T06-0160",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41650,7 +41382,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0162",
+   "id": "CN-T06-0161",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41709,7 +41441,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0163",
+   "id": "CN-T06-0162",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41768,7 +41500,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0164",
+   "id": "CN-T06-0163",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41827,7 +41559,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0165",
+   "id": "CN-T06-0164",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41884,7 +41616,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0166",
+   "id": "CN-T06-0165",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -41943,7 +41675,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0167",
+   "id": "CN-T06-0166",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42002,7 +41734,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0168",
+   "id": "CN-T06-0167",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42062,7 +41794,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0169",
+   "id": "CN-T06-0168",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42122,7 +41854,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0170",
+   "id": "CN-T06-0169",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42179,7 +41911,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0171",
+   "id": "CN-T06-0170",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42236,7 +41968,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0172",
+   "id": "CN-T06-0171",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42293,7 +42025,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0173",
+   "id": "CN-T06-0172",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42352,7 +42084,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0174",
+   "id": "CN-T06-0173",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42411,7 +42143,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0175",
+   "id": "CN-T06-0174",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42468,7 +42200,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0176",
+   "id": "CN-T06-0175",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42527,7 +42259,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0177",
+   "id": "CN-T06-0176",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42587,7 +42319,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0178",
+   "id": "CN-T06-0177",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42644,7 +42376,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0179",
+   "id": "CN-T06-0178",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42701,7 +42433,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0180",
+   "id": "CN-T06-0179",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42758,7 +42490,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0181",
+   "id": "CN-T06-0180",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42815,7 +42547,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0182",
+   "id": "CN-T06-0181",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42872,7 +42604,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0183",
+   "id": "CN-T06-0182",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42929,7 +42661,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0184",
+   "id": "CN-T06-0183",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -42986,7 +42718,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0185",
+   "id": "CN-T06-0184",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43030,7 +42762,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0186",
+   "id": "CN-T06-0185",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43074,7 +42806,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0187",
+   "id": "CN-T06-0186",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43118,7 +42850,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0188",
+   "id": "CN-T06-0187",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43162,7 +42894,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0189",
+   "id": "CN-T06-0188",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43206,7 +42938,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0190",
+   "id": "CN-T06-0189",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43250,7 +42982,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0191",
+   "id": "CN-T06-0190",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43294,7 +43026,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0192",
+   "id": "CN-T06-0191",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43338,7 +43070,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0193",
+   "id": "CN-T06-0192",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -43382,7 +43114,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0194",
+   "id": "CN-T06-0193",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43430,7 +43162,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0195",
+   "id": "CN-T06-0194",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43477,7 +43209,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0196",
+   "id": "CN-T06-0195",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43524,7 +43256,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0197",
+   "id": "CN-T06-0196",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43571,7 +43303,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0198",
+   "id": "CN-T06-0197",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43618,7 +43350,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0199",
+   "id": "CN-T06-0198",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43665,7 +43397,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0200",
+   "id": "CN-T06-0199",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43712,7 +43444,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0201",
+   "id": "CN-T06-0200",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43759,7 +43491,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0202",
+   "id": "CN-T06-0201",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43807,7 +43539,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0203",
+   "id": "CN-T06-0202",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43855,7 +43587,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0204",
+   "id": "CN-T06-0203",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43902,7 +43634,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0205",
+   "id": "CN-T06-0204",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43949,7 +43681,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0206",
+   "id": "CN-T06-0205",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43996,7 +43728,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0207",
+   "id": "CN-T06-0206",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -44043,7 +43775,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0208",
+   "id": "CN-T06-0207",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -44090,7 +43822,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0209",
+   "id": "CN-T06-0208",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -44135,7 +43867,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0210",
+   "id": "CN-T06-0209",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44182,7 +43914,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0211",
+   "id": "CN-T06-0210",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44230,7 +43962,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0212",
+   "id": "CN-T06-0211",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44277,7 +44009,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0213",
+   "id": "CN-T06-0212",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44324,7 +44056,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0214",
+   "id": "CN-T06-0213",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44371,7 +44103,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0215",
+   "id": "CN-T06-0214",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44418,7 +44150,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0216",
+   "id": "CN-T06-0215",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44465,7 +44197,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0217",
+   "id": "CN-T06-0216",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44512,7 +44244,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0218",
+   "id": "CN-T06-0217",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44559,7 +44291,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0219",
+   "id": "CN-T06-0218",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44604,7 +44336,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0220",
+   "id": "CN-T06-0219",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44649,7 +44381,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0221",
+   "id": "CN-T06-0220",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44694,7 +44426,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0222",
+   "id": "CN-T06-0221",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44748,7 +44480,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0223",
+   "id": "CN-T06-0222",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44796,7 +44528,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0224",
+   "id": "CN-T06-0223",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44843,7 +44575,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0225",
+   "id": "CN-T06-0224",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44891,7 +44623,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0226",
+   "id": "CN-T06-0225",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44938,7 +44670,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0227",
+   "id": "CN-T06-0226",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44986,7 +44718,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0228",
+   "id": "CN-T06-0227",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -45033,7 +44765,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0229",
+   "id": "CN-T06-0228",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -45080,7 +44812,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0230",
+   "id": "CN-T06-0229",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -45128,7 +44860,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0231",
+   "id": "CN-T06-0230",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -45173,7 +44905,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0232",
+   "id": "CN-T06-0231",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -45218,7 +44950,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0233",
+   "id": "CN-T06-0232",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45265,7 +44997,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0234",
+   "id": "CN-T06-0233",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45312,7 +45044,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0235",
+   "id": "CN-T06-0234",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45359,7 +45091,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0236",
+   "id": "CN-T06-0235",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45406,7 +45138,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0237",
+   "id": "CN-T06-0236",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45453,7 +45185,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0238",
+   "id": "CN-T06-0237",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45500,7 +45232,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0239",
+   "id": "CN-T06-0238",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45547,7 +45279,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0240",
+   "id": "CN-T06-0239",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",

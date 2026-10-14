@@ -343,3 +343,17 @@ explanation problem.
 
 Totals: **805 practice questions** (631 sourced + 174 originals), 81 booklet
 pages, 7 quiz HTMLs, books rebuilt with English explanations.
+
+## 17. Master-spec execution round (Oct 2026) — main-branch starter pack
+
+Main branch (commit e8b75e9) supplied `Computer Network/new/` (master execution
+prompt + Topic-1 audit CSV + repeater correction + portal HTML + 20 computer-networks
+sets + 3 MCQ PDFs + starter ZIP). Imported read-only. Executed: normalized
+`data/cn_questions.json` (801 records, spec §6 schema), reports (inventory,
+dedupe, answer-verification, source register, exam blueprints, QA), portal v5
+(exam/difficulty/source/type/language/marking filters + net mock score + unsaved
+warning + quiz-feedback-on-revisit), repeater/ring correction (answer: Ring,
+"traditional ring" wording, labelled concept-check), 4 exact duplicate stems
+removed (0 exact groups remain), release ZIP. Missing spec files
+(README_CN_QUESTION_BANK.md, ARENA_CN_MASTER_EXECUTION_PROMPT.md standalone,
+Pasted text (5).txt, both original Topic-1 HTMLs) recorded as missing in QA_REPORT.

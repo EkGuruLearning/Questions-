@@ -64,6 +64,19 @@ def to_qdict(t):
 
 def collect(n):
     d = load(f"topic{n}_data")
+    try:
+        import cn_export_json as _X
+        import cn_difficulty as _D
+        _classify = _X.classify_source
+        _tags_for = _X.exam_tags_for
+        _infer_style = _X.infer_style
+        _qdiff = lambda q: _D.q_diff(q)
+    except Exception:
+        _classify = lambda s: ("repository_internal", None, None, "answer_checked")
+        _tags_for = lambda s, d, st: []
+        _infer_style = lambda t: "concept"
+        _qdiff = lambda q: 1
+    _DIFF_LABELS = ("easy", "medium", "hard")
     new_map = {}
     for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3",
                "practice_new_p4"):
@@ -97,6 +110,11 @@ def collect(n):
                 "exp": [exp_en, exp_hi],
                 "src": q["src"],
                 "sec": s["title"],
+                # audited metadata for the exam/source/difficulty/type filters
+                "diff": _DIFF_LABELS[_qdiff(q)],
+                "stype": _classify(q["src"])[0],
+                "style": _infer_style(q["q"][0]),
+                "tags": _tags_for(q["src"], _qdiff(q), _classify(q["src"])[0]),
             })
     return items
 
@@ -272,10 +290,30 @@ function startTest() {
   if (!document.getElementById('agreeIn').checked) { alert('Kripya instructions padhkar checkbox tik karein.'); return; }
   S.name = name;
   S.mode = document.getElementById('modeIn').value;
-  let count = parseInt(document.getElementById('countIn').value, 10) || QUESTIONS.length;
-  count = Math.min(count, QUESTIONS.length);
+  /* --- exam / difficulty / source / type filters (audited tags) --- */
+  const examSel = document.getElementById('examIn') ? document.getElementById('examIn').value : 'all';
+  const diffSel = document.getElementById('diffIn') ? document.getElementById('diffIn').value : 'all';
+  const srcSel = document.getElementById('srcIn') ? document.getElementById('srcIn').value : 'all';
+  const typeSel = document.getElementById('typeIn') ? document.getElementById('typeIn').value : 'all';
+  const langSel = document.getElementById('langIn') ? document.getElementById('langIn').value : 'both';
+  S.lang = langSel;
+  let pool = QUESTIONS.filter(q => {
+    if (diffSel !== 'all' && q.diff !== diffSel) return false;
+    if (srcSel !== 'all' && q.stype !== srcSel) return false;
+    if (typeSel !== 'all' && q.style !== typeSel) return false;
+    if (examSel !== 'all' && !(q.tags || []).some(t => t.indexOf(examSel) !== -1)) return false;
+    return true;
+  });
+  if (!pool.length) { alert('In filters ke liye koi question nahi mila — filters badalkar dobara try karein.'); return; }
+  /* --- mock marking preset (labelled mock; NOT an official scheme) --- */
+  const mk = document.getElementById('markIn') ? document.getElementById('markIn').value : '1:0';
+  const parts = mk.split(':');
+  S.marking = { pos: parseFloat(parts[0]), neg: parseFloat(parts[1]) };
+  S.markLabel = parts[2] || 'mock';
+  let count = parseInt(document.getElementById('countIn').value, 10) || pool.length;
+  count = Math.min(count, pool.length);
   const tpq = parseInt(document.getElementById('tpqIn').value, 10) || 60;
-  S.qs = shuffle(QUESTIONS.slice()).slice(0, count).map(q => {
+  S.qs = shuffle(pool.slice()).slice(0, count).map(q => {
     const ix = [0,1,2,3]; shuffle(ix);
     return { q: q.q, opts: ix.map(i => q.opts[i]), ans: ix.indexOf(q.ans), exp: q.exp, src: q.src, sec: q.sec };
   });
@@ -342,7 +380,12 @@ function renderPalette() {
     const d = document.createElement('button');
     d.className = paletteClass(i) + (i === S.idx ? ' cur' : '');
     d.textContent = i+1;
-    d.onclick = () => { saveTime(false); S.idx = i; S.pending = undefined; renderQ(); };
+    d.onclick = () => {
+      if (S.mode === 'exam' && S.pending !== undefined) {
+        if (!confirm('Is question ka jawab abhi SAVE nahi hua (Save & Next nahi dabaya). Phir bhi jaana hai?')) return;
+      }
+      saveTime(false); S.idx = i; S.pending = undefined; renderQ();
+    };
     b.appendChild(d);
   });
   let ans=0, mk=0, ma=0, vis=0;
@@ -393,6 +436,8 @@ function renderQ() {
   });
   document.getElementById('fbBox').innerHTML = '';
   renderPalette();
+  /* quiz mode: revisited answered question must still show its feedback */
+  if (S.mode === 'quiz' && S.answers[S.idx] !== undefined) showFeedback(S.answers[S.idx]);
 }
 function onPick(i) {
   if (S.mode === 'exam') {
@@ -430,6 +475,10 @@ function nextQ() {
   renderQ();
 }
 function moveQ(d) {
+  if (S.mode === 'exam' && S.pending !== undefined) {
+    if (!confirm('Is question ka jawab abhi SAVE nahi hua (Save & Next nahi dabaya). Phir bhi jaana hai?')) return;
+    S.pending = undefined;
+  }
   saveTime(false);
   const n = S.idx + d;
   if (n < 0 || n >= S.qs.length) return;
@@ -477,6 +526,9 @@ function submitTest(auto) {
   const skipped = S.qs.length - correct - wrong;
   const attempted = correct + wrong;
   const acc = attempted ? Math.round(correct*100/attempted) : 0;
+  const net = (correct * (S.marking ? S.marking.pos : 1) - wrong * (S.marking ? S.marking.neg : 0));
+  const netStr = (Math.round(net*100)/100).toFixed(2);
+  const mkStr = S.marking ? ('+' + S.marking.pos + ' / −' + S.marking.neg) : '+1 / −0';
   const avgT = attempted ? (secs/attempted).toFixed(1) : '—';
   let slow = 0;
   S.spent.forEach((t,i) => { if (t > S.spent[slow]) slow = i; });
@@ -485,7 +537,8 @@ function submitTest(auto) {
   document.getElementById('resTitle').textContent = S.name + ' — ' + (S.mode==='quiz'?'Quiz Mode':'Exam Mode') + ' Result';
   document.getElementById('resSub').innerHTML = 'Topic __N__: __TITLE__ • Questions: ' + S.qs.length + ' • Unattempted questions ko SKIPPED mana gaya hai (galat nahi).';
   document.getElementById('statGrid').innerHTML =
-    '<div class="stat t"><div class="v">' + correct + ' / ' + S.qs.length + '</div><div class="l">SCORE</div></div>' +
+    '<div class="stat t"><div class="v">' + netStr + '</div><div class="l">NET MOCK SCORE (' + mkStr + ')</div></div>' +
+    '<div class="stat t"><div class="v">' + correct + ' / ' + S.qs.length + '</div><div class="l">SCORE (sahhi count)</div></div>' +
     '<div class="stat c"><div class="v">' + correct + '</div><div class="l">SAHI (CORRECT)</div></div>' +
     '<div class="stat w"><div class="v">' + wrong + '</div><div class="l">GALAT (WRONG)</div></div>' +
     '<div class="stat s"><div class="v">' + skipped + '</div><div class="l">CHHODE HUE (SKIPPED)</div></div>' +
@@ -499,7 +552,7 @@ function submitTest(auto) {
     '<tr><th>Total Questions</th><td>' + S.qs.length + '</td><th>Attempted</th><td>' + attempted + '</td></tr>' +
     '<tr><th>Correct / Wrong</th><td>' + correct + ' / ' + wrong + '</td><th>Skipped (chhode hue)</th><td>' + skipped + '</td></tr>' +
     '<tr><th>Accuracy</th><td>' + acc + '% (attempted par)</td><th>Marked for review</th><td>' + marked + '</td></tr>' +
-    '<tr><th>Time taken</th><td>' + fmt(secs) + '</td><th>Avg time/question</th><td>' + avgT + 's</td></tr>';
+    '<tr><th>Net mock score</th><td>' + netStr + ' (' + mkStr + ', mock rule)</td><th>Time taken</th><td>' + fmt(secs) + ' | avg ' + avgT + 's/Q</td></tr>';
   const rb = document.getElementById('revBox'); rb.innerHTML = '';
   S.qs.forEach((q,i) => {
     const picked = S.answers[i];
@@ -647,9 +700,64 @@ HTML = """<!DOCTYPE html>
           <option value="120">2 minute</option>
         </select></div>
     </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <div class="fld" style="flex:1; min-width:170px"><label>Target exam (tag filter)</label>
+        <select id="examIn">
+          <option value="all">Sabhi (All)</option>
+          <option value="GATE CS">GATE CS</option>
+          <option value="UGC-NET">UGC-NET 087</option>
+          <option value="RPSC Programmer">RPSC Programmer</option>
+          <option value="RPSC ACP">RPSC ACP / Deputy Director</option>
+          <option value="RSMSSB Informatics Assistant">RSMSSB Informatics Assistant</option>
+          <option value="SSC">SSC Computer Awareness</option>
+          <option value="JNV TAT">JNV TAT</option>
+          <option value="Practice Set">Practice originals</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:140px"><label>Difficulty</label>
+        <select id="diffIn">
+          <option value="all">Sabhi</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:180px"><label>Source status</label>
+        <select id="srcIn">
+          <option value="all">Sabhi</option>
+          <option value="verified_official_pyq">Verified official PYQ</option>
+          <option value="claimed_pyq_unverified">Claimed PYQ (unverified)</option>
+          <option value="repository_internal">Repository / internal</option>
+          <option value="textbook_paraphrase">Textbook-based</option>
+          <option value="original_practice">Original practice</option>
+        </select></div>
+    </div>
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <div class="fld" style="flex:1; min-width:150px"><label>Question type</label>
+        <select id="typeIn">
+          <option value="all">Sabhi</option>
+          <option value="concept">Concept / definition</option>
+          <option value="scenario">Scenario / application</option>
+          <option value="statement">Statement-based</option>
+          <option value="numerical">Numerical / calculation</option>
+          <option value="match">Match</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:140px"><label>Language</label>
+        <select id="langIn">
+          <option value="both">English + Hindi</option>
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+        </select></div>
+      <div class="fld" style="flex:1; min-width:210px"><label>Marking (mock rule — official scheme nahi)</label>
+        <select id="markIn">
+          <option value="1:0.333:GATE mock">GATE mock — +1 / −⅓</option>
+          <option value="1:0.333:RPSC mock">RPSC mock — +1 / −⅓</option>
+          <option value="2:0:UGC-NET mock">UGC-NET mock — +2 / −0</option>
+          <option value="1:0.333:IA mock">IA mock — +1 / −⅓</option>
+          <option value="1:0:No negative" selected>Practice — +1 / −0</option>
+        </select></div>
+    </div>
     <div class="chkline"><input type="checkbox" id="agreeIn"> <label for="agreeIn" style="display:inline">Maine instructions padh li hain.</label></div>
     <button class="btn prime" onclick="startTest()">Test Shuru Karein</button>
-    <div class="hint">Questions: repo exam papers + Forouzan + India-level PYQ banks (GATE, UGC NET, RPSC, KVS, EMRS, SSC, RRB, IBPS — 2011–2026) + original practice set. Sabhi uttar verify kiye gaye hain.</div>
+    <div class="hint">Sources: repo exam papers + Forouzan + claimed-PYQ banks + original practice. Har question ka <b>source status</b> alag label hai (verified / claimed / repository / textbook / original) — sab answers curation pipeline se cross-checked hain, official paper+key matching sirf unhi items par hai jinke paas evidence hai (Reports/ANSWER_VERIFICATION.md dekhein).</div>
   </div>
 </div>
 

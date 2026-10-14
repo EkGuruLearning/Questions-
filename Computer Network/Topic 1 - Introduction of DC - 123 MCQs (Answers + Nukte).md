@@ -1,11 +1,11 @@
 # Data Communication & Computer Networks (CN)
-## Topic 1 of 7 : Introduction of DC (Data Communication) — 124 MCQs (English + Hindi)
+## Topic 1 of 7 : Introduction of DC (Data Communication) — 123 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 124 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 123 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
@@ -16,8 +16,8 @@
 | 3 | Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex) | Q37 - Q45 |
 | 4 | Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802) | Q46 - Q66 |
 | 5 | Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P) | Q67 - Q99 |
-| 6 | Section F - Network History (ARPANET to Today's Network) | Q100 - Q107 |
-| 7 | Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests) | Q108 - Q124 |
+| 6 | Section F - Network History (ARPANET to Today's Network) | Q100 - Q106 |
+| 7 | Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests) | Q107 - Q123 |
 
 ---
 
@@ -1006,24 +1006,24 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q2] · Medium*
 
 ---
-### Q49. The repeater is used in _______ topology.
+### Q49. In a traditional ring network, repeaters are particularly associated with which topology because each station can regenerate and forward the signal?
 
-<span lang='hi'>Repeater का use _______ topology में होता है।</span>
+<span lang='hi'>पारंपरिक ring network में repeaters किस topology से विशेष रूप से जुड़े हैं, क्योंकि हर station signal को regenerate और आगे भेज सकता है?</span>
 
-- **(A)** Mesh Topology / mesh topology
-- **(B)** Ring Topology / ring topology
-- **(C)** Bus Topology / bus topology ✅ **(CORRECT)**
-- **(D)** Star Topology / star topology
+- **(A)** Ring topology / Ring topology ✅ **(CORRECT)**
+- **(B)** Mesh topology / Mesh topology
+- **(C)** Bus topology / Bus topology
+- **(D)** Star topology / Star topology
 
-**✔ Correct Answer: (C) Bus Topology** — In a bus topology, one long backbone cable carries the signal over the whole length; a repeater is used to regenerate/amplify the signal so it can travel the long distance without degradation.
+**✔ Correct Answer: (A) Ring topology** — In a classic/traditional ring, each station commonly regenerates (repeats) the incoming signal before passing it to the next station — repeaters are thus built into the ring model.
 
-*Bus topology में एक लंबा backbone cable पूरी length पर signal le जाता है; repeater का use signal को regenerate/amplify करने के लिए होता है ताकि वह लंबी दूरी बिना ख़राब हुए जा sake।*
+*पारंपरिक ring में हर station आने वाले signal को अगले station को देने से पहले regenerate (repeat) करता है — इसलिए ring model में repeaters अंतर्निहित हैं।*
 
-**★ Nukta (Key Point):** Bus = long backbone -> signal weak हो जाता है -> repeater use होता है. (Ring में भी हर device repeater की तरह काम करता है.)
+**★ Nukta (Key Point):** Concept-check correction of the old "repeater is used in ___ topology" stem (that wording wrongly implied repeaters are exclusive to one topology). Repeaters are Physical-layer devices usable on many links; the "traditional ring network" qualifier keeps the intended textbook answer (Ring) without the false universal claim. Not a verified PYQ.
 
-*Bus = लंबा backbone -> signal kamzor हो जाता है -> repeater use होता है। (Ring में भी हर device repeater की तरह काम करता है.)*
+*पुराने "repeater किस topology में" वाले प्रश्न का सुधार — repeater Physical-layer device है, हर link पर चलता है; "पारंपरिक ring" जोड़ने से अभीष्ट उत्तर (Ring) बना रहता है। यह सत्यापित PYQ नहीं है।*
 
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q50] · Medium*
+*[Source: Practice — original (concept-check correction — not a verified PYQ)] · Medium*
 
 ---
 ### Q50. What type of topology connects each node in a closed loop?
@@ -2036,27 +2036,7 @@
 
 *Syllabus: Network History - ARPANET to today's network*
 
-### Q100. ARPANET stands for _______.
-
-<span lang='hi'>ARPANET का पूरा नाम है _______.</span>
-
-- **(A)** Advanced Recheck Projects Agency Internet / Advanced Recheck Projects Agency Internet
-- **(B)** Advanced Recheck Projects Agency Network / Advanced Recheck Projects Agency Network
-- **(C)** Advanced Research Projects Agency Network / Advanced Research Projects Agency Network ✅ **(CORRECT)**
-- **(D)** Advanced Research Projects Agency Internet / Advanced Research Projects Agency Internet
-
-**✔ Correct Answer: (C) Advanced Research Projects Agency Network** — ARPANET = Advanced Research Projects Agency Network. It was created by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense.
-
-*ARPANET = Advanced Research Projects Agency Network. इसे ARPA (Advanced Research Projects Agency) of U.S. Department of Defense ने बनाया था।*
-
-**★ Nukta (Key Point):** ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).
-
-*ARPANET = Advanced Research Projects Agency Network (U.S. Dept. of Defense).*
-
-*[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q26] · Medium*
-
----
-### Q101. The first network was:
+### Q100. The first network was:
 
 <span lang='hi'>सबसे पहला network था:</span>
 
@@ -2076,7 +2056,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q34] · Medium*
 
 ---
-### Q102. In the original ARPANET, _______ were directly connected together.
+### Q101. In the original ARPANET, _______ were directly connected together.
 
 <span lang='hi'>Original ARPANET में, _______ आपस में directly connected the।</span>
 
@@ -2096,7 +2076,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q43] · Medium*
 
 ---
-### Q103. The first operational computer network in the world was the _________ for the United States Department of Defense.
+### Q102. The first operational computer network in the world was the _________ for the United States Department of Defense.
 
 <span lang='hi'>दुनिया का पहला operational computer network, United States Department of Defense के लिए _________ था।</span>
 
@@ -2116,7 +2096,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q48] · Medium*
 
 ---
-### Q104. ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
+### Q103. ARPANET - the precursor of today's Internet - was created in ______ by ARPA (Advanced Research Projects Agency) of the U.S. Department of Defense, starting with four nodes (UCLA, SRI, UC Santa Barbara, University of Utah).
 
 <span lang='hi'>ARPANET - aaj के Internet का purvaj - ______ में ARPA (Advanced Research Projects Agency), U.S. Department of Defense द्वारा बनाया गया था, चार nodes से shuruaat हुई (UCLA, SRI, UC Santa Barbara, University of Utah).</span>
 
@@ -2136,7 +2116,7 @@
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q105. TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
+### Q104. TCP/IP (developed by Vint Cerf and Bob Kahn) was adopted by ARPANET as its official protocol suite on 1 January ______ - an event known as the fflag day.
 
 <span lang='hi'>TCP/IP (Vint Cerf और Bob Kahn द्वारा develop किया गया) को ARPANET ने apna official protocol suite बनाया था 1 January ______ को - is event को fflag day कहा जाता है।</span>
 
@@ -2156,7 +2136,7 @@
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q106. NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
+### Q105. NSFNET, created by the U.S. National Science Foundation in ______, became a major backbone of the Internet, connecting universities and research centres.
 
 <span lang='hi'>NSFNET, U.S. National Science Foundation द्वारा ______ में बनाया गया, Internet का एक major backbone बन गया, universities और research centres को जोड़ता था।</span>
 
@@ -2176,7 +2156,7 @@
 *[Source: Extra (Forouzan) - fills syllabus gap] · Medium*
 
 ---
-### Q107. The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
+### Q106. The World Wide Web (WWW) was invented in 1991 at CERN by ______, and it made the Internet popular among the general public.
 
 <span lang='hi'>World Wide Web (WWW) का invention 1991 में CERN में ______ ने किया था, और isne Internet को आम public के बीच popular बनाया।</span>
 
@@ -2201,7 +2181,7 @@
 
 *Syllabus: Introduction of DC - general basics asked in BCI/RPSC exams (Specific Address/URL, Application services, Switching)*
 
-### Q108. A collection of hyperlinked documents on the internet forms the?
+### Q107. A collection of hyperlinked documents on the internet forms the?
 
 <span lang='hi'>Internet पर hyperlinked documents का sangrah (collection) क्या banata है?</span>
 
@@ -2221,7 +2201,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q5] · Medium*
 
 ---
-### Q109. Which one of the following is a valid email address?
+### Q108. Which one of the following is a valid email address?
 
 <span lang='hi'>निम्नलिखित में से कौन सा एक valid email address है?</span>
 
@@ -2241,7 +2221,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q6] · Medium*
 
 ---
-### Q110. Which of the following best describes uploading information?
+### Q109. Which of the following best describes uploading information?
 
 <span lang='hi'>निम्नलिखित में से कौन uploading information को सबसे achhe से describe करता है?</span>
 
@@ -2261,7 +2241,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q7] · Medium*
 
 ---
-### Q111. Which one of the following is the most common internet protocol?
+### Q110. Which one of the following is the most common internet protocol?
 
 <span lang='hi'>Nimnlikhis में से कौन सा सबसे common internet protocol है?</span>
 
@@ -2281,7 +2261,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q8] · Medium*
 
 ---
-### Q112. The dial-up connections to access the internet use ___ protocol.
+### Q111. The dial-up connections to access the internet use ___ protocol.
 
 <span lang='hi'>Internet access के लिए dial-up connections ___ protocol use करते हैं।</span>
 
@@ -2301,7 +2281,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q18] · Medium*
 
 ---
-### Q113. When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
+### Q112. When a resident uses a dial-up or DSL service to connect to the Internet, what is the role of the telephone company?
 
 <span lang='hi'>जब कोई व्यक्ति Internet से जुड़ने के लिए dial-up या DSL service use करता है, तो telephone company की भूमिका क्या होती है?</span>
 
@@ -2321,7 +2301,7 @@
 *[Source: Forouzan Ch1 (Q1-14) — Practice Set] · Medium*
 
 ---
-### Q114. Which of the following servers allows LAN users to share data?
+### Q113. Which of the following servers allows LAN users to share data?
 
 <span lang='hi'>निम्नलिखित में से कौन सा server LAN users को data share करने की अनुमति देता है?</span>
 
@@ -2341,7 +2321,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q22] · Medium*
 
 ---
-### Q115. EDI stands for ____.
+### Q114. EDI stands for ____.
 
 <span lang='hi'>EDI का पूरा नाम है ____.</span>
 
@@ -2361,7 +2341,7 @@
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q25] · Medium*
 
 ---
-### Q116. The term UPnP is a short form of:
+### Q115. The term UPnP is a short form of:
 
 <span lang='hi'>UPnP term का पूरा नाम (full form) क्या है?</span>
 
@@ -2381,7 +2361,7 @@
 *[Source: Repo: Unit Test-4 Solution (OCR), p11] · Medium*
 
 ---
-### Q117. Consider the switching statements:
+### Q116. Consider the switching statements:
 1. Circuit Switching establishes a dedicated path.
 2. Packet Switching routes data in packets on different paths.
 3. Message Switching uses store-and-forward.
@@ -2409,7 +2389,7 @@ Which statements are correct?
 *[Source: Repo: BCI Subject Test-9 (BCI/SCI Batch)] · Medium*
 
 ---
-### Q118. All the information on the internet is passed using _______ switching method.
+### Q117. All the information on the internet is passed using _______ switching method.
 
 <span lang='hi'>Internet पर saari information _______ switching method से pass होती है।</span>
 
@@ -2429,7 +2409,7 @@ Which statements are correct?
 *[Source: Repo: Random Test- Rajasthan PYQ (RPSC/RSSB)] · Medium*
 
 ---
-### Q119. Which technique breaks data into packets for transmission?
+### Q118. Which technique breaks data into packets for transmission?
 
 <span lang='hi'>Transmission के लिए data को packets में तोड़ने की technique कौन-सी है?</span>
 
@@ -2449,7 +2429,7 @@ Which statements are correct?
 *[Source: Repo: CN Topic Test 6 (UNIT TEST-6)] · Medium*
 
 ---
-### Q120. Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
+### Q119. Home broadband connections that work on DSL (Digital Subscriber Line) use ___ protocol.
 
 <span lang='hi'>DSL (Digital Subscriber Line) पर काम करने वाले home broadband connections ___ protocol use करते हैं।</span>
 
@@ -2469,7 +2449,7 @@ Which statements are correct?
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q19] · Hard*
 
 ---
-### Q121. A computer network permits sharing of:
+### Q120. A computer network permits sharing of:
 
 <span lang='hi'>एक computer network किस चीज़ की sharing की अनुमति देता है?</span>
 
@@ -2489,7 +2469,7 @@ Which statements are correct?
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q47 / CN Topic Test-02 (UNIT TEST-2), Q47] · Hard*
 
 ---
-### Q122. Which of the following is a benefit of networking?
+### Q121. Which of the following is a benefit of networking?
 
 <span lang='hi'>Networking का कौन-सा लाभ (benefit) है?</span>
 
@@ -2509,7 +2489,7 @@ Which statements are correct?
 *[Source: InstrumentationTools 150 CN MCQs] · Hard*
 
 ---
-### Q123. How many digits of the Data Network Identification Code (DNIC) identify the country?
+### Q122. How many digits of the Data Network Identification Code (DNIC) identify the country?
 
 <span lang='hi'>Data Network Identification Code (DNIC) के kitne digits देश (country) की पहचान करते हैं?</span>
 
@@ -2529,7 +2509,7 @@ Which statements are correct?
 *[Source: Repo: CN Topic Test-01 (UNIT TEST-1), Q15] · Hard*
 
 ---
-### Q124. Which of the following is true for Circuit Switching handling multiple simultaneous connections?
+### Q123. Which of the following is true for Circuit Switching handling multiple simultaneous connections?
 
 <span lang='hi'>एक साथ अनेक connections संभालते समय Circuit Switching के बारे में क्या सही है?</span>
 

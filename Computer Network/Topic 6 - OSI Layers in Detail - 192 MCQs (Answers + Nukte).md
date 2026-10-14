@@ -1,21 +1,21 @@
 # Data Communication & Computer Networks (CN)
-## Topic 6 of 7 : OSI Layers in Detail — 193 MCQs (English + Hindi)
+## Topic 6 of 7 : OSI Layers in Detail — 192 MCQs (English + Hindi)
 
 **Reference Book:** Data Communications and Networking — Behrouz A. Forouzan
 
 **Prepared for:** RPSC Programmer • ACP • RSMSSB IA • SA • DD • BCI • SCI • REET • RAS • DSSSB • KVS • NVS • HTET • SSC CGL/CHSL • RRB • IBPS • UPSC & all Rajasthan + Central Govt. Exams (Computer Awareness)
 
-**Total Questions:** 193 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
+**Total Questions:** 192 | **Type:** MCQ (4 options) | **Bilingual:** English + Hindi (technical terms in English) | Each: ✔ why the correct answer is right + ★ Nukta. Wrong options verified internally. Answers cross-verified 4×.
 
 ### Syllabus Coverage (sub-topic wise order)
 
 | # | Sub-topic | Questions |
 |---|-----------|-----------|
 | 1 | Section A — Data Link Layer: Flow & Error Control | Q1 - Q52 |
-| 2 | Section B — Data Link Layer: Framing & MAC Sub-layer | Q53 - Q79 |
-| 3 | Section C — Network Layer: IP, ICMP, ARP & Routing Protocols | Q80 - Q115 |
-| 4 | Section D — Transport Layer: TCP/UDP, Ports & Sockets | Q116 - Q152 |
-| 5 | Section E — Session, Presentation & Application Layer | Q153 - Q193 |
+| 2 | Section B — Data Link Layer: Framing & MAC Sub-layer | Q53 - Q78 |
+| 3 | Section C — Network Layer: IP, ICMP, ARP & Routing Protocols | Q79 - Q114 |
+| 4 | Section D — Transport Layer: TCP/UDP, Ports & Sockets | Q115 - Q151 |
+| 5 | Section E — Session, Presentation & Application Layer | Q152 - Q192 |
 
 ---
 
@@ -1428,27 +1428,7 @@
 *[Source: Unit Test -2 Solutions.pdf (OCR), p26] · Medium*
 
 ---
-### Q71. Which of the following is an example of Client–Server architecture?
-
-<span lang='hi'>निम्न में से कौन-सा Client–Server architecture का उदाहरण है?</span>
-
-- **(A)** Chat between two Bluetooth devices / Chat between two Bluetooth devices
-- **(B)** Web browser accessing a website / Web browser accessing a website ✅ **(CORRECT)**
-- **(C)** File transfer via USB cable / File transfer via USB cable
-- **(D)** Two laptops connected directly / Two laptops connected directly
-
-**✔ Correct Answer: (B) Web browser accessing a website** — Web browser (client) website के server से request करता है — यही classic client–server model है.
-
-*Web browser (client) website के server से request करता है — यही classic client–server model है.*
-
-**★ Nukta (Key Point):** Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.
-
-*Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.*
-
-*[Source: BCI_SCI Subject Test-01 (CN and Security)] · Medium*
-
----
-### Q72. What is the MTU size for Ethernet?
+### Q71. What is the MTU size for Ethernet?
 
 <span lang='hi'>Ethernet के लिए MTU आकार कितना है?</span>
 
@@ -1468,7 +1448,7 @@
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q73. In a slotted ALOHA with G stations attempting to transmit in one slot, the throughput is equal to:
+### Q72. In a slotted ALOHA with G stations attempting to transmit in one slot, the throughput is equal to:
 
 <span lang='hi'>Slotted ALOHA में एक slot में G stations transmit करने का प्रयास करें तो throughput होगा:</span>
 
@@ -1488,7 +1468,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q74. Which of the following Multiple Access Protocols is not suitable for wired networks?
+### Q73. Which of the following Multiple Access Protocols is not suitable for wired networks?
 
 <span lang='hi'>निम्न में से कौन-सा Multiple Access Protocol wired networks के लिए उपयुक्त नहीं है?</span>
 
@@ -1508,7 +1488,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q75. Network Allocation Vector (NAV) is associated with which of the following MAC technologies?
+### Q74. Network Allocation Vector (NAV) is associated with which of the following MAC technologies?
 
 <span lang='hi'>Network Allocation Vector (NAV) निम्न में से किस MAC technology से जुड़ा है?</span>
 
@@ -1528,7 +1508,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q76. In Reservation mode of MAC, each station in the network ______ a time slot for a finite or infinite amount of time to access the shared medium.
+### Q75. In Reservation mode of MAC, each station in the network ______ a time slot for a finite or infinite amount of time to access the shared medium.
 
 <span lang='hi'>MAC के Reservation mode में network का हर station shared medium तक पहुँचने के लिए एक time slot ______ करता है.</span>
 
@@ -1548,7 +1528,7 @@
 *[Source: Unit Test -2 Solutions.pdf (OCR), p25] · Hard*
 
 ---
-### Q77. Which one of the following is not used in media access control?
+### Q76. Which one of the following is not used in media access control?
 
 <span lang='hi'>निम्न में से कौन-सा media access control में उपयोग नहीं होता?</span>
 
@@ -1568,7 +1548,7 @@
 *[Source: CN Topic Test-01.pdf] · Hard*
 
 ---
-### Q78. Which of the following is NOT true with respect to a transparent bridge and a router?
+### Q77. Which of the following is NOT true with respect to a transparent bridge and a router?
 
 <span lang='hi'>Transparent bridge और router के संबंध में निम्न में से कौन-सा सही नहीं है?</span>
 
@@ -1577,7 +1557,7 @@
 - **(C)** A bridge builds its table by inspecting incoming packets / A bridge builds its table by inspecting incoming packets
 - **(D)** A router can connect between a LAN and a WAN / A router can connect between a LAN and a WAN
 
-**✔ Correct Answer: (B) A bridge uses IP addresses while a router uses MAC addresses** — This statement is reversed — a Bridge uses MAC addresses and a Router uses IP addresses. So this is the 'not correct' option.
+**✔ Correct Answer: (B) A bridge uses IP addresses while a router uses MAC addresses** — यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.
 
 *यह कथन उल्टा है — Bridge MAC addresses उपयोग करता है और Router IP addresses. इसलिए यही 'सही नहीं' वाला विकल्प है.*
 
@@ -1588,7 +1568,7 @@
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
 ---
-### Q79. Which of the following is NOT a function of the AAL (ATM Adaptation Layer)?
+### Q78. Which of the following is NOT a function of the AAL (ATM Adaptation Layer)?
 
 <span lang='hi'>निम्न में से कौन-सा AAL (ATM Adaptation Layer) का काम नहीं है?</span>
 
@@ -1597,7 +1577,7 @@
 - **(C)** Handling of cell delay variation / Handling of cell delay variation
 - **(D)** Segmentation and reassembly of user information / Segmentation and reassembly of user information
 
-**✔ Correct Answer: (A) Cell header generation** — Building the cell header is the ATM layer's job — the AAL splits/joins user data into cells and handles error/delay.
+**✔ Correct Answer: (A) Cell header generation** — This statement is reversed — a Bridge uses MAC addresses and a Router uses IP addresses. So this is the 'not correct' option.
 
 *Cell header बनाना ATM layer का काम है — AAL user data को cells में तोड़ने-जोड़ने और error/delay संभालने का काम करती है.*
 
@@ -1613,7 +1593,7 @@
 
 *IPv4 header & fragmentation, IPv6 fields, logical addressing, ARP/ICMP/IGMP, routing (RIP/OSPF/BGP/MPLS/STP), traceroute, DHCP & probability problems.*
 
-### Q80. What is the function of ARP?
+### Q79. What is the function of ARP?
 
 <span lang='hi'>ARP का काम क्या है?</span>
 
@@ -1633,7 +1613,7 @@
 *[Source: CN Topic Test 6.pdf + Unit Test -2 Solutions.pdf (OCR)] · Medium*
 
 ---
-### Q81. Which tool is used to view the MAC address of a system?
+### Q80. Which tool is used to view the MAC address of a system?
 
 <span lang='hi'>किस system का MAC address देखने के लिए कौन-सा tool उपयोग होता है?</span>
 
@@ -1653,7 +1633,7 @@
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
 ---
-### Q82. Which protocol is used for path MTU discovery?
+### Q81. Which protocol is used for path MTU discovery?
 
 <span lang='hi'>Path MTU discovery के लिए कौन-सा protocol उपयोग होता है?</span>
 
@@ -1673,7 +1653,7 @@
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
 ---
-### Q83. What is the function of IGMP in networking?
+### Q82. What is the function of IGMP in networking?
 
 <span lang='hi'>Networking में IGMP का काम क्या है?</span>
 
@@ -1693,7 +1673,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q84. What is the role of the TTL field in an IP packet?
+### Q83. What is the role of the TTL field in an IP packet?
 
 <span lang='hi'>IP packet में TTL field की भूमिका क्या है?</span>
 
@@ -1713,7 +1693,7 @@
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q85. Which field in the IPv4 header indicates the priority of the packet?
+### Q84. Which field in the IPv4 header indicates the priority of the packet?
 
 <span lang='hi'>IPv4 header में कौन-सा field packet की प्राथमिकता बताता है?</span>
 
@@ -1733,7 +1713,7 @@
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q86. Which of the following uses a logical addressing scheme?
+### Q85. Which of the following uses a logical addressing scheme?
 
 <span lang='hi'>निम्न में से कौन-सा logical addressing scheme उपयोग करता है?</span>
 
@@ -1753,7 +1733,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q87. Which algorithm is used by OSPF to compute the shortest path?
+### Q86. Which algorithm is used by OSPF to compute the shortest path?
 
 <span lang='hi'>OSPF shortest path निकालने के लिए कौन-सा algorithm उपयोग करता है?</span>
 
@@ -1773,7 +1753,7 @@
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q88. Which one is a distance-vector routing protocol?
+### Q87. Which one is a distance-vector routing protocol?
 
 <span lang='hi'>निम्न में से कौन-सा distance-vector routing protocol है?</span>
 
@@ -1793,7 +1773,7 @@
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q89. What is a major drawback of distance vector routing?
+### Q88. What is a major drawback of distance vector routing?
 
 <span lang='hi'>Distance vector routing की एक बड़ी कमी क्या है?</span>
 
@@ -1813,7 +1793,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q90. BGP is mainly used for which type of routing, and it belongs to which algorithm family?
+### Q89. BGP is mainly used for which type of routing, and it belongs to which algorithm family?
 
 <span lang='hi'>BGP मुख्य रूप से किस प्रकार के routing के लिए उपयोग होता है और यह किस algorithm परिवार का है?</span>
 
@@ -1833,7 +1813,7 @@
 *[Source: CN Topic Test 5.pdf + CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q91. In the early ARPANET, which routing method was used?
+### Q90. In the early ARPANET, which routing method was used?
 
 <span lang='hi'>प्रारंभिक ARPANET में कौन-सी routing method उपयोग होती थी?</span>
 
@@ -1853,7 +1833,7 @@
 *[Source: Unit Test-4 Solution.pdf (OCR), p8] · Medium*
 
 ---
-### Q92. Which of these protocols allows loop-free switching in Layer 2 networks?
+### Q91. Which of these protocols allows loop-free switching in Layer 2 networks?
 
 <span lang='hi'>निम्न में से कौन-सा protocol Layer 2 networks में loop-free switching देता है?</span>
 
@@ -1873,7 +1853,7 @@
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q93. MPLS operates between which two layers?
+### Q92. MPLS operates between which two layers?
 
 <span lang='hi'>MPLS किन दो layers के बीच काम करता है?</span>
 
@@ -1893,7 +1873,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q94. What does the 'traceroute' command do?
+### Q93. What does the 'traceroute' command do?
 
 <span lang='hi'>'traceroute' command क्या करता है?</span>
 
@@ -1913,7 +1893,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q95. Which protocol does traceroute use on UNIX/Linux systems?
+### Q94. Which protocol does traceroute use on UNIX/Linux systems?
 
 <span lang='hi'>UNIX/Linux systems पर traceroute कौन-सा protocol उपयोग करता है?</span>
 
@@ -1933,7 +1913,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q96. Which command is used to see the routing table in Linux?
+### Q95. Which command is used to see the routing table in Linux?
 
 <span lang='hi'>Linux में routing table देखने के लिए कौन-सा command उपयोग होती है?</span>
 
@@ -1953,7 +1933,7 @@
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q97. Which protocol is used for dynamic IP address assignment?
+### Q96. Which protocol is used for dynamic IP address assignment?
 
 <span lang='hi'>Dynamic IP address assignment के लिए कौन-सा protocol उपयोग होता है?</span>
 
@@ -1973,7 +1953,7 @@
 *[Source: CN Topic Test-03.pdf + CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q98. ICMP is a ............ layer protocol.
+### Q97. ICMP is a ............ layer protocol.
 
 <span lang='hi'>ICMP एक ............ layer protocol है.</span>
 
@@ -1993,7 +1973,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key) + Random Test- Rajasthan PYQ.pdf (OCR)] · Hard*
 
 ---
-### Q99. Which of the following is NOT a valid ICMP error message?
+### Q98. Which of the following is NOT a valid ICMP error message?
 
 <span lang='hi'>निम्न में से कौन-सा वैध ICMP error message नहीं है?</span>
 
@@ -2013,7 +1993,7 @@
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q100. Which field in the IP header helps in fragmentation?
+### Q99. Which field in the IP header helps in fragmentation?
 
 <span lang='hi'>IP header में कौन-सा field fragmentation में मदद करता है?</span>
 
@@ -2033,7 +2013,7 @@
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q101. How many bits are there in the 'Fragment Offset' field of the IPv4 header?
+### Q100. How many bits are there in the 'Fragment Offset' field of the IPv4 header?
 
 <span lang='hi'>IPv4 header के 'Fragment Offset' field में कितने bits होते हैं?</span>
 
@@ -2053,7 +2033,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q102. In IPv4, packet fragmentation and reassembly is handled by:
+### Q101. In IPv4, packet fragmentation and reassembly is handled by:
 
 <span lang='hi'>IPv4 में packet fragmentation और reassembly कैसे होता है?</span>
 
@@ -2073,7 +2053,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q103. What is fragmentation in IP networking?
+### Q102. What is fragmentation in IP networking?
 
 <span lang='hi'>IP networking में fragmentation क्या है?</span>
 
@@ -2093,7 +2073,7 @@
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q104. The size of the 'total length field' of an IPv4 datagram is:
+### Q103. The size of the 'total length field' of an IPv4 datagram is:
 
 <span lang='hi'>IPv4 datagram के 'total length field' का आकार है:</span>
 
@@ -2113,7 +2093,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q105. What is the minimum header size of an IPv4 packet?
+### Q104. What is the minimum header size of an IPv4 packet?
 
 <span lang='hi'>IPv4 packet का न्यूनतम header आकार कितना है?</span>
 
@@ -2133,7 +2113,7 @@
 *[Source: Networking MCQ bank (MQuestions)] · Hard*
 
 ---
-### Q106. In the IPv6 header, the traffic class field is similar to which field in the IPv4 header?
+### Q105. In the IPv6 header, the traffic class field is similar to which field in the IPv4 header?
 
 <span lang='hi'>IPv6 header में traffic class field, IPv4 header के किस field जैसा है?</span>
 
@@ -2153,7 +2133,7 @@
 *[Source: Sanfoundry CN MCQs — IPv6] · Hard*
 
 ---
-### Q107. How many maximum hops are allowed in RIP?
+### Q106. How many maximum hops are allowed in RIP?
 
 <span lang='hi'>RIP में अधिकतम कितने hops की अनुमति है?</span>
 
@@ -2173,7 +2153,7 @@
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q108. How does RIP prevent routing loops? (A) Poison reverse (B) Sequence numbers (C) Split horizon
+### Q107. How does RIP prevent routing loops? (A) Poison reverse (B) Sequence numbers (C) Split horizon
 
 <span lang='hi'>RIP routing loops कैसे रोकता है? (A) Poison reverse (B) Sequence numbers (C) Split horizon</span>
 
@@ -2193,7 +2173,7 @@
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q109. Dynamic routing protocols enable routers to:
+### Q108. Dynamic routing protocols enable routers to:
 
 <span lang='hi'>Dynamic routing protocols routers को सक्षम बनाते हैं:</span>
 
@@ -2213,7 +2193,7 @@
 *[Source: Unit Test-4 Solution.pdf (OCR), p27] · Hard*
 
 ---
-### Q110. Which of the following protocols may be used as zeroconf and plug-and-play?
+### Q109. Which of the following protocols may be used as zeroconf and plug-and-play?
 
 <span lang='hi'>निम्न में से कौन-सा protocol zeroconf और plug-and-play के रूप में उपयोग हो सकता है?</span>
 
@@ -2233,7 +2213,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q111. There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. The probability that exactly one station transmits in a slot is:
+### Q110. There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each time slot. The probability that exactly one station transmits in a slot is:
 
 <span lang='hi'>एक slotted LAN में n stations हैं. हर time slot में हर station p प्रायिकता से transmit करने का प्रयास करता है. किसी slot में ठीक एक station transmit करने की प्रायिकता है:</span>
 
@@ -2253,7 +2233,7 @@
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q112. One of the header fields in an IP datagram is the Time to Live (TTL). Which statement best explains the need for this field?
+### Q111. One of the header fields in an IP datagram is the Time to Live (TTL). Which statement best explains the need for this field?
 
 <span lang='hi'>IP datagram के header fields में से एक Time to Live (TTL) है. निम्न में से कौन-सा कथन इस field की आवश्यकता सबसे अच्छे से बताता है?</span>
 
@@ -2273,7 +2253,7 @@
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
 ---
-### Q113. Suppose the stop-and-wait protocol is used on a link with a bit rate of 64 kilobits per second and 20 milliseconds propagation delay. Acknowledgement transmission time and processing times are negligible. The minimum frame size in bytes to achieve a link utilisation of at least 50% is ______.
+### Q112. Suppose the stop-and-wait protocol is used on a link with a bit rate of 64 kilobits per second and 20 milliseconds propagation delay. Acknowledgement transmission time and processing times are negligible. The minimum frame size in bytes to achieve a link utilisation of at least 50% is ______.
 
 <span lang='hi'>64 kbps की link पर stop-and-wait protocol है, propagation delay 20 ms है (ACK transmission व processing नगण्य)। कम से कम 50% link utilisation के लिए न्यूनतम frame size (bytes में) कितनी हो?</span>
 
@@ -2293,7 +2273,7 @@
 *[Source: GATE CS 2015 Set-1] · Hard*
 
 ---
-### Q114. A link has a transmission speed of 10⁶ bits/sec. It uses data packets of size 1000 bytes each. Acknowledgements have negligible transmission delay and the same propagation delay as data; processing delays are negligible. The efficiency of the stop-and-wait protocol is exactly 25%. The one-way propagation delay (in milliseconds) is ______.
+### Q113. A link has a transmission speed of 10⁶ bits/sec. It uses data packets of size 1000 bytes each. Acknowledgements have negligible transmission delay and the same propagation delay as data; processing delays are negligible. The efficiency of the stop-and-wait protocol is exactly 25%. The one-way propagation delay (in milliseconds) is ______.
 
 <span lang='hi'>एक link की speed 10⁶ bits/sec है और packets 1000 bytes के हैं। ACK का transmission delay नगण्य, propagation delay data के बराबर है। Stop-and-wait की efficiency ठीक 25% है। एक-तरफ़ा propagation delay (ms में) कितना है?</span>
 
@@ -2313,7 +2293,7 @@
 *[Source: GATE CS 2015 Set-2] · Hard*
 
 ---
-### Q115. Consider the following statements regarding the slow start phase of TCP congestion control (cwnd = congestion window, MSS = maximum segment size):
+### Q114. Consider the following statements regarding the slow start phase of TCP congestion control (cwnd = congestion window, MSS = maximum segment size):
 (i) cwnd increases by 2 MSS on every successful acknowledgement.
 (ii) cwnd approximately doubles on every successful acknowledgement.
 (iii) cwnd increases by 1 MSS every round trip time.
@@ -2348,7 +2328,7 @@ Which one of the following is correct?
 
 *Connection-oriented vs connectionless services, sockets, TCP header & states, 3-way handshake, flow & congestion control, security (SYN flood, hijacking).*
 
-### Q116. A client opens a TCP connection to a web server on port 80 using source port 49152. What is the complete socket pair?
+### Q115. A client opens a TCP connection to a web server on port 80 using source port 49152. What is the complete socket pair?
 
 <span lang='hi'>एक client source port 49152 से port 80 वाले web server को TCP connection खोलता है. पूरा socket pair क्या होगा?</span>
 
@@ -2368,7 +2348,7 @@ Which one of the following is correct?
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
 ---
-### Q117. Which port is used by a DHCP client when requesting an IP address?
+### Q116. Which port is used by a DHCP client when requesting an IP address?
 
 <span lang='hi'>IP address माँगते समय DHCP client कौन-सा port उपयोग करता है?</span>
 
@@ -2388,7 +2368,7 @@ Which one of the following is correct?
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
 ---
-### Q118. Which of the following is a connectionless transport service?
+### Q117. Which of the following is a connectionless transport service?
 
 <span lang='hi'>निम्न में से कौन-सी connectionless transport service है?</span>
 
@@ -2408,7 +2388,7 @@ Which one of the following is correct?
 *[Source: BCI_SCI Subject Test-7.pdf + Oliveboard SSC CGL bank] · Medium*
 
 ---
-### Q119. What is a socket in networking?
+### Q118. What is a socket in networking?
 
 <span lang='hi'>Networking में socket क्या है?</span>
 
@@ -2428,7 +2408,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q120. What term is used for an endpoint in an inter-process communication across a network?
+### Q119. What term is used for an endpoint in an inter-process communication across a network?
 
 <span lang='hi'>Network पर inter-process communication में endpoint के लिए कौन-सा term उपयोग होता है?</span>
 
@@ -2448,7 +2428,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test-02.pdf] · Medium*
 
 ---
-### Q121. What is the purpose of the SYN flag in TCP?
+### Q120. What is the purpose of the SYN flag in TCP?
 
 <span lang='hi'>TCP में SYN flag का उद्देश्य क्या है?</span>
 
@@ -2468,7 +2448,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q122. In which scenario will TCP's three-way handshake fail?
+### Q121. In which scenario will TCP's three-way handshake fail?
 
 <span lang='hi'>किस स्थिति में TCP का three-way handshake विफल होगा?</span>
 
@@ -2488,7 +2468,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q123. In TCP, which state follows the SYN-SENT state in the normal case?
+### Q122. In TCP, which state follows the SYN-SENT state in the normal case?
 
 <span lang='hi'>TCP में सामान्य स्थिति में SYN-SENT के बाद कौन-सी state आती है?</span>
 
@@ -2508,7 +2488,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q124. Which one of the following attacks exploits TCP's three-way handshake?
+### Q123. Which one of the following attacks exploits TCP's three-way handshake?
 
 <span lang='hi'>निम्न में से कौन-सा attack TCP के three-way handshake का फ़ायदा उठाती है?</span>
 
@@ -2528,7 +2508,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q125. TCP initially uses which congestion control technique when a connection starts?
+### Q124. TCP initially uses which congestion control technique when a connection starts?
 
 <span lang='hi'>Connection शुरू होने पर TCP शुरू में कौन-सी congestion control technique उपयोग करता है?</span>
 
@@ -2548,7 +2528,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q126. What is the purpose of TCP's congestion window (cwnd)?
+### Q125. What is the purpose of TCP's congestion window (cwnd)?
 
 <span lang='hi'>TCP के congestion window (cwnd) का उद्देश्य क्या है?</span>
 
@@ -2568,7 +2548,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q127. What kind of delay does TCP's window size help handle on a long, high-bandwidth path?
+### Q126. What kind of delay does TCP's window size help handle on a long, high-bandwidth path?
 
 <span lang='hi'>लंबी, high-bandwidth path पर TCP का window size किस प्रकार की देर संभालने में मदद करता है?</span>
 
@@ -2588,7 +2568,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q128. In which protocol is 'port knocking' used as a security mechanism?
+### Q127. In which protocol is 'port knocking' used as a security mechanism?
 
 <span lang='hi'>किस protocol में 'port knocking' security mechanism के रूप में उपयोग होता है?</span>
 
@@ -2608,7 +2588,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q129. Which of the following supports QoS (Quality of Service) through label switching?
+### Q128. Which of the following supports QoS (Quality of Service) through label switching?
 
 <span lang='hi'>निम्न में से कौन-सा label switching के ज़रिए QoS (Quality of Service) देता है?</span>
 
@@ -2628,7 +2608,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q130. Virtual circuits are associated with which type of service?
+### Q129. Virtual circuits are associated with which type of service?
 
 <span lang='hi'>Virtual circuits किस प्रकार की service से जुड़े हैं?</span>
 
@@ -2648,7 +2628,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test-02.pdf] · Medium*
 
 ---
-### Q131. Transport layer multiplexing allows:
+### Q130. Transport layer multiplexing allows:
 
 <span lang='hi'>Transport layer multiplexing की अनुमति देता है:</span>
 
@@ -2668,7 +2648,7 @@ Which one of the following is correct?
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
 ---
-### Q132. Which protocol must use both TCP and UDP for different operations?
+### Q131. Which protocol must use both TCP and UDP for different operations?
 
 <span lang='hi'>कौन-सा protocol अलग-अलग कामों के लिए TCP और UDP दोनों उपयोग करता है?</span>
 
@@ -2688,7 +2668,7 @@ Which one of the following is correct?
 *[Source: BCI Subject Test-8.pdf + CN Topic Test 5.pdf] · Medium*
 
 ---
-### Q133. Which transport-layer protocol is used to support electronic mail delivery between machines?
+### Q132. Which transport-layer protocol is used to support electronic mail delivery between machines?
 
 <span lang='hi'>Machines के बीच electronic mail delivery के लिए कौन-सा transport-layer protocol उपयोग होता है?</span>
 
@@ -2708,7 +2688,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test-03.pdf] · Medium*
 
 ---
-### Q134. How many bits are used for port addressing at the transport layer?
+### Q133. How many bits are used for port addressing at the transport layer?
 
 <span lang='hi'>Transport layer पर port addressing के लिए कितने bits उपयोग होते हैं?</span>
 
@@ -2728,7 +2708,7 @@ Which one of the following is correct?
 *[Source: BCI_SCI Subject Test-7.pdf] · Hard*
 
 ---
-### Q135. The three-way handshake mechanism in TCP aims to:
+### Q134. The three-way handshake mechanism in TCP aims to:
 
 <span lang='hi'>TCP का three-way handshake mechanism किस उद्देश्य से होता है?</span>
 
@@ -2748,7 +2728,7 @@ Which one of the following is correct?
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q136. What type of attack is prevented by using random initial sequence numbers in TCP?
+### Q135. What type of attack is prevented by using random initial sequence numbers in TCP?
 
 <span lang='hi'>TCP में random initial sequence numbers उपयोग करने से किस प्रकार की attack रुकती है?</span>
 
@@ -2768,7 +2748,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q137. Which field in the TCP header is used for flow control?
+### Q136. Which field in the TCP header is used for flow control?
 
 <span lang='hi'>TCP header में flow control के लिए कौन-सा field उपयोग होता है?</span>
 
@@ -2788,7 +2768,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q138. Which TCP header field ensures that data arrives in order?
+### Q137. Which TCP header field ensures that data arrives in order?
 
 <span lang='hi'>TCP header का कौन-सा field सुनिश्चित करता है कि data क्रम में पहुँचे?</span>
 
@@ -2808,7 +2788,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q139. Which field in the TCP header ensures data integrity?
+### Q138. Which field in the TCP header ensures data integrity?
 
 <span lang='hi'>TCP header का कौन-सा field data integrity सुनिश्चित करता है?</span>
 
@@ -2828,7 +2808,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q140. Which of the following is NOT a property of TCP?
+### Q139. Which of the following is NOT a property of TCP?
 
 <span lang='hi'>निम्न में से कौन-सा TCP का गुण नहीं है?</span>
 
@@ -2848,7 +2828,7 @@ Which one of the following is correct?
 *[Source: CN Topic Test 5.pdf] · Hard*
 
 ---
-### Q141. Which of the following provides reliable, connection-oriented communication?
+### Q140. Which of the following provides reliable, connection-oriented communication?
 
 <span lang='hi'>निम्न में से कौन-सा भरोसेमंद, connection-oriented communication देता है?</span>
 
@@ -2868,7 +2848,7 @@ Which one of the following is correct?
 *[Source: MQuestions DCN bank + Oliveboard SSC CGL bank] · Hard*
 
 ---
-### Q142. Which of the following statements about TCP/IP is INCORRECT?
+### Q141. Which of the following statements about TCP/IP is INCORRECT?
 
 <span lang='hi'>TCP/IP के बारे में निम्न में से कौन-सा कथन गलत है?</span>
 
@@ -2888,7 +2868,7 @@ Which one of the following is correct?
 *[Source: DSSSB TGT CS (via Testbook solved)] · Hard*
 
 ---
-### Q143. Why are port numbers included in the TCP header of a segment?
+### Q142. Why are port numbers included in the TCP header of a segment?
 
 <span lang='hi'>Segment के TCP header में port numbers क्यों रखे जाते हैं?</span>
 
@@ -2908,7 +2888,7 @@ Which one of the following is correct?
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
 ---
-### Q144. Which one of the following fields of an IP header is NOT modified by a typical IP router?
+### Q143. Which one of the following fields of an IP header is NOT modified by a typical IP router?
 
 <span lang='hi'>IP header का कौन-सा field एक सामान्य IP router द्वारा संशोधित नहीं किया जाता?</span>
 
@@ -2928,7 +2908,7 @@ Which one of the following is correct?
 *[Source: GATE CS 2015 Set-1] · Hard*
 
 ---
-### Q145. Which of the following fields of an IP header is/are ALWAYS modified by any router before it forwards the IP packet?
+### Q144. Which of the following fields of an IP header is/are ALWAYS modified by any router before it forwards the IP packet?
 
 <span lang='hi'>IP packet forward करने से पहले हर router IP header के कौन-से fields हमेशा बदलता है?</span>
 
@@ -2948,7 +2928,7 @@ Which one of the following is correct?
 *[Source: GATE CS 2024 Set-2] · Hard*
 
 ---
-### Q146. Which of the following fields is/are modified in the IP header of a packet going out of a Network Address Translation (NAT) device from an internal network to an external network?
+### Q145. Which of the following fields is/are modified in the IP header of a packet going out of a Network Address Translation (NAT) device from an internal network to an external network?
 
 <span lang='hi'>NAT device से internal network से external network की तरफ़ जाते packet के IP header में कौन-से fields बदले जाते हैं?</span>
 
@@ -2968,7 +2948,7 @@ Which one of the following is correct?
 *[Source: GATE CS 2024 Set-1] · Hard*
 
 ---
-### Q147. Consider sending an IP datagram of size 1420 bytes (including a 20-byte IP header) over a path of two links with a router between them. The first link has MTU 542 bytes and the second link has MTU 360 bytes. The number of fragments delivered at the receiver is ______.
+### Q146. Consider sending an IP datagram of size 1420 bytes (including a 20-byte IP header) over a path of two links with a router between them. The first link has MTU 542 bytes and the second link has MTU 360 bytes. The number of fragments delivered at the receiver is ______.
 
 <span lang='hi'>1420 bytes का IP datagram (20-byte header सहित) दो links के रास्ते भेजा जा रहा है, बीच में एक router है। पहले link का MTU 542 bytes और दूसरे का 360 bytes है। Receiver पर कुल कितने fragments पहुँचेंगे?</span>
 
@@ -2988,7 +2968,7 @@ Which one of the following is correct?
 *[Source: GATE CS 2024 Set-1] · Hard*
 
 ---
-### Q148. In an IPv4 datagram, the M bit is 0, the value of HLEN is 10, the value of total length is 400 and the fragment offset value is 300. The position of the datagram, and the sequence numbers of the first and the last bytes of the payload, respectively, are:
+### Q147. In an IPv4 datagram, the M bit is 0, the value of HLEN is 10, the value of total length is 400 and the fragment offset value is 300. The position of the datagram, and the sequence numbers of the first and the last bytes of the payload, respectively, are:
 
 <span lang='hi'>एक IPv4 datagram में M bit = 0, HLEN = 10, total length = 400 और fragment offset = 300 है। इस datagram की स्थिति तथा payload के पहले और आख़िरी bytes के sequence numbers क्रमशः हैं:</span>
 
@@ -3008,7 +2988,7 @@ Which one of the following is correct?
 *[Source: GATE CS 2013] · Hard*
 
 ---
-### Q149. Consider the following three statements about link state and distance vector routing protocols for a large network with 500 nodes and 4000 links:
+### Q148. Consider the following three statements about link state and distance vector routing protocols for a large network with 500 nodes and 4000 links:
 S1: The computational overhead in link state protocols is higher than in distance vector protocols.
 S2: A distance vector protocol (with split horizon) avoids persistent routing loops, but a link state protocol does not.
 S3: After a topology change, a link state protocol converges faster than a distance vector protocol.
@@ -3036,7 +3016,7 @@ S3: Topology बदलने पर link state, distance vector से तेज
 *[Source: GATE CS 2014 Set-1] · Hard*
 
 ---
-### Q150. Which one of the following is TRUE about the interior gateway routing protocols RIP (Routing Information Protocol) and OSPF (Open Shortest Path First)?
+### Q149. Which one of the following is TRUE about the interior gateway routing protocols RIP (Routing Information Protocol) and OSPF (Open Shortest Path First)?
 
 <span lang='hi'>Interior gateway routing protocols RIP (Routing Information Protocol) और OSPF (Open Shortest Path First) के बारे में कौन-सा कथन सही है?</span>
 
@@ -3056,7 +3036,7 @@ S3: Topology बदलने पर link state, distance vector से तेज
 *[Source: GATE CS 2014 Set-2] · Hard*
 
 ---
-### Q151. Consider the following statements about the functionality of an IP based router:
+### Q150. Consider the following statements about the functionality of an IP based router:
 I. A router does not modify the IP packets during forwarding.
 II. It is not necessary for a router to implement any routing protocol.
 III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the size of the incoming IP packet.
@@ -3084,7 +3064,7 @@ III. यदि outgoing link का MTU आने वाले packet से ब
 *[Source: GATE CS 2020] · Hard*
 
 ---
-### Q152. Host A (on TCP/IPv4 network A) sends an IP datagram D to host B (on TCP/IPv4 network B) with no transmission error. When D reaches B, which of the following IP header field(s) may be different from that of the original datagram D?
+### Q151. Host A (on TCP/IPv4 network A) sends an IP datagram D to host B (on TCP/IPv4 network B) with no transmission error. When D reaches B, which of the following IP header field(s) may be different from that of the original datagram D?
 I. TTL    II. Checksum    III. Fragment Offset
 
 <span lang='hi'>Host A ने (TCP/IPv4 network A से) बिना किसी त्रुटि के IP datagram D, host B को भेजा। D के B पर पहुँचने पर निम्न में से कौन-से IP header fields मूल datagram से भिन्न हो सकते हैं?
@@ -3111,7 +3091,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 
 *Presentation-layer functions, application protocols & ports (HTTP/HTTPS/FTP/SMTP/DNS/SSH/Telnet/NFS/LDAP), TCP/IP layer-protocol matching.*
 
-### Q153. A server receives a packet with destination port 443. This implies:
+### Q152. A server receives a packet with destination port 443. This implies:
 
 <span lang='hi'>एक server को destination port 443 वाला packet मिलता है. इसका अर्थ है:</span>
 
@@ -3131,7 +3111,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: BCI Subject Test-8.pdf] · Easy*
 
 ---
-### Q154. For what application is the HTTP protocol used?
+### Q153. For what application is the HTTP protocol used?
 
 <span lang='hi'>HTTP protocol किस काम के लिए उपयोग होता है?</span>
 
@@ -3151,7 +3131,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: SSC MTS computer PYQ (via Testbook solved)] · Easy*
 
 ---
-### Q155. The structure or format of data is called:
+### Q154. The structure or format of data is called:
 
 <span lang='hi'>Data का structure या format कहलाता है:</span>
 
@@ -3171,7 +3151,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: Unit Test-4 Solution.pdf (OCR), p14] · Medium*
 
 ---
-### Q156. Which protocol layer uses protocols such as WWW, HTTP, FTP, SMTP and e-mail?
+### Q155. Which protocol layer uses protocols such as WWW, HTTP, FTP, SMTP and e-mail?
 
 <span lang='hi'>कौन-सी protocol layer WWW, HTTP, FTP, SMTP और e-mail जैसे protocols उपयोग करती है?</span>
 
@@ -3191,7 +3171,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-02.pdf + CN Topic Test-01.pdf] · Medium*
 
 ---
-### Q157. Which layer protocols provide user and application programme support such as passwords, resource sharing and file transfer?
+### Q156. Which layer protocols provide user and application programme support such as passwords, resource sharing and file transfer?
 
 <span lang='hi'>किस layer के protocols उपयोगकर्ता और application programme को passwords, resource sharing और file transfer जैसी सहायता देते हैं?</span>
 
@@ -3211,7 +3191,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-02.pdf] · Medium*
 
 ---
-### Q158. Which of the following protocols is primarily used for secure web browsing?
+### Q157. Which of the following protocols is primarily used for secure web browsing?
 
 <span lang='hi'>निम्न में से कौन-सा protocol मुख्य रूप से सुरक्षित web browsing के लिए उपयोग होता है?</span>
 
@@ -3231,7 +3211,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-01.pdf] · Medium*
 
 ---
-### Q159. Which protocol is generally used to encrypt data between a web browser and a web server?
+### Q158. Which protocol is generally used to encrypt data between a web browser and a web server?
 
 <span lang='hi'>Web browser और web server के बीच data encrypt करने के लिए आमतौर पर कौन-सा protocol उपयोग होता है?</span>
 
@@ -3251,7 +3231,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-01.pdf] · Medium*
 
 ---
-### Q160. Which protocol is used for secure shell (remote) login?
+### Q159. Which protocol is used for secure shell (remote) login?
 
 <span lang='hi'>Secure shell (remote) login के लिए कौन-सा protocol उपयोग होता है?</span>
 
@@ -3271,7 +3251,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf + Medium 30 CN MCQ bank] · Medium*
 
 ---
-### Q161. A firewall blocks all ports except 22. What service remains accessible?
+### Q160. A firewall blocks all ports except 22. What service remains accessible?
 
 <span lang='hi'>एक firewall port 22 को छोड़कर सब बंद कर देता है. कौन-सी सेवा अभी भी खुली है?</span>
 
@@ -3291,7 +3271,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: BCI Subject Test-8.pdf] · Medium*
 
 ---
-### Q162. Which port does Telnet use by default?
+### Q161. Which port does Telnet use by default?
 
 <span lang='hi'>Telnet डिफ़ॉल्ट रूप से कौन-सा port उपयोग करता है?</span>
 
@@ -3311,7 +3291,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q163. Which of the following uses port number 25?
+### Q162. Which of the following uses port number 25?
 
 <span lang='hi'>निम्न में से कौन-सा port number 25 उपयोग करता है?</span>
 
@@ -3331,7 +3311,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q164. Which protocol uses different ports for control and data connections?
+### Q163. Which protocol uses different ports for control and data connections?
 
 <span lang='hi'>कौन-सा protocol control और data connections के लिए अलग-अलग ports उपयोग करता है?</span>
 
@@ -3351,7 +3331,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: BCI_SCI Subject Test-7.pdf] · Medium*
 
 ---
-### Q165. Which protocol is used for file transfer over a network?
+### Q164. Which protocol is used for file transfer over a network?
 
 <span lang='hi'>Network पर file transfer के लिए कौन-सा protocol उपयोग होता है?</span>
 
@@ -3371,7 +3351,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf + Medium 30 CN MCQ bank] · Medium*
 
 ---
-### Q166. Which application allows a user to access and use remote files without actually transferring them?
+### Q165. Which application allows a user to access and use remote files without actually transferring them?
 
 <span lang='hi'>कौन-सा application उपयोगकर्ता को remote files को बिना वास्तव में स्थानांतरित किए उपयोग करने देता है?</span>
 
@@ -3391,7 +3371,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Medium*
 
 ---
-### Q167. Which protocol translates domain names to IP addresses?
+### Q166. Which protocol translates domain names to IP addresses?
 
 <span lang='hi'>कौन-सा protocol domain names को IP addresses में बदलता है?</span>
 
@@ -3411,7 +3391,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 5.pdf + CN Topic Test-01.pdf] · Medium*
 
 ---
-### Q168. What does a 'ping' command test?
+### Q167. What does a 'ping' command test?
 
 <span lang='hi'>'ping' command क्या जाँचता है?</span>
 
@@ -3431,7 +3411,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf] · Medium*
 
 ---
-### Q169. Which HTTP status code means 'Forbidden'?
+### Q168. Which HTTP status code means 'Forbidden'?
 
 <span lang='hi'>कौन-सा HTTP status code का अर्थ है 'Forbidden'?</span>
 
@@ -3451,7 +3431,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: Oliveboard SSC CGL Tier-2 bank] · Medium*
 
 ---
-### Q170. Lightweight Directory Access Protocol (LDAP) is used for:
+### Q169. Lightweight Directory Access Protocol (LDAP) is used for:
 
 <span lang='hi'>Lightweight Directory Access Protocol (LDAP) किस काम आता है?</span>
 
@@ -3471,7 +3451,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: Unit Test-4 Solution.pdf (OCR), p29] · Medium*
 
 ---
-### Q171. Which protocol is used for receiving an email?
+### Q170. Which protocol is used for receiving an email?
 
 <span lang='hi'>Email प्राप्त करने के लिए कौन-सा protocol उपयोग होता है?</span>
 
@@ -3491,7 +3471,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
 ---
-### Q172. Which of the following is the odd one out?
+### Q171. Which of the following is the odd one out?
 
 <span lang='hi'>निम्न में से असंगत कौन-सा है?</span>
 
@@ -3511,7 +3491,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: RRB NTPC previous-year computer banks (via adda247 50-PYQ PDF)] · Medium*
 
 ---
-### Q173. ICMP is a network-layer protocol used by devices to diagnose network issues. ICMP stands for:
+### Q172. ICMP is a network-layer protocol used by devices to diagnose network issues. ICMP stands for:
 
 <span lang='hi'>ICMP network-layer protocol है जो devices को network समस्याएँ जाँचने में सहायता करता है. ICMP का पूरा नाम है:</span>
 
@@ -3531,7 +3511,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: IBPS PO Computer Awareness PYQ (via Testbook solved)] · Medium*
 
 ---
-### Q174. POP3 stands for:
+### Q173. POP3 stands for:
 
 <span lang='hi'>POP3 का पूरा नाम है:</span>
 
@@ -3551,7 +3531,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: SBI/IBPS Computer Awareness Capsule 2018 (IBT India)] · Medium*
 
 ---
-### Q175. SLIP stands for:
+### Q174. SLIP stands for:
 
 <span lang='hi'>SLIP का पूरा नाम है:</span>
 
@@ -3571,7 +3551,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: IBPS/banking computer banks (via tpointtech MCQ)] · Medium*
 
 ---
-### Q176. The functionalities of the presentation layer include:
+### Q175. The functionalities of the presentation layer include:
 
 <span lang='hi'>Presentation layer के कार्यों में शामिल हैं:</span>
 
@@ -3591,7 +3571,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-02.pdf] · Hard*
 
 ---
-### Q177. Which of the following protocols is NOT secure?
+### Q176. Which of the following protocols is NOT secure?
 
 <span lang='hi'>निम्न में से कौन-सा protocol सुरक्षित नहीं है?</span>
 
@@ -3611,7 +3591,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test 6.pdf] · Hard*
 
 ---
-### Q178. Which of the following protocols is used for transferring email messages from one machine to another?
+### Q177. Which of the following protocols is used for transferring email messages from one machine to another?
 
 <span lang='hi'>निम्न में से कौन-सा protocol email संदेशों को एक machine से दूसरी में भेजने के लिए उपयोग होता है?</span>
 
@@ -3631,7 +3611,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: RPSC Programmer 2024 Paper-1 (with official key)] · Hard*
 
 ---
-### Q179. In one of the pairs below, both protocols can use multiple TCP connections between the same client and the same server. Which pair is it?
+### Q178. In one of the pairs below, both protocols can use multiple TCP connections between the same client and the same server. Which pair is it?
 
 <span lang='hi'>नीचे दिए जोड़ों में से किसमें दोनों protocols एक ही client और server के बीच कई TCP connections उपयोग कर सकते हैं?</span>
 
@@ -3651,7 +3631,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-02.pdf] · Hard*
 
 ---
-### Q180. Identify the true statements: (1) HTTP may use different TCP connections for different objects of a webpage if non-persistent connections are used (2) FTP uses two TCP connections, one for data and another for control (3) TELNET and FTP can only use TWO connections at a time
+### Q179. Identify the true statements: (1) HTTP may use different TCP connections for different objects of a webpage if non-persistent connections are used (2) FTP uses two TCP connections, one for data and another for control (3) TELNET and FTP can only use TWO connections at a time
 
 <span lang='hi'>सही कथन पहचानें: (1) non-persistent connections में HTTP webpage के अलग-अलग objects के लिए अलग TCP connections उपयोग कर सकता है (2) FTP दो TCP connections उपयोग करता है, एक data के लिए और दूसरा control के लिए (3) TELNET और FTP एक समय में केवल TWO connections ही उपयोग कर सकते हैं</span>
 
@@ -3671,7 +3651,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: CN Topic Test-03.pdf] · Hard*
 
 ---
-### Q181. Which of the following is NOT an application layer protocol?
+### Q180. Which of the following is NOT an application layer protocol?
 
 <span lang='hi'>निम्न में से कौन-सा application layer protocol नहीं है?</span>
 
@@ -3691,7 +3671,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Hard*
 
 ---
-### Q182. Which is the FALSE statement?
+### Q181. Which is the FALSE statement?
 
 <span lang='hi'>कौन-सा कथन गलत है?</span>
 
@@ -3711,7 +3691,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: SSC CGL Internet & Networking (via EduRev bank)] · Hard*
 
 ---
-### Q183. Match TCP/IP layers and protocols — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. Which matching is correct?
+### Q182. Match TCP/IP layers and protocols — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. Which matching is correct?
 
 <span lang='hi'>TCP/IP layers और protocols मिलाएँ — (P) Transport layer (Q) Network (internet) layer (R) Application layer; (1) ICMP (2) FTP (3) UDP. कौन-सा मिलान सही है?</span>
 
@@ -3731,7 +3711,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: Random Test- Rajasthan PYQ.pdf (OCR) + answer_keys.py Q23] · Hard*
 
 ---
-### Q184. Which one of the following is NOT a client-server application?
+### Q183. Which one of the following is NOT a client-server application?
 
 <span lang='hi'>निम्न में से कौन-सा client-server application नहीं है?</span>
 
@@ -3751,7 +3731,7 @@ I. TTL    II. Checksum    III. Fragment Offset</span>
 *[Source: RPSC Programmer 2011 Paper-1 (via pyqp.in)] · Hard*
 
 ---
-### Q185. Which of the following is/are example(s) of stateful application layer protocols?
+### Q184. Which of the following is/are example(s) of stateful application layer protocols?
 I. HTTP    II. FTP    III. TCP    IV. POP3
 
 <span lang='hi'>निम्न में से कौन-सा stateful application layer protocol का उदाहरण है?
@@ -3773,7 +3753,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2016 Set-1] · Hard*
 
 ---
-### Q186. Identify the correct sequence in which the following packets are transmitted by a host when a browser requests a web page from a remote server, assuming that the host has just been restarted:
+### Q185. Identify the correct sequence in which the following packets are transmitted by a host when a browser requests a web page from a remote server, assuming that the host has just been restarted:
 
 <span lang='hi'>मान लीजिए host अभी-अभी restart हुआ है और browser एक remote server से web page माँगता है। निम्न packets सही क्रम में transmit होंगे:</span>
 
@@ -3793,7 +3773,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2016 Set-2] · Hard*
 
 ---
-### Q187. Which of the following protocol pairs can be used to send and retrieve e-mails (in that order)?
+### Q186. Which of the following protocol pairs can be used to send and retrieve e-mails (in that order)?
 
 <span lang='hi'>ई-मेल भेजने और प्राप्त करने (इसी क्रम में) के लिए निम्न में से किस protocol जोड़ी का प्रयोग हो सकता है?</span>
 
@@ -3813,7 +3793,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2019] · Hard*
 
 ---
-### Q188. Consider a long-lived TCP session with an end-to-end bandwidth of 1 Gbps (= 10⁹ bits/second). The session starts with a sequence number of 1234. The minimum time (in seconds, rounded to the closest integer) before this sequence number can be used again is ______.
+### Q187. Consider a long-lived TCP session with an end-to-end bandwidth of 1 Gbps (= 10⁹ bits/second). The session starts with a sequence number of 1234. The minimum time (in seconds, rounded to the closest integer) before this sequence number can be used again is ______.
 
 <span lang='hi'>एक लंबी TCP session की bandwidth 1 Gbps (= 10⁹ bits/second) है और वह sequence number 1234 से शुरू होती है। इस sequence number के पुनः प्रयोग से पहले न्यूनतम समय (seconds में, निकटतम पूर्णांक) कितना है?</span>
 
@@ -3833,7 +3813,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2018] · Hard*
 
 ---
-### Q189. In the TCP three-way handshake, host P sends a connection request to Q with SYN = 1, SEQ = X, ACK = 0. Q accepts the connection. Which of the following represents the information in the TCP segment header sent by Q to P?
+### Q188. In the TCP three-way handshake, host P sends a connection request to Q with SYN = 1, SEQ = X, ACK = 0. Q accepts the connection. Which of the following represents the information in the TCP segment header sent by Q to P?
 
 <span lang='hi'>TCP three-way handshake में host P, Q को connection request भेजता है: SYN = 1, SEQ = X, ACK = 0। Q connection स्वीकार करता है। Q द्वारा P को भेजे segment header में क्या होगा?</span>
 
@@ -3853,7 +3833,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2021 Set-2] · Hard*
 
 ---
-### Q190. Consider data transfer using TCP over a 1 Gbps link. Assuming that the maximum segment lifetime (MSL) is set to 60 seconds, the minimum number of bits required for the sequence number field of the TCP header, to prevent the sequence number space from wrapping around during the MSL, is ______.
+### Q189. Consider data transfer using TCP over a 1 Gbps link. Assuming that the maximum segment lifetime (MSL) is set to 60 seconds, the minimum number of bits required for the sequence number field of the TCP header, to prevent the sequence number space from wrapping around during the MSL, is ______.
 
 <span lang='hi'>1 Gbps link पर TCP से data transfer हो रहा है। Maximum segment lifetime (MSL) 60 seconds है। MSL के दौरान sequence number space के wrap होने से बचने के लिए TCP header के sequence number field में न्यूनतम कितने bits चाहिए?</span>
 
@@ -3873,7 +3853,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2022] · Hard*
 
 ---
-### Q191. A TCP client and server complete data transfer. The client calls close; a FIN segment is sent to the server, which responds with an ACK received by the client. As per the TCP connection state diagram (RFC 793), in which state does the client-side TCP connection wait for the FIN from the server?
+### Q190. A TCP client and server complete data transfer. The client calls close; a FIN segment is sent to the server, which responds with an ACK received by the client. As per the TCP connection state diagram (RFC 793), in which state does the client-side TCP connection wait for the FIN from the server?
 
 <span lang='hi'>TCP client-server का data transfer पूरा हुआ। Client close करता है; server को FIN जाता है; server का ACK client को मिलता है। RFC 793 की state diagram के अनुसार client-side connection server के FIN की प्रतीक्षा किस state में करती है?</span>
 
@@ -3893,7 +3873,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2017 Set-1] · Hard*
 
 ---
-### Q192. In the TCP three-way handshake, let the three packets exchanged during connection establishment be P1, P2 and P3 in order. Which of the following is TRUE about the TCP header flags set in these packets?
+### Q191. In the TCP three-way handshake, let the three packets exchanged during connection establishment be P1, P2 and P3 in order. Which of the following is TRUE about the TCP header flags set in these packets?
 
 <span lang='hi'>TCP three-way handshake में connection establishment के दौरान तीन packets P1, P2 और P3 (इसी क्रम में) बदले जाते हैं। इनमें सेट TCP header flags के बारे में क्या सही है?</span>
 
@@ -3913,7 +3893,7 @@ I. HTTP    II. FTP    III. TCP    IV. POP3</span>
 *[Source: GATE CS 2025 Set-1] · Hard*
 
 ---
-### Q193. The World Wide Web (WWW) is:
+### Q192. The World Wide Web (WWW) is:
 
 <span lang='hi'>World Wide Web (WWW) क्या है?</span>
 
