@@ -906,20 +906,7 @@ SEC_B = [
           {0: ("Ethernet का MAC होता है.", "Ethernet का MAC होता है."),
            2: ("FDDI का MAC token-based होता है.", "FDDI का MAC token-based होता है."),
            3: ("DSL सही जवाब है.", "DSL सही जवाब है.")}),
-        Q("BCI_SCI Subject Test-01 (CN and Security)",
-          "Which of the following is an example of Client–Server architecture?",
-          "निम्न में से कौन-सा Client–Server architecture का उदाहरण है?",
-          ["Chat between two Bluetooth devices", "Web browser accessing a website", "File transfer via USB cable", "Two laptops connected directly"], 1,
-          ("Web browser (client) website के server से request करता है — यही classic "
-           "client–server model है.",
-           "Web browser (client) website के server से request करता है — यही classic "
-           "client–server model है."),
-          ("Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer.",
-           "Client–Server: एक सेवा देता है, दूसरा लेता है. Bluetooth chat = peer-to-peer."),
-          {0: ("Bluetooth chat peer-to-peer है.", "Bluetooth chat peer-to-peer है."),
-           2: ("USB transfer direct connection है.", "USB transfer direct connection है."),
-           3: ("दो laptops direct = peer-to-peer.", "दो laptops direct = peer-to-peer.")}),
-]
+        ]
 
 SEC_C = [
         Q("CN Topic Test 6.pdf + Unit Test -2 Solutions.pdf (OCR)",

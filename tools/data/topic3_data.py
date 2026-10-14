@@ -1184,22 +1184,7 @@ SEC_E.extend([
       {0: ("DNS नाम→IP करता है.", "DNS नाम→IP करता है."),
        1: ("ARP IP→MAC करता है.", "ARP IP→MAC करता है."),
        3: ("RARP MAC→IP करता है.", "RARP MAC→IP करता है.")}),
-    Q("RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
-      "A reverse lookup in DNS means a lookup to ______ using ______ records.",
-      "DNS में reverse lookup का अर्थ है ______ records का उपयोग करके ______ की खोज.",
-      ["map domain names to IP address, A", "map IP address to domain name, PTR", "determine the authoritative name servers, CNAME", "identify mail servers, SOA"], 1,
-      ("Reverse lookup में IP address से domain name निकाला जाता है और इसमें "
-       "PTR (Pointer) records उपयोग होते हैं.",
-       "Reverse lookup में IP address से domain name निकाला जाता है और इसमें "
-       "PTR (Pointer) records उपयोग होते हैं."),
-      ("Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी "
-       "परीक्षा में बार-बार आती है.",
-       "Normal: name→IP = A record; Reverse: IP→name = PTR record. यह जोड़ी "
-       "परीक्षा में बार-बार आती है."),
-      {0: ("A record सामान्य (forward) lookup का है.", "A record सामान्य (forward) lookup का है."),
-       2: ("CNAME alias बनाता है.", "CNAME alias बनाता है."),
-       3: ("SOA zone की जानकारी देता है.", "SOA zone की जानकारी देता है.")}),
-])
+    ])
 
 # --- PYQ wave 2: GATE 2011-2026 full + KVS/EMRS (Oct 2026) ---
 
