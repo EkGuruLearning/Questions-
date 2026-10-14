@@ -72,6 +72,12 @@ python3 tools/build_catalog.py       # chunks + catalogue -> data/site.json
 python3 tools/read_structure.py --check
 ```
 
+## Local preview
+
+```bash
+python3 tools/serve_site.py          # http://localhost:8000 — sirf public pages
+```
+
 ## Checks
 
 ```bash

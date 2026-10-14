@@ -80,7 +80,18 @@ chhota naam builder nikalta hai: "Section A - DC Components & Protocol Basics (�
 * Result: score ring, correct/wrong/skipped, topic-wise bars, poora answer review, "galat questions dobara".
 * Saved questions (⭐) aur pichhle test results `localStorage` me rehte hain — server par kuch nahi jata.
 
-## 6. Release checks
+## 6. Local preview
+
+```bash
+python3 tools/serve_site.py          # http://localhost:8000
+```
+
+Ye server sirf public paths deta hai (`index.html`, `404.html`, `subjects/`, `assets/`, `data/`,
+`content/`). `maintainer/`, `tools/`, `tests/` aur repo docs par 404 page milta hai — bina directory
+listing. GitHub Pages par ye files URL se technically reachable hoti hain (static host), lekin website
+kabhi unhe link nahi karti; `tools/validate_site.py` isi rule ko enforce karta hai.
+
+## 7. Release checks
 
 ```bash
 python3 tools/read_structure.py --check      # required paths + generated data + links + whitespace
