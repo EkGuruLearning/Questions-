@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "mapping_version": "ekguru-syllabus-mappings-v1",
+  "mappings": [
+    {
+      "exam_profile_id": "general-cn-practice",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "subject_scope",
+      "source_ref": "Computer Network/data/cn_questions.json"
+    },
+    {
+      "exam_profile_id": "gate-cs",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "suggested_practice_fit",
+      "source_ref": "Computer Network/Reports/EXAM_BLUEPRINTS.md (historic secondary-source snapshot; official pattern not reverified)"
+    },
+    {
+      "exam_profile_id": "ugc-net-cs-087",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "suggested_practice_fit",
+      "source_ref": "Computer Network/Reports/EXAM_BLUEPRINTS.md (historic secondary-source snapshot; official syllabus/pattern not reverified)"
+    },
+    {
+      "exam_profile_id": "rpsc-programmer",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "suggested_practice_fit",
+      "source_ref": "Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/README-source.md (community-maintained source; not an official key)"
+    },
+    {
+      "exam_profile_id": "rsmssb-informatics-assistant",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "suggested_practice_fit",
+      "source_ref": "Computer Network/Reports/SOURCE_REGISTER.md (source labels/difficulty-derived tags; not official syllabus mapping)"
+    },
+    {
+      "exam_profile_id": "ssc-computer-awareness",
+      "subject_id": "cn",
+      "topic_ids": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
+      "mapping_status": "suggested_practice_fit",
+      "source_ref": "Computer Network/Reports/SOURCE_REGISTER.md (source labels/difficulty-derived tags; not official syllabus mapping)"
+    }
+  ]
+}

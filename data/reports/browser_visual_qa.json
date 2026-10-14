@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "checked_at_utc": "2026-10-14T10:31:46.411Z",
+  "bank_build_id": "cn-014b0aa51c0651e7",
+  "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
+  "ui_sha256": "99c5929dfad95f32f6b1402811020eb02382d3a5357d6384b29c7714dfe27e09",
+  "browser": "Chromium 153.0.8010.0 (headless)",
+  "viewports": [
+    {
+      "name": "phone-320",
+      "width": 320,
+      "height": 780,
+      "landing": {
+        "inner_width": 320,
+        "document_width": 320,
+        "body_width": 320,
+        "page_height": 12076,
+        "nav_toggle_display": "flex",
+        "nav_display": "none"
+      },
+      "quiz": {
+        "inner_width": 320,
+        "document_width": 320,
+        "body_width": 320,
+        "panel_width": 302,
+        "panel_client_width": 302,
+        "stem_height": 453,
+        "options_width": 236,
+        "options_client_width": 236
+      },
+      "dialog": {
+        "width": 283,
+        "viewport": 320
+      },
+      "mobile_menu_tested": true,
+      "minimum_control_height_px": 44,
+      "controls_under_44px": 0,
+      "axe": {
+        "landing_violations": [],
+        "quiz_violations": [],
+        "source_dialog_violations": [],
+        "landing_incomplete_checks": 0,
+        "quiz_incomplete_checks": 1,
+        "source_dialog_incomplete_checks": 0
+      }
+    },
+    {
+      "name": "phone-375",
+      "width": 375,
+      "height": 812,
+      "landing": {
+        "inner_width": 375,
+        "document_width": 375,
+        "body_width": 375,
+        "page_height": 11297,
+        "nav_toggle_display": "flex",
+        "nav_display": "none"
+      },
+      "quiz": {
+        "inner_width": 375,
+        "document_width": 375,
+        "body_width": 375,
+        "panel_width": 357,
+        "panel_client_width": 357,
+        "stem_height": 191,
+        "options_width": 291,
+        "options_client_width": 291
+      },
+      "dialog": {
+        "width": 338,
+        "viewport": 375
+      },
+      "mobile_menu_tested": true,
+      "minimum_control_height_px": 44,
+      "controls_under_44px": 0,
+      "axe": {
+        "landing_violations": [],
+        "quiz_violations": [],
+        "source_dialog_violations": [],
+        "landing_incomplete_checks": 1,
+        "quiz_incomplete_checks": 1,
+        "source_dialog_incomplete_checks": 0
+      }
+    },
+    {
+      "name": "tablet-768",
+      "width": 768,
+      "height": 1024,
+      "landing": {
+        "inner_width": 768,
+        "document_width": 768,
+        "body_width": 768,
+        "page_height": 7044,
+        "nav_toggle_display": "flex",
+        "nav_display": "none"
+      },
+      "quiz": {
+        "inner_width": 768,
+        "document_width": 768,
+        "body_width": 768,
+        "panel_width": 734,
+        "panel_client_width": 734,
+        "stem_height": 62,
+        "options_width": 414,
+        "options_client_width": 414
+      },
+      "dialog": {
+        "width": 560,
+        "viewport": 768
+      },
+      "mobile_menu_tested": true,
+      "minimum_control_height_px": 44,
+      "controls_under_44px": 0,
+      "axe": {
+        "landing_violations": [],
+        "quiz_violations": [],
+        "source_dialog_violations": [],
+        "landing_incomplete_checks": 0,
+        "quiz_incomplete_checks": 1,
+        "source_dialog_incomplete_checks": 0
+      }
+    },
+    {
+      "name": "laptop-1365",
+      "width": 1365,
+      "height": 900,
+      "landing": {
+        "inner_width": 1365,
+        "document_width": 1365,
+        "body_width": 1365,
+        "page_height": 5965,
+        "nav_toggle_display": "none",
+        "nav_display": "flex"
+      },
+      "quiz": {
+        "inner_width": 1365,
+        "document_width": 1365,
+        "body_width": 1365,
+        "panel_width": 1158,
+        "panel_client_width": 1158,
+        "stem_height": 132,
+        "options_width": 784,
+        "options_client_width": 784
+      },
+      "dialog": {
+        "width": 560,
+        "viewport": 1365
+      },
+      "mobile_menu_tested": false,
+      "minimum_control_height_px": 44,
+      "controls_under_44px": 0,
+      "axe": {
+        "landing_violations": [],
+        "quiz_violations": [],
+        "source_dialog_violations": [],
+        "landing_incomplete_checks": 0,
+        "quiz_incomplete_checks": 1,
+        "source_dialog_incomplete_checks": 0
+      }
+    }
+  ],
+  "browser_errors": [],
+  "total_axe_violations": 0
+}

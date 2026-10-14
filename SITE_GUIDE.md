@@ -1,33 +1,56 @@
-# SITE GUIDE — EkGuru Website kaise badlein (Prakash ke liye)
+# Site guide — maintain the EkGuru portal safely
 
-Website = sirf `index.html` (design + test engine) + `assets/cn-questions.min.json` (data).
-GitHub Pages repo ke root se `index.html` serve karta hai. `.nojekyll` rakha hai taaki
-file/folder naam (space wale bhi) waise hi serve hon jaise hain.
+## Source of truth and generated files
 
-## 1) CN me naye question judenge tab (sabse aam kaam)
-Purana pipeline hi chalega:
-```bash
-python tools/cn_pipeline.py ingest      # naya PDF -> Incoming/ se bank me
-python tools/cn_pipeline.py rebuild --all
-python3 tools/build_site_data.py        # ★ website ka data taza (yeh bhoolna mat)
-```
-Phir commit + push. 2-3 minute me site live.
+- `Computer Network/data/cn_questions.json` is the canonical CN bank (schema v2). Source content and evidence must be reviewed before a record is promoted.
+- `assets/catalog.min.json`, `assets/banks/cn/manifest.json`, `assets/banks/cn/Tnn.<hash>.min.json`, `assets/source-register.min.json`, `assets/cn-questions.min.json`, and `data/reports/build_manifest.json` are generated. Never hand-edit them.
+- `index.html` is the accessible static shell; app behavior is in `assets/js/app.mjs` and pure test-engine functions are in `assets/js/engine.mjs`; styles are in `assets/css/portal.css`.
+- The root site uses relative URLs and can be served as a static GitHub Pages project. Runtime requires no server-side service, account, framework, analytics or cloud storage.
 
-## 2) Naya subject LIVE karna ho (jaise DBMS)
-1. Uska bank banao: `Subject/data/xx_questions.json` (CN wale format me).
-2. `tools/build_site_data.py` me us subject ka slim file bhi nikalo (`assets/xx-questions.min.json`).
-3. `index.html` me:
-   - `SUBJECTS` list me us subject ka `st:"soon"` → `st:"live"`, `pct:100`, chips me asli ginti likho.
-   - Test Centre ke `fSubject` dropdown me option jodo, aur subject badalne par uska data load karo
-     (abhi CN wala `fetch(...)` ek hi hai — wahi pattern copy karna hai).
-   - Hero/Register ke number badlo.
-4. Pehle mobile par test karke dekho, phir push.
+## Rebuild after question-source changes
 
-## 3) Sirf likhai/design badalna ho
-Sab kuch `index.html` ke `<style>` aur body me hai. Rang: Navy `#16283f`, kesariya `#E97313` —
-EkGuru ki pehchan yahi hai, yahi rakho taaki saari kitaabein/site ek parivar lagein.
+1. Update the source data in the existing question modules and preserve the original PDF/HTML/source material.
+2. Run the exporter; it writes the canonical bank and rebuilds downstream site data/reports:
 
-## 4) Dhyaan rahe
-- `assets/cn-questions.min.json` haath se kabhi edit mat karo — hamesha script se banao.
-- Nayi file ke naam me space ho to link me `%20` likho (books table me udaharan hai).
-- Push se pehle browser me `index.html` khol kar ek 10-question test pura karke dekho.
+   ```bash
+   python3 tools/cn_export_json.py
+   ```
+
+3. Run the independent release checks:
+
+   ```bash
+   python3 tools/validate_question_bank.py
+   python3 tools/audit_blueprints.py
+   python3 tools/audit_links.py --strict
+   python3 -m unittest discover -s tests/data -p 'test_*.py' -v
+   python3 -m unittest discover -s tests/navigation -p 'test_*.py' -v
+   python3 -m unittest discover -s tests/responsive -p 'test_*.py' -v
+   node --test tests/engine/engine.test.mjs
+   ```
+
+4. Check `Computer Network/Reports/` and `data/reports/build_manifest.json` for a shared bank build ID and canonical SHA-256. Exact duplicates and near-duplicate candidates are reports, not automatic deletion decisions.
+5. Before release, run rendered browser tests at phone, tablet and laptop widths, keyboard/accessibility checks, and a post-deploy smoke test. A passing structural CSS test is not a visual browser pass.
+
+## Evidence and status rules
+
+- Only stable question IDs mapped to an official exam paper **and** final/corrected official key in `data/sources/official_paper_key_evidence.json` can be `paper_and_key_checked` / `verified_official_pyq`.
+- `answer_checked` means answer-level curation only. It does not imply an official appearance or answer-key match.
+- `claimed_pyq_unverified`, `claimed_answer_unverified`, `disputed`, and `pending_review` remain distinct. Disputed/pending records are excluded from test chunks; incomplete source wording is retained in canonical data, not repaired by guessing.
+- Exam tags and difficulty are practice filters. They do not prove a past appearance or an official exam blueprint.
+- Planned subjects stay unavailable until a reviewed bank, data builder, validation tests, source report and release checks exist. Do not change `status` to `live` as a display-only edit.
+- “Save for later” is a browser-local bookmark. Do not call it a push/email notification.
+
+## Catalog changes
+
+Edit only the source drafts under `data/catalog/`:
+
+- `subjects.json`: publication status, descriptions and syllabus topics.
+- `exams.json`: practice profiles, references, and explicit pattern/simulation confidence.
+- `syllabus_mappings.json`: topic mappings and their evidence status.
+- `books.json`: existing PDF paths and generated launcher paths.
+
+For new files, verify every path exists. The book builder rejects missing files and paths escaping the repository. `Computer Network/Online Quiz/v6/` launchers are generated by `tools/build_v6_launchers.py`; original legacy quiz bytes are archived and the former public paths redirect to the shared portal.
+
+## Data and rollback
+
+Before changing a published file, preserve prior sources/release artifacts. The pre-audit root page, compatibility asset, reports and all seven original quiz HTML snapshots are kept under `archive/pre-audit-2026-10-14/`; archived HTML files use a non-runnable `.snapshot` suffix but retain their original bytes. Original PDFs remain in place. A byte-for-byte copy of the immediately prior canonical bank (SHA-256 `5d431ff72300cd55867d322c99223cb5c835926b63e2854e510b8199d67ba6fa`) is at `archive/pre-audit-2026-10-14/Computer Network/data/cn_questions.pre-refresh.json`; `cn_questions.v1.original.json` is an older snapshot. To roll back the portal implementation, copy `archive/pre-audit-2026-10-14/index.html.snapshot` back to the root as `index.html` and restore the compatibility asset from `archive/pre-audit-2026-10-14/assets/cn-questions.min.json`; restore `archive/pre-audit-2026-10-14/Computer Network/data/cn_questions.v1.original.json` and archived reports only if intentionally rolling back the data migration too. The seven old public HTML paths are redirect wrappers; to intentionally reactivate one old snapshot, copy its matching `.html.snapshot` back to the original `.html` path only after addressing the stale `verified_official_pyq` labels (for example, `cp 'archive/pre-audit-2026-10-14/Computer Network/Online Quiz/Topic 1 - Online Quiz & Exam (by PRAKASH - EkGuru).html.snapshot' 'Computer Network/Online Quiz/Topic 1 - Online Quiz & Exam (by PRAKASH - EkGuru).html'`). This deliberately reintroduces the historical standalone page and is not recommended. For a full branch rollback after commit, use `git revert <feature-commit>` on this branch. Do not delete versioned chunks/catalog files without checking what the current page references.

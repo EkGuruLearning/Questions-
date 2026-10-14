@@ -357,3 +357,19 @@ warning + quiz-feedback-on-revisit), repeater/ring correction (answer: Ring,
 removed (0 exact groups remain), release ZIP. Missing spec files
 (README_CN_QUESTION_BANK.md, ARENA_CN_MASTER_EXECUTION_PROMPT.md standalone,
 Pasted text (5).txt, both original Topic-1 HTMLs) recorded as missing in QA_REPORT.
+
+## Current-data correction — 2026-10-14 (supersedes historical totals and verification claims above)
+
+This section is generated from the current schema-v2 canonical bank and overrides earlier rolling totals and any earlier claim that the RPSC answer table was an official final key. The historical diary above is retained for traceability; its claims about every source/PDF being processed were **not revalidated in this audit**.
+
+- Canonical bank: **1,556 records**. Topic counts: T01 375, T02 144, T03 231, T04 99, T05 174, T06 387, T07 146.
+- Test-payload records: **1,554**. `CN-T01-0287` and `CN-T06-0296` contain a blank answer option; the original wording is preserved, both are `pending_review`, and neither is shipped in a practice chunk. No missing option was guessed or filled.
+- Answer-verification statuses: `paper_and_key_checked` 0; `answer_checked` 847; `claimed_answer_unverified` 707; `disputed` 0; `pending_review` 2. `answer_checked` is not official paper/key matching.
+- Source types: `verified_official_pyq` 0; `claimed_pyq_unverified` 112; `repository_internal` 1,205; `textbook_paraphrase` 42; `original_practice` 197.
+- The question-level official paper/final-key register is empty. The 26 former RPSC “official key checked” labels were downgraded. `2024 Programmer Paper-1 ANSWERS.md` says its answers are based on standard solutions and recommends checking the official key; it is a community-maintained answer table, not an official final/corrected key.
+- Language fields: English stems 1,556; Hindi stems 817; complete English/Hindi option arrays 1,554; English explanations 817; Hindi explanations 817; records meeting the stricter full-bilingual condition 817. Missing Hindi is not filled by this audit.
+- Automated duplicate scan: 0 exact normalized English-stem groups; 748 near-duplicate candidates. **0 candidates received a manual concept-level disposition in this implementation.** No candidate was automatically deleted or merged.
+- The 593, 801 and 817 totals elsewhere in this historical file describe earlier snapshots; they are not current inventory. The 739 W6 imports are a historical import count, not a current answer-verification count.
+- Original PDFs and all seven legacy quiz snapshots were preserved byte-for-byte as inert `.html.snapshot` files under `archive/pre-audit-2026-10-14/Computer Network/Online Quiz/`. Their former public paths now redirect to the shared portal because the archived snapshots embed 26 stale `verified_official_pyq` labels. This audit did not render or re-parse PDF contents; file presence does not establish PDF page/question-count accuracy. The archived topic pages are not current provenance-gated test apps.
+
+Current generated reports and the build hash are in `Reports/` and `data/reports/build_manifest.json`. See `Reports/QA_REPORT.md` for executed checks, browser/PDF limitations and deployment status.

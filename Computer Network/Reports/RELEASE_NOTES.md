@@ -1,39 +1,25 @@
-# EkGuru CN — Release 2026-10-14
+# EkGuru Portal — Implementation Release Notes
 
-**Compiled & updated by PRAKASH • EkGuru Learning** — following the master
-execution prompt in `Computer Network/new/README.md`.
+**Bank build ID:** `cn-014b0aa51c0651e7`<br>
+**Canonical SHA-256:** `014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0`<br>
+**Snapshot date:** 2026-10-14
 
-## What is in this release
-- **Working portal:** 7 topic-wise offline CBT apps (`Online Quiz/`), v5 —
-  exam/difficulty/source-status/question-type/language/marking filters with
-  audited tags, real CBT navigation (palette + hide-show, Save & Next with
-  authentic save rule, mark-for-review, unsaved-answer warning), mobile-first
-  layout, per-question Source (exam/year) chips, Correct/Wrong/Skipped analysis,
-  net mock score, question-wise solutions.
-- **Normalized bank:** `data/cn_questions.json` — 801 records (spec §6 schema),
-  stable IDs; 0 exact duplicate groups (4 removed after audit; canonical kept).
-- **Reports:** INVENTORY, DUPLICATE_AUDIT (357 near-candidates for review),
-  ANSWER_VERIFICATION (26 paper+key checked / 775 pipeline-checked — no
-  overclaims), SOURCE_REGISTER (classification rules + evidence + blocked sites),
-  EXAM_BLUEPRINTS (GATE-2026 / NET / RPSC Programmer / RSMSSB IA — conflicts
-  recorded), QA_REPORT (this folder).
-- **Books:** 7 topic books (627 MCQ + 165 rapid), Complete Book (216 pp),
-  7 practice booklets (801 Q, 80 pp) — all rebuilt after dedupe + language fixes.
-- **Repeater/ring-topology correction** applied (concept-check, not a PYQ).
+## Current implementation snapshot
 
-## Change log
-### 2026-10-14 — release R1
-- Imported the main-branch starter pack (`new/`) read-only; missing spec files recorded.
-- Repeater question corrected (traditional-ring wording, answer Ring).
-- 4 exact duplicate stems removed (ARPANET ×2; Client-Server cross-topic;
-  DNS reverse-lookup claimed twin; digital-modulation twin).
-- 97 Hindi-in-English-slot explanations given English (earlier round, retained).
-- Portal v5 filters + net mock score + unsaved warning + quiz-feedback-on-revisit.
-- Honest source-status labels; "all answers verified" startup claim removed.
+- Canonical CN bank: 1,556 records across 7 topics; 1,554 practice-payload records.
+- 2 record(s) marked disputed/pending are omitted from practice chunks; source records remain in the canonical bank.
+- Only the root data-driven portal is the current production candidate; other subjects remain unavailable until their review gates pass.
+- Official paper + final-key match: 0 records in the current evidence register.
+- Answer checked: 847; claimed answer unverified: 707; pending review: 2.
+- All current exam profiles are practice or suggested-fit mappings, not exact simulations.
 
-## Remaining / next
-- Second-pass answer review (human) for the 775 pipeline-checked items.
-- Manual near-duplicate review of the 357 candidates.
-- Import `computer-networks [set 1–20]` PDFs + the 3 MCQ PDFs as new source waves
-  (after per-question dedupe + answer verification).
-- Website build (login + real-time monitoring) — user's future plan.
+## User-facing changes in this branch
+
+- Provenance-aware topic chunks, catalog, source register and generated counts.
+- Accessible responsive navigation and same-tab internal routes.
+- Source/verification filters, honest language fallbacks, local attempt recovery, deterministic scoring, question review and report-copy flow.
+- Legacy source files, original PDFs and historical quiz snapshots are preserved.
+
+## Deployment
+
+This report is generated on a feature branch. It is not evidence of a merge, GitHub Pages deployment or live-site smoke test.
