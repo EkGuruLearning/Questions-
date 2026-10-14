@@ -1,0 +1,9 @@
+{
+  "build_date": "2026-10-14",
+  "master_gpkg": "data/processed/rajasthan_border_atlas.gpkg",
+  "crs": "EPSG:4326",
+  "map_projection": "+proj=lcc +lat_1=25 +lat_2=30 +lat_0=27 +lon_0=71 +datum=WGS84 +units=m +no_defs",
+  "districts_total": 431,
+  "rajasthan_districts": 41,
+  "pakistan_districts": 160
+}

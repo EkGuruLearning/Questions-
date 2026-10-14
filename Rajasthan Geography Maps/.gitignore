@@ -1,0 +1,32 @@
+# Regenerable / oversized artefacts
+# ---------------------------------------------------------------------------
+# These are NOT committed because they blow past the repository's ~128 MB
+# patchset budget and because every one of them is reproducible from the
+# scripts that ARE committed.  They remain present in the working directory.
+#
+#   data/raw/**        -> re-downloaded by scripts/00_fetch_sources.sh
+#   *.gpkg             -> rebuilt by scripts/01_build_master.py
+#   exports/*.pdf      -> re-rendered by scripts/03_render.py  (~82 MB total)
+#
+# A1/A2/A3 PNG previews and the preview sheet ARE committed so the repository
+# carries a viewable result without the 82 MB of PDFs.
+
+data/raw/*
+!data/raw/reference_uploads/
+!data/raw/reference_uploads/.gitkeep
+*.gpkg
+*.gpkg-wal
+*.gpkg-shm
+exports/*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
