@@ -137,14 +137,6 @@ P1_D = [
 ]
 P1_E = [
  (SRC,
-  "A network that connects storage devices and servers in a data centre is called:",
-  "Data centre में storage devices और servers को जोड़ने वाला network है:",
-  [("PAN", "PAN"), ("CAN", "CAN"), ("SAN", "SAN"), ("MAN", "MAN")],
-  2,
-  ("SAN = Storage Area Network — servers/disks ke liye.", "SAN = Storage Area Network।"),
-  ("PAN body ke paas; CAN campus.", "PAN शरीर के पास; CAN campus।"),
-  {}),
- (SRC,
   "A company's internal network that uses Internet technology but is accessible "
   "only to its employees is called:",
   "Internet technology पर चलने वाला वह internal network जो केवल कर्मचारियों के लिए हो:",

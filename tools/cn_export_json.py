@@ -244,7 +244,8 @@ def main():
 
         # practice originals (practice_new p1..p4, *_X lists)
         new_map = {}
-        for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3", "practice_new_p4"):
+        for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3", "practice_new_p4",
+                   "practice_new_p5"):
             m = load_tuple_module(pn)
             for k in dir(m):
                 if k.startswith("P") and isinstance(getattr(m, k), list):

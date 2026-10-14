@@ -129,3 +129,12 @@ Following `Computer Network/new/README.md` (master spec, from main branch):
 
 Honest limits: not every answer is officially verified (see `Reports/ANSWER_VERIFICATION.md`);
 marking presets are mock rules; near-duplicate review is partial. Never claim 100% without evidence.
+
+## R2 — Wave-5 import + near-dup merge (2026-10-14)
+
+- Bank **801 → 817 questions** (`data/cn_questions.json`, spec §6 schema).
+- Wave-5 source import (`new/` PDFs, 23 files): 636 unique stems deduped; 26 gap-concept questions re-authored as
+  originals (spec §7 — no verbatim copying); `Computer-Network-MCQ.pdf` + `networkmcq.pdf` not parseable (honestly not imported).
+- Near-dup merge review: 15 same-answer candidates → 9 merged, 6 kept (see `Reports/DUPLICATE_AUDIT.md` §3). Exact dups = 0.
+- All 7 practice booklets rebuilt (817Q/82pp), all 7 quiz HTMLs rebuilt (JS check 7/7).
+- Grand totals: `Reports/TOTALS.md`.

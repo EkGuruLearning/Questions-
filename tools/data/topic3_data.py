@@ -1120,21 +1120,6 @@ SECTIONS = [
 # --- PYQ 2011-2026 additions (India-level exams, merged at section level) ---
 
 SEC_C.extend([
-    Q("RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
-      "If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?",
-      "यदि internet पर किसी Class B network की subnet mask 255.255.248.0 हो, तो हर subnet में अधिकतम hosts कितने होंगे?",
-      ["1023", "1022", "1024", "2046"], 3,
-      ("255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 "
-       "= 2046.",
-       "255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 "
-       "= 2046."),
-      ("248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 "
-       "(network और broadcast हटाकर).",
-       "248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 "
-       "(network और broadcast हटाकर)."),
-      {0: ("1023 = 2¹⁰−1 — यहाँ host bits 11 हैं.", "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं."),
-       1: ("1022 = 2¹⁰−2.", "1022 = 2¹⁰−2."),
-       2: ("1024 = 2¹⁰ बिना −2.", "1024 = 2¹⁰ बिना −2.")}),
     Q("RPSC Programmer 2011 Paper-1 (via pyqp.in) + GATE CS 2005",
       "The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?",
       "Class B host के पते को 6-bit subnet number से subnets में बाँटना है. अधिकतम subnets और हर subnet में अधिकतम hosts कितने होंगे?",

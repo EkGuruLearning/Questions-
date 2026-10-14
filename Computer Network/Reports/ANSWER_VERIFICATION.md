@@ -5,7 +5,7 @@ This report is deliberately conservative (spec §10): **"answer_checked" means t
 | verification_status | count | meaning |
 |---|---|---|
 | paper_and_key_checked | 26 | RPSC Programmer 2024 Paper-1 items whose paper + official key are in `Past Papers/` |
-| answer_checked | 775 | solved + cross-checked in the curation pipeline; official key not attached |
+| answer_checked | 791 | solved + cross-checked in the curation pipeline; official key not attached |
 | pending_review | 0 | none outstanding at export time |
 
 ## Evidence files present

@@ -5,41 +5,41 @@
  "generated": "2026-10-14",
  "spec": "Computer Network/new/README.md (master execution prompt)",
  "counts": {
-  "total": 801,
+  "total": 817,
   "per_topic": {
    "T01": 150,
    "T02": 100,
-   "T03": 121,
-   "T04": 53,
-   "T05": 66,
-   "T06": 239,
-   "T07": 72
+   "T03": 122,
+   "T04": 52,
+   "T05": 73,
+   "T06": 247,
+   "T07": 73
   },
   "by_source_type": {
    "textbook_paraphrase": 42,
-   "repository_internal": 470,
-   "claimed_pyq_unverified": 88,
-   "original_practice": 175,
+   "repository_internal": 466,
+   "claimed_pyq_unverified": 86,
+   "original_practice": 197,
    "verified_official_pyq": 26
   },
   "by_difficulty": {
-   "medium": 460,
-   "hard": 254,
-   "easy": 87
+   "medium": 475,
+   "hard": 256,
+   "easy": 86
   },
   "by_style": {
-   "concept": 696,
-   "numerical": 65,
-   "statement": 22,
+   "concept": 714,
+   "numerical": 64,
+   "statement": 21,
    "scenario": 14,
    "match": 4
   },
   "by_verification": {
-   "answer_checked": 775,
+   "answer_checked": 791,
    "paper_and_key_checked": 26
   },
   "exact_duplicate_groups": 0,
-  "near_duplicate_candidates": 357
+  "near_duplicate_candidates": 346
  },
  "questions": [
   {
@@ -5854,65 +5854,6 @@
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
-   "stem_en": "The first network was:",
-   "stem_hi": "सबसे पहला network था:",
-   "options_en": [
-    "CNNET",
-    "NSFNET",
-    "ASAPNET",
-    "ARPANET"
-   ],
-   "options_hi": [
-    "CNNET",
-    "NSFNET",
-    "ASAPNET",
-    "ARPANET"
-   ],
-   "correct_option": "D",
-   "explanation_en": "The first network was ARPANET (1969), created by ARPA of the U.S. Department of Defense. NSFNET (1986) came later as a backbone.",
-   "explanation_hi": "सबसे पहला network ARPANET (1969) था, जिसे ARPA of U.S. Department of Defense ने बनाया था। NSFNET (1986) बाद में एक backbone के रूप में aaya था।",
-   "nukte_en": "First network = ARPANET (1969). NSFNET = 1986 (backbone).",
-   "nukte_hi": "First network = ARPANET (1969). NSFNET = 1986 (backbone).",
-   "why_wrong": {
-    "A": [
-     "CNNET is not a real/standard network.",
-     "CNNET koi real/standard network nahi hai।"
-    ],
-    "B": [
-     "NSFNET came later (1986), it was not the first network.",
-     "NSFNET baad mein aaya (1986), ye pehla network nahi tha।"
-    ],
-    "C": [
-     "ASAPNET is not a real/standard network.",
-     "ASAPNET koi real/standard network nahi hai।"
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Repo: CN Topic Test-01 (UNIT TEST-1), Q34",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Introduction of Data Communication"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T01-0101",
-   "topic_id": "T01",
-   "topic": "Introduction of Data Communication",
-   "subtopic": "Section F - Network History (ARPANET to Today's Network)",
    "stem_en": "In the original ARPANET, _______ were directly connected together.",
    "stem_hi": "Original ARPANET में, _______ आपस में directly connected the।",
    "options_en": [
@@ -5968,7 +5909,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0102",
+   "id": "CN-T01-0101",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6027,7 +5968,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0103",
+   "id": "CN-T01-0102",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6086,7 +6027,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0104",
+   "id": "CN-T01-0103",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6145,7 +6086,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0105",
+   "id": "CN-T01-0104",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6204,7 +6145,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0106",
+   "id": "CN-T01-0105",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -6263,7 +6204,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0107",
+   "id": "CN-T01-0106",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6322,7 +6263,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0108",
+   "id": "CN-T01-0107",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6381,7 +6322,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0109",
+   "id": "CN-T01-0108",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6440,7 +6381,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0110",
+   "id": "CN-T01-0109",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6499,7 +6440,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0111",
+   "id": "CN-T01-0110",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6558,7 +6499,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0112",
+   "id": "CN-T01-0111",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6617,7 +6558,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0113",
+   "id": "CN-T01-0112",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6677,7 +6618,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0114",
+   "id": "CN-T01-0113",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6736,7 +6677,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0115",
+   "id": "CN-T01-0114",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6795,7 +6736,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0116",
+   "id": "CN-T01-0115",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6855,7 +6796,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0117",
+   "id": "CN-T01-0116",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6915,7 +6856,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0118",
+   "id": "CN-T01-0117",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -6974,7 +6915,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0119",
+   "id": "CN-T01-0118",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7034,7 +6975,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0120",
+   "id": "CN-T01-0119",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7093,7 +7034,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0121",
+   "id": "CN-T01-0120",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7150,7 +7091,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0122",
+   "id": "CN-T01-0121",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7209,7 +7150,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0123",
+   "id": "CN-T01-0122",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -7266,7 +7207,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0124",
+   "id": "CN-T01-0123",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7314,7 +7255,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0125",
+   "id": "CN-T01-0124",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7361,7 +7302,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0126",
+   "id": "CN-T01-0125",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7408,7 +7349,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0127",
+   "id": "CN-T01-0126",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section A - DC Components & Protocol Basics (Message, Sender, Receiver, Transmission Medium, Protocol)",
@@ -7461,7 +7402,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0128",
+   "id": "CN-T01-0127",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7508,7 +7449,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0129",
+   "id": "CN-T01-0128",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7555,7 +7496,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0130",
+   "id": "CN-T01-0129",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7602,7 +7543,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0131",
+   "id": "CN-T01-0130",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section B - Characteristics (Delivery, Accuracy, Timeliness, Jitter) & Criteria (Performance, Reliability, Security)",
@@ -7655,7 +7596,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0132",
+   "id": "CN-T01-0131",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7703,7 +7644,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0133",
+   "id": "CN-T01-0132",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7750,7 +7691,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0134",
+   "id": "CN-T01-0133",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section C - Transmission Mode (Direction of Data Flow: Simplex, Half-Duplex, Full-Duplex)",
@@ -7797,7 +7738,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0135",
+   "id": "CN-T01-0134",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7845,7 +7786,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0136",
+   "id": "CN-T01-0135",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7892,7 +7833,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0137",
+   "id": "CN-T01-0136",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7939,7 +7880,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0138",
+   "id": "CN-T01-0137",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -7986,7 +7927,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0139",
+   "id": "CN-T01-0138",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section D - Network Structure / Topology (Physical: Mesh, Star, Bus, Ring, Others; Logical: IEEE 802)",
@@ -8034,54 +7975,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0140",
-   "topic_id": "T01",
-   "topic": "Introduction of Data Communication",
-   "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
-   "stem_en": "A network that connects storage devices and servers in a data centre is called:",
-   "stem_hi": "Data centre में storage devices और servers को जोड़ने वाला network है:",
-   "options_en": [
-    "PAN",
-    "CAN",
-    "SAN",
-    "MAN"
-   ],
-   "options_hi": [
-    "PAN",
-    "CAN",
-    "SAN",
-    "MAN"
-   ],
-   "correct_option": "C",
-   "explanation_en": "SAN = Storage Area Network — servers/disks ke liye.",
-   "explanation_hi": "SAN = Storage Area Network।",
-   "nukte_en": "PAN body ke paas; CAN campus.",
-   "nukte_hi": "PAN शरीर के पास; CAN campus।",
-   "why_wrong": {},
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer",
-    "Practice Set"
-   ],
-   "source_type": "original_practice",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Practice — original (textbook-based)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN;"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T01-0141",
+   "id": "CN-T01-0139",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8128,7 +8022,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0142",
+   "id": "CN-T01-0140",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8175,7 +8069,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0143",
+   "id": "CN-T01-0141",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8222,7 +8116,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0144",
+   "id": "CN-T01-0142",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
@@ -8269,7 +8163,54 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0145",
+   "id": "CN-T01-0143",
+   "topic_id": "T01",
+   "topic": "Introduction of Data Communication",
+   "subtopic": "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN; Internet, Intranet, Extranet; Point-to-Point, Multipoint; Client-Server, P2P)",
+   "stem_en": "In a ______ network, the communication channel is shared by all the machines on the network:",
+   "stem_hi": "______ network में communication channel network की सभी machines में साझा होता है:",
+   "options_en": [
+    "Broadcast (multipoint) network",
+    "Point-to-point network",
+    "Circuit-switched WAN",
+    "Extranet"
+   ],
+   "options_hi": [
+    "Broadcast (multipoint) network",
+    "Point-to-point network",
+    "Circuit-switched WAN",
+    "Extranet"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Broadcast/multipoint network mein ek shared channel sab hosts tak pahunchta hai (jaise bus/Ethernet) — point-to-point mein sirf do ends hote hain.",
+   "explanation_hi": "Broadcast/multipoint network में एक shared channel सभी hosts तक जाता है; point-to-point में सिर्फ दो ends।",
+   "nukte_en": "Yaad rakho: point-to-point = dedicated link; multipoint/broadcast = shared medium.",
+   "nukte_hi": "point-to-point = dedicated link; multipoint/broadcast = shared medium।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section E - Types of Networks (LAN, MAN, WAN, PAN, CAN, SAN;"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T01-0144",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8316,7 +8257,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0146",
+   "id": "CN-T01-0145",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8363,7 +8304,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0147",
+   "id": "CN-T01-0146",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section F - Network History (ARPANET to Today's Network)",
@@ -8410,7 +8351,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0148",
+   "id": "CN-T01-0147",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -8457,7 +8398,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0149",
+   "id": "CN-T01-0148",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -8505,7 +8446,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T01-0150",
+   "id": "CN-T01-0149",
    "topic_id": "T01",
    "topic": "Introduction of Data Communication",
    "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
@@ -8528,6 +8469,53 @@
    "explanation_hi": "ATM cell = 53 bytes = 48 payload + 5 header।",
    "nukte_en": "64 = Ethernet ka minimum frame; 1500 = Ethernet ka maximum payload — ye ATM ke cell size nahi.",
    "nukte_hi": "64 = Ethernet minimum frame; 1500 = Ethernet maximum payload।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section G - General Network Basics (WWW, E-mail, Protocols, "
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T01-0150",
+   "topic_id": "T01",
+   "topic": "Introduction of Data Communication",
+   "subtopic": "Section G - General Network Basics (WWW, E-mail, Protocols, Servers, Switching - from repo intro tests)",
+   "stem_en": "In ______ switching, the resources needed for communication are reserved for the duration of the session:",
+   "stem_hi": "______ switching में, संचार के लिए आवश्यक संसाधन पूरे session की अवधि के लिए आरक्षित रहते हैं:",
+   "options_en": [
+    "Circuit",
+    "Packet",
+    "Message",
+    "Cell"
+   ],
+   "options_hi": [
+    "Circuit",
+    "Packet",
+    "Message",
+    "Cell"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Circuit switching: connection ke pehle path + bandwidth reserve hoti hai (telephone jaisa); packet switching mein koi reservation nahi.",
+   "explanation_hi": "Circuit switching में path + bandwidth पहले से आरक्षित; packet switching में कोई reservation नहीं।",
+   "nukte_en": "Reservation = circuit; store-and-forward = packet/message.",
+   "nukte_hi": "Reservation = circuit; store-and-forward = packet/message।",
    "why_wrong": {},
    "question_style": "concept",
    "difficulty": "medium",
@@ -12480,83 +12468,6 @@
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
-   "stem_en": "Which layer is responsible for encryption?",
-   "stem_hi": "Encryption के लिए कौन-सी layer जिम्मेदार है?",
-   "options_en": [
-    "Session",
-    "Presentation",
-    "Application",
-    "Transport"
-   ],
-   "options_hi": [
-    "Session",
-    "Presentation",
-    "Application",
-    "Transport"
-   ],
-   "correct_option": "B",
-   "explanation_en": "Encryption/decryption of data for presentation is a Presentation layer responsibility (layer 6).",
-   "explanation_hi": "Presentation के लिए data की encryption/decryption Presentation layer (layer 6) की जिम्मेदारी है।",
-   "nukte_en": "Encryption + Compression + Translation = Presentation (L6).",
-   "nukte_hi": "Encryption + Compression + Translation = Presentation (L6)।",
-   "why_wrong": {
-    "A": [
-     [
-      "Session handles dialogs/checkpoints.",
-      "Session dialogs/checkpoints देखती है।"
-     ],
-     [
-      "Session handles dialogs/checkpoints.",
-      "Session dialogs/checkpoints देखती है।"
-     ]
-    ],
-    "C": [
-     [
-      "Application may REQUEST encryption, but the presentation formatting is done at layer 6.",
-      "Application encryption माँग सकती है, पर formatting layer 6 करती है।"
-     ],
-     [
-      "Application may REQUEST encryption, but the presentation formatting is done at layer 6.",
-      "Application encryption माँग सकती है, पर formatting layer 6 करती है।"
-     ]
-    ],
-    "D": [
-     [
-      "Transport ensures delivery, not data secrecy.",
-      "Transport delivery सुनिश्चित करती है।"
-     ],
-     [
-      "Transport ensures delivery, not data secrecy.",
-      "Transport delivery सुनिश्चित करती है।"
-     ]
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "easy",
-   "exam_tags": [
-    "SSC Computer Awareness",
-    "RSMSSB Informatics Assistant",
-    "JNV TAT"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Repo: BCI_SCI Subject Test-7 (BCI/SCI Batch)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section B"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T02-0053",
-   "topic_id": "T02",
-   "topic": "Network Models (OSI & TCP/IP)",
-   "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
    "stem_en": "Which OSI layer ensures interoperability between different data formats?",
    "stem_hi": "कौन-सी OSI layer अलग-अलग data formats के बीच interoperability सुनिश्चित करती है?",
    "options_en": [
@@ -12630,7 +12541,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0054",
+   "id": "CN-T02-0053",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -12707,7 +12618,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0055",
+   "id": "CN-T02-0054",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -12784,7 +12695,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0056",
+   "id": "CN-T02-0055",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -12861,7 +12772,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0057",
+   "id": "CN-T02-0056",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -12936,7 +12847,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0058",
+   "id": "CN-T02-0057",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13013,7 +12924,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0059",
+   "id": "CN-T02-0058",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13090,7 +13001,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0060",
+   "id": "CN-T02-0059",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13167,7 +13078,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0061",
+   "id": "CN-T02-0060",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13245,7 +13156,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0062",
+   "id": "CN-T02-0061",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13320,7 +13231,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0063",
+   "id": "CN-T02-0062",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -13397,7 +13308,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0064",
+   "id": "CN-T02-0063",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13475,7 +13386,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0065",
+   "id": "CN-T02-0064",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13552,7 +13463,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0066",
+   "id": "CN-T02-0065",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13629,7 +13540,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0067",
+   "id": "CN-T02-0066",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13707,7 +13618,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0068",
+   "id": "CN-T02-0067",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13784,7 +13695,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0069",
+   "id": "CN-T02-0068",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13859,7 +13770,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0070",
+   "id": "CN-T02-0069",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -13934,7 +13845,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0071",
+   "id": "CN-T02-0070",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -14009,7 +13920,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0072",
+   "id": "CN-T02-0071",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -14084,7 +13995,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0073",
+   "id": "CN-T02-0072",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -14161,7 +14072,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0074",
+   "id": "CN-T02-0073",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -14238,7 +14149,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0075",
+   "id": "CN-T02-0074",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -14313,7 +14224,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0076",
+   "id": "CN-T02-0075",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14390,7 +14301,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0077",
+   "id": "CN-T02-0076",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14467,7 +14378,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0078",
+   "id": "CN-T02-0077",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14544,7 +14455,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0079",
+   "id": "CN-T02-0078",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14622,7 +14533,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0080",
+   "id": "CN-T02-0079",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14699,7 +14610,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0081",
+   "id": "CN-T02-0080",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14776,7 +14687,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0082",
+   "id": "CN-T02-0081",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -14853,7 +14764,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0083",
+   "id": "CN-T02-0082",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section A — OSI Model: Basics, Layer Order & Support Layers",
@@ -14900,7 +14811,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0084",
+   "id": "CN-T02-0083",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section A — OSI Model: Basics, Layer Order & Support Layers",
@@ -14947,7 +14858,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0085",
+   "id": "CN-T02-0084",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section A — OSI Model: Basics, Layer Order & Support Layers",
@@ -14994,7 +14905,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0086",
+   "id": "CN-T02-0085",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15041,7 +14952,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0087",
+   "id": "CN-T02-0086",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15088,7 +14999,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0088",
+   "id": "CN-T02-0087",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15135,7 +15046,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0089",
+   "id": "CN-T02-0088",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15182,7 +15093,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0090",
+   "id": "CN-T02-0089",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15229,7 +15140,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0091",
+   "id": "CN-T02-0090",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15276,7 +15187,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0092",
+   "id": "CN-T02-0091",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section B — OSI Layer Functions (Layer 1 → Layer 7)",
@@ -15323,7 +15234,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0093",
+   "id": "CN-T02-0092",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -15370,7 +15281,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0094",
+   "id": "CN-T02-0093",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -15417,7 +15328,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0095",
+   "id": "CN-T02-0094",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -15464,7 +15375,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0096",
+   "id": "CN-T02-0095",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section C — TCP/IP Model",
@@ -15511,7 +15422,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0097",
+   "id": "CN-T02-0096",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -15559,7 +15470,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0098",
+   "id": "CN-T02-0097",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -15606,7 +15517,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0099",
+   "id": "CN-T02-0098",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -15653,7 +15564,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T02-0100",
+   "id": "CN-T02-0099",
    "topic_id": "T02",
    "topic": "Network Models (OSI & TCP/IP)",
    "subtopic": "Section D — Comparison, Encapsulation & PDUs",
@@ -15676,6 +15587,53 @@
    "explanation_hi": "ऊपर से नीचे: application data → transport → network → data-link; receiver पर उल्टे क्रम में।",
    "nukte_en": "Encapsulation = har layer apna header add karti hai; decapsulation = reverse.",
    "nukte_hi": "Encapsulation = हर layer header जोड़ती है; decapsulation = उल्टा।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section D"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T02-0100",
+   "topic_id": "T02",
+   "topic": "Network Models (OSI & TCP/IP)",
+   "subtopic": "Section D — Comparison, Encapsulation & PDUs",
+   "stem_en": "The list of protocols used by a system — one protocol per layer — is called a:",
+   "stem_hi": "किसी system द्वारा प्रयोग की जाने वाली protocols की सूची — हर layer पर एक protocol — कहलाती है:",
+   "options_en": [
+    "Protocol stack (protocol suite)",
+    "Protocol syntax",
+    "Encapsulation table",
+    "Address map"
+   ],
+   "options_hi": [
+    "Protocol stack (protocol suite)",
+    "Protocol syntax",
+    "Encapsulation table",
+    "Address map"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Protocol stack = layered list (jaise TCP/IP stack: IP, TCP, HTTP...). Har layer apna protocol chunta hai — 'suite' bhi kehte hain.",
+   "explanation_hi": "Protocol stack = layer-wise सूची (जैसे TCP/IP stack)।",
+   "nukte_en": "Syntax = message ka format; stack = layers ka protocol set.",
+   "nukte_hi": "Syntax = format; stack = layers का protocol set।",
    "why_wrong": {},
    "question_style": "concept",
    "difficulty": "medium",
@@ -20705,81 +20663,6 @@
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
-   "stem_en": "If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum number of hosts per subnet?",
-   "stem_hi": "यदि internet पर किसी Class B network की subnet mask 255.255.248.0 हो, तो हर subnet में अधिकतम hosts कितने होंगे?",
-   "options_en": [
-    "1023",
-    "1022",
-    "1024",
-    "2046"
-   ],
-   "options_hi": [
-    "1023",
-    "1022",
-    "1024",
-    "2046"
-   ],
-   "correct_option": "D",
-   "explanation_en": "255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 = 2046.",
-   "explanation_hi": "255.255.248.0 = /21 — यानी host bits = 32 − 21 = 11. अधिकतम hosts = 2¹¹ − 2 = 2046.",
-   "nukte_en": "248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 (network और broadcast हटाकर).",
-   "nukte_hi": "248 = 11111000 → तीसरे octet में 5 subnet bits. हमेशा 2^hostbits − 2 (network और broadcast हटाकर).",
-   "why_wrong": {
-    "A": [
-     [
-      "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं.",
-      "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं."
-     ],
-     [
-      "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं.",
-      "1023 = 2¹⁰−1 — यहाँ host bits 11 हैं."
-     ]
-    ],
-    "B": [
-     [
-      "1022 = 2¹⁰−2.",
-      "1022 = 2¹⁰−2."
-     ],
-     [
-      "1022 = 2¹⁰−2.",
-      "1022 = 2¹⁰−2."
-     ]
-    ],
-    "C": [
-     [
-      "1024 = 2¹⁰ बिना −2.",
-      "1024 = 2¹⁰ बिना −2."
-     ],
-     [
-      "1024 = 2¹⁰ बिना −2.",
-      "1024 = 2¹⁰ बिना −2."
-     ]
-    ]
-   },
-   "question_style": "numerical",
-   "difficulty": "hard",
-   "exam_tags": [
-    "RPSC Programmer"
-   ],
-   "source_type": "claimed_pyq_unverified",
-   "exam_name": "RPSC",
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "RPSC Programmer 2024 Paper-1 (via Suraku Academy official-key solutions)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section C"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T03-0068",
-   "topic_id": "T03",
-   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
-   "subtopic": "Section C — Subnetting & CIDR",
    "stem_en": "The address of a Class B host is to be split into subnets with a 6-bit subnet number. What is the maximum number of subnets and the maximum number of hosts in each subnet?",
    "stem_hi": "Class B host के पते को 6-bit subnet number से subnets में बाँटना है. अधिकतम subnets और हर subnet में अधिकतम hosts कितने होंगे?",
    "options_en": [
@@ -20851,7 +20734,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0069",
+   "id": "CN-T03-0068",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -20895,7 +20778,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0070",
+   "id": "CN-T03-0069",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -20939,7 +20822,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0071",
+   "id": "CN-T03-0070",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21017,7 +20900,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0072",
+   "id": "CN-T03-0071",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21095,7 +20978,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0073",
+   "id": "CN-T03-0072",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21173,7 +21056,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0074",
+   "id": "CN-T03-0073",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21251,7 +21134,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0075",
+   "id": "CN-T03-0074",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21328,7 +21211,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0076",
+   "id": "CN-T03-0075",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21405,7 +21288,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0077",
+   "id": "CN-T03-0076",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21482,7 +21365,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0078",
+   "id": "CN-T03-0077",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21559,7 +21442,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0079",
+   "id": "CN-T03-0078",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -21634,7 +21517,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0080",
+   "id": "CN-T03-0079",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -21711,7 +21594,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0081",
+   "id": "CN-T03-0080",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -21788,7 +21671,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0082",
+   "id": "CN-T03-0081",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -21865,7 +21748,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0083",
+   "id": "CN-T03-0082",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -21942,7 +21825,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0084",
+   "id": "CN-T03-0083",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22019,7 +21902,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0085",
+   "id": "CN-T03-0084",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22096,7 +21979,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0086",
+   "id": "CN-T03-0085",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22173,7 +22056,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0087",
+   "id": "CN-T03-0086",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22250,7 +22133,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0088",
+   "id": "CN-T03-0087",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22325,7 +22208,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0089",
+   "id": "CN-T03-0088",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22400,7 +22283,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0090",
+   "id": "CN-T03-0089",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22477,7 +22360,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0091",
+   "id": "CN-T03-0090",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22552,7 +22435,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0092",
+   "id": "CN-T03-0091",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -22627,7 +22510,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0093",
+   "id": "CN-T03-0092",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22674,7 +22557,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0094",
+   "id": "CN-T03-0093",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22722,54 +22605,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0095",
-   "topic_id": "T03",
-   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
-   "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
-   "stem_en": "The destination MAC address FF-FF-FF-FF-FF-FF represents:",
-   "stem_hi": "Destination MAC FF-FF-FF-FF-FF-FF दर्शाता है:",
-   "options_en": [
-    "Unicast",
-    "Multicast",
-    "Broadcast",
-    "Anycast"
-   ],
-   "options_hi": [
-    "Unicast",
-    "Multicast",
-    "Broadcast",
-    "Anycast"
-   ],
-   "correct_option": "C",
-   "explanation_en": "Sab 1s wala MAC = broadcast (LAN ke sab nodes).",
-   "explanation_hi": "सब 1s वाला MAC = broadcast।",
-   "nukte_en": "Multicast ke MAC ke pehle byte ka ek bit alag hota hai.",
-   "nukte_hi": "Multicast में पहले byte का एक bit अलग।",
-   "why_wrong": {},
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer",
-    "Practice Set"
-   ],
-   "source_type": "original_practice",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Practice — original (textbook-based)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section A"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T03-0096",
+   "id": "CN-T03-0094",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22816,7 +22652,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0097",
+   "id": "CN-T03-0095",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section A — Address Levels & MAC Address (Physical Address)",
@@ -22863,7 +22699,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0098",
+   "id": "CN-T03-0096",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -22910,7 +22746,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0099",
+   "id": "CN-T03-0097",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -22958,7 +22794,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0100",
+   "id": "CN-T03-0098",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23005,7 +22841,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0101",
+   "id": "CN-T03-0099",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23052,7 +22888,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0102",
+   "id": "CN-T03-0100",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23100,7 +22936,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0103",
+   "id": "CN-T03-0101",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section B — IPv4 Addressing (Format, Classes & Special Addresses)",
@@ -23147,7 +22983,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0104",
+   "id": "CN-T03-0102",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23195,7 +23031,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0105",
+   "id": "CN-T03-0103",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23243,7 +23079,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0106",
+   "id": "CN-T03-0104",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23290,7 +23126,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0107",
+   "id": "CN-T03-0105",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23337,7 +23173,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0108",
+   "id": "CN-T03-0106",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23385,7 +23221,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0109",
+   "id": "CN-T03-0107",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23433,7 +23269,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0110",
+   "id": "CN-T03-0108",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23481,7 +23317,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0111",
+   "id": "CN-T03-0109",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23528,7 +23364,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0112",
+   "id": "CN-T03-0110",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23582,7 +23418,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0113",
+   "id": "CN-T03-0111",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section C — Subnetting & CIDR",
@@ -23627,7 +23463,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0114",
+   "id": "CN-T03-0112",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23675,7 +23511,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0115",
+   "id": "CN-T03-0113",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23723,7 +23559,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0116",
+   "id": "CN-T03-0114",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23770,7 +23606,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0117",
+   "id": "CN-T03-0115",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section D — IPv6 Addressing",
@@ -23817,7 +23653,149 @@
    "last_reviewed": "2026-10-14"
   },
   {
+   "id": "CN-T03-0116",
+   "topic_id": "T03",
+   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
+   "subtopic": "Section D — IPv6 Addressing",
+   "stem_en": "In IPv6, the field that determines the lifetime of a datagram (the counterpart of IPv4's TTL) is called:",
+   "stem_hi": "IPv6 में, datagram का जीवन-काल तय करने वाला field (IPv4 के TTL के समकक्ष) कहलाता है:",
+   "options_en": [
+    "Hop Limit",
+    "Flow Label",
+    "Next Header",
+    "Payload Length"
+   ],
+   "options_hi": [
+    "Hop Limit",
+    "Flow Label",
+    "Next Header",
+    "Payload Length"
+   ],
+   "correct_option": "A",
+   "explanation_en": "IPv6 Hop Limit = har hop par 1 ghat-ta hai (TTL jaisa); Flow Label = QoS flow pehchaan; Next Header = agla extension/upper-layer header; Payload Length = data ki lambai.",
+   "explanation_hi": "IPv6 Hop Limit = हर hop पर 1 घटता है (TTL जैसा)। बाकी fields अन्य कामों के लिए।",
+   "nukte_en": "IPv6 ke 8 base-header fields: Version, Traffic Class, Flow Label, Payload Length, Next Header, Hop Limit, Src, Dst.",
+   "nukte_hi": "IPv6 के base-header fields: Version, Traffic Class, Flow Label, Payload Length, Next Header, Hop Limit, Src, Dst।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section D"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T03-0117",
+   "topic_id": "T03",
+   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
+   "subtopic": "Section D — IPv6 Addressing",
+   "stem_en": "In the dual-stack approach to IPv6 migration, a host or router runs:",
+   "stem_hi": "IPv6 migration के dual-stack तरीके में, host या router चलाता है:",
+   "options_en": [
+    "Both IPv4 and IPv6 protocols simultaneously",
+    "Only IPv6 with IPv4 tunnels",
+    "Only IPv4 with IPv6 headers",
+    "Neither — only translation"
+   ],
+   "options_hi": [
+    "IPv4 और IPv6 दोनों protocols साथ-साथ",
+    "सिर्फ IPv6, IPv4 tunnels के साथ",
+    "सिर्फ IPv4, IPv6 headers के साथ",
+    "कोई नहीं — सिर्फ translation"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Dual stack: dono protocols ek saath — jo destination IPv4 samajhe woh IPv4 se, jo IPv6 woh IPv6 se. Tunneling/translation alag strategies hain.",
+   "explanation_hi": "Dual stack: दोनों protocols साथ; tunneling/translation अलग रणनीतियाँ हैं।",
+   "nukte_en": "IPv6 migration ke 3 tarika: dual stack, tunneling, translation.",
+   "nukte_hi": "IPv6 migration के 3 तरीके: dual stack, tunneling, translation।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section D"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
    "id": "CN-T03-0118",
+   "topic_id": "T03",
+   "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
+   "subtopic": "Section D — IPv6 Addressing",
+   "stem_en": "Teredo is an IPv6 transition technique that provides IPv6 connectivity to hosts behind NAT by:",
+   "stem_hi": "Teredo एक IPv6 transition तकनीक है जो NAT के पीछे के hosts को IPv6 connectivity देती है:",
+   "options_en": [
+    "Encapsulating IPv6 packets inside UDP datagrams over IPv4",
+    "Translating every IPv6 header to IPv4",
+    "Reserving public IPv6 blocks per host",
+    "Broadcasting IPv6 router solicitations"
+   ],
+   "options_hi": [
+    "IPv6 packets को IPv4 पर UDP datagrams के अंदर encapsulate करके",
+    "हर IPv6 header को IPv4 में बदलकर",
+    "हर host के लिए सार्वजनिक IPv6 blocks आरक्षित करके",
+    "IPv6 router solicitations broadcast करके"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Teredo (RFC 4380): IPv6-in-UDP-over-IPv4 tunneling — NAT traversal ke liye UDP ports use hote hain. 6to4 alag hai (IPv6-in-IPv4, proto 41).",
+   "explanation_hi": "Teredo (RFC 4380): IPv6-in-UDP-over-IPv4 tunneling — NAT traversal हेतु UDP ports।",
+   "nukte_en": "Teredo = UDP; 6to4 = IPv4 protocol 41; dual stack = dono protocols native.",
+   "nukte_hi": "Teredo = UDP; 6to4 = IPv4 protocol 41; dual stack = दोनों native।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section D"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T03-0119",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -23864,7 +23842,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0119",
+   "id": "CN-T03-0120",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -23911,7 +23889,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0120",
+   "id": "CN-T03-0121",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -23958,7 +23936,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T03-0121",
+   "id": "CN-T03-0122",
    "topic_id": "T03",
    "topic": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
    "subtopic": "Section E — Port Numbers, DNS/URL & Address Resolution (ARP)",
@@ -25920,84 +25898,6 @@
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section C — Router / Brouter",
-   "stem_en": "Consider the statements about an IP router: I. A router does not modify the IP packets during forwarding. II. It is not necessary for a router to implement any routing protocol. III. A router should reassemble IP fragments if the MTU of the outgoing link is larger than the incoming fragment. Which is correct?",
-   "stem_hi": "IP router के बारे में कथन देखिए: I. Forwarding के दौरान router IP packets को नहीं बदलता। II. Router के लिए कोई routing protocol लागू करना आवश्यक नहीं है। III. यदि outgoing link का MTU आने वाले fragment से बड़ा हो तो router को IP fragments फिर से जोड़ने चाहिए। कौन-सा सही है?",
-   "options_en": [
-    "I and II only",
-    "I only",
-    "II and III only",
-    "II only"
-   ],
-   "options_hi": [
-    "I and II only",
-    "I only",
-    "II and III only",
-    "II only"
-   ],
-   "correct_option": "D",
-   "explanation_en": "Only II is true: a router can use static routes (no routing protocol). I is false — the router decrements TTL and updates the checksum. III is false — reassembly is done only by the destination, not routers.",
-   "explanation_hi": "केवल II सही है: router static routes उपयोग कर सकता है (कोई routing protocol नहीं)। I गलत है — router TTL घटाता है और checksum अपडेट करता है। III गलत है — reassembly केवल destination करता है, routers नहीं।",
-   "nukte_en": "Advanced but classic: routers modify IP header (TTL/checksum), may run static-only, never reassemble fragments (destination does).",
-   "nukte_hi": "उन्नत लेकिन classic: router IP header बदलता है (TTL/checksum), केवल static चला सकता है, fragments कभी नहीं जोड़ता (destination जोड़ता है)।",
-   "why_wrong": {
-    "A": [
-     [
-      "Statement I is false — the router DOES modify the IP header (TTL, checksum). (Internal.)",
-      ""
-     ],
-     [
-      "Statement I is false — the router DOES modify the IP header (TTL, checksum). (Internal.)",
-      ""
-     ]
-    ],
-    "B": [
-     [
-      "Statement I is false. (Internal.)",
-      ""
-     ],
-     [
-      "Statement I is false. (Internal.)",
-      ""
-     ]
-    ],
-    "C": [
-     [
-      "Statement III is false — routers do not reassemble fragments. (Internal.)",
-      ""
-     ],
-     [
-      "Statement III is false — routers do not reassemble fragments. (Internal.)",
-      ""
-     ]
-    ]
-   },
-   "question_style": "statement",
-   "difficulty": "hard",
-   "exam_tags": [
-    "GATE CS",
-    "UGC-NET 087",
-    "RPSC Programmer",
-    "RPSC ACP/DD"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Unit Test-4 Solution (OCR), p15",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section C"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T04-0027",
-   "topic_id": "T04",
-   "topic": "Networking Devices",
-   "subtopic": "Section C — Router / Brouter",
    "stem_en": "Which device creates a separate broadcast domain?",
    "stem_hi": "कौन-सा device अलग broadcast domain बनाता है?",
    "options_en": [
@@ -26071,7 +25971,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0028",
+   "id": "CN-T04-0027",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26148,7 +26048,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0029",
+   "id": "CN-T04-0028",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26225,7 +26125,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0030",
+   "id": "CN-T04-0029",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26300,7 +26200,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0031",
+   "id": "CN-T04-0030",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26377,7 +26277,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0032",
+   "id": "CN-T04-0031",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26454,7 +26354,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0033",
+   "id": "CN-T04-0032",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26531,7 +26431,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0034",
+   "id": "CN-T04-0033",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26608,7 +26508,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0035",
+   "id": "CN-T04-0034",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26685,7 +26585,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0036",
+   "id": "CN-T04-0035",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26762,7 +26662,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0037",
+   "id": "CN-T04-0036",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26840,7 +26740,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0038",
+   "id": "CN-T04-0037",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -26918,7 +26818,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0039",
+   "id": "CN-T04-0038",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)",
@@ -26966,7 +26866,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0040",
+   "id": "CN-T04-0039",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)",
@@ -27013,7 +26913,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0041",
+   "id": "CN-T04-0040",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section A — Physical-Layer Devices (Hub, Repeater, Modem & Simple Devices)",
@@ -27061,7 +26961,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0042",
+   "id": "CN-T04-0041",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section B — Switch / NIC / Bridge",
@@ -27108,7 +27008,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0043",
+   "id": "CN-T04-0042",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section B — Switch / NIC / Bridge",
@@ -27155,7 +27055,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0044",
+   "id": "CN-T04-0043",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section B — Switch / NIC / Bridge",
@@ -27203,7 +27103,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0045",
+   "id": "CN-T04-0044",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section B — Switch / NIC / Bridge",
@@ -27250,7 +27150,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0046",
+   "id": "CN-T04-0045",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section B — Switch / NIC / Bridge",
@@ -27295,7 +27195,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0047",
+   "id": "CN-T04-0046",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section C — Router / Brouter",
@@ -27343,7 +27243,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0048",
+   "id": "CN-T04-0047",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section C — Router / Brouter",
@@ -27390,7 +27290,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0049",
+   "id": "CN-T04-0048",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section C — Router / Brouter",
@@ -27437,7 +27337,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0050",
+   "id": "CN-T04-0049",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -27484,7 +27384,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0051",
+   "id": "CN-T04-0050",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -27531,7 +27431,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0052",
+   "id": "CN-T04-0051",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -27578,7 +27478,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T04-0053",
+   "id": "CN-T04-0052",
    "topic_id": "T04",
    "topic": "Networking Devices",
    "subtopic": "Section D — Gateway, Firewall & NAT Devices",
@@ -28785,84 +28685,6 @@
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
-   "stem_en": "An analog signal carries 4 bits per signal unit. If 1000 signal units are sent per second, what are the baud rate and bit rate?",
-   "stem_hi": "एक analog signal प्रति signal unit 4 bits ले जाती है। यदि प्रति सेकंड 1000 signal units भेजे जाएँ, तो baud rate और bit rate क्या होंगे?",
-   "options_en": [
-    "1000 bauds/sec, 4000 bps",
-    "1000 bauds/sec, 500 bps",
-    "4000 bauds/sec, 1000 bps",
-    "2000 bauds/sec, 1000 bps"
-   ],
-   "options_hi": [
-    "1000 bauds/sec, 4000 bps",
-    "1000 bauds/sec, 500 bps",
-    "4000 bauds/sec, 1000 bps",
-    "2000 bauds/sec, 1000 bps"
-   ],
-   "correct_option": "A",
-   "explanation_en": "Baud rate = signal units per second = 1000 bauds/sec. Bit rate = baud × bits per unit = 1000 × 4 = 4000 bps.",
-   "explanation_hi": "Baud rate = प्रति सेकंड signal units = 1000 bauds/sec। Bit rate = baud × प्रति unit bits = 1000 × 4 = 4000 bps।",
-   "nukte_en": "Bit rate = Baud rate × bits per signal unit. Baud = signalling speed; bps = data speed.",
-   "nukte_hi": "Bit rate = Baud rate × प्रति signal unit bits। Baud = signalling speed; bps = data speed।",
-   "why_wrong": {
-    "B": [
-     [
-      "500 bps would need 0.5 bits per unit — impossible. (Internal.)",
-      ""
-     ],
-     [
-      "500 bps would need 0.5 bits per unit — impossible. (Internal.)",
-      ""
-     ]
-    ],
-    "C": [
-     [
-      "Baud is 1000 (units/sec), not 4000. (Internal.)",
-      ""
-     ],
-     [
-      "Baud is 1000 (units/sec), not 4000. (Internal.)",
-      ""
-     ]
-    ],
-    "D": [
-     [
-      "Both values are wrong for 4 bits/unit. (Internal.)",
-      ""
-     ],
-     [
-      "Both values are wrong for 4 bits/unit. (Internal.)",
-      ""
-     ]
-    ]
-   },
-   "question_style": "numerical",
-   "difficulty": "hard",
-   "exam_tags": [
-    "GATE CS",
-    "UGC-NET 087",
-    "RPSC Programmer",
-    "RPSC ACP/DD"
-   ],
-   "source_type": "repository_internal",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Repo: CN Topic Test-04 (UNIT TEST-4)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section A"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T05-0017",
-   "topic_id": "T05",
-   "topic": "Transmission Medium",
-   "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
    "stem_en": "The effective bandwidth of a communication channel is primarily limited by:",
    "stem_hi": "Communication channel की effective bandwidth मुख्य रूप से किससे सीमित होती है?",
    "options_en": [
@@ -28936,7 +28758,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0018",
+   "id": "CN-T05-0017",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29013,7 +28835,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0019",
+   "id": "CN-T05-0018",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29088,7 +28910,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0020",
+   "id": "CN-T05-0019",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29165,7 +28987,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0021",
+   "id": "CN-T05-0020",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29240,7 +29062,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0022",
+   "id": "CN-T05-0021",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29315,7 +29137,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0023",
+   "id": "CN-T05-0022",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29390,7 +29212,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0024",
+   "id": "CN-T05-0023",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -29411,7 +29233,7 @@
    "correct_option": "D",
    "explanation_en": "Dial-up पुरानी सुस्त (कम bandwidth) तकनीक है — broadband नहीं. Cable, DSL और Satellite broadband हैं.",
    "explanation_hi": "Dial-up पुरानी सुस्त (कम bandwidth) तकनीक है — broadband नहीं. Cable, DSL और Satellite broadband हैं.",
-   "nukte_en": "Media = the path; Hertz = the frequency/speed measure. This distinction is what is being asked.",
+   "nukte_en": "Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.",
    "nukte_hi": "Broadband = fast internet (Cable/DSL/Fibre/Satellite); Dial-up = टेलीफ़ोन वाला पुराना संस्करण.",
    "why_wrong": {
     "A": [
@@ -29465,7 +29287,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0025",
+   "id": "CN-T05-0024",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29542,7 +29364,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0026",
+   "id": "CN-T05-0025",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29619,7 +29441,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0027",
+   "id": "CN-T05-0026",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29696,7 +29518,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0028",
+   "id": "CN-T05-0027",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29773,7 +29595,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0029",
+   "id": "CN-T05-0028",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29850,7 +29672,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0030",
+   "id": "CN-T05-0029",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -29927,7 +29749,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0031",
+   "id": "CN-T05-0030",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30004,7 +29826,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0032",
+   "id": "CN-T05-0031",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30081,7 +29903,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0033",
+   "id": "CN-T05-0032",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30158,7 +29980,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0034",
+   "id": "CN-T05-0033",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30236,7 +30058,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0035",
+   "id": "CN-T05-0034",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30313,7 +30135,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0036",
+   "id": "CN-T05-0035",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30390,7 +30212,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0037",
+   "id": "CN-T05-0036",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30467,7 +30289,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0038",
+   "id": "CN-T05-0037",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30544,7 +30366,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0039",
+   "id": "CN-T05-0038",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30622,7 +30444,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0040",
+   "id": "CN-T05-0039",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -30699,7 +30521,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0041",
+   "id": "CN-T05-0040",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -30776,7 +30598,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0042",
+   "id": "CN-T05-0041",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -30853,7 +30675,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0043",
+   "id": "CN-T05-0042",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -30930,7 +30752,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0044",
+   "id": "CN-T05-0043",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31008,7 +30830,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0045",
+   "id": "CN-T05-0044",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31085,7 +30907,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0046",
+   "id": "CN-T05-0045",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31162,7 +30984,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0047",
+   "id": "CN-T05-0046",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31240,7 +31062,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0048",
+   "id": "CN-T05-0047",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31288,7 +31110,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0049",
+   "id": "CN-T05-0048",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31336,7 +31158,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0050",
+   "id": "CN-T05-0049",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31383,7 +31205,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0051",
+   "id": "CN-T05-0050",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31430,7 +31252,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0052",
+   "id": "CN-T05-0051",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31477,7 +31299,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0053",
+   "id": "CN-T05-0052",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31525,7 +31347,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0054",
+   "id": "CN-T05-0053",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31572,7 +31394,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0055",
+   "id": "CN-T05-0054",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31617,7 +31439,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0056",
+   "id": "CN-T05-0055",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section A — Signals & Performance (Encoding, Noise, Bandwidth, Data Rate)",
@@ -31671,7 +31493,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0057",
+   "id": "CN-T05-0056",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31718,7 +31540,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0058",
+   "id": "CN-T05-0057",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31765,7 +31587,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0059",
+   "id": "CN-T05-0058",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31812,7 +31634,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0060",
+   "id": "CN-T05-0059",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31859,7 +31681,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0061",
+   "id": "CN-T05-0060",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
@@ -31907,7 +31729,337 @@
    "last_reviewed": "2026-10-14"
   },
   {
+   "id": "CN-T05-0061",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "A coaxial cable consists of ______ concentric copper conductors:",
+   "stem_hi": "Coaxial cable में ______ संकेंद्रित (concentric) copper conductors होते हैं:",
+   "options_en": [
+    "Two (inner wire + outer shield)",
+    "Four",
+    "Eight",
+    "One"
+   ],
+   "options_hi": [
+    "दो (भीतरी तार + बाहरी shield)",
+    "चार",
+    "आठ",
+    "एक"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Coax: beech mein inner copper conductor, uske chaaron taraf outer copper shield — dono ke beech insulator. Isi se EMI resistance aati hai.",
+   "explanation_hi": "Coax: भीतरी copper conductor और बाहरी copper shield — बीच में insulator।",
+   "nukte_en": "UTP = 4 pairs (8 wires); coax = 2 concentric conductors.",
+   "nukte_hi": "UTP = 4 pairs; coax = 2 संकेंद्रित conductors।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
    "id": "CN-T05-0062",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "10Base5, 10Base2 and 10BaseT are different types of:",
+   "stem_hi": "10Base5, 10Base2 और 10BaseT हैं किसके अलग-अलग प्रकार:",
+   "options_en": [
+    "Ethernet",
+    "Token Ring",
+    "FDDI",
+    "ATM"
+   ],
+   "options_hi": [
+    "Ethernet",
+    "Token Ring",
+    "FDDI",
+    "ATM"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Ye sab Ethernet cable standards hain: 10 Mbps; Base = baseband. 10Base5 = thick coax (Thicknet), 10Base2 = thin coax (Thinnet), 10BaseT = UTP.",
+   "explanation_hi": "ये सब Ethernet cable standards हैं (10 Mbps, baseband): 10Base5 thick coax, 10Base2 thin coax, 10BaseT UTP।",
+   "nukte_en": "Suffix: 5/2 = segment length (sau metre mein); T = twisted pair.",
+   "nukte_hi": "Suffix: 5/2 = segment length (सौ मीटर में); T = twisted pair।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0063",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "In the Ethernet names 10Base2 and 10Base5, the digits '2' and '5' indicate:",
+   "stem_hi": "Ethernet नामों 10Base2 और 10Base5 में अंक '2' और '5' बताते हैं:",
+   "options_en": [
+    "Maximum segment length in hundreds of metres (~200 m and ~500 m)",
+    "Number of hosts per segment",
+    "Cable thickness in mm",
+    "Transmission speed in Mbps"
+   ],
+   "options_hi": [
+    "अधिकतम segment लंबाई, सौ मीटर में (~200 m और ~500 m)",
+    "प्रति segment hosts की संख्या",
+    "Cable की मोटाई mm में",
+    "Transmission गति Mbps में"
+   ],
+   "correct_option": "A",
+   "explanation_en": "10Base2 = ~185-200 m (thin coax), 10Base5 = 500 m (thick coax) — '10' = 10 Mbps, 'Base' = baseband.",
+   "explanation_hi": "10Base2 = ~185-200 m; 10Base5 = 500 m; '10' = 10 Mbps; 'Base' = baseband।",
+   "nukte_en": "Speed '10' mein hai; digits 2/5 distance mein (sau metre).",
+   "nukte_hi": "Speed '10' में; अंक 2/5 दूरी में (सौ मीटर)।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0064",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "The function of a DSLAM (DSL Access Multiplexer) located at the telephone exchange is to:",
+   "stem_hi": "Telephone exchange पर स्थित DSLAM (DSL Access Multiplexer) का काम है:",
+   "options_en": [
+    "Aggregate many DSL subscriber lines onto a high-speed backbone link",
+    "Convert digital voice to analog",
+    "Assign IP addresses to DSL modems",
+    "Encrypt DSL traffic"
+   ],
+   "options_hi": [
+    "कई DSL subscriber lines को high-speed backbone link पर इकट्ठा करना",
+    "Digital voice को analog में बदलना",
+    "DSL modems को IP addresses देना",
+    "DSL traffic encrypt करना"
+   ],
+   "correct_option": "A",
+   "explanation_en": "DSLAM: exchange par sab DSL lines multiplex karke backbone par daalta hai (aur aksar ISP routing tak). Ghar par DSL modem hota hai.",
+   "explanation_hi": "DSLAM: exchange पर सभी DSL lines को backbone पर multiplex करता है; घर पर DSL modem होता है।",
+   "nukte_en": "DHCP = IP dena; modem = signal convert; DSLAM = aggregation.",
+   "nukte_hi": "DHCP = IP; modem = signal convert; DSLAM = aggregation।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0065",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "Cable Internet access (HFC) differs from DSL in that:",
+   "stem_hi": "Cable Internet access (HFC), DSL से भिन्न है क्योंकि:",
+   "options_en": [
+    "The HFC bandwidth is shared among all subscribers on the neighbourhood segment",
+    "It uses the telephone line's DSLAM",
+    "It cannot carry television signals simultaneously",
+    "Each subscriber gets a dedicated fibre pair"
+   ],
+   "options_hi": [
+    "HFC bandwidth पड़ोस के segment के सभी subscribers में साझा होती है",
+    "यह telephone line का DSLAM प्रयोग करता है",
+    "यह television signals साथ नहीं चला सकता",
+    "हर subscriber को dedicated fibre जोड़ी मिलती है"
+   ],
+   "correct_option": "A",
+   "explanation_en": "HFC (Hybrid Fibre-Coax): fibre tak, phir coax — segment ka bandwidth shared (peak hours par slow). DSL mein har line exchange tak dedicated hoti hai.",
+   "explanation_hi": "HFC: bandwidth साझा (peak hours पर धीमा); DSL में हर line exchange तक dedicated।",
+   "nukte_en": "DSL = dedicated last-mile; Cable = shared coax segment.",
+   "nukte_hi": "DSL = dedicated last-mile; Cable = shared coax segment।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0066",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "In SONET (Synchronous Optical Networking), the base electrical signal level STS-1 has a data rate of approximately:",
+   "stem_hi": "SONET में, आधार electrical signal level STS-1 की data rate लगभग होती है:",
+   "options_en": [
+    "51.84 Mbps",
+    "155.52 Mbps",
+    "622.08 Mbps",
+    "43.2 Mbps"
+   ],
+   "options_hi": [
+    "51.84 Mbps",
+    "155.52 Mbps",
+    "622.08 Mbps",
+    "43.2 Mbps"
+   ],
+   "correct_option": "A",
+   "explanation_en": "STS-1 = 51.84 Mbps; STS-3 = 155.52 (OC-3); STS-12 = 622.08 (OC-12) — har level n × STS-1.",
+   "explanation_hi": "STS-1 = 51.84 Mbps; STS-3 = 155.52; STS-12 = 622.08 — हर level n × STS-1।",
+   "nukte_en": "Yaad karo: STS-1 = 51.84 Mbps, aur OC-n/STS-n = n × 51.84.",
+   "nukte_hi": "STS-1 = 51.84 Mbps; OC-n/STS-n = n × 51.84।",
+   "why_wrong": {},
+   "question_style": "numerical",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0067",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section B — Guided Media (UTP, Coaxial, Fiber Optic)",
+   "stem_en": "In the SONET protocol stack, the photonic layer corresponds to which layer of the OSI model?",
+   "stem_hi": "SONET protocol stack में, photonic layer OSI model की किस layer के बराबर है?",
+   "options_en": [
+    "Physical layer",
+    "Data link layer",
+    "Network layer",
+    "Session layer"
+   ],
+   "options_hi": [
+    "Physical layer",
+    "Data link layer",
+    "Network layer",
+    "Session layer"
+   ],
+   "correct_option": "A",
+   "explanation_en": "SONET ke 4 layers: Photonic (physical/electrical-optical), Section, Line, Path — Photonic layer light signals/green-red lasers ka kaam sambhalti hai.",
+   "explanation_hi": "SONET की 4 layers: Photonic, Section, Line, Path — Photonic = physical।",
+   "nukte_en": "Section/Line/Path = overhead management levels; Photonic = actual light.",
+   "nukte_hi": "Section/Line/Path = overhead; Photonic = प्रकाश संकेत।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section B"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0068",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -31954,7 +32106,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0063",
+   "id": "CN-T05-0069",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32001,7 +32153,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0064",
+   "id": "CN-T05-0070",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32049,7 +32201,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0065",
+   "id": "CN-T05-0071",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32096,7 +32248,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T05-0066",
+   "id": "CN-T05-0072",
    "topic_id": "T05",
    "topic": "Transmission Medium",
    "subtopic": "Section C — Unguided Media (Wireless)",
@@ -32141,6 +32293,53 @@
    "paper_or_shift": null,
    "question_id_in_official_key": null,
    "source_url_or_file": "Practice — original (SSC MTS/CHSL exam-pattern, textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T05-0073",
+   "topic_id": "T05",
+   "topic": "Transmission Medium",
+   "subtopic": "Section C — Unguided Media (Wireless)",
+   "stem_en": "Terrestrial radio channels are broadly classified into ______ groups:",
+   "stem_hi": "Terrestrial radio channels मोटे तौर पर ______ समूहों में विभाजित हैं:",
+   "options_en": [
+    "Three",
+    "Two",
+    "Five",
+    "Seven"
+   ],
+   "options_hi": [
+    "तीन",
+    "दो",
+    "पाँच",
+    "सात"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Forouzan: terrestrial radio = 3 groups — (1) VLF/LF/MF (ground waves), (2) HF (sky waves/ionosphere reflection), (3) VHF/UHF/SHF/EHF (line-of-sight).",
+   "explanation_hi": "Forouzan: terrestrial radio = 3 समूह — ground wave, sky wave, line-of-sight।",
+   "nukte_en": "Satellite/microwave alag category hain; terrestrial = teen.",
+   "nukte_hi": "Satellite/microwave अलग; terrestrial = तीन।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
    "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
    "verification_status": "answer_checked",
    "duplicate_group": null,
@@ -43260,53 +43459,6 @@
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
-   "stem_en": "Stop-and-wait protocol has a window size of:",
-   "stem_hi": "Stop-and-wait protocol की window size होती है:",
-   "options_en": [
-    "1",
-    "8",
-    "255",
-    "Unlimited"
-   ],
-   "options_hi": [
-    "1",
-    "8",
-    "255",
-    "असीमित"
-   ],
-   "correct_option": "A",
-   "explanation_en": "Stop-and-wait: ek frame, phir ACK — window = 1.",
-   "explanation_hi": "Window = 1।",
-   "nukte_en": "Sliding window mein zyada.",
-   "nukte_hi": "Sliding window में अधिक।",
-   "why_wrong": {},
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "RSMSSB Informatics Assistant",
-    "SSC Computer Awareness",
-    "RPSC Programmer",
-    "Practice Set"
-   ],
-   "source_type": "original_practice",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Practice — original (textbook-based)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section A"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T06-0197",
-   "topic_id": "T06",
-   "topic": "OSI Layers in Detail",
-   "subtopic": "Section A — Data Link Layer: Flow & Error Control",
    "stem_en": "Parity check can detect which type of errors?",
    "stem_hi": "Parity check कौन-सी errors detect कर सकता है?",
    "options_en": [
@@ -43350,7 +43502,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0198",
+   "id": "CN-T06-0197",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43397,7 +43549,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0199",
+   "id": "CN-T06-0198",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43444,7 +43596,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0200",
+   "id": "CN-T06-0199",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section A — Data Link Layer: Flow & Error Control",
@@ -43467,6 +43619,53 @@
    "explanation_hi": "Piggybacking: bidirectional link पर ack को data frame के साथ जोड़ना — bandwidth बचती है।",
    "nukte_en": "Piggybacking mein ack ke liye timer hota hai, taaki der zyada na ho.",
    "nukte_hi": "Piggybacking में ack timer होता है, ताकि देर न हो।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section A"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0200",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section A — Data Link Layer: Flow & Error Control",
+   "stem_en": "Network congestion occurs when:",
+   "stem_hi": "Network congestion तब होता है जब:",
+   "options_en": [
+    "The offered traffic exceeds the network's capacity",
+    "Two hosts use the same port",
+    "A frame is corrupted by noise",
+    "The DNS server is down"
+   ],
+   "options_hi": [
+    "Offered traffic network की क्षमता से अधिक हो",
+    "दो hosts एक ही port प्रयोग करें",
+    "Noise से frame खराब हो",
+    "DNS server बंद हो"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Congestion = queues bhar jaate hain kyunki demand capacity se zyada hai — delay/loss badhte hain. Isi ko sambhalne ke liye congestion control hota hai.",
+   "explanation_hi": "Congestion = demand क्षमता से अधिक; queues भरती हैं, delay/loss बढ़ता है।",
+   "nukte_en": "Flow control = receiver ki speed; congestion = network ki capacity.",
+   "nukte_hi": "Flow control = receiver; congestion = network की क्षमता।",
    "why_wrong": {},
    "question_style": "concept",
    "difficulty": "medium",
@@ -43543,54 +43742,6 @@
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
-   "stem_en": "The minimum Ethernet frame size (without preamble) is:",
-   "stem_hi": "Ethernet frame का न्यूनतम size (preamble बिना) है:",
-   "options_en": [
-    "46 bytes",
-    "64 bytes",
-    "128 bytes",
-    "1518 bytes"
-   ],
-   "options_hi": [
-    "46 bytes",
-    "64 bytes",
-    "128 bytes",
-    "1518 bytes"
-   ],
-   "correct_option": "B",
-   "explanation_en": "64 bytes (14 header + 46 data + 4 FCS).",
-   "explanation_hi": "64 bytes (14+46+4)।",
-   "nukte_en": "1518 maximum hai.",
-   "nukte_hi": "1518 maximum।",
-   "why_wrong": {},
-   "question_style": "concept",
-   "difficulty": "hard",
-   "exam_tags": [
-    "GATE CS",
-    "UGC-NET 087",
-    "RPSC Programmer",
-    "RPSC ACP/DD",
-    "Practice Set"
-   ],
-   "source_type": "original_practice",
-   "exam_name": null,
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "Practice — original (textbook-based)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section B"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T06-0203",
-   "topic_id": "T06",
-   "topic": "OSI Layers in Detail",
-   "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
    "stem_en": "CSMA/CD is used in:",
    "stem_hi": "CSMA/CD प्रयोग होता है:",
    "options_en": [
@@ -43634,7 +43785,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0204",
+   "id": "CN-T06-0203",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43681,7 +43832,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0205",
+   "id": "CN-T06-0204",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43728,7 +43879,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0206",
+   "id": "CN-T06-0205",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43775,7 +43926,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0207",
+   "id": "CN-T06-0206",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43822,7 +43973,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0208",
+   "id": "CN-T06-0207",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section B — Data Link Layer: Framing & MAC Sub-layer",
@@ -43867,7 +44018,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0209",
+   "id": "CN-T06-0208",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -43914,7 +44065,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0210",
+   "id": "CN-T06-0209",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -43962,7 +44113,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0211",
+   "id": "CN-T06-0210",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44009,7 +44160,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0212",
+   "id": "CN-T06-0211",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44056,7 +44207,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0213",
+   "id": "CN-T06-0212",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44103,7 +44254,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0214",
+   "id": "CN-T06-0213",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44150,7 +44301,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0215",
+   "id": "CN-T06-0214",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44197,7 +44348,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0216",
+   "id": "CN-T06-0215",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44244,7 +44395,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0217",
+   "id": "CN-T06-0216",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44291,7 +44442,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0218",
+   "id": "CN-T06-0217",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44336,7 +44487,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0219",
+   "id": "CN-T06-0218",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44381,7 +44532,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0220",
+   "id": "CN-T06-0219",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44426,7 +44577,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0221",
+   "id": "CN-T06-0220",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
@@ -44480,7 +44631,245 @@
    "last_reviewed": "2026-10-14"
   },
   {
+   "id": "CN-T06-0221",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
+   "stem_en": "If the Protocol field of an IPv4 header is 17, the transport-layer protocol carried in the datagram is:",
+   "stem_hi": "यदि IPv4 header का Protocol field 17 हो, तो datagram में लिया गया transport-layer protocol है:",
+   "options_en": [
+    "UDP",
+    "TCP",
+    "ICMP",
+    "IGMP"
+   ],
+   "options_hi": [
+    "UDP",
+    "TCP",
+    "ICMP",
+    "IGMP"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Protocol numbers: 1 = ICMP, 2 = IGMP, 6 = TCP, 17 = UDP, 89 = OSPF. Ye field fragmentation ke saath-saath next-header ki pehchaan deta hai.",
+   "explanation_hi": "Protocol numbers: 1=ICMP, 2=IGMP, 6=TCP, 17=UDP, 89=OSPF।",
+   "nukte_en": "6 TCP, 17 UDP — dono sabse zyada puche jaate hain.",
+   "nukte_hi": "6 TCP, 17 UDP — सबसे अधिक पूछे जाते हैं।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
    "id": "CN-T06-0222",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
+   "stem_en": "In IPv4 fragmentation, the LAST fragment has the More Fragments (MF) flag set to:",
+   "stem_hi": "IPv4 fragmentation में, अंतिम fragment का More Fragments (MF) flag होता है:",
+   "options_en": [
+    "0",
+    "1",
+    "Its fragment offset value",
+    "The same as the first fragment"
+   ],
+   "options_hi": [
+    "0",
+    "1",
+    "उसका fragment offset मान",
+    "पहले fragment के बराबर"
+   ],
+   "correct_option": "A",
+   "explanation_en": "MF = 1 matlab 'aur fragments aane hain'; aakhri fragment par MF = 0. Har fragment ka offset alag hota hai.",
+   "explanation_hi": "MF=1 = 'और fragments आने हैं'; अंतिम पर MF=0।",
+   "nukte_en": "Dono fields (MF flag + offset) milkar reassembly karte hain.",
+   "nukte_hi": "MF flag + offset मिलकर reassembly करते हैं।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0223",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
+   "stem_en": "The Fragment Offset field in the IPv4 header is used to:",
+   "stem_hi": "IPv4 header का Fragment Offset field प्रयोग होता है:",
+   "options_en": [
+    "Place the fragment at its correct position in the original datagram during reassembly",
+    "Count the total number of fragments",
+    "Encrypt fragment payloads",
+    "Set the fragment's lifetime"
+   ],
+   "options_hi": [
+    "Reassembly के दौरान fragment को मूल datagram में सही स्थान पर रखने के लिए",
+    "कुल fragments गिनने के लिए",
+    "Fragment payloads encrypt करने के लिए",
+    "Fragment का जीवन-काल तय करने के लिए"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Offset (8-byte units mein) batata hai fragment original datagram mein kahan baitha hai — destination sirf offset se hi sahi order bana sakta hai.",
+   "explanation_hi": "Offset (8-byte units में) बताता है fragment का स्थान — इसी से सही क्रम बनता है।",
+   "nukte_en": "Offset = position; MF = aur aane hain ya nahi.",
+   "nukte_hi": "Offset = स्थान; MF = और आने हैं या नहीं।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0224",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
+   "stem_en": "The data field of an IPv4 datagram can carry:",
+   "stem_hi": "IPv4 datagram का data field ले जा सकता है:",
+   "options_en": [
+    "TCP segment, UDP datagram, or ICMP message — all of these",
+    "Only TCP segments",
+    "Only UDP datagrams",
+    "Only application data"
+   ],
+   "options_hi": [
+    "TCP segment, UDP datagram, या ICMP message — ये सब",
+    "सिर्फ TCP segments",
+    "सिर्फ UDP datagrams",
+    "सिर्फ application data"
+   ],
+   "correct_option": "A",
+   "explanation_en": "IP ka payload kuch bhi ho sakta hai jo Protocol field bataye — TCP/UDP segments, ICMP/IGMP messages, tunnels mein doosra IP packet bhi.",
+   "explanation_hi": "IP का payload कुछ भी हो सकता है — TCP/UDP, ICMP/IGMP, या tunnel में दूसरा IP packet।",
+   "nukte_en": "Protocol field = 6/17/1/2/41... isi se pata chalta hai kya andar hai.",
+   "nukte_hi": "Protocol field से पता चलता है क्या अंदर है।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0225",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section C — Network Layer: IP, ICMP, ARP & Routing Protocols",
+   "stem_en": "RSVP (Resource ReSerVation Protocol) is used by hosts to:",
+   "stem_hi": "RSVP (Resource ReSerVation Protocol) का उपयोग hosts करते हैं:",
+   "options_en": [
+    "Request reservation of network resources (bandwidth) along a path for QoS flows",
+    "Assign IP addresses automatically",
+    "Resolve domain names",
+    "Exchange routing tables between routers"
+   ],
+   "options_hi": [
+    "QoS flows के लिए रास्ते में network संसाधन (bandwidth) आरक्षित करने के अनुरोध हेतु",
+    "स्वतः IP addresses देने के लिए",
+    "Domain names हल करने के लिए",
+    "Routers के बीच routing tables बाँटने के लिए"
+   ],
+   "correct_option": "A",
+   "explanation_en": "RSVP = signalling protocol jo routers se kehta hai ki flow ke liye resources reserve karo (IntServ/QoS). IP assignment = DHCP; routing = OSPF/BGP; names = DNS.",
+   "explanation_hi": "RSVP = routers से संसाधन आरक्षित करने का संकेत (QoS)। IP=DHCP; routing=OSPF/BGP; names=DNS।",
+   "nukte_en": "RSVP 'reservation' ka protocol hai — circuit-switching jaisi guarantee nahi, bas soft-state reservations.",
+   "nukte_hi": "RSVP = soft-state reservations; पूरी guarantee नहीं।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section C"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0226",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44528,7 +44917,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0223",
+   "id": "CN-T06-0227",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44575,7 +44964,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0224",
+   "id": "CN-T06-0228",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44623,7 +45012,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0225",
+   "id": "CN-T06-0229",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44670,7 +45059,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0226",
+   "id": "CN-T06-0230",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44718,7 +45107,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0227",
+   "id": "CN-T06-0231",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44765,7 +45154,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0228",
+   "id": "CN-T06-0232",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44812,7 +45201,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0229",
+   "id": "CN-T06-0233",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44860,7 +45249,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0230",
+   "id": "CN-T06-0234",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44905,7 +45294,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0231",
+   "id": "CN-T06-0235",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section D — Transport Layer: TCP/UDP, Ports & Sockets",
@@ -44950,7 +45339,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0232",
+   "id": "CN-T06-0236",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -44997,7 +45386,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0233",
+   "id": "CN-T06-0237",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45044,7 +45433,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0234",
+   "id": "CN-T06-0238",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45091,7 +45480,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0235",
+   "id": "CN-T06-0239",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45138,7 +45527,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0236",
+   "id": "CN-T06-0240",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45185,7 +45574,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0237",
+   "id": "CN-T06-0241",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45232,7 +45621,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0238",
+   "id": "CN-T06-0242",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45279,7 +45668,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T06-0239",
+   "id": "CN-T06-0243",
    "topic_id": "T06",
    "topic": "OSI Layers in Detail",
    "subtopic": "Section E — Session, Presentation & Application Layer",
@@ -45315,6 +45704,195 @@
    "paper_or_shift": null,
    "question_id_in_official_key": null,
    "source_url_or_file": "Practice — original (SSC CGL/IBPS exam-pattern, textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section E"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0244",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section E — Session, Presentation & Application Layer",
+   "stem_en": "The first line of an HTTP request message is called the:",
+   "stem_hi": "HTTP request message की पहली पंक्ति कहलाती है:",
+   "options_en": [
+    "Request line",
+    "Header line",
+    "Status line",
+    "Body line"
+   ],
+   "options_hi": [
+    "Request line",
+    "Header line",
+    "Status line",
+    "Body line"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Request line = METHOD URI HTTP/VERSION (jaise 'GET /index.html HTTP/1.1'). Response message ki pehli line STATUS line hoti hai.",
+   "explanation_hi": "Request line = METHOD URI HTTP/VERSION। Response की पहली line = status line।",
+   "nukte_en": "Status line sirf RESPONSE mein hoti hai.",
+   "nukte_hi": "Status line सिर्फ RESPONSE में होती है।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section E"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0245",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section E — Session, Presentation & Application Layer",
+   "stem_en": "By default, HTTP/1.1 connections are:",
+   "stem_hi": "डिफ़ॉल्ट रूप से, HTTP/1.1 connections होते हैं:",
+   "options_en": [
+    "Persistent (keep-alive)",
+    "Non-persistent",
+    "Simplex",
+    "Datagram-based"
+   ],
+   "options_hi": [
+    "Persistent (keep-alive)",
+    "Non-persistent",
+    "Simplex",
+    "Datagram-based"
+   ],
+   "correct_option": "A",
+   "explanation_en": "HTTP/1.1 default persistent connection: ek TCP connection par kai request/response (Connection: close se band hota hai). HTTP/1.0 default non-persistent tha.",
+   "explanation_hi": "HTTP/1.1 default persistent: एक connection पर कई request/response; HTTP/1.0 non-persistent था।",
+   "nukte_en": "Persistent = connection reuse; non-persistent = har object par nayi connection.",
+   "nukte_hi": "Persistent = connection reuse; non-persistent = हर object पर नई connection।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section E"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0246",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section E — Session, Presentation & Application Layer",
+   "stem_en": "In HTTP, a conditional GET (using If-Modified-Since) allows:",
+   "stem_hi": "HTTP में conditional GET (If-Modified-Since के साथ) संभव बनाता है:",
+   "options_en": [
+    "Cache validation — the server sends a 304 Not Modified instead of the object if unchanged",
+    "Automatic language translation",
+    "Password-free login",
+    "Parallel downloads"
+   ],
+   "options_hi": [
+    "Cache validation — अपरिवर्तित होने पर server वस्तु के बजाय 304 Not Modified भेजे",
+    "स्वतः भाषा अनुवाद",
+    "बिना password login",
+    "समांतर downloads"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Conditional GET: browser poochta hai 'kitne din se badla?'; agar object same hai to sirf 304 header — bandwidth bachti hai.",
+   "explanation_hi": "Conditional GET: object अपरिवर्तित हो तो सिर्फ 304 Not Modified — bandwidth बचती है।",
+   "nukte_en": "304 = Not Modified; 200 = OK (poora content).",
+   "nukte_hi": "304 = Not Modified; 200 = OK।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section E"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T06-0247",
+   "topic_id": "T06",
+   "topic": "OSI Layers in Detail",
+   "subtopic": "Section E — Session, Presentation & Application Layer",
+   "stem_en": "Which of the following is NOT a valid HTTP status code?",
+   "stem_hi": "निम्न में से कौन-सा वैध HTTP status code नहीं है?",
+   "options_en": [
+    "250",
+    "200",
+    "404",
+    "503"
+   ],
+   "options_hi": [
+    "250",
+    "200",
+    "404",
+    "503"
+   ],
+   "correct_option": "A",
+   "explanation_en": "200 = OK, 3xx redirection (301/302/304), 4xx client errors (400/403/404), 5xx server errors (500/503). '250' SMTP ka 'mail action ok' code hai, HTTP ka nahi.",
+   "explanation_hi": "200=OK; 3xx=redirection; 4xx=client error; 5xx=server error। 250 SMTP का code है।",
+   "nukte_en": "HTTP 2xx family: 200, 201, 204... 250 nahi.",
+   "nukte_hi": "HTTP 2xx: 200, 201, 204... 250 नहीं।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "hard",
+   "exam_tags": [
+    "GATE CS",
+    "UGC-NET 087",
+    "RPSC Programmer",
+    "RPSC ACP/DD",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
    "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
    "verification_status": "answer_checked",
    "duplicate_group": null,
@@ -49244,81 +49822,6 @@
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
-   "stem_en": "Which of the following networks extends a private network across public networks?",
-   "stem_hi": "निम्न में से कौन-सा network public networks के ऊपर private network का विस्तार करता है?",
-   "options_en": [
-    "Virtual private network (VPN)",
-    "Local area network",
-    "Enterprise private network",
-    "None of these"
-   ],
-   "options_hi": [
-    "Virtual private network (VPN)",
-    "Local area network",
-    "Enterprise private network",
-    "None of these"
-   ],
-   "correct_option": "A",
-   "explanation_en": "VPN (Virtual Private Network) tunneling और encryption से public Internet पर एक सुरक्षित private रास्ता बनाता है.",
-   "explanation_hi": "VPN (Virtual Private Network) tunneling और encryption से public Internet पर एक सुरक्षित private रास्ता बनाता है.",
-   "nukte_en": "BPSC 2024 official key (a). VPN = a private limousine on the public road.",
-   "nukte_hi": "BPSC 2024 official key (a). VPN = सार्वजनिक सड़क पर निजी लिमोज़ीन.",
-   "why_wrong": {
-    "B": [
-     [
-      "LAN स्थानीय network है.",
-      "LAN स्थानीय network है."
-     ],
-     [
-      "LAN स्थानीय network है.",
-      "LAN स्थानीय network है."
-     ]
-    ],
-    "C": [
-     [
-      "Enterprise private network संगठन का अपना network है.",
-      "Enterprise private network संगठन का अपना network है."
-     ],
-     [
-      "Enterprise private network संगठन का अपना network है.",
-      "Enterprise private network संगठन का अपना network है."
-     ]
-    ],
-    "D": [
-     [
-      "VPN सही जवाब है.",
-      "VPN सही जवाब है."
-     ],
-     [
-      "VPN सही जवाब है.",
-      "VPN सही जवाब है."
-     ]
-    ]
-   },
-   "question_style": "concept",
-   "difficulty": "medium",
-   "exam_tags": [
-    "BPSC"
-   ],
-   "source_type": "claimed_pyq_unverified",
-   "exam_name": "BPSC",
-   "exam_year": null,
-   "paper_or_shift": null,
-   "question_id_in_official_key": null,
-   "source_url_or_file": "BPSC TRE 2024 (via KnowledgeGate solved PYQ bank)",
-   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
-   "verification_status": "answer_checked",
-   "duplicate_group": null,
-   "concept_tags": [
-    "Section C"
-   ],
-   "last_reviewed": "2026-10-14"
-  },
-  {
-   "id": "CN-T07-0053",
-   "topic_id": "T07",
-   "topic": "Network Security",
-   "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
    "stem_en": "Which one of the following is a key function of a firewall?",
    "stem_hi": "निम्न में से firewall का एक मुख्य काम कौन-सा है?",
    "options_en": [
@@ -49334,9 +49837,9 @@
     "Moving"
    ],
    "correct_option": "A",
-   "explanation_en": "A firewall monitors incoming and outgoing traffic and blocks unauthorised access.",
+   "explanation_en": "Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.",
    "explanation_hi": "Firewall आने-जाने वाले traffic की monitoring करता है और अनधिकृत पहुँच को रोकता है.",
-   "nukte_en": "Firewall = the network's gatekeeper — it watches, checks, stops.",
+   "nukte_en": "BPSC 2024 official key (a). VPN = a private limousine on the public road.",
    "nukte_hi": "Firewall = network का चौकीदार — देखता है, जाँचता है, रोकता है.",
    "why_wrong": {
     "B": [
@@ -49390,7 +49893,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0054",
+   "id": "CN-T07-0053",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49438,7 +49941,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0055",
+   "id": "CN-T07-0054",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49485,7 +49988,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0056",
+   "id": "CN-T07-0055",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49532,7 +50035,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0057",
+   "id": "CN-T07-0056",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49579,7 +50082,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0058",
+   "id": "CN-T07-0057",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49626,7 +50129,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0059",
+   "id": "CN-T07-0058",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section A — Security Goals & Attacks",
@@ -49673,7 +50176,101 @@
    "last_reviewed": "2026-10-14"
   },
   {
+   "id": "CN-T07-0059",
+   "topic_id": "T07",
+   "topic": "Network Security",
+   "subtopic": "Section A — Security Goals & Attacks",
+   "stem_en": "A honeypot in network security is:",
+   "stem_hi": "Network security में honeypot होता है:",
+   "options_en": [
+    "A decoy system set up to attract attackers and study their activity",
+    "A firewall rule that blocks all traffic",
+    "A backup server",
+    "An antivirus quarantine folder"
+   ],
+   "options_hi": [
+    "एक प्रलोभन (decoy) system जो attackers को आकर्षित कर उनकी गतिविधि अध्ययन करता है",
+    "सभी traffic रोकने वाला firewall rule",
+    "एक backup server",
+    "Antivirus quarantine folder"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Honeypot = jaal jaisa fake system/data — attackers usme fass kar apne tools/tarike dikha dete hain; defenders ko intelligence milti hai.",
+   "explanation_hi": "Honeypot = जाल जैसा decoy system — attackers अपने तरीके दिखा देते हैं।",
+   "nukte_en": "Firewall rokta hai; honeypot fasata hai aur seekhata hai.",
+   "nukte_hi": "Firewall रोकता है; honeypot फँसाता और सिखाता है।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section A"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
    "id": "CN-T07-0060",
+   "topic_id": "T07",
+   "topic": "Network Security",
+   "subtopic": "Section A — Security Goals & Attacks",
+   "stem_en": "A shadow honeypot combines a honeypot with:",
+   "stem_hi": "Shadow honeypot जोड़ता है honeypot के साथ:",
+   "options_en": [
+    "An anomaly detection system (suspect traffic is run inside the honeypot)",
+    "A physical lock",
+    "A DNS sinkhole only",
+    "A load balancer"
+   ],
+   "options_hi": [
+    "Anomaly detection system (संदिग्ध traffic को honeypot के अंदर चलाया जाता है)",
+    "एक भौतिक lock",
+    "सिर्फ DNS sinkhole",
+    "एक load balancer"
+   ],
+   "correct_option": "A",
+   "explanation_en": "Shadow honeypot: IDS/IPS ka anomaly detector jo kuch block kare, uske shadow copy ko honeypot par chala kar dekhte hain ki attack tha ya false positive — learning + safety dono.",
+   "explanation_hi": "Shadow honeypot: anomaly detector की shadow copy को honeypot पर चलाकर जाँच — attack या false positive।",
+   "nukte_en": "Simple honeypot = decoy; shadow = decoy + anomaly detector ka validation.",
+   "nukte_hi": "Simple honeypot = decoy; shadow = decoy + anomaly detector।",
+   "why_wrong": {},
+   "question_style": "concept",
+   "difficulty": "medium",
+   "exam_tags": [
+    "RSMSSB Informatics Assistant",
+    "SSC Computer Awareness",
+    "RPSC Programmer",
+    "Practice Set"
+   ],
+   "source_type": "original_practice",
+   "exam_name": null,
+   "exam_year": null,
+   "paper_or_shift": null,
+   "question_id_in_official_key": null,
+   "source_url_or_file": "Practice — original (textbook-based)",
+   "answer_verified_by": "EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)",
+   "verification_status": "answer_checked",
+   "duplicate_group": null,
+   "concept_tags": [
+    "Section A"
+   ],
+   "last_reviewed": "2026-10-14"
+  },
+  {
+   "id": "CN-T07-0061",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section B — Cryptography",
@@ -49720,7 +50317,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0061",
+   "id": "CN-T07-0062",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section B — Cryptography",
@@ -49767,7 +50364,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0062",
+   "id": "CN-T07-0063",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section B — Cryptography",
@@ -49814,7 +50411,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0063",
+   "id": "CN-T07-0064",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section B — Cryptography",
@@ -49861,7 +50458,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0064",
+   "id": "CN-T07-0065",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section B — Cryptography",
@@ -49909,7 +50506,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0065",
+   "id": "CN-T07-0066",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -49956,7 +50553,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0066",
+   "id": "CN-T07-0067",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50003,7 +50600,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0067",
+   "id": "CN-T07-0068",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50050,7 +50647,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0068",
+   "id": "CN-T07-0069",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50097,7 +50694,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0069",
+   "id": "CN-T07-0070",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50144,7 +50741,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0070",
+   "id": "CN-T07-0071",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50191,7 +50788,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0071",
+   "id": "CN-T07-0072",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",
@@ -50238,7 +50835,7 @@
    "last_reviewed": "2026-10-14"
   },
   {
-   "id": "CN-T07-0072",
+   "id": "CN-T07-0073",
    "topic_id": "T07",
    "topic": "Network Security",
    "subtopic": "Section C — Firewalls, IPSec & Security Protocols",

@@ -1657,18 +1657,6 @@ SECTIONS = [{'title': 'Section A - DC Components & Protocol Basics (Message, Sen
  {'title': "Section F - Network History (ARPANET to Today's Network)",
   'note': "Syllabus: Network History - ARPANET to today's network",
   'questions': [
-                {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q34',
-                 'q': ['The first network was:', 'सबसे पहला network था:'],
-                 'opts': [['CNNET', 'CNNET'], ['NSFNET', 'NSFNET'], ['ASAPNET', 'ASAPNET'], ['ARPANET', 'ARPANET']],
-                 'ans': 3,
-                 'wr': ['The first network was ARPANET (1969), created by ARPA of the U.S. Department of Defense. NSFNET (1986) came later as a '
-                        'backbone.',
-                        'सबसे पहला network ARPANET (1969) था, जिसे ARPA of U.S. Department of Defense ने बनाया था। NSFNET (1986) बाद में एक backbone '
-                        'के रूप में aaya था।'],
-                 'nk': ['First network = ARPANET (1969). NSFNET = 1986 (backbone).', 'First network = ARPANET (1969). NSFNET = 1986 (backbone).'],
-                 'ww': {0: ['CNNET is not a real/standard network.', 'CNNET koi real/standard network nahi hai।'],
-                        1: ['NSFNET came later (1986), it was not the first network.', 'NSFNET baad mein aaya (1986), ye pehla network nahi tha।'],
-                        2: ['ASAPNET is not a real/standard network.', 'ASAPNET koi real/standard network nahi hai।']}},
                 {'src': 'Repo: CN Topic Test-01 (UNIT TEST-1), Q43',
                  'q': ['In the original ARPANET, _______ were directly connected together.',
                        'Original ARPANET में, _______ आपस में directly connected the।'],
