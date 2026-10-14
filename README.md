@@ -99,6 +99,29 @@ par jao" link hota hai. Online test app alag hai: wo `assets/js/test.mjs` se cha
 Sirf visitor material publish hota hai — `maintainer/`, `tools/`, `tests/` aur `.md` files site par
 kahin link nahi hoti (`tools/validate_site.py` isi par fail karta hai).
 
+## Reasoning chapters kaise add karein (namuna pehle se hai)
+
+Har Reasoning folder me ek **sample** rakha hai, taaki format saaf dikhe:
+
+```
+content/reasoning/theory/      📘 Reasoning-Series-Sample-Chapter.pdf     (notes ka namuna)
+content/reasoning/practice/    ✍️ Reasoning-Series-Sample-Practice.pdf    (12 sawal, options ke saath)
+content/reasoning/answers/     ✅ Reasoning-Series-Sample-Answer-Key.pdf   (key + ek-line hal)
+content/reasoning/tests/       🧾 Reasoning-Sample-Test-Paper.pdf         (10 sawal ka test)
+```
+
+Apne asli chapter ki file usi folder me rakh dijiye — naam se hi title ban jayega, aur website par
+apne aap dikh jayega (`build_catalog.py` → `build_pages.py`). Chapter ke andar subfolder bhi ban
+sakta hai, jaise `content/reasoning/theory/Series/Series-Notes.pdf` → website par `Series` folder.
+Naye sample banane ke liye: `python3 tools/reasoning_samples.py [doc-id]`.
+
+## Previous Year Papers — exam-wise aur saal-wise
+
+`content/previous-year-papers/<exam>/<saal>/` me paper rakho. Har exam ke page par **2000 se 2026 tak
+ke saare saal** chip ke roop me dikhte hain: jis saal ka paper aa chuka hai wo gehra (blue) chip hai
+aur us par click karke paper khulta hai; baaki saal muted chip hain. Jo saal folder banta hai, uska page
+apne aap ban jata hai.
+
 ## Local preview
 
 ```bash

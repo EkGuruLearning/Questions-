@@ -61,11 +61,13 @@ class SiteDataTests(unittest.TestCase):
             built = json.loads(SITE.read_text(encoding="utf-8"))
             reasoning = {item["id"]: item for item in built["subjects"]}["reasoning"]
             practice = next(node for node in walk(reasoning["tree"]) if node["path"] == "practice")
+            before = next(node for node in walk(self.site["subjects"][3]["tree"]) if node["path"] == "practice")
             series = next(node for node in walk(reasoning["tree"]) if node["path"] == "practice/series")
             self.assertEqual(series["title_en"], "Series", "folder label should come from its own name")
             self.assertEqual(series["files"][0]["title_en"], "Seating Arrangement Basics")
             self.assertEqual(series["files"][0]["file_type"], "PDF")
-            self.assertEqual(practice["file_count"], 1, "parent folder counts the new file")
+            self.assertEqual(practice["file_count"], before["file_count"] + 1,
+                             "parent folder counts the new file")
         finally:
             sample.unlink(missing_ok=True)
             for path in sorted(folder.parent.rglob("*"), key=lambda item: len(item.parts), reverse=True):
@@ -93,7 +95,12 @@ class SiteDataTests(unittest.TestCase):
         reasoning = by_id["reasoning"]
         self.assertEqual([folder["path"] for folder in reasoning["tree"]["folders"]],
                          ["theory", "practice", "answers", "tests"])
-        self.assertTrue(all(folder["empty"] for folder in reasoning["tree"]["folders"]))
+        for folder in reasoning["tree"]["folders"]:
+            with self.subTest(folder=folder["path"]):
+                # har folder me ek namuna (sample) rakha hai, taaki format saaf dikhe
+                self.assertEqual(folder["file_count"], 1, f"reasoning/{folder['path']} me ek sample file")
+                self.assertTrue(folder["files"][0]["repo_path"].endswith(".pdf"))
+                self.assertFalse(folder["empty"])
 
     def test_registry_entries_must_exist_but_extra_files_are_fine(self):
         registered = [item["file"] for item in self.materials["materials"]]

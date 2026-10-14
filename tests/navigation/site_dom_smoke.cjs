@@ -146,9 +146,13 @@ section("reasoning folder pages", () => {
   const hub = read("subjects/reasoning/index.html");
   const tiles = all(hub, /class="folder-card/g).length;
   assert(tiles === 4, `expected 4 folder tiles, saw ${tiles}`);
+  for (const folder of ["theory", "practice", "answers", "tests"]) {
+    const page = read(`subjects/reasoning/${folder}/index.html`);
+    assert(/material-item/.test(page), `reasoning/${folder} should hold its sample file`);
+  }
   const practice = read("subjects/reasoning/practice/index.html");
-  assert(/empty-state/.test(practice), "an empty folder should say so");
-  assert(/crumb-up/.test(practice), "empty folder page still needs the back link");
+  assert(/material-item/.test(practice), "the sample practice paper should be listed");
+  assert(/crumb-up/.test(practice), "every folder page keeps the back link");
   return `${tiles} folder pages, empty ones explained`;
 });
 

@@ -425,6 +425,46 @@
       "title_hi": "RPSC प्रोग्रामर 2024 — पेपर 1 उत्तर कुंजी",
       "note_en": "Answer key for all 100 questions, section-wise.",
       "note_hi": "सभी 100 प्रश्नों की उत्तर कुंजी, सेक्शन-wise।"
+    },
+    {
+      "file": "content/reasoning/theory/Reasoning-Series-Sample-Chapter.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series (sample chapter)",
+      "title_hi": "रीज़निंग — श्रृंखला (नमूना अध्याय)",
+      "note_en": "Number series, letter series aur solved examples ek jagah.",
+      "note_hi": "संख्या श्रृंखला, अक्षर श्रृंखला और हल किए हुए उदाहरण एक साथ।"
+    },
+    {
+      "file": "content/reasoning/practice/Reasoning-Series-Sample-Practice.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series practice (sample)",
+      "title_hi": "रीज़निंग — श्रृंखला अभ्यास (नमूना)",
+      "note_en": "12 sawal, chaar-chaar options ke saath.",
+      "note_hi": "12 प्रश्न, चार-चार विकल्पों के साथ।"
+    },
+    {
+      "file": "content/reasoning/answers/Reasoning-Series-Sample-Answer-Key.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series answer key (sample)",
+      "title_hi": "रीज़निंग — श्रृंखला उत्तर कुंजी (नमूना)",
+      "note_en": "Har jawab ke saath ek line ka hal.",
+      "note_hi": "हर उत्तर के साथ एक पंक्ति का हल।"
+    },
+    {
+      "file": "content/reasoning/tests/Reasoning-Sample-Test-Paper.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — sample test paper",
+      "title_hi": "रीज़निंग — नमूना टेस्ट पेपर",
+      "note_en": "10 mishrit sawal, 10 ank — poora test practice ke liye.",
+      "note_hi": "10 मिश्रित प्रश्न, 10 अंक — पूरे टेस्ट के अभ्यास के लिए।"
     }
   ]
 }

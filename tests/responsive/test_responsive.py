@@ -4,6 +4,7 @@ import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 CSS = ROOT / "assets/css/ekguru.css"
+ROUTES_FILE = ROOT / "data/catalog/site-routes.txt"
 PAGES = [
     ROOT / "index.html",
     ROOT / "subjects/index.html",
@@ -13,6 +14,8 @@ PAGES = [
     ROOT / "subjects/rajasthan-geography/index.html",
     ROOT / "404.html",
 ]
+# chhote phone ka sabse aam size
+PHONE_WIDTHS = (360, 390, 414)
 
 
 class ResponsiveStructuralTests(unittest.TestCase):
@@ -78,6 +81,43 @@ class ResponsiveStructuralTests(unittest.TestCase):
         self.assertIn('id="paletteGrid"', source)
         self.assertIn('id="optionList"', source)
         self.assertIn('id="progressFill"', source)
+
+    def test_phone_first_rules_exist_for_layout_type_and_scrolling(self):
+        """Mobile zaruri hai: chhote phone par padding, type, buttons aur scroll sab set ho."""
+        self.assertRegex(self.css, r"@media\s*\(max-width:\s*380px\)", "very small phones ka block")
+        self.assertIn("overflow-x: hidden", self.css, "sideways scroll kabhi na ho")
+        self.assertRegex(self.css, r"html\s*\{[^}]*text-size-adjust:\s*100%")
+        self.assertRegex(self.css, r"h1,\s*h2,\s*h3,\s*h4,\s*p,\s*li[^{]*\{[^}]*overflow-wrap:\s*anywhere")
+        self.assertIn("scroll-margin-top", self.css, "sticky header ke neeche heading na chhupe")
+        self.assertIn(".footer-bottom { flex-direction: column", self.css)
+
+    def test_form_controls_are_16px_so_iphone_does_not_zoom(self):
+        self.assertRegex(self.css, r"\.field select,[^{]*\{[^}]*font-size:\s*16px")
+        self.assertIn('font: inherit; font-size: 16px;', self.css)
+
+    def test_buttons_stay_tappable_and_full_width_on_phones(self):
+        self.assertRegex(self.css, r"\.hero-actions\s+\{\s*flex-direction:\s*column")
+        self.assertRegex(self.css, r"\.material-actions\s+\.button\s*\{[^}]*min-height:\s*44px")
+        self.assertRegex(self.css, r"\.year-chip\s*\{[^}]*min-height:\s*(?:4[0-9]|[5-9][0-9])px")
+        self.assertRegex(self.css, r"\.button\s*\{[^}]*min-height:\s*44px")
+
+    def test_every_published_page_is_phone_ready(self):
+        """Har generated page: viewport, ek stylesheet, koi fixed width nahi."""
+        routes = [line.strip() for line in ROUTES_FILE.read_text(encoding="utf-8").splitlines()
+                  if line.strip() and not line.strip().startswith("#")]
+        self.assertGreater(len(routes), 10, "route list padhi jaani chahiye")
+        for rel in routes:
+            source = (ROOT / rel).read_text(encoding="utf-8")
+            with self.subTest(page=rel):
+                self.assertIn('name="viewport" content="width=device-width, initial-scale=1"', source)
+                self.assertIn("assets/css/ekguru.css", source)
+                self.assertNotRegex(source, r'width="\d{4,}"\s+(?![^>]*height)', "4-digit fixed width")
+                self.assertNotIn("<table", source, "tables ko wrapper chahiye — abhi koi publish nahi hota")
+
+    def test_quiz_buttons_are_big_enough_for_a_thumb(self):
+        self.assertRegex(self.css, r"\.option\s*\{[^}]*min-height:\s*48px")
+        self.assertRegex(self.css, r"\.palette-grid\s+button\s*\{[^}]*min-height:\s*44px")
+        self.assertRegex(self.css, r"\.mode-switch\s*\{[^}]*flex-wrap:\s*wrap")
 
     def test_question_text_and_options_wrap_on_small_screens(self):
         self.assertRegex(self.css, r"\.question-stem\s*\{[^}]*white-space:\s*pre-line")

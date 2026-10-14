@@ -459,6 +459,9 @@ def build() -> dict:
             "files": files,
         }
 
+        if subject.get("year_folders"):
+            entry["year_folders"] = subject["year_folders"]
+
         if has_test:
             topics = []
             for topic in subject["topics"]:

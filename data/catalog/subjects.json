@@ -259,7 +259,14 @@
           "note_hi": "आर.पी.एस.सी. प्रोग्रामर, AEN और असिस्टेंट प्रोफेसर पेपर।"
         }
       },
-      "topics": []
+      "topics": [],
+      "year_folders": {
+        "from": 2000,
+        "to": 2026,
+        "title_en": "Saal-wise (year-wise)",
+        "note_en": "Jis saal ka paper aa chuka hai wo gehra (blue) chip hai — us par click karke paper kholo. Halke chip wale saal ke paper jald aa rahe hain.",
+        "note_hi": "जिस साल का पेपर आ चुका है वह गहरा (नीला) चिप है — उस पर क्लिक करके पेपर खोलें। हल्के चिप वाले सालों के पेपर जल्द आ रहे हैं।"
+      }
     }
   ]
 }

@@ -238,6 +238,43 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
         </li>"""
 
 
+def year_chips(subject: dict, node: dict, from_page: str, current: str = "") -> str:
+    """Saal-wise chips (2000–2026). Jis saal ka folder bana hua hai wo link ban jata hai."""
+    cfg = subject["year_folders"]
+    known = {child["path"].split("/")[-1]: child for child in node["folders"]}
+    chips = []
+    for year in range(int(cfg["to"]), int(cfg["from"]) - 1, -1):
+        key = str(year)
+        child = known.get(key)
+        if not child:
+            chips.append(f'<span class="chip neutral year-chip pending">{key}</span>')
+            continue
+        target = f"subjects/{subject['slug']}/{child['path']}/index.html"
+        href = esc(href_from(from_page, target))
+        state = ' aria-current="page"' if key == current else ""
+        count = f'<span class="year-count">{child["file_count"]}</span>' if child["file_count"] else ""
+        chips.append(f'<a class="chip year-chip ready" href="{href}"{state}>{key}{count}</a>')
+    return "".join(chips)
+
+
+def year_section(subject: dict, node: dict, from_page: str) -> str:
+    """Exam folder page: saare saal ek jagah, taaki saal-wise kuch bhi chhoot na jaye."""
+    cfg = subject["year_folders"]
+    ready = sum(1 for child in node["folders"] if child["file_count"])
+    total_years = int(cfg["to"]) - int(cfg["from"]) + 1
+    return f"""
+    <section class="section">
+      <div class="section-head">
+        <h2>🗓️ {esc(cfg['title_en'])}</h2>
+        <span class="muted small">{ready} of {total_years} saal me paper maujood</span>
+      </div>
+      <p class="section-note">{esc(cfg['note_en'])}</p>
+      <div class="year-grid">
+{year_chips(subject, node, from_page)}
+      </div>
+    </section>"""
+
+
 def folder_tile(node: dict, href: str, compact: bool = False) -> str:
     meta = []
     if node["file_count"]:
@@ -488,6 +525,24 @@ class Builder:
             folder_tile(child, self.folder_href_from(subject, child, depth, rel_path))
             for child in node["folders"]
         )
+        # exam folder (jaise RPSC / DSSSB): folders ki jagah saal-wise chips
+        years = subject.get("year_folders") or {}
+        is_exam_folder = bool(years) and "/" not in node["path"]
+        year_block = year_section(subject, node, rel_path) if is_exam_folder else ""
+        # year folder (jaise RPSC > 2024): neeche dusre saal par jane ke chips
+        year_switch = ""
+        if years and "/" in node["path"]:
+            parent_path = node["path"].rsplit("/", 1)[0]
+            parent = next((item for item in walk_nodes(subject["tree"]) if item["path"] == parent_path), None)
+            if parent is not None and "/" not in parent["path"]:
+                year_switch = f"""
+    <section class="section">
+      <div class="section-head"><h2>🗓️ {esc(parent['title_en'])} ke doosre saal</h2></div>
+      <div class="year-grid">
+{year_chips(subject, parent, rel_path, current=node['path'].split('/')[-1])}
+      </div>
+    </section>"
+                """.strip()
         files = "".join(file_row(item, depth, rel_path) for item in node["files"])
         file_block = (f'        <ul class="material-list">\n{files}\n        </ul>' if node["files"]
                       else '        <p class="empty-state">Is folder ka material jald aa raha hai. '
@@ -502,17 +557,17 @@ class Builder:
       <p class="muted">{esc(node['title_hi'])}{f' — {esc(node["note_en"])}' if node['note_en'] else ''}</p>
       <p class="section-note">{esc(subject['title_en'])} · {plural(node['file_count'], 'file', 'files')}
         {f" · {' / '.join(node['file_types'])}" if node['file_types'] else ''}</p>
-    </section>
+    </section>{year_block}
     {f'''<section class="section">
       <div class="section-head"><h2>Subfolders</h2></div>
       <div class="folder-grid">
 {sub_tiles}
       </div>
-    </section>''' if sub_tiles else ''}
+    </section>''' if sub_tiles and not is_exam_folder else ''}
     <section class="section">
       <div class="section-head"><h2>Files</h2><span class="muted small">{plural(len(node['files']), 'file', 'files')}</span></div>
 {file_block}
-    </section>
+    </section>{year_switch}
   </main>
 
 {footer(depth, self.subjects, quick)}"""

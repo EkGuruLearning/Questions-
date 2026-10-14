@@ -248,6 +248,31 @@ class NavigationTests(unittest.TestCase):
                     if node["files"]:
                         self.assertIn("Download", source)
 
+    def test_exam_pages_show_every_year_from_2000_to_2026(self):
+        """Saal-wise grid: jis saal ka paper hai wo link, baaki saal muted chip."""
+        self.assertIn("year-grid", pathlib.Path("assets/css/ekguru.css").read_text(encoding="utf-8"))
+        pyq = next(subject for subject in self.site["subjects"] if subject["slug"] == "previous-year-papers")
+        years = pyq["year_folders"]
+        expected = [str(year) for year in range(years["to"], years["from"] - 1, -1)]
+        for exam in ("rpsc", "dsssb", "computer-operator"):
+            rel = f"subjects/previous-year-papers/{exam}/index.html"
+            source, parser = self.pages[rel]
+            with self.subTest(page=rel):
+                self.assertIn("year-grid", source)
+                chips = re.findall(r'class="chip (?:neutral )?year-chip[^"]*"[^>]*>(\d{4})', source)
+                self.assertEqual(chips, expected, "har saal ka chip maujood hona chahiye")
+                ready = re.findall(r'class="chip year-chip ready" href="([^"]+)"', source)
+                for href in ready:
+                    target = (ROOT / rel).parent / href
+                    self.assertTrue(target.is_file() or target.is_dir(), f"{rel}: {href} broken")
+
+    def test_year_page_offers_the_other_years(self):
+        rel = "subjects/previous-year-papers/rpsc/2024/index.html"
+        source, parser = self.pages[rel]
+        self.assertIn("ke doosre saal", source)
+        current = re.findall(r'class="chip year-chip ready" href="[^"]+" aria-current="page">(\d{4})', source)
+        self.assertEqual(current, ["2024"], "khuli hui saal ki chip par nishaan hona chahiye")
+
     def test_home_page_links_to_every_main_area(self):
         source, parser = self.pages["index.html"]
         hrefs = {link.get("href") for link in parser.links}
