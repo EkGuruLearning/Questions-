@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T17:03:09+00:00",
+  "generated_at": "2026-10-14T17:10:13+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 16,
@@ -95,7 +95,7 @@
         "test_published_route_list_covers_every_html_page (test_site_data.SiteDataTests.test_published_route_list_covers_every_html_page) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 10 tests in 0.235s",
+        "Ran 11 tests in 0.221s",
         "",
         "OK"
       ]
@@ -109,7 +109,7 @@
         "test_subject_cards_use_real_subject_ids (test_navigation.NavigationTests.test_subject_cards_use_real_subject_ids) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 15 tests in 0.014s",
+        "Ran 16 tests in 0.013s",
         "",
         "OK"
       ]
@@ -123,7 +123,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.003s",
+        "Ran 8 tests in 0.002s",
         "",
         "OK"
       ]
@@ -137,7 +137,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.067s",
+        "Ran 8 tests in 0.068s",
         "",
         "OK"
       ]
@@ -160,7 +160,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 73.799828"
+        "# duration_ms 68.646576"
       ]
     },
     {
@@ -183,7 +183,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (22 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (12 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],

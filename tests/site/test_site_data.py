@@ -155,6 +155,34 @@ class SiteDataTests(unittest.TestCase):
                 for item in topic["material"]["practice"]:
                     self.assertEqual(item["folder"], "practice")
 
+    def test_pictures_carry_real_seo_text(self):
+        pictures = [item for subject in self.site["subjects"] for item in subject["files"]
+                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}]
+        self.assertTrue(pictures)
+        for item in pictures:
+            with self.subTest(item=item["repo_path"]):
+                for field in ("alt_en", "alt_hi", "description_en", "description_hi"):
+                    text = item[field].strip()
+                    self.assertTrue(text, f"{item['repo_path']} needs {field}")
+                    self.assertNotIn(item["file_name"], text, "alt/description must describe the map, not repeat the file name")
+                self.assertLessEqual(len(item["alt_en"]), 200)
+                self.assertLessEqual(len(item["alt_hi"]), 200)
+                self.assertGreaterEqual(len(item["description_en"]), 120)
+                self.assertGreaterEqual(len(item["description_hi"]), 120)
+        maps = [item for item in pictures if item["subject"] == "rajasthan-geography"]
+        joined = " ".join(item["description_en"] + item["description_hi"] + item["alt_hi"] for item in maps)
+        for needle in ("41", "36", "सीमावर्ती", "पाकिस्तान"):
+            self.assertIn(needle, joined, f"map descriptions should mention {needle}")
+        for district in ("बाड़मेर", "बीकानेर", "श्रीगंगानगर", "जैसलमेर", "फलौदी"):
+            self.assertIn(district, joined, f"Pakistan-border districts should be named: {district}")
+        a4 = {item["file_name"]: item for item in maps}
+        portrait = a4["Rajasthan-Border-Districts-A4-Portrait.png"]
+        landscape = a4["Rajasthan-Border-Districts-A4-Landscape.png"]
+        self.assertIn("210 × 297", portrait["description_hi"])
+        self.assertIn("297 × 210", landscape["description_hi"])
+        self.assertIn("portrait", portrait["alt_en"].lower())
+        self.assertIn("landscape", landscape["alt_en"].lower())
+
     def test_image_previews_are_current_and_light(self):
         thumbs = json.loads((ROOT / "data/thumbs/manifest.json").read_text(encoding="utf-8"))["thumbs"]
         images = [item for subject in self.site["subjects"] for item in subject["files"]

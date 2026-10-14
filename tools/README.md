@@ -6,7 +6,7 @@
 |---|---|
 | `python3 tools/build_site_data.py` | Canonical bank → `data/banks/cn/manifest.json` + topic chunks. `--check` verify karta hai |
 | `python3 tools/build_thumbs.py` | Picture files ke halke preview (`data/thumbs/`) → website thumbnails. `--check` verify karta hai. Naya picture add karne par ImageMagick chahiye |
-| `python3 tools/build_catalog.py` | Catalogue inputs + previews + chunks → `data/site.json`. `--check` verify karta hai |
+| `python3 tools/build_catalog.py` | Catalogue inputs + previews + chunks → `data/site.json` (alt/description = image SEO). `--check` verify karta hai |
 | `python3 tools/validate_site.py` | Routes, links, anchors, `.md`/maintainer leak, download hashes, `?folder=` links, preview files |
 | `python3 tools/validate_question_bank.py` | Bank schema v2, evidence gate, chunk coverage |
 | `python3 tools/read_structure.py` | Structure ka map; `--check` par poora preflight |

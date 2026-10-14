@@ -92,10 +92,16 @@
   function fileRow(item) {
     var row = el("li", "material-item" + (isImage(item) ? " is-image" : ""));
     var topicChip = item.topic_id ? '<span class="chip neutral">' + esc(item.topic_id) + "</span>" : "";
+    // Pictures carry their own SEO alt text; the description is part of the page
+    // content so a search engine (and the student) reads what the sheet shows.
     var thumb = isImage(item)
       ? '<a class="file-thumb" href="' + esc(fileHref(item)) + '" target="_blank" rel="noopener noreferrer">' +
-        '<img src="' + esc(previewHref(item)) + '" alt="' + esc(item.title_en) + '" loading="lazy" decoding="async">' +
+        '<img src="' + esc(previewHref(item)) + '" alt="' + esc(item.alt_en || item.title_en) + '" loading="lazy" decoding="async">' +
         '<span class="file-thumb-open">Poora dekho</span></a>'
+      : "";
+    var description = isImage(item) && item.description_en
+      ? '<p class="file-description" lang="en">' + esc(item.description_en) + '</p>' +
+        (item.description_hi ? '<p class="file-description" lang="hi">' + esc(item.description_hi) + "</p>" : "")
       : "";
     row.innerHTML =
       thumb +
@@ -103,6 +109,7 @@
         "<h4>" + esc(item.title_en) + "</h4>" +
         '<p class="muted small" style="margin:0">' + esc(item.title_hi) + "</p>" +
         (item.note_en ? '<p class="small" style="margin:0.2rem 0 0">' + esc(item.note_en) + "</p>" : "") +
+        description +
         '<div class="material-meta">' + topicChip +
           '<span class="chip neutral">' + esc(item.file_type) + "</span>" +
           '<span class="chip neutral">' + esc(item.size_label) + "</span>" +

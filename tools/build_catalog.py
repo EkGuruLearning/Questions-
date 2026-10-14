@@ -25,6 +25,8 @@ Wiring rules enforced here (the build fails instead of shipping a wrong page):
 3. Every folder that contains published files needs a label in `subjects.json`,
    and every configured label must point at a folder that really has files.
 4. Every registered topic must exist in the bank manifest and match its topic name.
+   Pictures must also carry alt text (`alt_en`, `alt_hi`) and a description, which
+   is what a search engine reads and what the page shows under the map.
    Every picture must have an up-to-date preview from `tools/build_thumbs.py`, so a
    folder of 3 MB maps still opens instantly on a phone.
 5. Counts, byte sizes and SHA-256 values come from the real files, never hand-typed.
@@ -189,6 +191,14 @@ def build_files(subject: dict, registered: list[dict], thumbs: dict) -> list[dic
                 "url": url_for(entry["thumb"]),
                 "bytes": thumb_file.stat().st_size,
             }
+        is_picture = path.suffix.lower().lstrip(".") in {"png", "jpg", "jpeg", "webp", "svg"}
+        if is_picture:
+            for field in ("alt_en", "alt_hi", "description_en", "description_hi"):
+                if not (raw.get(field) or "").strip():
+                    raise SystemExit(
+                        f"FAIL: {rel} is a picture, so data/catalog/materials.json needs a "
+                        f"non-empty '{field}' (SEO alt text / description)"
+                    )
         items.append({
             "id": rel.split("/", 1)[1].replace("/", "-").rsplit(".", 1)[0],
             "subject": subject_id,
@@ -199,6 +209,10 @@ def build_files(subject: dict, registered: list[dict], thumbs: dict) -> list[dic
             "title_hi": raw["title_hi"],
             "note_en": raw.get("note_en", ""),
             "note_hi": raw.get("note_hi", ""),
+            "alt_en": raw.get("alt_en", ""),
+            "alt_hi": raw.get("alt_hi", ""),
+            "description_en": raw.get("description_en", ""),
+            "description_hi": raw.get("description_hi", ""),
             "repo_path": rel,
             "url": url_for(rel),
             "file_name": path.name,

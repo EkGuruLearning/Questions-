@@ -28,6 +28,9 @@ class PageParser(html.parser.HTMLParser):
         self.buttons = []
         self.images = []
         self.scripts = []
+        self.meta = []
+        self.titles = []
+        self._in_title = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -41,6 +44,18 @@ class PageParser(html.parser.HTMLParser):
             self.images.append(attrs)
         elif tag == "script":
             self.scripts.append(attrs)
+        elif tag == "meta":
+            self.meta.append(attrs)
+        elif tag == "title":
+            self._in_title = True
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self._in_title = False
+
+    def handle_data(self, data):
+        if self._in_title:
+            self.titles.append(data.strip())
 
 
 class NavigationTests(unittest.TestCase):
@@ -196,6 +211,18 @@ class NavigationTests(unittest.TestCase):
         self.assertIn("index.html", hrefs)
         self.assertIn("subjects/computer-network/test/index.html", hrefs)
         self.assertIn("subjects/computer-network/material/index.html", hrefs)
+
+    def test_geography_page_carries_border_district_seo(self):
+        source, parser = self.pages["subjects/rajasthan-geography/index.html"]
+        meta = next((tag for tag in parser.meta if tag.get("name") == "description"), None)
+        self.assertIsNotNone(meta, "the map page needs a meta description")
+        text = meta.get("content", "")
+        for needle in ("41", "36", "A4", "A1"):
+            self.assertIn(needle, text)
+        self.assertIn("सीमावर्ती", source + text)
+        self.assertIn("application/ld+json", source)
+        title = " ".join(parser.titles)
+        self.assertIn("Rajasthan", title)
 
     def test_deep_links_use_relative_paths_for_the_pages_project_base(self):
         for rel, (source, _) in self.pages.items():

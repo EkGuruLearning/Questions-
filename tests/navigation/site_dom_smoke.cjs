@@ -230,6 +230,11 @@ async function main() {
     const fullLink = items[0].querySelector("a.button.secondary");
     assert(/content\/rajasthan-geography\/map\/rajasthan\/.+\.png$/.test(fullLink.getAttribute("href")), "Rajasthan folder: the full-size map link is missing");
     assert(/download/.test(items[0].innerHTML), "Rajasthan folder: download button is missing");
+    const firstAlt = items[0].querySelector("img").getAttribute("alt");
+    assert(/Rajasthan border districts|Rajasthan border district atlas/.test(firstAlt), `Rajasthan folder: SEO alt text is missing: ${firstAlt}`);
+    const described = [...items].filter((item) => item.querySelector(".file-description"));
+    assert(described.length === items.length, "Rajasthan folder: every map should show its SEO description");
+    assert(/41/.test(items[0].textContent) && /सीमावर्ती/.test(items[0].textContent), "Rajasthan folder: the description text is not shown");
     results.push(`Rajasthan folder: ${items.length} map files with previews and downloads`);
     dom.window.close();
   }

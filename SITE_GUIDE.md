@@ -72,6 +72,8 @@ Website ka folder view `content/` ke asli folders se banta hai:
    (`title_en`, `title_hi`, `note_en`, `note_hi`, `icon`, `order`) — site par folder card apne aap ban jayega.
 4. Picture (map/PNG) hai to `python3 tools/build_thumbs.py` — halka preview `data/thumbs/` me banta hai,
    jise website thumbnail ke liye use karti hai (full file dekho/download ke liye alag rehti hai).
+   Picture ke entry me `alt_en`, `alt_hi`, `description_en`, `description_hi` bhi likho — alt text image
+   SEO hai aur description folder view me map ke neeche dikhti hai (kitne jile, kis se seema lagti hai etc.).
 5. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
 
 ### Nayi quiz/test file (HTML) banani hai?
