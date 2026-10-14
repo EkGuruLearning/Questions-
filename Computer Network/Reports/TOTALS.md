@@ -83,3 +83,40 @@ Sab self-authored questions (waves 1–5 = 197) jo quiz/practice me add hue: har
 Q + 4 options + ✓ correct answer + why (EN/HI) + nukte + source. Part A = wave-5 NEW (26),
 Part B = waves 1–4 (171). User inka answer verify karenge.
 Wave-5 stems practice booklets me confirmed (26/26, PDF text extract proof).
+
+---
+
+# R3 — W6 bulk import (ALL new/ questions) — 2026-10-14
+
+**Grand total = 1556 questions** (817 R2 bank + **739 newly imported** from new/ compiled banks).
+
+## Per topic (R3)
+
+| Topic | Q | Practice booklet | Quiz HTML |
+|---|---|---|---|
+| 1 | 375 | 375Q / 31pp | 431 KB |
+| 2 | 144 | 144Q / 12pp | 180 KB |
+| 3 | 231 | 231Q / 19pp | 259 KB |
+| 4 | 99 | 99Q / 8pp | 136 KB |
+| 5 | 174 | 174Q / 14pp | 202 KB |
+| 6 | 387 | 387Q / 34pp | 444 KB |
+| 7 | 146 | 146Q / 12pp | 178 KB |
+| **Total** | **1556** | **1556Q / 130pp** | 7 HTMLs, JS check 7/7 |
+
+## Source pool & zero-repeat evidence (W6_IMPORT_LOG.md)
+
+- Extracted: 1008 (21 PDFs) + 178 (2nd-parser: Computer-Network-MCQ 89 + networkmcq 89) = **1185 usable**
+- Dropped as REPEATS: **446** (241 exact stem + 136 near≥0.90 + 69 near≥0.75 & same answer)
+- **Imported: 739 new** — 0 exact dup groups in export scan
+
+## Answer status (honest)
+
+| verification_status | count | meaning |
+|---|---|---|
+| answer_checked | 791 | curation pipeline solved/cross-checked |
+| paper_and_key_checked | 26 | RPSC Programmer 2024 paper + official key |
+| **claimed_answer_unverified** | **739** | W6 bulk import — source key only, ⚠ CAUTION in nukte |
+
+- W6 records: EN stems/options (Hindi translation pass pending); every nukte carries
+  "⚠ CAUTION — answer NOT verified: compiled-bank source key = (X)". Visible in quiz feedback panel.
+- Agent verification pass will flip records to answer_checked + fill explanations, batch by batch.

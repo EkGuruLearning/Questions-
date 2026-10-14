@@ -113,7 +113,7 @@ NEW_MAP = {
 def build_booklet(n, title):
     d = load(f"topic{n}_data")
     new_mods = [load("practice_new_p1"), load("practice_new_p2"), load("practice_new_p3"),
-                load("practice_new_p4"), load("practice_new_p5")]
+                load("practice_new_p4"), load("practice_new_p5"), load("w6_bank")]
     new_map = {}
     for m in new_mods:
         for k in dir(m):

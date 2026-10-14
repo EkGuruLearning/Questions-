@@ -79,7 +79,7 @@ def collect(n):
     _DIFF_LABELS = ("easy", "medium", "hard")
     new_map = {}
     for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3",
-               "practice_new_p4", "practice_new_p5"):
+               "practice_new_p4", "practice_new_p5", "w6_bank"):
         m = load(pn)
         for k in dir(m):
             if k.startswith("P") and isinstance(getattr(m, k), list):

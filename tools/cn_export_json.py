@@ -90,7 +90,7 @@ EVIDENCE_FILES = _evi
 HAS_RPSC_2024 = any("QUESTIONS" in f.upper() or "ANSWER" in f.upper() for f in _evi)
 
 
-def classify_source(src):
+def classify_source(src, nk=None):
     """Return (source_type, exam_name, exam_year, verification_status)."""
     s = src or ""
     exam_m = EXAM_YEAR.search(s)
@@ -110,6 +110,8 @@ def classify_source(src):
         st = "repository_internal"
     if st == "verified_official_pyq":
         vs = "paper_and_key_checked"
+    elif nk and isinstance(nk, (list, tuple)) and nk and nk[0] and "NOT verified" in nk[0]:
+        vs = "claimed_answer_unverified"   # bulk-imported source key, agent-verification pending
     else:
         vs = "answer_checked"
     return st, exam_name, exam_year, vs
@@ -197,7 +199,7 @@ def main():
                 ans = q["ans"]
                 wr, nk = q["wr"], q["nk"]
                 src = q["src"]
-                st, exam_name, exam_year, vs = classify_source(src)
+                st, exam_name, exam_year, vs = classify_source(src, nk)
                 diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
                 rid = f"CN-{tid}-{seq:04d}"
                 style = infer_style(qen)
@@ -228,7 +230,9 @@ def main():
                     "source_url_or_file": src,
                     "answer_verified_by": ("EkGuru curation pipeline — cross-checked vs Forouzan + computed numerics (Oct 2026)"
                                            if vs == "answer_checked" else
-                                           "Official paper + key matched (Past Papers/RPSC Programmer 2024 Paper-1)"),
+                                           "Official paper + key matched (Past Papers/RPSC Programmer 2024 Paper-1)"
+                                           if vs == "paper_and_key_checked" else
+                                           "NOT verified — compiled-bank source key only (agent review pending)"),
                     "verification_status": vs,
                     "duplicate_group": None,
                     "concept_tags": [sub.split("—")[0].strip()[:60]] if "—" in sub else [tname],
@@ -245,7 +249,7 @@ def main():
         # practice originals (practice_new p1..p4, *_X lists)
         new_map = {}
         for pn in ("practice_new_p1", "practice_new_p2", "practice_new_p3", "practice_new_p4",
-                   "practice_new_p5"):
+                   "practice_new_p5", "w6_bank"):
             m = load_tuple_module(pn)
             for k in dir(m):
                 if k.startswith("P") and isinstance(getattr(m, k), list):
@@ -274,7 +278,7 @@ def main():
                         seq += 1
                         src, qen, qhi, opts, ans, wr, nk, ww = t
                         opts = [[o[0], (o[1] or o[0])] for o in opts]
-                        st, exam_name, exam_year, vs = classify_source(src)
+                        st, exam_name, exam_year, vs = classify_source(src, nk)
                         diff = cn_difficulty.q_diff(dict(src=src, q=[qen, qhi], opts=opts, ans=ans))
                         rid = f"CN-{tid}-{seq:04d}"
                         rec = {

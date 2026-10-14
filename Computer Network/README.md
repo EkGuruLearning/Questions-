@@ -140,3 +140,11 @@ marking presets are mock rules; near-duplicate review is partial. Never claim 10
 - Grand totals: `Reports/TOTALS.md`.
 - **Verification Answer Key** — `Practice/ANSWER KEY - Added Questions (197) (Verification).pdf` (60pp): har added
   question ka answer + explanation, taaki aap khud answers verify kar sako (Part A = wave-5 new 26).
+
+## R3 — W6 bulk import: ALL new/ questions (2026-10-14)
+
+- Bank **817 → 1556 questions** — saare `new/` compiled-bank questions added (1185 extracted, 446 repeats dropped, 739 imported).
+- Zero-repeat enforced: exact stem / ≥0.90 overlap / ≥0.75+same-answer = dropped (`Reports/W6_IMPORT_LOG.md`).
+- Unverified answers = ⚠ CAUTION banner in nukte (quiz feedback me dikhta hai) — `claimed_answer_unverified: 739`.
+- Parser #2 recovered the 2 earlier-unparseable PDFs (89+89 Qs with their keys).
+- Practice booklets 1556Q/130pp; quiz apps rebuilt (JS 7/7).
