@@ -296,3 +296,61 @@ on it is now above the 5 pt legibility floor, which was not true before.
 **Reproducing it.** Nothing above is hand-drawn into the PNG. Every element
 is generated from the master GeoPackage by `scripts/03_render.py`; editing
 the data and re-running the script regenerates the sheet.
+
+
+---
+
+## 10. The clean A4 border map (`Rajasthan_Border_Districts_A4_*`)
+
+A deliberately stripped-down companion sheet, for when the full atlas carries
+more than is needed. It draws **only**:
+
+| Unit | Districts |
+|---|---|
+| Rajasthan | 41 |
+| Madhya Pradesh | 10 |
+| Haryana | 7 |
+| Gujarat | 6 |
+| Sindh (Pakistan) | 6 |
+| Punjab (Pakistan) | 3 |
+| Uttar Pradesh | 2 |
+| Punjab (India) | 2 |
+| **Total** | **77** |
+
+The other **354** districts in the master are excluded by construction. So is
+all the furniture: no graticule, no legend, no locator inset, no study panels.
+The only things on the page besides the map are a **north arrow** and a
+**scale bar**.
+
+- **Sheets:** A4 landscape (297×210 mm) and A4 portrait (210×297 mm), PNG + PDF at 300 dpi.
+- **Labels:** bilingual — Hindi above, English below. Rajasthan's districts are
+  set in bold.
+- **Borders:** India–Pakistan international boundary in red, Rajasthan's
+  interstate boundary in yellow, district outlines crisp at 0.34 pt.
+
+**Projection.** Optimised for *this* map's extent rather than inherited from
+the atlas. The 77 districts span 22.503–30.692 N, and scanning the symmetric
+standard-parallel pair gives **23.71 N / 29.485 N** (lat₀ 26.5975, lon₀
+73.516) with a maximum scale error of **0.1264 % = 0.0321 mm per inch**. The
+atlas's own parallels would give 0.2101 % on this extent, and the old 25/30
+pair 0.2802 %.
+
+**Reproduce:**
+
+```bash
+python scripts/01_build_master.py     # master GeoPackage
+python scripts/02_adjacency.py        # BOUNDARY_RELATIONS.csv
+python scripts/10_render_border_only.py   # both A4 sheets
+python scripts/11_verify_border_only.py   # audit -> reports/BORDER_ONLY_QA.md
+```
+
+**Audit:** `reports/BORDER_ONLY_QA.md` — 18 PASS / 2 REVIEW / 0 FAIL. The
+auditor re-derives the 77-district set from the master and the adjacency
+table, re-measures the projection distortion, and checks the rendered pixels.
+The two REVIEWs are labels the collision engine nudged off their district
+interior point (2 of 77 landscape, 4 of 77 portrait, ≤ 6 mm); each is drawn
+with a leader line back to its district.
+
+**Note:** because there is no legend, the per-state fill colours are not
+keyed on the sheet. This was requested ("direction and scale bar only"); say
+the word and a compact six-row key can be added.

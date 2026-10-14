@@ -42,7 +42,7 @@
 | 21 | A3: international red and interstate yellow are drawn | **PASS** | red-ish pixels=38,812, yellow-ish pixels=30,664 |
 | 22 | No duplicate Hindi district labels | **PASS** | 0 duplicated Hindi names in the name table |
 | 23 | Adjacency table produced from geometry, not typed by hand | **PASS** | BOUNDARY_RELATIONS.csv holds 67 rows produced by scripts/02_adjacency.py using a bidirectional geodesic measurement with a 1000 m conflation tolerance |
-| 24 | Project reproducible from the master | **PASS** | scripts: 00_audit_uploads.py, 01_build_master.py, 02_adjacency.py, 03_render.py, 04_make_qgis_project.py, 05_review_round1.py, 06_review_round2.py, 07_review_round3.py, 99_validate.py, atlas_lib.py, atlas_style.py; raw files archived unmodified with SHA-256 in data/metadata/RAW_FILE_INVENTORY.csv (13 files) |
+| 24 | Project reproducible from the master | **PASS** | scripts: 00_audit_uploads.py, 01_build_master.py, 02_adjacency.py, 03_render.py, 04_make_qgis_project.py, 05_review_round1.py, 06_review_round2.py, 07_review_round3.py, 10_render_border_only.py, 11_verify_border_only.py, 99_validate.py, atlas_lib.py, atlas_style.py; raw files archived unmodified with SHA-256 in data/metadata/RAW_FILE_INVENTORY.csv (13 files) |
 | 25 | 1-degree graticule drawn on the sheet | **PASS** | 153,798 pixels matching the graticule colour #B4AC9C |
 | 26 | study panel 1 has content | **PASS** | ink fraction 0.008 in x[0.010,0.335] y[0.026,0.237] |
 | 27 | study panel 2 has content | **PASS** | ink fraction 0.008 in x[0.350,0.645] y[0.026,0.237] |
@@ -60,7 +60,7 @@
 | 39 | QGIS project opened in QGIS Desktop | **NOT TESTED** | QGIS is not installed in this environment. gis_project/*.qgz was written by hand as a QGIS 3.x project XML referencing the master GeoPackage; it has not been opened in QGIS to confirm. |
 | 40 | Every label anchor lies inside its own polygon | **PASS** | 228 anchors tested, 0 outside |
 | 41 | Border lengths cross-checked against published exam figures | **REVIEW** | GIS-measured vs. published: Pakistan 1036/1070 km (-3%), Punjab 90/89 km (+1%), Haryana 1039/1262 km (-18%), Uttar Pradesh 462/877 km (-47%), Madhya Pradesh 2110/1600 km (+32%), Gujarat 723/1022 km (-29%). The district COUNTS match published lists exactly; the LENGTHS do not, and the published lengths are not reproducible from two independent GIS datasets. The sheet reports the GIS lengths. |
-| 42 | Delivered files hashed | **PASS** | 7 exported files recorded in data/metadata/DELIVERED_FILE_HASHES.csv |
+| 42 | Delivered files hashed | **PASS** | 11 exported files recorded in data/metadata/DELIVERED_FILE_HASHES.csv |
 
 ## Measurement conventions
 
