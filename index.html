@@ -1,118 +1,282 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142d3f">
-  <meta name="description" content="EkGuru Learning by PRAKASH: explore Computer Network practice, Rajasthan Geography maps, study material and source notes.">
-  <title>EkGuru Learning — Subjects, Study Material &amp; Maps</title>
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script type="module" src="assets/js/app.js"></script>
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="EkGuru Learning by PRAKASH — Computer Network, Reasoning, Rajasthan Geography maps aur Previous Year Papers (RPSC, DSSSB, SSC, NET). Folder-wise PDF aur online test, free.">
+  <title>EkGuru Learning — study material, previous year papers aur online test</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/ekguru.css">
 </head>
-<body class="catalog-page" data-page="home">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="index.html">
         <span class="brand-mark" aria-hidden="true">e</span>
-        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">BY PRAKASH · STUDY PORTAL</span></span>
+        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
       </a>
+      <nav class="site-nav desktop-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="subjects/computer-network/index.html">Computer Network</a><a href="subjects/previous-year-papers/index.html">Previous Year Papers</a><a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a><a href="subjects/reasoning/index.html">Reasoning</a><a href="subjects/index.html">All Subjects</a></nav>
       <details class="site-menu">
         <summary class="site-menu-toggle">Menu</summary>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="subjects/index.html">All Subjects</a>
-          <a href="subjects/computer-network/index.html">Computer Network</a>
-          <a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a>
-          <a href="maps/index.html">Maps &amp; Atlases</a>
-          <a href="practice/index.html">Practice Tests</a>
-          <a href="study-material/index.html">Study Material</a>
-          <a href="sources/index.html">Sources &amp; Verification</a>
-          <a href="guides/repository-structure/index.html">File Guide</a>
-        </nav>
+        <nav class="site-nav" aria-label="Main navigation (mobile)"><a href="index.html" aria-current="page">Home</a><a href="subjects/computer-network/index.html">Computer Network</a><a href="subjects/previous-year-papers/index.html">Previous Year Papers</a><a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a><a href="subjects/reasoning/index.html">Reasoning</a><a href="subjects/index.html">All Subjects</a></nav>
       </details>
     </div>
   </header>
-
-  <section class="hero" aria-labelledby="homeTitle">
-    <div class="shell hero-grid">
-      <div class="hero-copy">
+  <section class="hero">
+    <div class="shell hero-inner">
+      <div>
         <span class="eyebrow">EkGuru Learning · By PRAKASH</span>
-        <h1 id="homeTitle">Learn by subject.<br><em>Find the source.</em></h1>
-        <p class="lead">A practical learning portal built from the materials already in this repository. Explore the source-labelled Computer Network question bank, or open the existing Rajasthan Geography map and data collection.</p>
-        <p class="muted">Computer Network has a question bank. Rajasthan Geography currently publishes maps, boundary data and audits—not a question bank. Map source and boundary claims have open verification notes.</p>
+        <h1>Padho, practice karo, <em>test do.</em></h1>
+        <p class="hero-lead">Har subject ke folders — theory, practice, answers aur tests. Previous year papers
+          exam-wise aur saal-wise, aur Computer Network ka online test turant.</p>
         <div class="hero-actions">
-          <a class="button accent" href="subjects/index.html">Explore all subjects</a>
-          <a class="button secondary" href="subjects/computer-network/index.html">Computer Network</a>
+          <a class="button primary" href="subjects/computer-network/index.html">Computer Network</a>
+          <a class="button secondary" href="subjects/previous-year-papers/index.html">Previous Year Papers</a>
+          <a class="button secondary" href="subjects/rajasthan-geography/index.html">Rajasthan Map</a>
+          <a class="button ghost" href="subjects/index.html">All subjects</a>
+        </div>
+        <div class="hero-stats">
+          <span class="hero-stat"><strong>4</strong><span>Subjects</span></span>
+          <span class="hero-stat"><strong>55</strong><span>Files</span></span>
+          <span class="hero-stat"><strong>1,554</strong><span>Online questions</span></span>
         </div>
       </div>
-      <aside class="hero-map" aria-label="Rajasthan map preview">
-        <a href="maps/rajasthan/index.html" aria-label="Open Rajasthan map and atlas details">
-          <img id="mapPreviewImage" src="assets/catalog/rajasthan-border-atlas-preview.webp" width="1600" height="1130" fetchpriority="high" alt="Preview of the repository's Rajasthan border-district atlas with Hindi labels and highlighted borders. This is a study preview; source and boundary details still need verification.">
-        </a>
-        <p class="image-caption" id="mapImageCaption">Existing Rajasthan border-district atlas preview. It is not an official or fully verified map; read the linked source audit.</p>
-        <div class="card-actions">
-          <a class="button secondary small" href="maps/rajasthan/index.html">Maps &amp; Atlases</a>
-          <a id="fullSizeMapLink" class="button secondary small" href="Rajasthan%20Geography%20Maps/exports/Rajasthan_Border_District_Atlas_A1.png" >Open full-size A1 PNG</a>
-        </div>
-      </aside>
     </div>
   </section>
 
   <main id="main" class="shell">
-    <section class="section" aria-labelledby="exploreTitle">
-      <div class="section-heading-row">
-        <div>
-          <span class="eyebrow">Start here</span>
-          <h2 id="exploreTitle">Explore Subjects</h2>
-        </div>
-        <a href="subjects/index.html">Browse all subjects →</a>
+    <section class="section">
+      <div class="section-head">
+        <h2>Subjects</h2>
+        <a href="subjects/index.html">All subjects →</a>
       </div>
-      <p class="section-intro">Each subject opens a dedicated page with its real, available material. A live resource page does not imply a question bank or verified exam claims.</p>
-      <p id="catalogStatus" class="status-line" role="status" aria-live="polite">Subject catalogue is shown below. Resource details are enhanced from the checked-in catalogue when JavaScript is available.</p>
-      <div id="subjectGrid" class="subject-grid" aria-live="polite">
+      <p class="section-note">Har subject ke andar folder — folder ke andar files.</p>
+      <div class="subject-grid">
         <article class="card subject-card">
-          <span class="status-chip">Live question bank</span><span class="subject-mark" aria-hidden="true">01</span>
-          <h3>Computer Network</h3><p class="muted">कंप्यूटर नेटवर्क</p>
-          <p>Seven topics, interactive practice, booklets, theory and question-level source/answer-status notes.</p>
-          <a class="button accent" href="subjects/computer-network/index.html">Explore Computer Network</a>
+          <div class="card-title-row">
+            <h3 style="margin:0">Computer Network</h3>
+            <span class="chip neutral">कंप्यूटर नेटवर्क</span>
+          </div>
+          <p class="muted small" style="margin:0.3rem 0 0.7rem">5 folders · 32 files · 1,554 online questions</p>
+          <p class="small" style="margin:0 0 0.7rem">7 topics · theory · practice · answers · tests</p>
+          <div class="folder-grid">
+          <a class="folder-card compact" href="subjects/computer-network/theory/index.html">
+            <span class="folder-icon" aria-hidden="true">📘</span>
+            <span class="folder-body">
+              <strong>Theory</strong>
+              <span class="folder-hi">थ्योरी</span>
+
+              <span class="folder-meta">8 files · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/computer-network/practice/index.html">
+            <span class="folder-icon" aria-hidden="true">✍️</span>
+            <span class="folder-body">
+              <strong>Practice questions</strong>
+              <span class="folder-hi">प्रैक्टिस प्रश्न</span>
+
+              <span class="folder-meta">7 files · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/computer-network/answers/index.html">
+            <span class="folder-icon" aria-hidden="true">✅</span>
+            <span class="folder-body">
+              <strong>Answers &amp; explanations</strong>
+              <span class="folder-hi">उत्तर और व्याख्या</span>
+
+              <span class="folder-meta">5 files · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/computer-network/tests/index.html">
+            <span class="folder-icon" aria-hidden="true">🧾</span>
+            <span class="folder-body">
+              <strong>Tests</strong>
+              <span class="folder-hi">टेस्ट</span>
+
+              <span class="folder-meta">11 files · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/computer-network/reference/index.html">
+            <span class="folder-icon" aria-hidden="true">📚</span>
+            <span class="folder-body">
+              <strong>Reference book</strong>
+              <span class="folder-hi">रेफरेंस बुक</span>
+
+              <span class="folder-meta">1 file · PDF</span>
+            </span>
+
+          </a>
+          </div>
+          <div class="button-row" style="margin-top:0.9rem"><a class="button primary" href="subjects/computer-network/index.html">Folder kholo</a><a class="button secondary" href="subjects/computer-network/test/index.html">Test do</a></div>
         </article>
         <article class="card subject-card">
-          <span class="status-chip warning">Live resources · no quiz bank</span><span class="subject-mark" aria-hidden="true">02</span>
-          <h3>Rajasthan Geography</h3><p class="muted">राजस्थान भूगोल</p>
-          <p>Existing map previews, border-district CSVs, metadata, source registers and open audit findings.</p>
-          <a class="button accent" href="subjects/rajasthan-geography/index.html">Explore Rajasthan Geography</a>
+          <div class="card-title-row">
+            <h3 style="margin:0">Previous Year Papers</h3>
+            <span class="chip neutral">पिछले वर्षों के पेपर</span>
+          </div>
+          <p class="muted small" style="margin:0.3rem 0 0.7rem">8 folders · 2 files</p>
+          <p class="small" style="margin:0 0 0.7rem">Exam-wise aur saal-wise old papers — 2000 se aage</p>
+          <div class="folder-grid">
+          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/ia/index.html">
+            <span class="folder-icon" aria-hidden="true">🧾</span>
+            <span class="folder-body">
+              <strong>IA</strong>
+              <span class="folder-hi">आई.ए.</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/sci/index.html">
+            <span class="folder-icon" aria-hidden="true">🧾</span>
+            <span class="folder-body">
+              <strong>SCI</strong>
+              <span class="folder-hi">एस.सी.आई.</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/computer-operator/index.html">
+            <span class="folder-icon" aria-hidden="true">💻</span>
+            <span class="folder-body">
+              <strong>Computer Operator</strong>
+              <span class="folder-hi">कंप्यूटर ऑपरेटर</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/system-assistant/index.html">
+            <span class="folder-icon" aria-hidden="true">🖥️</span>
+            <span class="folder-body">
+              <strong>System Assistant</strong>
+              <span class="folder-hi">सिस्टम असिस्टेंट</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/dsssb/index.html">
+            <span class="folder-icon" aria-hidden="true">🏫</span>
+            <span class="folder-body">
+              <strong>DSSSB</strong>
+              <span class="folder-hi">डी.एस.एस.एस.बी.</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>          <a class="folder-card compact is-empty" href="subjects/previous-year-papers/ssc/index.html">
+            <span class="folder-icon" aria-hidden="true">📋</span>
+            <span class="folder-body">
+              <strong>SSC</strong>
+              <span class="folder-hi">एस.एस.सी.</span>
+
+              <span class="folder-meta">material jald aa raha hai</span>
+            </span>
+
+          </a>
+          </div>
+          <div class="button-row" style="margin-top:0.9rem"><a class="button primary" href="subjects/previous-year-papers/index.html">Folder kholo</a></div>
+        </article>
+        <article class="card subject-card">
+          <div class="card-title-row">
+            <h3 style="margin:0">Rajasthan Geography</h3>
+            <span class="chip neutral">राजस्थान भूगोल</span>
+          </div>
+          <p class="muted small" style="margin:0.3rem 0 0.7rem">1 folder · 8 files</p>
+          <p class="small" style="margin:0 0 0.7rem">Map folder · Rajasthan ke maps</p>
+          <div class="folder-grid">
+          <a class="folder-card compact" href="subjects/rajasthan-geography/map/index.html">
+            <span class="folder-icon" aria-hidden="true">🗂️</span>
+            <span class="folder-body">
+              <strong>Map</strong>
+              <span class="folder-hi">मैप</span>
+
+              <span class="folder-meta">8 files · 1 subfolder · PDF / PNG</span>
+            </span>
+
+          </a>
+          </div>
+          <div class="button-row" style="margin-top:0.9rem"><a class="button primary" href="subjects/rajasthan-geography/index.html">Folder kholo</a></div>
+        </article>
+        <article class="card subject-card">
+          <div class="card-title-row">
+            <h3 style="margin:0">Reasoning</h3>
+            <span class="chip neutral">तर्कशक्ति (रीज़निंग)</span>
+          </div>
+          <p class="muted small" style="margin:0.3rem 0 0.7rem">4 folders · 13 files</p>
+          <p class="small" style="margin:0 0 0.7rem">Section-wise reasoning material aur practice</p>
+          <div class="folder-grid">
+          <a class="folder-card compact" href="subjects/reasoning/theory/index.html">
+            <span class="folder-icon" aria-hidden="true">📘</span>
+            <span class="folder-body">
+              <strong>Theory</strong>
+              <span class="folder-hi">थ्योरी</span>
+
+              <span class="folder-meta">2 files · 1 subfolder · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/reasoning/practice/index.html">
+            <span class="folder-icon" aria-hidden="true">✍️</span>
+            <span class="folder-body">
+              <strong>Practice questions</strong>
+              <span class="folder-hi">प्रैक्टिस प्रश्न</span>
+
+              <span class="folder-meta">9 files · 1 subfolder · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/reasoning/answers/index.html">
+            <span class="folder-icon" aria-hidden="true">✅</span>
+            <span class="folder-body">
+              <strong>Answers &amp; explanations</strong>
+              <span class="folder-hi">उत्तर और व्याख्या</span>
+
+              <span class="folder-meta">1 file · PDF</span>
+            </span>
+
+          </a>          <a class="folder-card compact" href="subjects/reasoning/tests/index.html">
+            <span class="folder-icon" aria-hidden="true">🧾</span>
+            <span class="folder-body">
+              <strong>Tests</strong>
+              <span class="folder-hi">टेस्ट</span>
+
+              <span class="folder-meta">1 file · PDF</span>
+            </span>
+
+          </a>
+          </div>
+          <div class="button-row" style="margin-top:0.9rem"><a class="button primary" href="subjects/reasoning/index.html">Folder kholo</a></div>
         </article>
       </div>
-    </section>
-
-    <section class="section" aria-labelledby="shortcutsTitle">
-      <div class="section-heading-row">
-        <div><span class="eyebrow">Browse by resource</span><h2 id="shortcutsTitle">Study tools and material</h2></div>
-      </div>
-      <div class="shortcut-grid">
-        <article class="card"><span class="subject-mark" aria-hidden="true">M</span><h3>Maps &amp; Atlases</h3><p>See the existing Rajasthan map preview, full-size PNG exports, border data and the limitations recorded in the audits.</p><a href="maps/index.html">Open Maps &amp; Atlases →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">P</span><h3>Practice Tests</h3><p>Build a source-labelled Computer Network practice set. Topic filters and answer status are explicit.</p><a href="practice/index.html">Open Practice Tests →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">S</span><h3>Study Material</h3><p>Find existing topic notes, practice booklets, solutions and reference material without confusing historical PDF counts with live-bank totals.</p><a href="study-material/index.html">Open Study Material →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">V</span><h3>Sources &amp; Verification</h3><p>Review question-source policy, answer-check reports, geography source registers, QA and unresolved discrepancies.</p><a href="sources/index.html">Open Sources &amp; Verification →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">G</span><h3>Repository File Guide</h3><p>Find the right folder for topic files, see what the website reads, and run the safe merge preflight.</p><a href="guides/repository-structure/index.html">Open the File Guide →</a></article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="recentTitle">
-      <div class="section-heading-row"><div><span class="eyebrow">Checked-in data only</span><h2 id="recentTitle">Recently updated</h2></div></div>
-      <p class="section-intro">Dates are read from the repository build metadata, not guessed from page timestamps. A map build date is not a deployment date or a verification claim.</p>
-      <div id="recentUpdates" aria-live="polite"><p class="empty-state">No release note is shown until a dated build record is available.</p></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div><h2>EkGuru Learning</h2><p>By PRAKASH. Static learning resources from the existing repository; no account or external runtime service is required.</p></div>
-      <div><h3>Explore</h3><p><a href="subjects/index.html">All Subjects</a></p><p><a href="maps/index.html">Maps &amp; Atlases</a></p><p><a href="practice/index.html">Practice Tests</a></p></div>
-      <div><h3>Read before use</h3><p><a href="README.md">Repository README</a></p><p><a href="SITE_GUIDE.md">Site guide &amp; source policy</a></p><p><a href="guides/repository-structure/index.html">Repository File Guide</a></p><p><a href="sources/index.html">Sources &amp; verification</a></p></div>
+    <div class="shell footer-grid">
+      <div>
+        <h3>EkGuru Learning</h3>
+        <p>Study material, previous year papers aur online test — sab free, koi login nahi.</p>
+        <p class="footer-stats">4 subjects · 55 files · 1,554 online questions</p>
+      </div>
+      <div>
+        <h3>Subjects</h3>
+        <p><a href="subjects/computer-network/index.html">Computer Network (32)</a></p>
+        <p><a href="subjects/previous-year-papers/index.html">Previous Year Papers (2)</a></p>
+        <p><a href="subjects/rajasthan-geography/index.html">Rajasthan Geography (8)</a></p>
+        <p><a href="subjects/reasoning/index.html">Reasoning (13)</a></p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <p><a href="subjects/index.html">All subjects</a></p>
+        <p><a href="subjects/computer-network/index.html">Computer Network</a></p>
+        <p><a href="subjects/computer-network/test/index.html">Online test</a></p>
+      </div>
     </div>
-    <div class="shell footer-bottom">Internal links stay in this tab. PDF, official external-source and full-size map actions are labelled when they open separately. Geography audit issues remain visible and linked.</div>
+    <div class="shell footer-bottom">
+      <span>© EkGuru Learning · By PRAKASH</span>
+      <span class="footer-note">Saara material free hai — print karein, share karein.</span>
+    </div>
   </footer>
 </body>
 </html>

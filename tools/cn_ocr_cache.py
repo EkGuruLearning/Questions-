@@ -18,15 +18,15 @@ import time
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OCR_DIR = os.path.join(REPO, "tools", "data", "ocr_text")
-SRC_DIR = os.path.join(REPO, "Computer Network")
+SRC_DIR = os.path.join(REPO, "content", "computer-network", "tests")
 
 # image-only source PDFs (no text layer) that must be OCR'd
 SCANNED = [
-    "Random Test- Rajasthan PYQ.pdf",
-    "Subject Test Solution -1 (CN & Security).pdf",
-    "Subject Test Solution -1 (CN & Security) Part-2.pdf",
-    "Unit Test -2 Solutions.pdf",
-    "Unit Test-4 Solution.pdf",
+    "Random-Test-Rajasthan-PYQ.pdf",
+    "Subject-Test-01-CN-Security-Solutions.pdf",
+    "Subject-Test-01-CN-Security-Solutions-Part-2.pdf",
+    "Unit-Test-02-Solutions.pdf",
+    "Unit-Test-04-Solutions.pdf",
 ]
 
 
@@ -83,7 +83,7 @@ def main():
                 pdfs.append(p)
             else:
                 # fall back to git-show extraction is caller's job; try /tmp
-                alt = os.path.join("/tmp/Computer Network", name)
+                alt = os.path.join("/tmp/ekguru-cn", name)
                 if os.path.exists(alt):
                     pdfs.append(alt)
                 else:

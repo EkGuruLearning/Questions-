@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "how_to_add": "Nayi student file `content/<subject>/<folder>/` me rakho, yahan ek entry add karo, phir `python3 tools/build_catalog.py` chalao. Folder ka naam path se hi banta hai (e.g. content/computer-network/answers/x.pdf -> folder `answers`). Folder ka label data/catalog/subjects.json ke `folders` me likha hota hai. Builder check karta hai: jo file register nahi hui, jo registered path gayab hai, ya jis folder ka label nahi hai — teeno par build fail ho jata hai.",
+  "materials": [
+    {
+      "file": "content/computer-network/theory/T01-Introduction-to-Data-Communication-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T01",
+      "order": 1,
+      "title_en": "Topic 1 — Introduction to Data Communication",
+      "title_hi": "टॉपिक 1 — परिचय: डेटा संचार",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T02-Network-Models-OSI-TCP-IP-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T02",
+      "order": 2,
+      "title_en": "Topic 2 — Network Models: OSI & TCP/IP",
+      "title_hi": "टॉपिक 2 — नेटवर्क मॉडल: OSI और TCP/IP",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T03-Addressing-MAC-IPv4-IPv6-Port-DNS-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T03",
+      "order": 3,
+      "title_en": "Topic 3 — Addressing: MAC, IPv4, IPv6, Port, DNS",
+      "title_hi": "टॉपिक 3 — एड्रेसिंग: MAC, IPv4, IPv6, पोर्ट, DNS",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T04-Networking-Devices-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T04",
+      "order": 4,
+      "title_en": "Topic 4 — Networking Devices",
+      "title_hi": "टॉपिक 4 — नेटवर्किंग उपकरण",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T05-Transmission-Medium-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T05",
+      "order": 5,
+      "title_en": "Topic 5 — Transmission Medium",
+      "title_hi": "टॉपिक 5 — ट्रांसमिशन माध्यम",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T06-OSI-Layers-in-Detail-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T06",
+      "order": 6,
+      "title_en": "Topic 6 — OSI Layers in Detail",
+      "title_hi": "टॉपिक 6 — OSI लेयर्स का विस्तृत अध्ययन",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/T07-Network-Security-Theory-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": "T07",
+      "order": 7,
+      "title_en": "Topic 7 — Network Security",
+      "title_hi": "टॉपिक 7 — नेटवर्क सुरक्षा",
+      "note_en": "Theory notes with solved MCQs (answers + nukte).",
+      "note_hi": "थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।"
+    },
+    {
+      "file": "content/computer-network/theory/Complete-Computer-Network-Theory-631-MCQ.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 8,
+      "title_en": "Complete Computer Network — full book (Theory + 631 MCQs)",
+      "title_hi": "संपूर्ण कंप्यूटर नेटवर्क — पूरी बुक (थ्योरी + 631 MCQ)",
+      "note_en": "All seven topics in one file, with answers and nukte.",
+      "note_hi": "सातों टॉपिक एक ही फाइल में, उत्तर और नुक्तों सहित।"
+    },
+    {
+      "file": "content/computer-network/practice/T01-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T01",
+      "order": 1,
+      "title_en": "Topic 1 — Practice questions",
+      "title_hi": "टॉपिक 1 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T02-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T02",
+      "order": 2,
+      "title_en": "Topic 2 — Practice questions",
+      "title_hi": "टॉपिक 2 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T03-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T03",
+      "order": 3,
+      "title_en": "Topic 3 — Practice questions",
+      "title_hi": "टॉपिक 3 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T04-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T04",
+      "order": 4,
+      "title_en": "Topic 4 — Practice questions",
+      "title_hi": "टॉपिक 4 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T05-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T05",
+      "order": 5,
+      "title_en": "Topic 5 — Practice questions",
+      "title_hi": "टॉपिक 5 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T06-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T06",
+      "order": 6,
+      "title_en": "Topic 6 — Practice questions",
+      "title_hi": "टॉपिक 6 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/practice/T07-Practice-Questions.pdf",
+      "subject": "computer-network",
+      "topic": "T07",
+      "order": 7,
+      "title_en": "Topic 7 — Practice questions",
+      "title_hi": "टॉपिक 7 — प्रैक्टिस प्रश्न",
+      "note_en": "Solve these before checking the answer key.",
+      "note_hi": "उत्तर कुंजी देखने से पहले ये हल करें।"
+    },
+    {
+      "file": "content/computer-network/answers/Answer-Key-Added-Questions-197.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 1,
+      "title_en": "Answer key — added questions (197)",
+      "title_hi": "उत्तर कुंजी — जोड़े गए प्रश्न (197)",
+      "note_en": "Key for the extra practice questions.",
+      "note_hi": "अतिरिक्त प्रैक्टिस प्रश्नों की कुंजी।"
+    },
+    {
+      "file": "content/computer-network/answers/Unit-Test-02-Solutions.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 2,
+      "title_en": "Unit test 2 — full solutions",
+      "title_hi": "यूनिट टेस्ट 2 — पूरे हल",
+      "note_en": "Explanation of every question.",
+      "note_hi": "हर प्रश्न की व्याख्या।"
+    },
+    {
+      "file": "content/computer-network/answers/Unit-Test-04-Solutions.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 3,
+      "title_en": "Unit test 4 — full solutions",
+      "title_hi": "यूनिट टेस्ट 4 — पूरे हल",
+      "note_en": "Explanation of every question.",
+      "note_hi": "हर प्रश्न की व्याख्या।"
+    },
+    {
+      "file": "content/computer-network/answers/Subject-Test-01-CN-Security-Solutions.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 4,
+      "title_en": "Subject test 1 — CN & security (solutions)",
+      "title_hi": "सब्जेक्ट टेस्ट 1 — CN और सुरक्षा (हल)",
+      "note_en": "Full solution set, part 1.",
+      "note_hi": "पूरा हल सेट, भाग 1।"
+    },
+    {
+      "file": "content/computer-network/answers/Subject-Test-01-CN-Security-Solutions-Part-2.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 5,
+      "title_en": "Subject test 1 — CN & security (solutions, part 2)",
+      "title_hi": "सब्जेक्ट टेस्ट 1 — CN और सुरक्षा (हल, भाग 2)",
+      "note_en": "Full solution set, part 2.",
+      "note_hi": "पूरा हल सेट, भाग 2।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-01.pdf",
+      "subject": "computer-network",
+      "topic": "T01",
+      "order": 1,
+      "title_en": "Topic test 1",
+      "title_hi": "टॉपिक टेस्ट 1",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-02.pdf",
+      "subject": "computer-network",
+      "topic": "T02",
+      "order": 2,
+      "title_en": "Topic test 2",
+      "title_hi": "टॉपिक टेस्ट 2",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-03.pdf",
+      "subject": "computer-network",
+      "topic": "T03",
+      "order": 3,
+      "title_en": "Topic test 3",
+      "title_hi": "टॉपिक टेस्ट 3",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-04.pdf",
+      "subject": "computer-network",
+      "topic": "T04",
+      "order": 4,
+      "title_en": "Topic test 4",
+      "title_hi": "टॉपिक टेस्ट 4",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-05.pdf",
+      "subject": "computer-network",
+      "topic": "T05",
+      "order": 5,
+      "title_en": "Topic test 5",
+      "title_hi": "टॉपिक टेस्ट 5",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/CN-Topic-Test-06.pdf",
+      "subject": "computer-network",
+      "topic": "T06",
+      "order": 6,
+      "title_en": "Topic test 6",
+      "title_hi": "टॉपिक टेस्ट 6",
+      "note_en": "Printed topic test paper.",
+      "note_hi": "लिखित टॉपिक टेस्ट पेपर।"
+    },
+    {
+      "file": "content/computer-network/tests/BCI-Subject-Test-08.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 7,
+      "title_en": "BCI subject test 8",
+      "title_hi": "BCI सब्जेक्ट टेस्ट 8",
+      "note_en": "Exam-style subject test.",
+      "note_hi": "परीक्षा पैटर्न सब्जेक्ट टेस्ट।"
+    },
+    {
+      "file": "content/computer-network/tests/BCI-Subject-Test-09.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 8,
+      "title_en": "BCI subject test 9",
+      "title_hi": "BCI सब्जेक्ट टेस्ट 9",
+      "note_en": "Exam-style subject test.",
+      "note_hi": "परीक्षा पैटर्न सब्जेक्ट टेस्ट।"
+    },
+    {
+      "file": "content/computer-network/tests/BCI-SCI-Subject-Test-01-CN-Security.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 9,
+      "title_en": "BCI SCI subject test 1 — CN & security",
+      "title_hi": "BCI SCI सब्जेक्ट टेस्ट 1 — CN और सुरक्षा",
+      "note_en": "Exam-style subject test.",
+      "note_hi": "परीक्षा पैटर्न सब्जेक्ट टेस्ट।"
+    },
+    {
+      "file": "content/computer-network/tests/BCI-SCI-Subject-Test-07.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 10,
+      "title_en": "BCI SCI subject test 7",
+      "title_hi": "BCI SCI सब्जेक्ट टेस्ट 7",
+      "note_en": "Exam-style subject test.",
+      "note_hi": "परीक्षा पैटर्न सब्जेक्ट टेस्ट।"
+    },
+    {
+      "file": "content/computer-network/tests/Random-Test-Rajasthan-PYQ.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 11,
+      "title_en": "Random test — Rajasthan PYQ",
+      "title_hi": "रैंडम टेस्ट — राजस्थान PYQ",
+      "note_en": "Previous-year style random test.",
+      "note_hi": "पिछले वर्षों के पैटर्न पर रैंडम टेस्ट।"
+    },
+    {
+      "file": "content/computer-network/reference/Forouzan-Data-Communications-and-Networking.pdf",
+      "subject": "computer-network",
+      "topic": null,
+      "order": 1,
+      "title_en": "Forouzan — Data Communications and Networking",
+      "title_hi": "फोरोज़ान — डेटा कम्युनिकेशन एंड नेटवर्किंग",
+      "note_en": "Standard textbook kept in the repository for deeper reading.",
+      "note_hi": "गहरी पढ़ाई के लिए रेपो में रखी स्टैंडर्ड टेक्स्टबुक।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A1.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 1,
+      "title_en": "Border district atlas — A1 poster",
+      "title_hi": "सीमावर्ती जिला एटलस — A1 पोस्टर",
+      "note_en": "Largest print size (594 × 841 mm). Best for wall charts.",
+      "note_hi": "सबसे बड़ा प्रिंट साइज़ (594 × 841 मिमी)। दीवार चार्ट के लिए बेहतरीन।",
+      "alt_en": "Rajasthan border district atlas, A1 poster — 41 districts, legend by division, and tables of international border lengths with Pakistan.",
+      "alt_hi": "राजस्थान सीमावर्ती जिला एटलस, A1 पोस्टर — 41 जिले, मंडल-वार लेजेंड और पाकिस्तान से लगती सीमा की लंबाई की तालिकाएँ।",
+      "description_en": "Rajasthan border district atlas (A1 poster, 594 × 841 mm). The detailed wall-chart sheet: all 41 districts of Rajasthan and the 36 border-sharing districts of Pakistan and the five neighbouring states, a division-wise legend of the districts, an inset locator map of India, and the printed tables — district-wise international border lengths with Pakistan (Barmer 459 km, Bikaner 232 km, Sri Ganganagar 208 km, Jaisalmer 143 km, Phalodi 19 km) and the interstate border lengths for Punjab, Haryana, Uttar Pradesh, Madhya Pradesh and Gujarat. Meant for classroom walls and deep revision.",
+      "description_hi": "राजस्थान सीमावर्ती जिला एटलस (A1 पोस्टर, 594 × 841 मिमी)। विस्तृत वॉल-चार्ट शीट: राजस्थान के सभी 41 जिले और पाकिस्तान तथा पाँच पड़ोसी राज्यों के 36 सीमावर्ती जिले, मंडल-वार जिला लेजेंड, भारत के भीतर स्थिति दिखाने वाला inset नक्शा, और छपी हुई तालिकाएँ — पाकिस्तान से लगती अंतर्राष्ट्रीय सीमा की जिला-वार लंबाई (बाड़मेर 459 कि.मी., बीकानेर 232 कि.मी., श्रीगंगानगर 208 कि.मी., जैसलमेर 143 कि.मी., फलौदी 19 कि.मी.) तथा पंजाब, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश व गुजरात से लगती सीमा की लंबाई। क्लासरूम की दीवार और गहरे रिवीजन के लिए।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A2.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 2,
+      "title_en": "Border district atlas — A2",
+      "title_hi": "सीमावर्ती जिला एटलस — A2",
+      "note_en": "Large print size (420 × 594 mm).",
+      "note_hi": "बड़ा प्रिंट साइज़ (420 × 594 मिमी)।",
+      "alt_en": "Rajasthan border district atlas, A2 print — 41 Rajasthan districts with border-sharing districts of Pakistan and neighbouring states, legend and tables.",
+      "alt_hi": "राजस्थान सीमावर्ती जिला एटलस, A2 प्रिंट — 41 जिले, पाकिस्तान व पड़ोसी राज्यों के सीमावर्ती जिले, लेजेंड और तालिकाएँ।",
+      "description_en": "Rajasthan border district atlas (A2 print, 420 × 594 mm). Same detailed atlas as the A1 poster at half the size: 41 Rajasthan districts, the 36 border-sharing districts of Pakistan, Punjab, Haryana, Uttar Pradesh, Madhya Pradesh and Gujarat, a division-wise district legend, the India inset and the border-length tables. Good for a study-room wall where a full poster is too big.",
+      "description_hi": "राजस्थान सीमावर्ती जिला एटलस (A2 प्रिंट, 420 × 594 मिमी)। A1 पोस्टर का ही विस्तृत एटलस, आधे आकार में: राजस्थान के 41 जिले, पाकिस्तान, पंजाब, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश व गुजरात के 36 सीमावर्ती जिले, मंडल-वार जिला लेजेंड, भारत inset और सीमा-लंबाई की तालिकाएँ। ऐसे स्टडी-रूम के लिए जहाँ पूरा पोस्टर बड़ा पड़ता है।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A3.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 3,
+      "title_en": "Border district atlas — A3",
+      "title_hi": "सीमावर्ती जिला एटलस — A3",
+      "note_en": "Medium print size (297 × 420 mm).",
+      "note_hi": "मध्यम प्रिंट साइज़ (297 × 420 मिमी)।",
+      "alt_en": "Rajasthan border district atlas, A3 print — 41 districts, division legend, India inset and Pakistan border-length tables.",
+      "alt_hi": "राजस्थान सीमावर्ती जिला एटलस, A3 प्रिंट — 41 जिले, मंडल लेजेंड, भारत inset और सीमा लंबाई की तालिकाएँ।",
+      "description_en": "Rajasthan border district atlas (A3 print, 297 × 420 mm). The detailed atlas on a desk-size sheet: all 41 districts of Rajasthan, the 36 neighbouring border districts of Pakistan and the five bordering states, division-wise legend, India inset and the district-wise border-length tables. Handy for coaching folders and group study.",
+      "description_hi": "राजस्थान सीमावर्ती जिला एटलस (A3 प्रिंट, 297 × 420 मिमी)। डेस्क-साइज़ शीट पर विस्तृत एटलस: राजस्थान के सभी 41 जिले, पाकिस्तान और पाँच पड़ोसी राज्यों के 36 सीमावर्ती जिले, मंडल-वार लेजेंड, भारत inset और जिला-वार सीमा-लंबाई तालिकाएँ। कोचिंग फाइल और ग्रुप स्टडी के लिए उपयुक्त।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Landscape.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 4,
+      "title_en": "Border districts — A4 landscape",
+      "title_hi": "सीमावर्ती जिले — A4 लैंडस्केप",
+      "note_en": "Page size (297 × 210 mm), landscape.",
+      "note_hi": "पेज साइज़ (297 × 210 मिमी), लैंडस्केप।",
+      "alt_en": "Rajasthan border districts map, A4 landscape — 41 Rajasthan districts with the 36 border-sharing districts of Pakistan and five neighbouring states.",
+      "alt_hi": "राजस्थान सीमावर्ती जिले नक्शा (A4 लैंडस्केप) — 41 राजस्थान जिले और पाकिस्तान व पाँच पड़ोसी राज्यों के 36 सीमावर्ती जिले।",
+      "description_en": "Rajasthan — border districts (A4 landscape, 297 × 210 mm). The wide version of the same sheet: all 41 districts of Rajasthan and the 36 districts of Pakistan, Punjab, Haryana, Uttar Pradesh, Madhya Pradesh and Gujarat that share its border, laid out horizontally so the long international border reads without turning the page. Pakistan's bordering districts (Bahawalnagar, Bahawalpur, Rahim Yar Khan, Ghotki, Khairpur, Sanghar, Sukkur, Tharparkar, Umer Kot) and Rajasthan's own border belt — Barmer, Bikaner, Sri Ganganagar, Jaisalmer, Phalodi — sit along the top edge. Hindi labels, colour-coded state boundaries, north arrow and a 0–150 km scale bar; sized for a normal A4 printer and useful for RPSC, REET, Police, SI and Patwari revision.",
+      "description_hi": "राजस्थान — सीमावर्ती जिले (A4 लैंडस्केप, 297 × 210 मिमी)। इसी शीट का चौड़ा (horizontal) रूप — राजस्थान के सभी 41 जिले और पाकिस्तान, पंजाब, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश व गुजरात के सीमा साझा करने वाले 36 जिले। लंबी अंतर्राष्ट्रीय सीमा एक ही दिशा में पढ़ी जा सके, इसलिए यह लेआउट नोटबुक और फाइल में लगाने के लिए बेहतर है। पाकिस्तान से लगने वाले राजस्थान के जिले — बाड़मेर, बीकानेर, श्रीगंगानगर, जैसलमेर और फलौदी — ऊपरी सीमा के साथ दिखते हैं; पाकिस्तानी जिले (बहावलनगर, बहावलपुर, रहीम यार ख़ान, घोटकी, ख़ैरपुर, सांघर, सुक्कुर, थारपारकर, उमरकोट) भी नाम सहित अंकित हैं। हिंदी लेबल, रंगों में राज्य-सीमाएँ, उत्तर तीर और 0–150 कि.मी. स्केल बार — RPSC, REET, पुलिस, SI और पटवारी की तैयारी के लिए प्रिंट-ready।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 5,
+      "title_en": "Border districts — A4 portrait",
+      "title_hi": "सीमावर्ती जिले — A4 पोर्ट्रेट",
+      "note_en": "Page size (210 × 297 mm), portrait.",
+      "note_hi": "पेज साइज़ (210 × 297 मिमी), पोर्ट्रेट।",
+      "alt_en": "Rajasthan border districts map, A4 portrait — all 41 Rajasthan districts and the 36 districts of Pakistan, Punjab, Haryana, UP, MP and Gujarat that touch its border.",
+      "alt_hi": "राजस्थान सीमावर्ती जिले नक्शा (A4 पोर्ट्रेट) — सभी 41 जिले और पाकिस्तान तथा पंजाब, हरियाणा, उ.प्र., म.प्र., गुजरात के 36 सीमावर्ती जिले।",
+      "description_en": "Rajasthan — border districts (A4 portrait, 210 × 297 mm). One printable sheet shows all 41 districts of Rajasthan together with the 36 districts that share its border: Pakistan (Bahawalnagar, Bahawalpur, Rahim Yar Khan in Punjab province; Ghotki, Khairpur, Sanghar, Sukkur, Tharparkar, Umer Kot in Sindh) plus the bordering districts of Punjab, Haryana, Uttar Pradesh, Madhya Pradesh and Gujarat. Districts of Rajasthan that touch Pakistan — Barmer, Bikaner, Sri Ganganagar, Jaisalmer and Phalodi — are the ones drawn along the international border. State boundaries are colour-coded, every name is in Hindi, and the sheet carries a north arrow and a 0–150 km scale bar. Designed for RPSC, REET, Rajasthan Police, SI and Patwari exam preparation — print it straight on A4.",
+      "description_hi": "राजस्थान — सीमावर्ती जिले (A4 पोर्ट्रेट, 210 × 297 मिमी)। एक ही शीट पर राजस्थान के सभी 41 जिले और सीमा साझा करने वाले 36 पड़ोसी जिले — पाकिस्तान (पंजाब प्रांत: बहावलनगर, बहावलपुर, रहीम यार ख़ान; सिंध: घोटकी, ख़ैरपुर, सांघर, सुक्कुर, थारपारकर, उमरकोट) तथा पंजाब, हरियाणा, उत्तर प्रदेश, मध्य प्रदेश और गुजरात के सीमावर्ती जिले। पाकिस्तान से लगने वाले राजस्थान के जिले — बाड़मेर, बीकानेर, श्रीगंगानगर, जैसलमेर और फलौदी — अंतर्राष्ट्रीय सीमा के साथ दिखाए गए हैं। राज्यों की सीमाएँ रंगों से अलग, हर नाम हिंदी में, उत्तर दिशा तीर और 0–150 कि.मी. स्केल बार सहित। RPSC, REET, राजस्थान पुलिस, SI और पटवारी परीक्षा की तैयारी के लिए सीधे A4 पर प्रिंट करने योग्य शीट।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-Preview.png",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 6,
+      "title_en": "Border district atlas — preview image",
+      "title_hi": "सीमावर्ती जिला एटलस — प्रीव्यू इमेज",
+      "note_en": "Quick look before downloading a print size.",
+      "note_hi": "प्रिंट साइज़ डाउनलोड करने से पहले एक नज़र।",
+      "alt_en": "Preview of the Rajasthan border district atlas — 41 districts and 36 border-sharing districts drawn with Hindi labels.",
+      "alt_hi": "राजस्थान सीमावर्ती जिला एटलस का प्रीव्यू — हिंदी नामों के साथ 41 जिले और 36 सीमावर्ती जिले।",
+      "description_en": "Preview image of the Rajasthan border district atlas — the whole layout (41 Rajasthan districts, 36 border-sharing districts of Pakistan and the neighbouring states, legend and tables) in one screen, so you can check the sheet before downloading a print size.",
+      "description_hi": "राजस्थान सीमावर्ती जिला एटलस की प्रीव्यू इमेज — पूरा लेआउट (41 जिले, पाकिस्तान व पड़ोसी राज्यों के 36 सीमावर्ती जिले, लेजेंड और तालिकाएँ) एक स्क्रीन पर, जिससे प्रिंट साइज़ डाउनलोड करने से पहले देखा जा सके।"
+    },
+    {
+      "file": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Questions.pdf",
+      "subject": "previous-year-papers",
+      "topic": null,
+      "order": 1,
+      "title_en": "RPSC Programmer 2024 — Paper 1 (questions)",
+      "title_hi": "RPSC प्रोग्रामर 2024 — पेपर 1 (प्रश्न)",
+      "note_en": "Full paper: 100 questions, Section A (Q1–40) and Section B (Q41–100), with a 24-page printable layout.",
+      "note_hi": "पूरा पेपर: 100 प्रश्न, सेक्शन A (प्र.1–40) और सेक्शन B (प्र.41–100), 24 पन्नों का प्रिंट-ready रूप।"
+    },
+    {
+      "file": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Answer-Key.pdf",
+      "subject": "previous-year-papers",
+      "topic": null,
+      "order": 2,
+      "title_en": "RPSC Programmer 2024 — Paper 1 answer key",
+      "title_hi": "RPSC प्रोग्रामर 2024 — पेपर 1 उत्तर कुंजी",
+      "note_en": "Answer key for all 100 questions, section-wise.",
+      "note_hi": "सभी 100 प्रश्नों की उत्तर कुंजी, सेक्शन-wise।"
+    },
+    {
+      "file": "content/reasoning/theory/Reasoning-Series-Sample-Chapter.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series (sample chapter)",
+      "title_hi": "रीज़निंग — श्रृंखला (नमूना अध्याय)",
+      "note_en": "Number series, letter series aur solved examples ek jagah.",
+      "note_hi": "संख्या श्रृंखला, अक्षर श्रृंखला और हल किए हुए उदाहरण एक साथ।"
+    },
+    {
+      "file": "content/reasoning/practice/Reasoning-Series-Sample-Practice.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series practice (sample)",
+      "title_hi": "रीज़निंग — श्रृंखला अभ्यास (नमूना)",
+      "note_en": "12 sawal, chaar-chaar options ke saath.",
+      "note_hi": "12 प्रश्न, चार-चार विकल्पों के साथ।"
+    },
+    {
+      "file": "content/reasoning/answers/Reasoning-Series-Sample-Answer-Key.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — Series answer key (sample)",
+      "title_hi": "रीज़निंग — श्रृंखला उत्तर कुंजी (नमूना)",
+      "note_en": "Har jawab ke saath ek line ka hal.",
+      "note_hi": "हर उत्तर के साथ एक पंक्ति का हल।"
+    },
+    {
+      "file": "content/reasoning/tests/Reasoning-Sample-Test-Paper.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Reasoning — sample test paper",
+      "title_hi": "रीज़निंग — नमूना टेस्ट पेपर",
+      "note_en": "10 mishrit sawal, 10 ank — poora test practice ke liye.",
+      "note_hi": "10 मिश्रित प्रश्न, 10 अंक — पूरे टेस्ट के अभ्यास के लिए।"
+    },
+    {
+      "file": "content/reasoning/theory/Calendar/Calendar-Short-Notes.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Calendar — short notes",
+      "title_hi": "कैलेंडर — शॉर्ट नोट्स",
+      "note_en": "Leap year, odd days aur saal ke dinon ka poora formula — ek page me.",
+      "note_hi": "लीप ईयर, विषम दिन और साल के दिनों का पूरा फॉर्मूला — एक पेज में।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Practice-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Calendar — practice questions",
+      "title_hi": "कैलेंडर — अभ्यास प्रश्न",
+      "note_en": "Chapter ke sawal, option ke saath — pehle isi se practice karo.",
+      "note_hi": "अध्याय के प्रश्न, विकल्पों के साथ — पहले इसी से अभ्यास करें।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Class-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 2,
+      "title_en": "Calendar — class questions",
+      "title_hi": "कैलेंडर — क्लास प्रश्न",
+      "note_en": "Class me karaye gaye sawal — odd-one-out aur date questions.",
+      "note_hi": "क्लास में कराए गए प्रश्न — विषम-चुनें और तारीख़ वाले प्रश्न।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-PYQs-Practice-Set.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 3,
+      "title_en": "Calendar — PYQ practice set",
+      "title_hi": "कैलेंडर — पिछले वर्षों के प्रश्न सेट",
+      "note_en": "Purane paper me aaye calendar ke 28 page ke sawal.",
+      "note_hi": "पुराने पेपरों में आए कैलेंडर के प्रश्न, 28 पन्नों में।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Practice-Set-Hindi.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 4,
+      "title_en": "Calendar — practice set (Hindi)",
+      "title_hi": "कैलेंडर — अभ्यास सेट (हिंदी)",
+      "note_en": "Hindi me poora practice set.",
+      "note_hi": "हिंदी में पूरा अभ्यास सेट।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Test-Paper.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 5,
+      "title_en": "Calendar — test paper",
+      "title_hi": "कैलेंडर — टेस्ट पेपर",
+      "note_en": "Apna test lo: date, din aur calendar ke sawal (Hindi + English).",
+      "note_hi": "अपना टेस्ट दें: तारीख़, दिन और कैलेंडर के प्रश्न (हिंदी + अंग्रेज़ी)।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-700-Practice-Book-RPSC-RSMSSB.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 6,
+      "title_en": "Calendar — 700 practice questions (RPSC / RSMSSB)",
+      "title_hi": "कैलेंडर — 700 अभ्यास प्रश्न (RPSC / RSMSSB)",
+      "note_en": "EkGuru practice series: 71 page, 700 sawal — RPSC aur RSMSSB ke liye.",
+      "note_hi": "एकगुरु प्रैक्टिस सीरीज़: 71 पन्ने, 700 प्रश्न — RPSC और RSMSSB के लिए।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-and-Clock-SSC-Book.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 7,
+      "title_en": "Calendar & clock — SSC book",
+      "title_hi": "कैलेंडर और घड़ी — SSC बुक",
+      "note_en": "Calendar aur clock ke milte-julte sawal, SSC ke pattern par.",
+      "note_hi": "कैलेंडर और घड़ी के मिलते-जुलते प्रश्न, SSC के पैटर्न पर।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Old-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 8,
+      "title_en": "Calendar — old exam questions",
+      "title_hi": "कैलेंडर — पुराने परीक्षा प्रश्न",
+      "note_en": "Competition exams me pooche gaye purane calendar sawal.",
+      "note_hi": "प्रतियोगी परीक्षाओं में पूछे गए पुराने कैलेंडर प्रश्न।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A3-Print.pdf",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 7,
+      "title_en": "Border district atlas — A3 print (PDF)",
+      "title_hi": "सीमावर्ती जिला एटलस — A3 प्रिंट (PDF)",
+      "note_en": "A3 size ka print-ready PDF — poster jaisa bada naksha.",
+      "note_hi": "A3 साइज़ का प्रिंट-रेडी PDF — पोस्टर जैसा बड़ा नक्शा।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 8,
+      "title_en": "Border districts — A4 portrait print (PDF)",
+      "title_hi": "सीमावर्ती जिले — A4 पोर्ट्रेट प्रिंट (PDF)",
+      "note_en": "A4 portrait ka PDF — seedha printer par lagao.",
+      "note_hi": "A4 पोर्ट्रेट का PDF — सीधे प्रिंटर पर लगाएँ।"
+    }
+  ]
+}

@@ -9,7 +9,7 @@ User spec:
   * Existing sourced questions + ORIGINAL predicted questions (practice_new_*)
   * ZERO repeats (dedupe check against the book banks)
   * Answer key (letters only) at the end — print ke liye
-Output: Computer Network/Practice/Topic N - Practice Questions (Test Booklet).pdf
+Output: content/computer-network/practice/T0N-Practice-Questions.pdf
 """
 import os, sys, html as _html
 import fitz
@@ -22,7 +22,7 @@ from cn_engine import (esc, pad_top, _archive, PAGE_W, PAGE_H, ML, MR,
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
-OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "Computer Network", "Practice"))
+OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "content", "computer-network", "practice"))
 
 TOPICS = [
     (1, "Introduction of Data Communication"),
@@ -214,7 +214,7 @@ def build_booklet(n, title):
     html = ("<html><head><meta charset='utf-8'><style>" + CSS +
             "</style></head><body>" + "\n".join(body) + "</body></html>")
     story = fitz.Story(html=html, archive=arch)
-    out_pdf = os.path.join(OUT_DIR, f"Topic {n} - Practice Questions - {qno}Q (Test Booklet).pdf")
+    out_pdf = os.path.join(OUT_DIR, f"T{n:02d}-Practice-Questions.pdf")
     writer = fitz.DocumentWriter(out_pdf)
     where = fitz.Rect(LEFT, TOP, RIGHT, BOTTOM)
     more = 1

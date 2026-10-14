@@ -1,116 +1,272 @@
 {
   "schema_version": 1,
-  "catalog_version": "ekguru-subjects-v1",
+  "brand": {
+    "name": "EkGuru Learning",
+    "short": "EkGuru",
+    "by": "PRAKASH",
+    "tagline_en": "Study material aur topic-wise practice tests.",
+    "tagline_hi": "स्टडी मटेरियल और टॉपिक-वाइज़ प्रैक्टिस टेस्ट।"
+  },
   "subjects": [
     {
-      "id": "cn",
-      "name": "Computer Networks",
-      "name_hi": "कंप्यूटर नेटवर्क / डेटा संचार",
-      "category": "technical",
-      "status": "live",
-      "summary": "The only published subject bank. Per-question source and answer-verification labels are shown; the bank is not wholly official or fully bilingual. Counts and coverage come from canonical CN data.",
-      "syllabus_topics": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
-      "learning_modes": ["learn", "practice", "timed_practice", "verified_pyq", "draft_practice", "bookmark_review"],
-      "book_ids": ["cn-t01-theory", "cn-t01-practice", "cn-t01-cbt", "cn-t02-theory", "cn-t02-practice", "cn-t02-cbt", "cn-t03-theory", "cn-t03-practice", "cn-t03-cbt", "cn-t04-theory", "cn-t04-practice", "cn-t04-cbt", "cn-t05-theory", "cn-t05-practice", "cn-t05-cbt", "cn-t06-theory", "cn-t06-practice", "cn-t06-cbt", "cn-t07-theory", "cn-t07-practice", "cn-t07-cbt"]
-    },
-    {
-      "id": "computer-fundamentals",
-      "name": "Computer Fundamentals & Awareness",
-      "name_hi": "कंप्यूटर फंडामेंटल्स और सामान्य जानकारी",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Hardware and software", "Number systems", "Memory and storage", "Internet and office productivity"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "dbms",
-      "name": "Database Management Systems",
-      "name_hi": "डेटाबेस मैनेजमेंट सिस्टम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No reviewed DBMS bank is published or startable yet.",
-      "syllabus_topics": ["Relational model", "SQL", "Normalization", "Transactions", "Indexing"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "programming",
-      "name": "Programming Fundamentals",
-      "name_hi": "प्रोग्रामिंग के मूल सिद्धांत",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. Language-specific banks will be listed only after their own review gate.",
-      "syllabus_topics": ["Algorithms and pseudocode", "C", "C++", "Java", "Python", "Code tracing"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "data-structures-algorithms",
-      "name": "Data Structures & Algorithms",
-      "name_hi": "डेटा स्ट्रक्चर और एल्गोरिदम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Arrays and lists", "Stacks and queues", "Trees and graphs", "Searching and sorting", "Complexity"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "operating-systems",
-      "name": "Operating Systems",
-      "name_hi": "ऑपरेटिंग सिस्टम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Processes and threads", "Scheduling", "Synchronization", "Memory", "File systems"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "computer-architecture",
-      "name": "Computer Organization & Architecture",
-      "name_hi": "कंप्यूटर ऑर्गनाइजेशन और आर्किटेक्चर",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Digital logic", "Instruction sets", "CPU datapath", "Pipelining", "Cache and memory hierarchy"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "software-engineering",
-      "name": "Software Engineering & Systems Analysis",
-      "name_hi": "सॉफ्टवेयर इंजीनियरिंग और सिस्टम विश्लेषण",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["SDLC", "Requirements", "Testing", "UML", "Maintenance"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "cybersecurity",
-      "name": "Cybersecurity Fundamentals",
-      "name_hi": "साइबर सुरक्षा के मूल सिद्धांत",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. The live CN security topic remains part of the CN bank; this is not a separate subject bank.",
-      "syllabus_topics": ["Cryptography", "Authentication", "Access control", "Secure protocols", "Defensive design"],
-      "learning_modes": [],
-      "book_ids": []
+      "id": "computer-network",
+      "slug": "computer-network",
+      "title_en": "Computer Network",
+      "title_hi": "कंप्यूटर नेटवर्क",
+      "tagline_en": "7 topics · theory · practice · answers · tests",
+      "tagline_hi": "7 टॉपिक · थ्योरी · प्रैक्टिस · उत्तर · टेस्ट",
+      "intro_en": "Folder kholo, PDF dekho ya download karo — ya seedha online test do.",
+      "intro_hi": "फोल्डर खोलें, PDF देखें या डाउनलोड करें — या सीधे ऑनलाइन टेस्ट दें।",
+      "has_material": true,
+      "has_test": true,
+      "has_maps": false,
+      "test_bank": "cn",
+      "folders": {
+        "theory": {
+          "title_en": "Theory",
+          "title_hi": "थ्योरी",
+          "note_en": "Topic-wise theory notes with solved MCQs (answers + nukte).",
+          "note_hi": "टॉपिक-वाइज़ थ्योरी नोट्स, हल किए गए MCQ (उत्तर + नुक्ते) सहित।",
+          "icon": "📘",
+          "order": 1
+        },
+        "practice": {
+          "title_en": "Practice questions",
+          "title_hi": "प्रैक्टिस प्रश्न",
+          "note_en": "Topic-wise practice booklets — pehle khud solve karo.",
+          "note_hi": "टॉपिक-वाइज़ प्रैक्टिस बुकलेट — पहले खुद हल करें।",
+          "icon": "✍️",
+          "order": 2
+        },
+        "answers": {
+          "title_en": "Answers & explanations",
+          "title_hi": "उत्तर और व्याख्या",
+          "note_en": "Answer key aur full solutions — practice ke baad check karo.",
+          "note_hi": "उत्तर कुंजी और पूरे हल — प्रैक्टिस के बाद मिलाएँ।",
+          "icon": "✅",
+          "order": 3
+        },
+        "tests": {
+          "title_en": "Tests",
+          "title_hi": "टेस्ट",
+          "note_en": "Topic test, unit test aur subject test papers.",
+          "note_hi": "टॉपिक टेस्ट, यूनिट टेस्ट और सब्जेक्ट टेस्ट पेपर।",
+          "icon": "🧾",
+          "order": 4
+        },
+        "reference": {
+          "title_en": "Reference book",
+          "title_hi": "रेफरेंस बुक",
+          "note_en": "Standard textbook for deep reading.",
+          "note_hi": "गहरी पढ़ाई के लिए स्टैंडर्ड टेक्स्टबुक।",
+          "icon": "📚",
+          "order": 5
+        }
+      },
+      "topics": [
+        {
+          "id": "T01",
+          "title_en": "Introduction of Data Communication",
+          "title_hi": "परिचय: डेटा संचार"
+        },
+        {
+          "id": "T02",
+          "title_en": "Network Models (OSI & TCP/IP)",
+          "title_hi": "नेटवर्क मॉडल: OSI और TCP/IP"
+        },
+        {
+          "id": "T03",
+          "title_en": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
+          "title_hi": "एड्रेसिंग: MAC, IPv4, IPv6, पोर्ट और DNS"
+        },
+        {
+          "id": "T04",
+          "title_en": "Networking Devices",
+          "title_hi": "नेटवर्किंग उपकरण"
+        },
+        {
+          "id": "T05",
+          "title_en": "Transmission Medium",
+          "title_hi": "ट्रांसमिशन माध्यम"
+        },
+        {
+          "id": "T06",
+          "title_en": "OSI Layers in Detail",
+          "title_hi": "OSI लेयर्स का विस्तृत अध्ययन"
+        },
+        {
+          "id": "T07",
+          "title_en": "Network Security",
+          "title_hi": "नेटवर्क सुरक्षा"
+        }
+      ]
     },
     {
       "id": "rajasthan-geography",
-      "name": "Rajasthan Geography",
-      "name_hi": "राजस्थान का भूगोल",
-      "category": "rajasthan-gk",
-      "status": "planned",
-      "summary": "A separate non-technical subject candidate. No map/question bank is published or startable yet.",
-      "syllabus_topics": ["Physical geography", "Rivers", "Districts", "Resources and maps"],
-      "learning_modes": [],
-      "book_ids": []
+      "slug": "rajasthan-geography",
+      "title_en": "Rajasthan Geography",
+      "title_hi": "राजस्थान भूगोल",
+      "tagline_en": "Map folder · Rajasthan ke maps",
+      "tagline_hi": "मैप फोल्डर · राजस्थान के मैप",
+      "intro_en": "Map folder kholo, Rajasthan ke maps dekho ya download karo.",
+      "intro_hi": "मैप फोल्डर खोलें, राजस्थान के मैप देखें या डाउनलोड करें।",
+      "has_material": false,
+      "has_test": false,
+      "has_maps": true,
+      "folders": {
+        "map": {
+          "title_en": "Map",
+          "title_hi": "मैप",
+          "note_en": "Saare maps is folder me — pehle state, aage district aur city maps.",
+          "note_hi": "सारे मैप इस फोल्डर में — पहले राज्य, आगे जिला और शहर के मैप।",
+          "icon": "🗂️",
+          "order": 1
+        },
+        "map/rajasthan": {
+          "title_en": "Rajasthan",
+          "title_hi": "राजस्थान",
+          "note_en": "Rajasthan ke maps — border district atlas, A1 se A4 print size.",
+          "note_hi": "राजस्थान के मैप — सीमावर्ती जिला एटलस, A1 से A4 प्रिंट साइज़।",
+          "icon": "🗺️",
+          "order": 1
+        }
+      },
+      "topics": []
+    },
+    {
+      "id": "reasoning",
+      "slug": "reasoning",
+      "title_en": "Reasoning",
+      "title_hi": "तर्कशक्ति (रीज़निंग)",
+      "tagline_en": "Section-wise reasoning material aur practice",
+      "tagline_hi": "सेक्शन-वाइज़ रीज़निंग मटेरियल और प्रैक्टिस",
+      "intro_en": "Folder kholo — theory, practice, answers aur tests yahan aate rahenge.",
+      "intro_hi": "फोल्डर खोलें — थ्योरी, प्रैक्टिस, उत्तर और टेस्ट यहाँ जुड़ते रहेंगे।",
+      "has_material": true,
+      "has_test": false,
+      "has_maps": false,
+      "folders": {
+        "theory": {
+          "title_en": "Theory",
+          "title_hi": "थ्योरी",
+          "icon": "📘",
+          "order": 1,
+          "note_en": "Concept aur shortcut notes.",
+          "note_hi": "कॉन्सेप्ट और शॉर्टकट नोट्स।"
+        },
+        "practice": {
+          "title_en": "Practice questions",
+          "title_hi": "प्रैक्टिस प्रश्न",
+          "icon": "✍️",
+          "order": 2,
+          "note_en": "Section-wise practice sets.",
+          "note_hi": "सेक्शन-वाइज़ प्रैक्टिस सेट।"
+        },
+        "answers": {
+          "title_en": "Answers & explanations",
+          "title_hi": "उत्तर और व्याख्या",
+          "icon": "✅",
+          "order": 3,
+          "note_en": "Answer key aur full solutions.",
+          "note_hi": "उत्तर कुंजी और पूरे हल।"
+        },
+        "tests": {
+          "title_en": "Tests",
+          "title_hi": "टेस्ट",
+          "icon": "🧾",
+          "order": 4,
+          "note_en": "Section test aur full-length test.",
+          "note_hi": "सेक्शन टेस्ट और फुल-लेंथ टेस्ट।"
+        }
+      },
+      "topics": []
+    },
+    {
+      "id": "previous-year-papers",
+      "slug": "previous-year-papers",
+      "title_en": "Previous Year Papers",
+      "title_hi": "पिछले वर्षों के पेपर",
+      "tagline_en": "Exam-wise aur saal-wise old papers — 2000 se aage",
+      "tagline_hi": "परीक्षा-वार और साल-वार पुराने पेपर — 2000 से आगे",
+      "intro_en": "Pehle exam chuno (IA, SCI, Computer Operator, System Assistant, DSSSB, SSC, NET, RPSC), phir us saal ka folder kholo. Naya saal folder (jaise 2019) apne aap ban jata hai jab usme paper daala jata hai.",
+      "intro_hi": "पहले परीक्षा चुनें, फिर उस साल का फोल्डर खोलें। नया साल फोल्डर (जैसे 2019) अपने आप बन जाता है जब उसमें पेपर डाला जाता है।",
+      "has_material": true,
+      "has_test": false,
+      "has_maps": false,
+      "folders": {
+        "ia": {
+          "title_en": "IA",
+          "title_hi": "आई.ए.",
+          "icon": "🧾",
+          "order": 1,
+          "note_en": "Information Assistant ke old papers — saal ke folder ke andar.",
+          "note_hi": "सूचना सहायक के पुराने पेपर — साल के फोल्डर में।"
+        },
+        "sci": {
+          "title_en": "SCI",
+          "title_hi": "एस.सी.आई.",
+          "icon": "🧾",
+          "order": 2,
+          "note_en": "SCI (Senior Computer Instructor) ke papers, saal-wise.",
+          "note_hi": "एस.सी.आई. के पेपर, साल-वार।"
+        },
+        "computer-operator": {
+          "title_en": "Computer Operator",
+          "title_hi": "कंप्यूटर ऑपरेटर",
+          "icon": "💻",
+          "order": 3,
+          "note_en": "Computer Operator ke do-do paper, saal ke folder me.",
+          "note_hi": "कंप्यूटर ऑपरेटर के दोनों पेपर, साल-वार।"
+        },
+        "system-assistant": {
+          "title_en": "System Assistant",
+          "title_hi": "सिस्टम असिस्टेंट",
+          "icon": "🖥️",
+          "order": 4,
+          "note_en": "System Assistant ke saare papers, saal-wise.",
+          "note_hi": "सिस्टम असिस्टेंट के सारे पेपर, साल-वार।"
+        },
+        "dsssb": {
+          "title_en": "DSSSB",
+          "title_hi": "डी.एस.एस.एस.बी.",
+          "icon": "🏫",
+          "order": 5,
+          "note_en": "DSSSB ke saare papers 2000 se aage, saal ke folder me.",
+          "note_hi": "डी.एस.एस.एस.बी. के सारे पेपर, साल-वार।"
+        },
+        "ssc": {
+          "title_en": "SSC",
+          "title_hi": "एस.एस.सी.",
+          "icon": "📋",
+          "order": 6,
+          "note_en": "SSC (CGL, CHSL, MTS, CPO) ke technical papers.",
+          "note_hi": "एस.एस.सी. के टेक्निकल पेपर।"
+        },
+        "net": {
+          "title_en": "NET",
+          "title_hi": "यू.जी.सी. नेट",
+          "icon": "🎓",
+          "order": 7,
+          "note_en": "UGC NET / SET Computer Science papers.",
+          "note_hi": "यू.जी.सी. नेट कंप्यूटर साइंस पेपर।"
+        },
+        "rpsc": {
+          "title_en": "RPSC",
+          "title_hi": "आर.पी.एस.सी.",
+          "icon": "🏛️",
+          "order": 8,
+          "note_en": "RPSC Programmer, AEN aur Assistant Professor papers.",
+          "note_hi": "आर.पी.एस.सी. प्रोग्रामर, AEN और असिस्टेंट प्रोफेसर पेपर।"
+        }
+      },
+      "topics": [],
+      "year_folders": {
+        "from": 2000,
+        "to": 2026,
+        "title_en": "Saal-wise (year-wise)",
+        "note_en": "Jis saal ka paper aa chuka hai wo gehra (blue) chip hai — us par click karke paper kholo. Halke chip wale saal ke paper jald aa rahe hain.",
+        "note_hi": "जिस साल का पेपर आ चुका है वह गहरा (नीला) चिप है — उस पर क्लिक करके पेपर खोलें। हल्के चिप वाले सालों के पेपर जल्द आ रहे हैं।"
+      }
     }
   ]
 }

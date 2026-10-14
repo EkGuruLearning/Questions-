@@ -1,60 +1,28 @@
-# Catalogue source files — read before adding website content
+# data/catalog/ — editable catalogue inputs
 
-Files in this folder are **editable source inputs**. Browser-facing catalogues under `assets/catalog/` are generated outputs; do not edit those outputs by hand.
+Yahan likho, phir `python3 tools/build_catalog.py` chalao (`data/site.json` inhi inputs se banta hai).
+Uske baad `python3 tools/build_pages.py` pages likhta hai aur `python3 tools/build_site_routes.py`
+published page list refresh karta hai — teeno `--check` support karte hain.
 
-| File | Purpose | Website reader / builder |
-|---|---|---|
-| `subjects.json` | Subject identity, route, status, topics and book IDs. | `tools/build_site_data.py` and `tools/build_catalog.py` |
-| `books.json` | Existing and new Computer Network topic PDFs/CBT launchers. Each file needs a stable ID, exact repository path and topic ID. | `tools/build_site_data.py` and `tools/build_catalog.py` |
-| `portal_resources.json` | Curated add-on resources that are not CN topic-book entries (for example, a new geography source note or CSV). | `tools/build_catalog.py` |
-| `exams.json` | Practice profiles and their recorded source/evidence status. | `tools/build_site_data.py` |
-| `syllabus_mappings.json` | Source-labelled exam/syllabus mapping records. | `tools/build_site_data.py` |
+| File | Kaam |
+|---|---|
+| `subjects.json` | Brand, subject (EN/HI title, tagline, intro, `has_material`/`has_test`/`has_maps`), `folders` ke labels (icon, EN/HI naam + note, order), topic titles |
+| `materials.json` | Har downloadable file ka record: `file`, `subject`, `topic` (ya `null`), `order`, `title_en`, `title_hi`, `note_en`, `note_hi`. Picture (map/PNG) ke liye **`alt_en`, `alt_hi`, `description_en`, `description_hi`** bhi — yahi SEO text page par aur image alt me jata hai |
+| `site-routes.txt` | Published pages ki list — `tools/build_site_routes.py` likhta hai (link validator aur tests isi se check karte hain) |
 
-## Adding a topic PDF
+Folder path hi website ka folder ban jata hai: `content/computer-network/answers/x.pdf` → folder
+`answers` → "Answers & explanations" card. Isliye folder ka label `subjects.json` ke `folders` me
+hona chahiye.
 
-Use `Computer Network/Topics/T01/` through `T07/` for new topic-specific study files. Add the same record to `books.json` and add its ID to the CN `book_ids` list in `subjects.json`. Example:
+Builder ke rules (fail-fast):
 
-```json
-{
-  "id": "cn-t01-extra-notes",
-  "subject_id": "cn",
-  "topic_id": "T01",
-  "kind": "theory_mcq_pdf",
-  "label": "Topic 1 supplementary notes",
-  "file": "Computer Network/Topics/T01/extra-notes.pdf",
-  "status": "reviewed_resource",
-  "note": "Describe the file and its provenance; do not claim official status without evidence."
-}
-```
-
-Use a unique `id`; `file` must exist and match case exactly. The generated page groups all registered practice/theory resources under the recorded topic. PDF paths are safely encoded for the `/Questions-/` GitHub Pages base.
-
-## Adding another website resource
-
-For a new non-CN-book resource, first place the original under its correct subject/source folder. Add a record to `portal_resources.json`:
-
-```json
-{
-  "id": "geo-new-audit-note",
-  "subject_id": "rajasthan-geography",
-  "title": "New source audit",
-  "category": "Audit/QA",
-  "repo_path": "Rajasthan Geography Maps/reports/NEW_AUDIT.md",
-  "source_status": "State what the file does and what it does not prove.",
-  "source_status_label": "Source audit · read caveats",
-  "source_status_state": "warning",
-  "notes": "Keep the source limitations visible on the site."
-}
-```
-
-Supported current subject IDs are `computer-network` and `rajasthan-geography`. Use the `books.json` path for a CN topic book so it appears on the topic card. New geography map images also need an explicit map record in the map builder and a reviewed alt/caption/status; registering an image as a resource alone does not add it to the map gallery.
-
-## Regenerate and preflight
-
-```bash
-python3 tools/build_site_data.py   # after an approved CN bank/catalog source change
-python3 tools/build_catalog.py     # rebuild web catalogues and repository inventory
-python3 tools/read_structure.py --check
-```
-
-Question-bank source changes have their own review/export procedure in `SITE_GUIDE.md` and `Computer Network/README.md`. Do not mark a future subject live by adding a resource row alone.
+1. `materials.json` me likhi **har** file disk par honi chahiye (typo protection). Iske ilawa
+   `content/` me jo bhi file hai wo bina registration ke bhi publish hoti hai — naam se title ban jata hai.
+2. Registered **har** path exist karna chahiye, `content/<subject>/<folder>/` ke andar hona chahiye.
+3. `subjects.json` me likha har folder disk par hona chahiye; baaki folders apne naam se label le lete hain
+   (aur khali folder bhi site par apne page ke saath dikhta hai — file daalte hi bhar jata hai).
+4. `topic` sirf `T01`–`T07` ya `null`.
+5. Har topic ka naam question-bank manifest se match karna chahiye.
+6. Har picture ka `alt_en`/`alt_hi` (200 akshar tak) aur `description_en`/`description_hi` (120+ akshar)
+   hona chahiye — alt text search engines padhte hain aur description page par dikhti hai.
+7. Byte size aur SHA-256 asli file se aate hain — haath se nahi likhte.

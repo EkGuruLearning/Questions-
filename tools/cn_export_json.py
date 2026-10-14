@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 """cn_export_json.py — normalized question-bank export + audit reports.
 
-Spec: Computer Network/new/README.md (master execution prompt, §6 schema).
-Outputs (all under Computer Network/):
-  data/cn_questions.json            — normalized bank, stable IDs, full schema
-  Reports/INVENTORY.md              — question inventory
-  Reports/DUPLICATE_AUDIT.md        — exact + near-duplicate candidates
-  Reports/ANSWER_VERIFICATION.md    — honest verification status counts
-  Reports/SOURCE_REGISTER.md        — classification rules + evidence files
+Spec: maintainer/computer-network/sources/web-banks/README.md (master execution prompt, §6 schema).
+Outputs:
+  data/banks/cn/cn_questions.json   — normalized bank, stable IDs, full schema
+  maintainer/computer-network/reports/*.md — internal inventory/audit reports
 
 Honesty rules (spec §8, §10): source labels are classified, never upgraded
 without evidence; never claim 100% verified.
@@ -23,9 +20,9 @@ from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA = os.path.join(HERE, "data")
-CN = os.path.join(ROOT, "Computer Network")
-OUT_DATA = os.path.join(CN, "data")
-OUT_REP = os.path.join(CN, "Reports")
+CN = os.path.join(ROOT, "content", "computer-network")
+OUT_DATA = os.path.join(ROOT, "data", "banks", "cn")
+OUT_REP = os.path.join(ROOT, "maintainer", "computer-network", "reports")
 sys.path.insert(0, HERE)
 import cn_textfix  # noqa: E402
 import cn_difficulty  # noqa: E402
@@ -154,7 +151,7 @@ def scrub_unverified_source_key_text(value):
 def public_source_reference(src):
     if UNSUPPORTED_RPSC_KEY_LABEL.search(src or ""):
         return (
-            "Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/"
+            "maintainer/computer-network/past-papers/RPSC Programmer 2024 Paper-1/"
             "2024 Programmer Paper-1 QUESTIONS.md; "
             "2024 Programmer Paper-1 ANSWERS.md (community-maintained; "
             "not an official final answer key)"
@@ -425,7 +422,7 @@ def main():
         "brand": "EkGuru Learning",
         "compiler": "PRAKASH",
         "generated": "2026-10-14",
-        "spec": "Computer Network/new/README.md (master execution prompt)",
+        "spec": "maintainer/computer-network/sources/web-banks/README.md (master execution prompt)",
         "counts": {
             "total": len(records),
             "per_topic": dict(inv),
@@ -443,7 +440,7 @@ def main():
 
     # Keep all derived public assets and reports in their deterministic builders.
     import subprocess
-    for script in ("build_site_data.py", "build_reports.py"):
+    for script in ("build_site_data.py", "build_catalog.py"):
         subprocess.run([sys.executable, os.path.join(HERE, script)], check=True)
     print("records:", len(records))
     print("exact dup groups:", len(dup_groups))

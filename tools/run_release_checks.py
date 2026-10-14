@@ -1,94 +1,139 @@
 #!/usr/bin/env python3
-"""Run CN and subject-portal release checks; preserve results in a portal-specific report."""
+"""Run the EkGuru release checks and write a machine-readable report.
+
+Report: maintainer/reports/release_checks.json (not published on the website).
+"""
 from __future__ import annotations
+
 import json
 import pathlib
-import shlex
 import subprocess
 import sys
 from datetime import datetime, timezone
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-RESULTS_PATH = ROOT / "data/reports/portal_qa_results.json"
+RESULTS_PATH = ROOT / "maintainer/reports/release_checks.json"
+PY = sys.executable
+PY_TOOLS = [
+    "tools/build_catalog.py",
+    "tools/build_site_data.py",
+    "tools/validate_site.py",
+    "tools/serve_site.py",
+    "tools/build_thumbs.py",
+    "tools/validate_question_bank.py",
+    "tools/check_whitespace.py",
+    "tools/read_structure.py",
+    "tools/run_release_checks.py",
+    "tools/cn_export_json.py",
+    "tools/cn_engine.py",
+    "tools/cn_taxonomy.py",
+    "tools/cn_pipeline.py",
+    "tools/cn_textfix.py",
+    "tools/cn_difficulty.py",
+    "tools/cn_extract.py",
+    "tools/cn_ingest_web.py",
+    "tools/cn_ocr_cache.py",
+    "tools/cn_parse_cnp3.py",
+    "tools/cn_parse_ocr.py",
+    "tools/cn_build_topic.py",
+    "tools/cn_build_practice.py",
+    "tools/cn_build_complete.py",
+    "tools/cn_build_verify_key.py",
+    "tools/audit_duplicates.py",
+    "tools/audit_pdfs.py",
+    "tools/import_w6_build.py",
+    "tools/reconcile_cn_bank.py",
+    "tools/read_structure.py",
+]
+JS_FILES = [
+    "assets/js/engine.mjs",
+    "assets/js/test.mjs",
+    "tests/engine/engine.test.mjs",
+    "tests/navigation/site_dom_smoke.cjs",
+]
+
 CHECKS = [
-    ("Python syntax", ["python3", "-m", "py_compile", "tools/cn_export_json.py", "tools/reconcile_cn_bank.py", "tools/build_site_data.py", "tools/build_reports.py", "tools/audit_duplicates.py", "tools/audit_links.py", "tools/audit_blueprints.py", "tools/validate_question_bank.py", "tools/build_v6_launchers.py", "tools/retire_legacy_apps.py", "tools/audit_legacy_apps.py", "tools/inert_archived_html.py", "tools/audit_pdfs.py", "tools/check_whitespace.py", "tools/run_release_checks.py", "tools/build_catalog.py", "tools/validate_links.py", "tools/validate_assets.py", "tools/validate_subjects.py", "tools/read_structure.py"], "All release/build/audit Python scripts compile."),
-    ("Catalog and schema JSON", ["bash", "-lc", "for f in data/catalog/*.json data/sources/*.json data/schemas/*.json assets/catalog.min.json assets/catalog/*.json assets/banks/cn/manifest.json assets/source-register.min.json data/reports/build_manifest.json data/reports/browser_visual_qa.json data/reports/portal_browser_visual_qa.json data/reports/pdf_rendering_qa.json data/reports/portal_pdf_rendering_qa.json; do [ -f \"$f\" ] || continue; python3 -m json.tool \"$f\" >/dev/null || exit 1; done"], "Catalog, evidence, schemas and generated manifests parse as JSON."),
-    ("Canonical and generated-data validation", ["python3", "tools/validate_question_bank.py"], "Canonical v2, hashes, official evidence gate, chunks and source references."),
-    ("Exam profile and mapping audit", ["python3", "tools/audit_blueprints.py"], "Profiles/mappings validated; none claims an exact simulation."),
-    ("Legacy app provenance audit", ["python3", "tools/audit_legacy_apps.py"], "Seven archived snapshots checked for embedded stale official labels; public paths must redirect."),
-    ("Static links and new-tab safety", ["python3", "tools/audit_links.py", "--strict"], "Root page, legacy pages, v6 launchers, catalog book files and topic chunks."),
-    ("Duplicate scan", ["python3", "tools/audit_duplicates.py", "--check"], "Exact and near-duplicate scan; reports candidates without auto-merging."),
-    ("Data unit tests", ["python3", "-m", "unittest", "discover", "-s", "tests/data", "-p", "test_*.py", "-v"], "Canonical integrity, source gates, payloads, catalog and preserved files."),
-    ("Navigation unit tests", ["python3", "-m", "unittest", "discover", "-s", "tests/navigation", "-p", "test_*.py", "-v"], "Anchors, explicit buttons, mobile navigation semantics and safe links."),
-    ("Responsive structural tests", ["python3", "-m", "unittest", "discover", "-s", "tests/responsive", "-p", "test_*.py", "-v"], "Viewport, breakpoint and touch-target CSS checks; not rendered visual QA."),
-    ("Portal catalogue reproducibility", ["python3", "tools/build_catalog.py", "--check"], "Generated subjects, resource and map manifests plus repository inventories match checked-in sources."),
-    ("Portal project-base links", ["python3", "tools/validate_links.py"], "Route and fragment resolution under /Questions-/; PDF/external new-tab safety and manifest URL checks."),
-    ("Portal asset integrity", ["python3", "tools/validate_assets.py"], "Resource hashes/sizes, image metadata, alternative text and responsive map aspect ratios."),
-    ("Portal publication gates", ["python3", "tools/validate_subjects.py"], "CN topic/resource availability and Rajasthan Geography resource-library status."),
-    ("Repository structure merge preflight", ["python3", "tools/read_structure.py", "--check"], "Read-only merge safety, source/catalogue layout, generated paths and project-base checks; not a deployment test."),
-    ("JavaScript syntax", ["bash", "-lc", "node --check assets/js/engine.mjs && node --check assets/js/app.mjs && node --check assets/js/app.js && node --check tests/engine/engine.test.mjs && node --check tests/navigation/app_dom_smoke.cjs && node --check tests/visual/browser_visual_qa.cjs"], "Engine, application modules and Node tests parse."),
-    ("Portal interaction smoke (optional JSDOM)", ["node", "tests/navigation/app_dom_smoke.cjs"], "Catalog-first loading, topic-only fetch, nav, answer feedback, bookmark, source dialog, scoring/review and filters; exit 77 means jsdom is not installed."),
-    ("Engine unit tests", ["node", "--test", "tests/engine/engine.test.mjs"], "Filtering, opt-in status, deterministic sampling, scoring and language fallbacks."),
-    ("Rendered portal browser visual and accessibility QA (optional)", ["node", "tests/visual/browser_visual_qa.cjs"], "Headless Chromium route/viewport checks, navigation-back flows, mobile menu, keyboard skip-link, 44px controls and axe checks; exit 77 means browser packages are unavailable."),
-    ("PDF validity and rendering audit (optional PyMuPDF)", ["python3", "tools/audit_pdfs.py"], "Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable."),
-    ("Whitespace/conflict check", ["bash", "-lc", "git diff --check && git diff --cached --check && python3 tools/check_whitespace.py"], "Tracked diffs and changed/untracked text files are checked; preserved archive bytes are excluded."),
+    ("Python syntax", [PY, "-m", "py_compile", *dict.fromkeys(PY_TOOLS)],
+     "Every builder/validator script compiles."),
+    ("Generated data parses as JSON",
+     ["bash", "-lc", "for f in data/site.json data/banks/cn/manifest.json data/banks/cn/T0*.min.json "
+                     "data/catalog/*.json data/sources/*.json data/schemas/*.json; do "
+                     "[ -f \"$f\" ] || continue; python3 -m json.tool \"$f\" >/dev/null || exit 1; done"],
+     "Site data, bank manifest, chunks and catalogue JSON are valid."),
+    ("Question bank and evidence gate", [PY, "tools/validate_question_bank.py"],
+     "Canonical schema v2, hashes, official-evidence gate and chunk coverage."),
+    ("Site routes, links and downloads", [PY, "tools/validate_site.py"],
+     "No broken links, no .md links, no maintainer links, download hashes match."),
+    ("Site data is current", [PY, "tools/build_catalog.py", "--check"],
+     "data/site.json matches the registered content and catalogue."),
+    ("Bank chunks are current", [PY, "tools/build_site_data.py", "--check"],
+     "Generated topic chunks and manifest match the canonical bank."),
+    ("Image previews", [PY, "tools/build_thumbs.py", "--check"],
+     "Every published picture has a light preview that matches the full-size file."),
+    ("Repository structure preflight", [PY, "tools/read_structure.py", "--check"],
+     "Required paths, generated data, links and whitespace in one pass."),
+    ("Site tests", [PY, "-m", "unittest", "discover", "-s", "tests/site", "-p", "test_*.py", "-v"],
+     "Site data integrity, registry wiring and route/anchor checks."),
+    ("Navigation and content tests", [PY, "-m", "unittest", "discover", "-s", "tests/navigation", "-p", "test_*.py", "-v"],
+     "Page semantics, nav targets, new-tab safety and no-audit-leak rules."),
+    ("Responsive structural tests", [PY, "-m", "unittest", "discover", "-s", "tests/responsive", "-p", "test_*.py", "-v"],
+     "Viewport, breakpoints and touch-target CSS checks; not rendered visual QA."),
+    ("Data pipeline tests", [PY, "-m", "unittest", "discover", "-s", "tests/data", "-p", "test_*.py", "-v"],
+     "Canonical bank identity, public chunk fields and preserved snapshots."),
+    ("JavaScript syntax", ["bash", "-lc", "for f in " + " ".join(JS_FILES) + "; do node --check \"$f\" || exit 1; done"],
+     "Site modules, test app and Node tests parse."),
+    ("Engine unit tests", ["node", "--test", "tests/engine/engine.test.mjs"],
+     "Filtering, sampling, scoring and language fallbacks."),
+    ("Site page smoke test", ["node", "tests/navigation/site_dom_smoke.cjs"],
+     "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer."),
+    ("Mobile / responsive browser check (optional)", ["node", "tests/mobile/mobile_check.cjs"],
+     "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, "
+     "tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me."),
+    ("Reasoning sample PDFs", [PY, "tools/reasoning_samples.py", "--check"],
+     "Reasoning ke sample chapter/practice/test/answer-key PDFs maujood hain."),
+    ("Whitespace/conflict check", ["bash", "-lc", "git diff --check && git diff --cached --check && python3 tools/check_whitespace.py"],
+     "Tracked diffs and changed/untracked text files are checked."),
 ]
 
 
-def main():
-    checks = []
+def main() -> int:
+    results = []
     for name, command, note in CHECKS:
         result = subprocess.run(command, cwd=ROOT, text=True, capture_output=True)
-        output = (result.stdout + result.stderr).strip()
-        check_result = "PASS" if result.returncode == 0 else "SKIP" if result.returncode == 77 else "FAIL"
-        check_note = note
-        if name == "Portal interaction smoke (optional JSDOM)":
-            if result.returncode == 0:
-                check_note += " JSDOM was available in this test environment; the production portal has no npm runtime dependency."
-            elif result.returncode == 77:
-                check_note += " JSDOM was absent, so this interaction smoke was skipped."
-        if name == "Rendered portal browser visual and accessibility QA (optional)":
-            if result.returncode == 0:
-                browser_report = json.loads((ROOT / "data/reports/portal_browser_visual_qa.json").read_text(encoding="utf-8"))
-                route_count = sum(len(item.get("routes", [])) for item in browser_report["viewports"])
-                check_note += f" {browser_report['browser']}; viewports={len(browser_report['viewports'])}; rendered routes={route_count}; navigation flows={len(browser_report.get('navigation_flows', []))}; axe violations={browser_report['total_axe_violations']}."
-            elif result.returncode == 77:
-                check_note += " Browser packages were absent, so rendered visual QA was skipped."
-        if name == "PDF validity and rendering audit (optional PyMuPDF)":
-            if result.returncode == 0:
-                pdf_report = json.loads((ROOT / "data/reports/portal_pdf_rendering_qa.json").read_text(encoding="utf-8"))
-                check_note += f" {pdf_report['tool']}; PDFs={pdf_report['tracked_pdf_count']}; pages rendered={pdf_report['total_pages_rendered']}/{pdf_report['total_pages']}; repaired={pdf_report['mupdf_repaired_files']}; hashes unchanged={pdf_report['all_source_hashes_unchanged']}."
-            elif result.returncode == 77:
-                check_note += " PyMuPDF was absent, so PDF parse/render QA was skipped."
-        checks.append({
+        status = "PASS" if result.returncode == 0 else "SKIP" if result.returncode == 77 else "FAIL"
+        if result.returncode == 77:
+            note += " Skipped in this environment."
+        output = (result.stdout + result.stderr).strip().splitlines()
+        results.append({
             "name": name,
-            "command": shlex.join(command),
+            "status": status,
             "exit_code": result.returncode,
-            "result": check_result,
-            "notes": check_note,
-            "output_tail": output[-6000:],
+            "note": note,
+            "output_tail": output[-6:],
         })
-        print(f"{check_result}: {name}")
-        if output:
-            print(output)
-    build_manifest = json.loads((ROOT / "data/reports/build_manifest.json").read_text(encoding="utf-8"))
+        print(f"[{status}] {name}")
+        for line in output[-4:]:
+            print("    " + line)
+
     report = {
-        "schema_version": 1,
-        "recorded_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "bank_build_id": build_manifest["bank_build_id"],
-        "canonical_sha256": build_manifest["canonical_sha256"],
-        "checks": checks,
-        "browser_visual_qa": next((check["notes"] for check in checks if check["name"] == "Rendered portal browser visual and accessibility QA (optional)"), "NOT_RUN"),
-        "pdf_rendering": next((check["notes"] for check in checks if check["name"] == "PDF validity and rendering audit (optional PyMuPDF)"), "NOT_RUN"),
-        "deployment": "NOT_PART_OF_LOCAL_QA_RUN: checks ran on the feature branch; this report does not include a deployment or post-deployment smoke test.",
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "command": "python3 tools/run_release_checks.py",
+        "summary": {
+            "pass": sum(item["status"] == "PASS" for item in results),
+            "skip": sum(item["status"] == "SKIP" for item in results),
+            "fail": sum(item["status"] == "FAIL" for item in results),
+        },
+        "checks": results,
+        "not_tested": [
+            "Real browser rendering, device testing and the live GitHub Pages deployment.",
+            "PDF page-by-page rendering (tools/audit_pdfs.py needs PyMuPDF).",
+        ],
     }
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    RESULTS_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    failed = [check for check in checks if check["exit_code"] not in (0, 77)]
-    print(f"Recorded {len(checks)} check results in {RESULTS_PATH.relative_to(ROOT)}; failures={len(failed)}")
-    if failed:
-        raise SystemExit(1)
+    RESULTS_PATH.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    print(f"\nsummary: {report['summary']} — report: {RESULTS_PATH.relative_to(ROOT)}")
+    return 1 if report["summary"]["fail"] else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

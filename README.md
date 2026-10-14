@@ -1,80 +1,177 @@
-# EkGuru Learning — repository-backed subject portal
+# EkGuru Learning — student portal (Computer Network + Rajasthan map atlas)
 
-**Work status:** feature branch `arena/cfe67f95-questions`; this change has not been merged or deployed.
+Live site (GitHub Pages project path): `https://ekgurulearning.github.io/Questions-/`
 
-**GitHub Pages project URL:** <https://ekgurulearning.github.io/Questions-/> — the live deployment was **not checked** as part of this work. All checked-in internal routes are project-base-safe for `/Questions-/`.
+Website par sirf do cheezein hain, aur dono student ke kaam ki hain:
 
-EkGuru presents existing study material as a source-labelled catalogue. The portal distinguishes a live resource collection from a live question bank, and does not promote unresolved source or boundary claims as verified facts.
+1. **Computer Network** — 7 topics, topic-wise/full-mix online test (1,554 questions) aur PDF study material (32 files).
+2. **Rajasthan Geography** — border-district map atlas, A1 se A4 print sizes (6 files).
 
-## Portal routes
+Audit reports, source registers, GIS scripts, purane legacy apps — kuch bhi website par nahi dikhta.
+Wo sab `maintainer/` me hai (dekhne ke liye [`maintainer/README.md`](maintainer/README.md)).
 
-- `index.html` — subject catalogue and map preview.
-- `subjects/index.html` — all published subjects.
-- `subjects/computer-network/index.html` — Computer Network bank, topics, CBTs, booklets, theory, source notes and audit material.
-- `subjects/rajasthan-geography/index.html` — existing map, district CSV, metadata and audit resources; **no question bank is published**.
-- `maps/index.html` and `maps/rajasthan/index.html` — map catalogue, same-tab full-size PNG action, CSV data and verification notes.
-- `practice/index.html` — existing shared Computer Network practice app.
-- `study-material/index.html` and `sources/index.html` — resource and source/audit catalogues.
-- `guides/repository-structure/index.html` — website-readable English/Hindi file map, topic folder guide and safe repository-merge checklist.
+## Folder structure
 
-Internal links stay in the current tab. PDFs and external official-source links open a new tab only with a visible label and `rel="noopener noreferrer"`. Full-size map PNGs stay in the current tab so browser Back returns to the previous page.
+Website par wahi folders dikhte hain jo repository me hain — `content/` ka tree hi site ka tree hai.
 
-## Published data snapshot
+```
+index.html                                  home (subject cards + folder tiles)
+subjects/                                   subject pages
+  index.html                                  saare subjects
+  computer-network/index.html                 CN home — folders + topic list
+  computer-network/material/index.html        folder browser (folder kholo → files)
+  computer-network/test/index.html            online test (topic-wise + full mix)
+  rajasthan-geography/index.html              Map folder → Rajasthan → maps
+404.html                                     purane link ke liye friendly page
 
-### Computer Network
+content/                                    STUDENT CONTENT (yahi publish hota hai)
+  reasoning/                                  Reasoning material (theory/practice/answers/tests)
+  previous-year-papers/                       Old papers, exam-wise: ia/ sci/ computer-operator/
+                                              system-assistant/ dsssb/ ssc/ net/ rpsc/
+                                              (har exam ke andar saal ka folder: 2019/, 2020/ …)
+  computer-network/
+    theory/        📘 Theory — T01..T07 + complete book (8 PDF)
+    practice/      ✍️ Practice questions — T01..T07 booklets (7 PDF)
+    answers/       ✅ Answers & explanations — key + solutions (5 PDF)
+    tests/         🧾 Tests — topic/unit/subject papers (11 PDF)
+    reference/     📚 Reference book (1 PDF)
+  rajasthan-geography/
+    map/           🗂️ Map
+      rajasthan/   🗺️ Rajasthan ke maps — A1/A2/A3/A4 + preview (6 PNG)
 
-- Canonical bank: **1,556** records across seven topics; **1,554** are in the current practice payload.
-- Two incomplete pending-review records remain in canonical data and are excluded from practice.
-- The official paper + final-key evidence count is **0**. “Answer checked” is not an official-key match; unverified claims stay separately labelled.
-- Counts, build ID and SHA-256 are generated from the canonical bank and recorded in `data/reports/build_manifest.json` and the CN reports.
+assets/                                     site code
+  css/ekguru.css                               ek hi stylesheet (light + dark)
+  js/test.mjs                                  online test app (player, result, review)
+  js/engine.mjs                                pure question-engine helpers
+  img/                                         map preview image
 
-### Rajasthan Geography
+data/                                       site data
+  site.json                                    generated page data (counts, titles, hashes)
+  banks/cn/cn_questions.json                   canonical question bank (schema v2)
+  banks/cn/manifest.json + T0N.<hash>.json     generated topic chunks (test page inhe load karta hai)
+  catalog/subjects.json                        subject/topic titles (EN + HI)
+  catalog/materials.json                       har downloadable file ka record
+  catalog/site-routes.txt                      published page list
 
-- Published as a **resource library**, not a question bank; the catalogue intentionally contains no geography question count or practice-test button.
-- `Rajasthan Geography Maps/` and `Geography/Map/Rajasthan/` are distinct source trees with separate READMEs/audits. They have not been merged, moved or rewritten.
-- Existing previews, raster exports, CSVs and audit files are linked in place. Boundary, source-vintage and review conflicts stay marked **Needs verification**; see each source audit and `UNRESOLVED_DISCREPANCIES.md` before relying on a map or CSV value.
-- `assets/catalog/rajasthan-border-atlas-preview.webp` is an optimized derivative; the original PNG remains unchanged. The source atlas PDFs/GeoPackage are not claimed as included when absent from the tracked repository.
-
-## Catalogue build and validation
-
-The catalogue builder reads real repository files and checked-in manifests. It is read-only with respect to original question banks, PDFs, maps, CSVs and CBT files.
-
-```bash
-python3 tools/build_catalog.py
-python3 tools/build_catalog.py --check
-python3 tools/validate_links.py       # project-base links and new-tab policy
-python3 tools/validate_assets.py      # existence, SHA-256, sizes, image metadata
-python3 tools/validate_subjects.py   # publication gates and required resources
+maintainer/                                 NOT published — audits, reports, GIS, legacy, archive
+tools/ tests/                               builders, validators, tests
 ```
 
-The builder writes `assets/catalog/{subjects,resources,maps}.json`, `data/reports/portal_repository_inventory.csv`, and `Rajasthan Geography Maps/STRUCTURE_AND_ASSET_INVENTORY.md`. Review and regenerate those outputs whenever their source data or tracked resource paths change; do not hand-edit generated catalogue JSON. Editable catalog inputs and add-file examples are documented in [`data/catalog/README.md`](data/catalog/README.md).
-
-To print the repository/site folder map or run the read-only merge preflight, use:
+## Naya material add karna — koi code change nahi
 
 ```bash
-python3 tools/read_structure.py
+# 1. file rakho — jis folder me rakhoge, wahi folder website par banega
+content/previous-year-papers/dsssb/2019/DSSSB-Computer-Operator-2019-Paper-1.pdf
+content/reasoning/practice/series/Sitting-Arrangement-Set-1.pdf
+
+# 2. rebuild (+ image ho to pehle preview)
+python3 tools/build_thumbs.py       # sirf nayi picture ke liye (PNG/JPG)
+python3 tools/build_catalog.py      # content -> data/site.json
+python3 tools/build_pages.py        # data/site.json -> plain HTML pages
+python3 tools/build_site_routes.py  # published page list (validate/test isi ko padhte hain)
+
+# 3. verify
+python3 tools/validate_site.py
+```
+
+Folder aur file ke naam se hi title ban jata hai (`dsssb` → DSSSB, `2019` → 2019,
+`DSSSB-...-Paper-1.pdf` → DSSSB Computer Operator 2019 Paper 1). Hindi title, note ya SEO
+alt/description chahiye to `data/catalog/materials.json` me us file ka record likh do — optional hai.
+
+Builder khud check karta hai: jo file register nahi hui, ya jo registered path gayab hai — dono par
+build fail ho jata hai. Isliye website par kabhi adhura/tuta hua record nahi jayega.
+
+## Question bank rebuild
+
+```bash
+python3 tools/build_site_data.py     # canonical bank -> data/banks/cn/manifest.json + topic chunks
+python3 tools/build_catalog.py       # chunks + catalogue -> data/site.json
 python3 tools/read_structure.py --check
 ```
 
-The website version of this guide is linked in the main navigation at `guides/repository-structure/index.html`.
+## Pages kaise bante hain
 
-**Quick placement rule:** new CN study PDFs go in `Computer Network/Topics/TNN/` and must be registered in `data/catalog/books.json` plus the CN `book_ids` list; question-source PDFs go to `Computer Network/Incoming/` for review and are not published automatically. Geography files stay in one of their two audited source trees and new documents/CSVs are registered through `data/catalog/portal_resources.json`. Do not hand-edit files under `assets/catalog/` or combine the geography roots.
+Website plain HTML hai — koi page browser me JavaScript se nahi banta, isliye page turant khulta hai.
+`tools/build_pages.py` har subject ka page aur har folder ka apna page likhta hai, `content/` ke folder
+structure ke hisaab se (folder rakho → page apne aap). Har page par breadcrumb aur "↑ upar wale page
+par jao" link hota hai. Online test app alag hai: wo `assets/js/test.mjs` se chalta hai.
 
-To rebuild the existing Computer Network data pipeline after question-source changes, follow `SITE_GUIDE.md` and `Computer Network/README.md`. Do not hand-edit the generated bank chunks or compatibility catalog.
+Sirf visitor material publish hota hai — `maintainer/`, `tools/`, `tests/` aur `.md` files site par
+kahin link nahi hoti (`tools/validate_site.py` isi par fail karta hai).
 
-## Tests and release report
+## Reasoning chapters kaise add karein (namuna pehle se hai)
 
-Run each Python test group explicitly (the repository does not package `tests/` as a single unittest package):
+Har Reasoning folder me ek **sample** rakha hai, taaki format saaf dikhe:
+
+```
+content/reasoning/theory/      📘 Reasoning-Series-Sample-Chapter.pdf     (notes ka namuna)
+content/reasoning/practice/    ✍️ Reasoning-Series-Sample-Practice.pdf    (12 sawal, options ke saath)
+content/reasoning/answers/     ✅ Reasoning-Series-Sample-Answer-Key.pdf   (key + ek-line hal)
+content/reasoning/tests/       🧾 Reasoning-Sample-Test-Paper.pdf         (10 sawal ka test)
+```
+
+### Apne chapters upload karne ka tarika (do step)
 
 ```bash
-python3 -m unittest discover -s tests/data -p 'test_*.py' -v
+# 1. chapter ke chaaron folder ek command me banao (Calendar, Clock, Blood Relations …)
+python3 tools/new_reasoning_chapter.py "Calendar" "Clock" "Blood Relations"
+
+# 2. PDFs in folders me daaliye (GitHub par bhi drag-drop kar sakte hain) —
+#    content/reasoning/theory/Calendar/Calendar-Short-Notes.pdf
+#    content/reasoning/practice/Calendar/Calendar-Practice-Questions.pdf
+#    content/reasoning/answers/Calendar/Calendar-Answer-Key.pdf
+#    content/reasoning/tests/Calendar/Calendar-Test-Paper.pdf
+
+# 3. site bana dijiye
+python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py
+```
+
+Chapter ka folder khali ho to site par nahi dikhta — PDF daalte hi us chapter ka page apne aap
+ban jata hai (naam se hi title, PDF ke andar ka content waisa hi rehta hai). Chapter ke andar ka
+folder bhi dikhta hai: `content/reasoning/practice/Calendar/…` → website par `Practice questions ›
+Calendar`. Naye sample PDF banane ke liye: `python3 tools/reasoning_samples.py [doc-id]`.
+
+## Previous Year Papers — exam-wise aur saal-wise
+
+`content/previous-year-papers/<exam>/<saal>/` me paper rakho. Har exam ke page par **2000 se 2026 tak
+ke saare saal** chip ke roop me dikhte hain: jis saal ka paper aa chuka hai wo gehra (blue) chip hai
+aur us par click karke paper khulta hai; baaki saal muted chip hain. Jo saal folder banta hai, uska page
+apne aap ban jata hai.
+
+## Local preview
+
+```bash
+python3 tools/serve_site.py          # http://localhost:8000 — sirf public pages
+```
+
+## Mobile check (asli browser me)
+
+```bash
+# ek baar setup (browser puppeteer ke saath)
+mkdir -p /tmp/mcheck && cd /tmp/mcheck && npm init -y && npm i puppeteer-core @sparticuz/chromium
+
+node tests/mobile/mobile_check.cjs   # 360/390/768/1280 widths par saare important pages
+```
+
+Ye check pakka karta hai: koi page sideways scroll nahi karta, phone par "Menu" dikhta hai
+(desktop nav 951px ke baad), tap targets chhote nahi, console me error nahi. Screenshots
+`/tmp/ekguru-mobile-shots` me aate hain. `run_release_checks.py` ise bhi chalata hai aur
+browser na milne par skip (exit 77) kar deta hai.
+
+## Checks
+
+```bash
+python3 tools/validate_site.py                    # routes, links, downloads, hashes, no .md/audit links
+python3 tools/validate_question_bank.py           # canonical bank + evidence gate + chunk coverage
+python3 tools/read_structure.py --check           # structure + generated data + whitespace preflight
+python3 tools/run_release_checks.py               # poora suite + maintainer/reports/release_checks.json
+python3 -m unittest discover -s tests/site -p 'test_*.py' -v
 python3 -m unittest discover -s tests/navigation -p 'test_*.py' -v
 python3 -m unittest discover -s tests/responsive -p 'test_*.py' -v
-python3 tools/read_structure.py --check
+python3 -m unittest discover -s tests/data -p 'test_*.py' -v
 node --test tests/engine/engine.test.mjs
-node tests/navigation/app_dom_smoke.cjs  # optional; exit 77 if jsdom is absent
+NODE_PATH=<node_modules> node tests/navigation/site_dom_smoke.cjs       # optional (jsdom)
+NODE_PATH=<node_modules> node tests/navigation/test_app_dom_smoke.cjs   # optional (jsdom)
 ```
 
-Rendered browser QA is optional and has no production/runtime dependency. It requires temporary `playwright-core`, `@sparticuz/chromium`, and `axe-core` packages; see `tests/visual/browser_visual_qa.cjs`. The run recorded for this branch is summarized in `data/reports/portal_qa_report.md`, with machine-readable results in `data/reports/portal_browser_visual_qa.json`. It is headless viewport emulation, not a test on physical devices or a post-deployment smoke test.
-
-The report lists actual checks, scope and anything **NOT TESTED**. This branch has not been merged, and no deployment or live-site behavior is claimed as verified.
+`SITE_GUIDE.md` me data flow, folder responsibilities aur maintenance recipes detail me hain.

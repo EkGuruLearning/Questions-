@@ -11,7 +11,7 @@ Covered: every question whose source contains "Practice - original" (all waves 1
 plus wave-5 ("textbook-based") gap-concept questions — i.e. everything NOT from the
 repo source banks (those already have answers in the topic books).
 
-Output: Computer Network/Practice/ANSWER KEY - Added Questions (Verification).pdf
+Output: content/computer-network/practice/Answer-Key-Added-Questions-<count>.pdf
 """
 import os, sys
 import fitz
@@ -24,7 +24,7 @@ from cn_engine import (esc, _archive, PAGE_W, PAGE_H, ML, MR,
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
-OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "Computer Network", "Practice"))
+OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "content", "computer-network", "practice"))
 
 TOPICS = [
     (1, "Data Communications & Networks"),
@@ -230,7 +230,7 @@ def build():
     html = ("<html><head><meta charset='utf-8'><style>" + CSS +
             "</style></head><body>" + "\n".join(body) + "</body></html>")
     story = fitz.Story(html=html, archive=arch)
-    out_pdf = os.path.join(OUT_DIR, f"ANSWER KEY - Added Questions ({tot}) (Verification).pdf")
+    out_pdf = os.path.join(OUT_DIR, f"Answer-Key-Added-Questions-{tot}.pdf")
     writer = fitz.DocumentWriter(out_pdf)
     where = fitz.Rect(LEFT, TOP, RIGHT, BOTTOM)
     more = 1

@@ -14,8 +14,14 @@ import {
 } from "../../assets/js/engine.mjs";
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
-const BANK_PATH = path.resolve(HERE, "../../assets/cn-questions.min.json");
-const canonicalPublicBank = JSON.parse(fs.readFileSync(BANK_PATH, "utf8"));
+const MANIFEST_PATH = path.resolve(HERE, "../../data/banks/cn/manifest.json");
+const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, "utf8"));
+// The published bank is split into one content-hashed chunk per topic; the engine
+// tests run against the real chunk the browser fetches for topic 1.
+const firstChunk = manifest.topics[0];
+const canonicalPublicBank = JSON.parse(
+  fs.readFileSync(path.resolve(HERE, "../../", firstChunk.file), "utf8"),
+);
 const clone = (item, changes = {}) => ({ ...item, ...changes });
 
 test("default practice eligibility excludes claimed, disputed and pending records", () => {
