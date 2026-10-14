@@ -245,8 +245,15 @@
 
       var homeMapPath = document.getElementById("geoFolderPath");
       if (homeMapPath && geo) {
-        homeMapPath.textContent = geo.tree.folders.map(function (folder) { return folder.title_en; }).join(" › ")
-          + " › " + (findNode(geo.tree, "map") || { folders: [] }).folders.map(function (f) { return f.title_en; }).join("");
+        // Geo page ek hi chain dikhata hai: Map › Rajasthan › (aage jo folders aayenge)
+        var chain = [];
+        (function descend(node) {
+          node.folders.forEach(function (folder) {
+            chain.push(folder.title_en);
+            descend(folder);
+          });
+        })(geo.tree);
+        homeMapPath.textContent = chain.join(" › ");
       }
 
       var topicGrid = document.getElementById("topicGrid");
