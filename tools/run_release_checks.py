@@ -18,6 +18,7 @@ PY_TOOLS = [
     "tools/build_catalog.py",
     "tools/build_site_data.py",
     "tools/validate_site.py",
+    "tools/serve_site.py",
     "tools/validate_question_bank.py",
     "tools/check_whitespace.py",
     "tools/read_structure.py",

@@ -52,13 +52,33 @@ def resolve(request_path: str) -> pathlib.Path | None:
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
-    server_version = "EkGuruPreview/1.0"
+    server_version = "EkGuruPreview/1.1"
+    protocol_version = "HTTP/1.1"  # keep-alive: the preview proxy serves many files per page
 
     def do_GET(self):  # noqa: N802 (stdlib naming)
         self.respond(body=True)
 
     def do_HEAD(self):  # noqa: N802
         self.respond(body=False)
+
+    def parse_range(self, size: int):
+        """Return (start, end) for a single-range request, or None when unsupported."""
+        header = self.headers.get("Range")
+        if not header or not header.startswith("bytes=") or "," in header:
+            return None
+        start_text, _, end_text = header[len("bytes="):].partition("-")
+        try:
+            if start_text:
+                start = int(start_text)
+                end = int(end_text) if end_text else size - 1
+            else:  # suffix range: last N bytes
+                start = max(0, size - int(end_text))
+                end = size - 1
+        except ValueError:
+            return None
+        if start > end or start >= size:
+            return None
+        return start, min(end, size - 1)
 
     def respond(self, body: bool):
         target = resolve(self.path)
@@ -71,14 +91,37 @@ class Handler(http.server.BaseHTTPRequestHandler):
             if body:
                 self.wfile.write(content)
             return
-        content = target.read_bytes()
-        self.send_response(200)
-        self.send_header("Content-Type", mimetypes.guess_type(target.name)[0] or "application/octet-stream")
-        self.send_header("Content-Length", str(len(content)))
+
+        size = target.stat().st_size
+        content_type = mimetypes.guess_type(target.name)[0] or "application/octet-stream"
+        # Browsers ask for byte ranges when they open a PDF; serving them keeps the
+        # big study PDFs usable in the preview instead of re-downloading everything.
+        window = self.parse_range(size)
+        if window is None:
+            self.send_response(200)
+            self.send_header("Content-Type", content_type)
+            self.send_header("Content-Length", str(size))
+            self.send_header("Accept-Ranges", "bytes")
+            self.send_header("Cache-Control", "no-cache")
+            self.end_headers()
+            if body:
+                with target.open("rb") as handle:
+                    self.wfile.write(handle.read())
+            return
+
+        start, end = window
+        length = end - start + 1
+        self.send_response(206)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(length))
+        self.send_header("Content-Range", f"bytes {start}-{end}/{size}")
+        self.send_header("Accept-Ranges", "bytes")
         self.send_header("Cache-Control", "no-cache")
         self.end_headers()
         if body:
-            self.wfile.write(content)
+            with target.open("rb") as handle:
+                handle.seek(start)
+                self.wfile.write(handle.read(length))
 
     def log_message(self, fmt, *args):
         sys.stderr.write("%s - %s\n" % (self.address_string(), fmt % args))
