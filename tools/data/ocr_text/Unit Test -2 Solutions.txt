@@ -1,0 +1,824 @@
+
+--- page 1 ---
+Topic
+Computer Nelwork - Lnbeduehon,Dat lik 
+Jawa intoduetion, class
+RPSC PROGRAMMAR
+UNIT TEST-2
+21
+Min wail
+--- page 2 ---
+S.No.
+Name
+Email
+Phone
+Marks
+Photo
+Analysis
+ResetAttempt
+Date&Time
+Ashutosh Singh
+43.38
+ViewAnalysis
+ResetAttemptCount
+2024-08-2917:00:51
+komal samariya
+38.01
+ViewAnalysis
+Reset Attempt Count
+2024-08-2916:46:06
+Deependra Singh Chauhan
+36.05
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:13:56
+36.04
+VlewAnalysis
+Reset Attempt Count
+2024-08-29 17:11:27
+K
+35.42
+VlewAnalysis
+Reset Attempt Count
+2024-08-2917:02:10
+NAMAN PACHEYAN
+35.35
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:15:25
+prajwalroat
+34.36
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:17:50
+Preetika Dadhich
+33.71
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 17:15:13
+pooja
+33.70
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:04:37
+10
+Amit Bohra
+31.39
+ViewAnalysis
+Reset AttemptCount
+2024-08-29 16:51:02
+11
+Rajkumar Meghwanshi
+31.07
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:10:16
+12
+chirag
+31.05
+VlewAnalysis
+Reset Attempt Count
+2024-08-29 16:45:14
+13
+vaibhav
+31.05
+ViewAnalysis
+ResetAttempt Count
+2024-08-2916:53:22
+14
+PChhonkar
+30.76
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 16:54:13
+15
+mahaveer saini
+30.75
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:13:35
+16
+Usha Aswani
+30.71
+ViewAnalysis
+Reset AttemptCount
+2024-08-2917:11:03
+17
+Rohit Kumar
+30.71
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:18:44
+18
+NARAYAN LAL PATEL
+30.41
+ViewAnalysis
+Reset Attempt Count
+2024-08-2916:53:01
+19
+Sunil
+30.35
+ViewAnalysis
+Reset Attempt Count
+2024-08-2916:40:29
+--- page 3 ---
+1. what are the advantages of star topology ?
+(2) less number of cables are required
+(b)more number of cables are required
+(c) it is a distributed topology
+(d) security is high
+--- page 4 ---
+2。
+which of the following is a valid IP address assigned to Host
+(a) 127.0.0.1 - Reserwe - loop Bacl
+(b) 192.248.16.255 - DBA
+l25.25.25.25
+(d) 150.7.0.0 → Nel -id
+--- page 5 ---
+3. given an IP address 156.233.42.56 with subnet mask
+of 7 bits. How many hosts and subnets are possible ?
+(a) 126 hosts, 510 subnets
+42.SG
+(b) 128 hosts , 512 subnets
+156. 233
+(c) 510 hosts 126 subnets
+6
+(d) 512 hosts, 128 subnets
+UasB
+Host
+9
+29-2
+2 -2
+(26
+5r
+--- page 6 ---
+4. the IEEE 802 projects the data link layer into
+two sublayes. Which sublayer of the Data link
+layer provide flow control,
+error correct,detect
+facilities ?
+layer)
+(LL(
+(a) logical link control sublayes
+(b) logical access control sublayer
+(c)
+medium access control sublayer
+(d)
+data access control sublayer
+--- page 7 ---
+5. which error detection method consists of a parity
+bit for each data unit as well
+1 as an entire data unit
+of parity bits
+(a) Simple parity check
+(b) CRC
+(c) Two-dimensional parity check
+(d) checksum
+--- page 8 ---
+6. In the
+Protocol, if no acknowledgment
+for a frame has arrived, we resend all outstanding
+frames.
+13
+(a) S
+Stop-and-Wait ARQ
+(b) Go-Back-N ARQ
+(c)
+Selective-Repeat ARQ
+(d) Both b and c
+--- page 9 ---
+7. In Go-Back-N ARQ, if 6 is the number of bits for
+the
+esequence
+ number, then the maximum
+sizeof
+the send window must be
+63
+(b) 61
+(c) 31
+(d) 64
+3
+2 -1 = 2-1 
+--- page 10 ---
+8. In Go-Back-N ARQ, if 5 is the number of bits for
+the sequence
+number, then
+n the
+emaximum
+size of
+the receive window must be
+(a)15
+(b)31
+(d) 32
+--- page 11 ---
+which of the following
+9.
+are network connecting
+devices
+1. repeater 2. Bridge
+3. hub4. bluetooth
+(a) 1,2 and 3
+(b) 1,2 and 4
+(o) 2,3 and 4  (
+(d) 1,3 and 4
+--- page 12 ---
+10. Which of the following
+ are network layer protocol
+1. NMP 2. ICMP 3. SNMP
+4. SMTP 5. IGMP
+Select the correct answer using the code given below
+(a)1,2,3 only
+(b)2,3,5 only
+()1,2,3,5 only
+(d)2,3,4,5 only
+--- page 13 ---
+11. which of the following are Data link layer protocol
+1. NMP 2. PPP 3. SNMP
+4.HDLC
+Select the correct answer using the code given below
+(a)1,2,3 only
+(b)2,3,4 only
+(cy2,4 only
+(d)3,4 only
+--- page 14 ---
+12. In Selective Repeate ARQ, if 5 is the number of
+bits for the sequence
+number, then the maximum size of the send window
+must be
+(a) 15
+y16
+S-1
+=2
+(d) 32
+(c) 31
+16
+--- page 15 ---
+13. 1
+High-level Data Link Control (
+(HDLC) is a
+protocol for communication over point-to-point and
+multipoint links.
+(2) bit-oriented
+(b) byte-oriented
+(c) character-oriented
+(d)
+none of the above
+1
+--- page 16 ---
+14. The most
+common
+protocol for 1
+point-to-point
+access is the Point-to-Point Protocol (PPP), which is
+a
+protocol.
+(a) bit-oriented
+(b) byte-oriented
+(c) character-oriented
+(d)
+none of the above
+--- page 17 ---
+flo
+15.
+control refers to a set of procedures used
+to restrict the amount of data that the sender can
+send before waiting for acknowledgment.
+(aj flow
+(b)
+ error
+(c) transmission(d)
+ access control
+--- page 18 ---
+16. Choose the Protocols working in the Data Link
+Control Layer of OSI model below.
+(a) ATM (Asynchronous Transfer
+Mode), Frame Relay
+(b) HDLC (
+(High-Level Data Link
+Control), SDLC (Synchronous
+Data Link Control)
+(a) ARP (Address Resolution
+Protoc0l), 1EEE-802.3
+All of the above
+--- page 19 ---
+17.
+Which
+1is the
+that
+protocol
+maps
+varying
+IP
+addresses to the Physical MAC Address of a machine
+in a LAN network?
+loye -2
+(a) ARQ (Automatic Repeat Request)
+ARP
+(b) ARP (Address Resolution
+laye -3
+Protocol)
+(c)SLIP (Serial Line Internet
+Protocol)
+(d) PLIP (Parallel Line Internet
+Protocol)
+--- page 20 ---
+18. The Dial-up
+connections to access
+the internet
+uses
+protocol.
+(aj PPP (Point to Point protocol)
+(b) X.25 protocol
+(c) PLIP protocol
+(d) None of the above
+--- page 21 ---
+19. Home broadband connections that work on DSL
+(Digital Subscriber Line)
+)use
+protocol.
+(a) PPPoE
+C (PPP over Ethernet)
+(b) PPPoA (PPP over ATM)
+(c) Bridge protocol
+(d) All of the above
+--- page 22 ---
+20. S1: Every
+Computer or an Internet device has
+: a
+unique MAC address.
+S2: Every
+Computer
+Internet device
+ has
+ or an
+a
+unique IP address
+Consider the following statement given above
+2
+(a)Statement s1 true and s2 false
+(b)Both statement s1,s2 false
+(c)Staement s1 false and s2 true
+(d)Both statement s1,s2 true
+--- page 23 ---
+21.
+Which of the following technique
+working at media access control
+1.TDMA 2CDMS3:FDMA
+5.CSMA
+4.EDMA
+Select the correct answer using the code given below
+(a)1,2,3 only
+(b)1,3,4 only
+(c)1,3,4,5 only
+(d)A1l of 1,2,3,4,5
+--- page 24 ---
+22. 
+The types of Medium Access
+s Control are
+(a) Centrally Access Control
+(b) Distributed Access Control
+(c) both a and b
+(d) None of the above
+--- page 25 ---
+23. In Reservation mode of MAC, each station in the
+network
+a time slot for a finite or infinite amount
+of time to access the shared medium.
+(2) should reserve
+(b) need not reserve
+(c) Can't say
+(d) None of the above
+--- page 26 ---
+24. A Token Ring implementation works on the
+mode.
+(a)Contention
+(b)
+) Reservation
+(c) Round Robin
+(d) None of the above
+--- page 27 ---
+25. The physical address to each machine is provided
+by which layer in an
+OsI reference model?
+(a)Physical layer
+MAC Adlrex
+(b)Data Link Layer
+(c)Network Layer
+(d)Transport Layer
+--- page 28 ---
+26. What is the hamming
+distance between these 2
+codes: 10010010 and 11011001?
+(a)3
+2 t+ /
+一00一0
+(b)4
+(c)6
+t+l
+(d)2
+--- page 29 ---
+27
+What is the hamming code for the data: 1001101?
+(a)10011100101
+(b)11010000101
+(c)10001100101
+Φ11111001011
+1P1(
+PI
+P2
+4
++
+ollloo-olol
+--- page 30 ---
+28. The two sub-layers of a Data Link layer are.
+(a)LLC - Logical Link Control Layer
+(b)MAC - Medium Access Control Layer
+(o)both a and b
+(d)Data Layer
+--- page 31 ---
+29. Which is the sub-layer
+ that accepts
+ frames
+: from
+the upper layer that is Network Layer?
+(}ELC (Logical Link Control Layer)
+(b)MAC (Medium Access Control) layer
+(c)both a and b
+Nelworuk
+77
+(d) None of the above
+Dala link
+MAC
+phwysiay
+--- page 32 ---
+30. The types of data services offered by
+anLLC
+(Logical Link Control) layer are
+(a)Connectionless which is fast and unreliable
+(b)Connection-Oriented which is slow and reliable
+(e) both a and b
+(d) None of the above
+--- page 33 ---
+31.
+The checksum is used in the Internet by several
+protocols although not at the
+data link layer
+Letf
+(b)
+transport layer
+(c)
+) network layer
+(d)
+none of the above
+--- page 34 ---
+32.
+A simple parity-check code can detect
+(a] odd number of errors
+(b)
+even number of errors
+(c) positive number of errors
+(d) negative number of errors
+--- page 35 ---
+33. The hamming distance can easily be found if we
+applythe
+(2) XoR operation
+(b) XNOR operation
+(c) OR operation
+(d) AND operation
+--- page 36 ---
+34. To detect or correct errors, we send extra bits
+with data. It is called
+(2) redundancy
+(b) correction
+(c)
+detection
+(d) Both b and c
+--- page 37 ---
+35. Any
+coding
+ scheme needs to have at least
+t the
+parameters of
+(a) codeword size
+(b)
+dataword size
+(c)
+ minimum hamming distance
+(dAll of them
+50-5s
+--- page 38 ---
+36. which variable have a scope limited to a
+method
+(a) interface variable
+(b) class variable
+(c) instance variable
+tjlocal variable
+--- page 39 ---
+37which statement about a valid .java file is true ?
+(a) it can only contain one class DeclaratiokK .
+(b) it may define at least one public clas<
+e) Tt may define at most one public classs
+(d) It can contain one public class declarationa and
+one public interface definition
+--- page 40 ---
+38. which statement about java are true
+1. the java command can execute .java
+and .class file
+Z.Java is not purely object oriented
+3.The
+javac
+command
+compiles
+.java
+a_ile
+that
+must
+having public class
+(a)1 only
+Jbj2 only
+(c)3 only
+(d) 2 and 3
+--- page 41 ---
+39. which of the following lines of code is not
+allowed as the first line of a java class file
+1.import java.io.*; 2. void main0
+3.package p1; 4.int a;
+5. / /my first pro
+(a) 1,3,5 only
+(b) 2,4 only
+(c) 3,5 only
+(d) all are allowed
+--- page 42 ---
+40 which of the following features allows a
+Java class to be run on a wide variety of
+computer and
+devices ?
+(a)encapsulation
+(b)object oriented
+(c)inheritance
+()platform independence
+--- page 43 ---
+41. which of the following is a true statement
+(a) the java command compiles a .java file
+into .class file
+(b) the javac command compile a .class
+File into .class file
+(c)the java command compile .java fil
+and convert into executable file
+(d)javac command compile a .java file into
+A .class file
+--- page 44 ---
+42. which of the following declaration does Not compile ?
+(a)int num1,num2;
+(bjint num1, double num2=0;
+(c)int num1, num2=0;
+(d)both b and c
+--- page 45 ---
+43. Which of the following does not compile ?
+(a) int num=888;
+(b) int num= 9_9_9;
+(c) int num=_9_99;
+(d) both b and c
+--- page 46 ---
+44.
+which of the following statement about primitive
+data type is true in java ?
+       
+(b)primitive data type begin with a lowercase letter
+(c)string is a primitive type
+(d)primitive type can be set as null
+--- page 47 ---
+45. which of the following utility is used to Create java
+documentation ?
+(a)javahelp
+jar
+(b)javadoc
+(c)javadocs
+(d)javafile
+--- page 48 ---
+46.
+which operator is used to perform bitwise inversion
+in java. Select the one correct answer
+faf~
+(b)!
+(c)&
+l0ll0
+(d) 1
+O/ 0 0/
+--- page 49 ---
+47. what is output of the given java code
+public class A
+{ public static void main(String aa[l)
+{ boolean b=false ;
+int a;
+if(b) a=b?1:2;
+else a=b?3:4;
+System..out.println(a); }}
+(a)1
+(b)2
+(c)3
+(oya
+--- page 50 ---
+48.
+which of the following are correct.
+Select correct answer
+(a)Java provide two operator to do left shift << and
+(b)>> is th zero fill right shift operato&.
+(c)>>> is the signed right shift operator.
+(d)For positive number results of operator >> and >>> are
+same
+--- page 51 ---
+49. what is the output the following java code
+public class A
+{ public static void main(String aa[l)
+int a=0,b=1,c;
+if(a) c=0;
+else c=1;
+if(b)
+c=2;
+else c=3;
+System.out.println(c);
+(a)1
+(b)2
+(c)3
+(d)Compilation error
+--- page 52 ---
+50. what is the value of the expression
+(1/4+3 /2+0.1+2)
+(a)2
+1+0.1+2
+(b)2.85
+op(——
+(e)3.1
+(d)3.85
+--- page 53 ---
+26
+&4
+No
+2 2
+32.
+3S
+20
+2#
+29
+32
+YADAV SIR
+SUNIL
+29
+30
+V
+2
+--- page 54 ---
+S.No.
+Name
+Email
+Phone
+Marks
+Photo
+Analysis
+Reset Attempt
+Date &Time
+Ashutosh Singh
+8299857ashu@gmail.com
+8299857661
+43.38
+View Analysis
+Reset Attempt Count
+2024-08-2917:00:51
+2
+komal samariya
+samariyakomal@gmail.com
+9529396455
+38.01
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 16:46:06
+3
+Deependra Singh Chauhan
+deependranitsxr@gmail.com
+8949078200
+36.05
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:13:56
+9462262051rk@gmail.com
+9660297156
+36.04
+ViewAnalysis
+ResetAttempt Count
+2024-08-2917:11:27
+kapilsaini.work@gmail.com
+9783684158
+35.42
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 17:02:10
+6
+NAMAN PACHEYAN
+pacheyannaman@gmail.com
+9982412466
+35.35
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:15:25
+prajwalroat
+prajwalroat@gmail.com
+9079618226
+34.36
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 17:17:50
+8
+Preetika Dadhich
+preetikadadhich20@gmail.com
+9983719745
+33.71
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 17:15:13
+pooja
+poojalakhlan1994@gmail.com
+9350148779
+33.70
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:04:37
+10
+Amit Bohra
+bohraamit.ab1234@gmail.com
+9672828036
+31.39
+ViewAnalysls
+Reset Attempt Count
+2024-08-29 16:51:02
+11
+Rajkumar Meghwanshi
+Rajkkumat180195@gmail.com
+9799940736
+31.07
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:10:16
+12
+chirag
+playboychirag400@gmail.com
+9953590331
+31.05
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 16:45:14
+13
+vaibhav
+dixitl.engg@gmail.com
+7983185247
+31.05
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 16:53:22
+14
+PChhonkar
+priyachhonkar2@gmail.com
+8952963579
+30.76
+ViewAnalysis
+ResetAttempt Count
+2024-08-29 16:54:13
+15
+mahaveer saini
+saini.mahaveer0o7@gmail.com
+8963843300
+30.75
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:13:35
+16
+Usha Aswani
+aswaniushal3@gmail.com
+8619771809
+30.71
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 17:11:03
+17
+RohitKumar
+rohit510gupta@gmail.com
+8709452607
+30.71
+ViewAnalysis
+Reset Attempt Count
+2024-08-2917:18:44
+18
+NARAYAN LAL PATEL
+narayanlalpatel123@gmail.com
+8209929320
+30.41
+ViewAnalysis
+Reset Attempt Count
+2024-08-29 16:53:01
+19
+Sunil
+cantshare@gmail.com
+7232013204
+ViewAnalysis
+Reset Attempt Count
+2024-08-2916:40:29
