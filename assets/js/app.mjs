@@ -559,10 +559,8 @@ function renderQuestion() {
     button.setAttribute("aria-pressed", String(selected === option.id));
     button.disabled = session.completed;
     const optionLetter = element("span", "option-letter", option.id);
-    optionLetter.setAttribute("aria-hidden", "true");
     const optionText = element("span");
     fallbackUsed = renderLocalized(optionText, option.text_en, option.text_hi, session.language) || fallbackUsed;
-    button.setAttribute("aria-label", `Option ${option.id}: ${option.text_en || option.text_hi || ""}`);
     button.append(optionLetter, optionText);
     if (session.mode === "learn" && selected != null && option.id === question.answer_option_id) button.classList.add("is-correct");
     if (session.mode === "learn" && selected != null && selected === option.id && selected !== question.answer_option_id) button.classList.add("is-wrong");
@@ -1029,12 +1027,10 @@ function wireNavigation() {
   const closeMenu = () => {
     nav.classList.remove("open");
     button.setAttribute("aria-expanded", "false");
-    button.setAttribute("aria-label", "Open navigation");
   };
   button.addEventListener("click", () => {
     const open = button.getAttribute("aria-expanded") !== "true";
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     nav.classList.toggle("open", open);
   });
   nav.addEventListener("click", (event) => {

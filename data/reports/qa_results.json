@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-10-14T09:54:43+00:00",
+  "recorded_at_utc": "2026-10-14T10:27:09+00:00",
   "bank_build_id": "cn-014b0aa51c0651e7",
   "canonical_sha256": "014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
   "checks": [
     {
       "name": "Python syntax",
-      "command": "python3 -m py_compile tools/cn_export_json.py tools/reconcile_cn_bank.py tools/build_site_data.py tools/build_reports.py tools/audit_duplicates.py tools/audit_links.py tools/audit_blueprints.py tools/validate_question_bank.py tools/build_v6_launchers.py tools/retire_legacy_apps.py tools/audit_legacy_apps.py tools/inert_archived_html.py tools/check_whitespace.py tools/run_release_checks.py",
+      "command": "python3 -m py_compile tools/cn_export_json.py tools/reconcile_cn_bank.py tools/build_site_data.py tools/build_reports.py tools/audit_duplicates.py tools/audit_links.py tools/audit_blueprints.py tools/validate_question_bank.py tools/build_v6_launchers.py tools/retire_legacy_apps.py tools/audit_legacy_apps.py tools/inert_archived_html.py tools/audit_pdfs.py tools/check_whitespace.py tools/run_release_checks.py",
       "exit_code": 0,
       "result": "PASS",
       "notes": "All release/build/audit Python scripts compile.",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Catalog and schema JSON",
-      "command": "bash -lc 'for f in data/catalog/*.json data/sources/*.json data/schemas/*.json assets/catalog.min.json assets/banks/cn/manifest.json assets/source-register.min.json data/reports/build_manifest.json; do python3 -m json.tool \"$f\" >/dev/null || exit 1; done'",
+      "command": "bash -lc 'for f in data/catalog/*.json data/sources/*.json data/schemas/*.json assets/catalog.min.json assets/banks/cn/manifest.json assets/source-register.min.json data/reports/build_manifest.json data/reports/browser_visual_qa.json data/reports/pdf_rendering_qa.json; do python3 -m json.tool \"$f\" >/dev/null || exit 1; done'",
       "exit_code": 0,
       "result": "PASS",
       "notes": "Catalog, evidence, schemas and generated manifests parse as JSON.",
@@ -66,7 +66,7 @@
       "exit_code": 0,
       "result": "PASS",
       "notes": "Canonical integrity, source gates, payloads, catalog and preserved files.",
-      "output_tail": "test_canonical_build_identity_and_counts_are_current (test_data_pipeline.GeneratedDataTests.test_canonical_build_identity_and_counts_are_current) ... ok\ntest_legacy_source_and_pre_audit_snapshot_are_preserved (test_data_pipeline.GeneratedDataTests.test_legacy_source_and_pre_audit_snapshot_are_preserved) ... ok\ntest_official_evidence_gate_has_no_unsupported_records (test_data_pipeline.GeneratedDataTests.test_official_evidence_gate_has_no_unsupported_records) ... ok\ntest_only_cn_is_live_and_catalog_books_resolve (test_data_pipeline.GeneratedDataTests.test_only_cn_is_live_and_catalog_books_resolve) ... ok\ntest_public_chunks_are_hashed_and_partition_canonical_ids (test_data_pipeline.GeneratedDataTests.test_public_chunks_are_hashed_and_partition_canonical_ids) ... ok\ntest_public_payloads_omit_internal_notes_and_preserve_source_references (test_data_pipeline.GeneratedDataTests.test_public_payloads_omit_internal_notes_and_preserve_source_references) ... ok\ntest_question_ids_options_keys_and_source_ids_are_stable (test_data_pipeline.GeneratedDataTests.test_question_ids_options_keys_and_source_ids_are_stable) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.063s\n\nOK"
+      "output_tail": "test_canonical_build_identity_and_counts_are_current (test_data_pipeline.GeneratedDataTests.test_canonical_build_identity_and_counts_are_current) ... ok\ntest_legacy_source_and_pre_audit_snapshot_are_preserved (test_data_pipeline.GeneratedDataTests.test_legacy_source_and_pre_audit_snapshot_are_preserved) ... ok\ntest_official_evidence_gate_has_no_unsupported_records (test_data_pipeline.GeneratedDataTests.test_official_evidence_gate_has_no_unsupported_records) ... ok\ntest_only_cn_is_live_and_catalog_books_resolve (test_data_pipeline.GeneratedDataTests.test_only_cn_is_live_and_catalog_books_resolve) ... ok\ntest_public_chunks_are_hashed_and_partition_canonical_ids (test_data_pipeline.GeneratedDataTests.test_public_chunks_are_hashed_and_partition_canonical_ids) ... ok\ntest_public_payloads_omit_internal_notes_and_preserve_source_references (test_data_pipeline.GeneratedDataTests.test_public_payloads_omit_internal_notes_and_preserve_source_references) ... ok\ntest_question_ids_options_keys_and_source_ids_are_stable (test_data_pipeline.GeneratedDataTests.test_question_ids_options_keys_and_source_ids_are_stable) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.066s\n\nOK"
     },
     {
       "name": "Navigation unit tests",
@@ -74,7 +74,7 @@
       "exit_code": 0,
       "result": "PASS",
       "notes": "Anchors, explicit buttons, mobile navigation semantics and safe links.",
-      "output_tail": "test_buttons_have_explicit_type_and_actions_are_not_fake_notifications (test_navigation.NavigationTests.test_buttons_have_explicit_type_and_actions_are_not_fake_notifications) ... ok\ntest_external_new_tab_links_are_safe (test_navigation.NavigationTests.test_external_new_tab_links_are_safe) ... ok\ntest_in_page_links_resolve_and_ids_are_unique (test_navigation.NavigationTests.test_in_page_links_resolve_and_ids_are_unique) ... ok\ntest_root_has_mobile_accessible_navigation (test_navigation.NavigationTests.test_root_has_mobile_accessible_navigation) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nOK"
+      "output_tail": "test_buttons_have_explicit_type_and_actions_are_not_fake_notifications (test_navigation.NavigationTests.test_buttons_have_explicit_type_and_actions_are_not_fake_notifications) ... ok\ntest_external_new_tab_links_are_safe (test_navigation.NavigationTests.test_external_new_tab_links_are_safe) ... ok\ntest_in_page_links_resolve_and_ids_are_unique (test_navigation.NavigationTests.test_in_page_links_resolve_and_ids_are_unique) ... ok\ntest_root_has_mobile_accessible_navigation (test_navigation.NavigationTests.test_root_has_mobile_accessible_navigation) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.003s\n\nOK"
     },
     {
       "name": "Responsive structural tests",
@@ -86,7 +86,7 @@
     },
     {
       "name": "JavaScript syntax",
-      "command": "bash -lc 'node --check assets/js/engine.mjs && node --check assets/js/app.mjs && node --check tests/engine/engine.test.mjs && node --check tests/navigation/app_dom_smoke.cjs'",
+      "command": "bash -lc 'node --check assets/js/engine.mjs && node --check assets/js/app.mjs && node --check tests/engine/engine.test.mjs && node --check tests/navigation/app_dom_smoke.cjs && node --check tests/visual/browser_visual_qa.cjs'",
       "exit_code": 0,
       "result": "PASS",
       "notes": "Engine, application module and Node tests parse.",
@@ -106,7 +106,23 @@
       "exit_code": 0,
       "result": "PASS",
       "notes": "Filtering, opt-in status, deterministic sampling, scoring and language fallbacks.",
-      "output_tail": "TAP version 13\n# Subtest: default practice eligibility excludes claimed, disputed and pending records\nok 1 - default practice eligibility excludes claimed, disputed and pending records\n  ---\n  duration_ms: 1.154562\n  type: 'test'\n  ...\n# Subtest: topic, difficulty, source type and exam tag filters compose\nok 2 - topic, difficulty, source type and exam tag filters compose\n  ---\n  duration_ms: 0.290161\n  type: 'test'\n  ...\n# Subtest: sampling is stable for a supplied RNG and never mutates the input\nok 3 - sampling is stable for a supplied RNG and never mutates the input\n  ---\n  duration_ms: 0.364568\n  type: 'test'\n  ...\n# Subtest: grading counts correct, incorrect and unanswered without negative scoring\nok 4 - grading counts correct, incorrect and unanswered without negative scoring\n  ---\n  duration_ms: 0.228333\n  type: 'test'\n  ...\n# Subtest: Hindi fallback is explicit and verification labels stay distinct\nok 5 - Hindi fallback is explicit and verification labels stay distinct\n  ---\n  duration_ms: 0.303123\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 74.437883"
+      "output_tail": "TAP version 13\n# Subtest: default practice eligibility excludes claimed, disputed and pending records\nok 1 - default practice eligibility excludes claimed, disputed and pending records\n  ---\n  duration_ms: 0.987164\n  type: 'test'\n  ...\n# Subtest: topic, difficulty, source type and exam tag filters compose\nok 2 - topic, difficulty, source type and exam tag filters compose\n  ---\n  duration_ms: 0.215195\n  type: 'test'\n  ...\n# Subtest: sampling is stable for a supplied RNG and never mutates the input\nok 3 - sampling is stable for a supplied RNG and never mutates the input\n  ---\n  duration_ms: 0.354906\n  type: 'test'\n  ...\n# Subtest: grading counts correct, incorrect and unanswered without negative scoring\nok 4 - grading counts correct, incorrect and unanswered without negative scoring\n  ---\n  duration_ms: 0.181398\n  type: 'test'\n  ...\n# Subtest: Hindi fallback is explicit and verification labels stay distinct\nok 5 - Hindi fallback is explicit and verification labels stay distinct\n  ---\n  duration_ms: 0.200109\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 64.719353"
+    },
+    {
+      "name": "Rendered browser visual and accessibility QA (optional)",
+      "command": "node tests/visual/browser_visual_qa.cjs",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Headless Chromium screenshots, viewport overflow, 44px controls and axe checks; exit 77 means browser packages are unavailable. Chromium 153.0.8010.0 (headless); viewports: 320×780, 375×812, 768×1024, 1365×900; axe violations=0.",
+      "output_tail": "phone-320: widths=320/320px; axe=0/0/0; <44px=0; runtime/network errors=0\nphone-375: widths=375/375px; axe=0/0/0; <44px=0; runtime/network errors=0\ntablet-768: widths=768/768px; axe=0/0/0; <44px=0; runtime/network errors=0\nlaptop-1365: widths=1365/1365px; axe=0/0/0; <44px=0; runtime/network errors=0\nPASS: rendered viewports=4, axe violations=0, browser/network errors=0; report=data/reports/browser_visual_qa.json"
+    },
+    {
+      "name": "PDF validity and rendering audit (optional PyMuPDF)",
+      "command": "python3 tools/audit_pdfs.py",
+      "exit_code": 0,
+      "result": "PASS",
+      "notes": "Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable. PyMuPDF 1.28.2; PDFs=55; pages rendered=2029/2029; repaired=0; hashes unchanged=True.",
+      "output_tail": "PASS: PDFs=55, pages=2029, rendered=2029, repaired=0, failures=0, unchanged=True; report=data/reports/pdf_rendering_qa.json"
     },
     {
       "name": "Whitespace/conflict check",
@@ -114,10 +130,10 @@
       "exit_code": 0,
       "result": "PASS",
       "notes": "Tracked diffs and changed/untracked text files are checked; preserved archive bytes are excluded.",
-      "output_tail": "PASS: changed text files contain no trailing whitespace (107 paths inspected; archive originals excluded)."
+      "output_tail": "PASS: changed text files contain no trailing whitespace (12 paths inspected; archive originals excluded)."
     }
   ],
-  "browser_visual_qa": "NOT_RUN: no Chromium/Firefox/browser automation runtime was installed during this audit; responsive CSS checks are structural only.",
-  "pdf_rendering": "NOT_RUN: existing PDFs were preserved and not rendered or re-parsed in this audit.",
+  "browser_visual_qa": "Headless Chromium screenshots, viewport overflow, 44px controls and axe checks; exit 77 means browser packages are unavailable. Chromium 153.0.8010.0 (headless); viewports: 320×780, 375×812, 768×1024, 1365×900; axe violations=0.",
+  "pdf_rendering": "Read-only parse and render of every page in each tracked PDF with pre/post SHA-256 preservation checks; exit 77 means PyMuPDF is unavailable. PyMuPDF 1.28.2; PDFs=55; pages rendered=2029/2029; repaired=0; hashes unchanged=True.",
   "deployment": "NOT_DEPLOYED: work remains on a feature branch; no merge or release command was run."
 }

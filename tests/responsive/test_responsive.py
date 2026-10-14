@@ -30,7 +30,8 @@ class ResponsiveStructuralTests(unittest.TestCase):
         self.assertNotRegex(self.css, r"body\s*\{[^}]*min-width:\s*(?:[4-9]\d\d|\d{4,})px")
 
     def test_navigation_and_touch_controls_have_mobile_states(self):
-        self.assertIn(".nav-toggle { display: inline-flex", self.css)
+        nav_rule = self.css.index(".nav-toggle { display: inline-flex")
+        self.assertLess(nav_rule, self.css.index("@media (max-width: 720px)"), "compact navigation should also cover tablet widths")
         self.assertIn(".site-nav.open { display: grid", self.css)
         self.assertRegex(self.css, r"\.button(?:\.small)?\s*\{[^}]*min-height:\s*44px")
         self.assertRegex(self.css, r"\.palette-button\s*\{[^}]*min-height:\s*44px")

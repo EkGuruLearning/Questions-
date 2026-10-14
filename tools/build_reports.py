@@ -6,6 +6,7 @@ import collections
 import hashlib
 import json
 import pathlib
+import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -17,6 +18,8 @@ BANK = ROOT / "Computer Network/data/cn_questions.json"
 REPORTS = ROOT / "Computer Network/Reports"
 BUILD_MANIFEST = ROOT / "data/reports/build_manifest.json"
 QA_RESULTS = ROOT / "data/reports/qa_results.json"
+BROWSER_QA = ROOT / "data/reports/browser_visual_qa.json"
+PDF_QA = ROOT / "data/reports/pdf_rendering_qa.json"
 EVIDENCE = ROOT / "data/sources/official_paper_key_evidence.json"
 EXAMS = ROOT / "data/catalog/exams.json"
 
@@ -51,6 +54,40 @@ def read(path):
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def ui_fingerprint():
+    value = hashlib.sha256()
+    for relative in ("index.html", "assets/css/portal.css", "assets/js/app.mjs", "assets/js/engine.mjs"):
+        value.update(relative.encode("utf-8"))
+        value.update(bytes((0,)))
+        value.update((ROOT / relative).read_bytes())
+        value.update(bytes((0,)))
+    return value.hexdigest()
+
+
+def current_pdf_qa(report):
+    if not report:
+        return None
+    try:
+        output = subprocess.run(
+            ["git", "ls-files", "-z", "--", "*.pdf"],
+            cwd=ROOT,
+            check=True,
+            stdout=subprocess.PIPE,
+        ).stdout
+        current_paths = {item.decode("utf-8") for item in output.split(bytes((0,))) if item}
+        entries = report.get("files", [])
+        expected = {item["path"]: item["sha256_after"] for item in entries}
+        if not current_paths or current_paths != set(expected):
+            return None
+        for relative, sha256 in expected.items():
+            path = ROOT / relative
+            if not path.is_file() or digest(path) != sha256:
+                return None
+        return report
+    except (KeyError, OSError, subprocess.CalledProcessError):
+        return None
 
 
 def md_header(title, build_id, canonical_sha, date):
@@ -236,7 +273,7 @@ def write_totals(bank, manifest, build_id, sha, date, duplicate_summary):
     (REPORTS / "TOTALS.md").write_text(text, encoding="utf-8")
 
 
-def write_qa_report(build_id, sha, date, qa_results=None):
+def write_qa_report(build_id, sha, date, qa_results=None, browser_qa=None, pdf_qa=None):
     text = md_header("QA Report — Current Portal Build", build_id, sha, date)
     if qa_results:
         text += "## Recorded automated results\n\n| Check | Result | Command | Notes |\n|---|---|---|---|\n"
@@ -246,14 +283,42 @@ def write_qa_report(build_id, sha, date, qa_results=None):
             text += f"| {item.get('name')} | **{item.get('result')}** | `{command}` | {notes} |\n"
         text += "\n"
     else:
-        text += "No `data/reports/qa_results.json` is present; do not infer browser or interaction tests from this report build.\n\n"
+        text += "No `data/reports/qa_results.json` is present; do not infer automated checks from this report build.\n\n"
+
+    text += "## Rendered-browser visual and accessibility QA\n\n"
+    if browser_qa:
+        viewport_sizes = ", ".join(f"{item['width']}×{item['height']}" for item in browser_qa.get("viewports", []))
+        text += (
+            f"**PASS** — {browser_qa.get('browser', 'headless browser')} at emulated viewports {viewport_sizes}. "
+            "Landing and quiz layouts had no horizontal overflow; source dialogs fit their viewports; mobile navigation was exercised; "
+            "all measured visible controls were at least 44 px high; axe reported "
+            f"{browser_qa.get('total_axe_violations', 'unknown')} violations across landing, quiz and source-dialog states; "
+            f"browser/runtime and failed-response errors: {len(browser_qa.get('browser_errors', []))}.\n\n"
+            "Rendered screenshots were captured and visually reviewed. These are headless viewport emulations, not tests on physical devices.\n\n"
+        )
+    else:
+        text += "**NOT PASS** — no current passing rendered-browser report is available for this UI build.\n\n"
+
+    text += "## Original PDF validity and rendering QA\n\n"
+    if pdf_qa:
+        status = pdf_qa.get("status", "UNKNOWN")
+        label = "PASS" if status == "PASS" else "PASS WITH WARNINGS" if status == "PASS_WITH_WARNINGS" else status
+        text += (
+            f"**{label}** — {pdf_qa.get('tracked_pdf_count', 0)} tracked PDFs; "
+            f"{pdf_qa.get('total_pages_rendered', 0):,}/{pdf_qa.get('total_pages', 0):,} pages rendered; "
+            f"{pdf_qa.get('mupdf_repaired_files', 0)} files repaired by MuPDF; "
+            f"{pdf_qa.get('failed_files', 0)} failed files. "
+            f"Original sizes and SHA-256 hashes unchanged: **{pdf_qa.get('all_source_hashes_unchanged', False)}**.\n\n"
+            "This validates file opening, page-tree loading and rendering—not question/answer correctness, source provenance, print quality, or PDF/A conformance.\n\n"
+        )
+    else:
+        text += "**NOT PASS** — no current PDF report matching the tracked PDF files is available.\n\n"
+
     text += (
         "## Scope and limitations\n\n"
         "- Current root portal data loads from a small catalog and content-hashed topic chunks.\n"
         "- Legacy topic HTML snapshots were inspected separately; they are retained as historical artifacts and must not be presented as current verification-gated apps.\n"
-        "- This environment has no installed browser executable or Playwright/Selenium runtime. A CSS/responsive structural audit is not a rendered phone/tablet/laptop visual pass.\n"
-        "- The pre-change GitHub Pages source was fetched during this audit. No merge/deployment occurred, so no post-change live smoke test exists.\n"
-        "- No PDF builder was run; existing PDFs were preserved. PDF file presence/hash checks do not establish that every PDF's internal question count matches the current JSON.\n"
+        "- The pre-change GitHub Pages source was fetched during this audit. No merge/deployment has occurred, so no post-change live smoke test exists.\n"
     )
     (REPORTS / "QA_REPORT.md").write_text(text, encoding="utf-8")
 
@@ -328,7 +393,19 @@ def main():
     write_exam_report(build_id, sha, generated_on, exam_doc, mappings_doc, bank)
     write_totals(bank, manifest, build_id, sha, generated_on, duplicate_summary)
     qa_results = read(QA_RESULTS) if QA_RESULTS.exists() else None
-    write_qa_report(build_id, sha, generated_on, qa_results)
+    browser_qa = read(BROWSER_QA) if BROWSER_QA.exists() else None
+    current_browser_qa = (
+        browser_qa
+        if browser_qa
+        and browser_qa.get("status") == "PASS"
+        and browser_qa.get("bank_build_id") == build_id
+        and browser_qa.get("canonical_sha256") == sha
+        and browser_qa.get("ui_sha256") == ui_fingerprint()
+        else None
+    )
+    pdf_qa = read(PDF_QA) if PDF_QA.exists() else None
+    current_pdf_report = current_pdf_qa(pdf_qa)
+    write_qa_report(build_id, sha, generated_on, qa_results, current_browser_qa, current_pdf_report)
     write_release_notes(bank, build_id, sha, generated_on, manifest)
     statuses = collections.Counter(q["verification_status"] for q in bank["questions"])
     update_w6_log(build_id, sha, generated_on, statuses)
