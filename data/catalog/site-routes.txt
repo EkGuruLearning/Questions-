@@ -26,6 +26,8 @@ subjects/rajasthan-geography/map/index.html
 subjects/rajasthan-geography/map/rajasthan/index.html
 subjects/reasoning/answers/index.html
 subjects/reasoning/index.html
+subjects/reasoning/practice/Calendar/index.html
 subjects/reasoning/practice/index.html
 subjects/reasoning/tests/index.html
+subjects/reasoning/theory/Calendar/index.html
 subjects/reasoning/theory/index.html

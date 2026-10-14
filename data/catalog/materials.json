@@ -465,6 +465,116 @@
       "title_hi": "रीज़निंग — नमूना टेस्ट पेपर",
       "note_en": "10 mishrit sawal, 10 ank — poora test practice ke liye.",
       "note_hi": "10 मिश्रित प्रश्न, 10 अंक — पूरे टेस्ट के अभ्यास के लिए।"
+    },
+    {
+      "file": "content/reasoning/theory/Calendar/Calendar-Short-Notes.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Calendar — short notes",
+      "title_hi": "कैलेंडर — शॉर्ट नोट्स",
+      "note_en": "Leap year, odd days aur saal ke dinon ka poora formula — ek page me.",
+      "note_hi": "लीप ईयर, विषम दिन और साल के दिनों का पूरा फॉर्मूला — एक पेज में।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Practice-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 1,
+      "title_en": "Calendar — practice questions",
+      "title_hi": "कैलेंडर — अभ्यास प्रश्न",
+      "note_en": "Chapter ke sawal, option ke saath — pehle isi se practice karo.",
+      "note_hi": "अध्याय के प्रश्न, विकल्पों के साथ — पहले इसी से अभ्यास करें।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Class-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 2,
+      "title_en": "Calendar — class questions",
+      "title_hi": "कैलेंडर — क्लास प्रश्न",
+      "note_en": "Class me karaye gaye sawal — odd-one-out aur date questions.",
+      "note_hi": "क्लास में कराए गए प्रश्न — विषम-चुनें और तारीख़ वाले प्रश्न।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-PYQs-Practice-Set.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 3,
+      "title_en": "Calendar — PYQ practice set",
+      "title_hi": "कैलेंडर — पिछले वर्षों के प्रश्न सेट",
+      "note_en": "Purane paper me aaye calendar ke 28 page ke sawal.",
+      "note_hi": "पुराने पेपरों में आए कैलेंडर के प्रश्न, 28 पन्नों में।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Practice-Set-Hindi.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 4,
+      "title_en": "Calendar — practice set (Hindi)",
+      "title_hi": "कैलेंडर — अभ्यास सेट (हिंदी)",
+      "note_en": "Hindi me poora practice set.",
+      "note_hi": "हिंदी में पूरा अभ्यास सेट।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Test-Paper.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 5,
+      "title_en": "Calendar — test paper",
+      "title_hi": "कैलेंडर — टेस्ट पेपर",
+      "note_en": "Apna test lo: date, din aur calendar ke sawal (Hindi + English).",
+      "note_hi": "अपना टेस्ट दें: तारीख़, दिन और कैलेंडर के प्रश्न (हिंदी + अंग्रेज़ी)।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-700-Practice-Book-RPSC-RSMSSB.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 6,
+      "title_en": "Calendar — 700 practice questions (RPSC / RSMSSB)",
+      "title_hi": "कैलेंडर — 700 अभ्यास प्रश्न (RPSC / RSMSSB)",
+      "note_en": "EkGuru practice series: 71 page, 700 sawal — RPSC aur RSMSSB ke liye.",
+      "note_hi": "एकगुरु प्रैक्टिस सीरीज़: 71 पन्ने, 700 प्रश्न — RPSC और RSMSSB के लिए।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-and-Clock-SSC-Book.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 7,
+      "title_en": "Calendar & clock — SSC book",
+      "title_hi": "कैलेंडर और घड़ी — SSC बुक",
+      "note_en": "Calendar aur clock ke milte-julte sawal, SSC ke pattern par.",
+      "note_hi": "कैलेंडर और घड़ी के मिलते-जुलते प्रश्न, SSC के पैटर्न पर।"
+    },
+    {
+      "file": "content/reasoning/practice/Calendar/Calendar-Old-Questions.pdf",
+      "subject": "reasoning",
+      "topic": null,
+      "order": 8,
+      "title_en": "Calendar — old exam questions",
+      "title_hi": "कैलेंडर — पुराने परीक्षा प्रश्न",
+      "note_en": "Competition exams me pooche gaye purane calendar sawal.",
+      "note_hi": "प्रतियोगी परीक्षाओं में पूछे गए पुराने कैलेंडर प्रश्न।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A3-Print.pdf",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 7,
+      "title_en": "Border district atlas — A3 print (PDF)",
+      "title_hi": "सीमावर्ती जिला एटलस — A3 प्रिंट (PDF)",
+      "note_en": "A3 size ka print-ready PDF — poster jaisa bada naksha.",
+      "note_hi": "A3 साइज़ का प्रिंट-रेडी PDF — पोस्टर जैसा बड़ा नक्शा।"
+    },
+    {
+      "file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf",
+      "subject": "rajasthan-geography",
+      "topic": null,
+      "order": 8,
+      "title_en": "Border districts — A4 portrait print (PDF)",
+      "title_hi": "सीमावर्ती जिले — A4 पोर्ट्रेट प्रिंट (PDF)",
+      "note_en": "A4 portrait ka PDF — seedha printer par lagao.",
+      "note_hi": "A4 पोर्ट्रेट का PDF — सीधे प्रिंटर पर लगाएँ।"
     }
   ]
 }

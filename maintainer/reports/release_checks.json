@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T18:20:05+00:00",
+  "generated_at": "2026-10-14T18:21:22+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 16,
@@ -41,7 +41,7 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 29 route(s), 884 link(s), 44 download(s) and 18 folder(s) checked",
+        "PASS: 31 route(s), 958 link(s), 55 download(s) and 18 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
       ]
     },
@@ -95,7 +95,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 15 tests in 0.681s",
+        "Ran 15 tests in 0.719s",
         "",
         "OK"
       ]
@@ -109,7 +109,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 21 tests in 0.136s",
+        "Ran 21 tests in 0.129s",
         "",
         "OK"
       ]
@@ -123,7 +123,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 13 tests in 0.006s",
+        "Ran 13 tests in 0.005s",
         "",
         "OK"
       ]
@@ -137,7 +137,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.057s",
+        "Ran 8 tests in 0.055s",
         "",
         "OK"
       ]
@@ -160,7 +160,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 62.001656"
+        "# duration_ms 55.358186"
       ]
     },
     {
@@ -173,8 +173,8 @@
         "  - folder page (files + breadcrumb back up): 5 files, breadcrumb back to the subject page",
         "  - previous year papers page: 8 exam folders, RPSC 2024 page with 2 files and a full breadcrumb",
         "  - reasoning folder pages: 4 folder pages, empty ones explained",
-        "  - map folder pages: 6 map rows with previews and downloads",
-        "  - nav + footer on every published page: 28 pages carry the full nav + footer"
+        "  - map folder pages: 8 map rows with previews and downloads",
+        "  - nav + footer on every published page: 30 pages carry the full nav + footer"
       ]
     },
     {

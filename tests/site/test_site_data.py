@@ -97,10 +97,14 @@ class SiteDataTests(unittest.TestCase):
                          ["theory", "practice", "answers", "tests"])
         for folder in reasoning["tree"]["folders"]:
             with self.subTest(folder=folder["path"]):
-                # har folder me ek namuna (sample) rakha hai, taaki format saaf dikhe
-                self.assertEqual(folder["file_count"], 1, f"reasoning/{folder['path']} me ek sample file")
-                self.assertTrue(folder["files"][0]["repo_path"].endswith(".pdf"))
+                # har folder me kam se kam ek PDF hai (namuna ya asli chapter)
+                self.assertGreaterEqual(folder["file_count"], 1, f"reasoning/{folder['path']} khali nahi")
+                self.assertTrue(all(item["repo_path"].endswith(".pdf") for item in folder["files"]))
                 self.assertFalse(folder["empty"])
+        theory = next(node for node in reasoning["tree"]["folders"] if node["path"] == "theory")
+        calendar = next(node for node in walk(theory) if node["path"] == "theory/Calendar")
+        self.assertEqual(calendar["title_en"], "Calendar", "chapter folder ka naam hi label hai")
+        self.assertTrue(any("Short-Notes" in item["repo_path"] for item in calendar["files"]))
 
     def test_registry_entries_must_exist_but_extra_files_are_fine(self):
         registered = [item["file"] for item in self.materials["materials"]]
@@ -182,10 +186,14 @@ class SiteDataTests(unittest.TestCase):
         self.assertEqual((map_folder["path"], map_folder["title_en"]), ("map", "Map"))
         rajasthan, = map_folder["folders"]
         self.assertEqual((rajasthan["path"], rajasthan["title_en"]), ("map/rajasthan", "Rajasthan"))
-        self.assertEqual(rajasthan["file_count"], 6)
+        self.assertGreaterEqual(rajasthan["file_count"], 6, "A1/A2/A3 + A4 + preview prints")
+        types = {item["file_type"] for item in rajasthan["files"]}
         for item in rajasthan["files"]:
-            self.assertTrue(item["repo_path"].startswith("content/rajasthan-geography/map/rajasthan/"))
-            self.assertEqual(item["file_type"], "PNG")
+            with self.subTest(item=item["repo_path"]):
+                self.assertTrue(item["repo_path"].startswith("content/rajasthan-geography/map/rajasthan/"))
+                self.assertIn(item["file_type"], {"PNG", "PDF"}, "print files PNG ya PDF hote hain")
+        self.assertIn("PNG", types)
+        self.assertIn("PDF", types, "bade prints PDF me bhi diye jaate hain")
 
     def test_download_hashes_sizes_and_paths_are_real(self):
         seen = set()

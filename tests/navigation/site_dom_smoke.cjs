@@ -148,8 +148,11 @@ section("reasoning folder pages", () => {
   assert(tiles === 4, `expected 4 folder tiles, saw ${tiles}`);
   for (const folder of ["theory", "practice", "answers", "tests"]) {
     const page = read(`subjects/reasoning/${folder}/index.html`);
-    assert(/material-item/.test(page), `reasoning/${folder} should hold its sample file`);
+    assert(/material-item/.test(page), `reasoning/${folder} should hold its files`);
   }
+  const calendar = read("subjects/reasoning/practice/Calendar/index.html");
+  assert(/Calendar-700-Practice-Book-RPSC-RSMSSB\.pdf/.test(calendar), "the Calendar practice set is missing");
+  assert(/crumb-up/.test(calendar), "chapter folder page keeps the back link");
   const practice = read("subjects/reasoning/practice/index.html");
   assert(/material-item/.test(practice), "the sample practice paper should be listed");
   assert(/crumb-up/.test(practice), "every folder page keeps the back link");
@@ -162,7 +165,8 @@ section("map folder pages", () => {
   assert(/map\/index\.html/.test(hub), "the map folder tile is missing");
   const rajasthan = read("subjects/rajasthan-geography/map/rajasthan/index.html");
   const rows = all(rajasthan, /class="material-item/g).length;
-  assert(rows === 6, `expected 6 maps, saw ${rows}`);
+  assert(rows === 8, `expected 8 map files (PNG prints + PDF prints), saw ${rows}`);
+  assert(/A3-Print\.pdf/.test(rajasthan), "the A3 print PDF should be listed");
   assert(/data\/thumbs\//.test(rajasthan), "map rows should show the light preview image");
   assert(/content\/rajasthan-geography\/map\/rajasthan\//.test(rajasthan), "map download links are missing");
   return `${rows} map rows with previews and downloads`;
