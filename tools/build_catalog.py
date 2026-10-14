@@ -25,6 +25,8 @@ Wiring rules enforced here (the build fails instead of shipping a wrong page):
 3. Every folder that contains published files needs a label in `subjects.json`,
    and every configured label must point at a folder that really has files.
 4. Every registered topic must exist in the bank manifest and match its topic name.
+   Every picture must have an up-to-date preview from `tools/build_thumbs.py`, so a
+   folder of 3 MB maps still opens instantly on a phone.
 5. Counts, byte sizes and SHA-256 values come from the real files, never hand-typed.
 
 Run:
@@ -46,6 +48,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "data/catalog"
 CONTENT = ROOT / "content"
 BANK_MANIFEST = ROOT / "data/banks/cn/manifest.json"
+THUMB_MANIFEST = ROOT / "data/thumbs/manifest.json"
 OUTPUT = ROOT / "data/site.json"
 
 CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
@@ -112,6 +115,14 @@ def section_label(title: str) -> str:
     return part or text
 
 
+def load_thumbs() -> dict:
+    """Previews built by tools/build_thumbs.py, keyed by repo path of the picture."""
+    if not THUMB_MANIFEST.is_file():
+        raise SystemExit("FAIL: data/thumbs/manifest.json missing — run tools/build_thumbs.py first")
+    manifest = read_json(THUMB_MANIFEST)
+    return manifest.get("thumbs", {})
+
+
 def load_bank() -> dict:
     if not BANK_MANIFEST.is_file():
         raise SystemExit("FAIL: data/banks/cn/manifest.json missing — run tools/build_site_data.py first")
@@ -146,7 +157,7 @@ def load_bank() -> dict:
     return manifest
 
 
-def build_files(subject: dict, registered: list[dict]) -> list[dict]:
+def build_files(subject: dict, registered: list[dict], thumbs: dict) -> list[dict]:
     """Turn material rows into publishable file records with real sizes and hashes."""
     subject_id = subject["id"]
     topic_ids = {topic["id"] for topic in subject["topics"]}
@@ -160,6 +171,24 @@ def build_files(subject: dict, registered: list[dict]) -> list[dict]:
         if raw.get("topic") is not None and raw["topic"] not in topic_ids:
             raise SystemExit(f"FAIL: {rel} has unknown topic {raw['topic']!r} for subject {subject_id}")
         size = path.stat().st_size
+        thumb = None
+        if path.suffix.lower().lstrip(".") in {"png", "jpg", "jpeg", "webp"}:
+            entry = thumbs.get(rel)
+            if entry is None:
+                raise SystemExit(
+                    f"FAIL: {rel} has no site preview — run python3 tools/build_thumbs.py "
+                    "(and commit the generated file under data/thumbs/)"
+                )
+            thumb_file = ROOT / entry["thumb"]
+            if not thumb_file.is_file():
+                raise SystemExit(
+                    f"FAIL: the preview listed for {rel} is missing on disk: {entry['thumb']} "
+                    "— run python3 tools/build_thumbs.py"
+                )
+            thumb = {
+                "url": url_for(entry["thumb"]),
+                "bytes": thumb_file.stat().st_size,
+            }
         items.append({
             "id": rel.split("/", 1)[1].replace("/", "-").rsplit(".", 1)[0],
             "subject": subject_id,
@@ -177,6 +206,8 @@ def build_files(subject: dict, registered: list[dict]) -> list[dict]:
             "bytes": size,
             "size_label": human_size(size),
             "sha256": sha256(path),
+            "thumb_url": thumb["url"] if thumb else None,
+            "thumb_bytes": thumb["bytes"] if thumb else None,
         })
     return sorted(items, key=lambda item: (item["folder"], item["order"], item["file_name"]))
 
@@ -258,6 +289,7 @@ def build() -> dict:
     subjects_doc = read_json(CATALOG / "subjects.json")
     materials_doc = read_json(CATALOG / "materials.json")
     bank = load_bank()
+    thumbs = load_thumbs()
 
     registered = materials_doc.get("materials", [])
     paths = [item["file"] for item in registered]
@@ -308,7 +340,7 @@ def build() -> dict:
     for subject in subjects_doc["subjects"]:
         subject_id = subject["id"]
         own = [item for item in registered if item["subject"] == subject_id]
-        files = build_files(subject, own)
+        files = build_files(subject, own, thumbs)
         tree = build_tree(subject, files)
         slug = subject["slug"]
         entry = {

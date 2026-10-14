@@ -24,6 +24,7 @@ REQUIRED_PATHS = (
     "assets/js/test.mjs",
     "assets/js/engine.mjs",
     "assets/img/rajasthan-border-atlas-preview.webp",
+    "data/thumbs/manifest.json",
     "data/site.json",
     "data/banks/cn/cn_questions.json",
     "data/banks/cn/manifest.json",
@@ -101,7 +102,8 @@ SAFELY HIDDEN (never linked from the website):
 HOW TO ADD A FILE (e.g. a new topic PDF):
   1. File rakho:          content/computer-network/theory/T08-...-Theory-MCQ.pdf
   2. Entry add karo:      data/catalog/materials.json (subject, topic, title_en, title_hi)
-  3. Rebuild + validate:  python3 tools/build_catalog.py && python3 tools/validate_site.py
+  3. Rebuild + validate:  python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/validate_site.py
+                          (image add ki ho to build_thumbs pehle — preview banata hai)
   (Naya folder banao to uska label data/catalog/subjects.json ke `folders` me likhna zaroori hai,
    warna website par wahi folder card apne aap ban jayega — bina page code chhue.)
   (Registry check: agar file register nahi hui ya registered file gayab hai, build fail ho jayega.)

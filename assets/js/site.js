@@ -46,6 +46,8 @@
   }
 
   function fileHref(item) { return root + item.url; }
+  /* Previews point at data/thumbs/... so a folder of 3 MB maps still opens fast. */
+  function previewHref(item) { return root + (item.thumb_url || item.url); }
   function isImage(item) { return ["PNG", "JPG", "JPEG", "WEBP", "SVG"].indexOf(item.file_type) >= 0; }
 
   /* ------------------------------------------------------------ folders ---- */
@@ -88,11 +90,12 @@
 
   /* -------------------------------------------------------------- files ---- */
   function fileRow(item) {
-    var row = el("li", "material-item");
+    var row = el("li", "material-item" + (isImage(item) ? " is-image" : ""));
     var topicChip = item.topic_id ? '<span class="chip neutral">' + esc(item.topic_id) + "</span>" : "";
     var thumb = isImage(item)
       ? '<a class="file-thumb" href="' + esc(fileHref(item)) + '" target="_blank" rel="noopener noreferrer">' +
-        '<img src="' + esc(fileHref(item)) + '" alt="' + esc(item.title_en) + '" loading="lazy"></a>'
+        '<img src="' + esc(previewHref(item)) + '" alt="' + esc(item.title_en) + '" loading="lazy" decoding="async">' +
+        '<span class="file-thumb-open">Poora dekho</span></a>'
       : "";
     row.innerHTML =
       thumb +

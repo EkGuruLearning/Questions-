@@ -111,6 +111,14 @@ class SiteDataTests(unittest.TestCase):
                     self.assertEqual(len(raw), item["bytes"])
                     self.assertEqual(hashlib.sha256(raw).hexdigest(), item["sha256"])
                     self.assertFalse(item["title_en"].lower().endswith(".md"))
+                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}:
+                        self.assertTrue(item["thumb_url"], f"{item['repo_path']} needs a light preview")
+                        thumb = ROOT / item["thumb_url"]
+                        self.assertTrue(thumb.is_file(), item["thumb_url"])
+                        self.assertLess(thumb.stat().st_size, item["bytes"])
+                        self.assertEqual(item["thumb_bytes"], thumb.stat().st_size)
+                    else:
+                        self.assertIsNone(item["thumb_url"])
 
     def test_every_content_file_is_registered_and_every_record_resolves(self):
         registered = [item["file"] for item in self.materials["materials"]]
@@ -146,6 +154,20 @@ class SiteDataTests(unittest.TestCase):
                 self.assertEqual(topic["material"]["theory"][0]["folder"], "theory")
                 for item in topic["material"]["practice"]:
                     self.assertEqual(item["folder"], "practice")
+
+    def test_image_previews_are_current_and_light(self):
+        thumbs = json.loads((ROOT / "data/thumbs/manifest.json").read_text(encoding="utf-8"))["thumbs"]
+        images = [item for subject in self.site["subjects"] for item in subject["files"]
+                  if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}]
+        self.assertTrue(images, "the site should publish at least one picture")
+        self.assertEqual({item["repo_path"] for item in images}, set(thumbs))
+        for item in images:
+            entry = thumbs[item["repo_path"]]
+            with self.subTest(item=item["repo_path"]):
+                digest = hashlib.sha256((ROOT / item["repo_path"]).read_bytes()).hexdigest()
+                self.assertEqual(entry["sha256"], digest, "preview is stale — run tools/build_thumbs.py")
+                self.assertEqual(entry["thumb"], item["thumb_url"])
+                self.assertLess(entry["bytes"], 600 * 1024, "previews must stay small enough for phones")
 
     def test_published_route_list_covers_every_html_page(self):
         listed = {

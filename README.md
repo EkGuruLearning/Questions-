@@ -64,6 +64,7 @@ content/computer-network/theory/T08-...-Theory-MCQ.pdf
 #    naya folder ho to data/catalog/subjects.json ke `folders` me uska label (icon + EN/HI naam) likho
 
 # 3. rebuild + validate
+python3 tools/build_thumbs.py      # nayi image ho to preview banao
 python3 tools/build_catalog.py
 python3 tools/validate_site.py
 ```

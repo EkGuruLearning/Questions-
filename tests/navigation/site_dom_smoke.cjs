@@ -194,6 +194,8 @@ async function main() {
     const dom = await render("subjects/rajasthan-geography/index.html", "#folderBrowser .folder-card");
     const doc = dom.window.document;
     assertClean(dom, "map page");
+    const hero = doc.querySelector(".map-frame img");
+    assert(hero && /rajasthan-border-atlas-preview\.webp$/.test(hero.getAttribute("src")), "map page: hero map image is missing");
     const topTiles = [...doc.querySelectorAll("#folderBrowser .folder-card")];
     assert(topTiles.length === 1, `map page: expected the Map folder, saw ${topTiles.length} tiles`);
     assert(/Map/.test(topTiles[0].textContent), "map page: the folder should be called Map");
@@ -222,7 +224,11 @@ async function main() {
     assert(/Map/.test(crumbs) && /Rajasthan/.test(crumbs), `Rajasthan folder: breadcrumb is wrong: ${crumbs}`);
     const items = doc.querySelectorAll("#folderBrowser .material-item");
     assert(items.length === 6, `Rajasthan folder: expected 6 maps, saw ${items.length}`);
-    assert(items[0].querySelector("img"), "Rajasthan folder: map files should show a preview thumbnail");
+    const thumb = items[0].querySelector("img");
+    assert(thumb, "Rajasthan folder: map files should show a preview thumbnail");
+    assert(/data\/thumbs\/rajasthan-geography\/map\/rajasthan\/.+\.png$/.test(thumb.getAttribute("src")), `Rajasthan folder: preview src is wrong: ${thumb.getAttribute("src")}`);
+    const fullLink = items[0].querySelector("a.button.secondary");
+    assert(/content\/rajasthan-geography\/map\/rajasthan\/.+\.png$/.test(fullLink.getAttribute("href")), "Rajasthan folder: the full-size map link is missing");
     assert(/download/.test(items[0].innerHTML), "Rajasthan folder: download button is missing");
     results.push(`Rajasthan folder: ${items.length} map files with previews and downloads`);
     dom.window.close();

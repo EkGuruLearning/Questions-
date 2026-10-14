@@ -70,7 +70,9 @@ Website ka folder view `content/` ke asli folders se banta hai:
    `order`, `title_en`, `title_hi`, `note_en`, `note_hi`.
 3. Naya folder banaya? `data/catalog/subjects.json` ke `folders` me uska label likho
    (`title_en`, `title_hi`, `note_en`, `note_hi`, `icon`, `order`) — site par folder card apne aap ban jayega.
-4. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
+4. Picture (map/PNG) hai to `python3 tools/build_thumbs.py` — halka preview `data/thumbs/` me banta hai,
+   jise website thumbnail ke liye use karti hai (full file dekho/download ke liye alag rehti hai).
+5. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
 
 ### Nayi quiz/test file (HTML) banani hai?
 Zaroorat nahi — topic-wise aur full-mix test site ke andar hi hai. Naya topic add karne ke liye

@@ -169,6 +169,12 @@ def main() -> int:
                     problems.append(f"size drift for {item['repo_path']}: register says {item['bytes']}, file has {len(raw)}")
                 if hashlib.sha256(raw).hexdigest() != item["sha256"]:
                     problems.append(f"hash drift for {item['repo_path']}: rebuild data/site.json")
+                if item.get("thumb_url"):
+                    thumb_file = ROOT / urllib.parse.unquote(item["thumb_url"])
+                    if not thumb_file.is_file():
+                        problems.append(f"site preview is missing for {item['repo_path']}: {item['thumb_url']}")
+                    elif thumb_file.stat().st_size >= len(raw):
+                        problems.append(f"site preview is not smaller than the picture: {item['thumb_url']}")
             if subject.get("test"):
                 manifest = ROOT / subject["test"]["manifest_url"]
                 if not manifest.is_file():
