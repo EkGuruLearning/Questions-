@@ -161,6 +161,25 @@ async function main() {
   assert(doc.querySelectorAll("#reviewList .review-item").length === 10, "review list does not list every question");
   lines.push(`result: ${$("scoreValue").textContent} score, stats, topic bars and 10 review items`);
 
+  // 7. exam pattern: no instant feedback, timer field appears, retry flow works
+  $("newTestButton").click();
+  assert($("setupPanel").hidden === false, "Naya test should return to the setup screen");
+  doc.querySelector("[data-pattern='exam']").click();
+  assert($("timeField").hidden === false, "exam pattern should reveal the time limit field");
+  await until(() => !$("startButton").disabled, "pool to be ready again");
+  $("countSelect").value = "10";
+  $("countSelect").dispatchEvent(new dom.window.Event("change"));
+  $("startButton").click();
+  await until(() => !$("playerPanel").hidden && $("optionList").children.length === 4, "exam session to render");
+  doc.querySelector("#optionList .option").click();
+  await sleep(60);
+  assert($("feedback").hidden === true, "exam pattern must not reveal the answer while running");
+  assert(doc.querySelectorAll("#paletteGrid button.answered").length === 1, "palette should mark the answered question");
+  $("finishButton").click();
+  await until(() => !$("resultPanel").hidden, "exam result to appear");
+  assert(/^\d+%$/.test($("scoreValue").textContent), "exam result score is missing");
+  lines.push("exam mode: hidden answers, palette marking, submit and result");
+
   assert(errors.length === 0, "page errors: " + errors.join(" | "));
   dom.window.close();
 
