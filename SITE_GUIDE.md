@@ -26,14 +26,23 @@ data/banks/cn/manifest.json + T0N.<hash>.min.json     (test page inhi chunks ko 
         │
 data/catalog/subjects.json  (titles, topics, routes)  │  tools/build_catalog.py
 data/catalog/materials.json (file registry + labels)  ▼
-                                              data/site.json  ←  pages isi ko padhte hain
+                                              data/site.json  ←  pages isi se bante hain
+                                                      │  tools/build_pages.py
+                                                      ▼
+                                index.html, subjects/**/index.html  (plain HTML, 27 pages)
+                                                      │  tools/build_site_routes.py
+                                                      ▼
+                                            data/catalog/site-routes.txt
 ```
 
 * `data/site.json` hi website ka single source of truth hai: subject titles (EN/HI), topic counts,
   section names, file sizes, SHA-256 aur download URLs.
-* Pages JavaScript se render hote hain, isliye HTML me sirf structure hai aur content ek hi jagah
-  (`site.json`) se aata hai. Har page par `<body data-root="...">` hai — isse relative URLs GitHub
+* Pages **plain HTML** hain — `tools/build_pages.py` unhe `data/site.json` se likhta hai, isliye
+  browser me koi render/fetch nahi hota aur page turant khulta hai. Har folder ka apna page hai,
+  har page par breadcrumb + "↑ upar wale page par jao" link hai, aur links relative hain — GitHub
   Pages project path `/Questions-/` par bhi sahi chalti hain.
+* Sirf visitor material publish hota hai: `maintainer/`, `tools/`, `tests/` aur `.md` files kisi
+  published page par link nahi hoti (validator isi par fail karta hai).
 * Test page pehle `manifest.json` load karti hai, phir sirf chune gaye topic ke chunk(s). Isliye
   topic-wise test poore bank ko download nahi karta.
 

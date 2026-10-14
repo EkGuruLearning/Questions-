@@ -41,7 +41,6 @@ content/                                    STUDENT CONTENT (yahi publish hota h
 
 assets/                                     site code
   css/ekguru.css                               ek hi stylesheet (light + dark)
-  js/site.js                                   topic/material/map lists render karta hai
   js/test.mjs                                  online test app (player, result, review)
   js/engine.mjs                                pure question-engine helpers
   img/                                         map preview image
@@ -66,8 +65,10 @@ content/previous-year-papers/dsssb/2019/DSSSB-Computer-Operator-2019-Paper-1.pdf
 content/reasoning/practice/series/Sitting-Arrangement-Set-1.pdf
 
 # 2. rebuild (+ image ho to pehle preview)
-python3 tools/build_thumbs.py      # sirf nayi picture ke liye (PNG/JPG)
-python3 tools/build_catalog.py
+python3 tools/build_thumbs.py       # sirf nayi picture ke liye (PNG/JPG)
+python3 tools/build_catalog.py      # content -> data/site.json
+python3 tools/build_pages.py        # data/site.json -> plain HTML pages
+python3 tools/build_site_routes.py  # published page list (validate/test isi ko padhte hain)
 
 # 3. verify
 python3 tools/validate_site.py
@@ -87,6 +88,16 @@ python3 tools/build_site_data.py     # canonical bank -> data/banks/cn/manifest.
 python3 tools/build_catalog.py       # chunks + catalogue -> data/site.json
 python3 tools/read_structure.py --check
 ```
+
+## Pages kaise bante hain
+
+Website plain HTML hai — koi page browser me JavaScript se nahi banta, isliye page turant khulta hai.
+`tools/build_pages.py` har subject ka page aur har folder ka apna page likhta hai, `content/` ke folder
+structure ke hisaab se (folder rakho → page apne aap). Har page par breadcrumb aur "↑ upar wale page
+par jao" link hota hai. Online test app alag hai: wo `assets/js/test.mjs` se chalta hai.
+
+Sirf visitor material publish hota hai — `maintainer/`, `tools/`, `tests/` aur `.md` files site par
+kahin link nahi hoti (`tools/validate_site.py` isi par fail karta hai).
 
 ## Local preview
 

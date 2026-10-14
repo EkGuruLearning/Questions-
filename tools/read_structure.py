@@ -20,7 +20,7 @@ REQUIRED_PATHS = (
     "subjects/rajasthan-geography/index.html",
     # site code and data
     "assets/css/ekguru.css",
-    "assets/js/site.js",
+    "assets/js/test.mjs",
     "assets/js/test.mjs",
     "assets/js/engine.mjs",
     "assets/img/rajasthan-border-atlas-preview.webp",

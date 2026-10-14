@@ -329,6 +329,22 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .crumbs a { font-weight: 600; }
 .crumb-sep { color: var(--line); font-weight: 700; }
 .crumb-current { font-weight: 700; color: var(--ink); }
+/* "upar wale page par wapas jao" — har folder page par */
+.crumb-up {
+  margin-left: auto;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--primary);
+}
+.crumb-up:hover { border-color: var(--primary); }
+@media (max-width: 620px) {
+  .crumbs { row-gap: 0.4rem; }
+  .crumb-up { margin-left: 0; flex-basis: 100%; text-align: center; }
+}
 .folder-path {
   display: inline-block;
   font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
@@ -350,6 +366,10 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
   padding: 0.85rem 1rem; box-shadow: var(--shadow);
 }
 .material-main { flex: 1 1 260px; min-width: 0; }
+/* map rows: the preview leads on small screens, text follows */
+.material-item.is-image { align-items: flex-start; }
+.material-item.is-image .file-thumb { width: 168px; }
+.material-item.is-image .file-thumb img { width: 168px; height: 120px; }
 .file-thumb { flex: none; width: 128px; position: relative; display: block; text-decoration: none; }
 .file-thumb img {
   width: 128px;

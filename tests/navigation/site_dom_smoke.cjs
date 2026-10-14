@@ -1,11 +1,14 @@
 #!/usr/bin/env node
-/* Renders the real pages in jsdom and checks that the lists actually appear.
+/* Static page checks — no browser, no JavaScript needed.
  *
- * jsdom is optional (no npm runtime dependency is shipped with the site).
- * When it is not installed, this script exits 77 so the release report can mark
- * the check as skipped instead of failed. Run it with jsdom available:
+ * The site is generated as plain HTML (tools/build_pages.py), so the content a
+ * visitor sees must already be inside the HTML file. These checks read the real
+ * pages and assert exactly that: lists, breadcrumbs with a way back up, nav and
+ * footer links, file rows with download buttons.
  *
- *   NODE_PATH=/path/to/node_modules node tests/navigation/site_dom_smoke.cjs
+ * The interactive test page keeps its own jsdom check (test_app_dom_smoke.cjs).
+ *
+ *   node tests/navigation/site_dom_smoke.cjs
  */
 "use strict";
 
@@ -13,288 +16,176 @@ const fs = require("fs");
 const path = require("path");
 
 const ROOT = path.resolve(__dirname, "..", "..");
-const BASE = "https://example.test/Questions-/";
-
-let JSDOM;
-let VirtualConsole;
-try {
-  ({ JSDOM, VirtualConsole } = require("jsdom"));
-} catch (error) {
-  console.log("SKIP: jsdom is not installed, so the rendered DOM smoke test was skipped.");
-  process.exit(77);
-}
-
-/* The page files are read straight from disk: no HTTP server is needed, and the
-   fetch shim is installed through `beforeParse` so it exists before site.js runs. */
-function sitePath(rawUrl) {
-  let rel = String(rawUrl && rawUrl.url ? rawUrl.url : rawUrl)
-    .replace(BASE, "")
-    .replace(/^https?:\/\/[^/]+\/Questions-\//, "")
-    .replace(/^file:\/\//, "");
-  rel = decodeURIComponent(rel).split("?")[0].split("#")[0].replace(/^\//, "");
-  return path.join(ROOT, rel);
-}
-
-function fetchShim() {
-  return `
-    window.fetch = async function (input) {
-      const text = window.__readFile(String(input && input.url ? input.url : input));
-      if (text === null) return { ok: false, status: 404, json: async () => { throw new Error("404"); } };
-      return { ok: true, status: 200, json: async () => JSON.parse(text) };
-    };
-  `;
-}
-
-async function render(page, waitForSelector) {
-  const assetPath = page.split("?")[0];
-  let html = fs.readFileSync(path.join(ROOT, assetPath), "utf8");
-  const scripts = [...html.matchAll(/<script\s+src="([^"]+)"[^>]*><\/script>/g)];
-  const injected = scripts
-    .filter((match) => !/type="module"/.test(match[0]))
-    .map((match) => {
-      const src = match[1].replace(/^https?:\/\/[^/]+\//, "");
-      const file = path.join(path.dirname(path.join(ROOT, assetPath)), src);
-      return `<script>${fs.readFileSync(file, "utf8")}<\/script>`;
-    })
-    .join("\n");
-  html = html.replace("</head>", `<script>${fetchShim()}<\/script>\n</head>`);
-  html = html.replace(/<script\s+src="[^"]+"[^>]*><\/script>/g, (match) => (/type="module"/.test(match) ? "" : ""));
-  html = html.replace("</body>", `${injected}\n</body>`);
-
-  const errors = [];
-  const virtualConsole = new VirtualConsole();
-  virtualConsole.on("jsdomError", (error) => errors.push(error.message));
-  virtualConsole.on("error", (...args) => errors.push(args.join(" ")));
-  const dom = new JSDOM(html, {
-    url: BASE + page,
-    runScripts: "dangerously",
-    pretendToBeVisual: true,
-    virtualConsole,
-    beforeParse(window) {
-      window.__readFile = (rawUrl) => {
-        const file = sitePath(rawUrl);
-        return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null;
-      };
-    },
-  });
-  await new Promise((resolve) => setTimeout(resolve, 150));
-  if (waitForSelector) {
-    await waitFor(() => dom.window.document.querySelector(waitForSelector), `${page}: ${waitForSelector} to render`);
-  }
-  dom.pageErrors = errors;
-  return dom;
-}
+const results = [];
+let failures = 0;
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-function assertClean(dom, page) {
-  if (dom.pageErrors.length) {
-    throw new Error(`${page}: page errors — ${dom.pageErrors.join(" | ")}`);
+function read(rel) {
+  const file = path.join(ROOT, rel);
+  assert(fs.existsSync(file), `missing page: ${rel}`);
+  return fs.readFileSync(file, "utf8");
+}
+
+function all(html, pattern) {
+  return [...html.matchAll(pattern)];
+}
+
+function section(title, fn) {
+  try {
+    const detail = fn();
+    results.push(`${title}: ${detail}`);
+  } catch (error) {
+    failures += 1;
+    results.push(`FAIL ${title}: ${error.message}`);
   }
 }
 
-/* The pages render from data/site.json, so give the async render a moment and
-   fail with a clear message instead of a null-property crash. */
-async function waitFor(check, message, timeout = 5000) {
-  const started = Date.now();
-  for (;;) {
-    const value = check();
-    if (value) return value;
-    if (Date.now() - started > timeout) throw new Error("timeout: " + message);
-    await new Promise((resolve) => setTimeout(resolve, 50));
-  }
+function links(html) {
+  return all(html, /<a\b[^>]*href="([^"]+)"[^>]*>/g).map((match) => match[1]);
 }
 
-async function main() {
-  const results = [];
-  let failures = 0;
-
-  // ---- home -------------------------------------------------------------
-  {
-    const dom = await render("index.html", "#subjectCards .subject-card");
-    const doc = dom.window.document;
-    const questions = doc.querySelector("[data-count='questions']").textContent.trim();
-    const subjects = doc.querySelector("[data-count='subjects']").textContent.trim();
-    const downloads = doc.querySelector("[data-count='downloads']").textContent.trim();
-    assertClean(dom, "index.html");
-    assert(questions === "1,554", `home: expected 1,554 questions, saw ${questions}`);
-    assert(subjects === "4", `home: expected 4 subjects, saw ${subjects}`);
-    assert(downloads === "38", `home: expected 38 files, saw ${downloads}`);
-
-    const cards = [...doc.querySelectorAll("#subjectCards .subject-card")];
-    assert(cards.length === 4, `home: expected 4 subject cards, saw ${cards.length}`);
-    const names = cards.map((card) => card.querySelector("h3").textContent.trim());
-    for (const expected of ["Computer Network", "Rajasthan Geography", "Reasoning", "Previous Year Papers"]) {
-      assert(names.includes(expected), `home: subject card missing: ${expected}`);
-    }
-
-    const pyq = cards.find((card) => /Previous Year Papers/.test(card.textContent));
-    const pyqFolders = [...pyq.querySelectorAll(".folder-card strong")].map((node) => node.textContent.trim());
-    for (const exam of ["IA", "SCI", "Computer Operator", "System Assistant", "DSSSB", "SSC", "NET", "RPSC"]) {
-      assert(pyqFolders.includes(exam), `home: previous year papers missing exam folder: ${exam}`);
-    }
-
-    const navLinks = [...doc.querySelectorAll("nav.site-nav a")].map((link) => link.textContent.trim());
-    for (const expected of ["Home", "All Subjects", "Computer Network", "Reasoning", "Previous Year Papers"]) {
-      assert(navLinks.includes(expected), `home: nav link missing: ${expected}`);
-    }
-    const footerLinks = [...doc.querySelectorAll("[data-footer-subjects] a")];
-    assert(footerLinks.length === 4, `home: footer should list 4 subjects, saw ${footerLinks.length}`);
-    assert(/\d+ subjects · \d+ files/.test(doc.querySelector("[data-footer-stats]").textContent),
-      "home: footer stats are missing");
-
-    results.push(`home: ${cards.length} subject cards (${pyqFolders.length} exam folders), nav + footer from site data`);
-    dom.window.close();
-  }
-
-  // ---- computer network hub --------------------------------------------
-  {
-    const dom = await render("subjects/computer-network/index.html", "#topicGrid .topic-card");
-    const doc = dom.window.document;
-    assertClean(dom, "subjects/computer-network/index.html");
-    const folders = doc.querySelectorAll("#subjectFolders .folder-card");
-    assert(folders.length === 5, `CN hub: expected 5 folder tiles, saw ${folders.length}`);
-    const folderNames = [...folders].map((tile) => tile.querySelector("strong").textContent.trim());
-    assert(folderNames.join("|") === "Theory|Practice questions|Answers & explanations|Tests|Reference book",
-      `CN hub: folder order/names are wrong: ${folderNames.join("|")}`);
-    assert(/8 file/.test(folders[0].textContent), `CN hub: theory folder should show 8 files, saw ${folders[0].textContent}`);
-    const cards = [...doc.querySelectorAll("#topicGrid .topic-card")];
-    assert(cards.length === 7, `CN hub: expected 7 topic cards, saw ${cards.length}`);
-    const first = cards[0];
-    assert(/T01/.test(first.textContent), "CN hub: first card is not T01");
-    const testLink = first.querySelector("a[href*='test/index.html?topic=T01']");
-    assert(testLink, "CN hub: topic card has no deep link into the test page");
-    assert(/374/.test(first.textContent), "CN hub: T01 question count is missing");
-    results.push(`CN hub: ${folders.length} folder tiles + ${cards.length} topic cards with deep links`);
-    dom.window.close();
-  }
-
-  // ---- material page: folders first, then files --------------------------
-  {
-    const dom = await render("subjects/computer-network/material/index.html", "#folderBrowser .folder-card");
-    const doc = dom.window.document;
-    assertClean(dom, "material page");
-    const tiles = [...doc.querySelectorAll("#folderBrowser .folder-card")];
-    assert(tiles.length === 5, `material page: expected 5 folder tiles, saw ${tiles.length}`);
-    assert(doc.querySelectorAll("#folderBrowser .material-item").length === 0, "material page: files should sit inside a folder");
-    assert(/Saare folders/.test(doc.getElementById("folderCrumbs").textContent), "material page: breadcrumb is missing");
-    results.push(`material page: ${tiles.length} folder tiles, files hidden until a folder is opened`);
-    dom.window.close();
-  }
-
-  // ---- material page: open the answers folder ----------------------------
-  {
-    const dom = await render("subjects/computer-network/material/index.html?folder=answers", "#folderBrowser .material-item");
-    const doc = dom.window.document;
-    assertClean(dom, "answers folder");
-    assert(/Answers & explanations/.test(doc.getElementById("folderCrumbs").textContent), "answers: breadcrumb should show the folder");
-    const items = doc.querySelectorAll("#folderBrowser .material-item");
-    assert(items.length === 5, `answers folder: expected 5 files, saw ${items.length}`);
-    assert(/answers\//.test(items[0].querySelector("a[download]").textContent + items[0].innerHTML), "answers: download link is wrong");
-    const crumbs = doc.querySelectorAll("#folderCrumbs a");
-    assert(crumbs.length >= 1, "answers: breadcrumb should link back to the folder list");
-    assert(!/\?folder=/.test(crumbs[0].getAttribute("href")), "answers: first crumb must return to the folder list");
-    results.push(`answers folder: ${items.length} files with working download links`);
-    dom.window.close();
-  }
-
-  // ---- subject explorer: saare subjects ---------------------------------
-  {
-    const dom = await render("subjects/index.html", "#subjectExplorer .subject-card");
-    const doc = dom.window.document;
-    assertClean(dom, "subjects index");
-    const cards = doc.querySelectorAll("#subjectExplorer .subject-card");
-    assert(cards.length === 4, `explorer: expected 4 subject cards, saw ${cards.length}`);
-    results.push(`explorer: ${cards.length} subject cards`);
-    dom.window.close();
-  }
-
-  // ---- subject explorer: naya subject bina page code ke -----------------
-  {
-    const dom = await render("subjects/index.html?subject=reasoning", "#subjectExplorer .folder-card");
-    const doc = dom.window.document;
-    assertClean(dom, "reasoning explorer");
-    assert(/Reasoning/.test(doc.getElementById("explorerTitle").textContent), "explorer: subject title is wrong");
-    const tiles = [...doc.querySelectorAll("#subjectExplorer .folder-card")];
-    const names = tiles.map((tile) => tile.querySelector("strong").textContent.trim());
-    assert(names.join("|") === "Theory|Practice questions|Answers & explanations|Tests",
-      `explorer: reasoning folders are wrong: ${names.join("|")}`);
-    assert(tiles.every((tile) => tile.classList.contains("is-empty")), "explorer: empty folders should be marked");
-    results.push("explorer: Reasoning folders (khali, file daalte hi bhar jayenge)");
-    dom.window.close();
-  }
-
-  // ---- previous year papers: exam sections ------------------------------
-  {
-    const dom = await render("subjects/index.html?subject=previous-year-papers", "#subjectExplorer .folder-card");
-    const doc = dom.window.document;
-    assertClean(dom, "pyq explorer");
-    const names = [...doc.querySelectorAll("#subjectExplorer .folder-card strong")].map((n) => n.textContent.trim());
-    for (const exam of ["IA", "SCI", "Computer Operator", "System Assistant", "DSSSB", "SSC", "NET", "RPSC"]) {
-      assert(names.includes(exam), `pyq: missing exam folder ${exam}`);
-    }
-    results.push(`previous year papers: ${names.length} exam sections`);
-    dom.window.close();
-  }
-
-  // ---- geography: Map folder -> Rajasthan folder -> maps -----------------
-  {
-    const dom = await render("subjects/rajasthan-geography/index.html", "#folderBrowser .folder-card");
-    const doc = dom.window.document;
-    assertClean(dom, "map page");
-    const hero = doc.querySelector(".map-frame img");
-    assert(hero && /rajasthan-border-atlas-preview\.webp$/.test(hero.getAttribute("src")), "map page: hero map image is missing");
-    const topTiles = [...doc.querySelectorAll("#folderBrowser .folder-card")];
-    assert(topTiles.length === 1, `map page: expected the Map folder, saw ${topTiles.length} tiles`);
-    assert(/Map/.test(topTiles[0].textContent), "map page: the folder should be called Map");
-    assert(/folder=map$/.test(new URL(topTiles[0].getAttribute("href"), "https://example.test/Questions-/").search)
-      || /folder=map%2F/.test(topTiles[0].getAttribute("href")), "map page: Map folder link is wrong");
-    results.push("map page: Map folder tile");
-    dom.window.close();
-  }
-
-  {
-    const dom = await render("subjects/rajasthan-geography/index.html?folder=map", "#folderBrowser .folder-card");
-    const doc = dom.window.document;
-    assertClean(dom, "Map folder");
-    const tiles = [...doc.querySelectorAll("#folderBrowser .folder-card")];
-    assert(tiles.length === 1, `Map folder: expected the Rajasthan folder, saw ${tiles.length}`);
-    assert(/Rajasthan/.test(tiles[0].textContent), "Map folder: the subfolder should be Rajasthan");
-    results.push("Map folder: Rajasthan subfolder tile");
-    dom.window.close();
-  }
-
-  {
-    const dom = await render("subjects/rajasthan-geography/index.html?folder=map%2Frajasthan", "#folderBrowser .material-item");
-    const doc = dom.window.document;
-    assertClean(dom, "Rajasthan folder");
-    const crumbs = doc.getElementById("folderCrumbs").textContent;
-    assert(/Map/.test(crumbs) && /Rajasthan/.test(crumbs), `Rajasthan folder: breadcrumb is wrong: ${crumbs}`);
-    const items = doc.querySelectorAll("#folderBrowser .material-item");
-    assert(items.length === 6, `Rajasthan folder: expected 6 maps, saw ${items.length}`);
-    const thumb = items[0].querySelector("img");
-    assert(thumb, "Rajasthan folder: map files should show a preview thumbnail");
-    assert(/data\/thumbs\/rajasthan-geography\/map\/rajasthan\/.+\.png$/.test(thumb.getAttribute("src")), `Rajasthan folder: preview src is wrong: ${thumb.getAttribute("src")}`);
-    const fullLink = items[0].querySelector("a.button.secondary");
-    assert(/content\/rajasthan-geography\/map\/rajasthan\/.+\.png$/.test(fullLink.getAttribute("href")), "Rajasthan folder: the full-size map link is missing");
-    assert(/download/.test(items[0].innerHTML), "Rajasthan folder: download button is missing");
-    const firstAlt = items[0].querySelector("img").getAttribute("alt");
-    assert(/Rajasthan border districts|Rajasthan border district atlas/.test(firstAlt), `Rajasthan folder: SEO alt text is missing: ${firstAlt}`);
-    const described = [...items].filter((item) => item.querySelector(".file-description"));
-    assert(described.length === items.length, "Rajasthan folder: every map should show its SEO description");
-    assert(/41/.test(items[0].textContent) && /सीमावर्ती/.test(items[0].textContent), "Rajasthan folder: the description text is not shown");
-    results.push(`Rajasthan folder: ${items.length} map files with previews and downloads`);
-    dom.window.close();
-  }
-
-  console.log("PASS: rendered DOM smoke test");
-  results.forEach((line) => console.log("  - " + line));
-  process.exit(failures ? 1 : 0);
+/* repo path a link on `page` resolves to */
+function repoPath(page, href) {
+  const clean = href.split("?")[0].split("#")[0];
+  if (!clean || /^[a-z]+:/i.test(clean)) return "";
+  const resolved = path.posix.normalize(path.posix.join(path.posix.dirname(page), clean));
+  return resolved.split("/").filter((part) => part !== "..").join("/");
 }
 
-main().catch((error) => {
-  console.error("FAIL: rendered DOM smoke test —", error.message);
-  process.exit(1);
+function text(html) {
+  return html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
+}
+
+/* home ------------------------------------------------------------------ */
+section("home (static HTML)", () => {
+  const html = read("index.html");
+  assert(!/assets\/js\/site\.js/.test(html), "home must not depend on site.js");
+  const cards = all(html, /class="card subject-card"/g).length;
+  assert(cards === 4, `expected 4 subject cards in the HTML, saw ${cards}`);
+  for (const subject of ["Computer Network", "Rajasthan Geography", "Reasoning", "Previous Year Papers"]) {
+    assert(text(html).includes(subject), `home is missing the ${subject} card`);
+  }
+  const navTargets = links(html).map((href) => repoPath("index.html", href));
+  for (const href of ["subjects/computer-network/index.html", "subjects/index.html",
+                      "subjects/previous-year-papers/index.html"]) {
+    assert(navTargets.includes(href), `home nav is missing ${href}`);
+  }
+  assert(/class="hero-stat"/.test(html), "home hero stats are missing");
+  assert(/1,554/.test(text(html)), "home should show the 1,554 online questions");
+  return `${cards} subject cards, nav + footer + hero stats baked into the HTML`;
 });
+
+/* subject explorer ------------------------------------------------------- */
+section("subjects/index.html", () => {
+  const html = read("subjects/index.html");
+  const cards = all(html, /class="card subject-card"/g).length;
+  assert(cards === 4, `expected 4 subject cards, saw ${cards}`);
+  const up = all(html, /class="crumb-up" href="([^"]+)"/g).map((match) => match[1]);
+  assert(up.length === 1 && repoPath("subjects/index.html", up[0]) === "index.html",
+    "the explorer should offer one way back, to Home");
+  assert(text(html).includes("Saare subjects"), "explorer heading is missing");
+  return `${cards} subjects, breadcrumb, static links`;
+});
+
+/* computer network ------------------------------------------------------- */
+section("computer-network subject page", () => {
+  const html = read("subjects/computer-network/index.html");
+  const tiles = all(html, /class="folder-card[^"]*" href="([^"]+)"/g)
+    .map((match) => repoPath("subjects/computer-network/index.html", match[1]));
+  assert(tiles.length === 5, `expected 5 folder tiles, saw ${tiles.length}`);
+  for (const folder of ["theory", "practice", "answers", "tests", "reference"]) {
+    assert(tiles.includes(`subjects/computer-network/${folder}/index.html`), `missing folder tile: ${folder}`);
+  }
+  const topics = all(html, /class="card topic-card"/g).length;
+  assert(topics === 7, `expected 7 topic cards, saw ${topics}`);
+  assert(/test\/index\.html\?topic=T01/.test(html), "topic cards need a deep link into the test");
+  assert(/class="crumb-up"/.test(html), "subject page needs an up link");
+  return `${tiles.length} folder tiles + ${topics} topic cards`;
+});
+
+/* one folder page per folder -------------------------------------------- */
+section("folder page (files + breadcrumb back up)", () => {
+  const html = read("subjects/computer-network/answers/index.html");
+  const rows = all(html, /class="material-item/g).length;
+  assert(rows === 5, `answers folder should list 5 files, saw ${rows}`);
+  assert(/download>Download<\/a>/.test(html), "file rows need a download button");
+  assert(/crumbs/.test(html) && /crumb-up/.test(html), "folder page needs a breadcrumb with a back link");
+  const up = all(html, /class="crumb-up" href="([^"]+)"/g).map((match) => match[1])[0];
+  assert(repoPath("subjects/computer-network/answers/index.html", up) === "subjects/computer-network/index.html",
+    `the back link should go to the subject page, saw ${up}`);
+  return `${rows} files, breadcrumb back to the subject page`;
+});
+
+/* deeper folder (year folders) ------------------------------------------ */
+section("previous year papers page", () => {
+  const subject = read("subjects/previous-year-papers/index.html");
+  const exams = all(subject, /class="folder-card[^"]*" href="([^"]+)"/g)
+    .map((match) => repoPath("subjects/previous-year-papers/index.html", match[1]));
+  for (const exam of ["ia", "sci", "computer-operator", "system-assistant", "dsssb", "ssc", "net", "rpsc"]) {
+    assert(exams.includes(`subjects/previous-year-papers/${exam}/index.html`), `missing exam folder: ${exam}`);
+  }
+  const year = read("subjects/previous-year-papers/rpsc/2024/index.html");
+  const files = all(year, /class="material-item/g).length;
+  assert(files === 2, `RPSC 2024 should publish the paper + answer key, saw ${files}`);
+  assert(/RPSC-Programmer-2024-Paper-1-Questions\.pdf/.test(year), "the question paper link is missing");
+  assert(/RPSC-Programmer-2024-Paper-1-Answer-Key\.pdf/.test(year), "the answer key link is missing");
+  const crumb = all(year, /<nav class="crumbs"[^>]*>(.*?)<\/nav>/gs);
+  assert(crumb.length === 1, "year page needs a breadcrumb");
+  const crumbText = text(crumb[0][1]);
+  for (const part of ["All Subjects", "Previous Year Papers", "RPSC", "2024"]) {
+    assert(crumbText.includes(part), `breadcrumb is missing ${part}: ${crumbText}`);
+  }
+  return `${exams.length} exam folders, RPSC 2024 page with ${files} files and a full breadcrumb`;
+});
+
+/* reasoning (empty folders still published) ------------------------------ */
+section("reasoning folder pages", () => {
+  const hub = read("subjects/reasoning/index.html");
+  const tiles = all(hub, /class="folder-card/g).length;
+  assert(tiles === 4, `expected 4 folder tiles, saw ${tiles}`);
+  const practice = read("subjects/reasoning/practice/index.html");
+  assert(/empty-state/.test(practice), "an empty folder should say so");
+  assert(/crumb-up/.test(practice), "empty folder page still needs the back link");
+  return `${tiles} folder pages, empty ones explained`;
+});
+
+/* maps ------------------------------------------------------------------- */
+section("map folder pages", () => {
+  const hub = read("subjects/rajasthan-geography/index.html");
+  assert(/map\/index\.html/.test(hub), "the map folder tile is missing");
+  const rajasthan = read("subjects/rajasthan-geography/map/rajasthan/index.html");
+  const rows = all(rajasthan, /class="material-item/g).length;
+  assert(rows === 6, `expected 6 maps, saw ${rows}`);
+  assert(/data\/thumbs\//.test(rajasthan), "map rows should show the light preview image");
+  assert(/content\/rajasthan-geography\/map\/rajasthan\//.test(rajasthan), "map download links are missing");
+  return `${rows} map rows with previews and downloads`;
+});
+
+/* navigation + footer on every page ------------------------------------- */
+section("nav + footer on every published page", () => {
+  const routes = fs.readFileSync(path.join(ROOT, "data/catalog/site-routes.txt"), "utf8")
+    .split("\n").filter((line) => line && !line.startsWith("#"));
+  const subjects = Object.keys(JSON.parse(fs.readFileSync(path.join(ROOT, "data/site.json"), "utf8"))
+    .subjects.reduce((acc, subject) => ({ ...acc, [subject.slug]: subject }), {}));
+  let checked = 0;
+  for (const route of routes) {
+    if (route === "404.html") continue;  // the not-found page keeps its own short list
+    const html = read(route);
+    const targets = links(html).map((href) => repoPath(route, href));
+    assert(/aria-label="Main navigation"/.test(html), `${route}: nav is missing`);
+    for (const slug of subjects) {
+      assert(targets.includes(`subjects/${slug}/index.html`), `${route}: nav/footer misses ${slug}`);
+    }
+    assert(/footer-grid/.test(html), `${route}: footer is missing`);
+    checked += 1;
+  }
+  return `${checked} pages carry the full nav + footer`;
+});
+
+/* serialisable count ----------------------------------------------------- */
+console.log(failures ? "FAIL: static page checks" : "PASS: static page checks");
+for (const line of results) console.log("  - " + line);
+process.exit(failures ? 1 : 0);

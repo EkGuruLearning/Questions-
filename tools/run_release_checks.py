@@ -47,7 +47,6 @@ PY_TOOLS = [
 ]
 JS_FILES = [
     "assets/js/engine.mjs",
-    "assets/js/site.js",
     "assets/js/test.mjs",
     "tests/engine/engine.test.mjs",
     "tests/navigation/site_dom_smoke.cjs",
@@ -85,8 +84,8 @@ CHECKS = [
      "Site modules, test app and Node tests parse."),
     ("Engine unit tests", ["node", "--test", "tests/engine/engine.test.mjs"],
      "Filtering, sampling, scoring and language fallbacks."),
-    ("Rendered DOM smoke test (optional jsdom)", ["node", "tests/navigation/site_dom_smoke.cjs"],
-     "Renders the real pages and asserts folder trees, files, map previews and the test app; exit 77 means jsdom is not installed."),
+    ("Site page smoke test", ["node", "tests/navigation/site_dom_smoke.cjs"],
+     "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer."),
     ("Whitespace/conflict check", ["bash", "-lc", "git diff --check && git diff --cached --check && python3 tools/check_whitespace.py"],
      "Tracked diffs and changed/untracked text files are checked."),
 ]

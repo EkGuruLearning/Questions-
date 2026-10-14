@@ -38,14 +38,18 @@ REQUIRED_ROUTES = (
     "subjects/rajasthan-geography/index.html",
     "404.html",
     "assets/css/ekguru.css",
-    "assets/js/site.js",
+    "assets/js/test.mjs",
     "assets/js/test.mjs",
     "assets/js/engine.mjs",
     "data/site.json",
     "data/banks/cn/manifest.json",
 )
 
-FORBIDDEN_LINK_PARTS = ("maintainer/", "/.git", "tools/", "tests/", "SITE_GUIDE.md", "README.md")
+# Repo-only roots: a page must never resolve into these. Checked on the resolved
+# path (not as a substring) so a student folder called `tests/` inside content or a
+# subject page stays legal.
+FORBIDDEN_ROOTS = ("maintainer/", "tools/", "tests/", ".git/", "data/sources/", "data/schemas/")
+FORBIDDEN_FILES = ("README.md", "SITE_GUIDE.md")
 
 
 class LinkParser(html.parser.HTMLParser):
@@ -119,8 +123,17 @@ def main() -> int:
                 continue
             link_count += 1
             lowered = target.lower()
-            if any(part.lower() in lowered for part in FORBIDDEN_LINK_PARTS):
-                problems.append(f"{page}: published page links to non-student material: {target}")
+            path_only = urllib.parse.urlsplit(target).path
+            if path_only:
+                resolved = (page_path.parent / path_only).resolve()
+                try:
+                    repo_relative = resolved.relative_to(ROOT).as_posix()
+                except ValueError:
+                    repo_relative = ""
+                if any(repo_relative.startswith(root) for root in FORBIDDEN_ROOTS):
+                    problems.append(f"{page}: published page links to non-student material: {target}")
+                if repo_relative in FORBIDDEN_FILES:
+                    problems.append(f"{page}: published page links to a repo document: {target}")
             if lowered.endswith(".md") or ".md#" in lowered or ".md?" in lowered:
                 problems.append(f"{page}: published page links to a markdown file: {target}")
             if target.startswith("#"):

@@ -82,9 +82,14 @@ class SiteDataTests(unittest.TestCase):
         )
         for folder in pyq["tree"]["folders"]:
             with self.subTest(folder=folder["path"]):
-                self.assertTrue(folder["empty"])
-                self.assertEqual(folder["file_count"], 0)
                 self.assertTrue(folder["title_en"].strip())
+                if folder["path"] == "rpsc":
+                    # the exam whose papers are already published
+                    self.assertFalse(folder["empty"])
+                    self.assertGreater(folder["file_count"], 0)
+                    continue
+                self.assertTrue(folder["empty"], "exam folders without papers stay empty, never invented")
+                self.assertEqual(folder["file_count"], 0)
         reasoning = by_id["reasoning"]
         self.assertEqual([folder["path"] for folder in reasoning["tree"]["folders"]],
                          ["theory", "practice", "answers", "tests"])

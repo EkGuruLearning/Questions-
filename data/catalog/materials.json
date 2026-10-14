@@ -405,6 +405,26 @@
       "alt_hi": "राजस्थान सीमावर्ती जिला एटलस का प्रीव्यू — हिंदी नामों के साथ 41 जिले और 36 सीमावर्ती जिले।",
       "description_en": "Preview image of the Rajasthan border district atlas — the whole layout (41 Rajasthan districts, 36 border-sharing districts of Pakistan and the neighbouring states, legend and tables) in one screen, so you can check the sheet before downloading a print size.",
       "description_hi": "राजस्थान सीमावर्ती जिला एटलस की प्रीव्यू इमेज — पूरा लेआउट (41 जिले, पाकिस्तान व पड़ोसी राज्यों के 36 सीमावर्ती जिले, लेजेंड और तालिकाएँ) एक स्क्रीन पर, जिससे प्रिंट साइज़ डाउनलोड करने से पहले देखा जा सके।"
+    },
+    {
+      "file": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Questions.pdf",
+      "subject": "previous-year-papers",
+      "topic": null,
+      "order": 1,
+      "title_en": "RPSC Programmer 2024 — Paper 1 (questions)",
+      "title_hi": "RPSC प्रोग्रामर 2024 — पेपर 1 (प्रश्न)",
+      "note_en": "Full paper: 100 questions, Section A (Q1–40) and Section B (Q41–100), with a 24-page printable layout.",
+      "note_hi": "पूरा पेपर: 100 प्रश्न, सेक्शन A (प्र.1–40) और सेक्शन B (प्र.41–100), 24 पन्नों का प्रिंट-ready रूप।"
+    },
+    {
+      "file": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Answer-Key.pdf",
+      "subject": "previous-year-papers",
+      "topic": null,
+      "order": 2,
+      "title_en": "RPSC Programmer 2024 — Paper 1 answer key",
+      "title_hi": "RPSC प्रोग्रामर 2024 — पेपर 1 उत्तर कुंजी",
+      "note_en": "Answer key for all 100 questions, section-wise.",
+      "note_hi": "सभी 100 प्रश्नों की उत्तर कुंजी, सेक्शन-wise।"
     }
   ]
 }
