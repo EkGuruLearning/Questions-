@@ -42,6 +42,7 @@ from atlas_style import (  # noqa: E402
     CHECKLIST_NOT_TOUCHING, PK_SUFFIX, FS_RAJASTHAN, FS_TOUCHING,
     FS_OTHER, FS_REGION, FS_PROVINCE, GRATICULE_STEP, GRATICULE_COLOR,
     GRATICULE_LW, DIST_EDGE_STUDY, DIST_EDGE_LW, PANEL_COLS,
+    SF_TEXT_EXPONENT,
 )
 
 EXPORTS = ROOT / "exports"
@@ -134,6 +135,8 @@ def draw_line(ax, geom, **kw):
 
 
 def draw_graticule(ax, sf):
+    # module-level helper: derive the type scale from the sheet factor
+    sf_text = float(sf ** SF_TEXT_EXPONENT)
     """1-degree graticule, projected (so the curves are geometrically true),
     with edge labels.  Lets the reader verify position and spot any
     distortion, instead of having to trust the drawing."""
@@ -151,7 +154,7 @@ def draw_graticule(ax, sf):
         ax.plot(*g.xy, **kw)
         x, y = g.coords[0]
         ax.text(x, y + 0.012 * (fy1 - fy0) * 111000, f"{lo:.0f}°E",
-                fontsize=5.2 * sf, color="#7C7568", ha="center", va="bottom",
+                fontsize=5.2 * sf_text, color="#7C7568", ha="center", va="bottom",
                 zorder=6)
     for la in lats:
         ln = LineString([(x, la) for x in
@@ -160,7 +163,7 @@ def draw_graticule(ax, sf):
         ax.plot(*g.xy, **kw)
         x, y = g.coords[0]
         ax.text(x + 0.010 * (fx1 - fx0) * 99000, y, f"{la:.0f}°N",
-                fontsize=5.2 * sf, color="#7C7568", ha="left", va="center",
+                fontsize=5.2 * sf_text, color="#7C7568", ha="left", va="center",
                 zorder=6)
 
 
@@ -261,6 +264,9 @@ def place_labels(ax, candidates, fig):
 def render(page="A1", dpi=200, preview=False):
     Wmm, Hmm = PAGES[page]
     sf = {"A1": 1.0, "A2": 1 / np.sqrt(2), "A3": 0.5}[page]
+    # Type shrinks sub-linearly with the sheet - see SF_TEXT_EXPONENT.
+    sf_text = float(sf ** SF_TEXT_EXPONENT)
+    name_all = (page != "A3")
 
     gdf = gpd.read_file(PROCESSED / "rajasthan_border_atlas.gpkg",
                         layer="districts_all")
@@ -354,7 +360,7 @@ def render(page="A1", dpi=200, preview=False):
             region_geoms[st] = u
     for st, u in region_geoms.items():
         p = label_point(u)
-        add_label(p.x, p.y, NEIGHBOUR_STYLE[st]["label"], FS_REGION * sf, FP_HI_B,
+        add_label(p.x, p.y, NEIGHBOUR_STYLE[st]["label"], FS_REGION * sf_text, FP_HI_B,
                   "#2B2620", priority=-3, zorder=16)
 
     # (b) Pakistani province labels
@@ -364,13 +370,13 @@ def render(page="A1", dpi=200, preview=False):
         if not len(grp):
             continue
         p = label_point(unary_union(grp.geometry))
-        add_label(p.x, p.y, hi, FS_PROVINCE * sf, FP_HI_B, "#5A5348",
+        add_label(p.x, p.y, hi, FS_PROVINCE * sf_text, FP_HI_B, "#5A5348",
                   priority=-2, zorder=15)
 
     # (c) Rajasthan districts
     for _, row in raj.iterrows():
         p = label_point(row.geometry)
-        add_label(p.x, p.y, row.district_hi, FS_RAJASTHAN * sf, FP_HI_B, TEXT_HI,
+        add_label(p.x, p.y, row.district_hi, FS_RAJASTHAN * sf_text, FP_HI_B, TEXT_HI,
                   priority=0, zorder=12)
 
     # (d) neighbouring districts that genuinely touch, then the rest
@@ -381,14 +387,18 @@ def render(page="A1", dpi=200, preview=False):
         key = (row.country, row.state_province, row.district_en)
         if key in touching:
             p = label_point(row.geometry)
-            add_label(p.x, p.y, row.district_hi, FS_TOUCHING * sf, FP_HI, "#3F3A33",
+            add_label(p.x, p.y, row.district_hi, FS_TOUCHING * sf_text, FP_HI, "#3F3A33",
                       priority=1, zorder=11)
-    for _, row in others.iterrows():
-        key = (row.country, row.state_province, row.district_en)
-        if key not in touching:
-            p = label_point(row.geometry)
-            add_label(p.x, p.y, row.district_hi, FS_OTHER * sf, FP_HI, "#6D675E",
-                      priority=3, zorder=10)
+    if name_all:
+        for _, row in others.iterrows():
+            key = (row.country, row.state_province, row.district_en)
+            if key not in touching:
+                p = label_point(row.geometry)
+                add_label(p.x, p.y, row.district_hi, FS_OTHER * sf_text,
+                          FP_HI, "#6D675E", priority=3, zorder=10)
+    # else: A3 omits these 151 context labels on purpose - they would have to
+    # be set below the legibility floor to fit.  The districts are still
+    # drawn and coloured; A1/A2 carry the full gazetteer.
 
     placed, dropped = place_labels(ax, cands, fig)
     label_stats = dict(
@@ -432,20 +442,20 @@ def render(page="A1", dpi=200, preview=False):
     n_raj = int((gdf.state_province == "Rajasthan").sum())
     n_div = len([d for d in DIVISION_ORDER if (raj.division == d).any()])
     fig.text(0.5, 0.980, "राजस्थान — सीमावर्ती ज़िला एटलस", ha="center",
-             va="top", fontproperties=FP_HI_B, fontsize=25 * sf,
+             va="top", fontproperties=FP_HI_B, fontsize=25 * sf_text,
              color="#1F1B16")
     fig.text(0.5, 0.941,
              f"राजस्थान के {n_raj} ज़िले · {n_div} संभाग   |   "
              "पाकिस्तान · पंजाब · हरियाणा · उत्तर प्रदेश · "
              "मध्य प्रदेश · गुजरात — सीमावर्ती ज़िले",
              ha="center", va="top", fontproperties=FP_HI,
-             fontsize=12.5 * sf, color="#4A443B")
+             fontsize=12.5 * sf_text, color="#4A443B")
     fig.text(0.5, 0.918,
              "ज्यामिति: Survey of India–व्युत्पन्न ज़िला सीमाएँ (भारत) · "
              "WFP / OCHA COD-AB v01 (पाकिस्तान)  |  "
              f"निर्माण तिथि {BUILD_DATE}",
              ha="center", va="top", fontproperties=FP_HI,
-             fontsize=8.6 * sf, color="#7A7367")
+             fontsize=8.6 * sf_text, color="#7A7367")
 
     # ----------------------------------------------------------- graticule
     draw_graticule(ax, sf)
@@ -470,10 +480,10 @@ def render(page="A1", dpi=200, preview=False):
         sp.set_linewidth(0.6)
     iax.text(0.5, 1.06, "स्थान संकेत — भारत में राजस्थान",
              transform=iax.transAxes, fontproperties=FP_HI_B,
-             fontsize=8.0 * sf, ha="center", va="bottom", color="#332F28")
+             fontsize=8.0 * sf_text, ha="center", va="bottom", color="#332F28")
 
     # ---- legend -------------------------------------------------------
-    lax = fig.add_axes([RX, 0.360, RW, 0.420], facecolor="#FFFFFF")
+    lax = fig.add_axes([RX, 0.400, RW, 0.380], facecolor="#FFFFFF")
     lax.set_xticks([])
     lax.set_yticks([])
     for sp in lax.spines.values():
@@ -510,11 +520,11 @@ def render(page="A1", dpi=200, preview=False):
             lax.plot([0.035, 0.175], [y, y], **kw)
         else:
             lax.add_patch(Rectangle((0.035, y - 0.022), 0.140, 0.044, **kw))
-        lax.text(0.215, y, lab, fontproperties=FP_HI, fontsize=7.0 * sf,
+        lax.text(0.215, y, lab, fontproperties=FP_HI, fontsize=7.0 * sf_text,
                  va="center", linespacing=1.25, color="#332F28")
     y -= 0.062
     lax.text(0.035, y, "राजस्थान के 7 संभाग:", fontproperties=FP_HI_B,
-             fontsize=7.2 * sf, va="center", color="#332F28")
+             fontsize=7.2 * sf_text, va="center", color="#332F28")
     for div in DIVISION_ORDER:
         y -= 0.040
         lax.add_patch(Rectangle((0.035, y - 0.013), 0.062, 0.026,
@@ -522,18 +532,18 @@ def render(page="A1", dpi=200, preview=False):
                                 edgecolor=DIST_EDGE_STUDY, lw=0.3))
         n_divd = int((raj.district_en.map(RAJASTHAN_DIVISIONS) == div).sum())
         lax.text(0.115, y, f"{DIVISION_HI[div]} ({n_divd})",
-                 fontproperties=FP_HI, fontsize=6.6 * sf, va="center",
+                 fontproperties=FP_HI, fontsize=6.6 * sf_text, va="center",
                  color="#332F28")
 
     # ---- north arrow + scale bar --------------------------------------
-    nax = fig.add_axes([RX, 0.255, RW, 0.095], facecolor="none")
+    nax = fig.add_axes([RX, 0.300, RW, 0.095], facecolor="none")
     nax.set_xlim(0, 1)
     nax.set_ylim(0, 1)
     nax.axis("off")
     nax.annotate("", xy=(0.10, 0.86), xytext=(0.10, 0.16),
                  arrowprops=dict(arrowstyle="-|>", color="#332F28", lw=1.4))
     nax.text(0.10, 0.02, "N", ha="center", va="bottom",
-             fontproperties=FP_HI_B, fontsize=9 * sf, color="#332F28")
+             fontproperties=FP_HI_B, fontsize=9 * sf_text, color="#332F28")
     skm = min([50, 100, 150, 200, 250, 300, 400, 500],
               key=lambda v: abs(v - 0.18 * (pw / 1000.0)))
     nax.plot([0.30, 0.95], [0.30, 0.30], color="#332F28", lw=1.7 * sf,
@@ -541,20 +551,23 @@ def render(page="A1", dpi=200, preview=False):
     for t in (0, 0.5, 1.0):
         nax.plot([0.30 + t * 0.65] * 2, [0.30, 0.38], color="#332F28",
                  lw=1.1 * sf)
-    nax.text(0.30, 0.44, "0", ha="center", va="bottom", fontsize=6.4 * sf,
+    nax.text(0.30, 0.44, "0", ha="center", va="bottom", fontsize=6.4 * sf_text,
              color="#332F28")
     nax.text(0.95, 0.44, f"{skm} कि.मी.", ha="center", va="bottom",
-             fontproperties=FP_HI, fontsize=7.2 * sf, color="#332F28")
+             fontproperties=FP_HI, fontsize=7.2 * sf_text, color="#332F28")
 
     # ---- accuracy note -------------------------------------------------
-    fig.text(RX, 0.228,
-             f"प्रक्षेप: लांबर्ट कन्फॉर्मल कोनिक, मानक समांतर "
-             f"24°26′N व 29°46′N\n"
-             f"शीट पर अधिकतम स्केल त्रुटि {MAX_SCALE_ERROR_PCT:.3f} % "
-             f"= 1 इंच पर {25.4*MAX_SCALE_ERROR_PCT/100:.3f} mm\n"
-             f"लंबाई/क्षेत्रफल: WGS 84 दीर्घवृत्त पर जियोडेसिक (बिना प्रक्षेप त्रुटि)",
+    note = (f"प्रक्षेप: लांबर्ट कन्फॉर्मल कोनिक, मानक समांतर "
+            f"24°26′N व 29°46′N\n"
+            f"शीट पर अधिकतम स्केल त्रुटि {MAX_SCALE_ERROR_PCT:.3f} % "
+            f"= 1 इंच पर {25.4*MAX_SCALE_ERROR_PCT/100:.3f} mm\n"
+            f"लंबाई/क्षेत्रफल: WGS 84 दीर्घवृत्त पर जियोडेसिक (बिना प्रक्षेप त्रुटि)")
+    if not name_all:
+        note += ("\nA3 संस्करण: केवल राजस्थान के 41 व सीमा-साझा 36 ज़िलों के "
+                 "नाम — पूरी 237 नाम A1/A2 पर")
+    fig.text(RX, 0.292, note,
              ha="left", va="top", fontproperties=FP_HI,
-             fontsize=6.6 * sf, color="#5A5348", linespacing=1.5)
+             fontsize=6.6 * sf_text, color="#5A5348", linespacing=1.5)
 
     # ==================================================================
     # BOTTOM STUDY STRIP — three panels
@@ -579,9 +592,9 @@ def render(page="A1", dpi=200, preview=False):
     axA.set_xlim(0, 1)
     axA.set_ylim(0, 1)
     axA.text(0.03, 0.955, "राजस्थान की सीमा से लगे ज़िले — पड़ोसी राज्य/देश",
-             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf_text, va="top",
              color="#1F1B16")
-    yy = 1.0 - step(9.0 * sf) * 1.25
+    yy = 1.0 - step(9.0 * sf_text) * 1.25
     for st in ["Pakistan", "Punjab", "Haryana", "Uttar Pradesh",
                "Madhya Pradesh", "Gujarat"]:
         sub = rel[rel.neighbour_state_province == st] \
@@ -599,17 +612,17 @@ def render(page="A1", dpi=200, preview=False):
         label = (NEIGHBOUR_STYLE[st]["label"] if st != "Pakistan"
                  else "पाकिस्तान")
         head = f"● {label} — {len(grp)} ज़िले, {grp.sum():.0f} कि.मी."
-        axA.text(0.03, yy, head, fontproperties=FP_HI_B, fontsize=7.6 * sf,
+        axA.text(0.03, yy, head, fontproperties=FP_HI_B, fontsize=7.6 * sf_text,
                  va="top", color="#3A352E")
-        yy -= step(7.6 * sf)
+        yy -= step(7.6 * sf_text)
         for ln in wrap_hi("    " + ", ".join(his), 58):
             if yy < 0.01:
                 OVERFLOW.append(("A", st, ln))
                 break
-            axA.text(0.03, yy, ln, fontproperties=FP_HI, fontsize=6.8 * sf,
+            axA.text(0.03, yy, ln, fontproperties=FP_HI, fontsize=6.8 * sf_text,
                      va="top", color="#4A443B")
-            yy -= step(6.8 * sf)
-        yy -= step(6.8 * sf) * 0.35
+            yy -= step(6.8 * sf_text)
+        yy -= step(6.8 * sf_text) * 0.35
 
     # ---- panel B: the international border + length comparison --------
     axB = fig.add_axes([PANEL_COLS[1][0], PY0,
@@ -623,10 +636,10 @@ def render(page="A1", dpi=200, preview=False):
     axB.set_xlim(0, 1)
     axB.set_ylim(0, 1)
     axB.text(0.03, 0.975, "अंतरराष्ट्रीय सीमा (पाकिस्तान) — राजस्थान के ज़िले",
-             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf_text, va="top",
              color="#1F1B16")
     pkrel = rel[rel.neighbour_country == "Pakistan"]
-    yy = 1.0 - step(9.0 * sf) * 1.25
+    yy = 1.0 - step(9.0 * sf_text) * 1.25
     for nm, v in (pkrel.groupby("rajasthan_district_en")["shared_border_km"]
                   .sum().sort_values(ascending=False).items()):
         m = names[(names.state_province == "Rajasthan")
@@ -634,11 +647,11 @@ def render(page="A1", dpi=200, preview=False):
         hn = m.district_hi.iloc[0] if len(m) else nm
         if yy > 0.01:
             axB.text(0.03, yy, f"● {hn}", fontproperties=FP_HI,
-                     fontsize=7.4 * sf, va="top", color="#3A352E")
+                     fontsize=7.4 * sf_text, va="top", color="#3A352E")
             axB.text(0.97, yy, f"{v:.0f} कि.मी.", fontproperties=FP_HI,
-                     fontsize=7.4 * sf, va="top", ha="right", color="#3A352E")
-        yy -= step(7.4 * sf)
-    yy -= step(7.4 * sf) * 0.8
+                     fontsize=7.4 * sf_text, va="top", ha="right", color="#3A352E")
+        yy -= step(7.4 * sf_text)
+    yy -= step(7.4 * sf_text) * 0.8
     for txt, fsz, col in [
             ("सीमा लंबाई — GIS बनाम प्रकाशित", 7.6, "#8C2F1E"),
             ("GIS    1,036 / 90 / 1,039 / 462 / 2,110 / 723 कि.मी.", 6.6, "#4A443B"),
@@ -651,7 +664,7 @@ def render(page="A1", dpi=200, preview=False):
             break
         axB.text(0.03, yy, txt, fontproperties=FP_HI, fontsize=fsz * sf,
                  va="top", color=col)
-        yy -= step(fsz * sf)
+        yy -= step(fsz * sf_text)
 
     # ---- panel C: 7 divisions and their districts ---------------------
     axC = fig.add_axes([PANEL_COLS[2][0], PY0,
@@ -665,9 +678,9 @@ def render(page="A1", dpi=200, preview=False):
     axC.set_xlim(0, 1)
     axC.set_ylim(0, 1)
     axC.text(0.03, 0.975, "राजस्थान के 7 संभाग और उनके ज़िले (कुल 41)",
-             fontproperties=FP_HI_B, fontsize=9.0 * sf, va="top",
+             fontproperties=FP_HI_B, fontsize=9.0 * sf_text, va="top",
              color="#1F1B16")
-    yy = 1.0 - step(9.0 * sf) * 1.25
+    yy = 1.0 - step(9.0 * sf_text) * 1.25
     for div in DIVISION_ORDER:
         ds = raj[raj.district_en.map(RAJASTHAN_DIVISIONS) == div]
         his = []
@@ -681,17 +694,17 @@ def render(page="A1", dpi=200, preview=False):
                                 edgecolor=DIST_EDGE_STUDY, lw=0.3,
                                 transform=axC.transAxes))
         axC.text(0.075, yy, f"{DIVISION_HI[div]} ({len(ds)})",
-                 fontproperties=FP_HI_B, fontsize=7.2 * sf, va="top",
+                 fontproperties=FP_HI_B, fontsize=7.2 * sf_text, va="top",
                  color="#3A352E")
-        yy -= step(7.2 * sf)
+        yy -= step(7.2 * sf_text)
         for ln in wrap_hi("    " + ", ".join(his), 56):
             if yy < 0.01:
                 OVERFLOW.append(("C", div, ln))
                 break
-            axC.text(0.075, yy, ln, fontproperties=FP_HI, fontsize=6.4 * sf,
+            axC.text(0.075, yy, ln, fontproperties=FP_HI, fontsize=6.4 * sf_text,
                      va="top", color="#4A443B")
-            yy -= step(6.4 * sf)
-        yy -= step(6.4 * sf) * 0.30
+            yy -= step(6.4 * sf_text)
+        yy -= step(6.4 * sf_text) * 0.30
 
     # ---- footnote on the hatch ----------------------------------------
     fig.text(0.008, 0.006,
@@ -701,7 +714,7 @@ def render(page="A1", dpi=200, preview=False):
              "ज्यामिति: Survey of India–व्युत्पन्न ज़िला सीमाएँ (भारत) · "
              "WFP / OCHA COD-AB v01 (पाकिस्तान) · निर्माण " + BUILD_DATE,
              ha="left", va="bottom", fontproperties=FP_HI,
-             fontsize=6.6 * sf, color="#7A3020")
+             fontsize=6.6 * sf_text, color="#7A3020")
 
     # ---------------------------------------------------------------- save
     EXPORTS.mkdir(parents=True, exist_ok=True)

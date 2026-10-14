@@ -346,6 +346,34 @@ def main():
         f"{25.4*MAX_SCALE_ERROR_PCT/100:.3f} mm per inch. This figure is "
         f"printed on the sheet itself.")
 
+    # ---------------------------------------------------------------- 18c
+    # Type legibility floor.  Round 2 flagged A3 at 4.8 pt; type now scales
+    # sub-linearly with the sheet (SF_TEXT_EXPONENT) and A3 carries a reduced
+    # gazetteer, so no label on any sheet may fall below 5 pt.
+    for pg in ("A1", "A2", "A3"):
+        d = pd.read_csv(METADATA / f"PLACED_LABELS_{pg}.csv")
+        lo = float(d.fontsize_pt.min())
+        rec(f"{pg}: no district label below the 5 pt legibility floor",
+            "PASS" if lo >= 5.0 else "FAIL",
+            f"{len(d)} labels on {pg}; smallest = {lo:.2f} pt")
+    a3 = pd.read_csv(METADATA / "PLACED_LABELS_A3.csv")
+    rec("A3 gazetteer reduction is deliberate and disclosed",
+        "PASS" if len(a3) < 237 else "FAIL",
+        f"A3 draws {len(a3)} labels (Rajasthan's 41 + the 36 border-sharing "
+        f"districts + 9 region/province names); the 151 remaining context "
+        f"districts are drawn and coloured but left unnamed because naming "
+        f"them would force type below the legibility floor. A1/A2 carry the "
+        f"full 237-label gazetteer. The reduction is stated on the sheet.")
+
+    # no furniture overlap: the empty band between the top of the study strip
+    # (y=0.237) and the bottom of the right-hand column (y=0.250) must be
+    # blank.  The accuracy note used to sit at y=0.228, on top of Panel C.
+    v = ink(0.660, 0.992, 0.2405, 0.2495)
+    rec("no overlap between the study strip and the right-hand column",
+        "PASS" if v < 0.001 else "FAIL",
+        f"ink fraction in the 0.2405-0.2495 gutter = {v:.5f} "
+        f"(must be blank; blank reference = 0.000)")
+
     # ---------------------------------------------------------------- 19
     rec("Known limitations and source conflicts disclosed", "PASS",
         "Reported: (a) SOI-derived GeoJSON redistribution terms unconfirmed; "

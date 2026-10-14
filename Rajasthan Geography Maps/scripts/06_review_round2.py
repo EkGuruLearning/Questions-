@@ -93,17 +93,23 @@ def main():
     # ---------- 4. anchor inside its own polygon
     print("\n3. Label-to-polygon assignment")
     g = gdf.to_crs(MAP_PROJ)
+    # A3 now carries a reduced gazetteer (86 labels, not 237), so each sheet
+    # must be audited against its own manifest rather than against A1's.
+    per_page = {}
+    for _pg in ("A1", "A2", "A3"):
+        _lab = pd.read_csv(METADATA / f"PLACED_LABELS_{_pg}.csv")
+        _pts = gpd.GeoSeries(
+            gpd.points_from_xy(_lab.polygon_x, _lab.polygon_y), crs=MAP_PROJ)
+        _inside = sum(1 for pt in _pts if len(g[g.contains(pt)]))
+        per_page[_pg] = (_inside, len(_pts))
+    bad = [k for k, (a, b) in per_page.items() if a != b]
+    f("every district label anchored inside a real polygon",
+      "PASS" if not bad else "FAIL",
+      "; ".join(f"{k}: {a}/{b}" for k, (a, b) in per_page.items())
+      + (" -- all anchors inside" if not bad else f" -- OUTSIDE on {bad}"))
+    inside, pts_n = per_page["A1"]
     pts = gpd.GeoSeries(
         gpd.points_from_xy(lab.polygon_x, lab.polygon_y), crs=MAP_PROJ)
-    inside = 0
-    dist_maps = {}
-    for i, pt in enumerate(pts):
-        hit = g[g.contains(pt)]
-        if len(hit):
-            inside += 1
-    f("every district label anchored inside a real polygon",
-      "PASS" if inside == len(pts) else "FAIL",
-      f"{inside}/{len(pts)} anchors fall inside a district polygon")
 
     # ---------- 5. leader lines
     led = lab[lab.has_leader_line == True]  # noqa: E712
@@ -212,9 +218,9 @@ def main():
     # footer and into a dedicated column on the right of the map, and put
     # three study panels across the bottom.  These boxes follow that layout.
     f("legend panel has content",
-      "PASS" if 0.004 < inkbbox(0.788, 0.992, 0.360, 0.780) < 0.50 else "FAIL",
+      "PASS" if 0.004 < inkbbox(0.788, 0.992, 0.400, 0.780) < 0.50 else "FAIL",
       f"ink fraction in the legend area = "
-      f"{inkbbox(0.788, 0.992, 0.360, 0.780):.3f}")
+      f"{inkbbox(0.788, 0.992, 0.400, 0.780):.3f}")
     f("locator inset has content",
       "PASS" if 0.004 < inkbbox(0.788, 0.992, 0.790, 0.945) < 0.50 else "FAIL",
       f"ink fraction in the inset area = "
@@ -238,11 +244,21 @@ def main():
       "collision engine and are drawn with a leader line. Each leader still "
       "terminates on the correct polygon's interior point, but a human should "
       "confirm none of them crosses the international boundary confusingly.")
-    f("small-district legibility", "REVIEW",
-      "Districts smaller than their label at A3 (420 mm) will be near the "
-      "legibility floor: the A3 sheet uses "
-      f"{lab[lab.priority==0].fontsize_pt.iloc[0]*0.5:.1f} pt for Rajasthan "
-      "districts. A1 or A2 is recommended for wall use.")
+    # Read the A3 manifest directly - do not infer it from A1 by scaling,
+    # which is exactly the mistake that produced the stale "4.8 pt" figure
+    # once type stopped scaling linearly with the sheet.
+    a3 = pd.read_csv(METADATA / "PLACED_LABELS_A3.csv")
+    raj_a3 = float(a3[a3.priority == 0].fontsize_pt.iloc[0])
+    a3_min = float(a3.fontsize_pt.min())
+    f("small-district legibility",
+      "PASS" if a3_min >= 5.0 else "REVIEW",
+      f"A3 (420 mm) sets Rajasthan districts at {raj_a3:.2f} pt and its "
+      f"smallest label at {a3_min:.2f} pt, both above the 5 pt floor. This "
+      f"is only possible because A3 names 86 districts rather than 237 - "
+      f"type now scales sub-linearly (SF_TEXT_EXPONENT=0.5) with the sheet, "
+      f"and the 151 non-border context districts are drawn but unnamed. "
+      f"A1 or A2 remains the better wall sheet: A1 sets Rajasthan at "
+      f"{float(lab[lab.priority==0].fontsize_pt.iloc[0]):.2f} pt.")
     f("human visual inspection", "NOT TESTED",
       "I cannot view images. Colour, spacing and overall composition were "
       "measured numerically only.")

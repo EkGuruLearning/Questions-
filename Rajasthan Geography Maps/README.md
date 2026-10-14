@@ -266,9 +266,32 @@ labels were raised to 9.5 pt (Rajasthan), 7.6 pt (neighbours) and
 6.0 pt (the rest), with the collision engine moving any label that would
 overlap another and drawing a leader line back to its district.
 
-**Recommended sheet for study:** A1 (or A2 at a push). A3 is supplied for
-handout use but its Rajasthan labels fall to ~4.8 pt, which is at the
-legibility floor.
+### 9.1 Type does not scale with the sheet
+
+A map scales with the paper, but type does not: a label is read at roughly the
+same eye distance whether the sheet is A1 or A3. Scaling point sizes by the
+linear sheet factor (1.0 / 0.707 / 0.50) drove the A3 labels down to 4.8 pt —
+below the legibility floor — which Round 2 flagged.
+
+Type now shrinks **sub-linearly**, as the square root of the sheet factor
+(`SF_TEXT_EXPONENT = 0.5`):
+
+| Sheet | Sheet factor | Type factor | Rajasthan labels | Smallest label |
+|---|---|---|---|---|
+| A1 | 1.000 | 1.000 | 9.50 pt | 6.00 pt |
+| A2 | 0.707 | 0.841 | 7.99 pt | 5.05 pt |
+| A3 | 0.500 | 0.707 | 6.72 pt | 5.37 pt |
+
+Even so, 237 labels cannot be set legibly in an A3 map area of about
+324 × 206 mm. **A3 therefore carries a reduced gazetteer:** it names
+Rajasthan's 41 districts plus the 36 border-sharing neighbour districts
+(86 labels in total); the remaining 151 context districts are still drawn,
+coloured and hatched but left unnamed. A1 and A2 carry the full 237-label
+gazetteer, and the reduction is stated on the A3 sheet itself.
+
+**Recommended sheet for study:** A1 for a wall map, A2 for a desk. A3 is a
+compact handout focused on Rajasthan and its border districts — every label
+on it is now above the 5 pt legibility floor, which was not true before.
 
 **Reproducing it.** Nothing above is hand-drawn into the PNG. Every element
 is generated from the master GeoPackage by `scripts/03_render.py`; editing

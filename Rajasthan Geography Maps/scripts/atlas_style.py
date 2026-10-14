@@ -114,3 +114,22 @@ DIST_EDGE_LW = 0.45
 
 # panel column boundaries (figure fractions) for the bottom study strip
 PANEL_COLS = ((0.010, 0.335), (0.350, 0.645), (0.660, 0.990))
+
+
+# ---------------------------------------------------------------------------
+# Sheet-to-sheet type scaling
+# ---------------------------------------------------------------------------
+# A map scales with the sheet, but TYPE DOES NOT: a label is read at roughly
+# the same eye distance whether the sheet is A1 or A3.  Scaling point sizes by
+# the linear sheet factor (1.0 / 0.707 / 0.50) therefore drove the A3 labels
+# down to 4.8 pt - below the legibility floor - which Round 2 flagged as a
+# REVIEW.  Type now shrinks sub-linearly, as the square root of the sheet
+# factor:   A1 -> 1.000   A2 -> 0.841   A3 -> 0.707
+SF_TEXT_EXPONENT = 0.5
+
+# Even with that, 237 labels cannot fit legibly in an A3 map area of about
+# 324 x 206 mm.  On A3 only, the gazetteer is therefore reduced: Rajasthan's
+# 41 districts and the 36 border-sharing districts are named (77 labels); the
+# remaining 151 context districts are still drawn, coloured and hatched but
+# not named.  A1 and A2 carry the full 237-label gazetteer.
+A3_NAMES_ONLY = "rajasthan_and_border"

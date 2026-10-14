@@ -27,10 +27,15 @@ cp "$TMP/soi/geojson/districts/_disputed.geojson" "$RAW/india_soi/"
 echo "== Pakistani districts (WFP/OCHA COD-AB v01 via OpenCarto) =="
 git clone --filter=blob:none --sparse \
   https://github.com/PRABHMANNAT/OpenCarto.git "$TMP/opencarto"
-( cd "$TMP/opencarto" && git sparse-checkout set --skip-checks public/data )
+( cd "$TMP/opencarto" && \
+  git sparse-checkout set --skip-checks public/data COUNTRY-DATA-LICENSES.txt )
 for f in pk-country-district pk-country-province pk-country-region; do
   cp "$TMP/opencarto/public/data/$f.geojson" "$RAW/pakistan_opencarto/"
 done
+# The licence lives at the repository root, not under public/data.  It is
+# part of the audited raw inventory (RAW_FILE_INVENTORY.csv), so the fetch
+# must reproduce it or the audit trail loses its CC BY-IGO provenance.
+cp "$TMP/opencarto/COUNTRY-DATA-LICENSES.txt" "$RAW/pakistan_opencarto/"
 
 echo "== Noto Sans Devanagari (SIL OFL 1.1) =="
 FONT="$HERE/../fonts"; mkdir -p "$FONT"
