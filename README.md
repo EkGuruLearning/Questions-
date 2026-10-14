@@ -110,10 +110,26 @@ content/reasoning/answers/     ✅ Reasoning-Series-Sample-Answer-Key.pdf   (key
 content/reasoning/tests/       🧾 Reasoning-Sample-Test-Paper.pdf         (10 sawal ka test)
 ```
 
-Apne asli chapter ki file usi folder me rakh dijiye — naam se hi title ban jayega, aur website par
-apne aap dikh jayega (`build_catalog.py` → `build_pages.py`). Chapter ke andar subfolder bhi ban
-sakta hai, jaise `content/reasoning/theory/Series/Series-Notes.pdf` → website par `Series` folder.
-Naye sample banane ke liye: `python3 tools/reasoning_samples.py [doc-id]`.
+### Apne chapters upload karne ka tarika (do step)
+
+```bash
+# 1. chapter ke chaaron folder ek command me banao (Calendar, Clock, Blood Relations …)
+python3 tools/new_reasoning_chapter.py "Calendar" "Clock" "Blood Relations"
+
+# 2. PDFs in folders me daaliye (GitHub par bhi drag-drop kar sakte hain) —
+#    content/reasoning/theory/Calendar/Calendar-Short-Notes.pdf
+#    content/reasoning/practice/Calendar/Calendar-Practice-Questions.pdf
+#    content/reasoning/answers/Calendar/Calendar-Answer-Key.pdf
+#    content/reasoning/tests/Calendar/Calendar-Test-Paper.pdf
+
+# 3. site bana dijiye
+python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py
+```
+
+Chapter ka folder khali ho to site par nahi dikhta — PDF daalte hi us chapter ka page apne aap
+ban jata hai (naam se hi title, PDF ke andar ka content waisa hi rehta hai). Chapter ke andar ka
+folder bhi dikhta hai: `content/reasoning/practice/Calendar/…` → website par `Practice questions ›
+Calendar`. Naye sample PDF banane ke liye: `python3 tools/reasoning_samples.py [doc-id]`.
 
 ## Previous Year Papers — exam-wise aur saal-wise
 

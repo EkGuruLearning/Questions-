@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T18:58:01+00:00",
+  "generated_at": "2026-10-14T19:00:22+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 18,
@@ -95,7 +95,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 15 tests in 0.791s",
+        "Ran 15 tests in 0.799s",
         "",
         "OK"
       ]
@@ -109,7 +109,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 21 tests in 0.121s",
+        "Ran 21 tests in 0.135s",
         "",
         "OK"
       ]
@@ -123,7 +123,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 19 tests in 0.029s",
+        "Ran 19 tests in 0.035s",
         "",
         "OK"
       ]
@@ -137,7 +137,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.049s",
+        "Ran 8 tests in 0.061s",
         "",
         "OK"
       ]
@@ -160,7 +160,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 55.229663"
+        "# duration_ms 56.158225"
       ]
     },
     {
@@ -207,7 +207,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (13 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (3 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],
