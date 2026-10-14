@@ -75,3 +75,11 @@ RPSC Programmer/ACP-DD • SSC MTS/CHSL/CGL/GD/Selection Post • RSMSSB IA/LDC/
 - Copyright rule (spec §7): compiled-bank stems **not copied verbatim**; 26 new gap-concept questions re-authored as originals (`Practice — original (textbook-based)`), incl. hop limit, dual-stack, Teredo, coax conductors, 10Base5/2/T, DSLAM, HFC, SONET STS-1, terrestrial radio, congestion collapse, protocol field 17/1, MF flag, fragment offset, RSVP, HTTP request-line/persistent/conditional-GET/250, honeypot/shadow honeypot.
 
 **Grand total = 817 questions across 7 topics, 82 practice pages, 7 CBT apps, 8 audit reports.**
+
+## 9. Verification Answer Key (user QA pass)
+
+`Practice/ANSWER KEY - Added Questions (197) (Verification).pdf` — 60pp.
+Sab self-authored questions (waves 1–5 = 197) jo quiz/practice me add hue: har question ka
+Q + 4 options + ✓ correct answer + why (EN/HI) + nukte + source. Part A = wave-5 NEW (26),
+Part B = waves 1–4 (171). User inka answer verify karenge.
+Wave-5 stems practice booklets me confirmed (26/26, PDF text extract proof).

@@ -138,3 +138,5 @@ marking presets are mock rules; near-duplicate review is partial. Never claim 10
 - Near-dup merge review: 15 same-answer candidates → 9 merged, 6 kept (see `Reports/DUPLICATE_AUDIT.md` §3). Exact dups = 0.
 - All 7 practice booklets rebuilt (817Q/82pp), all 7 quiz HTMLs rebuilt (JS check 7/7).
 - Grand totals: `Reports/TOTALS.md`.
+- **Verification Answer Key** — `Practice/ANSWER KEY - Added Questions (197) (Verification).pdf` (60pp): har added
+  question ka answer + explanation, taaki aap khud answers verify kar sako (Part A = wave-5 new 26).
