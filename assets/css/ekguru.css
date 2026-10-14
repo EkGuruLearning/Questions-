@@ -545,7 +545,7 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 
 /* 13. responsive ----------------------------------------------------------- */
 @media (min-width: 720px) {
-  .hero-inner { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); align-items: center; }
+  .hero-inner.has-media { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); align-items: center; }
   .folder-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

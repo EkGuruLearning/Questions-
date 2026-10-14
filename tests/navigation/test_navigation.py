@@ -175,10 +175,20 @@ class NavigationTests(unittest.TestCase):
         ):
             self.assertIn(expected, hrefs)
 
-    def test_map_page_shows_the_real_atlas_image(self):
+    def test_map_pages_show_the_real_maps_without_a_hero_banner(self):
+        # The home page aur map page dono par bada banner image nahi — maps folder ke andar dikhte hain.
+        for rel in ("index.html", "subjects/rajasthan-geography/index.html"):
+            source, parser = self.pages[rel]
+            with self.subTest(page=rel):
+                self.assertNotIn("rajasthan-border-atlas-preview", source)
+                self.assertNotIn("map-frame", source)
+                self.assertTrue(all((image.get("alt") or "").strip() for image in parser.images))
+
+    def test_geography_page_still_links_to_the_map_folder(self):
         source, parser = self.pages["subjects/rajasthan-geography/index.html"]
-        self.assertIn("assets/img/rajasthan-border-atlas-preview.webp", source)
-        self.assertTrue(all((image.get("alt") or "").strip() for image in parser.images))
+        self.assertIn("folder=map%2Frajasthan", source)
+        hrefs = {link.get("href") for link in parser.links}
+        self.assertTrue(any(href and "content/rajasthan-geography/map/rajasthan/" in href for href in hrefs))
 
     def test_not_found_page_offers_the_real_routes(self):
         source, parser = self.pages["404.html"]
