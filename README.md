@@ -25,6 +25,10 @@ subjects/                                   subject pages
 404.html                                     purane link ke liye friendly page
 
 content/                                    STUDENT CONTENT (yahi publish hota hai)
+  reasoning/                                  Reasoning material (theory/practice/answers/tests)
+  previous-year-papers/                       Old papers, exam-wise: ia/ sci/ computer-operator/
+                                              system-assistant/ dsssb/ ssc/ net/ rpsc/
+                                              (har exam ke andar saal ka folder: 2019/, 2020/ …)
   computer-network/
     theory/        📘 Theory — T01..T07 + complete book (8 PDF)
     practice/      ✍️ Practice questions — T01..T07 booklets (7 PDF)
@@ -54,20 +58,24 @@ maintainer/                                 NOT published — audits, reports, G
 tools/ tests/                               builders, validators, tests
 ```
 
-## Naya material add karna
+## Naya material add karna — koi code change nahi
 
 ```bash
 # 1. file rakho — jis folder me rakhoge, wahi folder website par banega
-content/computer-network/theory/T08-...-Theory-MCQ.pdf
+content/previous-year-papers/dsssb/2019/DSSSB-Computer-Operator-2019-Paper-1.pdf
+content/reasoning/practice/series/Sitting-Arrangement-Set-1.pdf
 
-# 2. data/catalog/materials.json me entry likho (subject, topic, title_en, title_hi, note)
-#    naya folder ho to data/catalog/subjects.json ke `folders` me uska label (icon + EN/HI naam) likho
-
-# 3. rebuild + validate
-python3 tools/build_thumbs.py      # nayi image ho to preview banao
+# 2. rebuild (+ image ho to pehle preview)
+python3 tools/build_thumbs.py      # sirf nayi picture ke liye (PNG/JPG)
 python3 tools/build_catalog.py
+
+# 3. verify
 python3 tools/validate_site.py
 ```
+
+Folder aur file ke naam se hi title ban jata hai (`dsssb` → DSSSB, `2019` → 2019,
+`DSSSB-...-Paper-1.pdf` → DSSSB Computer Operator 2019 Paper 1). Hindi title, note ya SEO
+alt/description chahiye to `data/catalog/materials.json` me us file ka record likh do — optional hai.
 
 Builder khud check karta hai: jo file register nahi hui, ya jo registered path gayab hai — dono par
 build fail ho jata hai. Isliye website par kabhi adhura/tuta hua record nahi jayega.

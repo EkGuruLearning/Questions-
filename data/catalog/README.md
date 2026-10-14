@@ -14,10 +14,11 @@ hona chahiye.
 
 Builder ke rules (fail-fast):
 
-1. `content/` ke andar ki **har** file register honi chahiye.
+1. `materials.json` me likhi **har** file disk par honi chahiye (typo protection). Iske ilawa
+   `content/` me jo bhi file hai wo bina registration ke bhi publish hoti hai — naam se title ban jata hai.
 2. Registered **har** path exist karna chahiye, `content/<subject>/<folder>/` ke andar hona chahiye.
-3. Jis folder me file hai, uska label `subjects.json` me hona chahiye — aur config me likha har
-   label asli folder se match karna chahiye.
+3. `subjects.json` me likha har folder disk par hona chahiye; baaki folders apne naam se label le lete hain
+   (aur khali folder bhi site par dikhta hai — file daalte hi bhar jata hai).
 4. `topic` sirf `T01`–`T07` ya `null`.
 5. Har topic ka naam question-bank manifest se match karna chahiye.
 6. Har picture ka `alt_en`/`alt_hi` (200 akshar tak) aur `description_en`/`description_hi` (120+ akshar)

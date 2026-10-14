@@ -104,6 +104,8 @@ class GeneratedDataTests(unittest.TestCase):
         for path in (ROOT / "content").rglob("*"):
             if path.is_file():
                 with self.subTest(path=path.as_posix()):
+                    if path.name.startswith("."):  # .gitkeep rakhta hai khali folder ko git me
+                        continue
                     self.assertIn(path.suffix.lower(), suffixes)
 
 

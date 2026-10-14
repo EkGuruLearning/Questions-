@@ -61,19 +61,26 @@ EkGuru Learning — repository structure / वेबसाइट की फा�
 
 STUDENTS JO DEKHTE HAIN (website routes):
   index.html                                       home
-  subjects/index.html                              saare subjects
+  subjects/index.html                              saare subjects (naya subject apne aap yahan
+                                                   dikhta hai: subjects/index.html?subject=<slug>)
   subjects/computer-network/index.html             CN home (Material / Test)
   subjects/computer-network/material/index.html     study material (PDF downloads)
   subjects/computer-network/test/index.html         online test (topic-wise + full mix)
   subjects/rajasthan-geography/index.html           Rajasthan map atlas
   404.html                                          purane link ke liye friendly page
 
-STUDENT FILES (only these get published) — folder structure = website structure:
+STUDENT FILES (only these get published) — folder structure = website structure.
+Koi bhi folder ya file daalo, `python3 tools/build_catalog.py` chalao, site par apne aap aa jata hai:
+
   content/computer-network/theory/     📘 Theory: T01..T07 + complete book (PDF)
   content/computer-network/practice/   ✍️ Practice questions: T01..T07 booklets (PDF)
   content/computer-network/answers/    ✅ Answers & explanations: answer key + solutions (PDF)
   content/computer-network/tests/      🧾 Tests: topic/unit/subject test papers (PDF)
   content/computer-network/reference/  📚 Reference book (PDF)
+  content/reasoning/{theory,practice,answers,tests}/   🧠 Reasoning material (file daalte hi bharta hai)
+  content/previous-year-papers/<exam>/<saal>/          🧾 Old papers:
+      ia/ sci/ computer-operator/ system-assistant/ dsssb/ ssc/ net/ rpsc/
+      (jaise content/previous-year-papers/dsssb/2019/paper.pdf -> DSSSB > 2019 tile)
   content/rajasthan-geography/map/     🗂️ Map folder
     rajasthan/                           🗺️ Rajasthan ke maps (PNG: A1..A4 + preview)
 
@@ -99,13 +106,14 @@ SAFELY HIDDEN (never linked from the website):
   maintainer/archive/                  preserved older snapshots
   tools/  tests/                       builders, validators and tests
 
-HOW TO ADD A FILE (e.g. a new topic PDF):
-  1. File rakho:          content/computer-network/theory/T08-...-Theory-MCQ.pdf
-  2. Entry add karo:      data/catalog/materials.json (subject, topic, title_en, title_hi)
-  3. Rebuild + validate:  python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/validate_site.py
-                          (image add ki ho to build_thumbs pehle — preview banata hai)
-  (Naya folder banao to uska label data/catalog/subjects.json ke `folders` me likhna zaroori hai,
-   warna website par wahi folder card apne aap ban jayega — bina page code chhue.)
+HOW TO ADD A FILE (koi code change nahi):
+  1. File rakho:          content/<subject>/<folder>/<naam>.pdf
+                          (jaise content/previous-year-papers/dsssb/2019/DSSSB-2019-Paper-1.pdf)
+  2. Rebuild:             python3 tools/build_catalog.py
+                          (image ho to pehle: python3 tools/build_thumbs.py)
+  3. Optional:            data/catalog/materials.json me entry likho to Hindi title, note aur
+                          SEO alt/description mil jate hain — warna naam filename se ban jata hai.
+  4. Verify:              python3 tools/validate_site.py
   (Registry check: agar file register nahi hui ya registered file gayab hai, build fail ho jayega.)
 
 HOW TO REBUILD THE QUESTION BANK:

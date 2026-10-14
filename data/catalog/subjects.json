@@ -132,6 +132,134 @@
         }
       },
       "topics": []
+    },
+    {
+      "id": "reasoning",
+      "slug": "reasoning",
+      "title_en": "Reasoning",
+      "title_hi": "तर्कशक्ति (रीज़निंग)",
+      "tagline_en": "Section-wise reasoning material aur practice",
+      "tagline_hi": "सेक्शन-वाइज़ रीज़निंग मटेरियल और प्रैक्टिस",
+      "intro_en": "Folder kholo — theory, practice, answers aur tests yahan aate rahenge.",
+      "intro_hi": "फोल्डर खोलें — थ्योरी, प्रैक्टिस, उत्तर और टेस्ट यहाँ जुड़ते रहेंगे।",
+      "has_material": true,
+      "has_test": false,
+      "has_maps": false,
+      "folders": {
+        "theory": {
+          "title_en": "Theory",
+          "title_hi": "थ्योरी",
+          "icon": "📘",
+          "order": 1,
+          "note_en": "Concept aur shortcut notes.",
+          "note_hi": "कॉन्सेप्ट और शॉर्टकट नोट्स।"
+        },
+        "practice": {
+          "title_en": "Practice questions",
+          "title_hi": "प्रैक्टिस प्रश्न",
+          "icon": "✍️",
+          "order": 2,
+          "note_en": "Section-wise practice sets.",
+          "note_hi": "सेक्शन-वाइज़ प्रैक्टिस सेट।"
+        },
+        "answers": {
+          "title_en": "Answers & explanations",
+          "title_hi": "उत्तर और व्याख्या",
+          "icon": "✅",
+          "order": 3,
+          "note_en": "Answer key aur full solutions.",
+          "note_hi": "उत्तर कुंजी और पूरे हल।"
+        },
+        "tests": {
+          "title_en": "Tests",
+          "title_hi": "टेस्ट",
+          "icon": "🧾",
+          "order": 4,
+          "note_en": "Section test aur full-length test.",
+          "note_hi": "सेक्शन टेस्ट और फुल-लेंथ टेस्ट।"
+        }
+      },
+      "topics": []
+    },
+    {
+      "id": "previous-year-papers",
+      "slug": "previous-year-papers",
+      "title_en": "Previous Year Papers",
+      "title_hi": "पिछले वर्षों के पेपर",
+      "tagline_en": "Exam-wise aur saal-wise old papers — 2000 se aage",
+      "tagline_hi": "परीक्षा-वार और साल-वार पुराने पेपर — 2000 से आगे",
+      "intro_en": "Pehle exam chuno (IA, SCI, Computer Operator, System Assistant, DSSSB, SSC, NET, RPSC), phir us saal ka folder kholo. Naya saal folder (jaise 2019) apne aap ban jata hai jab usme paper daala jata hai.",
+      "intro_hi": "पहले परीक्षा चुनें, फिर उस साल का फोल्डर खोलें। नया साल फोल्डर (जैसे 2019) अपने आप बन जाता है जब उसमें पेपर डाला जाता है।",
+      "has_material": true,
+      "has_test": false,
+      "has_maps": false,
+      "folders": {
+        "ia": {
+          "title_en": "IA",
+          "title_hi": "आई.ए.",
+          "icon": "🧾",
+          "order": 1,
+          "note_en": "Information Assistant ke old papers — saal ke folder ke andar.",
+          "note_hi": "सूचना सहायक के पुराने पेपर — साल के फोल्डर में।"
+        },
+        "sci": {
+          "title_en": "SCI",
+          "title_hi": "एस.सी.आई.",
+          "icon": "🧾",
+          "order": 2,
+          "note_en": "SCI (Senior Computer Instructor) ke papers, saal-wise.",
+          "note_hi": "एस.सी.आई. के पेपर, साल-वार।"
+        },
+        "computer-operator": {
+          "title_en": "Computer Operator",
+          "title_hi": "कंप्यूटर ऑपरेटर",
+          "icon": "💻",
+          "order": 3,
+          "note_en": "Computer Operator ke do-do paper, saal ke folder me.",
+          "note_hi": "कंप्यूटर ऑपरेटर के दोनों पेपर, साल-वार।"
+        },
+        "system-assistant": {
+          "title_en": "System Assistant",
+          "title_hi": "सिस्टम असिस्टेंट",
+          "icon": "🖥️",
+          "order": 4,
+          "note_en": "System Assistant ke saare papers, saal-wise.",
+          "note_hi": "सिस्टम असिस्टेंट के सारे पेपर, साल-वार।"
+        },
+        "dsssb": {
+          "title_en": "DSSSB",
+          "title_hi": "डी.एस.एस.एस.बी.",
+          "icon": "🏫",
+          "order": 5,
+          "note_en": "DSSSB ke saare papers 2000 se aage, saal ke folder me.",
+          "note_hi": "डी.एस.एस.एस.बी. के सारे पेपर, साल-वार।"
+        },
+        "ssc": {
+          "title_en": "SSC",
+          "title_hi": "एस.एस.सी.",
+          "icon": "📋",
+          "order": 6,
+          "note_en": "SSC (CGL, CHSL, MTS, CPO) ke technical papers.",
+          "note_hi": "एस.एस.सी. के टेक्निकल पेपर।"
+        },
+        "net": {
+          "title_en": "NET",
+          "title_hi": "यू.जी.सी. नेट",
+          "icon": "🎓",
+          "order": 7,
+          "note_en": "UGC NET / SET Computer Science papers.",
+          "note_hi": "यू.जी.सी. नेट कंप्यूटर साइंस पेपर।"
+        },
+        "rpsc": {
+          "title_en": "RPSC",
+          "title_hi": "आर.पी.एस.सी.",
+          "icon": "🏛️",
+          "order": 8,
+          "note_en": "RPSC Programmer, AEN aur Assistant Professor papers.",
+          "note_hi": "आर.पी.एस.सी. प्रोग्रामर, AEN और असिस्टेंट प्रोफेसर पेपर।"
+        }
+      },
+      "topics": []
     }
   ]
 }

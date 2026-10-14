@@ -7,6 +7,7 @@
 | `index.html` | Home — do subject cards + link counts + map preview |
 | `subjects/index.html` | Saare subjects ki list |
 | `subjects/computer-network/index.html` | CN home: **Material kholo** ya **Test shuru karo**, phir 7 topic cards |
+| `subjects/index.html` | Saare subjects; `?subject=<slug>` par us subject ke folders (`&folder=` se andar) |
 | `subjects/computer-network/material/index.html` | Folder browser: folder tile kholo → files dikhte hain (open/download) |
 | `subjects/computer-network/test/index.html` | Test setup + player + result + review |
 | `subjects/rajasthan-geography/index.html` | Map folder → Rajasthan folder → A1/A2/A3/A4 map files |
@@ -49,6 +50,8 @@ Website ka folder view `content/` ke asli folders se banta hai:
 | `computer-network/reference/` | 📚 Reference book |
 | `rajasthan-geography/map/` | 🗂️ Map |
 | `rajasthan-geography/map/rajasthan/` | 🗺️ Rajasthan (map files) |
+| `reasoning/{theory,practice,answers,tests}/` | 🧠 Reasoning (khali folder bhi dikhta hai) |
+| `previous-year-papers/<exam>/<saal>/` | 🧾 Exam folder → saal ka folder (apne aap) |
 
 | Folder | Kya rakhna hai | Website par? |
 |---|---|---|
@@ -98,6 +101,13 @@ chhota naam builder nikalta hai: "Section A - DC Components & Protocol Basics (�
 * **Language:** English + हिंदी (dono), English, ya हिंदी.
 * Result: score ring, correct/wrong/skipped, topic-wise bars, poora answer review, "galat questions dobara".
 * Saved questions (⭐) aur pichhle test results `localStorage` me rehte hain — server par kuch nahi jata.
+
+## 5b. Naya subject ya folder — bina code change
+
+1. `content/<subject>/<folder>/` banao aur file daalo (khali chhodna ho to `.gitkeep` rakho taaki git me rahe).
+2. `python3 tools/build_thumbs.py && python3 tools/build_catalog.py`.
+3. Subject/folder card apne aap ban jayega (naam se label). Hindi naam, icon, note, order ya
+   "subject ka online test bhi hai" chahiye to `data/catalog/subjects.json` me us entry ko likh do.
 
 ## 6. Local preview
 

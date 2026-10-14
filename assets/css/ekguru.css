@@ -140,6 +140,8 @@ code { background: var(--primary-soft); border-radius: 6px; padding: 0.1rem 0.35
 .brand-name { display: block; font-weight: 800; line-height: 1.1; }
 .brand-caption { display: block; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 
+/* Desktop nav row (small screens use the <details> menu instead). */
+.desktop-nav { display: none; }
 .site-menu { position: relative; }
 .site-menu-toggle {
   list-style: none;
@@ -557,6 +559,22 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .footer-grid p { margin: 0 0 0.35rem; font-size: 0.9rem; color: var(--muted); }
 .footer-grid a { text-decoration: none; }
 .footer-bottom { border-top: 1px solid var(--line); padding: 0.85rem 0 1.4rem; color: var(--muted); font-size: 0.84rem; }
+.footer-bottom { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; justify-content: space-between; }
+.footer-stats { margin: 0.5rem 0 0; color: var(--muted); font-size: 0.85rem; }
+.footer-note code, .how-list code {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.82em;
+}
+.how-card { border-style: dashed; }
+.how-list { margin: 0; padding-left: 1.2rem; color: var(--ink-soft); }
+.how-list li { margin: 0.25rem 0; }
+
+/* Folder that is declared but has no files yet: dashed, clearly "waiting". */
+.folder-card.is-empty { border-style: dashed; background: transparent; }
+.folder-card.is-empty .folder-meta { font-style: italic; }
 
 /* 13. responsive ----------------------------------------------------------- */
 @media (min-width: 720px) {
@@ -578,10 +596,9 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 }
 
 @media (min-width: 951px) {
-  /* Desktop: the menu is always visible, the "Menu" toggle disappears. */
-  .site-menu-toggle { display: none; }
-  .site-menu:not([open]) .site-nav { display: flex; }
-  .site-menu[open] .site-nav { position: static; flex-direction: row; padding: 0; border: 0; box-shadow: none; background: transparent; min-width: 0; }
+  /* Desktop: the nav row is always visible, the "Menu" toggle disappears. */
+  .desktop-nav { display: flex; gap: 0.25rem; flex: 1 1 auto; justify-content: flex-end; }
+  .site-menu { display: none; }
 }
 
 @media (max-width: 950px) {

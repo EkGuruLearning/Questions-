@@ -1,13 +1,23 @@
 /* EkGuru Learning — page renderer.
  *
  * Every page carries <body data-root="..."> so the same file works from any folder
- * depth under the GitHub Pages project path. All content comes from data/site.json.
+ * depth under the GitHub Pages project path. All content comes from data/site.json,
+ * which is generated from the folders in `content/`.
  *
  * The website shows the real folder tree of `content/`:
  *   subject -> folder -> subfolder -> files
- * So a new PDF in `content/computer-network/theory/` appears inside the "Theory"
- * folder, and a new map tree in `content/rajasthan-geography/map/<name>/` becomes
- * its own subfolder on the page.
+ * A new PDF in `content/reasoning/practice/` appears inside "Reasoning > Practice
+ * questions"; a new year folder such as `content/previous-year-papers/dsssb/2019/`
+ * becomes its own tile. No page code changes when material is added.
+ *
+ * Hooks used by the pages (all optional):
+ *   [data-nav]              main navigation, built from the subjects
+ *   [data-footer-subjects]  footer subject list
+ *   #subjectCards           home: one card per subject with its folder tiles
+ *   #subjectExplorer        subjects/index.html: subject list, or one subject (`?subject=`)
+ *   #subjectFolders         subject page: folder tiles for `data-subject`
+ *   #topicGrid              subject page: topic cards for `data-subject` (needs a test bank)
+ *   [data-browser-subject]  folder browser page (breadcrumbs + folder/file list)
  */
 (function () {
   "use strict";
@@ -40,15 +50,38 @@
   }
 
   function number(value) { return Number(value || 0).toLocaleString("en-IN"); }
+  function plural(count, one, many) { return count + " " + (count === 1 ? one : many); }
 
   function subjectOf(data, id) {
     return (data.subjects || []).filter(function (subject) { return subject.id === id; })[0];
   }
 
   function fileHref(item) { return root + item.url; }
-  /* Previews point at data/thumbs/... so a folder of 3 MB maps still opens fast. */
   function previewHref(item) { return root + (item.thumb_url || item.url); }
   function isImage(item) { return ["PNG", "JPG", "JPEG", "WEBP", "SVG"].indexOf(item.file_type) >= 0; }
+
+  /* Links that stay honest whether the target is a dedicated page or the explorer. */
+  function pageHref(page, params) {
+    var url = root + page;
+    var query = Object.keys(params || {})
+      .filter(function (key) { return params[key]; })
+      .map(function (key) { return key + "=" + encodeURIComponent(params[key]); })
+      .join("&");
+    return query ? url + (url.indexOf("?") >= 0 ? "&" : "?") + query : url;
+  }
+
+  function exploreHref(subject, folder) {
+    return pageHref("subjects/index.html", { subject: subject.slug, folder: folder || "" });
+  }
+
+  function folderHref(subject, path) {
+    if (subject.id === "computer-network" || subject.id === "rajasthan-geography") {
+      // these two have their own pretty page
+      var base = root + (subject.material_route || subject.route);
+      return path ? base + "?folder=" + encodeURIComponent(path) : base;
+    }
+    return exploreHref(subject, path);
+  }
 
   /* ------------------------------------------------------------ folders ---- */
   function findNode(node, path) {
@@ -60,47 +93,49 @@
     return null;
   }
 
-  function folderHref(subject, path) {
-    var base = root + (subject.material_route || subject.route);
-    return path ? base + "?folder=" + encodeURIComponent(path) : base;
+  function folderMeta(folder) {
+    var bits = [];
+    if (folder.file_count) bits.push(plural(folder.file_count, "file", "files"));
+    if (folder.folder_count) bits.push(plural(folder.folder_count, "subfolder", "subfolders"));
+    if (folder.file_types.length) bits.push(folder.file_types.join(" / "));
+    return bits.join(" · ");
   }
 
-  function renderFolderTiles(mount, subject, node) {
+  function folderTile(subject, folder, compact) {
+    var tile = el("a", "folder-card" + (compact ? " compact" : "") + (folder.empty ? " is-empty" : ""));
+    var key = subject.id === "computer-network" || subject.id === "rajasthan-geography"
+      ? encodeURIComponent(folder.path)
+      : folder.path;
+    tile.href = folderHref(subject, key);
+    tile.innerHTML =
+      '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
+      '<span class="folder-body">' +
+        "<strong>" + esc(folder.title_en) + "</strong>" +
+        '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
+        (compact || !folder.note_en ? "" : '<span class="folder-note">' + esc(folder.note_en) + "</span>") +
+        '<span class="folder-meta">' + esc(folderMeta(folder) || "Khali folder — file daalte hi dikh jayega") + "</span>" +
+      "</span>" +
+      (compact ? "" : '<span class="folder-open">' + (folder.empty ? "Khali" : "Kholo →") + "</span>");
+    return tile;
+  }
+
+  function folderGrid(subject, node, compact) {
     var grid = el("div", "folder-grid");
-    node.folders.forEach(function (folder) {
-      var tile = el("a", "folder-card");
-      tile.href = folderHref(subject, folder.path);
-      var meta = [];
-      if (folder.folder_count) meta.push(folder.folder_count + (folder.folder_count === 1 ? " subfolder" : " subfolders"));
-      if (folder.file_count) meta.push(folder.file_count + (folder.file_count === 1 ? " file" : " files"));
-      if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
-      tile.innerHTML =
-        '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
-        '<span class="folder-body">' +
-          '<strong>' + esc(folder.title_en) + "</strong>" +
-          '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
-          (folder.note_en ? '<span class="folder-note">' + esc(folder.note_en) + "</span>" : "") +
-          '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span>" +
-        "</span>" +
-        '<span class="folder-open">Kholo →</span>';
-      grid.appendChild(tile);
-    });
-    mount.appendChild(grid);
+    node.folders.forEach(function (folder) { grid.appendChild(folderTile(subject, folder, compact)); });
+    return grid;
   }
 
   /* -------------------------------------------------------------- files ---- */
   function fileRow(item) {
     var row = el("li", "material-item" + (isImage(item) ? " is-image" : ""));
     var topicChip = item.topic_id ? '<span class="chip neutral">' + esc(item.topic_id) + "</span>" : "";
-    // Pictures carry their own SEO alt text; the description is part of the page
-    // content so a search engine (and the student) reads what the sheet shows.
     var thumb = isImage(item)
       ? '<a class="file-thumb" href="' + esc(fileHref(item)) + '" target="_blank" rel="noopener noreferrer">' +
         '<img src="' + esc(previewHref(item)) + '" alt="' + esc(item.alt_en || item.title_en) + '" loading="lazy" decoding="async">' +
         '<span class="file-thumb-open">Poora dekho</span></a>'
       : "";
     var description = isImage(item) && item.description_en
-      ? '<p class="file-description" lang="en">' + esc(item.description_en) + '</p>' +
+      ? '<p class="file-description" lang="en">' + esc(item.description_en) + "</p>" +
         (item.description_hi ? '<p class="file-description" lang="hi">' + esc(item.description_hi) + "</p>" : "")
       : "";
     row.innerHTML =
@@ -123,9 +158,9 @@
     return row;
   }
 
-  function renderFiles(mount, files, emptyText) {
+  function renderFiles(mount, files) {
     if (!files.length) {
-      mount.appendChild(el("p", "empty-state", emptyText || "Is folder me abhi koi file nahi hai."));
+      mount.appendChild(el("p", "empty-state", "Is folder me abhi koi file nahi hai. PDF yahan daal do — page khud update ho jayega."));
       return;
     }
     var list = el("ul", "material-list");
@@ -154,10 +189,10 @@
   function renderBrowser(subject, folderPath, label) {
     var crumbs = document.getElementById("folderCrumbs");
     var mount = document.getElementById("folderBrowser");
-    if (!crumbs || !mount) return;
+    if (!mount) return;
     var node = findNode(subject.tree, folderPath || "") || subject.tree;
     mount.innerHTML = "";
-    renderCrumbs(crumbs, subject, node, label);
+    if (crumbs) renderCrumbs(crumbs, subject, node, label);
 
     var head = el("div", "folder-head");
     head.innerHTML =
@@ -165,9 +200,11 @@
       '<p class="muted" style="margin:0">' + esc(node.title_hi) + (node.note_en ? " — " + esc(node.note_en) : "") + "</p>";
     mount.appendChild(head);
 
-    if (node.folders.length) renderFolderTiles(mount, subject, node);
-    if (node.files.length) renderFiles(mount, node.files, "Is folder me abhi koi file nahi hai.");
-    if (!node.folders.length && !node.files.length) mount.appendChild(el("p", "empty-state", "Ye folder khaali hai."));
+    if (node.folders.length) mount.appendChild(folderGrid(subject, node, false));
+    if (node.files.length) renderFiles(mount, node.files);
+    if (!node.folders.length && !node.files.length) {
+      mount.appendChild(el("p", "empty-state", "Ye folder abhi khali hai. File daalte hi yahin dikh jayegi."));
+    }
   }
 
   /* ----------------------------------------------------------- topic grid -- */
@@ -181,7 +218,7 @@
       var more = topic.sections.length > 3
         ? '<span class="chip neutral">+' + (topic.sections.length - 3) + " more</span>"
         : "";
-      var theory = topic.material.theory[0];
+      var theory = (topic.material && topic.material.theory && topic.material.theory[0]) || null;
       card.innerHTML =
         '<div class="topic-head">' +
           '<span class="topic-badge">' + esc(topic.id) + "</span>" +
@@ -201,24 +238,110 @@
     });
   }
 
-  /* ----------------------------------------------------------- home rows --- */
-  function renderHomeFolders(container, subject) {
-    container.innerHTML = "";
-    var grid = el("div", "folder-grid");
-    subject.tree.folders.forEach(function (folder) {
-      var tile = el("a", "folder-card compact");
-      tile.href = folderHref(subject, folder.path);
-      var meta = [];
-      if (folder.file_count) meta.push(folder.file_count + " file");
-      if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
-      tile.innerHTML =
-        '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
-        '<span class="folder-body"><strong>' + esc(folder.title_en) + "</strong>" +
-        '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
-        '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span></span>";
-      grid.appendChild(tile);
+  /* --------------------------------------------------------- subject card -- */
+  function subjectCard(subject) {
+    var card = el("article", "card subject-card");
+    card.setAttribute("data-subject-card", subject.id);
+    var stats = [];
+    stats.push(plural(subject.folder_count, "folder", "folders"));
+    stats.push(plural(subject.file_count, "file", "files"));
+    if (subject.test) stats.push(number(subject.test.question_count) + " online questions");
+    var actions =
+      '<a class="button primary" href="' + esc(root + subject.route) + '">Folder kholo</a>' +
+      (subject.test_route
+        ? '<a class="button secondary" href="' + esc(root + subject.test_route) + '">Test do</a>'
+        : "");
+    card.innerHTML =
+      '<div class="card-title-row">' +
+        "<h3 style=\"margin:0\">" + esc(subject.title_en) + "</h3>" +
+        '<span class="chip neutral">' + esc(subject.title_hi) + "</span>" +
+      "</div>" +
+      '<p class="muted small" style="margin:0.3rem 0 0.7rem">' + esc(stats.join(" · ")) + "</p>" +
+      (subject.tagline_en ? '<p class="small" style="margin:0 0 0.7rem">' + esc(subject.tagline_en) + "</p>" : "");
+    if (subject.tree.folders.length) card.appendChild(folderGrid(subject, subject.tree, true));
+    var buttons = el("div", "button-row", actions);
+    buttons.style.marginTop = "0.9rem";
+    card.appendChild(buttons);
+    return card;
+  }
+
+  /* ---------------------------------------------------------- explorer ----- */
+  function renderExplorer(data, mount) {
+    var params = new URLSearchParams(window.location.search);
+    var wanted = params.get("subject");
+    mount.innerHTML = "";
+    if (!wanted) {
+      var grid = el("div", "subject-grid");
+      data.subjects.forEach(function (subject) { grid.appendChild(subjectCard(subject)); });
+      mount.appendChild(grid);
+      return;
+    }
+    var subject = subjectOf(data, wanted) || data.subjects.filter(function (item) { return item.slug === wanted; })[0];
+    if (!subject) {
+      mount.appendChild(el("p", "empty-state", "Ye subject nahi mila. All subjects page kholo."));
+      return;
+    }
+    document.title = subject.title_en + " — EkGuru Learning";
+    var heading = document.getElementById("explorerTitle");
+    if (heading) {
+      heading.textContent = subject.title_en;
+      var subtitle = document.getElementById("explorerSubtitle");
+      if (subtitle) subtitle.textContent = subject.title_hi + " · " + subject.tagline_hi;
+    }
+    var head = el("div", "folder-head");
+    head.innerHTML = '<p class="muted" style="margin:0">' + esc(subject.intro_en || subject.tagline_en || "") + "</p>";
+    mount.appendChild(head);
+    var node = findNode(subject.tree, params.get("folder") || "") || subject.tree;
+    var crumbs = el("nav", "crumbs");
+    crumbs.setAttribute("aria-label", "Folder path");
+    mount.appendChild(crumbs);
+    renderCrumbs(crumbs, subject, node, "Saare folders");
+    var browser = el("div", "folder-browser");
+    mount.appendChild(browser);
+    if (node.folders.length) browser.appendChild(folderGrid(subject, node, false));
+    if (node.files.length) renderFiles(browser, node.files);
+    if (subject.topics.length) {
+      var topicBlock = el("section", "section");
+      topicBlock.appendChild(el("h2", null, "Topic-wise test"));
+      var topics = el("div", "topic-grid");
+      topicBlock.appendChild(topics);
+      mount.appendChild(topicBlock);
+      renderTopicGrid(topics, subject);
+    }
+  }
+
+  /* ---------------------------------------------------------- nav/footer --- */
+  function renderNav(data) {
+    document.querySelectorAll("[data-nav]").forEach(function (nav) {
+      var current = window.location.pathname;
+      var html = '<a href="' + root + 'index.html">Home</a>' +
+        '<a href="' + root + 'subjects/index.html">All Subjects</a>';
+      data.subjects.forEach(function (subject) {
+        var href = root + subject.route;
+        var active = current.indexOf("/" + subject.slug + "/") >= 0;
+        html += '<a href="' + esc(href) + '"' + (active ? ' aria-current="page"' : "") + ">" + esc(subject.title_en) + "</a>";
+      });
+      nav.innerHTML = html;
     });
-    container.appendChild(grid);
+  }
+
+  function renderFooter(data) {
+    var total = data.subjects.reduce(function (sum, subject) { return sum + subject.file_count; }, 0);
+    document.querySelectorAll("[data-footer-subjects]").forEach(function (node) {
+      node.innerHTML = data.subjects.map(function (subject) {
+        var label = subject.title_en + (subject.file_count ? " (" + subject.file_count + ")" : "");
+        return '<p><a href="' + esc(root + subject.route) + '">' + esc(label) + "</a></p>";
+      }).join("");
+    });
+    document.querySelectorAll("[data-footer-stats]").forEach(function (node) {
+      node.textContent = data.subjects.length + " subjects · " + total + " files · " + number(
+        (subjectOf(data, "computer-network") || { test: { question_count: 0 } }).test
+          ? subjectOf(data, "computer-network").test.question_count : 0
+      ) + " online questions";
+    });
+    document.querySelectorAll("[data-build]").forEach(function (node) {
+      node.textContent = data.bank_build_id || "";
+    });
   }
 
   /* --------------------------------------------------------------- misc ---- */
@@ -229,64 +352,48 @@
   function init() {
     loadSite().then(function (data) {
       var cn = subjectOf(data, "computer-network");
-      var geo = subjectOf(data, "rajasthan-geography");
       var downloads = data.subjects.reduce(function (total, subject) { return total + subject.file_count; }, 0);
 
-      setText("[data-count='topics']", cn && cn.test ? cn.test.topic_count : 7);
+      setText("[data-count='subjects']", data.subjects.length);
+      setText("[data-count='topics']", cn && cn.test ? cn.test.topic_count : 0);
       setText("[data-count='questions']", cn && cn.test ? number(cn.test.question_count) : "0");
       setText("[data-count='downloads']", number(downloads));
-      setText("[data-count='maps']", geo ? geo.file_count : 0);
-      setText("[data-build]", data.bank_build_id || "");
 
-      document.querySelectorAll("[data-subject-card]").forEach(function (card) {
-        var subject = subjectOf(data, card.getAttribute("data-subject-card"));
-        if (!subject) return;
-        card.querySelectorAll("[data-count='subject-files']").forEach(function (node) { node.textContent = subject.file_count; });
-        card.querySelectorAll("[data-count='subject-folders']").forEach(function (node) { node.textContent = subject.folder_count; });
-        if (subject.test) {
-          card.querySelectorAll("[data-count='subject-questions']").forEach(function (node) {
-            node.textContent = number(subject.test.question_count);
-          });
-        }
-      });
+      renderNav(data);
+      renderFooter(data);
 
-      var homeFolders = document.getElementById("cnFolders");
-      if (homeFolders && cn) renderHomeFolders(homeFolders, cn);
+      var homeCards = document.getElementById("subjectCards");
+      if (homeCards) {
+        homeCards.innerHTML = "";
+        data.subjects.forEach(function (subject) { homeCards.appendChild(subjectCard(subject)); });
+      }
 
-      var homeMapPath = document.getElementById("geoFolderPath");
-      if (homeMapPath && geo) {
-        // Geo page ek hi chain dikhata hai: Map › Rajasthan › (aage jo folders aayenge)
-        var chain = [];
-        (function descend(node) {
-          node.folders.forEach(function (folder) {
-            chain.push(folder.title_en);
-            descend(folder);
-          });
-        })(geo.tree);
-        homeMapPath.textContent = chain.join(" › ");
+      var explorer = document.getElementById("subjectExplorer");
+      if (explorer) renderExplorer(data, explorer);
+
+      var subjectFolders = document.getElementById("subjectFolders");
+      var pageSubject = subjectOf(data, document.body.getAttribute("data-subject")) || cn;
+      if (subjectFolders && pageSubject) {
+        subjectFolders.innerHTML = "";
+        subjectFolders.appendChild(folderGrid(pageSubject, pageSubject.tree, false));
       }
 
       var topicGrid = document.getElementById("topicGrid");
-      if (topicGrid && cn) renderTopicGrid(topicGrid, cn);
+      if (topicGrid && pageSubject && pageSubject.topics.length) renderTopicGrid(topicGrid, pageSubject);
+      else if (topicGrid) {
+        topicGrid.innerHTML = '<p class="empty-state">Is subject ka online test abhi ban raha hai — tab tak material folders dekho.</p>';
+      }
 
-      var cnFolders = document.getElementById("subjectFolders");
-      if (cnFolders && cn) {
-        var grid = el("div", "folder-grid");
-        cn.tree.folders.forEach(function (folder) {
-          var tile = el("a", "folder-card");
-          tile.href = folderHref(cn, folder.path);
-          var meta = [folder.file_count + " file" + (folder.file_count === 1 ? "" : "s")];
-          if (folder.file_types.length) meta.push(folder.file_types.join(" / "));
-          tile.innerHTML =
-            '<span class="folder-icon" aria-hidden="true">' + esc(folder.icon) + "</span>" +
-            '<span class="folder-body"><strong>' + esc(folder.title_en) + "</strong>" +
-            '<span class="folder-hi">' + esc(folder.title_hi) + "</span>" +
-            '<span class="folder-note">' + esc(folder.note_en) + "</span>" +
-            '<span class="folder-meta">' + esc(meta.join(" · ")) + "</span></span>" +
-            '<span class="folder-open">Kholo →</span>';
-          grid.appendChild(tile);
-        });
-        cnFolders.appendChild(grid);
+      var geoPath = document.getElementById("geoFolderPath");
+      if (geoPath) {
+        var geo = subjectOf(data, "rajasthan-geography");
+        if (geo) {
+          var chain = [];
+          (function descend(node) {
+            node.folders.forEach(function (folder) { chain.push(folder.title_en); descend(folder); });
+          })(geo.tree);
+          geoPath.textContent = chain.join(" › ");
+        }
       }
 
       var browserSubject = document.body.getAttribute("data-browser-subject");

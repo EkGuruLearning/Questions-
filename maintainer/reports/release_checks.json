@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T17:10:13+00:00",
+  "generated_at": "2026-10-14T17:28:09+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 16,
@@ -41,7 +41,7 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 7 route(s), 96 link(s), 38 download(s) and 6 folder(s) checked",
+        "PASS: 7 route(s), 78 link(s), 38 download(s) and 18 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
       ]
     },
@@ -51,7 +51,7 @@
       "exit_code": 0,
       "note": "data/site.json matches the registered content and catalogue.",
       "output_tail": [
-        "PASS: data/site.json matches the registered content and catalogue."
+        "PASS: data/site.json matches the content folders and the catalogue."
       ]
     },
     {
@@ -92,10 +92,10 @@
       "exit_code": 0,
       "note": "Site data integrity, registry wiring and route/anchor checks.",
       "output_tail": [
-        "test_published_route_list_covers_every_html_page (test_site_data.SiteDataTests.test_published_route_list_covers_every_html_page) ... ok",
+        "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 11 tests in 0.221s",
+        "Ran 15 tests in 0.638s",
         "",
         "OK"
       ]
@@ -106,10 +106,10 @@
       "exit_code": 0,
       "note": "Page semantics, nav targets, new-tab safety and no-audit-leak rules.",
       "output_tail": [
-        "test_subject_cards_use_real_subject_ids (test_navigation.NavigationTests.test_subject_cards_use_real_subject_ids) ... ok",
+        "Cards are rendered by site.js from data/site.json \u2014 ids must come from there. ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 16 tests in 0.013s",
+        "Ran 18 tests in 0.012s",
         "",
         "OK"
       ]
@@ -137,7 +137,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.068s",
+        "Ran 8 tests in 0.057s",
         "",
         "OK"
       ]
@@ -160,7 +160,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 68.646576"
+        "# duration_ms 62.547552"
       ]
     },
     {
@@ -169,9 +169,9 @@
       "exit_code": 0,
       "note": "Renders the real pages and asserts folder trees, files, map previews and the test app; exit 77 means jsdom is not installed.",
       "output_tail": [
-        "  - CN hub: 5 folder tiles + 7 topic cards with deep links",
-        "  - material page: 5 folder tiles, files hidden until a folder is opened",
-        "  - answers folder: 5 files with working download links",
+        "  - explorer: 4 subject cards",
+        "  - explorer: Reasoning folders (khali, file daalte hi bhar jayenge)",
+        "  - previous year papers: 8 exam sections",
         "  - map page: Map folder tile",
         "  - Map folder: Rajasthan subfolder tile",
         "  - Rajasthan folder: 6 map files with previews and downloads"
@@ -183,7 +183,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (12 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (34 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],

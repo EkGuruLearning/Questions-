@@ -51,9 +51,12 @@ class ResponsiveStructuralTests(unittest.TestCase):
         self.assertIn(".site-menu:not([open]) .site-nav { display: none", self.css)
 
     def test_mobile_menu_is_a_dropdown_and_desktop_nav_is_always_visible(self):
-        self.assertIn(".site-menu[open] .site-nav {", self.css)
-        self.assertIn("position: absolute", self.css)
-        self.assertRegex(self.css, r"@media\s*\(min-width:\s*951px\)\s*\{[^@]*site-menu-toggle\s*\{\s*display:\s*none")
+        # small screens: <details> menu; 951px+: a normal nav row, menu hidden
+        self.assertRegex(self.css, r"\.desktop-nav\s*\{\s*display:\s*none")
+        self.assertRegex(self.css, r"@media\s*\(min-width:\s*951px\)\s*\{[^@]*\.desktop-nav\s*\{[^}]*display:\s*flex")
+        self.assertRegex(self.css, r"@media\s*\(min-width:\s*951px\)\s*\{[^@]*\.site-menu\s*\{\s*display:\s*none")
+        self.assertRegex(self.css, r"\.site-menu\[open\]\s+\.site-nav\s*\{")
+        self.assertRegex(self.css, r'\.site-nav\s+a\[aria-current="page"\]')
 
     def test_folder_tiles_and_breadcrumbs_are_responsive(self):
         self.assertIn(".folder-grid", self.css)

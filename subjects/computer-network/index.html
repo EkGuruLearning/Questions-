@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../assets/css/ekguru.css">
   <script src="../../assets/js/site.js" defer></script>
 </head>
-<body data-root="../../">
+<body data-root="../../" data-subject="computer-network">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -19,14 +19,10 @@
         <span class="brand-mark" aria-hidden="true">e</span>
         <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
       </a>
+      <nav class="site-nav desktop-nav" data-nav aria-label="Main navigation"></nav>
       <details class="site-menu">
         <summary class="site-menu-toggle">Menu</summary>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="../../index.html">Home</a>
-          <a href="index.html" aria-current="page">Computer Network</a>
-          <a href="material/index.html">Study Material</a>
-          <a href="test/index.html">Online Test</a>
-        </nav>
+        <nav class="site-nav" data-nav aria-label="Main navigation (mobile)"></nav>
       </details>
     </div>
   </header>
@@ -66,20 +62,26 @@
     <div class="shell footer-grid">
       <div>
         <h3>EkGuru Learning</h3>
-        <p>Computer Network — PDF aur practice test, ek jagah.</p>
-      </div>
-      <div>
-        <h3>Study</h3>
-        <p><a href="material/index.html">Study material</a></p>
-        <p><a href="test/index.html">Online test</a></p>
+        <p>By PRAKASH. Study material, previous year papers aur online test — sab free, koi login nahi.</p>
+        <p class="footer-stats" data-footer-stats>—</p>
       </div>
       <div>
         <h3>Subjects</h3>
-        <p><a href="../rajasthan-geography/index.html">Rajasthan Geography</a></p>
+        <div data-footer-subjects><p class="muted">Load ho raha hai…</p></div>
+      </div>
+      <div>
+        <h3>Quick links</h3>
         <p><a href="../../index.html">Home</a></p>
+        <p><a href="../index.html">All subjects</a></p>
+        <p><a href="material/index.html">Study material</a></p>
+        <p><a href="test/index.html">Online test</a></p>
+        <p><a href="../rajasthan-geography/index.html">Rajasthan Map</a></p>
       </div>
     </div>
-    <div class="shell footer-bottom"><span>Question bank build: <span data-build>—</span></span></div>
+    <div class="shell footer-bottom">
+      <span>Question bank build: <span data-build>—</span></span>
+      <span class="footer-note">Naya material? <code>content/</code> folder me daalo — site khud dikha degi.</span>
+    </div>
   </footer>
 </body>
 </html>

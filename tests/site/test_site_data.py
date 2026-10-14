@@ -1,6 +1,7 @@
 import hashlib
 import json
 import pathlib
+import sys
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -32,12 +33,76 @@ class SiteDataTests(unittest.TestCase):
     def test_every_subject_has_real_routes_and_a_folder_tree(self):
         for subject in self.site["subjects"]:
             with self.subTest(subject=subject["id"]):
-                self.assertTrue((ROOT / subject["route"]).is_file(), subject["route"])
-                self.assertGreaterEqual(subject["folder_count"], 1)
+                route = subject["route"].split("?")[0]
+                self.assertTrue((ROOT / route).is_file(), subject["route"])
+                self.assertGreaterEqual(subject["folder_count"], 1, "subject needs at least one folder")
                 self.assertTrue(subject["tree"]["folders"], "subject page needs at least one folder tile")
-                labels = self.subjects["subjects"]
-                configured = [item for item in labels if item["id"] == subject["id"]][0]["folders"]
-                self.assertEqual({node["path"] for node in walk(subject["tree"]) if node["path"]}, set(configured))
+                configured = {item["id"]: item for item in self.subjects["subjects"]}[subject["id"]]["folders"]
+                on_disk = {
+                    path.relative_to(ROOT / "content" / subject["id"]).as_posix()
+                    for path in (ROOT / "content" / subject["id"]).rglob("*")
+                    if path.is_dir() and not path.name.startswith(".")
+                }
+                # every folder on disk shows up, and nothing extra is invented
+                self.assertEqual(on_disk - {""}, {node["path"] for node in walk(subject["tree"]) if node["path"]})
+                self.assertTrue(set(configured).issubset(on_disk | {""}), sorted(set(configured) - on_disk))
+
+    def test_new_material_needs_no_code_change(self):
+        """Naya folder/file daalo -> build chalao -> site par aa jata hai (naam se label ban ke)."""
+        import subprocess
+
+        folder = ROOT / "content" / "reasoning" / "practice" / "series"
+        folder.mkdir(parents=True, exist_ok=True)
+        sample = folder / "Seating-Arrangement-Basics.pdf"
+        sample.write_bytes(b"%PDF-1.4\n% test fixture\n")
+        try:
+            result = subprocess.run([sys.executable, "tools/build_catalog.py"], cwd=ROOT, text=True, capture_output=True)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            built = json.loads(SITE.read_text(encoding="utf-8"))
+            reasoning = {item["id"]: item for item in built["subjects"]}["reasoning"]
+            practice = next(node for node in walk(reasoning["tree"]) if node["path"] == "practice")
+            series = next(node for node in walk(reasoning["tree"]) if node["path"] == "practice/series")
+            self.assertEqual(series["title_en"], "Series", "folder label should come from its own name")
+            self.assertEqual(series["files"][0]["title_en"], "Seating Arrangement Basics")
+            self.assertEqual(series["files"][0]["file_type"], "PDF")
+            self.assertEqual(practice["file_count"], 1, "parent folder counts the new file")
+        finally:
+            sample.unlink(missing_ok=True)
+            for path in sorted(folder.parent.rglob("*"), key=lambda item: len(item.parts), reverse=True):
+                if path.is_dir() and not any(path.iterdir()):
+                    path.rmdir()
+            subprocess.run([sys.executable, "tools/build_catalog.py"], cwd=ROOT, capture_output=True)
+
+    def test_declared_empty_folders_are_published_as_empty(self):
+        by_id = {item["id"]: item for item in self.site["subjects"]}
+        pyq = by_id["previous-year-papers"]
+        self.assertEqual(
+            [folder["path"] for folder in pyq["tree"]["folders"]],
+            ["ia", "sci", "computer-operator", "system-assistant", "dsssb", "ssc", "net", "rpsc"],
+        )
+        for folder in pyq["tree"]["folders"]:
+            with self.subTest(folder=folder["path"]):
+                self.assertTrue(folder["empty"])
+                self.assertEqual(folder["file_count"], 0)
+                self.assertTrue(folder["title_en"].strip())
+        reasoning = by_id["reasoning"]
+        self.assertEqual([folder["path"] for folder in reasoning["tree"]["folders"]],
+                         ["theory", "practice", "answers", "tests"])
+        self.assertTrue(all(folder["empty"] for folder in reasoning["tree"]["folders"]))
+
+    def test_registry_entries_must_exist_but_extra_files_are_fine(self):
+        registered = [item["file"] for item in self.materials["materials"]]
+        on_disk = {
+            path.relative_to(ROOT).as_posix()
+            for path in (ROOT / "content").rglob("*")
+            if path.is_file() and not path.name.startswith(".")
+        }
+        # registry is for nice titles/SEO: every entry must exist, extras are allowed
+        self.assertEqual(set(registered) - on_disk, set())
+        self.assertLessEqual(set(registered), on_disk)
+        for item in self.site["subjects"]:
+            for record in item["files"]:
+                self.assertIn(record["repo_path"], on_disk)
 
     def test_folder_tree_mirrors_the_content_folder_on_disk(self):
         for subject in self.site["subjects"]:
@@ -72,6 +137,19 @@ class SiteDataTests(unittest.TestCase):
                                      + sum(child["total_bytes"] for child in node["folders"]))
                     for item in node["files"]:
                         self.assertEqual(item["folder"], node["path"])
+
+    def test_auto_and_curated_labels_are_not_confused(self):
+        by_id = {item["id"]: item for item in self.site["subjects"]}
+        self.assertFalse(by_id["computer-network"]["auto"])
+        self.assertFalse(by_id["previous-year-papers"]["auto"])
+        self.assertTrue(by_id["previous-year-papers"]["tree"]["folders"][0]["auto"] is False)
+        for subject in self.site["subjects"]:
+            for node in walk(subject["tree"]):
+                if node["path"] == "":
+                    continue
+                self.assertTrue(node["title_en"].strip(), node["path"])
+                self.assertTrue(node["title_hi"].strip(), node["path"])
+                self.assertTrue(node["icon"].strip(), node["path"])
 
     def test_computer_network_folder_shape(self):
         cn = self.by_id["computer-network"]
@@ -120,19 +198,14 @@ class SiteDataTests(unittest.TestCase):
                     else:
                         self.assertIsNone(item["thumb_url"])
 
-    def test_every_content_file_is_registered_and_every_record_resolves(self):
+    def test_registry_entries_resolve_to_real_files(self):
         registered = [item["file"] for item in self.materials["materials"]]
         self.assertEqual(len(registered), len(set(registered)), "duplicate registration")
-        on_disk = sorted(
-            path.relative_to(ROOT).as_posix()
-            for path in (ROOT / "content").rglob("*")
-            if path.is_file() and not path.name.startswith(".") and path.suffix.lower() in CONTENT_SUFFIXES
-        )
-        self.assertEqual(sorted(registered), on_disk)
         subject_ids = {subject["id"] for subject in self.subjects["subjects"]}
         topic_ids = {"T%02d" % number for number in range(1, 8)}
         for record in self.materials["materials"]:
             with self.subTest(record=record["file"]):
+                self.assertTrue((ROOT / record["file"]).is_file(), record["file"])
                 self.assertIn(record["subject"], subject_ids)
                 self.assertIn(record["topic"], topic_ids | {None})
                 self.assertTrue(record["title_en"].strip())

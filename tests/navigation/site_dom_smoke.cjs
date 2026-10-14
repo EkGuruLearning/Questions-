@@ -113,32 +113,39 @@ async function main() {
 
   // ---- home -------------------------------------------------------------
   {
-    const dom = await render("index.html", "#cnFolders .folder-card");
+    const dom = await render("index.html", "#subjectCards .subject-card");
     const doc = dom.window.document;
     const questions = doc.querySelector("[data-count='questions']").textContent.trim();
-    const cards = doc.querySelectorAll("[data-subject-card]").length;
-    const topics = doc.querySelector("[data-count='topics']").textContent.trim();
-    const maps = doc.querySelector("[data-count='maps']").textContent.trim();
+    const subjects = doc.querySelector("[data-count='subjects']").textContent.trim();
+    const downloads = doc.querySelector("[data-count='downloads']").textContent.trim();
     assertClean(dom, "index.html");
     assert(questions === "1,554", `home: expected 1,554 questions, saw ${questions}`);
-    assert(topics === "7", `home: expected 7 topics, saw ${topics}`);
-    assert(cards === 2, `home: expected 2 subject cards, saw ${cards}`);
-    assert(maps === "6", `home: expected 6 map files, saw ${maps}`);
-    const folders = [...doc.querySelectorAll("#cnFolders .folder-card")];
-    assert(folders.length === 5, `home: expected 5 Computer Network folders, saw ${folders.length}`);
-    const names = folders.map((tile) => tile.querySelector("strong").textContent.trim());
-    assert(
-      names.join("|") === "Theory|Practice questions|Answers & explanations|Tests|Reference book",
-      `home: folder order/names are wrong: ${names.join("|")}`,
-    );
-    const theory = folders[0];
-    assert(/8 file/.test(theory.textContent), `home: theory folder should show 8 files, saw ${theory.textContent}`);
-    assert(
-      /theory$/.test(new URL(theory.getAttribute("href"), "https://example.test/Questions-/").search),
-      "home: folder tile must link into the folder view",
-    );
-    assert(/Map › Rajasthan/.test(doc.getElementById("geoFolderPath").textContent), "home: map folder path is missing");
-    results.push("home: 5 CN folder tiles (8 theory files) + map folder path");
+    assert(subjects === "4", `home: expected 4 subjects, saw ${subjects}`);
+    assert(downloads === "38", `home: expected 38 files, saw ${downloads}`);
+
+    const cards = [...doc.querySelectorAll("#subjectCards .subject-card")];
+    assert(cards.length === 4, `home: expected 4 subject cards, saw ${cards.length}`);
+    const names = cards.map((card) => card.querySelector("h3").textContent.trim());
+    for (const expected of ["Computer Network", "Rajasthan Geography", "Reasoning", "Previous Year Papers"]) {
+      assert(names.includes(expected), `home: subject card missing: ${expected}`);
+    }
+
+    const pyq = cards.find((card) => /Previous Year Papers/.test(card.textContent));
+    const pyqFolders = [...pyq.querySelectorAll(".folder-card strong")].map((node) => node.textContent.trim());
+    for (const exam of ["IA", "SCI", "Computer Operator", "System Assistant", "DSSSB", "SSC", "NET", "RPSC"]) {
+      assert(pyqFolders.includes(exam), `home: previous year papers missing exam folder: ${exam}`);
+    }
+
+    const navLinks = [...doc.querySelectorAll("nav.site-nav a")].map((link) => link.textContent.trim());
+    for (const expected of ["Home", "All Subjects", "Computer Network", "Reasoning", "Previous Year Papers"]) {
+      assert(navLinks.includes(expected), `home: nav link missing: ${expected}`);
+    }
+    const footerLinks = [...doc.querySelectorAll("[data-footer-subjects] a")];
+    assert(footerLinks.length === 4, `home: footer should list 4 subjects, saw ${footerLinks.length}`);
+    assert(/\d+ subjects · \d+ files/.test(doc.querySelector("[data-footer-stats]").textContent),
+      "home: footer stats are missing");
+
+    results.push(`home: ${cards.length} subject cards (${pyqFolders.length} exam folders), nav + footer from site data`);
     dom.window.close();
   }
 
@@ -149,6 +156,10 @@ async function main() {
     assertClean(dom, "subjects/computer-network/index.html");
     const folders = doc.querySelectorAll("#subjectFolders .folder-card");
     assert(folders.length === 5, `CN hub: expected 5 folder tiles, saw ${folders.length}`);
+    const folderNames = [...folders].map((tile) => tile.querySelector("strong").textContent.trim());
+    assert(folderNames.join("|") === "Theory|Practice questions|Answers & explanations|Tests|Reference book",
+      `CN hub: folder order/names are wrong: ${folderNames.join("|")}`);
+    assert(/8 file/.test(folders[0].textContent), `CN hub: theory folder should show 8 files, saw ${folders[0].textContent}`);
     const cards = [...doc.querySelectorAll("#topicGrid .topic-card")];
     assert(cards.length === 7, `CN hub: expected 7 topic cards, saw ${cards.length}`);
     const first = cards[0];
@@ -186,6 +197,45 @@ async function main() {
     assert(crumbs.length >= 1, "answers: breadcrumb should link back to the folder list");
     assert(!/\?folder=/.test(crumbs[0].getAttribute("href")), "answers: first crumb must return to the folder list");
     results.push(`answers folder: ${items.length} files with working download links`);
+    dom.window.close();
+  }
+
+  // ---- subject explorer: saare subjects ---------------------------------
+  {
+    const dom = await render("subjects/index.html", "#subjectExplorer .subject-card");
+    const doc = dom.window.document;
+    assertClean(dom, "subjects index");
+    const cards = doc.querySelectorAll("#subjectExplorer .subject-card");
+    assert(cards.length === 4, `explorer: expected 4 subject cards, saw ${cards.length}`);
+    results.push(`explorer: ${cards.length} subject cards`);
+    dom.window.close();
+  }
+
+  // ---- subject explorer: naya subject bina page code ke -----------------
+  {
+    const dom = await render("subjects/index.html?subject=reasoning", "#subjectExplorer .folder-card");
+    const doc = dom.window.document;
+    assertClean(dom, "reasoning explorer");
+    assert(/Reasoning/.test(doc.getElementById("explorerTitle").textContent), "explorer: subject title is wrong");
+    const tiles = [...doc.querySelectorAll("#subjectExplorer .folder-card")];
+    const names = tiles.map((tile) => tile.querySelector("strong").textContent.trim());
+    assert(names.join("|") === "Theory|Practice questions|Answers & explanations|Tests",
+      `explorer: reasoning folders are wrong: ${names.join("|")}`);
+    assert(tiles.every((tile) => tile.classList.contains("is-empty")), "explorer: empty folders should be marked");
+    results.push("explorer: Reasoning folders (khali, file daalte hi bhar jayenge)");
+    dom.window.close();
+  }
+
+  // ---- previous year papers: exam sections ------------------------------
+  {
+    const dom = await render("subjects/index.html?subject=previous-year-papers", "#subjectExplorer .folder-card");
+    const doc = dom.window.document;
+    assertClean(dom, "pyq explorer");
+    const names = [...doc.querySelectorAll("#subjectExplorer .folder-card strong")].map((n) => n.textContent.trim());
+    for (const exam of ["IA", "SCI", "Computer Operator", "System Assistant", "DSSSB", "SSC", "NET", "RPSC"]) {
+      assert(names.includes(exam), `pyq: missing exam folder ${exam}`);
+    }
+    results.push(`previous year papers: ${names.length} exam sections`);
     dom.window.close();
   }
 

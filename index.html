@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4f46e5">
-  <meta name="description" content="EkGuru Learning by PRAKASH — Computer Network ke PDF folders (theory, practice, answers, tests) aur online test, plus Rajasthan Geography ke map folder.">
-  <title>EkGuru Learning — study material aur online test</title>
+  <meta name="description" content="EkGuru Learning by PRAKASH — Computer Network, Reasoning, Rajasthan Geography maps aur Previous Year Papers (IA, SCI, Computer Operator, System Assistant, DSSSB, SSC, NET, RPSC). Folder-wise PDF aur online test, free.">
+  <meta name="keywords" content="EkGuru Learning, computer network notes PDF, reasoning practice, Rajasthan map, previous year papers, DSSSB computer operator, SSC, UGC NET computer science, RPSC programmer, system assistant papers">
+  <title>EkGuru Learning — study material, previous year papers aur online test</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/css/ekguru.css">
   <script src="assets/js/site.js" defer></script>
@@ -19,14 +20,10 @@
         <span class="brand-mark" aria-hidden="true">e</span>
         <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
       </a>
+      <nav class="site-nav desktop-nav" data-nav aria-label="Main navigation"></nav>
       <details class="site-menu">
         <summary class="site-menu-toggle">Menu</summary>
-        <nav class="site-nav" aria-label="Main navigation">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="subjects/computer-network/index.html">Computer Network</a>
-          <a href="subjects/computer-network/test/index.html">Online Test</a>
-          <a href="subjects/rajasthan-geography/index.html">Rajasthan Map</a>
-        </nav>
+        <nav class="site-nav" data-nav aria-label="Main navigation (mobile)"></nav>
       </details>
     </div>
   </header>
@@ -36,10 +33,17 @@
       <div>
         <span class="eyebrow">EkGuru Learning · By PRAKASH</span>
         <h1>Padho, practice karo, <em>test do.</em></h1>
-        <p class="hero-lead">Computer Network ke saare PDF folder me lagi hui hain — theory, practice, answers aur tests.</p>
+        <p class="hero-lead">Subject ke folders kholo — theory, practice, answers aur tests. Previous year papers exam-wise aur saal-wise lag rahe hain, aur Computer Network ka online test turant chalta hai.</p>
         <div class="hero-actions">
           <a class="button primary" href="subjects/computer-network/index.html">Computer Network</a>
+          <a class="button secondary" href="subjects/index.html?subject=previous-year-papers">Previous Year Papers</a>
           <a class="button secondary" href="subjects/rajasthan-geography/index.html">Rajasthan Map</a>
+          <a class="button ghost" href="subjects/index.html">All subjects</a>
+        </div>
+        <div class="hero-stats">
+          <span class="hero-stat"><strong data-count="subjects">4</strong><span>Subjects</span></span>
+          <span class="hero-stat"><strong data-count="downloads">0</strong><span>Files</span></span>
+          <span class="hero-stat"><strong data-count="questions">0</strong><span>Online questions</span></span>
         </div>
       </div>
     </div>
@@ -47,41 +51,32 @@
 
   <main id="main" class="shell">
     <section class="section">
-      <div class="card" data-subject-card="computer-network">
-        <div class="card-title-row">
-          <h2 style="margin:0">Computer Network</h2>
-          <span class="chip neutral">कंप्यूटर नेटवर्क</span>
-        </div>
-        <p class="muted" style="margin:0.35rem 0 0.9rem">
-          <b data-count="topics">7</b> topics ·
-          <b data-count="questions">0</b> online questions ·
-          <b data-count="subject-files">0</b> PDF files
-        </p>
-
-        <p class="field-label" style="margin:0 0 0.5rem">📁 Folders — jis folder me chahiye wahi kholo</p>
-        <div id="cnFolders" data-loading></div>
-
-        <div class="button-row" style="margin-top:1rem">
-          <a class="button primary" href="subjects/computer-network/test/index.html">Online test shuru karo</a>
-          <a class="button secondary" href="subjects/computer-network/index.html">Subject page kholo</a>
-        </div>
+      <div class="section-head">
+        <h2>Subjects</h2>
+        <a href="subjects/index.html">All subjects →</a>
       </div>
+      <p class="section-note">Har subject ke andar folder — folder ke andar files. Naya folder ya file daalte hi yahin dikh jati hai.</p>
+      <div class="subject-grid" id="subjectCards" data-loading>
+        <p class="empty-state">Subjects load ho rahe hain…</p>
+      </div>
+      <noscript>
+        <p class="empty-state">List ke liye JavaScript chahiye. Seedha kholo:
+          <a href="subjects/computer-network/index.html">Computer Network</a> ·
+          <a href="subjects/rajasthan-geography/index.html">Rajasthan Map</a> ·
+          <a href="subjects/index.html">All subjects</a>
+        </p>
+      </noscript>
     </section>
 
     <section class="section">
-      <div class="card" data-subject-card="rajasthan-geography">
-        <div class="card-title-row">
-          <h2 style="margin:0">Rajasthan Geography</h2>
-          <span class="chip neutral">राजस्थान भूगोल</span>
-        </div>
-        <p class="folder-path" id="geoFolderPath">Map</p>
-        <p class="muted" style="margin:0.35rem 0 0.9rem">
-          Map folder ke andar Rajasthan ke maps — <b data-count="maps">0</b> map files, A1 poster se A4 page tak.
-        </p>
-        <div class="button-row">
-          <a class="button primary" href="subjects/rajasthan-geography/index.html">Map folder kholo</a>
-          <a class="button secondary" href="content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait.png" download>A4 page download</a>
-        </div>
+      <div class="card how-card">
+        <h2 style="margin:0 0 0.4rem">Material kaise add hota hai?</h2>
+        <p class="muted" style="margin:0 0 0.6rem">Koi code change nahi — bas folder me file daalo:</p>
+        <ol class="how-list">
+          <li><code>content/&lt;subject&gt;/&lt;folder&gt;/</code> me PDF rakho (jaise <code>content/previous-year-papers/dsssb/2019/paper.pdf</code>).</li>
+          <li><code>python3 tools/build_catalog.py</code> chalao (image ho to pehle <code>tools/build_thumbs.py</code>).</li>
+          <li>Page par tile apne aap aa jayega — naam bhi filename se ban jata hai.</li>
+        </ol>
       </div>
     </section>
   </main>
@@ -90,21 +85,25 @@
     <div class="shell footer-grid">
       <div>
         <h3>EkGuru Learning</h3>
-        <p>By PRAKASH. Koi login nahi, koi tracking nahi — test result sirf aapke browser me.</p>
+        <p>By PRAKASH. Study material, previous year papers aur online test — sab free, koi login nahi, koi tracking nahi.</p>
+        <p class="footer-stats" data-footer-stats>—</p>
       </div>
       <div>
-        <h3>Computer Network</h3>
-        <p><a href="subjects/computer-network/index.html">Folder + topic list</a></p>
-        <p><a href="subjects/computer-network/material/index.html">Saare PDF</a></p>
-        <p><a href="subjects/computer-network/test/index.html">Online test</a></p>
+        <h3>Subjects</h3>
+        <div data-footer-subjects><p class="muted">Load ho raha hai…</p></div>
       </div>
       <div>
-        <h3>Geography</h3>
-        <p><a href="subjects/rajasthan-geography/index.html">Map folder</a></p>
+        <h3>Quick links</h3>
         <p><a href="subjects/index.html">All subjects</a></p>
+        <p><a href="subjects/index.html?subject=previous-year-papers">Previous year papers</a></p>
+        <p><a href="subjects/computer-network/test/index.html">Online test</a></p>
+        <p><a href="subjects/computer-network/material/index.html">Study material</a></p>
       </div>
     </div>
-    <div class="shell footer-bottom"><span>Question bank build: <span data-build>—</span></span></div>
+    <div class="shell footer-bottom">
+      <span>Question bank build: <span data-build>—</span></span>
+      <span class="footer-note">Naya material? <code>content/</code> folder me daalo — site khud dikha degi.</span>
+    </div>
   </footer>
 </body>
 </html>

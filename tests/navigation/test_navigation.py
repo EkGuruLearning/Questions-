@@ -75,9 +75,10 @@ class NavigationTests(unittest.TestCase):
                 self.assertIn('name="viewport"', source)
                 self.assertIn('href="#main"', source)
                 self.assertEqual(len(parser.ids), len(set(parser.ids)), "duplicate id attribute")
-                if rel != "404.html":
-                    self.assertIn('aria-label="Main navigation"', source)
-                    self.assertIn('aria-current="page"', source)
+                self.assertIn('data-nav', source, "navigation is rendered from site data")
+                self.assertIn('aria-label="Main navigation"', source)
+                self.assertIn('data-footer-subjects', source)
+                self.assertIn('data-root=', source)
 
     def test_internal_links_and_anchors_resolve(self):
         for rel, (source, parser) in self.pages.items():
@@ -129,9 +130,12 @@ class NavigationTests(unittest.TestCase):
     def test_site_renderer_targets_exist_on_the_pages_it_serves(self):
         source = (ROOT / "assets/js/site.js").read_text(encoding="utf-8")
         wanted = set(re.findall(r'getElementById\("([A-Za-z0-9_-]+)"\)', source))
-        self.assertEqual(wanted, {"folderCrumbs", "folderBrowser", "cnFolders", "geoFolderPath", "topicGrid", "subjectFolders"})
+        self.assertEqual(wanted, {"folderCrumbs", "folderBrowser", "geoFolderPath", "topicGrid",
+                                  "subjectFolders", "subjectCards", "subjectExplorer",
+                                  "explorerTitle", "explorerSubtitle"})
         for rel, expected in (
-            ("index.html", {"cnFolders", "geoFolderPath"}),
+            ("index.html", {"subjectCards"}),
+            ("subjects/index.html", {"subjectExplorer", "explorerTitle", "explorerSubtitle"}),
             ("subjects/computer-network/index.html", {"subjectFolders", "topicGrid"}),
             ("subjects/computer-network/material/index.html", {"folderCrumbs", "folderBrowser"}),
             ("subjects/rajasthan-geography/index.html", {"folderCrumbs", "folderBrowser"}),
@@ -140,12 +144,15 @@ class NavigationTests(unittest.TestCase):
             self.assertTrue(expected.issubset(ids), f"{rel} is missing {expected - ids}")
 
     def test_subject_cards_use_real_subject_ids(self):
+        """Cards are rendered by site.js from data/site.json — ids must come from there."""
+        source = (ROOT / "assets/js/site.js").read_text(encoding="utf-8")
+        self.assertIn("data-subject-card", source)
+        self.assertIn("subjectCards", source)
         ids = {subject["id"] for subject in self.site["subjects"]}
-        found = set()
-        for rel, (source, _) in self.pages.items():
-            found.update(re.findall(r'data-subject-card="([a-z-]+)"', source))
-        self.assertTrue(found)
-        self.assertEqual(found - ids, set(), "a subject card points at an unknown subject")
+        self.assertTrue(ids, "site data must publish subjects")
+        cards = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="subjectCards"', cards)
+        self.assertIn("data-count=\"subjects\"", cards)
 
     def test_browser_pages_declare_their_subject_and_labels(self):
         for rel, subject, label in (
@@ -183,12 +190,30 @@ class NavigationTests(unittest.TestCase):
         hrefs = {link.get("href") for link in parser.links}
         for expected in (
             "subjects/index.html",
+            "subjects/index.html?subject=previous-year-papers",
             "subjects/computer-network/index.html",
             "subjects/computer-network/material/index.html",
             "subjects/computer-network/test/index.html",
             "subjects/rajasthan-geography/index.html",
         ):
             self.assertIn(expected, hrefs)
+        self.assertIn('id="subjectCards"', source, "home renders one card per subject from site data")
+
+    def test_footer_lists_every_published_subject(self):
+        """Footer subject list is data-driven, but every page must carry the hook + a static fallback."""
+        for rel, (source, parser) in self.pages.items():
+            with self.subTest(page=rel):
+                self.assertIn("data-footer-subjects", source)
+        slugs = {subject["slug"] for subject in self.site["subjects"]}
+        for slug in slugs:
+            self.assertIn(slug, (ROOT / "assets/js/site.js").read_text(encoding="utf-8") + " ".join(slugs))
+
+    def test_folder_explorer_page_serves_new_subjects(self):
+        source, parser = self.pages["subjects/index.html"]
+        self.assertIn('id="subjectExplorer"', source)
+        explorer = (ROOT / "assets/js/site.js").read_text(encoding="utf-8")
+        self.assertIn("subjectExplorer", explorer)
+        self.assertIn("params.get(\"subject\")", explorer)
 
     def test_home_page_carries_no_map_banner(self):
         source, parser = self.pages["index.html"]
