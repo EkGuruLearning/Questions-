@@ -1,0 +1,432 @@
+﻿feat_id,country,state_province,district_en,district_lgd_code,admin_level,source_id,source_version,area_km2,n_parts,geom_valid,in_primary_frame
+IN-08-119,India,Rajasthan,AJMER,119,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6914.585181955264,1,True,False
+IN-08-104,India,Rajasthan,ALWAR,104,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4765.432398550067,2,True,False
+IN-08-785,India,Rajasthan,BALOTRA,785,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9525.614993649304,1,True,False
+IN-08-125,India,Rajasthan,BANSWARA,125,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4492.940256147494,1,True,False
+IN-08-128,India,Rajasthan,BARAN,128,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6999.257954529998,2,True,False
+IN-08-115,India,Rajasthan,BARMER,115,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,18864.85019100624,1,True,False
+IN-08-779,India,Rajasthan,BEAWAR,779,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4462.85028290681,1,True,False
+IN-08-105,India,Rajasthan,BHARATPUR,105,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2904.7578929910937,1,True,False
+IN-08-122,India,Rajasthan,BHILWARA,122,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10195.505564290594,3,True,False
+IN-08-101,India,Rajasthan,BIKANER,101,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,30330.87691741427,1,True,False
+IN-08-121,India,Rajasthan,BUNDI,121,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5779.979881181743,1,True,False
+IN-08-126,India,Rajasthan,CHITTAURGARH,126,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7833.551063752856,5,True,False
+IN-08-102,India,Rajasthan,CHURU,102,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,13848.407561768618,1,True,False
+IN-08-109,India,Rajasthan,DAUSA,109,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3425.5935236183523,2,True,False
+IN-08-774,India,Rajasthan,DEEG,774,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2165.434858755545,1,True,False
+IN-08-106,India,Rajasthan,DHAULPUR,106,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3034.6138122424254,1,True,False
+IN-08-787,India,Rajasthan,DIDWANA-KUCHAMAN,787,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6791.520904719262,1,True,False
+IN-08-124,India,Rajasthan,DUNGARPUR,124,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3791.0257969621493,1,True,False
+IN-08-099,India,Rajasthan,GANGANAGAR,099,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10914.161475922816,1,True,False
+IN-08-100,India,Rajasthan,HANUMANGARH,100,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9712.838863123568,1,True,False
+IN-08-110,India,Rajasthan,JAIPUR,110,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9862.267957799308,1,True,False
+IN-08-114,India,Rajasthan,JAISALMER,114,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,37163.63973257874,1,True,False
+IN-08-116,India,Rajasthan,JALOR,116,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10644.199569619908,1,True,False
+IN-08-129,India,Rajasthan,JHALAWAR,129,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6344.23731932114,1,True,False
+IN-08-103,India,Rajasthan,JHUNJHUNUN,103,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5922.031589251942,1,True,False
+IN-08-113,India,Rajasthan,JODHPUR,113,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,13239.957194630977,1,True,False
+IN-08-107,India,Rajasthan,KARAULI,107,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5011.47216369871,1,True,False
+IN-08-777,India,Rajasthan,KHAIRTHAL-TIJARA,777,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2012.1149213511408,1,True,False
+IN-08-127,India,Rajasthan,KOTA,127,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5080.63942808276,1,True,False
+IN-08-780,India,Rajasthan,KOTPUTLI-BEHROR,780,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2903.020332731247,1,True,False
+IN-08-112,India,Rajasthan,NAGAUR,112,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,11005.80640543576,1,True,False
+IN-08-118,India,Rajasthan,PALI,118,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9905.11620444682,1,True,False
+IN-08-783,India,Rajasthan,PHALODI,783,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10649.329358016224,1,True,False
+IN-08-131,India,Rajasthan,PRATAPGARH,131,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4434.889119210837,1,True,False
+IN-08-123,India,Rajasthan,RAJSAMAND,123,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4486.088649301275,2,True,False
+IN-08-775,India,Rajasthan,SALUMBAR,775,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2670.3765627430134,4,True,False
+IN-08-108,India,Rajasthan,SAWAI MADHOPUR,108,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5024.481456650038,1,True,False
+IN-08-111,India,Rajasthan,SIKAR,111,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7725.485408026059,1,True,False
+IN-08-117,India,Rajasthan,SIROHI,117,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5137.708311796472,2,True,False
+IN-08-120,India,Rajasthan,TONK,120,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7201.642723785521,1,True,False
+IN-08-130,India,Rajasthan,UDAIPUR,130,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9035.383729321966,5,True,False
+IN-24-474,India,Gujarat,AHMADABAD,474,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7323.3400149416975,1,True,False
+IN-24-480,India,Gujarat,AMRELI,480,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7373.869052240132,24,True,False
+IN-24-482,India,Gujarat,ANAND,482,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3174.4109122853192,1,True,False
+IN-24-650,India,Gujarat,ARVALLI,650,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3163.3158961045087,2,True,False
+IN-24-469,India,Gujarat,BANAS KANTHA,469,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10763.61099607146,3,True,False
+IN-24-488,India,Gujarat,BHARUCH,488,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4936.995577738007,10,True,False
+IN-24-481,India,Gujarat,BHAVNAGAR,481,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6704.208888586137,11,True,False
+IN-24-653,India,Gujarat,BOTAD,653,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2499.0253343051613,3,True,False
+IN-24-654,India,Gujarat,CHHOTAUDEPUR,654,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3456.7964559956317,1,True,False
+IN-24-485,India,Gujarat,DAHOD,485,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3642.195390403411,2,True,False
+IN-24-489,India,Gujarat,DANGS,489,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1766.3146390684146,2,True,False
+IN-24-656,India,Gujarat,DEVBHUMI DWARKA,656,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4195.620510084754,38,True,False
+IN-24-473,India,Gujarat,GANDHINAGAR,473,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2102.7181142210934,1,True,False
+IN-24-652,India,Gujarat,GIR SOMNATH,652,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2644.223764937576,4,True,False
+IN-24-477,India,Gujarat,JAMNAGAR,477,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5958.287343422351,22,True,False
+IN-24-479,India,Gujarat,JUNAGADH,479,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6146.621210463371,1,True,False
+IN-24-468,India,Gujarat,KACHCHH,468,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,40697.56071085575,5,True,False
+IN-24-483,India,Gujarat,KHEDA,483,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3441.744207669289,2,True,False
+IN-24-471,India,Gujarat,MAHESANA,471,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4418.607359063677,1,True,False
+IN-24-655,India,Gujarat,MAHISAGAR,655,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2511.871513538788,2,True,False
+IN-24-657,India,Gujarat,MORBI,657,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4997.6201194754185,9,True,False
+IN-24-487,India,Gujarat,NARMADA,487,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2818.272432969986,1,True,False
+IN-24-490,India,Gujarat,NAVSARI,490,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2204.6198587632766,1,True,False
+IN-24-484,India,Gujarat,PANCH MAHALS,484,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3283.870341806856,1,True,False
+IN-24-470,India,Gujarat,PATAN,470,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5785.37919531017,1,True,False
+IN-24-478,India,Gujarat,PORBANDAR,478,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2314.1023090472495,1,True,False
+IN-24-476,India,Gujarat,RAJKOT,476,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7762.790540805416,2,True,False
+IN-24-472,India,Gujarat,SABAR KANTHA,472,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4229.159370644029,1,True,False
+IN-24-492,India,Gujarat,SURAT,492,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4333.6065403750945,1,True,False
+IN-24-475,India,Gujarat,SURENDRANAGAR,475,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9002.009667094595,2,True,False
+IN-24-493,India,Gujarat,TAPI,493,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3140.103074660783,1,True,False
+IN-24-486,India,Gujarat,VADODARA,486,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4092.846642385493,1,True,False
+IN-24-491,India,Gujarat,VALSAD,491,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2949.5436636377153,2,True,False
+IN-23-735,India,Madhya Pradesh,AGAR MALWA,735,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2733.2896843876006,1,True,False
+IN-23-465,India,Madhya Pradesh,ALIRAJPUR,465,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3331.6308887316895,2,True,False
+IN-23-461,India,Madhya Pradesh,ANUPPUR,461,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3790.1634773775013,1,True,False
+IN-23-459,India,Madhya Pradesh,ASHOKNAGAR,459,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4745.521386188397,1,True,False
+IN-23-457,India,Madhya Pradesh,BALAGHAT,457,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9244.543572146991,1,True,False
+IN-23-441,India,Madhya Pradesh,BARWANI,441,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5443.656377378445,1,True,False
+IN-23-447,India,Madhya Pradesh,BETUL,447,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10059.005854857689,3,True,False
+IN-23-420,India,Madhya Pradesh,BHIND,420,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4466.461701506627,4,True,False
+IN-23-444,India,Madhya Pradesh,BHOPAL,444,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2766.391228765791,1,True,False
+IN-23-467,India,Madhya Pradesh,BURHANPUR,467,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3231.1119290267193,1,True,False
+IN-23-425,India,Madhya Pradesh,CHHATARPUR,425,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8702.387747261724,1,True,False
+IN-23-455,India,Madhya Pradesh,CHHINDWARA,455,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9832.934566169535,1,True,False
+IN-23-428,India,Madhya Pradesh,DAMOH,428,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7314.933643951538,1,True,False
+IN-23-422,India,Madhya Pradesh,DATIA,422,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3011.0061047197883,4,True,False
+IN-23-437,India,Madhya Pradesh,DEWAS,437,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7005.9077007986525,1,True,False
+IN-23-438,India,Madhya Pradesh,DHAR,438,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8154.475987610948,1,True,False
+IN-23-453,India,Madhya Pradesh,DINDORI,453,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5749.119472693982,1,True,False
+IN-23-458,India,Madhya Pradesh,GUNA,458,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6381.259531800336,1,True,False
+IN-23-421,India,Madhya Pradesh,GWALIOR,421,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4562.668241731224,1,True,False
+IN-23-448,India,Madhya Pradesh,HARDA,448,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3335.997401434967,1,True,False
+IN-23-439,India,Madhya Pradesh,INDORE,439,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3903.8931784800543,1,True,False
+IN-23-451,India,Madhya Pradesh,JABALPUR,451,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5093.90806257932,1,True,False
+IN-23-464,India,Madhya Pradesh,JHABUA,464,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3445.6864024122224,1,True,False
+IN-23-466,India,Madhya Pradesh,KHANDWA,466,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7470.315901086136,1,True,False
+IN-23-440,India,Madhya Pradesh,KHARGONE,440,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8011.865331751897,1,True,False
+IN-23-768,India,Madhya Pradesh,MAIHAR,768,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2240.70525616736,4,True,False
+IN-23-454,India,Madhya Pradesh,MANDLA,454,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7509.841927176425,1,True,False
+IN-23-433,India,Madhya Pradesh,MANDSAUR,433,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5555.40146503594,1,True,False
+IN-23-767,India,Madhya Pradesh,MAUGANJ,767,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1889.2430928987974,1,True,False
+IN-23-419,India,Madhya Pradesh,MORENA,419,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4986.737755513942,1,True,False
+IN-23-449,India,Madhya Pradesh,NARMADAPURAM,449,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6704.010860048971,1,True,False
+IN-23-452,India,Madhya Pradesh,NARSIMHAPUR,452,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5124.081909750232,1,True,False
+IN-23-432,India,Madhya Pradesh,NEEMUCH,432,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4285.080969313317,1,True,False
+IN-23-753,India,Madhya Pradesh,NIWARI,753,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1317.8511488761887,1,True,False
+IN-23-769,India,Madhya Pradesh,PANDHURNA,769,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1985.2545559627933,1,True,False
+IN-23-426,India,Madhya Pradesh,PANNA,426,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7083.788977926578,5,True,False
+IN-23-446,India,Madhya Pradesh,RAISEN,446,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8479.11780373238,1,True,False
+IN-23-442,India,Madhya Pradesh,RAJGARH,442,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6164.775436157359,1,True,False
+IN-23-434,India,Madhya Pradesh,RATLAM,434,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4852.490059342561,1,True,False
+IN-23-430,India,Madhya Pradesh,REWA,430,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4432.326445064722,2,True,False
+IN-23-427,India,Madhya Pradesh,SAGAR,427,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,10242.736265022939,1,True,False
+IN-23-429,India,Madhya Pradesh,SATNA,429,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5283.994442788318,5,True,False
+IN-23-445,India,Madhya Pradesh,SEHORE,445,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6548.417648146223,1,True,False
+IN-23-456,India,Madhya Pradesh,SEONI,456,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8751.839300846692,1,True,False
+IN-23-460,India,Madhya Pradesh,SHAHDOL,460,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5667.78612551929,1,True,False
+IN-23-436,India,Madhya Pradesh,SHAJAPUR,436,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3461.8927920147476,1,True,False
+IN-23-418,India,Madhya Pradesh,SHEOPUR,418,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6611.359483334566,1,True,False
+IN-23-423,India,Madhya Pradesh,SHIVPURI,423,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,9946.541316623603,1,True,False
+IN-23-462,India,Madhya Pradesh,SIDHI,462,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4766.244501247572,1,True,False
+IN-23-463,India,Madhya Pradesh,SINGRAULI,463,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5757.598563620099,1,True,False
+IN-23-424,India,Madhya Pradesh,TIKAMGARH,424,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3725.4841281643526,1,True,False
+IN-23-435,India,Madhya Pradesh,UJJAIN,435,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6101.046063761536,1,True,False
+IN-23-431,India,Madhya Pradesh,UMARIA,431,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4566.319759349977,1,True,False
+IN-23-443,India,Madhya Pradesh,VIDISHA,443,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7313.553846034839,2,True,False
+IN-23-450,India,Madhya Pradesh,KATNI,450,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5070.730113540323,1,True,False
+IN-09-146,India,Uttar Pradesh,AGRA,146,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4035.382740453502,1,True,False
+IN-09-143,India,Uttar Pradesh,ALIGARH,143,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3711.3145351320127,1,True,False
+IN-09-178,India,Uttar Pradesh,AMBEDKAR NAGAR,178,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2320.88548821995,1,True,False
+IN-09-661,India,Uttar Pradesh,AMETHI,661,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2423.4011030035194,1,True,False
+IN-09-137,India,Uttar Pradesh,AMROHA,137,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2178.2729736294796,1,True,False
+IN-09-162,India,Uttar Pradesh,AURAIYA,162,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2018.3438843923798,1,True,False
+IN-09-177,India,Uttar Pradesh,AYODHYA,177,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2684.8516651341083,1,True,False
+IN-09-191,India,Uttar Pradesh,AZAMGARH,191,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4214.151206390884,1,True,False
+IN-09-139,India,Uttar Pradesh,BAGHPAT,139,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1322.7298641861437,1,True,False
+IN-09-180,India,Uttar Pradesh,BAHRAICH,180,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4910.279422444553,1,True,False
+IN-09-193,India,Uttar Pradesh,BALLIA,193,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2989.0359417626623,1,True,False
+IN-09-182,India,Uttar Pradesh,BALRAMPUR,182,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3342.590927836318,1,True,False
+IN-09-176,India,Uttar Pradesh,BARA BANKI,176,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3861.256977233139,1,True,False
+IN-09-150,India,Uttar Pradesh,BAREILLY,150,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4119.561869763715,1,True,False
+IN-09-185,India,Uttar Pradesh,BASTI,185,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2787.49064637788,1,True,False
+IN-09-198,India,Uttar Pradesh,BHADOHI,198,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1015.0073665613373,1,True,False
+IN-09-134,India,Uttar Pradesh,BIJNOR,134,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4602.8921836714435,1,True,False
+IN-09-149,India,Uttar Pradesh,BUDAUN,149,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4255.084428365366,1,True,False
+IN-09-142,India,Uttar Pradesh,BULANDSHAHR,142,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3683.1662377818175,1,True,False
+IN-09-196,India,Uttar Pradesh,CHANDAULI,196,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2545.875796818082,1,True,False
+IN-09-171,India,Uttar Pradesh,CHITRAKOOT,171,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3249.732094770445,1,True,False
+IN-09-190,India,Uttar Pradesh,DEORIA,190,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2510.6166243761622,1,True,False
+IN-09-201,India,Uttar Pradesh,ETAH,201,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2423.2311022803733,1,True,False
+IN-09-161,India,Uttar Pradesh,ETAWAH,161,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2325.5108331360984,1,True,False
+IN-09-159,India,Uttar Pradesh,FARRUKHABAD,159,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2180.363010407659,1,True,False
+IN-09-172,India,Uttar Pradesh,FATEHPUR,172,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4156.4408205628,1,True,False
+IN-09-147,India,Uttar Pradesh,FIROZABAD,147,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2417.314857848573,1,True,False
+IN-09-141,India,Uttar Pradesh,GAUTAM BUDDHA NAGAR,141,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1246.870860616847,5,True,False
+IN-09-140,India,Uttar Pradesh,GHAZIABAD,140,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,914.1216567388083,1,True,False
+IN-09-195,India,Uttar Pradesh,GHAZIPUR,195,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3379.9845183454854,1,True,False
+IN-09-183,India,Uttar Pradesh,GONDA,183,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3967.944821435689,1,True,False
+IN-09-188,India,Uttar Pradesh,GORAKHPUR,188,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3329.7774428897546,1,True,False
+IN-09-168,India,Uttar Pradesh,HAMIRPUR,168,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3908.044022671817,1,True,False
+IN-09-665,India,Uttar Pradesh,HAPUR,665,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1127.4347964606238,1,True,False
+IN-09-155,India,Uttar Pradesh,HARDOI,155,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5987.802766009499,1,True,False
+IN-09-144,India,Uttar Pradesh,HATHRAS,144,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1782.2661837621436,1,True,False
+IN-09-165,India,Uttar Pradesh,JALAUN,165,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4563.932987742239,1,True,False
+IN-09-194,India,Uttar Pradesh,JAUNPUR,194,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4034.2984344120937,2,True,False
+IN-09-166,India,Uttar Pradesh,JHANSI,166,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5022.653635082385,1,True,False
+IN-09-160,India,Uttar Pradesh,KANNAUJ,160,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2090.752634558328,1,True,False
+IN-09-163,India,Uttar Pradesh,KANPUR DEHAT,163,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3163.3326744720016,1,True,False
+IN-09-164,India,Uttar Pradesh,KANPUR NAGAR,164,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2995.0052979545458,1,True,False
+IN-09-202,India,Uttar Pradesh,KASGANJ,202,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1960.8106849865928,1,True,False
+IN-09-174,India,Uttar Pradesh,KAUSHAMBI,174,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1809.0337464621623,6,True,False
+IN-09-153,India,Uttar Pradesh,KHERI,153,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,7672.894067735624,1,True,False
+IN-09-189,India,Uttar Pradesh,KUSHINAGAR,189,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2901.545261993532,1,True,False
+IN-09-167,India,Uttar Pradesh,LALITPUR,167,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5048.186694338638,1,True,False
+IN-09-157,India,Uttar Pradesh,LUCKNOW,157,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2528.0283339184484,1,True,False
+IN-09-169,India,Uttar Pradesh,MAHOBA,169,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3254.935204765408,5,True,False
+IN-09-187,India,Uttar Pradesh,MAHRAJGANJ,187,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2944.4056688332657,1,True,False
+IN-09-148,India,Uttar Pradesh,MAINPURI,148,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2740.193566999555,1,True,False
+IN-09-145,India,Uttar Pradesh,MATHURA,145,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3341.5014563769687,1,True,False
+IN-09-192,India,Uttar Pradesh,MAU,192,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1737.9859121839722,1,True,False
+IN-09-138,India,Uttar Pradesh,MEERUT,138,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2564.3824232098596,1,True,False
+IN-09-199,India,Uttar Pradesh,MIRZAPUR,199,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4415.770738203709,1,True,False
+IN-09-135,India,Uttar Pradesh,MORADABAD,135,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2266.9553790482414,1,True,False
+IN-09-133,India,Uttar Pradesh,MUZAFFARNAGAR,133,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2697.0954138210827,1,True,False
+IN-09-151,India,Uttar Pradesh,PILIBHIT,151,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3780.7872000539933,1,True,False
+IN-09-173,India,Uttar Pradesh,PRATAPGARH,173,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3716.9180172339566,1,True,False
+IN-09-175,India,Uttar Pradesh,PRAYAGRAJ,175,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5454.320752612146,1,True,False
+IN-09-158,India,Uttar Pradesh,RAE BARELI,158,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3937.732984023362,1,True,False
+IN-09-136,India,Uttar Pradesh,RAMPUR,136,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2366.168750183602,1,True,False
+IN-09-132,India,Uttar Pradesh,SAHARANPUR,132,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3721.496452559758,1,True,False
+IN-09-663,India,Uttar Pradesh,SAMBHAL,663,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2408.4047237520776,1,True,False
+IN-09-186,India,Uttar Pradesh,SANT KABIR NAGAR,186,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1639.8712945355066,1,True,False
+IN-09-152,India,Uttar Pradesh,SHAHJAHANPUR,152,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4313.872653238869,1,True,False
+IN-09-662,India,Uttar Pradesh,SHAMLI,662,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1305.363693801655,1,True,False
+IN-09-181,India,Uttar Pradesh,SHRAWASTI,181,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1931.1417923755942,1,True,False
+IN-09-184,India,Uttar Pradesh,SIDDHARTHNAGAR,184,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2897.0376962704095,1,True,False
+IN-09-154,India,Uttar Pradesh,SITAPUR,154,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,5777.474173344224,1,True,False
+IN-09-200,India,Uttar Pradesh,SONBHADRA,200,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,6886.089151005986,1,True,False
+IN-09-179,India,Uttar Pradesh,SULTANPUR,179,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2684.1363450269705,1,True,False
+IN-09-156,India,Uttar Pradesh,UNNAO,156,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4568.999875031217,1,True,False
+IN-09-197,India,Uttar Pradesh,VARANASI,197,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1536.4991057610798,1,True,False
+IN-09-170,India,Uttar Pradesh,BANDA,170,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4391.750335255408,1,True,False
+IN-06-070,India,Haryana,AMBALA,070,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1514.0088385278823,2,True,False
+IN-06-081,India,Haryana,BHIWANI,081,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3298.520953777913,1,True,False
+IN-06-732,India,Haryana,CHARKI DADRI,732,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1376.083659753272,1,True,False
+IN-06-088,India,Haryana,FARIDABAD,088,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,741.7127242327907,1,True,False
+IN-06-078,India,Haryana,FATEHABAD,078,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2527.542733564977,1,True,False
+IN-06-086,India,Haryana,GURUGRAM,086,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1259.049758961807,1,True,False
+IN-06-080,India,Haryana,HISAR,080,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4074.5657559927654,1,True,False
+IN-06-083,India,Haryana,JHAJJAR,083,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1902.8079363149386,1,True,False
+IN-06-077,India,Haryana,JIND,077,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2712.5247416260004,1,True,False
+IN-06-073,India,Haryana,KAITHAL,073,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2316.3573150195434,1,True,False
+IN-06-074,India,Haryana,KARNAL,074,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2472.9155126443566,1,True,False
+IN-06-072,India,Haryana,KURUKSHETRA,072,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1681.6664733987086,1,True,False
+IN-06-084,India,Haryana,MAHENDRAGARH,084,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1934.4996405620882,1,True,False
+IN-06-087,India,Haryana,NUH,087,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1502.5683130968757,1,True,False
+IN-06-089,India,Haryana,PALWAL,089,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1364.9604381013746,1,True,False
+IN-06-069,India,Haryana,PANCHKULA,069,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,880.8271114866509,1,True,False
+IN-06-075,India,Haryana,PANIPAT,075,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1302.0149810671242,2,True,False
+IN-06-085,India,Haryana,REWARI,085,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1509.098559707526,2,True,False
+IN-06-082,India,Haryana,ROHTAK,082,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1668.584105334127,1,True,False
+IN-06-079,India,Haryana,SIRSA,079,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4272.370465065414,1,True,False
+IN-06-076,India,Haryana,SONIPAT,076,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2155.925447309361,1,True,False
+IN-06-071,India,Haryana,YAMUNANAGAR,071,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1720.7424231841314,1,True,False
+IN-03-043,India,Punjab,FIROZPUR,043,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2371.44739753807,1,True,False
+IN-03-041,India,Punjab,LUDHIANA,041,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3690.106016762241,1,True,False
+IN-03-051,India,Punjab,RUPNAGAR,051,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1374.9655766069332,1,True,False
+IN-03-047,India,Punjab,MANSA,047,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2171.411295543167,1,True,False
+IN-03-044,India,Punjab,SRI MUKTSAR SAHIB,044,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2640.9556559645516,1,True,False
+IN-03-052,India,Punjab,SAS NAGAR (SAHIBZADA AJIT SINGH NAGAR),052,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1092.8501317800462,1,True,False
+IN-03-037,India,Punjab,JALANDHAR,037,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2639.2266805444456,1,True,False
+IN-03-678,India,Punjab,PATHANKOT,678,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,949.8517127003126,1,True,False
+IN-03-045,India,Punjab,FARIDKOT,045,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1460.941825800885,1,True,False
+IN-03-042,India,Punjab,MOGA,042,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2250.778788104121,1,True,False
+IN-03-038,India,Punjab,HOSHIARPUR,038,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3382.465726408134,1,True,False
+IN-03-046,India,Punjab,BATHINDA,046,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3378.3255170779685,1,True,False
+IN-03-050,India,Punjab,TARN TARAN,050,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2415.0706532033532,1,True,False
+IN-03-673,India,Punjab,FAZILKA,673,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2875.7687082889483,1,True,False
+IN-03-048,India,Punjab,PATIALA,048,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3315.955206315585,2,True,False
+IN-03-039,India,Punjab,SHAHID BHAGAT SINGH NAGAR,039,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1263.8178171419083,1,True,False
+IN-03-054,India,Punjab,BARNALA,054,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1424.3021084380873,1,True,False
+IN-03-035,India,Punjab,GURDASPUR,035,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2603.7196379772345,1,True,False
+IN-03-036,India,Punjab,KAPURTHALA,036,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1631.80391413451,2,True,False
+IN-03-040,India,Punjab,FATEHGARH SAHIB,040,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1151.2058594046398,1,True,False
+IN-03-049,India,Punjab,AMRITSAR,049,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2678.3946590035566,1,True,False
+IN-03-748,India,Punjab,MALER KOTLA,748,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,682.0196417674739,1,True,False
+IN-03-053,India,Punjab,SANGRUR,053,ADM2 (district),SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,2925.9818961498813,3,True,False
+IN-DISPUTED-0,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #1,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.9784121831615996,1,True,False
+IN-DISPUTED-1,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #2,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.4454037566875931,1,True,False
+IN-DISPUTED-2,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #3,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.2815347687003474,1,True,False
+IN-DISPUTED-3,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #4,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.18643783348158188,1,True,False
+IN-DISPUTED-4,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #5,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.014411079342794605,1,True,False
+IN-DISPUTED-5,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #6,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.9753739005076886,1,True,False
+IN-DISPUTED-6,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #7,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1.1242454517258753,1,True,False
+IN-DISPUTED-7,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #8,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.01788119430240989,1,True,False
+IN-DISPUTED-8,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #9,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.1270884819322147,1,True,False
+IN-DISPUTED-9,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #10,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.17114188870002528,1,True,False
+IN-DISPUTED-10,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #11,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.059055885566849264,1,True,False
+IN-DISPUTED-11,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #12,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.1546150520751737,1,True,False
+IN-DISPUTED-12,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #13,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.21548569275815202,1,True,False
+IN-DISPUTED-13,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #14,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1.32578595813748,1,True,False
+IN-DISPUTED-14,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #15,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,1.6937051346195466,1,True,False
+IN-DISPUTED-15,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #16,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,4.515339646667404,1,True,False
+IN-DISPUTED-16,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #17,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3.5382060650047054,1,True,False
+IN-DISPUTED-17,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #18,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,8.35557141846967,1,True,False
+IN-DISPUTED-18,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #19,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,3.036948489309866,1,True,False
+IN-DISPUTED-19,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #20,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.7177040509577471,1,True,False
+IN-DISPUTED-20,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #21,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.17203515127151187,1,True,False
+IN-DISPUTED-21,India,DISPUTED,DISPUTED AREA (RAJASTHAN-GUJARAT) #22,,disputed,SRC-IND-SOI-DIST,commit of clone made on 2026-10-14,0.03839912366907857,1,True,False
+pk-country-d-pk101,Pakistan,Azad Kashmir (Pakistan),Bagh,PK101,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,694.41652945903,1,True,False
+pk-country-d-pk102,Pakistan,Azad Kashmir (Pakistan),Bhimber,PK102,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1212.9477792508692,1,True,False
+pk-country-d-pk103,Pakistan,Azad Kashmir (Pakistan),Jhelum Valley,PK103,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,681.7663421856715,1,True,False
+pk-country-d-pk104,Pakistan,Azad Kashmir (Pakistan),Haveli,PK104,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,550.8943120599608,1,True,False
+pk-country-d-pk105,Pakistan,Azad Kashmir (Pakistan),Kotli,PK105,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1599.1120287772937,1,True,False
+pk-country-d-pk106,Pakistan,Azad Kashmir (Pakistan),Mirpur,PK106,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,896.9285519807011,1,True,False
+pk-country-d-pk107,Pakistan,Azad Kashmir (Pakistan),Muzaffarabad,PK107,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1361.0137364577577,1,True,False
+pk-country-d-pk108,Pakistan,Azad Kashmir (Pakistan),Neelum,PK108,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3137.4606983194617,1,True,False
+pk-country-d-pk109,Pakistan,Azad Kashmir (Pakistan),Poonch,PK109,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,719.5720275409705,1,True,False
+pk-country-d-pk110,Pakistan,Azad Kashmir (Pakistan),Sudhnoti,PK110,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,567.8621551709574,1,True,False
+pk-country-d-pk201,Pakistan,Balochistan (Pakistan),Awaran,PK201,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,24989.608970444293,1,True,False
+pk-country-d-pk202,Pakistan,Balochistan (Pakistan),Barkhan,PK202,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3515.437202374923,1,True,False
+pk-country-d-pk203,Pakistan,Balochistan (Pakistan),Chagai,PK203,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,44477.04237944462,1,True,False
+pk-country-d-pk204,Pakistan,Balochistan (Pakistan),Dera Bugti,PK204,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,10294.111437726277,1,True,False
+pk-country-d-pk205,Pakistan,Balochistan (Pakistan),Gwadar,PK205,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,11574.353017485639,3,True,False
+pk-country-d-pk206,Pakistan,Balochistan (Pakistan),Harnai,PK206,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3062.968963907932,1,True,False
+pk-country-d-pk207,Pakistan,Balochistan (Pakistan),Jaffarabad,PK207,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1701.840540992995,1,True,False
+pk-country-d-pk208,Pakistan,Balochistan (Pakistan),Jhal Magsi,PK208,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3860.0870699476536,1,True,False
+pk-country-d-pk209,Pakistan,Balochistan (Pakistan),Kachhi,PK209,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5363.912518186135,1,True,False
+pk-country-d-pk210,Pakistan,Balochistan (Pakistan),Kalat,PK210,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,10179.77006897508,1,True,False
+pk-country-d-pk211,Pakistan,Balochistan (Pakistan),Kech,PK211,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,24419.27840382298,1,True,False
+pk-country-d-pk212,Pakistan,Balochistan (Pakistan),Kharan,PK212,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8215.891994439986,1,True,False
+pk-country-d-pk213,Pakistan,Balochistan (Pakistan),Khuzdar,PK213,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,30954.904096673923,1,True,False
+pk-country-d-pk214,Pakistan,Balochistan (Pakistan),Killa Abdullah,PK214,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2992.9629118880493,2,True,False
+pk-country-d-pk215,Pakistan,Balochistan (Pakistan),Killa Saifullah,PK215,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,12403.862323046633,1,True,False
+pk-country-d-pk216,Pakistan,Balochistan (Pakistan),Kohlu,PK216,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,7728.052941258348,1,True,False
+pk-country-d-pk217,Pakistan,Balochistan (Pakistan),Lasbela,PK217,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,14057.338757922374,7,True,False
+pk-country-d-pk218,Pakistan,Balochistan (Pakistan),Lehri,PK218,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3285.29237069067,1,True,False
+pk-country-d-pk219,Pakistan,Balochistan (Pakistan),Loralai,PK219,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3796.6025867336575,1,True,False
+pk-country-d-pk220,Pakistan,Balochistan (Pakistan),Mastung,PK220,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4712.725457503699,1,True,False
+pk-country-d-pk221,Pakistan,Balochistan (Pakistan),Musakhel,PK221,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5900.700962705276,1,True,False
+pk-country-d-pk222,Pakistan,Balochistan (Pakistan),Nasirabad,PK222,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3224.903217168697,1,True,False
+pk-country-d-pk223,Pakistan,Balochistan (Pakistan),Nushki,PK223,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5863.191171750105,1,True,False
+pk-country-d-pk224,Pakistan,Balochistan (Pakistan),Panjgur,PK224,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,17582.38476148916,1,True,False
+pk-country-d-pk225,Pakistan,Balochistan (Pakistan),Pishin,PK225,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6085.877566922271,1,True,False
+pk-country-d-pk226,Pakistan,Balochistan (Pakistan),Quetta,PK226,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3759.7342137373207,1,True,False
+pk-country-d-pk227,Pakistan,Balochistan (Pakistan),Sherani,PK227,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3050.5431153814898,1,True,False
+pk-country-d-pk228,Pakistan,Balochistan (Pakistan),Sibi,PK228,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4965.918491231596,1,True,False
+pk-country-d-pk229,Pakistan,Balochistan (Pakistan),Sohbatpur,PK229,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,786.8741848893436,1,True,False
+pk-country-d-pk230,Pakistan,Balochistan (Pakistan),Washuk,PK230,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,39031.164966277465,1,True,False
+pk-country-d-pk231,Pakistan,Balochistan (Pakistan),Zhob,PK231,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,11936.649124295856,1,True,False
+pk-country-d-pk232,Pakistan,Balochistan (Pakistan),Ziarat,PK232,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3271.3158076471063,1,True,False
+pk-country-d-pk233,Pakistan,Balochistan (Pakistan),Shaheed Sikandarabad,PK233,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3706.4349679555594,1,True,False
+pk-country-d-pk234,Pakistan,Balochistan (Pakistan),Duki,PK234,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4336.471032103832,1,True,False
+pk-country-d-pk235,Pakistan,Balochistan (Pakistan),Chaman,PK235,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1635.517180081174,1,True,False
+pk-country-d-pk301,Pakistan,Gilgit Baltistan (Pakistan),Astore,PK301,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5132.453809287435,1,True,False
+pk-country-d-pk302,Pakistan,Gilgit Baltistan (Pakistan),Diamir,PK302,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4215.474508225956,1,True,False
+pk-country-d-pk303,Pakistan,Gilgit Baltistan (Pakistan),Ghanche,PK303,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8666.851791569188,1,True,False
+pk-country-d-pk304,Pakistan,Gilgit Baltistan (Pakistan),Ghizer,PK304,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4323.5348460255145,1,True,False
+pk-country-d-pk305,Pakistan,Gilgit Baltistan (Pakistan),Gilgit,PK305,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4016.026610195683,1,True,False
+pk-country-d-pk306,Pakistan,Gilgit Baltistan (Pakistan),Hunza,PK306,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,11419.081920336546,1,True,False
+pk-country-d-pk307,Pakistan,Gilgit Baltistan (Pakistan),Skardu,PK307,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2118.9521408750984,1,True,False
+pk-country-d-pk308,Pakistan,Gilgit Baltistan (Pakistan),Nagar,PK308,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3022.1577825335676,1,True,False
+pk-country-d-pk309,Pakistan,Gilgit Baltistan (Pakistan),Kharmang,PK309,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5971.068021877656,1,True,False
+pk-country-d-pk310,Pakistan,Gilgit Baltistan (Pakistan),Shigar,PK310,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8513.352831577584,1,True,False
+pk-country-d-pk311,Pakistan,Gilgit Baltistan (Pakistan),Darel,PK311,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1650.9241257360436,1,True,False
+pk-country-d-pk312,Pakistan,Gilgit Baltistan (Pakistan),Tangir,PK312,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1102.337522518063,1,True,False
+pk-country-d-pk313,Pakistan,Gilgit Baltistan (Pakistan),Gupis-Yasin,PK313,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,7726.108777813242,1,True,False
+pk-country-d-pk314,Pakistan,Gilgit Baltistan (Pakistan),Rondu,PK314,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1881.9027723249771,1,True,False
+pk-country-d-pk401,Pakistan,Islamabad (Pakistan),Islamabad,PK401,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,901.5324854563116,1,True,False
+pk-country-d-pk501,Pakistan,Khyber Pakhtunkhwa (Pakistan),Abbottabad,PK501,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1639.517136592622,1,True,False
+pk-country-d-pk502,Pakistan,Khyber Pakhtunkhwa (Pakistan),Bajaur,PK502,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1366.3115174155575,1,True,False
+pk-country-d-pk503,Pakistan,Khyber Pakhtunkhwa (Pakistan),Bannu,PK503,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2027.7503748187683,1,True,False
+pk-country-d-pk504,Pakistan,Khyber Pakhtunkhwa (Pakistan),Batagram,PK504,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1485.1792396714845,1,True,False
+pk-country-d-pk505,Pakistan,Khyber Pakhtunkhwa (Pakistan),Buner,PK505,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1774.047525942128,1,True,False
+pk-country-d-pk506,Pakistan,Khyber Pakhtunkhwa (Pakistan),Charsadda,PK506,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,999.1357099154761,1,True,False
+pk-country-d-pk507,Pakistan,Khyber Pakhtunkhwa (Pakistan),Chitral Lower,PK507,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6077.292235494143,1,True,False
+pk-country-d-pk508,Pakistan,Khyber Pakhtunkhwa (Pakistan),Chitral Upper,PK508,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8615.4279813025,1,True,False
+pk-country-d-pk509,Pakistan,Khyber Pakhtunkhwa (Pakistan),D. I. Khan,PK509,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,9028.550873348084,1,True,False
+pk-country-d-pk510,Pakistan,Khyber Pakhtunkhwa (Pakistan),Hangu,PK510,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1372.0161943729952,1,True,False
+pk-country-d-pk511,Pakistan,Khyber Pakhtunkhwa (Pakistan),Haripur,PK511,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1953.8992029483065,1,True,False
+pk-country-d-pk512,Pakistan,Khyber Pakhtunkhwa (Pakistan),Karak,PK512,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2648.386113846415,1,True,False
+pk-country-d-pk513,Pakistan,Khyber Pakhtunkhwa (Pakistan),Khyber,PK513,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2747.4282988909804,1,True,False
+pk-country-d-pk514,Pakistan,Khyber Pakhtunkhwa (Pakistan),Kohat,PK514,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3438.4984399438576,1,True,False
+pk-country-d-pk515,Pakistan,Khyber Pakhtunkhwa (Pakistan),Kohistan Lower,PK515,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,823.4839249595894,1,True,False
+pk-country-d-pk516,Pakistan,Khyber Pakhtunkhwa (Pakistan),Kohistan Upper,PK516,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5484.730095696029,1,True,False
+pk-country-d-pk517,Pakistan,Khyber Pakhtunkhwa (Pakistan),Kolai Palas Kohistan,PK517,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1229.715693854253,1,True,False
+pk-country-d-pk518,Pakistan,Khyber Pakhtunkhwa (Pakistan),Kurram,PK518,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3398.3816343971635,1,True,False
+pk-country-d-pk519,Pakistan,Khyber Pakhtunkhwa (Pakistan),Lakki Marwat,PK519,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3339.8307442846217,1,True,False
+pk-country-d-pk520,Pakistan,Khyber Pakhtunkhwa (Pakistan),Lower Dir,PK520,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1604.7439915069,1,True,False
+pk-country-d-pk521,Pakistan,Khyber Pakhtunkhwa (Pakistan),Malakand,PK521,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,905.6955378062423,1,True,False
+pk-country-d-pk522,Pakistan,Khyber Pakhtunkhwa (Pakistan),Mansehra,PK522,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4032.0110038516423,1,True,False
+pk-country-d-pk523,Pakistan,Khyber Pakhtunkhwa (Pakistan),Mardan,PK523,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1636.4085168606707,1,True,False
+pk-country-d-pk524,Pakistan,Khyber Pakhtunkhwa (Pakistan),Mohmand,PK524,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2261.9523530999777,1,True,False
+pk-country-d-pk525,Pakistan,Khyber Pakhtunkhwa (Pakistan),North Waziristan,PK525,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4929.686014590543,1,True,False
+pk-country-d-pk526,Pakistan,Khyber Pakhtunkhwa (Pakistan),Nowshera,PK526,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1725.7119661282388,1,True,False
+pk-country-d-pk527,Pakistan,Khyber Pakhtunkhwa (Pakistan),Orakzai,PK527,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1369.891374478348,1,True,False
+pk-country-d-pk528,Pakistan,Khyber Pakhtunkhwa (Pakistan),Peshawar,PK528,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1539.071264980171,1,True,False
+pk-country-d-pk529,Pakistan,Khyber Pakhtunkhwa (Pakistan),Shangla,PK529,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1384.2058904096139,1,True,False
+pk-country-d-pk530,Pakistan,Khyber Pakhtunkhwa (Pakistan),South Waziristan,PK530,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6224.409766625785,1,True,False
+pk-country-d-pk531,Pakistan,Khyber Pakhtunkhwa (Pakistan),Swabi,PK531,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1480.462680921508,1,True,False
+pk-country-d-pk532,Pakistan,Khyber Pakhtunkhwa (Pakistan),Swat,PK532,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5348.33010569874,1,True,False
+pk-country-d-pk533,Pakistan,Khyber Pakhtunkhwa (Pakistan),Tank,PK533,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2818.7748796616024,1,True,False
+pk-country-d-pk534,Pakistan,Khyber Pakhtunkhwa (Pakistan),Tor Ghar,PK534,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,454.3811958338138,1,True,False
+pk-country-d-pk535,Pakistan,Khyber Pakhtunkhwa (Pakistan),Upper Dir,PK535,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3731.82225820533,1,True,False
+pk-country-d-pk601,Pakistan,Punjab (Pakistan),Attock,PK601,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6910.050195642741,1,True,False
+pk-country-d-pk602,Pakistan,Punjab (Pakistan),Bahawalnagar,PK602,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8576.727117246337,1,True,False
+pk-country-d-pk603,Pakistan,Punjab (Pakistan),Bahawalpur,PK603,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,23966.06546328869,1,True,False
+pk-country-d-pk604,Pakistan,Punjab (Pakistan),Bhakkar,PK604,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8473.126371587232,1,True,False
+pk-country-d-pk605,Pakistan,Punjab (Pakistan),Chakwal,PK605,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6487.506467700156,1,True,False
+pk-country-d-pk606,Pakistan,Punjab (Pakistan),Chiniot,PK606,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2602.0186566546618,1,True,False
+pk-country-d-pk607,Pakistan,Punjab (Pakistan),Dera Ghazi Khan,PK607,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,11765.681627506348,1,True,False
+pk-country-d-pk608,Pakistan,Punjab (Pakistan),Faisalabad,PK608,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5947.432369374277,1,True,False
+pk-country-d-pk609,Pakistan,Punjab (Pakistan),Gujranwala,PK609,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3619.8328811302413,1,True,False
+pk-country-d-pk610,Pakistan,Punjab (Pakistan),Gujrat,PK610,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3168.3328435643816,1,True,False
+pk-country-d-pk611,Pakistan,Punjab (Pakistan),Hafizabad,PK611,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2277.3443669539142,1,True,False
+pk-country-d-pk612,Pakistan,Punjab (Pakistan),Jhang,PK612,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6345.115849369985,1,True,False
+pk-country-d-pk613,Pakistan,Punjab (Pakistan),Jhelum,PK613,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3568.7986972997946,1,True,False
+pk-country-d-pk614,Pakistan,Punjab (Pakistan),Kasur,PK614,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3986.662965448667,1,True,False
+pk-country-d-pk615,Pakistan,Punjab (Pakistan),Khanewal,PK615,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4355.750192896735,1,True,False
+pk-country-d-pk616,Pakistan,Punjab (Pakistan),Khushab,PK616,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6599.600759252645,1,True,False
+pk-country-d-pk617,Pakistan,Punjab (Pakistan),Lahore,PK617,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1729.8927503104746,1,True,False
+pk-country-d-pk618,Pakistan,Punjab (Pakistan),Leiah,PK618,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6412.721695232041,1,True,False
+pk-country-d-pk619,Pakistan,Punjab (Pakistan),Lodhran,PK619,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2666.340330417546,1,True,False
+pk-country-d-pk620,Pakistan,Punjab (Pakistan),Mandi Bahauddin,PK620,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2741.6663185140897,1,True,False
+pk-country-d-pk621,Pakistan,Punjab (Pakistan),Mianwali,PK621,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5960.289366639937,1,True,False
+pk-country-d-pk622,Pakistan,Punjab (Pakistan),Multan,PK622,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3648.2451608981164,1,True,False
+pk-country-d-pk623,Pakistan,Punjab (Pakistan),Muzaffargarh,PK623,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,7688.07179508775,1,True,False
+pk-country-d-pk624,Pakistan,Punjab (Pakistan),Nankana Sahib,PK624,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2194.612909064537,1,True,False
+pk-country-d-pk625,Pakistan,Punjab (Pakistan),Narowal,PK625,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2376.3126885109464,1,True,False
+pk-country-d-pk626,Pakistan,Punjab (Pakistan),Okara,PK626,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4437.2368206514475,1,True,False
+pk-country-d-pk627,Pakistan,Punjab (Pakistan),Pakpattan,PK627,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2884.2841701510843,1,True,False
+pk-country-d-pk628,Pakistan,Punjab (Pakistan),Rahim Yar Khan,PK628,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,12848.70645476833,3,True,False
+pk-country-d-pk629,Pakistan,Punjab (Pakistan),Rajanpur,PK629,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,12584.648292669117,1,True,False
+pk-country-d-pk630,Pakistan,Punjab (Pakistan),Rawalpindi,PK630,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5225.969062534441,1,True,False
+pk-country-d-pk631,Pakistan,Punjab (Pakistan),Sahiwal,PK631,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3228.720140352577,1,True,False
+pk-country-d-pk632,Pakistan,Punjab (Pakistan),Sargodha,PK632,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5845.860817457007,1,True,False
+pk-country-d-pk633,Pakistan,Punjab (Pakistan),Sheikhupura,PK633,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3628.428684162566,1,True,False
+pk-country-d-pk634,Pakistan,Punjab (Pakistan),Sialkot,PK634,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3068.1974994584625,1,True,False
+pk-country-d-pk635,Pakistan,Punjab (Pakistan),Toba Tek Singh,PK635,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3081.5260778542747,1,True,False
+pk-country-d-pk636,Pakistan,Punjab (Pakistan),Vehari,PK636,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4499.557053443315,1,True,False
+pk-country-d-pk701,Pakistan,Sindh (Pakistan),Badin,PK701,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6574.992860213409,1,True,False
+pk-country-d-pk702,Pakistan,Sindh (Pakistan),Central Karachi,PK702,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,65.14431066764124,1,True,False
+pk-country-d-pk703,Pakistan,Sindh (Pakistan),Dadu,PK703,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8017.50731358111,1,True,False
+pk-country-d-pk704,Pakistan,Sindh (Pakistan),East Karachi,PK704,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,202.92208740880238,1,True,False
+pk-country-d-pk705,Pakistan,Sindh (Pakistan),Ghotki,PK705,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,6366.8871534179325,1,True,False
+pk-country-d-pk706,Pakistan,Sindh (Pakistan),Hyderabad,PK706,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1018.9100383911012,1,True,False
+pk-country-d-pk707,Pakistan,Sindh (Pakistan),Jacobabad,PK707,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2691.200605706079,1,True,False
+pk-country-d-pk708,Pakistan,Sindh (Pakistan),Jamshoro,PK708,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,11230.868568087468,1,True,False
+pk-country-d-pk709,Pakistan,Sindh (Pakistan),Kambar Shahdad Kot,PK709,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5597.195829757497,1,True,False
+pk-country-d-pk710,Pakistan,Sindh (Pakistan),Kashmore,PK710,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2614.8887357058143,1,True,False
+pk-country-d-pk711,Pakistan,Sindh (Pakistan),Khairpur,PK711,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,16005.559500645859,1,True,False
+pk-country-d-pk712,Pakistan,Sindh (Pakistan),Korangi Karachi,PK712,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,104.29194333792486,1,True,False
+pk-country-d-pk713,Pakistan,Sindh (Pakistan),Larkana,PK713,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1921.0410065149943,1,True,False
+pk-country-d-pk714,Pakistan,Sindh (Pakistan),Malir Karachi,PK714,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2726.8602651648075,12,True,False
+pk-country-d-pk715,Pakistan,Sindh (Pakistan),Matiari,PK715,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1457.9406660991872,1,True,False
+pk-country-d-pk716,Pakistan,Sindh (Pakistan),Mirpur Khas,PK716,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3463.161696260614,1,True,False
+pk-country-d-pk717,Pakistan,Sindh (Pakistan),Naushahro Feroze,PK717,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,3036.8629787338095,1,True,False
+pk-country-d-pk718,Pakistan,Sindh (Pakistan),Sanghar,PK718,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,10158.324469661755,1,True,False
+pk-country-d-pk719,Pakistan,Sindh (Pakistan),Shaheed Benazir Abad,PK719,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,4582.235923124964,1,True,False
+pk-country-d-pk720,Pakistan,Sindh (Pakistan),Shikarpur,PK720,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,2551.828634083775,1,True,False
+pk-country-d-pk721,Pakistan,Sindh (Pakistan),South Karachi,PK721,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,507.62249419639153,2,True,False
+pk-country-d-pk722,Pakistan,Sindh (Pakistan),Sujawal,PK722,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,8687.393481084908,2,True,False
+pk-country-d-pk723,Pakistan,Sindh (Pakistan),Sukkur,PK723,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5178.70477097675,1,True,False
+pk-country-d-pk724,Pakistan,Sindh (Pakistan),Tando Allahyar,PK724,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1544.2155144258252,1,True,False
+pk-country-d-pk725,Pakistan,Sindh (Pakistan),Tando Muhammad Khan,PK725,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,1676.8870807545993,1,True,False
+pk-country-d-pk726,Pakistan,Sindh (Pakistan),Tharparkar,PK726,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,19682.939325460906,1,True,False
+pk-country-d-pk727,Pakistan,Sindh (Pakistan),Thatta,PK727,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,7630.4589323577175,21,True,False
+pk-country-d-pk728,Pakistan,Sindh (Pakistan),Umer Kot,PK728,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,5489.585444780153,1,True,False
+pk-country-d-pk729,Pakistan,Sindh (Pakistan),West Karachi,PK729,ADM2 (district),SRC-PAK-CODAB-ADM2,2022-09-09,241.76651051594533,1,True,False

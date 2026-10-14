@@ -1,0 +1,863 @@
+layer,feature_id,name,test,status,detail
+districts_all,IN-08-119,AJMER,invalid_polygon,PASS,
+districts_all,IN-08-119,AJMER,multipart_geometry,PASS,single part
+districts_all,IN-08-104,ALWAR,invalid_polygon,PASS,
+districts_all,IN-08-104,ALWAR,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-08-785,BALOTRA,invalid_polygon,PASS,
+districts_all,IN-08-785,BALOTRA,multipart_geometry,PASS,single part
+districts_all,IN-08-125,BANSWARA,invalid_polygon,PASS,
+districts_all,IN-08-125,BANSWARA,multipart_geometry,PASS,single part
+districts_all,IN-08-128,BARAN,invalid_polygon,PASS,
+districts_all,IN-08-128,BARAN,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-08-115,BARMER,invalid_polygon,PASS,
+districts_all,IN-08-115,BARMER,multipart_geometry,PASS,single part
+districts_all,IN-08-779,BEAWAR,invalid_polygon,PASS,
+districts_all,IN-08-779,BEAWAR,multipart_geometry,PASS,single part
+districts_all,IN-08-105,BHARATPUR,invalid_polygon,PASS,
+districts_all,IN-08-105,BHARATPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-122,BHILWARA,invalid_polygon,PASS,
+districts_all,IN-08-122,BHILWARA,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,IN-08-101,BIKANER,invalid_polygon,PASS,
+districts_all,IN-08-101,BIKANER,multipart_geometry,PASS,single part
+districts_all,IN-08-121,BUNDI,invalid_polygon,PASS,
+districts_all,IN-08-121,BUNDI,multipart_geometry,PASS,single part
+districts_all,IN-08-126,CHITTAURGARH,invalid_polygon,PASS,
+districts_all,IN-08-126,CHITTAURGARH,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-08-102,CHURU,invalid_polygon,PASS,
+districts_all,IN-08-102,CHURU,multipart_geometry,PASS,single part
+districts_all,IN-08-109,DAUSA,invalid_polygon,PASS,
+districts_all,IN-08-109,DAUSA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-08-774,DEEG,invalid_polygon,PASS,
+districts_all,IN-08-774,DEEG,multipart_geometry,PASS,single part
+districts_all,IN-08-106,DHAULPUR,invalid_polygon,PASS,
+districts_all,IN-08-106,DHAULPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-787,DIDWANA-KUCHAMAN,invalid_polygon,PASS,
+districts_all,IN-08-787,DIDWANA-KUCHAMAN,multipart_geometry,PASS,single part
+districts_all,IN-08-124,DUNGARPUR,invalid_polygon,PASS,
+districts_all,IN-08-124,DUNGARPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-099,GANGANAGAR,invalid_polygon,PASS,
+districts_all,IN-08-099,GANGANAGAR,multipart_geometry,PASS,single part
+districts_all,IN-08-100,HANUMANGARH,invalid_polygon,PASS,
+districts_all,IN-08-100,HANUMANGARH,multipart_geometry,PASS,single part
+districts_all,IN-08-110,JAIPUR,invalid_polygon,PASS,
+districts_all,IN-08-110,JAIPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-114,JAISALMER,invalid_polygon,PASS,
+districts_all,IN-08-114,JAISALMER,multipart_geometry,PASS,single part
+districts_all,IN-08-116,JALOR,invalid_polygon,PASS,
+districts_all,IN-08-116,JALOR,multipart_geometry,PASS,single part
+districts_all,IN-08-129,JHALAWAR,invalid_polygon,PASS,
+districts_all,IN-08-129,JHALAWAR,multipart_geometry,PASS,single part
+districts_all,IN-08-103,JHUNJHUNUN,invalid_polygon,PASS,
+districts_all,IN-08-103,JHUNJHUNUN,multipart_geometry,PASS,single part
+districts_all,IN-08-113,JODHPUR,invalid_polygon,PASS,
+districts_all,IN-08-113,JODHPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-107,KARAULI,invalid_polygon,PASS,
+districts_all,IN-08-107,KARAULI,multipart_geometry,PASS,single part
+districts_all,IN-08-777,KHAIRTHAL-TIJARA,invalid_polygon,PASS,
+districts_all,IN-08-777,KHAIRTHAL-TIJARA,multipart_geometry,PASS,single part
+districts_all,IN-08-127,KOTA,invalid_polygon,PASS,
+districts_all,IN-08-127,KOTA,multipart_geometry,PASS,single part
+districts_all,IN-08-780,KOTPUTLI-BEHROR,invalid_polygon,PASS,
+districts_all,IN-08-780,KOTPUTLI-BEHROR,multipart_geometry,PASS,single part
+districts_all,IN-08-112,NAGAUR,invalid_polygon,PASS,
+districts_all,IN-08-112,NAGAUR,multipart_geometry,PASS,single part
+districts_all,IN-08-118,PALI,invalid_polygon,PASS,
+districts_all,IN-08-118,PALI,multipart_geometry,PASS,single part
+districts_all,IN-08-783,PHALODI,invalid_polygon,PASS,
+districts_all,IN-08-783,PHALODI,multipart_geometry,PASS,single part
+districts_all,IN-08-131,PRATAPGARH,invalid_polygon,PASS,
+districts_all,IN-08-131,PRATAPGARH,multipart_geometry,PASS,single part
+districts_all,IN-08-123,RAJSAMAND,invalid_polygon,PASS,
+districts_all,IN-08-123,RAJSAMAND,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-08-775,SALUMBAR,invalid_polygon,PASS,
+districts_all,IN-08-775,SALUMBAR,multipart_geometry,REVIEW,"4 parts - multipart district, inspect before labelling"
+districts_all,IN-08-108,SAWAI MADHOPUR,invalid_polygon,PASS,
+districts_all,IN-08-108,SAWAI MADHOPUR,multipart_geometry,PASS,single part
+districts_all,IN-08-111,SIKAR,invalid_polygon,PASS,
+districts_all,IN-08-111,SIKAR,multipart_geometry,PASS,single part
+districts_all,IN-08-117,SIROHI,invalid_polygon,PASS,
+districts_all,IN-08-117,SIROHI,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-08-120,TONK,invalid_polygon,PASS,
+districts_all,IN-08-120,TONK,multipart_geometry,PASS,single part
+districts_all,IN-08-130,UDAIPUR,invalid_polygon,PASS,
+districts_all,IN-08-130,UDAIPUR,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-24-474,AHMADABAD,invalid_polygon,PASS,
+districts_all,IN-24-474,AHMADABAD,multipart_geometry,PASS,single part
+districts_all,IN-24-480,AMRELI,invalid_polygon,PASS,
+districts_all,IN-24-480,AMRELI,multipart_geometry,REVIEW,"24 parts - multipart district, inspect before labelling"
+districts_all,IN-24-482,ANAND,invalid_polygon,PASS,
+districts_all,IN-24-482,ANAND,multipart_geometry,PASS,single part
+districts_all,IN-24-650,ARVALLI,invalid_polygon,PASS,
+districts_all,IN-24-650,ARVALLI,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-469,BANAS KANTHA,invalid_polygon,PASS,
+districts_all,IN-24-469,BANAS KANTHA,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,IN-24-488,BHARUCH,invalid_polygon,PASS,
+districts_all,IN-24-488,BHARUCH,multipart_geometry,REVIEW,"10 parts - multipart district, inspect before labelling"
+districts_all,IN-24-481,BHAVNAGAR,invalid_polygon,PASS,
+districts_all,IN-24-481,BHAVNAGAR,multipart_geometry,REVIEW,"11 parts - multipart district, inspect before labelling"
+districts_all,IN-24-653,BOTAD,invalid_polygon,PASS,
+districts_all,IN-24-653,BOTAD,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,IN-24-654,CHHOTAUDEPUR,invalid_polygon,PASS,
+districts_all,IN-24-654,CHHOTAUDEPUR,multipart_geometry,PASS,single part
+districts_all,IN-24-485,DAHOD,invalid_polygon,PASS,
+districts_all,IN-24-485,DAHOD,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-489,DANGS,invalid_polygon,PASS,
+districts_all,IN-24-489,DANGS,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-656,DEVBHUMI DWARKA,invalid_polygon,PASS,
+districts_all,IN-24-656,DEVBHUMI DWARKA,multipart_geometry,REVIEW,"38 parts - multipart district, inspect before labelling"
+districts_all,IN-24-473,GANDHINAGAR,invalid_polygon,PASS,
+districts_all,IN-24-473,GANDHINAGAR,multipart_geometry,PASS,single part
+districts_all,IN-24-652,GIR SOMNATH,invalid_polygon,PASS,
+districts_all,IN-24-652,GIR SOMNATH,multipart_geometry,REVIEW,"4 parts - multipart district, inspect before labelling"
+districts_all,IN-24-477,JAMNAGAR,invalid_polygon,PASS,
+districts_all,IN-24-477,JAMNAGAR,multipart_geometry,REVIEW,"22 parts - multipart district, inspect before labelling"
+districts_all,IN-24-479,JUNAGADH,invalid_polygon,PASS,
+districts_all,IN-24-479,JUNAGADH,multipart_geometry,PASS,single part
+districts_all,IN-24-468,KACHCHH,invalid_polygon,PASS,
+districts_all,IN-24-468,KACHCHH,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-24-483,KHEDA,invalid_polygon,PASS,
+districts_all,IN-24-483,KHEDA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-471,MAHESANA,invalid_polygon,PASS,
+districts_all,IN-24-471,MAHESANA,multipart_geometry,PASS,single part
+districts_all,IN-24-655,MAHISAGAR,invalid_polygon,PASS,
+districts_all,IN-24-655,MAHISAGAR,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-657,MORBI,invalid_polygon,PASS,
+districts_all,IN-24-657,MORBI,multipart_geometry,REVIEW,"9 parts - multipart district, inspect before labelling"
+districts_all,IN-24-487,NARMADA,invalid_polygon,PASS,
+districts_all,IN-24-487,NARMADA,multipart_geometry,PASS,single part
+districts_all,IN-24-490,NAVSARI,invalid_polygon,PASS,
+districts_all,IN-24-490,NAVSARI,multipart_geometry,PASS,single part
+districts_all,IN-24-484,PANCH MAHALS,invalid_polygon,PASS,
+districts_all,IN-24-484,PANCH MAHALS,multipart_geometry,PASS,single part
+districts_all,IN-24-470,PATAN,invalid_polygon,PASS,
+districts_all,IN-24-470,PATAN,multipart_geometry,PASS,single part
+districts_all,IN-24-478,PORBANDAR,invalid_polygon,PASS,
+districts_all,IN-24-478,PORBANDAR,multipart_geometry,PASS,single part
+districts_all,IN-24-476,RAJKOT,invalid_polygon,PASS,
+districts_all,IN-24-476,RAJKOT,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-472,SABAR KANTHA,invalid_polygon,PASS,
+districts_all,IN-24-472,SABAR KANTHA,multipart_geometry,PASS,single part
+districts_all,IN-24-492,SURAT,invalid_polygon,PASS,
+districts_all,IN-24-492,SURAT,multipart_geometry,PASS,single part
+districts_all,IN-24-475,SURENDRANAGAR,invalid_polygon,PASS,
+districts_all,IN-24-475,SURENDRANAGAR,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-24-493,TAPI,invalid_polygon,PASS,
+districts_all,IN-24-493,TAPI,multipart_geometry,PASS,single part
+districts_all,IN-24-486,VADODARA,invalid_polygon,PASS,
+districts_all,IN-24-486,VADODARA,multipart_geometry,PASS,single part
+districts_all,IN-24-491,VALSAD,invalid_polygon,PASS,
+districts_all,IN-24-491,VALSAD,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-23-735,AGAR MALWA,invalid_polygon,PASS,
+districts_all,IN-23-735,AGAR MALWA,multipart_geometry,PASS,single part
+districts_all,IN-23-465,ALIRAJPUR,invalid_polygon,PASS,
+districts_all,IN-23-465,ALIRAJPUR,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-23-461,ANUPPUR,invalid_polygon,PASS,
+districts_all,IN-23-461,ANUPPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-459,ASHOKNAGAR,invalid_polygon,PASS,
+districts_all,IN-23-459,ASHOKNAGAR,multipart_geometry,PASS,single part
+districts_all,IN-23-457,BALAGHAT,invalid_polygon,PASS,
+districts_all,IN-23-457,BALAGHAT,multipart_geometry,PASS,single part
+districts_all,IN-23-441,BARWANI,invalid_polygon,PASS,
+districts_all,IN-23-441,BARWANI,multipart_geometry,PASS,single part
+districts_all,IN-23-447,BETUL,invalid_polygon,PASS,
+districts_all,IN-23-447,BETUL,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,IN-23-420,BHIND,invalid_polygon,PASS,
+districts_all,IN-23-420,BHIND,multipart_geometry,REVIEW,"4 parts - multipart district, inspect before labelling"
+districts_all,IN-23-444,BHOPAL,invalid_polygon,PASS,
+districts_all,IN-23-444,BHOPAL,multipart_geometry,PASS,single part
+districts_all,IN-23-467,BURHANPUR,invalid_polygon,PASS,
+districts_all,IN-23-467,BURHANPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-425,CHHATARPUR,invalid_polygon,PASS,
+districts_all,IN-23-425,CHHATARPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-455,CHHINDWARA,invalid_polygon,PASS,
+districts_all,IN-23-455,CHHINDWARA,multipart_geometry,PASS,single part
+districts_all,IN-23-428,DAMOH,invalid_polygon,PASS,
+districts_all,IN-23-428,DAMOH,multipart_geometry,PASS,single part
+districts_all,IN-23-422,DATIA,invalid_polygon,PASS,
+districts_all,IN-23-422,DATIA,multipart_geometry,REVIEW,"4 parts - multipart district, inspect before labelling"
+districts_all,IN-23-437,DEWAS,invalid_polygon,PASS,
+districts_all,IN-23-437,DEWAS,multipart_geometry,PASS,single part
+districts_all,IN-23-438,DHAR,invalid_polygon,PASS,
+districts_all,IN-23-438,DHAR,multipart_geometry,PASS,single part
+districts_all,IN-23-453,DINDORI,invalid_polygon,PASS,
+districts_all,IN-23-453,DINDORI,multipart_geometry,PASS,single part
+districts_all,IN-23-458,GUNA,invalid_polygon,PASS,
+districts_all,IN-23-458,GUNA,multipart_geometry,PASS,single part
+districts_all,IN-23-421,GWALIOR,invalid_polygon,PASS,
+districts_all,IN-23-421,GWALIOR,multipart_geometry,PASS,single part
+districts_all,IN-23-448,HARDA,invalid_polygon,PASS,
+districts_all,IN-23-448,HARDA,multipart_geometry,PASS,single part
+districts_all,IN-23-439,INDORE,invalid_polygon,PASS,
+districts_all,IN-23-439,INDORE,multipart_geometry,PASS,single part
+districts_all,IN-23-451,JABALPUR,invalid_polygon,PASS,
+districts_all,IN-23-451,JABALPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-464,JHABUA,invalid_polygon,PASS,
+districts_all,IN-23-464,JHABUA,multipart_geometry,PASS,single part
+districts_all,IN-23-466,KHANDWA,invalid_polygon,PASS,
+districts_all,IN-23-466,KHANDWA,multipart_geometry,PASS,single part
+districts_all,IN-23-440,KHARGONE,invalid_polygon,PASS,
+districts_all,IN-23-440,KHARGONE,multipart_geometry,PASS,single part
+districts_all,IN-23-768,MAIHAR,invalid_polygon,PASS,
+districts_all,IN-23-768,MAIHAR,multipart_geometry,REVIEW,"4 parts - multipart district, inspect before labelling"
+districts_all,IN-23-454,MANDLA,invalid_polygon,PASS,
+districts_all,IN-23-454,MANDLA,multipart_geometry,PASS,single part
+districts_all,IN-23-433,MANDSAUR,invalid_polygon,PASS,
+districts_all,IN-23-433,MANDSAUR,multipart_geometry,PASS,single part
+districts_all,IN-23-767,MAUGANJ,invalid_polygon,PASS,
+districts_all,IN-23-767,MAUGANJ,multipart_geometry,PASS,single part
+districts_all,IN-23-419,MORENA,invalid_polygon,PASS,
+districts_all,IN-23-419,MORENA,multipart_geometry,PASS,single part
+districts_all,IN-23-449,NARMADAPURAM,invalid_polygon,PASS,
+districts_all,IN-23-449,NARMADAPURAM,multipart_geometry,PASS,single part
+districts_all,IN-23-452,NARSIMHAPUR,invalid_polygon,PASS,
+districts_all,IN-23-452,NARSIMHAPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-432,NEEMUCH,invalid_polygon,PASS,
+districts_all,IN-23-432,NEEMUCH,multipart_geometry,PASS,single part
+districts_all,IN-23-753,NIWARI,invalid_polygon,PASS,
+districts_all,IN-23-753,NIWARI,multipart_geometry,PASS,single part
+districts_all,IN-23-769,PANDHURNA,invalid_polygon,PASS,
+districts_all,IN-23-769,PANDHURNA,multipart_geometry,PASS,single part
+districts_all,IN-23-426,PANNA,invalid_polygon,PASS,
+districts_all,IN-23-426,PANNA,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-23-446,RAISEN,invalid_polygon,PASS,
+districts_all,IN-23-446,RAISEN,multipart_geometry,PASS,single part
+districts_all,IN-23-442,RAJGARH,invalid_polygon,PASS,
+districts_all,IN-23-442,RAJGARH,multipart_geometry,PASS,single part
+districts_all,IN-23-434,RATLAM,invalid_polygon,PASS,
+districts_all,IN-23-434,RATLAM,multipart_geometry,PASS,single part
+districts_all,IN-23-430,REWA,invalid_polygon,PASS,
+districts_all,IN-23-430,REWA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-23-427,SAGAR,invalid_polygon,PASS,
+districts_all,IN-23-427,SAGAR,multipart_geometry,PASS,single part
+districts_all,IN-23-429,SATNA,invalid_polygon,PASS,
+districts_all,IN-23-429,SATNA,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-23-445,SEHORE,invalid_polygon,PASS,
+districts_all,IN-23-445,SEHORE,multipart_geometry,PASS,single part
+districts_all,IN-23-456,SEONI,invalid_polygon,PASS,
+districts_all,IN-23-456,SEONI,multipart_geometry,PASS,single part
+districts_all,IN-23-460,SHAHDOL,invalid_polygon,PASS,
+districts_all,IN-23-460,SHAHDOL,multipart_geometry,PASS,single part
+districts_all,IN-23-436,SHAJAPUR,invalid_polygon,PASS,
+districts_all,IN-23-436,SHAJAPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-418,SHEOPUR,invalid_polygon,PASS,
+districts_all,IN-23-418,SHEOPUR,multipart_geometry,PASS,single part
+districts_all,IN-23-423,SHIVPURI,invalid_polygon,PASS,
+districts_all,IN-23-423,SHIVPURI,multipart_geometry,PASS,single part
+districts_all,IN-23-462,SIDHI,invalid_polygon,PASS,
+districts_all,IN-23-462,SIDHI,multipart_geometry,PASS,single part
+districts_all,IN-23-463,SINGRAULI,invalid_polygon,PASS,
+districts_all,IN-23-463,SINGRAULI,multipart_geometry,PASS,single part
+districts_all,IN-23-424,TIKAMGARH,invalid_polygon,PASS,
+districts_all,IN-23-424,TIKAMGARH,multipart_geometry,PASS,single part
+districts_all,IN-23-435,UJJAIN,invalid_polygon,PASS,
+districts_all,IN-23-435,UJJAIN,multipart_geometry,PASS,single part
+districts_all,IN-23-431,UMARIA,invalid_polygon,PASS,
+districts_all,IN-23-431,UMARIA,multipart_geometry,PASS,single part
+districts_all,IN-23-443,VIDISHA,invalid_polygon,PASS,
+districts_all,IN-23-443,VIDISHA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-23-450,KATNI,invalid_polygon,PASS,
+districts_all,IN-23-450,KATNI,multipart_geometry,PASS,single part
+districts_all,IN-09-146,AGRA,invalid_polygon,PASS,
+districts_all,IN-09-146,AGRA,multipart_geometry,PASS,single part
+districts_all,IN-09-143,ALIGARH,invalid_polygon,PASS,
+districts_all,IN-09-143,ALIGARH,multipart_geometry,PASS,single part
+districts_all,IN-09-178,AMBEDKAR NAGAR,invalid_polygon,PASS,
+districts_all,IN-09-178,AMBEDKAR NAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-661,AMETHI,invalid_polygon,PASS,
+districts_all,IN-09-661,AMETHI,multipart_geometry,PASS,single part
+districts_all,IN-09-137,AMROHA,invalid_polygon,PASS,
+districts_all,IN-09-137,AMROHA,multipart_geometry,PASS,single part
+districts_all,IN-09-162,AURAIYA,invalid_polygon,PASS,
+districts_all,IN-09-162,AURAIYA,multipart_geometry,PASS,single part
+districts_all,IN-09-177,AYODHYA,invalid_polygon,PASS,
+districts_all,IN-09-177,AYODHYA,multipart_geometry,PASS,single part
+districts_all,IN-09-191,AZAMGARH,invalid_polygon,PASS,
+districts_all,IN-09-191,AZAMGARH,multipart_geometry,PASS,single part
+districts_all,IN-09-139,BAGHPAT,invalid_polygon,PASS,
+districts_all,IN-09-139,BAGHPAT,multipart_geometry,PASS,single part
+districts_all,IN-09-180,BAHRAICH,invalid_polygon,PASS,
+districts_all,IN-09-180,BAHRAICH,multipart_geometry,PASS,single part
+districts_all,IN-09-193,BALLIA,invalid_polygon,PASS,
+districts_all,IN-09-193,BALLIA,multipart_geometry,PASS,single part
+districts_all,IN-09-182,BALRAMPUR,invalid_polygon,PASS,
+districts_all,IN-09-182,BALRAMPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-176,BARA BANKI,invalid_polygon,PASS,
+districts_all,IN-09-176,BARA BANKI,multipart_geometry,PASS,single part
+districts_all,IN-09-150,BAREILLY,invalid_polygon,PASS,
+districts_all,IN-09-150,BAREILLY,multipart_geometry,PASS,single part
+districts_all,IN-09-185,BASTI,invalid_polygon,PASS,
+districts_all,IN-09-185,BASTI,multipart_geometry,PASS,single part
+districts_all,IN-09-198,BHADOHI,invalid_polygon,PASS,
+districts_all,IN-09-198,BHADOHI,multipart_geometry,PASS,single part
+districts_all,IN-09-134,BIJNOR,invalid_polygon,PASS,
+districts_all,IN-09-134,BIJNOR,multipart_geometry,PASS,single part
+districts_all,IN-09-149,BUDAUN,invalid_polygon,PASS,
+districts_all,IN-09-149,BUDAUN,multipart_geometry,PASS,single part
+districts_all,IN-09-142,BULANDSHAHR,invalid_polygon,PASS,
+districts_all,IN-09-142,BULANDSHAHR,multipart_geometry,PASS,single part
+districts_all,IN-09-196,CHANDAULI,invalid_polygon,PASS,
+districts_all,IN-09-196,CHANDAULI,multipart_geometry,PASS,single part
+districts_all,IN-09-171,CHITRAKOOT,invalid_polygon,PASS,
+districts_all,IN-09-171,CHITRAKOOT,multipart_geometry,PASS,single part
+districts_all,IN-09-190,DEORIA,invalid_polygon,PASS,
+districts_all,IN-09-190,DEORIA,multipart_geometry,PASS,single part
+districts_all,IN-09-201,ETAH,invalid_polygon,PASS,
+districts_all,IN-09-201,ETAH,multipart_geometry,PASS,single part
+districts_all,IN-09-161,ETAWAH,invalid_polygon,PASS,
+districts_all,IN-09-161,ETAWAH,multipart_geometry,PASS,single part
+districts_all,IN-09-159,FARRUKHABAD,invalid_polygon,PASS,
+districts_all,IN-09-159,FARRUKHABAD,multipart_geometry,PASS,single part
+districts_all,IN-09-172,FATEHPUR,invalid_polygon,PASS,
+districts_all,IN-09-172,FATEHPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-147,FIROZABAD,invalid_polygon,PASS,
+districts_all,IN-09-147,FIROZABAD,multipart_geometry,PASS,single part
+districts_all,IN-09-141,GAUTAM BUDDHA NAGAR,invalid_polygon,PASS,
+districts_all,IN-09-141,GAUTAM BUDDHA NAGAR,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-09-140,GHAZIABAD,invalid_polygon,PASS,
+districts_all,IN-09-140,GHAZIABAD,multipart_geometry,PASS,single part
+districts_all,IN-09-195,GHAZIPUR,invalid_polygon,PASS,
+districts_all,IN-09-195,GHAZIPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-183,GONDA,invalid_polygon,PASS,
+districts_all,IN-09-183,GONDA,multipart_geometry,PASS,single part
+districts_all,IN-09-188,GORAKHPUR,invalid_polygon,PASS,
+districts_all,IN-09-188,GORAKHPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-168,HAMIRPUR,invalid_polygon,PASS,
+districts_all,IN-09-168,HAMIRPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-665,HAPUR,invalid_polygon,PASS,
+districts_all,IN-09-665,HAPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-155,HARDOI,invalid_polygon,PASS,
+districts_all,IN-09-155,HARDOI,multipart_geometry,PASS,single part
+districts_all,IN-09-144,HATHRAS,invalid_polygon,PASS,
+districts_all,IN-09-144,HATHRAS,multipart_geometry,PASS,single part
+districts_all,IN-09-165,JALAUN,invalid_polygon,PASS,
+districts_all,IN-09-165,JALAUN,multipart_geometry,PASS,single part
+districts_all,IN-09-194,JAUNPUR,invalid_polygon,PASS,
+districts_all,IN-09-194,JAUNPUR,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-09-166,JHANSI,invalid_polygon,PASS,
+districts_all,IN-09-166,JHANSI,multipart_geometry,PASS,single part
+districts_all,IN-09-160,KANNAUJ,invalid_polygon,PASS,
+districts_all,IN-09-160,KANNAUJ,multipart_geometry,PASS,single part
+districts_all,IN-09-163,KANPUR DEHAT,invalid_polygon,PASS,
+districts_all,IN-09-163,KANPUR DEHAT,multipart_geometry,PASS,single part
+districts_all,IN-09-164,KANPUR NAGAR,invalid_polygon,PASS,
+districts_all,IN-09-164,KANPUR NAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-202,KASGANJ,invalid_polygon,PASS,
+districts_all,IN-09-202,KASGANJ,multipart_geometry,PASS,single part
+districts_all,IN-09-174,KAUSHAMBI,invalid_polygon,PASS,
+districts_all,IN-09-174,KAUSHAMBI,multipart_geometry,REVIEW,"6 parts - multipart district, inspect before labelling"
+districts_all,IN-09-153,KHERI,invalid_polygon,PASS,
+districts_all,IN-09-153,KHERI,multipart_geometry,PASS,single part
+districts_all,IN-09-189,KUSHINAGAR,invalid_polygon,PASS,
+districts_all,IN-09-189,KUSHINAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-167,LALITPUR,invalid_polygon,PASS,
+districts_all,IN-09-167,LALITPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-157,LUCKNOW,invalid_polygon,PASS,
+districts_all,IN-09-157,LUCKNOW,multipart_geometry,PASS,single part
+districts_all,IN-09-169,MAHOBA,invalid_polygon,PASS,
+districts_all,IN-09-169,MAHOBA,multipart_geometry,REVIEW,"5 parts - multipart district, inspect before labelling"
+districts_all,IN-09-187,MAHRAJGANJ,invalid_polygon,PASS,
+districts_all,IN-09-187,MAHRAJGANJ,multipart_geometry,PASS,single part
+districts_all,IN-09-148,MAINPURI,invalid_polygon,PASS,
+districts_all,IN-09-148,MAINPURI,multipart_geometry,PASS,single part
+districts_all,IN-09-145,MATHURA,invalid_polygon,PASS,
+districts_all,IN-09-145,MATHURA,multipart_geometry,PASS,single part
+districts_all,IN-09-192,MAU,invalid_polygon,PASS,
+districts_all,IN-09-192,MAU,multipart_geometry,PASS,single part
+districts_all,IN-09-138,MEERUT,invalid_polygon,PASS,
+districts_all,IN-09-138,MEERUT,multipart_geometry,PASS,single part
+districts_all,IN-09-199,MIRZAPUR,invalid_polygon,PASS,
+districts_all,IN-09-199,MIRZAPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-135,MORADABAD,invalid_polygon,PASS,
+districts_all,IN-09-135,MORADABAD,multipart_geometry,PASS,single part
+districts_all,IN-09-133,MUZAFFARNAGAR,invalid_polygon,PASS,
+districts_all,IN-09-133,MUZAFFARNAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-151,PILIBHIT,invalid_polygon,PASS,
+districts_all,IN-09-151,PILIBHIT,multipart_geometry,PASS,single part
+districts_all,IN-09-173,PRATAPGARH,invalid_polygon,PASS,
+districts_all,IN-09-173,PRATAPGARH,multipart_geometry,PASS,single part
+districts_all,IN-09-175,PRAYAGRAJ,invalid_polygon,PASS,
+districts_all,IN-09-175,PRAYAGRAJ,multipart_geometry,PASS,single part
+districts_all,IN-09-158,RAE BARELI,invalid_polygon,PASS,
+districts_all,IN-09-158,RAE BARELI,multipart_geometry,PASS,single part
+districts_all,IN-09-136,RAMPUR,invalid_polygon,PASS,
+districts_all,IN-09-136,RAMPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-132,SAHARANPUR,invalid_polygon,PASS,
+districts_all,IN-09-132,SAHARANPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-663,SAMBHAL,invalid_polygon,PASS,
+districts_all,IN-09-663,SAMBHAL,multipart_geometry,PASS,single part
+districts_all,IN-09-186,SANT KABIR NAGAR,invalid_polygon,PASS,
+districts_all,IN-09-186,SANT KABIR NAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-152,SHAHJAHANPUR,invalid_polygon,PASS,
+districts_all,IN-09-152,SHAHJAHANPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-662,SHAMLI,invalid_polygon,PASS,
+districts_all,IN-09-662,SHAMLI,multipart_geometry,PASS,single part
+districts_all,IN-09-181,SHRAWASTI,invalid_polygon,PASS,
+districts_all,IN-09-181,SHRAWASTI,multipart_geometry,PASS,single part
+districts_all,IN-09-184,SIDDHARTHNAGAR,invalid_polygon,PASS,
+districts_all,IN-09-184,SIDDHARTHNAGAR,multipart_geometry,PASS,single part
+districts_all,IN-09-154,SITAPUR,invalid_polygon,PASS,
+districts_all,IN-09-154,SITAPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-200,SONBHADRA,invalid_polygon,PASS,
+districts_all,IN-09-200,SONBHADRA,multipart_geometry,PASS,single part
+districts_all,IN-09-179,SULTANPUR,invalid_polygon,PASS,
+districts_all,IN-09-179,SULTANPUR,multipart_geometry,PASS,single part
+districts_all,IN-09-156,UNNAO,invalid_polygon,PASS,
+districts_all,IN-09-156,UNNAO,multipart_geometry,PASS,single part
+districts_all,IN-09-197,VARANASI,invalid_polygon,PASS,
+districts_all,IN-09-197,VARANASI,multipart_geometry,PASS,single part
+districts_all,IN-09-170,BANDA,invalid_polygon,PASS,
+districts_all,IN-09-170,BANDA,multipart_geometry,PASS,single part
+districts_all,IN-06-070,AMBALA,invalid_polygon,PASS,
+districts_all,IN-06-070,AMBALA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-06-081,BHIWANI,invalid_polygon,PASS,
+districts_all,IN-06-081,BHIWANI,multipart_geometry,PASS,single part
+districts_all,IN-06-732,CHARKI DADRI,invalid_polygon,PASS,
+districts_all,IN-06-732,CHARKI DADRI,multipart_geometry,PASS,single part
+districts_all,IN-06-088,FARIDABAD,invalid_polygon,PASS,
+districts_all,IN-06-088,FARIDABAD,multipart_geometry,PASS,single part
+districts_all,IN-06-078,FATEHABAD,invalid_polygon,PASS,
+districts_all,IN-06-078,FATEHABAD,multipart_geometry,PASS,single part
+districts_all,IN-06-086,GURUGRAM,invalid_polygon,PASS,
+districts_all,IN-06-086,GURUGRAM,multipart_geometry,PASS,single part
+districts_all,IN-06-080,HISAR,invalid_polygon,PASS,
+districts_all,IN-06-080,HISAR,multipart_geometry,PASS,single part
+districts_all,IN-06-083,JHAJJAR,invalid_polygon,PASS,
+districts_all,IN-06-083,JHAJJAR,multipart_geometry,PASS,single part
+districts_all,IN-06-077,JIND,invalid_polygon,PASS,
+districts_all,IN-06-077,JIND,multipart_geometry,PASS,single part
+districts_all,IN-06-073,KAITHAL,invalid_polygon,PASS,
+districts_all,IN-06-073,KAITHAL,multipart_geometry,PASS,single part
+districts_all,IN-06-074,KARNAL,invalid_polygon,PASS,
+districts_all,IN-06-074,KARNAL,multipart_geometry,PASS,single part
+districts_all,IN-06-072,KURUKSHETRA,invalid_polygon,PASS,
+districts_all,IN-06-072,KURUKSHETRA,multipart_geometry,PASS,single part
+districts_all,IN-06-084,MAHENDRAGARH,invalid_polygon,PASS,
+districts_all,IN-06-084,MAHENDRAGARH,multipart_geometry,PASS,single part
+districts_all,IN-06-087,NUH,invalid_polygon,PASS,
+districts_all,IN-06-087,NUH,multipart_geometry,PASS,single part
+districts_all,IN-06-089,PALWAL,invalid_polygon,PASS,
+districts_all,IN-06-089,PALWAL,multipart_geometry,PASS,single part
+districts_all,IN-06-069,PANCHKULA,invalid_polygon,PASS,
+districts_all,IN-06-069,PANCHKULA,multipart_geometry,PASS,single part
+districts_all,IN-06-075,PANIPAT,invalid_polygon,PASS,
+districts_all,IN-06-075,PANIPAT,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-06-085,REWARI,invalid_polygon,PASS,
+districts_all,IN-06-085,REWARI,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-06-082,ROHTAK,invalid_polygon,PASS,
+districts_all,IN-06-082,ROHTAK,multipart_geometry,PASS,single part
+districts_all,IN-06-079,SIRSA,invalid_polygon,PASS,
+districts_all,IN-06-079,SIRSA,multipart_geometry,PASS,single part
+districts_all,IN-06-076,SONIPAT,invalid_polygon,PASS,
+districts_all,IN-06-076,SONIPAT,multipart_geometry,PASS,single part
+districts_all,IN-06-071,YAMUNANAGAR,invalid_polygon,PASS,
+districts_all,IN-06-071,YAMUNANAGAR,multipart_geometry,PASS,single part
+districts_all,IN-03-043,FIROZPUR,invalid_polygon,PASS,
+districts_all,IN-03-043,FIROZPUR,multipart_geometry,PASS,single part
+districts_all,IN-03-041,LUDHIANA,invalid_polygon,PASS,
+districts_all,IN-03-041,LUDHIANA,multipart_geometry,PASS,single part
+districts_all,IN-03-051,RUPNAGAR,invalid_polygon,PASS,
+districts_all,IN-03-051,RUPNAGAR,multipart_geometry,PASS,single part
+districts_all,IN-03-047,MANSA,invalid_polygon,PASS,
+districts_all,IN-03-047,MANSA,multipart_geometry,PASS,single part
+districts_all,IN-03-044,SRI MUKTSAR SAHIB,invalid_polygon,PASS,
+districts_all,IN-03-044,SRI MUKTSAR SAHIB,multipart_geometry,PASS,single part
+districts_all,IN-03-052,SAS NAGAR (SAHIBZADA AJIT SINGH NAGAR),invalid_polygon,PASS,
+districts_all,IN-03-052,SAS NAGAR (SAHIBZADA AJIT SINGH NAGAR),multipart_geometry,PASS,single part
+districts_all,IN-03-037,JALANDHAR,invalid_polygon,PASS,
+districts_all,IN-03-037,JALANDHAR,multipart_geometry,PASS,single part
+districts_all,IN-03-678,PATHANKOT,invalid_polygon,PASS,
+districts_all,IN-03-678,PATHANKOT,multipart_geometry,PASS,single part
+districts_all,IN-03-045,FARIDKOT,invalid_polygon,PASS,
+districts_all,IN-03-045,FARIDKOT,multipart_geometry,PASS,single part
+districts_all,IN-03-042,MOGA,invalid_polygon,PASS,
+districts_all,IN-03-042,MOGA,multipart_geometry,PASS,single part
+districts_all,IN-03-038,HOSHIARPUR,invalid_polygon,PASS,
+districts_all,IN-03-038,HOSHIARPUR,multipart_geometry,PASS,single part
+districts_all,IN-03-046,BATHINDA,invalid_polygon,PASS,
+districts_all,IN-03-046,BATHINDA,multipart_geometry,PASS,single part
+districts_all,IN-03-050,TARN TARAN,invalid_polygon,PASS,
+districts_all,IN-03-050,TARN TARAN,multipart_geometry,PASS,single part
+districts_all,IN-03-673,FAZILKA,invalid_polygon,PASS,
+districts_all,IN-03-673,FAZILKA,multipart_geometry,PASS,single part
+districts_all,IN-03-048,PATIALA,invalid_polygon,PASS,
+districts_all,IN-03-048,PATIALA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-03-039,SHAHID BHAGAT SINGH NAGAR,invalid_polygon,PASS,
+districts_all,IN-03-039,SHAHID BHAGAT SINGH NAGAR,multipart_geometry,PASS,single part
+districts_all,IN-03-054,BARNALA,invalid_polygon,PASS,
+districts_all,IN-03-054,BARNALA,multipart_geometry,PASS,single part
+districts_all,IN-03-035,GURDASPUR,invalid_polygon,PASS,
+districts_all,IN-03-035,GURDASPUR,multipart_geometry,PASS,single part
+districts_all,IN-03-036,KAPURTHALA,invalid_polygon,PASS,
+districts_all,IN-03-036,KAPURTHALA,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,IN-03-040,FATEHGARH SAHIB,invalid_polygon,PASS,
+districts_all,IN-03-040,FATEHGARH SAHIB,multipart_geometry,PASS,single part
+districts_all,IN-03-049,AMRITSAR,invalid_polygon,PASS,
+districts_all,IN-03-049,AMRITSAR,multipart_geometry,PASS,single part
+districts_all,IN-03-748,MALER KOTLA,invalid_polygon,PASS,
+districts_all,IN-03-748,MALER KOTLA,multipart_geometry,PASS,single part
+districts_all,IN-03-053,SANGRUR,invalid_polygon,PASS,
+districts_all,IN-03-053,SANGRUR,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,IN-DISPUTED-0,DISPUTED AREA (RAJASTHAN-GUJARAT) #1,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-0,DISPUTED AREA (RAJASTHAN-GUJARAT) #1,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-1,DISPUTED AREA (RAJASTHAN-GUJARAT) #2,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-1,DISPUTED AREA (RAJASTHAN-GUJARAT) #2,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-2,DISPUTED AREA (RAJASTHAN-GUJARAT) #3,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-2,DISPUTED AREA (RAJASTHAN-GUJARAT) #3,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-3,DISPUTED AREA (RAJASTHAN-GUJARAT) #4,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-3,DISPUTED AREA (RAJASTHAN-GUJARAT) #4,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-4,DISPUTED AREA (RAJASTHAN-GUJARAT) #5,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-4,DISPUTED AREA (RAJASTHAN-GUJARAT) #5,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-5,DISPUTED AREA (RAJASTHAN-GUJARAT) #6,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-5,DISPUTED AREA (RAJASTHAN-GUJARAT) #6,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-6,DISPUTED AREA (RAJASTHAN-GUJARAT) #7,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-6,DISPUTED AREA (RAJASTHAN-GUJARAT) #7,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-7,DISPUTED AREA (RAJASTHAN-GUJARAT) #8,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-7,DISPUTED AREA (RAJASTHAN-GUJARAT) #8,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-8,DISPUTED AREA (RAJASTHAN-GUJARAT) #9,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-8,DISPUTED AREA (RAJASTHAN-GUJARAT) #9,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-9,DISPUTED AREA (RAJASTHAN-GUJARAT) #10,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-9,DISPUTED AREA (RAJASTHAN-GUJARAT) #10,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-10,DISPUTED AREA (RAJASTHAN-GUJARAT) #11,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-10,DISPUTED AREA (RAJASTHAN-GUJARAT) #11,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-11,DISPUTED AREA (RAJASTHAN-GUJARAT) #12,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-11,DISPUTED AREA (RAJASTHAN-GUJARAT) #12,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-12,DISPUTED AREA (RAJASTHAN-GUJARAT) #13,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-12,DISPUTED AREA (RAJASTHAN-GUJARAT) #13,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-13,DISPUTED AREA (RAJASTHAN-GUJARAT) #14,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-13,DISPUTED AREA (RAJASTHAN-GUJARAT) #14,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-14,DISPUTED AREA (RAJASTHAN-GUJARAT) #15,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-14,DISPUTED AREA (RAJASTHAN-GUJARAT) #15,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-15,DISPUTED AREA (RAJASTHAN-GUJARAT) #16,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-15,DISPUTED AREA (RAJASTHAN-GUJARAT) #16,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-16,DISPUTED AREA (RAJASTHAN-GUJARAT) #17,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-16,DISPUTED AREA (RAJASTHAN-GUJARAT) #17,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-17,DISPUTED AREA (RAJASTHAN-GUJARAT) #18,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-17,DISPUTED AREA (RAJASTHAN-GUJARAT) #18,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-18,DISPUTED AREA (RAJASTHAN-GUJARAT) #19,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-18,DISPUTED AREA (RAJASTHAN-GUJARAT) #19,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-19,DISPUTED AREA (RAJASTHAN-GUJARAT) #20,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-19,DISPUTED AREA (RAJASTHAN-GUJARAT) #20,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-20,DISPUTED AREA (RAJASTHAN-GUJARAT) #21,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-20,DISPUTED AREA (RAJASTHAN-GUJARAT) #21,multipart_geometry,PASS,single part
+districts_all,IN-DISPUTED-21,DISPUTED AREA (RAJASTHAN-GUJARAT) #22,invalid_polygon,PASS,
+districts_all,IN-DISPUTED-21,DISPUTED AREA (RAJASTHAN-GUJARAT) #22,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk101,Bagh,invalid_polygon,PASS,
+districts_all,pk-country-d-pk101,Bagh,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk102,Bhimber,invalid_polygon,PASS,
+districts_all,pk-country-d-pk102,Bhimber,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk103,Jhelum Valley,invalid_polygon,PASS,
+districts_all,pk-country-d-pk103,Jhelum Valley,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk104,Haveli,invalid_polygon,PASS,
+districts_all,pk-country-d-pk104,Haveli,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk105,Kotli,invalid_polygon,PASS,
+districts_all,pk-country-d-pk105,Kotli,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk106,Mirpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk106,Mirpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk107,Muzaffarabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk107,Muzaffarabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk108,Neelum,invalid_polygon,PASS,
+districts_all,pk-country-d-pk108,Neelum,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk109,Poonch,invalid_polygon,PASS,
+districts_all,pk-country-d-pk109,Poonch,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk110,Sudhnoti,invalid_polygon,PASS,
+districts_all,pk-country-d-pk110,Sudhnoti,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk201,Awaran,invalid_polygon,PASS,
+districts_all,pk-country-d-pk201,Awaran,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk202,Barkhan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk202,Barkhan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk203,Chagai,invalid_polygon,PASS,
+districts_all,pk-country-d-pk203,Chagai,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk204,Dera Bugti,invalid_polygon,PASS,
+districts_all,pk-country-d-pk204,Dera Bugti,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk205,Gwadar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk205,Gwadar,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk206,Harnai,invalid_polygon,PASS,
+districts_all,pk-country-d-pk206,Harnai,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk207,Jaffarabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk207,Jaffarabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk208,Jhal Magsi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk208,Jhal Magsi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk209,Kachhi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk209,Kachhi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk210,Kalat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk210,Kalat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk211,Kech,invalid_polygon,PASS,
+districts_all,pk-country-d-pk211,Kech,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk212,Kharan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk212,Kharan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk213,Khuzdar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk213,Khuzdar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk214,Killa Abdullah,invalid_polygon,PASS,
+districts_all,pk-country-d-pk214,Killa Abdullah,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk215,Killa Saifullah,invalid_polygon,PASS,
+districts_all,pk-country-d-pk215,Killa Saifullah,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk216,Kohlu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk216,Kohlu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk217,Lasbela,invalid_polygon,PASS,
+districts_all,pk-country-d-pk217,Lasbela,multipart_geometry,REVIEW,"7 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk218,Lehri,invalid_polygon,PASS,
+districts_all,pk-country-d-pk218,Lehri,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk219,Loralai,invalid_polygon,PASS,
+districts_all,pk-country-d-pk219,Loralai,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk220,Mastung,invalid_polygon,PASS,
+districts_all,pk-country-d-pk220,Mastung,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk221,Musakhel,invalid_polygon,PASS,
+districts_all,pk-country-d-pk221,Musakhel,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk222,Nasirabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk222,Nasirabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk223,Nushki,invalid_polygon,PASS,
+districts_all,pk-country-d-pk223,Nushki,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk224,Panjgur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk224,Panjgur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk225,Pishin,invalid_polygon,PASS,
+districts_all,pk-country-d-pk225,Pishin,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk226,Quetta,invalid_polygon,PASS,
+districts_all,pk-country-d-pk226,Quetta,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk227,Sherani,invalid_polygon,PASS,
+districts_all,pk-country-d-pk227,Sherani,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk228,Sibi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk228,Sibi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk229,Sohbatpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk229,Sohbatpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk230,Washuk,invalid_polygon,PASS,
+districts_all,pk-country-d-pk230,Washuk,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk231,Zhob,invalid_polygon,PASS,
+districts_all,pk-country-d-pk231,Zhob,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk232,Ziarat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk232,Ziarat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk233,Shaheed Sikandarabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk233,Shaheed Sikandarabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk234,Duki,invalid_polygon,PASS,
+districts_all,pk-country-d-pk234,Duki,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk235,Chaman,invalid_polygon,PASS,
+districts_all,pk-country-d-pk235,Chaman,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk301,Astore,invalid_polygon,PASS,
+districts_all,pk-country-d-pk301,Astore,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk302,Diamir,invalid_polygon,PASS,
+districts_all,pk-country-d-pk302,Diamir,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk303,Ghanche,invalid_polygon,PASS,
+districts_all,pk-country-d-pk303,Ghanche,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk304,Ghizer,invalid_polygon,PASS,
+districts_all,pk-country-d-pk304,Ghizer,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk305,Gilgit,invalid_polygon,PASS,
+districts_all,pk-country-d-pk305,Gilgit,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk306,Hunza,invalid_polygon,PASS,
+districts_all,pk-country-d-pk306,Hunza,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk307,Skardu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk307,Skardu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk308,Nagar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk308,Nagar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk309,Kharmang,invalid_polygon,PASS,
+districts_all,pk-country-d-pk309,Kharmang,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk310,Shigar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk310,Shigar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk311,Darel,invalid_polygon,PASS,
+districts_all,pk-country-d-pk311,Darel,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk312,Tangir,invalid_polygon,PASS,
+districts_all,pk-country-d-pk312,Tangir,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk313,Gupis-Yasin,invalid_polygon,PASS,
+districts_all,pk-country-d-pk313,Gupis-Yasin,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk314,Rondu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk314,Rondu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk401,Islamabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk401,Islamabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk501,Abbottabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk501,Abbottabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk502,Bajaur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk502,Bajaur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk503,Bannu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk503,Bannu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk504,Batagram,invalid_polygon,PASS,
+districts_all,pk-country-d-pk504,Batagram,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk505,Buner,invalid_polygon,PASS,
+districts_all,pk-country-d-pk505,Buner,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk506,Charsadda,invalid_polygon,PASS,
+districts_all,pk-country-d-pk506,Charsadda,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk507,Chitral Lower,invalid_polygon,PASS,
+districts_all,pk-country-d-pk507,Chitral Lower,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk508,Chitral Upper,invalid_polygon,PASS,
+districts_all,pk-country-d-pk508,Chitral Upper,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk509,D. I. Khan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk509,D. I. Khan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk510,Hangu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk510,Hangu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk511,Haripur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk511,Haripur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk512,Karak,invalid_polygon,PASS,
+districts_all,pk-country-d-pk512,Karak,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk513,Khyber,invalid_polygon,PASS,
+districts_all,pk-country-d-pk513,Khyber,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk514,Kohat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk514,Kohat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk515,Kohistan Lower,invalid_polygon,PASS,
+districts_all,pk-country-d-pk515,Kohistan Lower,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk516,Kohistan Upper,invalid_polygon,PASS,
+districts_all,pk-country-d-pk516,Kohistan Upper,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk517,Kolai Palas Kohistan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk517,Kolai Palas Kohistan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk518,Kurram,invalid_polygon,PASS,
+districts_all,pk-country-d-pk518,Kurram,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk519,Lakki Marwat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk519,Lakki Marwat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk520,Lower Dir,invalid_polygon,PASS,
+districts_all,pk-country-d-pk520,Lower Dir,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk521,Malakand,invalid_polygon,PASS,
+districts_all,pk-country-d-pk521,Malakand,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk522,Mansehra,invalid_polygon,PASS,
+districts_all,pk-country-d-pk522,Mansehra,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk523,Mardan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk523,Mardan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk524,Mohmand,invalid_polygon,PASS,
+districts_all,pk-country-d-pk524,Mohmand,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk525,North Waziristan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk525,North Waziristan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk526,Nowshera,invalid_polygon,PASS,
+districts_all,pk-country-d-pk526,Nowshera,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk527,Orakzai,invalid_polygon,PASS,
+districts_all,pk-country-d-pk527,Orakzai,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk528,Peshawar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk528,Peshawar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk529,Shangla,invalid_polygon,PASS,
+districts_all,pk-country-d-pk529,Shangla,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk530,South Waziristan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk530,South Waziristan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk531,Swabi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk531,Swabi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk532,Swat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk532,Swat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk533,Tank,invalid_polygon,PASS,
+districts_all,pk-country-d-pk533,Tank,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk534,Tor Ghar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk534,Tor Ghar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk535,Upper Dir,invalid_polygon,PASS,
+districts_all,pk-country-d-pk535,Upper Dir,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk601,Attock,invalid_polygon,PASS,
+districts_all,pk-country-d-pk601,Attock,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk602,Bahawalnagar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk602,Bahawalnagar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk603,Bahawalpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk603,Bahawalpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk604,Bhakkar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk604,Bhakkar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk605,Chakwal,invalid_polygon,PASS,
+districts_all,pk-country-d-pk605,Chakwal,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk606,Chiniot,invalid_polygon,PASS,
+districts_all,pk-country-d-pk606,Chiniot,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk607,Dera Ghazi Khan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk607,Dera Ghazi Khan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk608,Faisalabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk608,Faisalabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk609,Gujranwala,invalid_polygon,PASS,
+districts_all,pk-country-d-pk609,Gujranwala,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk610,Gujrat,invalid_polygon,PASS,
+districts_all,pk-country-d-pk610,Gujrat,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk611,Hafizabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk611,Hafizabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk612,Jhang,invalid_polygon,PASS,
+districts_all,pk-country-d-pk612,Jhang,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk613,Jhelum,invalid_polygon,PASS,
+districts_all,pk-country-d-pk613,Jhelum,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk614,Kasur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk614,Kasur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk615,Khanewal,invalid_polygon,PASS,
+districts_all,pk-country-d-pk615,Khanewal,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk616,Khushab,invalid_polygon,PASS,
+districts_all,pk-country-d-pk616,Khushab,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk617,Lahore,invalid_polygon,PASS,
+districts_all,pk-country-d-pk617,Lahore,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk618,Leiah,invalid_polygon,PASS,
+districts_all,pk-country-d-pk618,Leiah,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk619,Lodhran,invalid_polygon,PASS,
+districts_all,pk-country-d-pk619,Lodhran,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk620,Mandi Bahauddin,invalid_polygon,PASS,
+districts_all,pk-country-d-pk620,Mandi Bahauddin,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk621,Mianwali,invalid_polygon,PASS,
+districts_all,pk-country-d-pk621,Mianwali,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk622,Multan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk622,Multan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk623,Muzaffargarh,invalid_polygon,PASS,
+districts_all,pk-country-d-pk623,Muzaffargarh,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk624,Nankana Sahib,invalid_polygon,PASS,
+districts_all,pk-country-d-pk624,Nankana Sahib,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk625,Narowal,invalid_polygon,PASS,
+districts_all,pk-country-d-pk625,Narowal,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk626,Okara,invalid_polygon,PASS,
+districts_all,pk-country-d-pk626,Okara,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk627,Pakpattan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk627,Pakpattan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk628,Rahim Yar Khan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk628,Rahim Yar Khan,multipart_geometry,REVIEW,"3 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk629,Rajanpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk629,Rajanpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk630,Rawalpindi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk630,Rawalpindi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk631,Sahiwal,invalid_polygon,PASS,
+districts_all,pk-country-d-pk631,Sahiwal,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk632,Sargodha,invalid_polygon,PASS,
+districts_all,pk-country-d-pk632,Sargodha,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk633,Sheikhupura,invalid_polygon,PASS,
+districts_all,pk-country-d-pk633,Sheikhupura,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk634,Sialkot,invalid_polygon,PASS,
+districts_all,pk-country-d-pk634,Sialkot,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk635,Toba Tek Singh,invalid_polygon,PASS,
+districts_all,pk-country-d-pk635,Toba Tek Singh,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk636,Vehari,invalid_polygon,PASS,
+districts_all,pk-country-d-pk636,Vehari,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk701,Badin,invalid_polygon,PASS,
+districts_all,pk-country-d-pk701,Badin,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk702,Central Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk702,Central Karachi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk703,Dadu,invalid_polygon,PASS,
+districts_all,pk-country-d-pk703,Dadu,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk704,East Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk704,East Karachi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk705,Ghotki,invalid_polygon,PASS,
+districts_all,pk-country-d-pk705,Ghotki,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk706,Hyderabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk706,Hyderabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk707,Jacobabad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk707,Jacobabad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk708,Jamshoro,invalid_polygon,PASS,
+districts_all,pk-country-d-pk708,Jamshoro,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk709,Kambar Shahdad Kot,invalid_polygon,PASS,
+districts_all,pk-country-d-pk709,Kambar Shahdad Kot,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk710,Kashmore,invalid_polygon,PASS,
+districts_all,pk-country-d-pk710,Kashmore,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk711,Khairpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk711,Khairpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk712,Korangi Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk712,Korangi Karachi,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk713,Larkana,invalid_polygon,PASS,
+districts_all,pk-country-d-pk713,Larkana,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk714,Malir Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk714,Malir Karachi,multipart_geometry,REVIEW,"12 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk715,Matiari,invalid_polygon,PASS,
+districts_all,pk-country-d-pk715,Matiari,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk716,Mirpur Khas,invalid_polygon,PASS,
+districts_all,pk-country-d-pk716,Mirpur Khas,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk717,Naushahro Feroze,invalid_polygon,PASS,
+districts_all,pk-country-d-pk717,Naushahro Feroze,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk718,Sanghar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk718,Sanghar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk719,Shaheed Benazir Abad,invalid_polygon,PASS,
+districts_all,pk-country-d-pk719,Shaheed Benazir Abad,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk720,Shikarpur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk720,Shikarpur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk721,South Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk721,South Karachi,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk722,Sujawal,invalid_polygon,PASS,
+districts_all,pk-country-d-pk722,Sujawal,multipart_geometry,REVIEW,"2 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk723,Sukkur,invalid_polygon,PASS,
+districts_all,pk-country-d-pk723,Sukkur,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk724,Tando Allahyar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk724,Tando Allahyar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk725,Tando Muhammad Khan,invalid_polygon,PASS,
+districts_all,pk-country-d-pk725,Tando Muhammad Khan,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk726,Tharparkar,invalid_polygon,PASS,
+districts_all,pk-country-d-pk726,Tharparkar,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk727,Thatta,invalid_polygon,PASS,
+districts_all,pk-country-d-pk727,Thatta,multipart_geometry,REVIEW,"21 parts - multipart district, inspect before labelling"
+districts_all,pk-country-d-pk728,Umer Kot,invalid_polygon,PASS,
+districts_all,pk-country-d-pk728,Umer Kot,multipart_geometry,PASS,single part
+districts_all,pk-country-d-pk729,West Karachi,invalid_polygon,PASS,
+districts_all,pk-country-d-pk729,West Karachi,multipart_geometry,PASS,single part
