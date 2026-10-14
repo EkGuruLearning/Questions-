@@ -120,3 +120,10 @@ Wave-5 stems practice booklets me confirmed (26/26, PDF text extract proof).
 - W6 records: EN stems/options (Hindi translation pass pending); every nukte carries
   "⚠ CAUTION — answer NOT verified: compiled-bank source key = (X)". Visible in quiz feedback panel.
 - Agent verification pass will flip records to answer_checked + fill explanations, batch by batch.
+
+### Verification progress (rolling)
+
+- Batch 1 (P1_G_X901, 60 Qs): **54 keys confirmed**, **2 corrected** (RIP>15-hop→EIGRP; EIGRP adjacencies not RIPv2),
+  4 ambiguous → caution stays. Rolling verdict file: `tools/data/w6_verdicts.py`.
+- Current: answer_checked 847 · paper_and_key_checked 26 · claimed_answer_unverified 683 (caution-flagged).
+- Batches continue every update turn ("update krte rho").

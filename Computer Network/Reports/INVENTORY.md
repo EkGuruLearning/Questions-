@@ -44,6 +44,6 @@ Total normalized records: **1556**
 
 | status | count |
 |---|---|
-| answer_checked | 791 |
+| answer_checked | 847 |
 | paper_and_key_checked | 26 |
-| claimed_answer_unverified | 739 |
+| claimed_answer_unverified | 683 |

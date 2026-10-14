@@ -6,6 +6,11 @@
 - Dropped repeats: {'exact': 241, 'near90': 136, 'near-same-ans': 69}
 - **Imported: 739**
 
-All imported answers = source keys, **NOT verified** — every nukte carries the
-⚠ CAUTION banner. Verified-by-agent flips will remove the banner in later passes.
+## Agent verification verdicts
+
+{'ok': 54, 'fix': 2, 'claim': 4, 'unseen': 679}
+
+- `ok`/`fix` = agent-verified (caution removed; `fix` = source key corrected).
+- `claim`/`unseen` = ⚠ CAUTION banner stays (answer NOT verified).
+
 Zero-repeat policy: exact stem / >=0.90 overlap / >=0.75+same answer = dropped.

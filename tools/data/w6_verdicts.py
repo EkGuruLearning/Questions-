@@ -1,0 +1,75 @@
+# -*- coding: utf-8 -*-
+"""w6_verdicts.py — agent verification verdicts for w6_bank imports.
+
+Format: {list_name: {index: verdict}}
+  ("ok")                     -> key CONFIRMED by agent; caution removed
+  ("ok", nukte_en, nukte_hi) -> confirmed + content nukte
+  ("fix", new_ans_idx, nukte_en, nukte_hi) -> source key WRONG; corrected
+  ("claim",)                 -> uncertain/ambiguous; CAUTION banner stays
+
+Verified batches are appended over time (user: "jinka answer verify kar liya...").
+"""
+VERDICTS = {
+    "P1_G_X901": {
+        0: ("ok", "Conditional GET (If-Modified-Since) = cache validation — cache fresh rakhta hai.", "Conditional GET = cache validation।"),
+        1: ("ok", "FTP = File Transfer Protocol (TCP ports 20/21).", "FTP = File Transfer Protocol (port 20/21)।"),
+        2: ("ok", "WiMAX (802.16) = MAN technology — city-wide broadband.", "WiMAX = MAN technology।"),
+        3: ("ok", "WiMAX bands: 2.3/2.5/3.5 GHz. 2.4 GHz = ISM band (WiFi/Bluetooth).", "WiMAX: 2.3/2.5/3.5 GHz; 2.4 GHz ISM nahi।"),
+        4: ("ok", "Telnet me file transfer nahi hota — wo FTP ka kaam hai.", "Telnet me file transfer nahi — wo FTP।"),
+        5: ("ok", "Telnet/NVT = 8-bit byte transmission.", "Telnet = 8-bit।"),
+        6: ("ok", "IAC (Interpret As Command) = 255 decimal (0xFF).", "IAC = 255 (0xFF)।"),
+        7: ("ok", "NTP = UDP port 123. SNMP = 161/162.", "NTP = port 123।"),
+        8: ("ok", "Error-free packet ko retransmit karne ki zaroorat nahi.", "Error-free packet = no retransmission।"),
+        9: ("ok", "VC phases: setup, data transfer, teardown — 'termination' standard name nahi.", "VC phases: setup, data transfer, teardown।"),
+        10: ("claim",),
+        11: ("ok", "On-demand allocation = koi reservation nahi — har packet ka delay alag.", "On-demand = delay different per packet।"),
+        12: ("ok", "VC switching table = 4 columns (in-port, in-VC, out-port, out-VC).", "VC table = 4 columns।"),
+        13: ("ok", "ATM = 3 layers (Physical, ATM layer, AAL).", "ATM = 3 layers।"),
+        14: ("ok", "ATM LAN/MAN/WAN — kisi bhi range ke liye.", "ATM = any range।"),
+        15: ("ok", "ATM cell: 53 bytes = 5 header + 48 payload.", "ATM cell = 48 bytes payload।"),
+        16: ("ok", "Frame Relay me VC identifier = DLCI (Data Link Connection Identifier).", "Frame Relay VC = DLCI।"),
+        17: ("ok", "FRAD = Frame Relay Assembler/Disassembler.", "FRAD = assembler/disassembler।"),
+        18: ("ok", "Frame Relay = WAN technology, dedicated lines se sasta.", "Frame Relay = sasta WAN।"),
+        19: ("ok", "VoFR = Voice over Frame Relay (standard option).", "VoFR = Voice over Frame Relay।"),
+        20: ("claim",),
+        21: ("ok", "URL = Uniform Resource Locator.", "URL = Uniform Resource Locator।"),
+        22: ("ok", "DOM = HTML objects ko represent/interact karne ka convention.", "DOM = objects ka convention।"),
+        23: ("ok", "AJAX = Asynchronous JavaScript And XML.", "AJAX = Asynchronous JavaScript And XML।"),
+        24: ("ok", "Port range = 0–65535 (16-bit).", "Port range = 0–65535 (16-bit)।"),
+        25: ("ok", "IPv6 transition: dual stack, tunneling, header translation — 'conversion' strategy nahi.", "Transition strategies: dual stack/tunneling/header translation।"),
+        26: ("fix", 2, "CORRECTED: RIP max 15 hops — diameter >15 hone par EIGRP (default 100 hops) chuno. Source key galat tha.", "सुधारित: RIP = 15 hops max — बड़े diameter पर EIGRP।"),
+        27: ("ok", "RIP = full routing table update every 30 seconds.", "RIP = 30 sec updates।"),
+        28: ("ok", "Classless protocol = VLSM + discontiguous networks support.", "Classless = VLSM support।"),
+        29: ("ok", "RIPv2 = RIPv1 jaise timers, bas classless features (VLSM, auth) extra.", "RIPv2 = RIPv1 jaise timers।"),
+        30: ("fix", 3, "CORRECTED: EIGRP (aur OSPF) neighbor adjacencies maintain karte hain; RIPv2 nahi. Source key galat tha.", "सुधारित: EIGRP neighbor adjacencies रखता है; RIPv2 नहीं।"),
+        31: ("ok", "FTP = client-server architecture (control 21 + data 20).", "FTP = client-server।"),
+        32: ("ok", "FTP transfer modes: stream, block, compressed — 'message mode' nahi.", "FTP modes: stream/block/compressed।"),
+        33: ("ok", "REST = Representational State Transfer.", "REST = Representational State Transfer।"),
+        34: ("ok", "RPF = Reverse Path Forwarding (multicast routing).", "RPF = Reverse Path Forwarding।"),
+        35: ("ok", "LSP = Link State Packet (LSDB me entries).", "LSP = Link State Packet।"),
+        36: ("ok", "Dijkstra (SPF) ki calculation → routing table populate hota hai.", "Dijkstra → routing table।"),
+        37: ("ok", "OSPF Hello = 224.0.0.5 (all-SPF-routers); 224.0.0.6 = DR/BDR.", "OSPF Hello = 224.0.0.5।"),
+        38: ("ok", "DBD (Database Description) packets = ExStart + Exchange states me.", "DBD = ExStart + Exchange।"),
+        39: ("claim",),
+        40: ("claim",),
+        41: ("ok", "Ping = RTT measure + packet loss + latency report.", "Ping = RTT/loss/latency।"),
+        42: ("ok", "Ping sweep = nmap ka host-discovery technique.", "Ping sweep = nmap।"),
+        43: ("ok", "Interframe gap = frames ke beech ka idle time (Ethernet 96 bit times).", "Interframe gap = idle time between frames।"),
+        44: ("ok", "Internet = interconnected networks ka vast collection.", "Internet = networks ka collection।"),
+        45: ("ok", "Internet se judne ke liye ISP chahiye.", "Internet = ISP se judta hai।"),
+        46: ("ok", "ISPs apna traffic IXP (Internet Exchange Point) par exchange karte hain.", "ISP traffic exchange = IXP।"),
+        47: ("ok", "DHCP = dynamic IP assignment; RSVP = QoS reservation.", "DHCP = IP assign।"),
+        48: ("ok", "Piconets ka interconnected collection = scatternet.", "Scatternet = piconets ka collection।"),
+        49: ("ok", "Bluetooth: ek piconet ka master doosre piconet me slave ban sakta hai.", "Master = another piconet me slave।"),
+        50: ("ok", "Bluetooth = 2.4 GHz ISM band.", "Bluetooth = 2.4 GHz ISM।"),
+        51: ("ok", "Bluetooth piconet = point-to-multipoint (1 master + up to 7 slaves) + p2p bhi.", "Bluetooth = p2p + p2mp।"),
+        52: ("ok", "Scatternet me max 10 piconets (Forouzan).", "Scatternet = max 10 piconets।"),
+        53: ("ok", "RTP = streaming media, video conferencing, TV services — sab.", "RTP = streaming/VT/TV।"),
+        54: ("ok", "RTP = media stream carry karta hai; monitoring RTCP ka kaam.", "RTP = media stream।"),
+        55: ("ok", "RTCP = synchronization + QoS monitoring (RTP ke saath).", "RTCP = sync/QoS।"),
+        56: ("ok", "RTP session = har media stream ke liye alag.", "RTP session = per media stream।"),
+        57: ("ok", "RTP multimedia formats support karta hai (MPEG, MJPEG...) — 'txt' nahi.", "RTP = MPEG/MJPEG; txt nahi।"),
+        58: ("ok", "RTP header = minimum 12 bytes.", "RTP header = 12 bytes।"),
+        59: ("ok", "RPC = client initiate karta hai; server execute karke result bhejta hai.", "RPC = client initiates।"),
+    },
+}
