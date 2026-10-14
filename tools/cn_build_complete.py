@@ -20,7 +20,8 @@ from cn_engine import (CSS, esc, pad_top, rapid_chunks, _archive, PAGE_W, PAGE_H
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
-OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "Computer Network"))
+OUT_DIR = os.path.abspath(os.path.join(HERE, "..", "content", "computer-network", "theory"))
+MD_DIR = os.path.abspath(os.path.join(HERE, "..", "maintainer", "computer-network", "theory-md"))
 
 TOPICS = [
     (1, "Introduction of Data Communication"),
@@ -313,8 +314,9 @@ def build_md(out_md):
 
 if __name__ == "__main__":
     os.makedirs(OUT_DIR, exist_ok=True)
-    stem = "The Complete Computer Network - Theory + 631 MCQs (Answers + Nukte)"
+    stem = "Complete-Computer-Network-Theory-631-MCQ"
+    os.makedirs(MD_DIR, exist_ok=True)
     n_q, n_rapid, pages = build(os.path.join(OUT_DIR, stem + ".pdf"),
-                                os.path.join(OUT_DIR, stem + ".md"))
-    build_md(os.path.join(OUT_DIR, stem + ".md"))
+                                os.path.join(MD_DIR, stem + ".md"))
+    build_md(os.path.join(MD_DIR, stem + ".md"))
     print(f"COMPLETE BOOK: {n_q} Qs + {n_rapid} rapid, {pages} pages")

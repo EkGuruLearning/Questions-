@@ -2,7 +2,7 @@
 """
 cn_pipeline.py — the AUTO-UPDATE pipeline.
 
-Drop any question PDF into  Computer Network/Incoming/  (or pass --pdf/--dir) and run:
+Drop any question PDF into  maintainer/computer-network/intake/  (or pass --pdf/--dir) and run:
 
     python tools/cn_pipeline.py ingest                 # ingest everything in Incoming/
     python tools/cn_pipeline.py ingest --pdf path/to/new.pdf
@@ -39,7 +39,7 @@ from cn_taxonomy import TOPICS, topic_by_num, classify
 import cn_build_topic
 
 DATA_DIR = os.path.join(HERE, "data")
-INCOMING = os.path.join(ROOT, "Computer Network", "Incoming")
+INCOMING = os.path.join(ROOT, "maintainer", "computer-network", "intake")
 
 # ---------------------------------------------------------------------------
 def _norm_key(text):

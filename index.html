@@ -1,118 +1,149 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142d3f">
-  <meta name="description" content="EkGuru Learning by PRAKASH: explore Computer Network practice, Rajasthan Geography maps, study material and source notes.">
-  <title>EkGuru Learning — Subjects, Study Material &amp; Maps</title>
-  <link rel="stylesheet" href="assets/css/site.css">
-  <script type="module" src="assets/js/app.js"></script>
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="EkGuru Learning by PRAKASH — Computer Network ke topic-wise practice tests aur study material, aur Rajasthan Geography ke map atlas.">
+  <title>EkGuru Learning — Practice tests &amp; study material</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/ekguru.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body class="catalog-page" data-page="home">
+<body class="page-home" data-root="">
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand" href="index.html">
         <span class="brand-mark" aria-hidden="true">e</span>
-        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">BY PRAKASH · STUDY PORTAL</span></span>
+        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
       </a>
       <details class="site-menu">
         <summary class="site-menu-toggle">Menu</summary>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html" aria-current="page">Home</a>
-          <a href="subjects/index.html">All Subjects</a>
           <a href="subjects/computer-network/index.html">Computer Network</a>
-          <a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a>
-          <a href="maps/index.html">Maps &amp; Atlases</a>
-          <a href="practice/index.html">Practice Tests</a>
-          <a href="study-material/index.html">Study Material</a>
-          <a href="sources/index.html">Sources &amp; Verification</a>
-          <a href="guides/repository-structure/index.html">File Guide</a>
+          <a href="subjects/computer-network/material/index.html">Study Material</a>
+          <a href="subjects/computer-network/test/index.html">Online Test</a>
+          <a href="subjects/rajasthan-geography/index.html">Rajasthan Map</a>
         </nav>
       </details>
     </div>
   </header>
 
-  <section class="hero" aria-labelledby="homeTitle">
-    <div class="shell hero-grid">
-      <div class="hero-copy">
+  <section class="hero">
+    <div class="shell hero-inner">
+      <div>
         <span class="eyebrow">EkGuru Learning · By PRAKASH</span>
-        <h1 id="homeTitle">Learn by subject.<br><em>Find the source.</em></h1>
-        <p class="lead">A practical learning portal built from the materials already in this repository. Explore the source-labelled Computer Network question bank, or open the existing Rajasthan Geography map and data collection.</p>
-        <p class="muted">Computer Network has a question bank. Rajasthan Geography currently publishes maps, boundary data and audits—not a question bank. Map source and boundary claims have open verification notes.</p>
+        <h1>Padho. Practice karo. <em>Test do.</em></h1>
+        <p class="hero-lead">Computer Network ke saat topic — theory PDF, practice booklet, aur topic-wise ya full-mix online test. Rajasthan Geography ka map atlas A1 se A4 tak download karo.</p>
         <div class="hero-actions">
-          <a class="button accent" href="subjects/index.html">Explore all subjects</a>
-          <a class="button secondary" href="subjects/computer-network/index.html">Computer Network</a>
+          <a class="button primary" href="subjects/computer-network/test/index.html">Online test shuru karo</a>
+          <a class="button secondary" href="subjects/computer-network/material/index.html">Study material kholo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong data-count="topics">7</strong><span>Topics</span></div>
+          <div class="hero-stat"><strong data-count="questions">1,554</strong><span>Online questions</span></div>
+          <div class="hero-stat"><strong data-count="downloads">38</strong><span>PDF downloads</span></div>
+          <div class="hero-stat"><strong data-count="maps">6</strong><span>Map sizes</span></div>
         </div>
       </div>
-      <aside class="hero-map" aria-label="Rajasthan map preview">
-        <a href="maps/rajasthan/index.html" aria-label="Open Rajasthan map and atlas details">
-          <img id="mapPreviewImage" src="assets/catalog/rajasthan-border-atlas-preview.webp" width="1600" height="1130" fetchpriority="high" alt="Preview of the repository's Rajasthan border-district atlas with Hindi labels and highlighted borders. This is a study preview; source and boundary details still need verification.">
+      <div class="map-frame">
+        <a href="subjects/rajasthan-geography/index.html">
+          <img src="assets/img/rajasthan-border-atlas-preview.webp" width="1600" height="1130" alt="Rajasthan border-district atlas preview with Hindi labels and highlighted state borders.">
         </a>
-        <p class="image-caption" id="mapImageCaption">Existing Rajasthan border-district atlas preview. It is not an official or fully verified map; read the linked source audit.</p>
-        <div class="card-actions">
-          <a class="button secondary small" href="maps/rajasthan/index.html">Maps &amp; Atlases</a>
-          <a id="fullSizeMapLink" class="button secondary small" href="Rajasthan%20Geography%20Maps/exports/Rajasthan_Border_District_Atlas_A1.png" >Open full-size A1 PNG</a>
-        </div>
-      </aside>
+        <p class="map-caption">Rajasthan border-district atlas — A1, A2, A3 aur A4 print sizes.</p>
+      </div>
     </div>
   </section>
 
   <main id="main" class="shell">
-    <section class="section" aria-labelledby="exploreTitle">
-      <div class="section-heading-row">
-        <div>
-          <span class="eyebrow">Start here</span>
-          <h2 id="exploreTitle">Explore Subjects</h2>
-        </div>
-        <a href="subjects/index.html">Browse all subjects →</a>
+    <section class="section">
+      <div class="section-head">
+        <h2>Subjects</h2>
+        <span class="muted small">Ek hi jagah se material aur test</span>
       </div>
-      <p class="section-intro">Each subject opens a dedicated page with its real, available material. A live resource page does not imply a question bank or verified exam claims.</p>
-      <p id="catalogStatus" class="status-line" role="status" aria-live="polite">Subject catalogue is shown below. Resource details are enhanced from the checked-in catalogue when JavaScript is available.</p>
-      <div id="subjectGrid" class="subject-grid" aria-live="polite">
-        <article class="card subject-card">
-          <span class="status-chip">Live question bank</span><span class="subject-mark" aria-hidden="true">01</span>
-          <h3>Computer Network</h3><p class="muted">कंप्यूटर नेटवर्क</p>
-          <p>Seven topics, interactive practice, booklets, theory and question-level source/answer-status notes.</p>
-          <a class="button accent" href="subjects/computer-network/index.html">Explore Computer Network</a>
+
+      <div class="subject-grid">
+        <article class="card subject-card" data-subject-card="computer-network">
+          <span class="subject-mark" aria-hidden="true">CN</span>
+          <span class="eyebrow">Question bank live</span>
+          <h3 style="margin:0">Computer Network</h3>
+          <p class="muted" style="margin:0">कंप्यूटर नेटवर्क</p>
+          <p>7 topics, <span data-count="subject-questions">1,554</span> online questions, 31 sections aur <span data-count="subject-files">32</span> PDF files. Topic select karo — section-wise ya poora topic test do.</p>
+          <div class="material-meta">
+            <span class="chip green">Topic-wise test</span>
+            <span class="chip">Full mix test</span>
+            <span class="chip neutral">PDF material</span>
+          </div>
+          <div class="card-actions">
+            <a class="button primary" href="subjects/computer-network/index.html">Computer Network kholo</a>
+            <a class="button secondary" href="subjects/computer-network/test/index.html">Seedha test</a>
+          </div>
         </article>
-        <article class="card subject-card">
-          <span class="status-chip warning">Live resources · no quiz bank</span><span class="subject-mark" aria-hidden="true">02</span>
-          <h3>Rajasthan Geography</h3><p class="muted">राजस्थान भूगोल</p>
-          <p>Existing map previews, border-district CSVs, metadata, source registers and open audit findings.</p>
-          <a class="button accent" href="subjects/rajasthan-geography/index.html">Explore Rajasthan Geography</a>
+
+        <article class="card subject-card" data-subject-card="rajasthan-geography">
+          <span class="subject-mark" aria-hidden="true">GEO</span>
+          <span class="eyebrow">Map atlas</span>
+          <h3 style="margin:0">Rajasthan Geography</h3>
+          <p class="muted" style="margin:0">राजस्थान भूगोल</p>
+          <p>Rajasthan border-district map atlas — <span data-count="subject-files">6</span> files, A1 poster se A4 page tak. Website par dekho ya seedha download karo.</p>
+          <div class="material-meta">
+            <span class="chip gold">A1 / A2 / A3</span>
+            <span class="chip neutral">A4 landscape + portrait</span>
+          </div>
+          <div class="card-actions">
+            <a class="button primary" href="subjects/rajasthan-geography/index.html">Map gallery kholo</a>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="shortcutsTitle">
-      <div class="section-heading-row">
-        <div><span class="eyebrow">Browse by resource</span><h2 id="shortcutsTitle">Study tools and material</h2></div>
+    <section class="section">
+      <div class="section-head"><h2>Kaise use karein</h2></div>
+      <div class="grid">
+        <article class="card">
+          <h3>1 · Material padho</h3>
+          <p class="muted">Topic ki theory PDF aur practice booklet download karo. Sabhi files topic ke naam se lagi hui hain.</p>
+          <a class="button secondary small" href="subjects/computer-network/material/index.html">Material list</a>
+        </article>
+        <article class="card">
+          <h3>2 · Topic-wise test do</h3>
+          <p class="muted">Topic choose karo, section tick karo (ya poora topic), question count chuno aur turant feedback pao.</p>
+          <a class="button secondary small" href="subjects/computer-network/test/index.html">Topic test</a>
+        </article>
+        <article class="card">
+          <h3>3 · Full mix test do</h3>
+          <p class="muted">Saat topics ka mixed test — exam jaisa feel. Result me poora review aur explanation milega.</p>
+          <a class="button secondary small" href="subjects/computer-network/test/index.html?mode=full">Full test</a>
+        </article>
       </div>
-      <div class="shortcut-grid">
-        <article class="card"><span class="subject-mark" aria-hidden="true">M</span><h3>Maps &amp; Atlases</h3><p>See the existing Rajasthan map preview, full-size PNG exports, border data and the limitations recorded in the audits.</p><a href="maps/index.html">Open Maps &amp; Atlases →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">P</span><h3>Practice Tests</h3><p>Build a source-labelled Computer Network practice set. Topic filters and answer status are explicit.</p><a href="practice/index.html">Open Practice Tests →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">S</span><h3>Study Material</h3><p>Find existing topic notes, practice booklets, solutions and reference material without confusing historical PDF counts with live-bank totals.</p><a href="study-material/index.html">Open Study Material →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">V</span><h3>Sources &amp; Verification</h3><p>Review question-source policy, answer-check reports, geography source registers, QA and unresolved discrepancies.</p><a href="sources/index.html">Open Sources &amp; Verification →</a></article>
-        <article class="card"><span class="subject-mark" aria-hidden="true">G</span><h3>Repository File Guide</h3><p>Find the right folder for topic files, see what the website reads, and run the safe merge preflight.</p><a href="guides/repository-structure/index.html">Open the File Guide →</a></article>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="recentTitle">
-      <div class="section-heading-row"><div><span class="eyebrow">Checked-in data only</span><h2 id="recentTitle">Recently updated</h2></div></div>
-      <p class="section-intro">Dates are read from the repository build metadata, not guessed from page timestamps. A map build date is not a deployment date or a verification claim.</p>
-      <div id="recentUpdates" aria-live="polite"><p class="empty-state">No release note is shown until a dated build record is available.</p></div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner">
-      <div><h2>EkGuru Learning</h2><p>By PRAKASH. Static learning resources from the existing repository; no account or external runtime service is required.</p></div>
-      <div><h3>Explore</h3><p><a href="subjects/index.html">All Subjects</a></p><p><a href="maps/index.html">Maps &amp; Atlases</a></p><p><a href="practice/index.html">Practice Tests</a></p></div>
-      <div><h3>Read before use</h3><p><a href="README.md">Repository README</a></p><p><a href="SITE_GUIDE.md">Site guide &amp; source policy</a></p><p><a href="guides/repository-structure/index.html">Repository File Guide</a></p><p><a href="sources/index.html">Sources &amp; verification</a></p></div>
+    <div class="shell footer-grid">
+      <div>
+        <h3>EkGuru Learning</h3>
+        <p>By PRAKASH. Static study portal — koi login, koi tracking nahi. Aapke test result sirf aapke browser me save hote hain.</p>
+      </div>
+      <div>
+        <h3>Study</h3>
+        <p><a href="subjects/computer-network/material/index.html">Computer Network material</a></p>
+        <p><a href="subjects/computer-network/test/index.html">Online test</a></p>
+        <p><a href="subjects/rajasthan-geography/index.html">Rajasthan map atlas</a></p>
+      </div>
+      <div>
+        <h3>Subjects</h3>
+        <p><a href="subjects/index.html">All subjects</a></p>
+        <p><a href="subjects/computer-network/index.html">Computer Network</a></p>
+        <p><a href="subjects/rajasthan-geography/index.html">Rajasthan Geography</a></p>
+      </div>
     </div>
-    <div class="shell footer-bottom">Internal links stay in this tab. PDF, official external-source and full-size map actions are labelled when they open separately. Geography audit issues remain visible and linked.</div>
+    <div class="shell footer-bottom">
+      <span data-build-line>Question bank build: <span data-build>—</span></span>
+    </div>
   </footer>
 </body>
 </html>

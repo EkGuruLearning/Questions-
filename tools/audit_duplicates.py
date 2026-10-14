@@ -15,9 +15,9 @@ import unicodedata
 from collections import defaultdict
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BANK_PATH = ROOT / "Computer Network/data/cn_questions.json"
-QUEUE_PATH = ROOT / "Computer Network/Reports/DUPLICATE_REVIEW_QUEUE.csv"
-SUMMARY_PATH = ROOT / "data/reports/duplicate_audit.json"
+BANK_PATH = ROOT / "data/banks/cn/cn_questions.json"
+QUEUE_PATH = ROOT / "maintainer/computer-network/reports/DUPLICATE_REVIEW_QUEUE.csv"
+SUMMARY_PATH = ROOT / "maintainer/reports/duplicate_audit.json"
 FILLER = set("which of the following is a an in are and to or be its with for that it the is of a".split())
 
 

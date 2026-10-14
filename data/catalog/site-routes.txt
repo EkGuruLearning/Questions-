@@ -1,0 +1,9 @@
+# Published pages (GitHub Pages routes under /Questions-/).
+# Har naya page yahan likho aur tools/validate_site.py chalao.
+index.html
+404.html
+subjects/index.html
+subjects/computer-network/index.html
+subjects/computer-network/material/index.html
+subjects/computer-network/test/index.html
+subjects/rajasthan-geography/index.html

@@ -1,34 +1,87 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142d3f">
-  <meta name="description" content="Browse EkGuru Learning's live subject pages for Computer Network and Rajasthan Geography.">
-  <title>All Subjects — EkGuru Learning</title>
-  <link rel="stylesheet" href="../assets/css/site.css">
-  <script type="module" src="../assets/js/app.js"></script>
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="EkGuru Learning ke saare subjects — Computer Network tests aur Rajasthan Geography map atlas.">
+  <title>All subjects — EkGuru Learning</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/css/ekguru.css">
+  <script src="../assets/js/site.js" defer></script>
 </head>
-<body class="catalog-page" data-page="subjects">
+<body data-root="../">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">e</span><span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">BY PRAKASH · STUDY PORTAL</span></span></a>
-    <details class="site-menu"><summary class="site-menu-toggle">Menu</summary><nav class="site-nav" aria-label="Main navigation">
-      <a href="../index.html">Home</a><a href="index.html" aria-current="page">All Subjects</a><a href="computer-network/index.html">Computer Network</a><a href="rajasthan-geography/index.html">Rajasthan Geography</a><a href="../maps/index.html">Maps &amp; Atlases</a><a href="../practice/index.html">Practice Tests</a><a href="../study-material/index.html">Study Material</a><a href="../sources/index.html">Sources &amp; Verification</a><a href="../guides/repository-structure/index.html">File Guide</a>
-    </nav></details>
-  </div></header>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">e</span>
+        <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
+      </a>
+      <details class="site-menu">
+        <summary class="site-menu-toggle">Menu</summary>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="../index.html">Home</a>
+          <a href="index.html" aria-current="page">All Subjects</a>
+          <a href="computer-network/index.html">Computer Network</a>
+          <a href="computer-network/test/index.html">Online Test</a>
+          <a href="rajasthan-geography/index.html">Rajasthan Map</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
   <main id="main" class="shell">
-    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span class="separator" aria-hidden="true">/</span><span aria-current="page">All Subjects</span></nav>
-    <header class="page-hero"><span class="eyebrow">Subject catalogue</span><h1>All Subjects</h1><p class="lead">Choose a subject to see its actual resources and status. Computer Network has the published question bank; Rajasthan Geography has published map and reference resources but no quiz bank.</p></header>
-    <p id="catalogStatus" class="status-line" role="status" aria-live="polite">The two currently available subject pages are listed below. No empty subject cards are shown.</p>
-    <section class="section" aria-labelledby="availableTitle"><h2 id="availableTitle">Available learning areas</h2>
-      <div id="subjectGrid" class="subject-grid" aria-live="polite">
-        <article class="card subject-card"><span class="status-chip">Live question bank</span><h3>Computer Network</h3><p class="muted">कंप्यूटर नेटवर्क</p><p>Seven-topic practice bank with existing CBT launchers, booklets, theory and source/answer-status notes.</p><a class="button accent" href="computer-network/index.html">Explore Computer Network</a></article>
-        <article class="card subject-card"><span class="status-chip warning">Live resources · no quiz bank</span><h3>Rajasthan Geography</h3><p class="muted">राजस्थान भूगोल</p><p>Existing map previews, border-district data, metadata and open source/audit findings.</p><a class="button accent" href="rajasthan-geography/index.html">Explore Rajasthan Geography</a></article>
+    <section class="section">
+      <span class="eyebrow">Subjects</span>
+      <h1>Saare subjects</h1>
+      <p class="section-note">Har subject apna material aur apna test rakhta hai. Jo subject live hai wahi khulta hai.</p>
+
+      <div class="subject-grid">
+        <article class="card subject-card" data-subject-card="computer-network">
+          <span class="subject-mark" aria-hidden="true">CN</span>
+          <span class="eyebrow">Question bank live</span>
+          <h3 style="margin:0">Computer Network</h3>
+          <p class="muted" style="margin:0">कंप्यूटर नेटवर्क</p>
+          <p>7 topics · <span data-count="subject-questions">1,554</span> online questions · <span data-count="subject-files">32</span> PDF files</p>
+          <div class="card-actions">
+            <a class="button primary" href="computer-network/index.html">Kholo</a>
+            <a class="button secondary" href="computer-network/test/index.html">Test do</a>
+          </div>
+        </article>
+
+        <article class="card subject-card" data-subject-card="rajasthan-geography">
+          <span class="subject-mark" aria-hidden="true">GEO</span>
+          <span class="eyebrow">Map atlas</span>
+          <h3 style="margin:0">Rajasthan Geography</h3>
+          <p class="muted" style="margin:0">राजस्थान भूगोल</p>
+          <p>Border-district map atlas · <span data-count="subject-files">6</span> map files (A1 se A4)</p>
+          <div class="card-actions">
+            <a class="button primary" href="rajasthan-geography/index.html">Kholo</a>
+          </div>
+        </article>
       </div>
     </section>
-    <section class="section"><div class="callout info"><strong>Publication rule:</strong> a resource page is not a promise of an interactive test. Only subjects with a checked-in landing page and working resources are shown as live; no progress counts or fake start buttons are used.</div></section>
   </main>
-  <footer class="site-footer"><div class="shell footer-inner"><div><h2>EkGuru Learning</h2><p>By PRAKASH · subject-wise learning resources.</p></div><div><h3>Explore</h3><p><a href="../maps/index.html">Maps &amp; Atlases</a></p><p><a href="../practice/index.html">Practice Tests</a></p></div><div><h3>Source policy</h3><p><a href="../README.md">README</a></p><p><a href="../sources/index.html">Sources &amp; Verification</a></p></div></div><div class="shell footer-bottom">Internal routes open in the same tab; use browser Back to return to this catalogue.</div></footer>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <h3>EkGuru Learning</h3>
+        <p>By PRAKASH. Sirf study material aur practice tests.</p>
+      </div>
+      <div>
+        <h3>Study</h3>
+        <p><a href="computer-network/material/index.html">Study material</a></p>
+        <p><a href="computer-network/test/index.html">Online test</a></p>
+      </div>
+      <div>
+        <h3>Home</h3>
+        <p><a href="../index.html">EkGuru home</a></p>
+      </div>
+    </div>
+    <div class="shell footer-bottom"><span>Question bank build: <span data-build>—</span></span></div>
+  </footer>
 </body>
 </html>

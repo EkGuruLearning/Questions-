@@ -12,7 +12,7 @@ Sources:
     'Question not attempted' (no official key on the screenshots).
   * Repo-question quirks — per-question notes for Topics 3-7 curation.
   * RPSC Programmer 2024 Paper-1 — official key is at
-    Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/ANSWERS.md
+    maintainer/computer-network/past-papers/RPSC Programmer 2024 Paper-1/2024 Programmer Paper-1 ANSWERS.md
     (summaries repeated here for quick reference).
   * Forouzan Ch1 practice-set facts used for T1/T2 textbook MCQs.
 """

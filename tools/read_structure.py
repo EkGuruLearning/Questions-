@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print the website file map or run the one-command structure/merge preflight."""
+"""Print the EkGuru site/repository map, or run the read-only structure preflight."""
 from __future__ import annotations
 
 import argparse
@@ -8,130 +8,129 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+
 REQUIRED_PATHS = (
+    # published pages
     "index.html",
+    "404.html",
     "subjects/index.html",
     "subjects/computer-network/index.html",
+    "subjects/computer-network/material/index.html",
+    "subjects/computer-network/test/index.html",
     "subjects/rajasthan-geography/index.html",
-    "maps/index.html",
-    "maps/rajasthan/index.html",
-    "practice/index.html",
-    "study-material/index.html",
-    "sources/index.html",
-    "guides/repository-structure/index.html",
-    "assets/css/site.css",
-    "assets/js/app.js",
-    "assets/catalog/subjects.json",
-    "assets/catalog/resources.json",
-    "assets/catalog/maps.json",
-    "assets/banks/cn/manifest.json",
-    "Computer Network/data/cn_questions.json",
-    "Computer Network/Topics/README.md",
-    "data/catalog/books.json",
-    "data/catalog/portal_resources.json",
+    # site code and data
+    "assets/css/ekguru.css",
+    "assets/js/site.js",
+    "assets/js/test.mjs",
+    "assets/js/engine.mjs",
+    "assets/img/rajasthan-border-atlas-preview.webp",
+    "data/site.json",
+    "data/banks/cn/cn_questions.json",
+    "data/banks/cn/manifest.json",
+    # editable catalogue inputs
     "data/catalog/subjects.json",
+    "data/catalog/materials.json",
+    "data/catalog/site-routes.txt",
+    # student content roots
+    "content/computer-network/theory",
+    "content/computer-network/practice",
+    "content/computer-network/tests",
+    "content/rajasthan-geography/maps",
+    # builders and validators
     "tools/build_catalog.py",
-    "tools/validate_links.py",
-    "tools/validate_assets.py",
-    "tools/validate_subjects.py",
+    "tools/build_site_data.py",
+    "tools/validate_site.py",
+    "tools/validate_question_bank.py",
 )
+
 PREFLIGHT_COMMANDS = (
-    ("Generated catalogues and inventories", [sys.executable, "tools/build_catalog.py", "--check"]),
-    ("GitHub Pages links and project-base paths", [sys.executable, "tools/validate_links.py"]),
-    ("Resource files, hashes and map metadata", [sys.executable, "tools/validate_assets.py"]),
-    ("Subject/topic publication gates", [sys.executable, "tools/validate_subjects.py"]),
+    ("Bank chunks are current", [sys.executable, "tools/build_site_data.py", "--check"]),
+    ("Site data is current", [sys.executable, "tools/build_catalog.py", "--check"]),
+    ("Published routes, links and downloads", [sys.executable, "tools/validate_site.py"]),
+    ("Question bank and evidence gate", [sys.executable, "tools/validate_question_bank.py"]),
     ("Whitespace and conflict markers", [sys.executable, "tools/check_whitespace.py"]),
     ("Git diff whitespace", ["git", "diff", "--check"]),
     ("Staged diff whitespace", ["git", "diff", "--cached", "--check"]),
 )
 
 GUIDE = r"""
-EkGuru repository structure / वेबसाइट की फाइल संरचना
+EkGuru Learning — repository structure / वेबसाइट की फाइल संरचना
 
-PUBLIC WEBSITE ROUTES — browser इन्हीं HTML routes को खोलता है:
-  index.html                                  home / विषय सूची
-  subjects/computer-network/index.html        Computer Network subject page
-  subjects/rajasthan-geography/index.html     Rajasthan Geography resource page
-  maps/                                       map catalogue and detail routes
-  practice/index.html                        shared CN practice app
-  study-material/ and sources/                 resource and evidence pages
-  guides/repository-structure/index.html      this reader-friendly file guide
+STUDENTS JO DEKHTE HAIN (website routes):
+  index.html                                       home
+  subjects/index.html                              saare subjects
+  subjects/computer-network/index.html             CN home (Material / Test)
+  subjects/computer-network/material/index.html     study material (PDF downloads)
+  subjects/computer-network/test/index.html         online test (topic-wise + full mix)
+  subjects/rajasthan-geography/index.html           Rajasthan map atlas
+  404.html                                          purane link ke liye friendly page
 
-WEBSITE CODE AND DATA FLOW:
-  assets/css/site.css + assets/js/app.js      shared catalogue-site presentation
-  assets/css/portal.css + assets/js/app.mjs   existing practice-player UI
-  data/catalog/*.json                         editable catalogue source inputs
-  assets/catalog/*.json                       generated manifests read by app.js
-  Computer Network/data/cn_questions.json     canonical CN question records
-  assets/banks/cn/manifest.json + TNN chunks  generated; practice app loads selected topic
-  data/catalog/books.json                     maps CN topic PDFs/launchers to topic IDs
-  data/catalog/portal_resources.json          registers curated non-book add-on resources
+STUDENT FILES (only these get published):
+  content/computer-network/theory/     T01..T07 theory + complete book (PDF)
+  content/computer-network/practice/   practice booklets + answer key (PDF)
+  content/computer-network/tests/      topic/unit/subject tests (PDF)
+  content/computer-network/reference/  reference book (PDF)
+  content/rajasthan-geography/maps/    A1..A4 atlas + preview (PNG)
 
-SOURCE MATERIAL (keep originals in place):
-  Computer Network/Incoming/                   question-source intake; not published as approved content
-  Computer Network/Topics/T01 ... T07/         recommended home for new topic study PDFs
-  Computer Network/Practice/                   existing practice PDFs / answer aids
-  Computer Network/Past Papers/                existing papers, references and source notes
-  Computer Network/Reports/                    CN inventory, evidence, QA and release reports
-  Rajasthan Geography Maps/                    atlas project, exports, CSVs, audits and workflow
-  Geography/Map/Rajasthan/                     separate older geography source/audit tree; do not merge
-  tools/ and tests/                            builders, validators and tests; not student material
-  archive/                                      preserved snapshots; never edit as current source
+SITE CODE AND DATA:
+  assets/css/ekguru.css                one stylesheet for every page
+  assets/js/site.js                    renders topic/material/map lists from data/site.json
+  assets/js/test.mjs                   online test app (player, result, review)
+  assets/js/engine.mjs                 pure question-engine helpers
+  data/site.json                       generated page data (counts, titles, file hashes)
+  data/banks/cn/cn_questions.json      canonical Computer Network bank (schema v2)
+  data/banks/cn/manifest.json          generated topic manifest
+  data/banks/cn/T0N.<hash>.min.json    generated topic chunks (test page fetches one at a time)
 
-FOR EACH CN TOPIC:
-  T01  Introduction of Data Communication       Computer Network/Topics/T01/
-  T02  Network Models: OSI & TCP/IP             Computer Network/Topics/T02/
-  T03  Addressing: MAC, IPv4, IPv6, Ports, DNS   Computer Network/Topics/T03/
-  T04  Networking Devices                       Computer Network/Topics/T04/
-  T05  Transmission Medium                      Computer Network/Topics/T05/
-  T06  OSI Layers in Detail                     Computer Network/Topics/T06/
-  T07  Network Security                         Computer Network/Topics/T07/
+EDITABLE CATALOGUE INPUTS (yahan likho, phir rebuild karo):
+  data/catalog/subjects.json           subject + topic titles (English/Hindi), routes
+  data/catalog/materials.json          har downloadable file ka record + label
+  data/catalog/site-routes.txt         published page list used by the link validator
 
-IMPORTANT: adding a file is not the same as publishing it. Add the exact path and
-status to the correct source catalogue, rebuild generated manifests, then run:
+SAFELY HIDDEN (never linked from the website):
+  maintainer/computer-network/         audits, reports, intake, legacy apps, past papers
+  maintainer/rajasthan-geography/      GIS project, scripts, audits, metadata exports
+  maintainer/reports/                  generated audit reports
+  maintainer/archive/                  preserved older snapshots
+  tools/  tests/                       builders, validators and tests
+
+HOW TO ADD A FILE (e.g. a new topic PDF):
+  1. File rakho:          content/computer-network/theory/T08-...-Theory-MCQ.pdf
+  2. Entry add karo:      data/catalog/materials.json (subject, topic, kind, title_en, title_hi)
+  3. Rebuild + validate:  python3 tools/build_catalog.py && python3 tools/validate_site.py
+  (Registry check: agar file register nahi hui ya registered file gayab hai, build fail ho jayega.)
+
+HOW TO REBUILD THE QUESTION BANK:
+  python3 tools/build_site_data.py     # canonical bank -> chunks + manifest
+  python3 tools/build_catalog.py       # chunks + catalogue -> data/site.json
   python3 tools/read_structure.py --check
-
-For the bilingual website guide and the safe next-repository merge checklist, open:
-  guides/repository-structure/index.html
-""".strip()
+"""
 
 
 def unmerged_paths() -> list[str]:
-    result = subprocess.run(
-        ["git", "ls-files", "-u", "-z"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-    )
-    paths = []
-    for item in result.stdout.split(b"\0"):
-        if not item:
-            continue
-        record = item.decode("utf-8", errors="replace")
-        paths.append(record.split("\t", 1)[-1])
-    return paths
+    result = subprocess.run(["git", "ls-files", "-u", "-z"], cwd=ROOT, check=True, capture_output=True)
+    return [item.decode("utf-8", errors="replace").split("\t", 1)[-1]
+            for item in result.stdout.split(b"\0") if item]
 
 
 def run_check() -> int:
-    print("EkGuru structure / merge preflight — read-only")
+    print("EkGuru structure preflight — read-only")
     print("Repository:", ROOT)
     conflicts = unmerged_paths()
     if conflicts:
-        print(f"FAIL: {len(conflicts)} unmerged path entr(y/ies); resolve or abort the merge first:")
+        print(f"FAIL: {len(conflicts)} unmerged path(s); resolve or abort the merge first:")
         for entry in conflicts:
             print(" -", entry)
-        print("After resolving, rerun this command. To discard an in-progress merge, use `git merge --abort`.")
         return 1
     print("PASS: git index has no unresolved merge-conflict entries.")
 
-    missing = [rel for rel in REQUIRED_PATHS if not (ROOT / rel).is_file()]
+    missing = [rel for rel in REQUIRED_PATHS if not (ROOT / rel).exists()]
     if missing:
-        print(f"FAIL: {len(missing)} required route/source/tool path(s) are missing:")
+        print(f"FAIL: {len(missing)} required path(s) are missing:")
         for rel in missing:
             print(" -", rel)
-        print("Do not publish until the route, source catalogue, and generated assets are restored.")
         return 1
-    print(f"PASS: all {len(REQUIRED_PATHS)} required website, catalogue, source and validator paths exist.")
+    print(f"PASS: all {len(REQUIRED_PATHS)} required site/content/catalogue paths exist.")
 
     failures = 0
     for label, command in PREFLIGHT_COMMANDS:
@@ -143,20 +142,20 @@ def run_check() -> int:
         else:
             print(f"PASS: {label}")
     if failures:
-        print(f"\nNOT READY: {failures} structural preflight check(s) failed. Fix the source/path issue, rebuild if needed, and rerun this command.")
+        print(f"\nNOT READY: {failures} preflight check(s) failed.")
         return 1
-    print("\nREADY: repository structure, project-base links, generated catalogues and publication gates are consistent.")
-    print("This preflight does not run all data, browser, PDF, deployment or post-deployment tests; use tools/run_release_checks.py for release QA.")
+    print("\nREADY: structure, generated data, links and downloads are consistent.")
+    print("This preflight does not replace the unit tests or a browser check on the live site.")
     return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--check", action="store_true", help="run read-only route/catalogue/merge preflight checks")
+    parser.add_argument("--check", action="store_true", help="run the read-only structure preflight")
     args = parser.parse_args()
     if args.check:
         return run_check()
-    print(GUIDE)
+    print(GUIDE.strip())
     return 0
 
 

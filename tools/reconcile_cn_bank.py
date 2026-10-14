@@ -14,7 +14,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BANK_PATH = ROOT / "Computer Network/data/cn_questions.json"
+BANK_PATH = ROOT / "data/banks/cn/cn_questions.json"
 EVIDENCE_PATH = ROOT / "data/sources/official_paper_key_evidence.json"
 
 STATUS_VALUES = (
@@ -74,7 +74,7 @@ def main() -> None:
                 for field in ("explanation_en", "explanation_hi", "nukte_en", "nukte_hi"):
                     q[field] = scrub_unsupported_key_wording(q.get(field) or "")
                 q["source_url_or_file"] = (
-                    "Computer Network/Past Papers/RPSC Programmer 2024 Paper-1/"
+                    "maintainer/computer-network/past-papers/RPSC Programmer 2024 Paper-1/"
                     "2024 Programmer Paper-1 QUESTIONS.md; "
                     "2024 Programmer Paper-1 ANSWERS.md (community-maintained; "
                     "answer table says it is based on standard solutions and "

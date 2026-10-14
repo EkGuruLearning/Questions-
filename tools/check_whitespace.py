@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Check changed and untracked text files for trailing spaces/tabs outside archives."""
+"""Check changed and untracked text files for trailing spaces/tabs.
+
+`maintainer/` and `archive/` hold preserved original material (audits, GIS scripts,
+source registers, old snapshots). Those bytes are never rewritten, so they are skipped.
+"""
 from __future__ import annotations
 import pathlib
 import subprocess
@@ -19,7 +23,7 @@ def main():
     errors = []
     for relative in sorted(paths):
         path = ROOT / relative
-        if not path.is_file() or relative == "archive" or relative.startswith("archive/"):
+        if not path.is_file() or relative.startswith(("archive/", "maintainer/")):
             continue
         raw = path.read_bytes()
         if b"\0" in raw:
@@ -30,7 +34,7 @@ def main():
     if errors:
         print("\n".join(errors), file=sys.stderr)
         raise SystemExit(1)
-    print(f"PASS: changed text files contain no trailing whitespace ({len(paths)} paths inspected; archive originals excluded).")
+    print(f"PASS: changed text files contain no trailing whitespace ({len(paths)} paths inspected; maintainer/archive originals excluded).")
 
 if __name__ == "__main__":
     main()

@@ -1,116 +1,77 @@
 {
   "schema_version": 1,
-  "catalog_version": "ekguru-subjects-v1",
+  "brand": {
+    "name": "EkGuru Learning",
+    "short": "EkGuru",
+    "by": "PRAKASH",
+    "tagline_en": "Study material and topic-wise practice tests.",
+    "tagline_hi": "स्टडी मटेरियल और टॉपिक-वाइज़ प्रैक्टिस टेस्ट।"
+  },
   "subjects": [
     {
-      "id": "cn",
-      "name": "Computer Networks",
-      "name_hi": "कंप्यूटर नेटवर्क / डेटा संचार",
-      "category": "technical",
-      "status": "live",
-      "summary": "The only published subject bank. Per-question source and answer-verification labels are shown; the bank is not wholly official or fully bilingual. Counts and coverage come from canonical CN data.",
-      "syllabus_topics": ["T01", "T02", "T03", "T04", "T05", "T06", "T07"],
-      "learning_modes": ["learn", "practice", "timed_practice", "verified_pyq", "draft_practice", "bookmark_review"],
-      "book_ids": ["cn-t01-theory", "cn-t01-practice", "cn-t01-cbt", "cn-t02-theory", "cn-t02-practice", "cn-t02-cbt", "cn-t03-theory", "cn-t03-practice", "cn-t03-cbt", "cn-t04-theory", "cn-t04-practice", "cn-t04-cbt", "cn-t05-theory", "cn-t05-practice", "cn-t05-cbt", "cn-t06-theory", "cn-t06-practice", "cn-t06-cbt", "cn-t07-theory", "cn-t07-practice", "cn-t07-cbt"]
-    },
-    {
-      "id": "computer-fundamentals",
-      "name": "Computer Fundamentals & Awareness",
-      "name_hi": "कंप्यूटर फंडामेंटल्स और सामान्य जानकारी",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Hardware and software", "Number systems", "Memory and storage", "Internet and office productivity"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "dbms",
-      "name": "Database Management Systems",
-      "name_hi": "डेटाबेस मैनेजमेंट सिस्टम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No reviewed DBMS bank is published or startable yet.",
-      "syllabus_topics": ["Relational model", "SQL", "Normalization", "Transactions", "Indexing"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "programming",
-      "name": "Programming Fundamentals",
-      "name_hi": "प्रोग्रामिंग के मूल सिद्धांत",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. Language-specific banks will be listed only after their own review gate.",
-      "syllabus_topics": ["Algorithms and pseudocode", "C", "C++", "Java", "Python", "Code tracing"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "data-structures-algorithms",
-      "name": "Data Structures & Algorithms",
-      "name_hi": "डेटा स्ट्रक्चर और एल्गोरिदम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Arrays and lists", "Stacks and queues", "Trees and graphs", "Searching and sorting", "Complexity"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "operating-systems",
-      "name": "Operating Systems",
-      "name_hi": "ऑपरेटिंग सिस्टम",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Processes and threads", "Scheduling", "Synchronization", "Memory", "File systems"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "computer-architecture",
-      "name": "Computer Organization & Architecture",
-      "name_hi": "कंप्यूटर ऑर्गनाइजेशन और आर्किटेक्चर",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["Digital logic", "Instruction sets", "CPU datapath", "Pipelining", "Cache and memory hierarchy"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "software-engineering",
-      "name": "Software Engineering & Systems Analysis",
-      "name_hi": "सॉफ्टवेयर इंजीनियरिंग और सिस्टम विश्लेषण",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. No question bank is published or startable yet.",
-      "syllabus_topics": ["SDLC", "Requirements", "Testing", "UML", "Maintenance"],
-      "learning_modes": [],
-      "book_ids": []
-    },
-    {
-      "id": "cybersecurity",
-      "name": "Cybersecurity Fundamentals",
-      "name_hi": "साइबर सुरक्षा के मूल सिद्धांत",
-      "category": "technical",
-      "status": "planned",
-      "summary": "A future subject candidate. The live CN security topic remains part of the CN bank; this is not a separate subject bank.",
-      "syllabus_topics": ["Cryptography", "Authentication", "Access control", "Secure protocols", "Defensive design"],
-      "learning_modes": [],
-      "book_ids": []
+      "id": "computer-network",
+      "slug": "computer-network",
+      "title_en": "Computer Network",
+      "title_hi": "कंप्यूटर नेटवर्क",
+      "tagline_en": "7 topics · theory PDFs · practice booklets · online tests",
+      "tagline_hi": "7 टॉपिक · थ्योरी PDF · प्रैक्टिस बुकलेट · ऑनलाइन टेस्ट",
+      "intro_en": "Read the topic theory, download the practice booklet, then give a topic-wise or full mixed online test.",
+      "intro_hi": "टॉपिक की थ्योरी पढ़ें, प्रैक्टिस बुकलेट डाउनलोड करें, फिर टॉपिक-वाइज़ या पूरा मिक्स ऑनलाइन टेस्ट दें।",
+      "has_material": true,
+      "has_test": true,
+      "has_maps": false,
+      "test_bank": "cn",
+      "topics": [
+        {
+          "id": "T01",
+          "title_en": "Introduction of Data Communication",
+          "title_hi": "परिचय: डेटा संचार"
+        },
+        {
+          "id": "T02",
+          "title_en": "Network Models (OSI & TCP/IP)",
+          "title_hi": "नेटवर्क मॉडल: OSI और TCP/IP"
+        },
+        {
+          "id": "T03",
+          "title_en": "Addressing (MAC, IPv4, IPv6, Port, DNS)",
+          "title_hi": "एड्रेसिंग: MAC, IPv4, IPv6, पोर्ट और DNS"
+        },
+        {
+          "id": "T04",
+          "title_en": "Networking Devices",
+          "title_hi": "नेटवर्किंग उपकरण"
+        },
+        {
+          "id": "T05",
+          "title_en": "Transmission Medium",
+          "title_hi": "ट्रांसमिशन माध्यम"
+        },
+        {
+          "id": "T06",
+          "title_en": "OSI Layers in Detail",
+          "title_hi": "OSI लेयर्स का विस्तृत अध्ययन"
+        },
+        {
+          "id": "T07",
+          "title_en": "Network Security",
+          "title_hi": "नेटवर्क सुरक्षा"
+        }
+      ]
     },
     {
       "id": "rajasthan-geography",
-      "name": "Rajasthan Geography",
-      "name_hi": "राजस्थान का भूगोल",
-      "category": "rajasthan-gk",
-      "status": "planned",
-      "summary": "A separate non-technical subject candidate. No map/question bank is published or startable yet.",
-      "syllabus_topics": ["Physical geography", "Rivers", "Districts", "Resources and maps"],
-      "learning_modes": [],
-      "book_ids": []
+      "slug": "rajasthan-geography",
+      "title_en": "Rajasthan Geography",
+      "title_hi": "राजस्थान भूगोल",
+      "tagline_en": "Map atlas — border districts, A1 to A4 print sizes",
+      "tagline_hi": "मैप एटलस — सीमावर्ती जिले, A1 से A4 प्रिंट साइज़",
+      "intro_en": "Download or open the Rajasthan border-district map atlas in the print size you need.",
+      "intro_hi": "राजस्थान सीमावर्ती जिला मैप एटलस अपने ज़रूरत के प्रिंट साइज़ में डाउनलोड या खोलें।",
+      "has_material": false,
+      "has_test": false,
+      "has_maps": true,
+      "topics": []
     }
   ]
 }

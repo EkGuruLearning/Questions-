@@ -1,0 +1,184 @@
+{
+  "generated_at": "2026-10-14T16:19:28+00:00",
+  "command": "python3 tools/run_release_checks.py",
+  "summary": {
+    "pass": 15,
+    "skip": 0,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "name": "Python syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Every builder/validator script compiles.",
+      "output_tail": []
+    },
+    {
+      "name": "Generated data parses as JSON",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Site data, bank manifest, chunks and catalogue JSON are valid.",
+      "output_tail": []
+    },
+    {
+      "name": "Question bank and evidence gate",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Canonical schema v2, hashes, official-evidence gate and chunk coverage.",
+      "output_tail": [
+        "PASS: canonical schema v2 bank and browser test chunks are consistent",
+        "bank_build_id=cn-014b0aa51c0651e7",
+        "canonical_sha256=014b0aa51c0651e77ee8166a9f81a4daeeb0574b75b7abf6e5d72050c46feef0",
+        "question_count=1556 published=1554",
+        "topic_counts={\"T01\": 375, \"T02\": 144, \"T03\": 231, \"T04\": 99, \"T05\": 174, \"T06\": 387, \"T07\": 146}",
+        "verification_counts={\"answer_checked\": 847, \"claimed_answer_unverified\": 707, \"disputed\": 0, \"paper_and_key_checked\": 0, \"pending_review\": 2}"
+      ]
+    },
+    {
+      "name": "Site routes, links and downloads",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "No broken links, no .md links, no maintainer links, download hashes match.",
+      "output_tail": [
+        "PASS: 7 route(s), 103 link(s) and 38 download(s) checked",
+        "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
+      ]
+    },
+    {
+      "name": "Site data is current",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "data/site.json matches the registered content and catalogue.",
+      "output_tail": [
+        "PASS: data/site.json matches the registered content and catalogue."
+      ]
+    },
+    {
+      "name": "Bank chunks are current",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Generated topic chunks and manifest match the canonical bank.",
+      "output_tail": [
+        "PASS: data/banks/cn manifest and topic chunks match the canonical bank."
+      ]
+    },
+    {
+      "name": "Repository structure preflight",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Required paths, generated data, links and whitespace in one pass.",
+      "output_tail": [
+        "",
+        "--- Staged diff whitespace ---",
+        "PASS: Staged diff whitespace",
+        "",
+        "READY: structure, generated data, links and downloads are consistent.",
+        "This preflight does not replace the unit tests or a browser check on the live site."
+      ]
+    },
+    {
+      "name": "Site tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Site data integrity, registry wiring and route/anchor checks.",
+      "output_tail": [
+        "test_published_route_list_covers_every_html_page (test_site_data.SiteDataTests.test_published_route_list_covers_every_html_page) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 7 tests in 0.206s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "name": "Navigation and content tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Page semantics, nav targets, new-tab safety and no-audit-leak rules.",
+      "output_tail": [
+        "test_subject_cards_use_real_subject_ids (test_navigation.NavigationTests.test_subject_cards_use_real_subject_ids) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 12 tests in 0.014s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "name": "Responsive structural tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Viewport, breakpoints and touch-target CSS checks; not rendered visual QA.",
+      "output_tail": [
+        "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 7 tests in 0.002s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "name": "Data pipeline tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Canonical bank identity, public chunk fields and preserved snapshots.",
+      "output_tail": [
+        "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
+        "",
+        "----------------------------------------------------------------------",
+        "Ran 8 tests in 0.063s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "name": "JavaScript syntax",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Site modules, test app and Node tests parse.",
+      "output_tail": []
+    },
+    {
+      "name": "Engine unit tests",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Filtering, sampling, scoring and language fallbacks.",
+      "output_tail": [
+        "# pass 5",
+        "# fail 0",
+        "# cancelled 0",
+        "# skipped 0",
+        "# todo 0",
+        "# duration_ms 69.146156"
+      ]
+    },
+    {
+      "name": "Rendered DOM smoke test (optional jsdom)",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Renders the real pages and asserts topic/material/map lists; exit 77 means jsdom is not installed.",
+      "output_tail": [
+        "PASS: rendered DOM smoke test",
+        "  - home: 2 subject cards, 1,554 questions, 38 downloads",
+        "  - CN hub: 7 topic cards with test deep links",
+        "  - material page: 32 files, 8 filters",
+        "  - map page: 6 map cards"
+      ]
+    },
+    {
+      "name": "Whitespace/conflict check",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Tracked diffs and changed/untracked text files are checked.",
+      "output_tail": [
+        "PASS: changed text files contain no trailing whitespace (338 paths inspected; maintainer/archive originals excluded)."
+      ]
+    }
+  ],
+  "not_tested": [
+    "Real browser rendering, device testing and the live GitHub Pages deployment.",
+    "PDF page-by-page rendering (tools/audit_pdfs.py needs PyMuPDF)."
+  ]
+}

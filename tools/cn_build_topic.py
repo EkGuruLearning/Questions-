@@ -9,9 +9,9 @@ Usage:
 Reads:
     tools/data/topic<N>_data.py      -> SECTIONS (curated, verified) + optional NUKTE_RAPID
     tools/data/topic<N>_pending.py   -> PENDING (auto-ingested) [optional, legacy]
-Writes (into Computer Network/):
-    Topic N - <title> - <count> MCQs (Answers + Nukte).pdf
-    Topic N - <title> - <count> MCQs (Answers + Nukte).md
+Writes:
+    content/computer-network/theory/T0N-<slug>-Theory-MCQ.pdf   (student material)
+    maintainer/computer-network/theory-md/T0N-<slug>-Theory-MCQ.md  (editable source)
 """
 import os, sys, importlib.util, re
 
@@ -23,7 +23,18 @@ import cn_engine
 from cn_taxonomy import TOPICS, topic_by_num
 
 DATA_DIR = os.path.join(HERE, "data")
-OUT_DIR = os.path.join(ROOT, "Computer Network")
+OUT_DIR = os.path.join(ROOT, "content", "computer-network", "theory")
+MD_DIR = os.path.join(ROOT, "maintainer", "computer-network", "theory-md")
+# Topic number -> file-name slug used by data/catalog/materials.json
+SLUGS = {
+    1: "T01-Introduction-to-Data-Communication",
+    2: "T02-Network-Models-OSI-TCP-IP",
+    3: "T03-Addressing-MAC-IPv4-IPv6-Port-DNS",
+    4: "T04-Networking-Devices",
+    5: "T05-Transmission-Medium",
+    6: "T06-OSI-Layers-in-Detail",
+    7: "T07-Network-Security",
+}
 
 def _load_module(path, name):
     spec = importlib.util.spec_from_file_location(name, path)
@@ -59,12 +70,11 @@ def load_topic(topic_num):
 def build_one(topic_num, verbose=True):
     t, sections, pending, rapid = load_topic(topic_num)
     n_q = sum(len(s["questions"]) for s in sections)
+    base = SLUGS.get(topic_num, f"T{topic_num:02d}-{_slug(t.get('short', t['title']))}") + "-Theory-MCQ"
     if n_q == 0 and pending:
-        base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {len(pending)} Pending Questions (Needs Verification)"
-    else:
-        base = f"Topic {topic_num} - {_slug(t.get('short', t['title']))} - {n_q} MCQs (Answers + Nukte)"
+        base = SLUGS.get(topic_num, f"T{topic_num:02d}") + "-Pending-Questions"
     pdf_path = os.path.join(OUT_DIR, base + ".pdf")
-    md_path = os.path.join(OUT_DIR, base + ".md")
+    md_path = os.path.join(MD_DIR, base + ".md")
     pages = cn_engine.build_pdf(topic_num, t["title"], sections, pending, pdf_path, nukte_rapid=rapid)
     cn_engine.build_markdown(topic_num, t["title"], sections, pending, md_path, nukte_rapid=rapid)
     if verbose:
@@ -76,6 +86,7 @@ def build_one(topic_num, verbose=True):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+    os.makedirs(MD_DIR, exist_ok=True)
     args = sys.argv[1:]
     if not args:
         print(__doc__); return

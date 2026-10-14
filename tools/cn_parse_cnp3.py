@@ -21,7 +21,7 @@ import re
 import glob
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BANK = os.path.join(REPO, "Computer Network", "Past Papers", "Question Banks",
+BANK = os.path.join(REPO, "maintainer", "computer-network", "past-papers", "Question Banks",
                     "cnp3-MCQ (Kurose-Bonaventure textbook)")
 
 FILE_TOPIC = {
