@@ -3,7 +3,7 @@
    either a topic-wise test (with optional section filter) or a full mixed test. */
 import { filterQuestions, gradeAttempt, sampleQuestions } from "./engine.mjs";
 
-const ROOT = new URL("../../../", import.meta.url);
+const ROOT = new URL("../../", import.meta.url);
 const STORAGE = { sessions: "ekguru.sessions.v2", saved: "ekguru.saved.v2" };
 const POOL_STATUS = "all_practice"; // answer-checked + community-answered; review-only records stay out
 
@@ -24,6 +24,7 @@ const state = {
   questions: [],
   answers: {},
   marked: new Set(),
+  visited: new Set(),
   index: 0,
   checked: new Set(),
   startedAt: 0,
@@ -52,9 +53,13 @@ function writeLocal(key, value) {
 }
 
 async function fetchJSON(path) {
-  const response = await fetch(root(path), { cache: "no-cache" });
-  if (!response.ok) throw new Error(`${response.status} for ${path}`);
-  return response.json();
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(root(path), { cache: "no-cache", signal: controller.signal });
+    if (!response.ok) throw new Error(`${response.status} for ${path}`);
+    return await response.json();
+  } finally { clearTimeout(timeout); }
 }
 
 function sectionShort(fullTitle) {
@@ -74,6 +79,7 @@ async function loadTopic(topicId) {
   const entry = state.manifestTopics.get(topicId);
   if (!entry) throw new Error(`unknown topic ${topicId}`);
   const records = await fetchJSON(entry.file);
+  if (!Array.isArray(records) || !records.length) throw new Error(`Empty topic ${topicId}`);
   state.chunks.set(topicId, records);
   return records;
 }
@@ -155,9 +161,13 @@ function poolQuestions(records) {
   });
 }
 
+let poolRequest = 0;
 function updatePool() {
+  const request = ++poolRequest;
   const startButton = $("startButton");
   const status = $("poolStatus");
+  startButton.disabled = true;
+  $("retryPoolButton").hidden = true;
   if (state.mode === "topic" && !state.topicId) {
     status.textContent = "Pehle ek topic choose karein.";
     startButton.disabled = true;
@@ -167,8 +177,10 @@ function updatePool() {
     ? state.site.topics.map((topic) => topic.id)
     : [state.topicId];
 
+  status.textContent = "Questions load ho rahe hain…";
   Promise.all(selectedIds.map(loadTopic))
     .then((sets) => {
+      if (request !== poolRequest) return;
       const pool = poolQuestions(sets.flat());
       state.poolSize = pool.length;
       status.textContent = `${number(pool.length)} questions ready` +
@@ -195,6 +207,8 @@ function updatePool() {
       state.count = select.value === "all" ? "all" : Number(select.value);
     })
     .catch((error) => {
+      if (request !== poolRequest) return;
+      $("retryPoolButton").hidden = false;
       status.textContent = "Question data load nahi hua: " + error.message;
       startButton.disabled = true;
     });
@@ -245,6 +259,10 @@ async function startTest(questionList, label, presetAnswers) {
   state.questions = questionList;
   state.answers = presetAnswers || {};
   state.marked = new Set();
+  state.visited = new Set();
+  document.body.classList.add("cbt-active");
+  $("palettePanel").classList.remove("is-open");
+  $("paletteToggle").setAttribute("aria-expanded", "false");
   state.checked = new Set();
   state.index = 0;
   state.startedAt = Date.now();
@@ -301,7 +319,7 @@ function localized(primaryEn, primaryHi) {
 
 function renderQuestion() {
   const question = currentQuestion();
-  const card = $("questionCard");
+  state.visited.add(question.id);
   const stem = localized(question.stem_en, question.stem_hi);
   $("questionNumber").textContent = `Question ${state.index + 1} of ${state.questions.length}`;
   $("questionTopic").textContent = `${question.topic_id} · ${sectionShort(question.subtopic)}`;
@@ -333,7 +351,8 @@ function renderQuestion() {
   $("markButton").setAttribute("aria-pressed", String(state.marked.has(question.id)));
   $("saveButton").setAttribute("aria-pressed", String(state.saved.has(question.id)));
   $("prevButton").disabled = state.index === 0;
-  $("nextButton").hidden = state.index === state.questions.length - 1;
+  $("nextButton").textContent = state.index === state.questions.length - 1 ? "Save & submit" : "Save & next →";
+  $("markNextButton").textContent = "Mark for review & next";
 
   const feedback = $("feedback");
   if (reveal) {
@@ -377,18 +396,27 @@ function renderPalette() {
     const button = document.createElement("button");
     button.type = "button";
     button.textContent = String(index + 1);
+    if (state.visited.has(question.id)) button.classList.add("visited");
     if (state.answers[question.id]) button.classList.add("answered");
     if (state.marked.has(question.id)) button.classList.add("marked");
     if (index === state.index) button.classList.add("current");
-    button.setAttribute("aria-label", `Question ${index + 1}${state.marked.has(question.id) ? " (marked)" : ""}`);
+    const status = state.marked.has(question.id) ? (state.answers[question.id] ? "answered and marked" : "marked for review")
+      : state.answers[question.id] ? "answered" : state.visited.has(question.id) ? "not answered" : "not visited";
+    button.setAttribute("aria-label", `Question ${index + 1}, ${status}`);
+    if (index === state.index) button.setAttribute("aria-current", "true");
     button.addEventListener("click", () => {
       state.index = index;
       renderQuestion();
       renderPalette();
       updateProgress();
+      $("palettePanel").classList.remove("is-open");
+      $("paletteToggle").setAttribute("aria-expanded", "false");
+      $("questionCard").scrollIntoView?.({ block: "start", behavior: "smooth" });
     });
     grid.appendChild(button);
   });
+  const answered = state.questions.filter((q) => state.answers[q.id]).length;
+  $("paletteSummary").textContent = `${answered} answered · ${state.questions.length - answered} pending · ${state.marked.size} marked`;
 }
 
 function updateProgress() {
@@ -402,10 +430,9 @@ function updateProgress() {
 /* -------------------------------------------------------------- result ----- */
 function finishTest(silent) {
   const answeredCount = state.questions.filter((question) => state.answers[question.id]).length;
-  if (!silent && answeredCount < state.questions.length) {
-    const pending = state.questions.length - answeredCount;
-    if (!window.confirm(`${pending} question abhi khaali hain. Test submit karein?`)) return;
-  }
+  if (!silent && !window.confirm(`Submit test?\nAnswered: ${answeredCount}/${state.questions.length}\nNot answered: ${state.questions.length - answeredCount}\nMarked for review: ${state.marked.size} (selected answers will be counted)`)) return;
+  state.elapsed = Math.floor((Date.now() - state.startedAt) / 1000);
+  document.body.classList.remove("cbt-active");
   clearInterval(state.timerId);
   const result = gradeAttempt(state.questions, state.answers);
   state.lastResult = result;
@@ -434,6 +461,8 @@ function finishTest(silent) {
 
   renderTopicBars(result);
   renderReview();
+  $("reviewList").hidden = true;
+  $("reviewButton").setAttribute("aria-expanded", "false");
   renderHistory();
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -480,6 +509,20 @@ function renderReview() {
 
 /* --------------------------------------------------------------- wiring ---- */
 function bind() {
+  window.addEventListener("beforeunload", (event) => {
+    if (!$("playerPanel").hidden) { event.preventDefault(); event.returnValue = ""; }
+  });
+  $("retryPoolButton").addEventListener("click", updatePool);
+  $("paletteToggle").addEventListener("click", () => {
+    const open = $("palettePanel").classList.toggle("is-open");
+    $("paletteToggle").setAttribute("aria-expanded", String(open));
+    if (open) $("palettePanel").scrollIntoView?.({ block: "nearest", behavior: "smooth" });
+  });
+  $("markNextButton").addEventListener("click", () => {
+    state.marked.add(currentQuestion().id);
+    if (state.index < state.questions.length - 1) state.index += 1;
+    renderQuestion(); renderPalette(); updateProgress();
+  });
   $("modeTopic").addEventListener("click", () => setMode("topic"));
   $("modeFull").addEventListener("click", () => setMode("full"));
   $("countSelect").addEventListener("change", (event) => {
@@ -506,6 +549,8 @@ function bind() {
   $("minutesSelect").addEventListener("change", (event) => { state.minutes = Number(event.target.value); });
 
   $("startButton").addEventListener("click", async () => {
+    $("startButton").disabled = true;
+    try {
     const topicIds = state.mode === "full" ? state.site.topics.map((topic) => topic.id) : [state.topicId];
     const records = await loadTopics(topicIds);
     const pool = poolQuestions(records);
@@ -513,27 +558,33 @@ function bind() {
     const label = state.mode === "full"
       ? "Full mixed test (all topics)"
       : `${state.topicId} test${state.sections ? ` · ${state.sections.length} section(s)` : " · all sections"}`;
-    startTest(picked, label);
+    if (!picked.length) throw new Error("Koi question nahi mila; section choose karein.");
+    await startTest(picked, label);
+    } catch (error) {
+      showToast("Test load nahi hua. Dobara try karein. " + error.message);
+    } finally { $("startButton").disabled = false; }
   });
 
   $("practiceSavedButton").addEventListener("click", async () => {
+    try {
     const ids = [...state.saved.keys()];
     const topicIds = [...new Set(ids.map((id) => state.saved.get(id)))];
     const records = await loadTopics(topicIds);
     const picked = records.filter((question) => state.saved.has(question.id));
     if (!picked.length) { showToast("Saved questions abhi khaali hain."); return; }
-    startTest(picked, `Saved questions (${picked.length})`);
+    await startTest(picked, `Saved questions (${picked.length})`);
+    } catch (error) { showToast("Saved questions load nahi hue. Dobara try karein."); }
   });
   $("clearSavedButton").addEventListener("click", () => {
     state.saved.clear();
     writeLocal(STORAGE.saved, []);
     renderSavedPanel();
-    renderQuestion();
+    if (currentQuestion()) renderQuestion();
     showToast("Saved questions clear ho gaye.");
   });
 
   $("prevButton").addEventListener("click", () => { if (state.index > 0) { state.index -= 1; renderQuestion(); renderPalette(); } });
-  $("nextButton").addEventListener("click", () => { if (state.index < state.questions.length - 1) { state.index += 1; renderQuestion(); renderPalette(); } });
+  $("nextButton").addEventListener("click", () => { if (state.index < state.questions.length - 1) { state.index += 1; renderQuestion(); renderPalette(); } else finishTest(false); });
   $("clearAnswerButton").addEventListener("click", () => {
     const question = currentQuestion();
     delete state.answers[question.id];
@@ -558,6 +609,7 @@ function bind() {
   $("exitButton").addEventListener("click", () => {
     if (!window.confirm("Test chhod dein? Answer save nahi honge.")) return;
     clearInterval(state.timerId);
+    document.body.classList.remove("cbt-active");
     $("playerPanel").hidden = true;
     $("setupPanel").hidden = false;
   });
@@ -622,7 +674,9 @@ async function init() {
       setMode("topic");
     }
   } catch (error) {
-    $("setupPanel").innerHTML = `<p class="empty-state">Question data load nahi hua (${esc(error.message)}). Page refresh karein.</p>`;
+    $("bankInfo").textContent = "Data load nahi hua";
+    $("setupPanel").innerHTML = `<div class="card"><p role="alert">Question data load nahi hua (${esc(error.message)}). Internet check karke dobara try karein.</p><button class="button primary" id="retryInitButton" type="button">Dobara load karo</button></div>`;
+    $("retryInitButton").addEventListener("click", () => window.location.reload());
   }
 }
 

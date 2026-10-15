@@ -3,7 +3,7 @@
  *
  * jsdom cannot execute ES modules, so this script assembles the two real source
  * files (engine.mjs + test.mjs) into one classic script, swaps `import.meta.url`
- * for the page URL, and then drives the page the way a student would:
+ * for the real script URL, and then drives the page the way a student would:
  * pick a topic -> start -> answer -> submit -> check the result screen.
  *
  * Exits 77 when jsdom is not installed (optional tooling, no runtime dependency).
@@ -42,7 +42,7 @@ function appSource() {
     .replace(/^export\s+/gm, "");
   const app = fs.readFileSync(path.join(ROOT, "assets/js/test.mjs"), "utf8")
     .replace(/^import .*$/gm, "")
-    .replace('new URL("../../../", import.meta.url)', `new URL("${BASE}")`);
+    .replaceAll("import.meta.url", JSON.stringify(BASE + "assets/js/test.mjs"));
   return `${engine}\n${app}`;
 }
 
@@ -124,7 +124,7 @@ async function main() {
   const poolNumber = () => Number(($("poolStatus").textContent.match(/^[\s]*([\d,]+)/) || [0, "0"])[1].replace(/,/g, ""));
   const sectionBoxes = [...doc.querySelectorAll("#sectionPicker input[value]")];
   sectionBoxes[0].click();
-  await until(() => poolNumber() !== 144, "section filter to change the pool size");
+  await until(() => /questions ready/.test($("poolStatus").textContent) && poolNumber() !== 144, "section filter to change the pool size");
   const filtered = poolNumber();
   assert(filtered > 0 && filtered < 144, "one section should narrow the pool: " + filtered);
   lines.push(`section filter: ${filtered} questions in the chosen section`);

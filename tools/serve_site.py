@@ -31,6 +31,11 @@ mimetypes.add_type("image/webp", ".webp")
 def resolve(request_path: str) -> pathlib.Path | None:
     """Return the file to serve, or None when the path is not public."""
     clean = urllib.parse.unquote(request_path.split("?", 1)[0].split("#", 1)[0])
+    # Also preview the actual GitHub Pages project prefix (not just domain root).
+    if clean == "/Questions-":
+        clean = "/"
+    elif clean.startswith("/Questions-/"):
+        clean = clean[len("/Questions-"):]
     clean = posixpath.normpath(clean)
     if clean in ("/", ""):
         return ROOT / "index.html"

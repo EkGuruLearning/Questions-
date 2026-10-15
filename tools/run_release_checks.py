@@ -48,6 +48,8 @@ PY_TOOLS = [
 JS_FILES = [
     "assets/js/engine.mjs",
     "assets/js/test.mjs",
+    "assets/js/viewer.mjs",
+    "tests/mobile/cbt_reader_check.cjs",
     "tests/engine/engine.test.mjs",
     "tests/navigation/site_dom_smoke.cjs",
 ]
@@ -64,6 +66,12 @@ CHECKS = [
      "Canonical schema v2, hashes, official-evidence gate and chunk coverage."),
     ("Site routes, links and downloads", [PY, "tools/validate_site.py"],
      "No broken links, no .md links, no maintainer links, download hashes match."),
+    ("Generated pages are current", [PY, "tools/build_pages.py", "--check"],
+     "Content uploads and reader links are reflected in the published HTML."),
+    ("Rendered test app", ["node", "tests/navigation/test_app_dom_smoke.cjs"],
+     "Real module-relative root resolution, pools, practice and CBT result flow."),
+    ("CBT and mobile reader browser regression (optional)", ["node", "tests/mobile/cbt_reader_check.cjs"],
+     "Real HTTP under /Questions-/: CBT at four widths, PDF pages, maps, zoom and original/download links."),
     ("Site data is current", [PY, "tools/build_catalog.py", "--check"],
      "data/site.json matches the registered content and catalogue."),
     ("Bank chunks are current", [PY, "tools/build_site_data.py", "--check"],
@@ -125,8 +133,8 @@ def main() -> int:
         },
         "checks": results,
         "not_tested": [
-            "Real browser rendering, device testing and the live GitHub Pages deployment.",
-            "PDF page-by-page rendering (tools/audit_pdfs.py needs PyMuPDF).",
+            "Physical Android/iOS devices and the live GitHub Pages deployment (local Chromium checks run when available).",
+            "Exhaustive rendering of every PDF page; the browser regression samples hosted papers, theory and maps.",
         ],
     }
     RESULTS_PATH.parent.mkdir(parents=True, exist_ok=True)

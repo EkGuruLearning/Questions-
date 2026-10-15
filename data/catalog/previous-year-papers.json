@@ -294,6 +294,18 @@
                   "kind": "local-paper"
                 },
                 {
+                  "label_en": "Read hosted Paper I questions (mobile reader)",
+                  "label_hi": "पेपर I प्रश्न पढ़ें (मोबाइल रीडर)",
+                  "url": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Questions.pdf",
+                  "kind": "local-paper"
+                },
+                {
+                  "label_en": "Read hosted Paper I answer key (mobile reader)",
+                  "label_hi": "पेपर I उत्तर-कुंजी पढ़ें (मोबाइल रीडर)",
+                  "url": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Answer-Key.pdf",
+                  "kind": "local-paper"
+                },
+                {
                   "label_en": "Official RPSC question papers — Paper I / II",
                   "label_hi": "RPSC के आधिकारिक प्रश्न-पत्र — पेपर I / II",
                   "url": "https://rpsc.rajasthan.gov.in/quespapers?Pie=306",

@@ -197,7 +197,10 @@ section("map folder pages", () => {
   assert(/map\/rajasthan\/index\.html/.test(hub), "the Rajasthan map folder link is missing");
   const rajasthan = read("subjects/rajasthan-geography/map/rajasthan/index.html");
   const rows = all(rajasthan, /class="material-item/g).length;
-  assert(rows === 8, `expected 8 map files (PNG prints + PDF prints), saw ${rows}`);
+  const site = JSON.parse(read("data/site.json"));
+  const map = site.subjects.find((s) => s.id === "rajasthan-geography").tree.folders
+    .find((n) => n.path === "map").folders.find((n) => n.path === "map/rajasthan");
+  assert(rows === map.files.length, `expected ${map.files.length} map files, saw ${rows}`);
   assert(/A3-Print\.pdf/.test(rajasthan), "the A3 print PDF should be listed");
   assert(/data\/thumbs\//.test(rajasthan), "map rows should show the light preview image");
   const thumbs = all(rajasthan, /<img src="[^"]*data\/thumbs\/[^"]*"[^>]*>/g).map((match) => match[0]);
@@ -208,12 +211,10 @@ section("map folder pages", () => {
   }
   assert(/content\/rajasthan-geography\/map\/rajasthan\//.test(rajasthan), "map download links are missing");
   assert(/id="map-pdf-preview"/.test(rajasthan), "the inline PDF preview section is missing");
-  const preview = rajasthan.match(/<iframe\b[^>]*src="([^"]+)"[^>]*>/);
-  assert(preview && /Rajasthan-Border-Districts-A4-Portrait-Print\.pdf#view=FitH/.test(preview[1]),
-    "the embedded A4 PDF preview should use the real print PDF");
-  const previewPath = repoPath("subjects/rajasthan-geography/map/rajasthan/index.html", preview[1]);
-  assert(fs.existsSync(path.join(ROOT, previewPath)), `embedded PDF is missing: ${previewPath}`);
-  return `${rows} map rows, A4 PDF preview and downloads`;
+  assert(!/<iframe/.test(rajasthan), "map must not depend on a native PDF plugin");
+  assert(/reader\/index\.html\?file=/.test(rajasthan), "zoomable reader link missing");
+  assert(/assets\/img\/rajasthan-border-atlas-preview\.webp/.test(rajasthan), "mobile preview missing");
+  return `${rows} map rows, lightweight preview, reader and downloads`;
 });
 
 /* navigation + footer on every page ------------------------------------- */
