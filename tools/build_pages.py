@@ -576,21 +576,29 @@ class Builder:
         detail_href = href_from(rel_path, "subjects/previous-year-papers/index.html")
         group_title = group["title_en"]
         year_cards = []
-        for year in exam["years"]:
+        for index, year in enumerate(exam["years"]):
             label = str(year["year"])
             year_id = paper_year_id(label)
-            year_cards.append(f"""      <article class="card pyq-year-card" id="{esc(year_id)}">
-        <div class="pyq-year-head">
+            # Mobile par sab saal ek saath khule to page bahut lamba ho jata hai:
+            # har saal collapsible hai, sirf sabse naya saal (pehla) shuru me khula rehta hai.
+            open_attr = " open" if index == 0 else ""
+            year_cards.append(f"""      <details class="card pyq-year-card" id="{esc(year_id)}"{open_attr}>
+        <summary class="pyq-year-summary">
           <span class="chip green">{esc(label)}</span>
-          <h2>{esc(year['title_en'])}</h2>
-        </div>
-        <p class="pyq-title-hi" lang="hi">{esc(year['title_hi'])}</p>
+          <span class="pyq-year-summary-text">
+            <strong>{esc(year['title_en'])}</strong>
+            <span class="pyq-title-hi" lang="hi">{esc(year['title_hi'])}</span>
+          </span>
+          <span class="pyq-year-toggle" aria-hidden="true">▾</span>
+        </summary>
+        <div class="pyq-year-body">
         <p class="pyq-year-note">{esc(year.get('note_en', ''))}</p>
         <p class="pyq-year-note pyq-year-note-hi" lang="hi">{esc(year.get('note_hi', ''))}</p>
         <ul class="pyq-source-list">
 {paper_link_list(year['links'], rel_path)}
         </ul>
-      </article>""")
+        </div>
+      </details>""")
         archive_links = paper_link_list(exam.get("sources", []), rel_path) or (
             '<li class="muted small">No separate archive link is listed.</li>'
         )
@@ -645,6 +653,7 @@ class Builder:
       <div class="pdf-viewer">
         <iframe src="{viewer_src}" title="Preview of the Rajasthan district and border atlas PDF" loading="lazy"></iframe>
       </div>
+      <p class="pdf-mobile-note">Mobile par PDF preview kai phone browsers me nahi khulta — neeche button se PDF seedha kholo ya download karo.</p>
       <div class="button-row">
         <a class="button primary" href="{pdf_href}" target="_blank" rel="noopener noreferrer">Open A4 PDF ↗</a>
         <a class="button secondary" href="{pdf_href}" download>Download A4 PDF</a>

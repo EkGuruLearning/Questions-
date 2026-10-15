@@ -488,6 +488,7 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .pyq-summary { color: var(--ink-soft); margin: 0; }
 .pyq-summary-hi { color: var(--muted); font-size: 0.91rem; }
 .pyq-year-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.15rem 0 0.3rem; }
+.pyq-exam-card { min-width: 0; }
 .pyq-exam-card > .button { margin-top: auto; }
 .pyq-detail-year-nav { margin-top: 1rem; }
 .pyq-year-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
@@ -498,6 +499,18 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .pyq-year-note-hi { color: var(--muted); font-size: 0.92rem; }
 .pyq-source-list { list-style: none; display: grid; gap: 0.5rem; padding: 0; margin: 0.75rem 0 0; }
 .pyq-link-item { min-width: 0; }
+.pyq-year-card { padding: 0; overflow: hidden; }
+.pyq-year-summary { display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1rem; cursor: pointer; list-style: none; min-height: 48px; }
+.pyq-year-summary::-webkit-details-marker { display: none; }
+.pyq-year-summary:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+.pyq-year-summary-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.15rem; }
+.pyq-year-summary-text strong { font-size: 1.02rem; line-height: 1.35; overflow-wrap: anywhere; }
+.pyq-year-summary-text .pyq-title-hi { margin: 0; font-size: 0.9rem; }
+.pyq-year-toggle { color: var(--muted); transition: transform 0.2s ease; }
+.pyq-year-card[open] > .pyq-year-summary .pyq-year-toggle { transform: rotate(180deg); }
+.pyq-year-body { padding: 0 1rem 1rem; }
+.pyq-year-body .pyq-title-hi { margin: 0 0 0.25rem; }
+.pdf-mobile-note { display: none; color: var(--muted); font-size: 0.88rem; margin: 0.4rem 0 0; }
 .pyq-source-link {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -759,6 +772,14 @@ a.year-chip:hover { border-color: var(--primary); color: var(--primary-dark); }
 
 @media (max-width: 720px) {
   body { font-size: 15.5px; }
+  /* PDF iframe phones par aksar blank/abort hota hai — chhota note + button dikhao */
+  .pdf-viewer { display: none; }
+  /* exam card ke saal chips mobile par ek hi scroll-able line me — card chhota rahe */
+  .pyq-exam-card { align-items: stretch; }
+  .pyq-year-chips { width: 100%; max-width: 100%; box-sizing: border-box; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.25rem; scrollbar-width: thin; }
+  .pyq-year-chips .chip { flex: 0 0 auto; }
+  .pdf-mobile-note { display: block; }
+  .pyq-link-item .pyq-source-link { min-height: 48px; }
   .hero-stats { gap: 0.7rem 1.1rem; }
   .material-item { flex-direction: column; align-items: stretch; }
   /* column layout me `flex: 1 1 260px` height ki basis ban jata hai — usse reset karo,
