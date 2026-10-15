@@ -1,0 +1,1345 @@
+{
+  "schema_version": 1,
+  "intro_en": "Choose your exam, then practise from the year-wise links. Official question papers and answer keys are labelled separately from third-party or memory-based practice.",
+  "intro_hi": "अपनी परीक्षा चुनें और फिर साल-वार पेपर लिंक से अभ्यास करें। आधिकारिक प्रश्न-पत्र/उत्तर-कुंजी और तीसरे पक्ष के memory-based अभ्यास को अलग-अलग साफ़ लेबल किया गया है।",
+  "groups": [
+    {
+      "id": "rajasthan",
+      "title_en": "Rajasthan — State Recruitments",
+      "title_hi": "राजस्थान — राज्य स्तरीय भर्तियाँ",
+      "exams": [
+        {
+          "id": "rssb-informatics-assistant",
+          "title_en": "RSSB / RSMSSB — Informatics Assistant",
+          "title_hi": "RSSB / RSMSSB — सूचना सहायक",
+          "summary_en": "The 2023 recruitment-cycle exam was actually held in 2024; it is filed under the sitting year, with the board’s recruitment label retained in the note. The separate 2018 paper is linked from the official archive.",
+          "summary_hi": "2023 भर्ती चक्र की परीक्षा वास्तव में 2024 में हुई; इसे परीक्षा-वर्ष में रखा है और बोर्ड का भर्ती-वर्ष नोट में रखा है। 2018 का पेपर आधिकारिक संग्रह से अलग जुड़ा है।",
+          "sources": [
+            {
+              "label_en": "Official RSSB question-paper archive",
+              "label_hi": "RSSB का आधिकारिक प्रश्न-पत्र संग्रह",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official RSSB answer-key archive",
+              "label_hi": "RSSB की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "Informatics Assistant — 2023 recruitment cycle, exam held 21 January 2024",
+              "title_hi": "सूचना सहायक — भर्ती चक्र 2023, परीक्षा 21 जनवरी 2024 को हुई",
+              "note_en": "RSSB labels this recruitment as Informatics Assistant Exam 2023, but the written exam was actually held on 21 January 2024. It is listed under the sitting year here; the board's recruitment-cycle label is preserved.",
+              "note_hi": "RSSB इस भर्ती को Informatics Assistant Exam 2023 कहता है, लेकिन लिखित परीक्षा वास्तव में 21 जनवरी 2024 को हुई थी। यहाँ इसे परीक्षा-वर्ष 2024 में रखा है और बोर्ड का भर्ती-वर्ष भी सुरक्षित रखा है।",
+              "links": [
+                {
+                  "label_en": "IA — official master question paper (exam held 21 Jan 2024; recruitment 2023)",
+                  "label_hi": "IA — आधिकारिक मास्टर प्रश्न-पत्र (परीक्षा 21 जनवरी 2024; भर्ती 2023)",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=2206",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official IA primary answer key / answer-key archive",
+                  "label_hi": "IA की आधिकारिक प्राथमिक उत्तर-कुंजी / उत्तर-कुंजी संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "title_en": "Informatics Assistant — 2018 examination",
+              "title_hi": "सूचना सहायक — 2018 की परीक्षा",
+              "note_en": "The official RSSB archive lists a direct-recruitment Informatics Assistant 2018 master paper. Open the archive and select that exam entry.",
+              "note_hi": "RSSB के आधिकारिक संग्रह में सीधी भर्ती Informatics Assistant 2018 का मास्टर पेपर सूचीबद्ध है। संग्रह खोलकर इसी परीक्षा की entry चुनें।",
+              "links": [
+                {
+                  "label_en": "Official RSSB Informatics Assistant question-paper archive",
+                  "label_hi": "RSSB का आधिकारिक Informatics Assistant प्रश्न-पत्र संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+                  "kind": "official-archive"
+                },
+                {
+                  "label_en": "Official RSSB answer-key archive",
+                  "label_hi": "RSSB का आधिकारिक उत्तर-कुंजी संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rssb-basic-computer-instructor",
+          "title_en": "RSSB / RSMSSB — Basic Computer Instructor",
+          "title_hi": "RSSB / RSMSSB — बेसिक कंप्यूटर अनुदेशक",
+          "summary_en": "Basic Computer Instructor papers are separated from Senior Computer Instructor and other RSSB computer posts. Paper I, Paper II and final-key archive links are provided.",
+          "summary_hi": "बेसिक कंप्यूटर अनुदेशक के पेपर सीनियर कंप्यूटर अनुदेशक और RSSB के अन्य कंप्यूटर पदों से अलग रखे हैं। पेपर I, पेपर II और अंतिम उत्तर-कुंजी संग्रह के लिंक दिए हैं।",
+          "sources": [
+            {
+              "label_en": "Official RSSB question-paper archive",
+              "label_hi": "RSSB का आधिकारिक प्रश्न-पत्र संग्रह",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official RSSB answer-key archive",
+              "label_hi": "RSSB की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2022",
+              "title_en": "Basic Computer Instructor",
+              "title_hi": "बेसिक कंप्यूटर अनुदेशक",
+              "note_en": "Official master question papers for Basic Computer Instructor; Paper I and Paper II are linked separately.",
+              "note_hi": "बेसिक कंप्यूटर अनुदेशक के आधिकारिक मास्टर प्रश्न-पत्र; पेपर I और पेपर II अलग लिंक हैं।",
+              "links": [
+                {
+                  "label_en": "Basic Computer Instructor — Paper I",
+                  "label_hi": "बेसिक कंप्यूटर अनुदेशक — पेपर I",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=1669",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Basic Computer Instructor — Paper II",
+                  "label_hi": "बेसिक कंप्यूटर अनुदेशक — पेपर II",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=1670",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official Basic Computer Instructor final answer keys",
+                  "label_hi": "बेसिक कंप्यूटर अनुदेशक की आधिकारिक अंतिम उत्तर-कुंजियाँ",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-answer-key"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rssb-senior-computer-instructor",
+          "title_en": "RSSB / RSMSSB — Senior Computer Instructor",
+          "title_hi": "RSSB / RSMSSB — सीनियर कंप्यूटर अनुदेशक",
+          "summary_en": "Senior Computer Instructor papers are separated from Basic Computer Instructor and other RSSB computer posts. Paper I, Paper II and final-key archive links are provided.",
+          "summary_hi": "सीनियर कंप्यूटर अनुदेशक के पेपर बेसिक कंप्यूटर अनुदेशक और RSSB के अन्य कंप्यूटर पदों से अलग रखे हैं। पेपर I, पेपर II और अंतिम उत्तर-कुंजी संग्रह के लिंक दिए हैं।",
+          "sources": [
+            {
+              "label_en": "Official RSSB question-paper archive",
+              "label_hi": "RSSB का आधिकारिक प्रश्न-पत्र संग्रह",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official RSSB answer-key archive",
+              "label_hi": "RSSB की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2022",
+              "title_en": "Senior Computer Instructor",
+              "title_hi": "सीनियर कंप्यूटर अनुदेशक",
+              "note_en": "Official master question papers for Senior Computer Instructor; Paper I and Paper II are linked separately.",
+              "note_hi": "सीनियर कंप्यूटर अनुदेशक के आधिकारिक मास्टर प्रश्न-पत्र; पेपर I और पेपर II अलग लिंक हैं।",
+              "links": [
+                {
+                  "label_en": "Senior Computer Instructor — Paper I",
+                  "label_hi": "सीनियर कंप्यूटर अनुदेशक — पेपर I",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=1671",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Senior Computer Instructor — Paper II",
+                  "label_hi": "सीनियर कंप्यूटर अनुदेशक — पेपर II",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=1672",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official Senior Computer Instructor final answer keys",
+                  "label_hi": "सीनियर कंप्यूटर अनुदेशक की आधिकारिक अंतिम उत्तर-कुंजियाँ",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-answer-key"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rssb-computor",
+          "title_en": "RSSB / RSMSSB — Computor",
+          "title_hi": "RSSB / RSMSSB — संगणक",
+          "summary_en": "Computor examination papers are kept separate from Informatics Assistant and Computer Instructor papers. The year labels follow the board archive; open the archive for the exact paper entry and key.",
+          "summary_hi": "संगणक परीक्षा के पेपर सूचना सहायक और कंप्यूटर अनुदेशक से अलग रखे गए हैं। साल के लेबल बोर्ड के संग्रह के अनुसार हैं; सटीक पेपर entry और कुंजी के लिए संग्रह खोलें।",
+          "sources": [
+            {
+              "label_en": "Official RSSB question-paper archive",
+              "label_hi": "RSSB का आधिकारिक प्रश्न-पत्र संग्रह",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official RSSB answer-key archive",
+              "label_hi": "RSSB की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2023",
+              "title_en": "Computor 2023",
+              "title_hi": "संगणक 2023",
+              "note_en": "RSSB lists this master paper for the 2023 Computor exam. Use the official archive for its answer key.",
+              "note_hi": "RSSB ने यह मास्टर पेपर 2023 की Computor परीक्षा के लिए सूचीबद्ध किया है। उत्तर-कुंजी के लिए आधिकारिक संग्रह देखें।",
+              "links": [
+                {
+                  "label_en": "Computor 2023 — master question paper",
+                  "label_hi": "संगणक 2023 — मास्टर प्रश्न-पत्र",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=2326",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official Computor answer-key archive",
+                  "label_hi": "Computor का आधिकारिक उत्तर-कुंजी संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2021",
+              "title_en": "Computor",
+              "title_hi": "संगणक",
+              "note_en": "The official archive labels this master paper Computor 2021.",
+              "note_hi": "आधिकारिक संग्रह में यह मास्टर पेपर Computor 2021 के नाम से है।",
+              "links": [
+                {
+                  "label_en": "Computor 2021 — master question paper",
+                  "label_hi": "संगणक 2021 — मास्टर प्रश्न-पत्र",
+                  "url": "https://rsmssb.rajasthan.gov.in/download_file?downloadFileId=1384",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official answer-key archive",
+                  "label_hi": "आधिकारिक उत्तर-कुंजी संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "title_en": "Computor — 2018 examination",
+              "title_hi": "संगणक — 2018 की परीक्षा",
+              "note_en": "The official RSSB archive lists a Computor 2018 question-paper entry. Open the archive and confirm the exam title before downloading.",
+              "note_hi": "RSSB के आधिकारिक संग्रह में Computor 2018 का प्रश्न-पत्र सूचीबद्ध है। डाउनलोड से पहले संग्रह में परीक्षा का शीर्षक मिलाएँ।",
+              "links": [
+                {
+                  "label_en": "Official RSSB Computor question-paper archive",
+                  "label_hi": "RSSB का आधिकारिक Computor प्रश्न-पत्र संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=Xj4lCb9vGxpQnfLs%2FxlZ2g%3D%3D",
+                  "kind": "official-archive"
+                },
+                {
+                  "label_en": "Official RSSB answer-key archive",
+                  "label_hi": "RSSB का आधिकारिक उत्तर-कुंजी संग्रह",
+                  "url": "https://rsmssb.rajasthan.gov.in/show_archived?menuName=AGDAnN3xlANlxQ9BZvzaeg%3D%3D",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rpsc-programmer",
+          "title_en": "RPSC — Programmer / Computer Science posts",
+          "title_hi": "RPSC — प्रोग्रामर / कंप्यूटर साइंस पद",
+          "summary_en": "Start with the Programmer paper. RPSC’s official archive also contains papers and answer keys for other posts when released; check the exam title before practising.",
+          "summary_hi": "प्रोग्रामर पेपर से शुरुआत करें। RPSC के आधिकारिक संग्रह में अन्य पदों के पेपर और उत्तर-कुंजी भी जारी होने पर मिलते हैं; अभ्यास से पहले परीक्षा का नाम जाँचें।",
+          "sources": [
+            {
+              "label_en": "Official RPSC question-paper archive",
+              "label_hi": "RPSC का आधिकारिक प्रश्न-पत्र संग्रह",
+              "url": "https://rpsc.rajasthan.gov.in/quespapers?Pie=306",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official RPSC answer-key archive",
+              "label_hi": "RPSC की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://rpsc.rajasthan.gov.in/answerkeys?Pie=306",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "Programmer — Paper I and Paper II",
+              "title_hi": "प्रोग्रामर — पेपर I और पेपर II",
+              "note_en": "The official archive lists both question papers and final keys. EkGuru currently hosts a local Paper I question copy and answer-key file; use the RPSC archive for Paper II and the official final keys.",
+              "note_hi": "आधिकारिक संग्रह में दोनों प्रश्न-पत्र और अंतिम उत्तर-कुंजियाँ हैं। EkGuru पर अभी पेपर-I की प्रश्न प्रति और उत्तर-कुंजी फ़ाइल है; पेपर-II और आधिकारिक अंतिम कुंजियों के लिए RPSC संग्रह खोलें।",
+              "links": [
+                {
+                  "label_en": "EkGuru hosted paper and answer key (Paper I)",
+                  "label_hi": "EkGuru पर उपलब्ध पेपर और उत्तर-कुंजी (पेपर I)",
+                  "url": "subjects/previous-year-papers/rpsc/2024/index.html",
+                  "kind": "local-paper"
+                },
+                {
+                  "label_en": "Official RPSC question papers — Paper I / II",
+                  "label_hi": "RPSC के आधिकारिक प्रश्न-पत्र — पेपर I / II",
+                  "url": "https://rpsc.rajasthan.gov.in/quespapers?Pie=306",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official final answer keys",
+                  "label_hi": "आधिकारिक अंतिम उत्तर-कुंजियाँ",
+                  "url": "https://rpsc.rajasthan.gov.in/answerkeys?Pie=306",
+                  "kind": "official-answer-key"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rajasthan-hc-system-assistant",
+          "title_en": "Rajasthan High Court — System Assistant",
+          "title_hi": "राजस्थान उच्च न्यायालय — सिस्टम असिस्टेंट",
+          "summary_en": "The System Assistant recruitment exam was held in 2024. The High Court’s public previous-paper page does not list this paper, so this card points to the official recruitment record rather than claiming a public PDF.",
+          "summary_hi": "सिस्टम असिस्टेंट भर्ती परीक्षा 2024 में हुई थी। उच्च न्यायालय के सार्वजनिक पुराने-पेपर पेज पर यह पेपर सूचीबद्ध नहीं है; इसलिए यहाँ आधिकारिक भर्ती रिकॉर्ड का लिंक है, कोई सार्वजनिक PDF होने का दावा नहीं।",
+          "sources": [
+            {
+              "label_en": "Official System Assistant recruitment record",
+              "label_hi": "सिस्टम असिस्टेंट का आधिकारिक भर्ती रिकॉर्ड",
+              "url": "https://hcraj.nic.in/hcraj/recruitment_detail.php?id=NDE%3D",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "High Court previous-year paper list",
+              "label_hi": "उच्च न्यायालय की पुराने-पेपर सूची",
+              "url": "https://hcraj.nic.in/hcraj/oldpaperexam.php",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "System Assistant — written examination",
+              "title_hi": "सिस्टम असिस्टेंट — लिखित परीक्षा",
+              "note_en": "Official recruitment updates are available. A downloadable official question-paper PDF could not be verified in the High Court’s public paper list.",
+              "note_hi": "आधिकारिक भर्ती अपडेट उपलब्ध हैं। उच्च न्यायालय की सार्वजनिक पेपर सूची में डाउनलोड योग्य आधिकारिक प्रश्न-पत्र PDF सत्यापित नहीं मिला।",
+              "links": [
+                {
+                  "label_en": "Official recruitment updates",
+                  "label_hi": "आधिकारिक भर्ती अपडेट",
+                  "url": "https://hcraj.nic.in/hcraj/recruitment_detail.php?id=NDE%3D",
+                  "kind": "official-archive"
+                },
+                {
+                  "label_en": "Official previous-year exam papers list",
+                  "label_hi": "आधिकारिक पुराने परीक्षा-पत्रों की सूची",
+                  "url": "https://hcraj.nic.in/hcraj/oldpaperexam.php",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "teaching",
+      "title_en": "Teaching — Computer Science",
+      "title_hi": "शिक्षण — कंप्यूटर साइंस",
+      "exams": [
+        {
+          "id": "dsssb-tgt-computer-science",
+          "title_en": "DSSSB — TGT Computer Science",
+          "title_hi": "DSSSB — TGT कंप्यूटर साइंस",
+          "summary_en": "DSSSB has publicly posted question papers for some shifts. Use the post code, date and shift shown on each paper to match it to your exam.",
+          "summary_hi": "DSSSB ने कुछ शिफ्टों के प्रश्न-पत्र सार्वजनिक किए हैं। अपने पेपर से मिलान के लिए पोस्ट कोड, तारीख़ और शिफ्ट अवश्य जाँचें।",
+          "sources": [
+            {
+              "label_en": "Official DSSSB online-exam question bank",
+              "label_hi": "DSSSB का आधिकारिक ऑनलाइन-एग्ज़ाम प्रश्न बैंक",
+              "url": "https://dsssb.delhi.gov.in/doit/tab-content/question-bank-online-2023",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official DSSSB answer-key archive",
+              "label_hi": "DSSSB की आधिकारिक उत्तर-कुंजी सूची",
+              "url": "https://dsssb.delhi.gov.in/answer-keys/Delhi-Subordinate-Services-Selection-Board",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2023",
+              "title_en": "TGT Computer Science — Post Code 39/22, 24 June, Shift 2",
+              "title_hi": "TGT कंप्यूटर साइंस — पोस्ट कोड 39/22, 24 जून, शिफ्ट 2",
+              "note_en": "This is a specific official shift paper, not a bundle of every DSSSB shift.",
+              "note_hi": "यह एक विशेष शिफ्ट का आधिकारिक पेपर है; सभी DSSSB शिफ्टों का पूरा सेट नहीं।",
+              "links": [
+                {
+                  "label_en": "Official question-paper page and download",
+                  "label_hi": "आधिकारिक प्रश्न-पत्र पेज और डाउनलोड",
+                  "url": "https://dsssb.delhi.gov.in/node/68263",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official 2023 question-bank page",
+                  "label_hi": "2023 का आधिकारिक प्रश्न-बैंक पेज",
+                  "url": "https://dsssb.delhi.gov.in/doit/tab-content/question-bank-online-2023",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2021",
+              "title_en": "TGT Computer Science — official paper PDF",
+              "title_hi": "TGT कंप्यूटर साइंस — आधिकारिक पेपर PDF",
+              "note_en": "The PDF is on the DSSSB government domain. Confirm the paper title and shift before attempting it.",
+              "note_hi": "यह PDF DSSSB के सरकारी डोमेन पर है। हल करने से पहले पेपर का शीर्षक और शिफ्ट जाँचें।",
+              "links": [
+                {
+                  "label_en": "Official TGT Computer Science question paper",
+                  "label_hi": "TGT कंप्यूटर साइंस का आधिकारिक प्रश्न-पत्र",
+                  "url": "https://dsssb.delhi.gov.in/sites/default/files/DSSSB/universal-tab/tgt_computer_science4.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "Official DSSSB answer-key archive",
+                  "label_hi": "DSSSB की आधिकारिक उत्तर-कुंजी सूची",
+                  "url": "https://dsssb.delhi.gov.in/answer-keys/Delhi-Subordinate-Services-Selection-Board",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kvs-pgt-computer-science",
+          "title_en": "KVS — PGT Computer Science",
+          "title_hi": "KVS — PGT कंप्यूटर साइंस",
+          "summary_en": "KVS question papers and response sheets may be candidate-login resources. Third-party practice links are clearly marked; they are not KVS-hosted documents and may require an account.",
+          "summary_hi": "KVS के प्रश्न-पत्र और response sheet उम्मीदवार के लॉगिन में मिल सकते हैं। तीसरे पक्ष के अभ्यास लिंक अलग से चिह्नित हैं; वे KVS द्वारा होस्ट नहीं किए गए और लॉगिन माँग सकते हैं।",
+          "sources": [
+            {
+              "label_en": "Official KVS results / answer-key archive",
+              "label_hi": "KVS का आधिकारिक परिणाम / उत्तर-कुंजी संग्रह",
+              "url": "https://kvsangathan.nic.in/en/results-misc-answer-keys/",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official KVS recruitment and employment notices",
+              "label_hi": "KVS के आधिकारिक भर्ती और रोजगार नोटिस",
+              "url": "https://kvsangathan.nic.in/en/employment-notice/",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2023",
+              "title_en": "PGT Computer Science — 23 February, Shift 2",
+              "title_hi": "PGT कंप्यूटर साइंस — 23 फरवरी, शिफ्ट 2",
+              "note_en": "Official candidate response access was time-limited. The practice link is third-party; use the KVS archive for official notices and keys.",
+              "note_hi": "आधिकारिक उम्मीदवार response access सीमित समय के लिए था। अभ्यास लिंक तीसरे पक्ष का है; आधिकारिक नोटिस और कुंजी के लिए KVS संग्रह देखें।",
+              "links": [
+                {
+                  "label_en": "Computer Science practice paper (third-party; may require sign-in)",
+                  "label_hi": "कंप्यूटर साइंस अभ्यास पेपर (तीसरा पक्ष; लॉगिन लग सकता है)",
+                  "url": "https://testbook.com/kvs-pgt/previous-year-papers",
+                  "kind": "practice-third-party"
+                },
+                {
+                  "label_en": "Official KVS answer-key / result archive",
+                  "label_hi": "KVS का आधिकारिक उत्तर-कुंजी / परिणाम संग्रह",
+                  "url": "https://kvsangathan.nic.in/en/results-misc-answer-keys/",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2017",
+              "title_en": "PGT Computer Science — third-party practice copy",
+              "title_hi": "PGT कंप्यूटर साइंस — तीसरे पक्ष की अभ्यास प्रति",
+              "note_en": "This is a third-party practice resource, not an official KVS-hosted PDF.",
+              "note_hi": "यह तीसरे पक्ष का अभ्यास स्रोत है, KVS द्वारा होस्ट की गई आधिकारिक PDF नहीं।",
+              "links": [
+                {
+                  "label_en": "KVS recruitment practice-paper collection",
+                  "label_hi": "KVS भर्ती अभ्यास-पेपर संग्रह",
+                  "url": "https://prepp.in/kvs-recruitment-exam/practice-papers",
+                  "kind": "practice-third-party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "emrs-pgt-computer-science",
+          "title_en": "EMRS / NESTS — PGT Computer Science",
+          "title_hi": "EMRS / NESTS — PGT कंप्यूटर साइंस",
+          "summary_en": "The 2023 official final answer key is linked for checking. The question-paper practice link is third-party, so compare the set and date carefully.",
+          "summary_hi": "जाँच के लिए 2023 की आधिकारिक अंतिम उत्तर-कुंजी का लिंक दिया है। प्रश्न-पत्र अभ्यास लिंक तीसरे पक्ष का है; सेट और तारीख़ ध्यान से मिलाएँ।",
+          "sources": [
+            {
+              "label_en": "Official NESTS final answer keys — ESSE 2023",
+              "label_hi": "NESTS की आधिकारिक अंतिम उत्तर-कुंजियाँ — ESSE 2023",
+              "url": "https://nests.tribal.gov.in/show_content.php?lang=1&level=2&ls_id=626&lid=273",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official answer-key PDF (PGT Computer Science sets included)",
+              "label_hi": "आधिकारिक उत्तर-कुंजी PDF (PGT कंप्यूटर साइंस के सेट शामिल)",
+              "url": "https://nests.tribal.gov.in/WriteReadData/RTF1984/1709035863.pdf",
+              "kind": "official-answer-key"
+            }
+          ],
+          "years": [
+            {
+              "year": "2023",
+              "title_en": "PGT Computer Science — exam on 16 December",
+              "title_hi": "PGT कंप्यूटर साइंस — परीक्षा 16 दिसंबर",
+              "note_en": "The official key contains multiple sets (P2, Q2 and R2). The question-paper copy below is a third-party practice link, not an NESTS-hosted PDF.",
+              "note_hi": "आधिकारिक कुंजी में कई सेट (P2, Q2 और R2) हैं। नीचे दिया प्रश्न-पत्र तीसरे पक्ष का अभ्यास लिंक है, NESTS की होस्ट की हुई PDF नहीं।",
+              "links": [
+                {
+                  "label_en": "Computer Science question-paper practice (third-party)",
+                  "label_hi": "कंप्यूटर साइंस प्रश्न-पत्र अभ्यास (तीसरा पक्ष)",
+                  "url": "https://testbook.com/emrs-pgt/previous-year-papers",
+                  "kind": "practice-third-party"
+                },
+                {
+                  "label_en": "Official final answer-key PDF",
+                  "label_hi": "आधिकारिक अंतिम उत्तर-कुंजी PDF",
+                  "url": "https://nests.tribal.gov.in/WriteReadData/RTF1984/1709035863.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central-technical",
+      "title_en": "Central — IT, Computer Science & Technical Exams",
+      "title_hi": "केंद्र स्तर — IT, कंप्यूटर साइंस और तकनीकी परीक्षाएँ",
+      "exams": [
+        {
+          "id": "rrb-je",
+          "title_en": "RRB JE — Railway technical posts",
+          "title_hi": "RRB JE — रेलवे तकनीकी पद",
+          "summary_en": "RRB CBT question papers and response sheets are often available only through the candidate portal for a limited window. RRB JE is not a separate IT-only paper every year; verify the CEN and discipline before using a practice set.",
+          "summary_hi": "RRB CBT के प्रश्न-पत्र और response sheet अक्सर उम्मीदवार पोर्टल पर सीमित समय के लिए मिलते हैं। RRB JE हर वर्ष अलग IT-only पेपर नहीं है; अभ्यास सेट लेने से पहले CEN और ब्रांच जाँचें।",
+          "sources": [
+            {
+              "label_en": "Official RRB Chandigarh portal",
+              "label_hi": "RRB चंडीगढ़ का आधिकारिक पोर्टल",
+              "url": "https://www.rrbcdg.gov.in/",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "CEN 03/2024 — official JE notification",
+              "label_hi": "CEN 03/2024 — आधिकारिक JE अधिसूचना",
+              "url": "https://www.rrbcdg.gov.in/uploads/2024/03-JE/CEN%2003%202024_JE.pdf",
+              "kind": "official-notice"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "CEN 03/2024 — JE CBT question/response access",
+              "title_hi": "CEN 03/2024 — JE CBT प्रश्न-पत्र / response access",
+              "note_en": "The official question-paper and response-sheet window was candidate-login based and time-limited. The extra practice source is third-party and may include reconstructed papers; it is not an official archive.",
+              "note_hi": "आधिकारिक प्रश्न-पत्र और response sheet उम्मीदवार लॉगिन से सीमित समय के लिए उपलब्ध थे। अतिरिक्त अभ्यास स्रोत तीसरे पक्ष का है और उसमें reconstructed पेपर हो सकते हैं; यह आधिकारिक संग्रह नहीं है।",
+              "links": [
+                {
+                  "label_en": "Official RRB portal / CEN 03/2024 updates",
+                  "label_hi": "आधिकारिक RRB पोर्टल / CEN 03/2024 अपडेट",
+                  "url": "https://www.rrbcdg.gov.in/",
+                  "kind": "candidate-login"
+                },
+                {
+                  "label_en": "RRB JE 2024 practice papers (third-party; verify discipline)",
+                  "label_hi": "RRB JE 2024 अभ्यास पेपर (तीसरा पक्ष; ब्रांच जाँचें)",
+                  "url": "https://prepp.in/rrb-je-exam/question-paper-2024",
+                  "kind": "practice-third-party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ssc-selection-posts-it",
+          "title_en": "SSC — Selection Posts (IT / Computer posts)",
+          "title_hi": "SSC — Selection Posts (IT / कंप्यूटर पद)",
+          "summary_en": "Selection Posts are post-code specific. SSC has no single annual IT question paper; the official question-paper cum response sheet is usually available to the candidate for a limited login window.",
+          "summary_hi": "Selection Posts पद-कोड के अनुसार अलग होते हैं। SSC का एक समान वार्षिक IT पेपर नहीं है; आधिकारिक question-paper cum response sheet आमतौर पर उम्मीदवार लॉगिन में सीमित समय के लिए मिलती है।",
+          "sources": [
+            {
+              "label_en": "Official SSC website",
+              "label_hi": "SSC की आधिकारिक वेबसाइट",
+              "url": "https://ssc.gov.in/",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "Selection Post Phase XII/2024",
+              "title_hi": "Selection Post Phase XII/2024",
+              "note_en": "SSC's notice confirms that final keys and question-paper cum response sheets were available from 25 October to 15 November 2024 through candidate login. The access window is now closed; this notice is not a downloadable paper bundle.",
+              "note_hi": "SSC के नोटिस के अनुसार अंतिम कुंजी और question-paper cum response sheet 25 अक्टूबर से 15 नवंबर 2024 तक उम्मीदवार लॉगिन में उपलब्ध थे। अब access window बंद है; यह नोटिस पेपरों का downloadable bundle नहीं है।",
+              "links": [
+                {
+                  "label_en": "Official SSC notice about Phase XII papers / response sheets",
+                  "label_hi": "Phase XII पेपर / response sheet पर SSC का आधिकारिक नोटिस",
+                  "url": "https://ssc.gov.in/api/attachment/uploads/masterData/NoticeBoards/RHQ_2024XII_Write-up_Final_Answer_Key_251024.pdf",
+                  "kind": "official-notice"
+                },
+                {
+                  "label_en": "Official SSC portal",
+                  "label_hi": "SSC का आधिकारिक पोर्टल",
+                  "url": "https://ssc.gov.in/",
+                  "kind": "candidate-login"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nic-scientist-b",
+          "title_en": "NIC — Scientist-B / Scientific Officer / Technical Assistant",
+          "title_hi": "NIC — Scientist-B / Scientific Officer / Technical Assistant",
+          "summary_en": "NIELIT’s December 2023 notice covers question papers and provisional keys for several NIC posts as candidate response sheets. Access may be limited or expired; this page does not claim a permanent public paper PDF.",
+          "summary_hi": "दिसंबर 2023 के NIELIT नोटिस में NIC के कई पदों के प्रश्न-पत्र और provisional keys उम्मीदवार response sheets के रूप में बताए गए हैं। access सीमित या समाप्त हो सकता है; यहाँ स्थायी सार्वजनिक PDF होने का दावा नहीं है।",
+          "sources": [
+            {
+              "label_en": "Official NIELIT recruitment archive",
+              "label_hi": "NIELIT का आधिकारिक भर्ती संग्रह",
+              "url": "https://nielit.gov.in/delhi/recruitment?page=211",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2023",
+              "title_en": "NIC examinations held in December 2023 — response-sheet access",
+              "title_hi": "दिसंबर 2023 में हुई NIC परीक्षाएँ — response-sheet access",
+              "note_en": "The notice concerns Scientist-B and other technical posts. The question paper/response sheet was provided through the candidate response facility; follow the current NIELIT notice/archive for access status.",
+              "note_hi": "नोटिस Scientist-B और अन्य technical posts के लिए है। प्रश्न-पत्र/response sheet उम्मीदवार सुविधा से उपलब्ध थी; access स्थिति के लिए NIELIT का वर्तमान नोटिस/संग्रह देखें।",
+              "links": [
+                {
+                  "label_en": "Official response-sheet / provisional-key notice",
+                  "label_hi": "आधिकारिक response-sheet / provisional-key नोटिस",
+                  "url": "https://www.calicut.nielit.in/nic23/documentformats/NoticeResponseSheet.pdf",
+                  "kind": "official-notice"
+                },
+                {
+                  "label_en": "Official NIELIT recruitment archive",
+                  "label_hi": "NIELIT का आधिकारिक भर्ती संग्रह",
+                  "url": "https://nielit.gov.in/delhi/recruitment?page=211",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nielit-stqc-scientific-assistant",
+          "title_en": "NIELIT / STQC — Scientific Assistant (Computer Science / IT)",
+          "title_hi": "NIELIT / STQC — Scientific Assistant (Computer Science / IT)",
+          "summary_en": "Official revised answer keys are published separately for Computer Science and IT. The candidate portal is the official route for any question-paper/response-sheet access; a public full paper was not verified.",
+          "summary_hi": "Computer Science और IT की आधिकारिक संशोधित उत्तर-कुंजियाँ अलग प्रकाशित हैं। प्रश्न-पत्र/response sheet के लिए उम्मीदवार पोर्टल आधिकारिक रास्ता है; सार्वजनिक पूरा पेपर सत्यापित नहीं मिला।",
+          "sources": [
+            {
+              "label_en": "Official STQC recruitment portal",
+              "label_hi": "STQC का आधिकारिक भर्ती पोर्टल",
+              "url": "https://recruit-delhi.nielit.gov.in/frmHome.aspx",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2025",
+              "title_en": "NIELIT STQC — Scientific Assistant, CS / IT",
+              "title_hi": "NIELIT STQC — Scientific Assistant, CS / IT",
+              "note_en": "Official revised answer keys are available separately for CS and IT. Use the official portal for any question-paper/response access; availability can depend on candidate login.",
+              "note_hi": "CS और IT की आधिकारिक संशोधित उत्तर-कुंजियाँ अलग-अलग उपलब्ध हैं। प्रश्न-पत्र/response access के लिए आधिकारिक पोर्टल देखें; उपलब्धता उम्मीदवार लॉगिन पर निर्भर हो सकती है।",
+              "links": [
+                {
+                  "label_en": "Scientific Assistant — Computer Science revised key",
+                  "label_hi": "Scientific Assistant — Computer Science संशोधित कुंजी",
+                  "url": "https://recruit-delhi.nielit.gov.in/PDF/STQC/RevisedAnsKey/SA_CS_RevisedForWeb.pdf",
+                  "kind": "official-answer-key"
+                },
+                {
+                  "label_en": "Scientific Assistant — IT revised key",
+                  "label_hi": "Scientific Assistant — IT संशोधित कुंजी",
+                  "url": "https://recruit-delhi.nielit.gov.in/PDF/STQC/RevisedAnsKey/SA_IT_RevisedForWeb.pdf",
+                  "kind": "official-answer-key"
+                },
+                {
+                  "label_en": "Official STQC recruitment portal",
+                  "label_hi": "STQC का आधिकारिक भर्ती पोर्टल",
+                  "url": "https://recruit-delhi.nielit.gov.in/frmHome.aspx",
+                  "kind": "candidate-login"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "drdo-ceptam-sta",
+          "title_en": "DRDO CEPTAM — Senior Technical Assistant-B (CS)",
+          "title_hi": "DRDO CEPTAM — Senior Technical Assistant-B (CS)",
+          "summary_en": "Use the CEPTAM recruitment page for the latest exam cycle. Question challenge / response access is provided through a candidate portal and may not remain public after the objection period.",
+          "summary_hi": "नवीनतम परीक्षा चक्र के लिए CEPTAM भर्ती पेज देखें। प्रश्न challenge / response उम्मीदवार पोर्टल पर मिलता है और आपत्ति अवधि के बाद सार्वजनिक न रहे।",
+          "sources": [
+            {
+              "label_en": "Official CEPTAM-11 recruitment and exam updates",
+              "label_hi": "CEPTAM-11 के आधिकारिक भर्ती और परीक्षा अपडेट",
+              "url": "https://drdo.gov.in/drdo/en/offerings/vacancies/ceptam-11-advertisement-post-sta-b-and-technician",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2026",
+              "title_en": "CEPTAM-11 — STA-B Tier-II CBT",
+              "title_hi": "CEPTAM-11 — STA-B Tier-II CBT",
+              "note_en": "The official Tier-II question challenge / response window was 18–30 June 2026 and is now closed. Use the CEPTAM page for any current access or later release; confirm discipline and stage before opening a response sheet.",
+              "note_hi": "आधिकारिक Tier-II question challenge / response window 18–30 जून 2026 थी और अब बंद है। वर्तमान access या आगे जारी सामग्री के लिए CEPTAM पेज देखें; response sheet खोलने से पहले discipline और stage जाँचें।",
+              "links": [
+                {
+                  "label_en": "Official Tier-II question challenge / response notice (window closed 30 June 2026)",
+                  "label_hi": "Tier-II प्रश्न challenge / response का आधिकारिक नोटिस (window 30 जून 2026 को बंद)",
+                  "url": "https://drdo.gov.in/drdo/en/announcement/question-challenge-questions-questions-paper-responses-keys-option-keys-portal-tier-ii",
+                  "kind": "official-notice"
+                },
+                {
+                  "label_en": "Official CEPTAM-11 exam page / candidate portal",
+                  "label_hi": "CEPTAM-11 का आधिकारिक परीक्षा पेज / उम्मीदवार पोर्टल",
+                  "url": "https://drdo.gov.in/drdo/en/offerings/vacancies/ceptam-11-advertisement-post-sta-b-and-technician",
+                  "kind": "candidate-login"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "isro-technical-assistant-cs",
+          "title_en": "ISRO VSSC — Technical Assistant (Computer Science)",
+          "title_hi": "ISRO VSSC — Technical Assistant (Computer Science)",
+          "summary_en": "VSSC publishes official previous-question PDFs by stream. The links below are the Computer Science stream only; the official page lists other engineering branches separately.",
+          "summary_hi": "VSSC stream-wise आधिकारिक पुराने प्रश्न-पत्र PDF प्रकाशित करता है। नीचे केवल Computer Science stream के लिंक हैं; अन्य इंजीनियरिंग ब्रांच आधिकारिक पेज पर अलग दी हैं।",
+          "sources": [
+            {
+              "label_en": "Official VSSC previous-question page",
+              "label_hi": "VSSC का आधिकारिक पुराने-प्रश्नों का पेज",
+              "url": "https://www.vssc.gov.in/previousQuestions.html",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2024",
+              "title_en": "Technical Assistant — Computer Science",
+              "title_hi": "Technical Assistant — Computer Science",
+              "note_en": "Official VSSC question paper.",
+              "note_hi": "VSSC का आधिकारिक प्रश्न-पत्र।",
+              "links": [
+                {
+                  "label_en": "Open 2024 Computer Science paper",
+                  "label_hi": "2024 Computer Science पेपर खोलें",
+                  "url": "https://www.vssc.gov.in/media-vssc/pdf/recruitments/rmts/previous-questions/2024/ComputerScienceAdvNo323.pdf",
+                  "kind": "official-paper"
+                }
+              ]
+            },
+            {
+              "year": "2021",
+              "title_en": "Technical Assistant — Computer Science",
+              "title_hi": "Technical Assistant — Computer Science",
+              "note_en": "Official VSSC question paper.",
+              "note_hi": "VSSC का आधिकारिक प्रश्न-पत्र।",
+              "links": [
+                {
+                  "label_en": "Open 2021 Computer Science paper",
+                  "label_hi": "2021 Computer Science पेपर खोलें",
+                  "url": "https://www.vssc.gov.in/media-vssc/pdf/recruitments/rmts/previous-questions/2022/1427_TECHNICAL_ASSISTANT(COMPUTERSCIENCE).pdf",
+                  "kind": "official-paper"
+                }
+              ]
+            },
+            {
+              "year": "2019",
+              "title_en": "Technical Assistant — Computer Science",
+              "title_hi": "Technical Assistant — Computer Science",
+              "note_en": "Official VSSC question paper.",
+              "note_hi": "VSSC का आधिकारिक प्रश्न-पत्र।",
+              "links": [
+                {
+                  "label_en": "Open 2019 Computer Science paper",
+                  "label_hi": "2019 Computer Science पेपर खोलें",
+                  "url": "https://www.vssc.gov.in/media-vssc/pdf/recruitments/rmts/previous-questions/2019/TechAssistant_CS.pdf",
+                  "kind": "official-paper"
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "title_en": "Technical Assistant — Computer Science",
+              "title_hi": "Technical Assistant — Computer Science",
+              "note_en": "Official VSSC question paper.",
+              "note_hi": "VSSC का आधिकारिक प्रश्न-पत्र।",
+              "links": [
+                {
+                  "label_en": "Open 2018 Computer Science paper",
+                  "label_hi": "2018 Computer Science पेपर खोलें",
+                  "url": "https://www.vssc.gov.in/media-vssc/pdf/recruitments/rmts/previous-questions/2017/TACS1370.pdf",
+                  "kind": "official-paper"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate-cse",
+          "title_en": "GATE — Computer Science & Information Technology",
+          "title_hi": "GATE — कंप्यूटर साइंस और सूचना प्रौद्योगिकी",
+          "summary_en": "GATE's official site offers recent year-wise CSE papers with keys and a bulk archive for 2007–2025.",
+          "summary_hi": "GATE की आधिकारिक साइट पर हाल के वर्षों के CSE पेपर/कुंजी और 2007–2025 का bulk संग्रह उपलब्ध है।",
+          "sources": [
+            {
+              "label_en": "Official GATE year-wise and bulk paper archive",
+              "label_hi": "GATE का आधिकारिक साल-वार और bulk पेपर संग्रह",
+              "url": "https://gate2026.iitg.ac.in/download.html",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Official GATE bulk-download folder (2007–2025)",
+              "label_hi": "GATE का आधिकारिक bulk-download folder (2007–2025)",
+              "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2025",
+              "title_en": "Computer Science & Information Technology — CS-1 and CS-2",
+              "title_hi": "Computer Science & Information Technology — CS-1 और CS-2",
+              "note_en": "Official papers and answer keys for both sessions.",
+              "note_hi": "दोनों sessions के आधिकारिक पेपर और उत्तर-कुंजियाँ।",
+              "links": [
+                {
+                  "label_en": "CS-1 question paper",
+                  "label_hi": "CS-1 प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2025/CS12025.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "CS-1 answer key",
+                  "label_hi": "CS-1 उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2025_Key/CS1_Keys.pdf",
+                  "kind": "official-answer-key"
+                },
+                {
+                  "label_en": "CS-2 question paper",
+                  "label_hi": "CS-2 प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2025/CS22025.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "CS-2 answer key",
+                  "label_hi": "CS-2 उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2025_Key/CS2_Keys.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2024",
+              "title_en": "Computer Science & Information Technology — CS-1 and CS-2",
+              "title_hi": "Computer Science & Information Technology — CS-1 और CS-2",
+              "note_en": "Official question papers and final answer keys for both CS sessions.",
+              "note_hi": "दोनों CS sessions के आधिकारिक प्रश्न-पत्र और अंतिम उत्तर-कुंजियाँ।",
+              "links": [
+                {
+                  "label_en": "CS-1 question paper",
+                  "label_hi": "CS-1 प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2024/CS124S5.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "CS-1 final answer key",
+                  "label_hi": "CS-1 अंतिम उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2024/CS1FinalAnswerKey.pdf",
+                  "kind": "official-answer-key"
+                },
+                {
+                  "label_en": "CS-2 question paper",
+                  "label_hi": "CS-2 प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2024/CS224S6.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "CS-2 final answer key",
+                  "label_hi": "CS-2 अंतिम उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2024/CS2FinalAnswerKey.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2023",
+              "title_en": "Computer Science & Information Technology",
+              "title_hi": "Computer Science & Information Technology",
+              "note_en": "Official question paper; use the GATE archive for the corresponding key and other year sessions.",
+              "note_hi": "आधिकारिक प्रश्न-पत्र; संबंधित कुंजी और दूसरे वर्षों के sessions के लिए GATE संग्रह देखें।",
+              "links": [
+                {
+                  "label_en": "2023 official question paper",
+                  "label_hi": "2023 का आधिकारिक प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2023/cs_2023.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "2023 official answer key",
+                  "label_hi": "2023 की आधिकारिक उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/Answer_keys2023/CS_ANS_GATE2023.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2022",
+              "title_en": "Computer Science & Information Technology",
+              "title_hi": "Computer Science & Information Technology",
+              "note_en": "Official question paper; check the GATE archive for the answer key.",
+              "note_hi": "आधिकारिक प्रश्न-पत्र; उत्तर-कुंजी के लिए GATE संग्रह देखें।",
+              "links": [
+                {
+                  "label_en": "2022 official question paper",
+                  "label_hi": "2022 का आधिकारिक प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2022/cs_2022.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "2022 official answer key",
+                  "label_hi": "2022 की आधिकारिक उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/Answer_keys2022/cs_2022.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2021",
+              "title_en": "Computer Science & Information Technology",
+              "title_hi": "Computer Science & Information Technology",
+              "note_en": "Official GATE question paper and answer key.",
+              "note_hi": "GATE का आधिकारिक प्रश्न-पत्र और उत्तर-कुंजी।",
+              "links": [
+                {
+                  "label_en": "2021 official question paper",
+                  "label_hi": "2021 का आधिकारिक प्रश्न-पत्र",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/2021/cs_2021.pdf",
+                  "kind": "official-paper"
+                },
+                {
+                  "label_en": "2021 official answer key",
+                  "label_hi": "2021 की आधिकारिक उत्तर-कुंजी",
+                  "url": "https://gate2026.iitg.ac.in/doc/download/Answer_keys2021/cs_merged_2021.pdf",
+                  "kind": "official-answer-key"
+                }
+              ]
+            },
+            {
+              "year": "2020",
+              "title_en": "Computer Science & Information Technology — GATE 2020",
+              "title_hi": "Computer Science & Information Technology — GATE 2020",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2020.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2020 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2020",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2020 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2019",
+              "title_en": "Computer Science & Information Technology — GATE 2019",
+              "title_hi": "Computer Science & Information Technology — GATE 2019",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2019.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2019 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2019",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2019 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2018",
+              "title_en": "Computer Science & Information Technology — GATE 2018",
+              "title_hi": "Computer Science & Information Technology — GATE 2018",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2018.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2018 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2018",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2018 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2017",
+              "title_en": "Computer Science & Information Technology — GATE 2017",
+              "title_hi": "Computer Science & Information Technology — GATE 2017",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2017.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2017 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2017",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2017 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2016",
+              "title_en": "Computer Science & Information Technology — GATE 2016",
+              "title_hi": "Computer Science & Information Technology — GATE 2016",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2016.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2016 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2016",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2016 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2015",
+              "title_en": "Computer Science & Information Technology — GATE 2015",
+              "title_hi": "Computer Science & Information Technology — GATE 2015",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2015.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2015 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2015",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2015 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2014",
+              "title_en": "Computer Science & Information Technology — GATE 2014",
+              "title_hi": "Computer Science & Information Technology — GATE 2014",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2014.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2014 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2014",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2014 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2013",
+              "title_en": "Computer Science & Information Technology — GATE 2013",
+              "title_hi": "Computer Science & Information Technology — GATE 2013",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2013.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2013 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2013",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2013 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2012",
+              "title_en": "Computer Science & Information Technology — GATE 2012",
+              "title_hi": "Computer Science & Information Technology — GATE 2012",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2012.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2012 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2012",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2012 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2011",
+              "title_en": "Computer Science & Information Technology — GATE 2011",
+              "title_hi": "Computer Science & Information Technology — GATE 2011",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2011.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2011 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2011",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2011 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2010",
+              "title_en": "Computer Science & Information Technology — GATE 2010",
+              "title_hi": "Computer Science & Information Technology — GATE 2010",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2010.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2010 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2010",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2010 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2009",
+              "title_en": "Computer Science & Information Technology — GATE 2009",
+              "title_hi": "Computer Science & Information Technology — GATE 2009",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2009.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2009 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2009",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2009 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2008",
+              "title_en": "Computer Science & Information Technology — GATE 2008",
+              "title_hi": "Computer Science & Information Technology — GATE 2008",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2008.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2008 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2008",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2008 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            },
+            {
+              "year": "2007",
+              "title_en": "Computer Science & Information Technology — GATE 2007",
+              "title_hi": "Computer Science & Information Technology — GATE 2007",
+              "note_en": "The official GATE bulk-download archive covers question papers from 2007 to 2025. Open it and select the Computer Science paper for 2007.",
+              "note_hi": "GATE के आधिकारिक bulk-download archive में 2007 से 2025 तक के प्रश्न-पत्र हैं। इसे खोलकर 2007 का Computer Science पेपर चुनें।",
+              "links": [
+                {
+                  "label_en": "Open official bulk archive — select GATE CS 2007",
+                  "label_hi": "आधिकारिक bulk archive खोलें — GATE CS 2007 चुनें",
+                  "url": "https://drive.google.com/drive/folders/1sV6FgtOUDl_PGjc36Zdc0eJwK1zZ_2OF",
+                  "kind": "official-archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ugc-net-computer-science",
+          "title_en": "UGC-NET — Computer Science & Applications",
+          "title_hi": "UGC-NET — कंप्यूटर साइंस और एप्लिकेशन",
+          "summary_en": "NTA publishes question papers with recorded responses and answer-key challenge notices during specified windows. Candidate access may be limited after the challenge period; the archive is the official starting point.",
+          "summary_hi": "NTA निर्धारित अवधि में recorded responses वाले प्रश्न-पत्र और answer-key challenge notices प्रकाशित करता है। challenge अवधि के बाद उम्मीदवार access सीमित हो सकता है; आधिकारिक शुरुआत archive से करें।",
+          "sources": [
+            {
+              "label_en": "Official UGC-NET NTA archive",
+              "label_hi": "UGC-NET NTA का आधिकारिक archive",
+              "url": "https://ugcnet.nta.ac.in/archive.html",
+              "kind": "official-archive"
+            }
+          ],
+          "years": [
+            {
+              "year": "2025",
+              "title_en": "December 2024 cycle — Computer Science exam held 6 January 2025",
+              "title_hi": "दिसंबर 2024 चक्र — कंप्यूटर साइंस परीक्षा 6 जनवरी 2025 को हुई",
+              "note_en": "The cycle is named December 2024, but NTA scheduled Computer Science and Applications on 6 January 2025. The archive/recorded-response access may require candidate login and may have expired.",
+              "note_hi": "चक्र का नाम दिसंबर 2024 है, लेकिन NTA ने Computer Science and Applications की परीक्षा 6 जनवरी 2025 को रखी थी। archive/recorded-response access के लिए उम्मीदवार लॉगिन लग सकता है और समय-सीमा समाप्त हो सकती है।",
+              "links": [
+                {
+                  "label_en": "Official subject-wise schedule (NTA notice)",
+                  "label_hi": "आधिकारिक विषय-वार परीक्षा कार्यक्रम (NTA नोटिस)",
+                  "url": "https://ugcnet.nta.ac.in/images/public-notice-for-schedule-of-ugc-net-december-2024-hrvplurnzjd47qa6oja9ksy6m5x6aq.pdf",
+                  "kind": "official-notice"
+                },
+                {
+                  "label_en": "Official NTA archive / candidate response access",
+                  "label_hi": "NTA का आधिकारिक archive / उम्मीदवार response access",
+                  "url": "https://ugcnet.nta.ac.in/archive.html",
+                  "kind": "candidate-login"
+                }
+              ]
+            },
+            {
+              "year": "2024",
+              "title_en": "June 2024 cycle — rescheduled sitting in August–September 2024",
+              "title_hi": "जून 2024 चक्र — अगस्त–सितंबर 2024 में पुनर्निर्धारित परीक्षा",
+              "note_en": "The original June 2024 exam was cancelled and rescheduled. The NTA notice states question papers with recorded responses were available during the challenge window; the window may now be closed.",
+              "note_hi": "मूल जून 2024 परीक्षा रद्द होकर पुनर्निर्धारित हुई थी। NTA नोटिस के अनुसार challenge अवधि में recorded responses वाले प्रश्न-पत्र उपलब्ध थे; यह अवधि अब बंद हो सकती है।",
+              "links": [
+                {
+                  "label_en": "Official NTA notice — question papers / recorded responses for the rescheduled exam",
+                  "label_hi": "NTA का आधिकारिक नोटिस — पुनर्निर्धारित परीक्षा के प्रश्न-पत्र / recorded responses",
+                  "url": "https://ugcnet.nta.ac.in/images/public-noticeanswer-key-challengeugc-net-june-2024.pdf",
+                  "kind": "official-notice"
+                },
+                {
+                  "label_en": "Official NTA archive / candidate response access",
+                  "label_hi": "NTA का आधिकारिक archive / उम्मीदवार response access",
+                  "url": "https://ugcnet.nta.ac.in/archive.html",
+                  "kind": "candidate-login"
+                }
+              ]
+            },
+            {
+              "year": "2023",
+              "title_en": "UGC-NET Computer Science & Applications — 2023 sitting",
+              "title_hi": "UGC-NET Computer Science & Applications — 2023 की परीक्षा",
+              "note_en": "Use the official archive to locate the Computer Science & Applications paper and final key. Recorded-response access may have expired.",
+              "note_hi": "Computer Science & Applications का प्रश्न-पत्र और अंतिम कुंजी खोजने के लिए आधिकारिक archive देखें। recorded-response access समाप्त हो सकता है।",
+              "links": [
+                {
+                  "label_en": "Official NTA UGC-NET archive",
+                  "label_hi": "NTA का आधिकारिक UGC-NET archive",
+                  "url": "https://ugcnet.nta.ac.in/archive.html",
+                  "kind": "candidate-login"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ibps-so-it-officer",
+          "title_en": "IBPS SO — IT Officer (Scale I)",
+          "title_hi": "IBPS SO — IT Officer (Scale I)",
+          "summary_en": "IBPS publishes information handouts and sample questions, not a permanent year-wise public question-paper archive. Practice-paper links are memory-based reconstructions and are labelled accordingly.",
+          "summary_hi": "IBPS information handouts और sample questions प्रकाशित करता है, स्थायी साल-वार सार्वजनिक प्रश्न-पत्र संग्रह नहीं। अभ्यास-पेपर के लिंक memory-based पुनर्निर्माण हैं और वैसे ही चिह्नित हैं।",
+          "sources": [
+            {
+              "label_en": "Official IBPS website",
+              "label_hi": "IBPS की आधिकारिक वेबसाइट",
+              "url": "https://www.ibps.in/",
+              "kind": "official-archive"
+            },
+            {
+              "label_en": "Memory-based IBPS SO practice-paper collection",
+              "label_hi": "IBPS SO memory-based अभ्यास-पेपर संग्रह",
+              "url": "https://www.adda247.com/jobs/ibps-so-previous-year-question-paper/",
+              "kind": "practice-third-party"
+            }
+          ],
+          "years": [
+            {
+              "year": "2025",
+              "title_en": "CRP SPL-XV — IT Officer Main information handout",
+              "title_hi": "CRP SPL-XV — IT Officer Main information handout",
+              "note_en": "The official handout includes sample questions and exam instructions; it is not a full previous-year question paper.",
+              "note_hi": "आधिकारिक handout में sample questions और परीक्षा निर्देश हैं; यह पूरा पिछले-वर्ष का प्रश्न-पत्र नहीं है।",
+              "links": [
+                {
+                  "label_en": "Official Main Exam information handout (sample questions)",
+                  "label_hi": "Main परीक्षा का आधिकारिक information handout (sample questions)",
+                  "url": "https://www.ibps.in/wp-content/uploads/IBPS-MAIN-SPL-XV-MAIN-IH-Eng-2025.pdf",
+                  "kind": "sample-paper"
+                },
+                {
+                  "label_en": "Memory-based practice collection (third-party)",
+                  "label_hi": "Memory-based अभ्यास संग्रह (तीसरा पक्ष)",
+                  "url": "https://www.adda247.com/jobs/ibps-so-previous-year-question-paper/",
+                  "kind": "practice-third-party"
+                }
+              ]
+            },
+            {
+              "year": "2024",
+              "title_en": "IBPS SO IT Officer — memory-based practice",
+              "title_hi": "IBPS SO IT Officer — memory-based अभ्यास",
+              "note_en": "Reconstructed from candidate-recalled questions; not an official IBPS question paper.",
+              "note_hi": "उम्मीदवारों को याद रहे प्रश्नों से बनाया गया अभ्यास; IBPS का आधिकारिक प्रश्न-पत्र नहीं।",
+              "links": [
+                {
+                  "label_en": "2024 memory-based practice papers (third-party)",
+                  "label_hi": "2024 memory-based अभ्यास-पेपर (तीसरा पक्ष)",
+                  "url": "https://www.adda247.com/jobs/ibps-so-previous-year-question-paper/",
+                  "kind": "practice-third-party"
+                }
+              ]
+            },
+            {
+              "year": "2023",
+              "title_en": "IBPS SO IT Officer — memory-based practice",
+              "title_hi": "IBPS SO IT Officer — memory-based अभ्यास",
+              "note_en": "Reconstructed from candidate-recalled questions; not an official IBPS question paper.",
+              "note_hi": "उम्मीदवारों को याद रहे प्रश्नों से बनाया गया अभ्यास; IBPS का आधिकारिक प्रश्न-पत्र नहीं।",
+              "links": [
+                {
+                  "label_en": "2023 memory-based practice papers (third-party)",
+                  "label_hi": "2023 memory-based अभ्यास-पेपर (तीसरा पक्ष)",
+                  "url": "https://www.adda247.com/jobs/ibps-so-previous-year-question-paper/",
+                  "kind": "practice-third-party"
+                }
+              ]
+            },
+            {
+              "year": "2015",
+              "title_en": "IBPS SO IT Officer — memory-based practice",
+              "title_hi": "IBPS SO IT Officer — memory-based अभ्यास",
+              "note_en": "Reconstructed practice; not an official IBPS paper.",
+              "note_hi": "पुनर्निर्मित अभ्यास-पेपर; IBPS का आधिकारिक पेपर नहीं।",
+              "links": [
+                {
+                  "label_en": "2015 memory-based practice paper (third-party)",
+                  "label_hi": "2015 memory-based अभ्यास-पेपर (तीसरा पक्ष)",
+                  "url": "https://www.adda247.com/jobs/ibps-so-previous-year-question-paper/",
+                  "kind": "practice-third-party"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

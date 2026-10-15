@@ -164,8 +164,9 @@ class NavigationTests(unittest.TestCase):
                 self.assertNotIn("python3 ", source, f"{rel}: shows a build command")
                 self.assertNotIn("bank_build_id", source)
                 self.assertNotIn("cn-014b0aa5", source)
-                self.assertNotIn("content/", re.sub(r"href=\"[^\"]*\"", "", source).split("<code>", 1)[0]
-                                 if "content/" in source else source)
+                resource_stripped = re.sub(r"(?:href|src)=\"[^\"]*\"", "", source)
+                self.assertNotIn("content/", resource_stripped.split("<code>", 1)[0]
+                                 if "content/" in source else resource_stripped)
 
     def test_new_tab_links_are_labelled_and_safe(self):
         for rel, (_, parser) in self.pages.items():
@@ -214,6 +215,8 @@ class NavigationTests(unittest.TestCase):
             hrefs = {link.get("href") for link in parser.links}
             with self.subTest(page=rel):
                 for node in subject["tree"]["folders"]:
+                    if subject["slug"] == "previous-year-papers" and not node["file_count"]:
+                        continue  # empty legacy folders stay available to direct links, but are not advertised as papers
                     suffix = f"{node['path']}/index.html"
                     self.assertTrue(any(href and href.endswith(suffix) for href in hrefs),
                                     f"{rel}: missing folder link {suffix}")
@@ -248,23 +251,53 @@ class NavigationTests(unittest.TestCase):
                     if node["files"]:
                         self.assertIn("Download", source)
 
-    def test_exam_pages_show_every_year_from_2000_to_2026(self):
-        """Saal-wise grid: jis saal ka paper hai wo link, baaki saal muted chip."""
-        self.assertIn("year-grid", pathlib.Path("assets/css/ekguru.css").read_text(encoding="utf-8"))
-        pyq = next(subject for subject in self.site["subjects"] if subject["slug"] == "previous-year-papers")
-        years = pyq["year_folders"]
-        expected = [str(year) for year in range(years["to"], years["from"] - 1, -1)]
-        for exam in ("rpsc", "dsssb", "computer-operator"):
-            rel = f"subjects/previous-year-papers/{exam}/index.html"
-            source, parser = self.pages[rel]
-            with self.subTest(page=rel):
-                self.assertIn("year-grid", source)
-                chips = re.findall(r'class="chip (?:neutral )?year-chip[^"]*"[^>]*>(\d{4})', source)
-                self.assertEqual(chips, expected, "har saal ka chip maujood hona chahiye")
-                ready = re.findall(r'class="chip year-chip ready" href="([^"]+)"', source)
-                for href in ready:
-                    target = (ROOT / rel).parent / href
-                    self.assertTrue(target.is_file() or target.is_dir(), f"{rel}: {href} broken")
+    def test_local_year_chips_only_show_uploaded_papers(self):
+        rel = "subjects/previous-year-papers/rpsc/index.html"
+        source, _ = self.pages[rel]
+        self.assertIn("year-grid", source)
+        chips = re.findall(r'class="chip year-chip ready"[^>]*>(\d{4})', source)
+        self.assertEqual(chips, ["2024"], "only the year with locally hosted paper files is shown")
+        empty = self.pages["subjects/previous-year-papers/dsssb/index.html"][0]
+        self.assertNotIn("year-grid", empty, "do not imply that papers exist in every year")
+
+    def test_exam_catalog_generates_year_pages_and_source_labels(self):
+        catalog = json.loads((ROOT / "data/catalog/previous-year-papers.json").read_text(encoding="utf-8"))
+        landing_rel = "subjects/previous-year-papers/index.html"
+        landing, parser = self.pages[landing_rel]
+        targets = {repo_target(landing_rel, link.get("href", "")) for link in parser.links}
+        self.assertIn("Exam-wise previous-year sources", landing)
+        kind_labels = {
+            "official-paper": "Official paper",
+            "official-answer-key": "Official answer key",
+            "official-archive": "Official archive",
+            "official-notice": "Official notice",
+            "candidate-login": "Candidate login / limited window",
+            "practice-third-party": "Third-party / memory-based",
+            "sample-paper": "Sample questions only",
+            "local-paper": "Available on EkGuru",
+        }
+        for group in catalog["groups"]:
+            self.assertIn(html.escape(group["title_en"], quote=True), landing)
+            for exam in group["exams"]:
+                rel = f"subjects/previous-year-papers/exams/{exam['id']}/index.html"
+                with self.subTest(exam=exam["id"]):
+                    self.assertIn(rel, self.routes)
+                    self.assertIn(rel, targets, "landing page must link to every exam detail page")
+                    source, detail_parser = self.pages[rel]
+                    self.assertIn(html.escape(exam["title_en"], quote=True), source)
+                    ids = set(detail_parser.ids)
+                    for year in exam["years"]:
+                        token = re.sub(r"[^A-Za-z0-9_-]+", "-", str(year["year"])).strip("-")
+                        self.assertIn("pyq-year-" + token, ids)
+                        for link in year["links"]:
+                            self.assertIn(kind_labels[link["kind"]], source)
+        rssb = self.pages["subjects/previous-year-papers/exams/rssb-informatics-assistant/index.html"][0]
+        self.assertIn("2023 recruitment cycle, exam held 21 January 2024", rssb)
+        self.assertIn("21 January 2024", rssb)
+        nic = self.pages["subjects/previous-year-papers/exams/nic-scientist-b/index.html"][0]
+        nielit = self.pages["subjects/previous-year-papers/exams/nielit-stqc-scientific-assistant/index.html"][0]
+        self.assertIn("Scientist-B", nic)
+        self.assertIn("STQC", nielit)
 
     def test_year_page_offers_the_other_years(self):
         rel = "subjects/previous-year-papers/rpsc/2024/index.html"
@@ -309,6 +342,21 @@ class NavigationTests(unittest.TestCase):
         hrefs = {link.get("href") for link in parser.links}
         self.assertTrue(any(href and href.startswith("../../content/rajasthan-geography/") for href in hrefs),
                         "the map page must expose the downloadable prints")
+
+    def test_rajasthan_map_folder_embeds_a_real_pdf_preview(self):
+        rel = "subjects/rajasthan-geography/map/rajasthan/index.html"
+        source, parser = self.pages[rel]
+        self.assertIn('id="map-pdf-preview"', source)
+        iframe = re.search(r'<iframe[^>]+src="([^"]+)"[^>]*title="([^"]+)"', source)
+        self.assertIsNotNone(iframe, "the map page should embed an accessible PDF preview")
+        preview_url, title = iframe.groups()
+        self.assertIn("Rajasthan-Border-Districts-A4-Portrait-Print.pdf#view=FitH", preview_url)
+        self.assertIn("Rajasthan", title)
+        hrefs = {link.get("href", "") for link in parser.links}
+        self.assertTrue(any("Rajasthan-Border-Districts-A4-Portrait-Print.pdf" in href and href.endswith(".pdf") for href in hrefs))
+        self.assertTrue(any("Rajasthan-Border-District-Atlas-A3-Print.pdf" in href and href.endswith(".pdf") for href in hrefs))
+        landing = self.pages["subjects/rajasthan-geography/index.html"][0]
+        self.assertIn("map/rajasthan/index.html#map-pdf-preview", landing)
 
     def test_not_found_page_offers_the_real_routes(self):
         source, parser = self.pages["404.html"]

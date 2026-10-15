@@ -9,6 +9,7 @@ SITE = ROOT / "data/site.json"
 MATERIALS = ROOT / "data/catalog/materials.json"
 SUBJECTS = ROOT / "data/catalog/subjects.json"
 ROUTES = ROOT / "data/catalog/site-routes.txt"
+PAPER_CATALOG = ROOT / "data/catalog/previous-year-papers.json"
 BANK_MANIFEST = ROOT / "data/banks/cn/manifest.json"
 
 CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
@@ -27,8 +28,14 @@ class SiteDataTests(unittest.TestCase):
         cls.site = json.loads(SITE.read_text(encoding="utf-8"))
         cls.materials = json.loads(MATERIALS.read_text(encoding="utf-8"))
         cls.subjects = json.loads(SUBJECTS.read_text(encoding="utf-8"))
+        cls.paper_catalog = json.loads(PAPER_CATALOG.read_text(encoding="utf-8"))
         cls.manifest = json.loads(BANK_MANIFEST.read_text(encoding="utf-8"))
         cls.by_id = {subject["id"]: subject for subject in cls.site["subjects"]}
+        cls.paper_exams = {
+            exam["id"]: exam
+            for group in cls.paper_catalog["groups"]
+            for exam in group["exams"]
+        }
 
     def test_every_subject_has_real_routes_and_a_folder_tree(self):
         for subject in self.site["subjects"]:
@@ -105,6 +112,64 @@ class SiteDataTests(unittest.TestCase):
         calendar = next(node for node in walk(theory) if node["path"] == "theory/Calendar")
         self.assertEqual(calendar["title_en"], "Calendar", "chapter folder ka naam hi label hai")
         self.assertTrue(any("Short-Notes" in item["repo_path"] for item in calendar["files"]))
+
+    def test_previous_year_catalog_covers_the_requested_exam_families(self):
+        required = {
+            "rssb-informatics-assistant", "rssb-basic-computer-instructor",
+            "rssb-senior-computer-instructor", "rssb-computor", "rpsc-programmer",
+            "rrb-je", "ibps-so-it-officer", "ugc-net-computer-science",
+            "ssc-selection-posts-it", "drdo-ceptam-sta", "isro-technical-assistant-cs",
+            "nic-scientist-b", "nielit-stqc-scientific-assistant",
+            "dsssb-tgt-computer-science", "kvs-pgt-computer-science", "emrs-pgt-computer-science",
+        }
+        self.assertTrue(required.issubset(self.paper_exams))
+        self.assertEqual(self.paper_catalog["schema_version"], 1)
+        self.assertEqual(len({group["id"] for group in self.paper_catalog["groups"]}),
+                         len(self.paper_catalog["groups"]))
+        for exam_id, exam in self.paper_exams.items():
+            with self.subTest(exam=exam_id):
+                self.assertTrue(exam["title_en"].strip())
+                self.assertTrue(exam["title_hi"].strip())
+                self.assertTrue(exam["years"], "show only an exam cycle/year with a source record")
+                years = [str(record["year"]) for record in exam["years"]]
+                self.assertEqual(len(years), len(set(years)), "no duplicate year/session labels")
+                for record in exam["years"]:
+                    self.assertTrue(record["links"])
+                    for link in record["links"]:
+                        self.assertIn(link["kind"], {
+                            "official-paper", "official-answer-key", "official-archive",
+                            "official-notice", "candidate-login", "practice-third-party",
+                            "sample-paper", "local-paper",
+                        })
+                        self.assertTrue(link["label_en"].strip())
+                        self.assertTrue(link["label_hi"].strip())
+        ia_years = {str(record["year"]): record for record in self.paper_exams["rssb-informatics-assistant"]["years"]}
+        self.assertIn("21 January 2024", ia_years["2024"]["title_en"])
+        computor_years = {str(record["year"]): record for record in self.paper_exams["rssb-computor"]["years"]}
+        self.assertIn("Computor", computor_years["2023"]["title_en"])
+        self.assertEqual(set(ia_years), {"2024", "2018"})
+        self.assertEqual(set(computor_years), {"2023", "2021", "2018"})
+        net_years = {str(record["year"]): record for record in self.paper_exams["ugc-net-computer-science"]["years"]}
+        self.assertIn("6 January 2025", net_years["2025"]["title_en"])
+        self.assertIn("August–September 2024", net_years["2024"]["title_en"])
+        gate_years = [str(record["year"]) for record in self.paper_exams["gate-cse"]["years"]]
+        self.assertEqual(gate_years, [str(year) for year in range(2025, 2006, -1)])
+
+    def test_paper_kinds_do_not_promote_keys_login_sheets_or_reconstructions(self):
+        kvs_2017 = next(record for record in self.paper_exams["kvs-pgt-computer-science"]["years"]
+                        if str(record["year"]) == "2017")
+        self.assertTrue(all(link["kind"] == "practice-third-party" for link in kvs_2017["links"]))
+        emrs_2023 = next(record for record in self.paper_exams["emrs-pgt-computer-science"]["years"]
+                         if str(record["year"]) == "2023")
+        self.assertIn("official-answer-key", {link["kind"] for link in emrs_2023["links"]})
+        self.assertIn("practice-third-party", {link["kind"] for link in emrs_2023["links"]})
+        ibps_2025 = next(record for record in self.paper_exams["ibps-so-it-officer"]["years"]
+                         if str(record["year"]) == "2025")
+        self.assertIn("sample-paper", {link["kind"] for link in ibps_2025["links"]})
+        self.assertNotIn("official-paper", {link["kind"] for link in ibps_2025["links"]})
+        ssc_2024 = next(record for record in self.paper_exams["ssc-selection-posts-it"]["years"]
+                        if str(record["year"]) == "2024")
+        self.assertIn("candidate-login", {link["kind"] for link in ssc_2024["links"]})
 
     def test_registry_entries_must_exist_but_extra_files_are_fine(self):
         registered = [item["file"] for item in self.materials["materials"]]
