@@ -41,7 +41,9 @@ subjects/previous-year-papers/ssc/index.html
 subjects/previous-year-papers/system-assistant/index.html
 subjects/rajasthan-geography/index.html
 subjects/rajasthan-geography/map/index.html
+subjects/rajasthan-geography/map/rajasthan/PDF/index.html
 subjects/rajasthan-geography/map/rajasthan/index.html
+subjects/reader/index.html
 subjects/reasoning/answers/index.html
 subjects/reasoning/index.html
 subjects/reasoning/practice/Calendar/index.html

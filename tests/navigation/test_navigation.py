@@ -190,7 +190,7 @@ class NavigationTests(unittest.TestCase):
         wanted = set(re.findall(r'\$\("([A-Za-z0-9_-]+)"\)', source))
         self.assertGreater(len(wanted), 20, "test app should reference its controls by id")
         # ids created at runtime by the app itself (section picker "all sections" box)
-        runtime_created = {"allSections"}
+        runtime_created = {"allSections", "retryInitButton"}
         ids = set(self.pages["subjects/computer-network/test/index.html"][1].ids)
         self.assertEqual(wanted - ids - runtime_created, set(), "test.mjs references ids that the page does not provide")
 
@@ -347,11 +347,9 @@ class NavigationTests(unittest.TestCase):
         rel = "subjects/rajasthan-geography/map/rajasthan/index.html"
         source, parser = self.pages[rel]
         self.assertIn('id="map-pdf-preview"', source)
-        iframe = re.search(r'<iframe[^>]+src="([^"]+)"[^>]*title="([^"]+)"', source)
-        self.assertIsNotNone(iframe, "the map page should embed an accessible PDF preview")
-        preview_url, title = iframe.groups()
-        self.assertIn("Rajasthan-Border-Districts-A4-Portrait-Print.pdf#view=FitH", preview_url)
-        self.assertIn("Rajasthan", title)
+        self.assertNotIn('<iframe', source, "mobile map must not depend on a PDF plugin")
+        self.assertIn('assets/img/rajasthan-border-atlas-preview.webp', source)
+        self.assertIn('reader/index.html?file=', source)
         hrefs = {link.get("href", "") for link in parser.links}
         self.assertTrue(any("Rajasthan-Border-Districts-A4-Portrait-Print.pdf" in href and href.endswith(".pdf") for href in hrefs))
         self.assertTrue(any("Rajasthan-Border-District-Atlas-A3-Print.pdf" in href and href.endswith(".pdf") for href in hrefs))

@@ -313,14 +313,16 @@ def crumbs(parts: list[tuple[str, str]]) -> str:
 
 def file_row(item: dict, depth: int, from_page: str = "") -> str:
     prefix = rel(depth)
-    href = url_for(href_from(from_page, item["url"])) if from_page else prefix + url_for(item["url"])
+    href = url_for(href_from(from_page, item["repo_path"])) if from_page else prefix + url_for(item["repo_path"])
+    viewer_base = href_from(from_page, "subjects/reader/index.html") if from_page else prefix + "subjects/reader/index.html"
+    viewer_href = viewer_base + "?" + urllib.parse.urlencode({"file": item["repo_path"]})
     is_picture = item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}
     thumb = ""
     if is_picture and item.get("thumb_url"):
         thumb_src = url_for(href_from(from_page, item["thumb_url"])) if from_page else prefix + url_for(item["thumb_url"])
         size = image_size(item["thumb_url"])
         size_attrs = f' width="{size[0]}" height="{size[1]}"' if size else ""
-        thumb = (f'<a class="file-thumb" href="{esc(href)}" target="_blank" rel="noopener noreferrer">'
+        thumb = (f'<a class="file-thumb" href="{esc(viewer_href)}">'
                  f'<img src="{esc(thumb_src)}" alt="{esc(item["alt_en"] or item["title_en"])}"{size_attrs} '
                  f'loading="lazy" decoding="async"><span class="file-thumb-open">Poora dekho</span></a>')
     description = ""
@@ -333,7 +335,7 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
         chips.append(f'<span class="chip neutral">{esc(item["topic_id"])}</span>')
     chips.append(f'<span class="chip neutral">{esc(item["file_type"])}</span>')
     chips.append(f'<span class="chip neutral">{esc(human_size(item["bytes"]))}</span>')
-    open_label = "Poora dekho ↗" if is_picture else "PDF kholo ↗"
+    open_label = "Map kholo" if is_picture else "PDF kholo"
     return f"""        <li class="material-item{' is-image' if is_picture else ''}">
           {thumb}
           <div class="material-main">
@@ -344,7 +346,8 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
             <div class="material-meta">{''.join(chips)}</div>
           </div>
           <div class="material-actions">
-            <a class="button secondary small" href="{esc(href)}" target="_blank" rel="noopener noreferrer">{open_label}</a>
+            <a class="button secondary small" href="{esc(viewer_href)}">{open_label}</a>
+            <a class="button ghost small" href="{esc(href)}" target="_blank" rel="noopener noreferrer">Original ↗</a>
             <a class="button primary small" href="{esc(href)}" download>Download</a>
           </div>
         </li>"""
@@ -419,7 +422,10 @@ def paper_link_list(links: list[dict], from_page: str) -> str:
     for link in links:
         target = link["url"]
         external = urllib.parse.urlsplit(target).scheme == "https"
-        href = target if external else href_from(from_page, target)
+        if not external and target.lower().endswith(".pdf"):
+            href = href_from(from_page, "subjects/reader/index.html") + "?" + urllib.parse.urlencode({"file": target})
+        else:
+            href = target if external else href_from(from_page, target)
         safety = ' target="_blank" rel="noopener noreferrer"' if external else ""
         marker = "↗" if external else "→"
         kind = PAPER_KINDS[link["kind"]]
@@ -719,17 +725,17 @@ class Builder:
         pdf = "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf"
         pdf_path = href_from(from_page, pdf)
         pdf_href = esc(url_for(pdf_path))
-        viewer_src = esc(url_for(pdf_path) + "#view=FitH")
+        preview = esc(url_for(href_from(from_page, "assets/img/rajasthan-border-atlas-preview.webp")))
+        viewer = esc(href_from(from_page, "subjects/reader/index.html") + "?" + urllib.parse.urlencode({"file": "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait.png"}))
         a3_pdf = esc(url_for(href_from(from_page, "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A3-Print.pdf")))
         return f"""    <section class="section map-pdf-preview" id="map-pdf-preview">
-      <div class="section-head"><h2>Rajasthan map — PDF preview</h2><span class="chip neutral">A4 · PDF</span></div>
-      <p class="section-note">Browser PDF viewer. If it does not display on your device, open or download the map directly.</p>
-      <div class="pdf-viewer">
-        <iframe src="{viewer_src}" title="Preview of the Rajasthan district and border atlas PDF" loading="lazy"></iframe>
-      </div>
-      <p class="pdf-mobile-note">Mobile par PDF preview kai phone browsers me nahi khulta — neeche button se PDF seedha kholo ya download karo.</p>
+      <div class="section-head"><h2>Rajasthan map — mobile preview</h2><span class="chip neutral">A4 · PDF</span></div>
+      <p class="section-note">Map seedha dekhein — mobile par PDF plugin ki zaroorat nahi. Map kholo se zoom aur swipe karke padhein.</p>
+      <a class="map-frame" href="{viewer}"><img src="{preview}" alt="Rajasthan district and border atlas — mobile map preview" width="1200" height="848" decoding="async"></a>
+      <p class="pdf-mobile-note">Print ke liye PDF; phone par padhne ke liye zoomable map. Badi file ke liye stable internet rakhein.</p>
       <div class="button-row">
-        <a class="button primary" href="{pdf_href}" target="_blank" rel="noopener noreferrer">Open A4 PDF ↗</a>
+        <a class="button primary" href="{viewer}">Map kholo · Zoom</a>
+        <a class="button secondary" href="{pdf_href}" target="_blank" rel="noopener noreferrer">Open A4 PDF ↗</a>
         <a class="button secondary" href="{pdf_href}" download>Download A4 PDF</a>
         <a class="button ghost" href="{a3_pdf}" download>Download print-ready A3 PDF</a>
       </div>
@@ -795,7 +801,7 @@ class Builder:
             <div class="topic-meta">{chips}{extra}</div>
             <div class="topic-actions">
               <a class="button primary small" href="test/index.html?topic={esc(topic['id'])}">Test do</a>
-              {f'<a class="button secondary small" href="{esc(url_for(href_from(subject_page_rel, theory["url"])))}" download>Theory PDF</a>' if theory else ''}
+              {f'<a class="button secondary small" href="{esc(url_for(href_from(subject_page_rel, theory["repo_path"])))}" download>Theory PDF</a>' if theory else ''}
             </div>
           </article>""")
             topic_block = f"""
@@ -1050,6 +1056,38 @@ class Builder:
 {footer(1, self.subjects, [('Computer Network', 'subjects/computer-network/index.html'), ('Previous year papers', 'subjects/previous-year-papers/index.html'), ('Reasoning', 'subjects/reasoning/index.html')])}"""
         self.add("subjects/index.html", body)
 
+    def reader(self) -> None:
+        body = f"""{head("PDF & Map Reader — EkGuru Learning", "Mobile-friendly PDF and map reader. Page-wise reading, zoom and direct downloads.", 2, extra_head='<script type="module" src="../../assets/js/viewer.mjs"></script>')}
+{header(2, self.nav)}
+  <main id="main" class="shell">
+    <section class="section">
+      {crumbs([('Home', '../../index.html'), ('All Subjects', '../index.html'), ('PDF / Map Reader', '')])}
+      <h1 id="readerTitle">PDF / Map Reader</h1>
+      <p id="readerStatus" role="status" aria-live="polite">File load ho rahi hai…</p>
+      <noscript>Reader ke liye JavaScript on karein. Subject folder par Original / Download links bina JavaScript ke bhi kaam karte hain.</noscript>
+      <div id="fileActions" class="button-row" hidden>
+        <a id="originalFile" class="button secondary" href="../index.html" target="_blank" rel="noopener noreferrer">Original file ↗</a>
+        <a id="downloadFile" class="button primary" href="../index.html">Download</a>
+      </div>
+      <div id="readerTools" class="reader-tools" hidden aria-label="Reader controls">
+        <button id="readerPrev" class="button secondary small" type="button" disabled>← Page</button>
+        <span id="pageLabel" aria-live="polite">—</span>
+        <button id="readerNext" class="button secondary small" type="button" disabled>Page →</button>
+        <button id="readerZoomOut" class="button secondary small" type="button" aria-label="Zoom out">−</button>
+        <span id="zoomLabel">100%</span>
+        <button id="readerZoomIn" class="button secondary small" type="button" aria-label="Zoom in">+</button>
+        <button id="readerFit" class="button secondary small" type="button">Fit width</button>
+      </div>
+      <div id="readerStage" class="reader-stage" tabindex="0" role="region" aria-label="Document page — scroll to read">
+        <canvas id="pdfCanvas" hidden aria-label="PDF page image"></canvas>
+      </div>
+      <p class="small muted">PDF page image ke roop mein dikhti hai; searchable text / screen reader ke liye Original file use karein.</p>
+      <button id="readerRetry" class="button secondary" type="button" hidden>Retry loading</button>
+    </section>
+  </main>
+{footer(2, self.subjects, [('All subjects', 'subjects/index.html'), ('Previous year papers', 'subjects/previous-year-papers/index.html')])}"""
+        self.add("subjects/reader/index.html", body)
+
     # -------------------------------------------------------------- legacy
     def legacy_material(self) -> None:
         """Old links (…/computer-network/material/index.html) keep working: same folder list."""
@@ -1095,6 +1133,7 @@ def main() -> int:
     builder = Builder(site, subjects_doc, paper_catalog)
     builder.home()
     builder.subjects_index()
+    builder.reader()
     for subject in builder.subjects:
         builder.subject_page(subject)
     builder.paper_exam_pages()

@@ -175,3 +175,36 @@ NODE_PATH=<node_modules> node tests/navigation/test_app_dom_smoke.cjs   # option
 ```
 
 `SITE_GUIDE.md` me data flow, folder responsibilities aur maintenance recipes detail me hain.
+
+## GitHub Pages loading / mobile reader
+
+- Test data is resolved relative to `assets/js/test.mjs` (`../../`), **not** the
+  current page or the domain root. This preserves `/Questions-/` on GitHub Pages.
+- PDF and map **Open** buttons use `subjects/reader/index.html?file=content%2F…`.
+  PDF.js is self-hosted in `assets/vendor/pdfjs/` (Apache-2.0); no CDN, backend,
+  iframe PDF plugin or external proxy is required. PDFs render one page at a time
+  with page/zoom controls. Original and Download links remain available.
+- The map folder shows a lightweight image immediately, instead of an embedded
+  PDF that may be blank on Android/iOS. Full maps open in the zoomable reader.
+- The CBT player supports countdown/auto-submit, saved answers during question
+  navigation, clear response, mark-for-review & next, and a mobile palette toggle.
+  Attempts are in memory; leaving/reloading a running test resets the attempt.
+- Only locally hosted files are guaranteed by repository checks. Other exams'
+  official/third-party sites may be unavailable, require login, or remove papers;
+  these are external source links, not files hosted by EkGuru. RPSC Paper I 2024
+  questions and the answer key are hosted locally and available in the reader.
+
+Real-browser regression (start `python3 tools/serve_site.py` first):
+
+```bash
+npm install --prefix /tmp/ekguru-deps puppeteer-core @sparticuz/chromium
+NODE_PATH=/tmp/ekguru-deps/node_modules node tests/mobile/cbt_reader_check.cjs
+```
+
+The preview server accepts both `/` and `/Questions-/` so project-path bugs can
+be reproduced locally. The browser check uses **real ES modules** and the
+`/Questions-/` prefix, covering CBT at 360/390/768/1280px and PDF/map reading.
+
+Changes on an Arena working branch do not update the public site automatically:
+GitHub Pages is configured to deploy **main / (root)**. Merge the reviewed fix PR
+into main and wait for the Pages deployment before checking the public URL.

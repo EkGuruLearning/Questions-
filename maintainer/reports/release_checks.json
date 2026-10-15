@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-14T19:07:25+00:00",
+  "generated_at": "2026-10-15T07:02:02+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
-    "pass": 18,
+    "pass": 21,
     "skip": 0,
     "fail": 0
   },
@@ -41,8 +41,45 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 31 route(s), 958 link(s), 55 download(s) and 18 folder(s) checked",
+        "PASS: 51 route(s), 1808 link(s), 65 download(s) and 18 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
+      ]
+    },
+    {
+      "name": "Generated pages are current",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Content uploads and reader links are reflected in the published HTML.",
+      "output_tail": [
+        "PASS: 49 generated page(s) match data/site.json."
+      ]
+    },
+    {
+      "name": "Rendered test app",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Real module-relative root resolution, pools, practice and CBT result flow.",
+      "output_tail": [
+        "  - topic-wise: T02 pool 144 questions with section filter",
+        "  - section filter: 129 questions in the chosen section",
+        "  - player: 10-question practice session rendered",
+        "  - practice mode: instant feedback after answering",
+        "  - result: 30% score, stats, topic bars and 10 review items",
+        "  - exam mode: hidden answers, palette marking, submit and result"
+      ]
+    },
+    {
+      "name": "CBT and mobile reader browser regression (optional)",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Real HTTP under /Questions-/: CBT at four widths, PDF pages, maps, zoom and original/download links.",
+      "output_tail": [
+        "PASS mobile reader: content/computer-network/theory/T01-Introduction-to-Data-Communication-Theory-MCQ.pdf",
+        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf",
+        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait.png",
+        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan_Border_District_Map_A4 (1).pdf",
+        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/PDF/Rajasthan_Border_District_Map_A4.pdf",
+        "PASS lightweight map preview and external URL rejection"
       ]
     },
     {
@@ -95,7 +132,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 15 tests in 0.742s",
+        "Ran 17 tests in 0.958s",
         "",
         "OK"
       ]
@@ -109,7 +146,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 21 tests in 0.117s",
+        "Ran 23 tests in 0.283s",
         "",
         "OK"
       ]
@@ -123,7 +160,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 19 tests in 0.029s",
+        "Ran 19 tests in 0.058s",
         "",
         "OK"
       ]
@@ -137,7 +174,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.050s",
+        "Ran 8 tests in 0.060s",
         "",
         "OK"
       ]
@@ -160,7 +197,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 63.483516"
+        "# duration_ms 55.24814"
       ]
     },
     {
@@ -170,11 +207,11 @@
       "note": "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer.",
       "output_tail": [
         "  - folder page (files + breadcrumb back up): 5 files, breadcrumb back to the subject page",
-        "  - previous year papers page: 8 exam folders, RPSC 2024 page with 2 files and a full breadcrumb",
+        "  - previous year papers page: 1 hosted folder, 18 exam pages, RPSC 2024 with 2 files",
         "  - reasoning folder pages: 4 folder pages, empty ones explained",
-        "  - year-wise exam pages: 27 year chips, ready chips sirf jahan papers hain",
-        "  - map folder pages: 8 map rows with previews and downloads",
-        "  - nav + footer on every published page: 30 pages carry the full nav + footer"
+        "  - year-wise exam pages: 1 locally ready year chip; external years are grouped by exam and actual sitting",
+        "  - map folder pages: 17 map rows, lightweight preview, reader and downloads",
+        "  - nav + footer on every published page: 50 pages carry the full nav + footer"
       ]
     },
     {
@@ -183,8 +220,8 @@
       "exit_code": 0,
       "note": "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me.",
       "output_tail": [
-        "ok   desktop-1280 /subjects/reasoning/practice/Calendar/index.html   scrollW=1280",
-        "ok   desktop-1280 /subjects/reasoning/theory/index.html              scrollW=1280",
+        "ok   desktop-1280 /subjects/previous-year-papers/sci/index.html      scrollW=1280",
+        "ok   desktop-1280 /subjects/reasoning/answers/index.html             scrollW=1280",
         "ok   desktop-1280 /subjects/previous-year-papers/rpsc/2024/index.html scrollW=1280",
         "ok   desktop-1280 /404.html                                          scrollW=1280",
         "",
@@ -207,12 +244,12 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (0 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (255 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],
   "not_tested": [
-    "Real browser rendering, device testing and the live GitHub Pages deployment.",
-    "PDF page-by-page rendering (tools/audit_pdfs.py needs PyMuPDF)."
+    "Physical Android/iOS devices and the live GitHub Pages deployment (local Chromium checks run when available).",
+    "Exhaustive rendering of every PDF page; the browser regression samples hosted papers, theory and maps."
   ]
 }

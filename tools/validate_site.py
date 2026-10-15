@@ -39,7 +39,10 @@ REQUIRED_ROUTES = (
     "404.html",
     "assets/css/ekguru.css",
     "assets/js/test.mjs",
-    "assets/js/test.mjs",
+    "assets/js/viewer.mjs",
+    "subjects/reader/index.html",
+    "assets/vendor/pdfjs/pdf.min.mjs",
+    "assets/vendor/pdfjs/pdf.worker.min.mjs",
     "assets/js/engine.mjs",
     "data/site.json",
     "data/banks/cn/manifest.json",
@@ -122,6 +125,14 @@ def main() -> int:
             if not target:
                 continue
             link_count += 1
+            # The reader route can exist while its ?file= target is missing.
+            parsed_target = urllib.parse.urlsplit(target)
+            reader_file = urllib.parse.parse_qs(parsed_target.query).get("file", [])
+            if reader_file and parsed_target.path.endswith("reader/index.html"):
+                source = reader_file[0]
+                source_path = (ROOT / source).resolve()
+                if not source.startswith("content/") or not source_path.is_relative_to(ROOT / "content") or not source_path.is_file():
+                    problems.append(f"{page}: reader file does not resolve: {source}")
             lowered = target.lower()
             path_only = urllib.parse.urlsplit(target).path
             if path_only:
