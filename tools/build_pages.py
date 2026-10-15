@@ -18,10 +18,13 @@ The pages are written straight into the folders the site already publishes:
     subjects/<slug>/<folder>/index.html            a real page per folder, so a folder
                                                    link works as a deep link and every
                                                    page has a breadcrumb back up
+    subjects/previous-year-papers/exams/<id>/index.html
+                                                   verified year-wise exam source pages
     subjects/computer-network/material/index.html  (kept: older links still work)
     subjects/computer-network/test/index.html      (hand-written: the online test app)
 
-Inputs: data/site.json (tools/build_catalog.py) + data/catalog/subjects.json (labels).
+Inputs: data/site.json (tools/build_catalog.py), data/catalog/subjects.json (labels) and
+`data/catalog/previous-year-papers.json` (verified exam/year source records).
 
 Run:
     python3 tools/build_pages.py            # write the pages
@@ -34,6 +37,7 @@ import html
 import json
 import pathlib
 import posixpath
+import re
 import struct
 import sys
 import urllib.parse
@@ -41,6 +45,17 @@ import urllib.parse
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "data/site.json"
 SUBJECTS = ROOT / "data/catalog/subjects.json"
+PAPER_CATALOG = ROOT / "data/catalog/previous-year-papers.json"
+PAPER_KINDS = {
+    "official-paper": "Official paper",
+    "official-answer-key": "Official answer key",
+    "official-archive": "Official archive",
+    "official-notice": "Official notice",
+    "candidate-login": "Candidate login / limited window",
+    "practice-third-party": "Third-party / memory-based",
+    "sample-paper": "Sample questions only",
+    "local-paper": "Available on EkGuru",
+}
 FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
            "%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' "
            "font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' "
@@ -90,6 +105,71 @@ def number(value) -> str:
         return str(value)
 
 
+def paper_year_id(year: str) -> str:
+    """Stable HTML anchor for years or year ranges such as `2007–2025`."""
+    token = re.sub(r"[^A-Za-z0-9_-]+", "-", str(year)).strip("-")
+    return "pyq-year-" + (token or "year")
+
+
+def validate_paper_catalog(catalog: dict) -> None:
+    """Fail early on a broken exam entry or an unsafe/malformed paper link."""
+    if catalog.get("schema_version") != 1:
+        raise SystemExit("FAIL: previous-year-papers.json must use schema_version 1")
+    group_ids: set[str] = set()
+    exam_ids: set[str] = set()
+    for group in catalog.get("groups", []):
+        group_id = group.get("id", "")
+        if not group_id or group_id in group_ids:
+            raise SystemExit(f"FAIL: missing or duplicate PYQ group id: {group_id!r}")
+        group_ids.add(group_id)
+        if not group.get("title_en") or not group.get("title_hi"):
+            raise SystemExit(f"FAIL: PYQ group {group_id!r} needs bilingual titles")
+        for exam in group.get("exams", []):
+            exam_id = exam.get("id", "")
+            if not exam_id or exam_id in exam_ids or not re.fullmatch(r"[a-z0-9-]+", exam_id):
+                raise SystemExit(f"FAIL: missing, duplicate or invalid PYQ exam id: {exam_id!r}")
+            exam_ids.add(exam_id)
+            for field in ("title_en", "title_hi", "summary_en", "summary_hi"):
+                if not (exam.get(field) or "").strip():
+                    raise SystemExit(f"FAIL: PYQ exam {exam_id!r} needs {field}")
+            years = exam.get("years", [])
+            if not years:
+                raise SystemExit(f"FAIL: PYQ exam {exam_id!r} needs at least one verified year/session")
+            seen_years: set[str] = set()
+            for year in years:
+                year_label = str(year.get("year", "")).strip()
+                if not year_label or year_label in seen_years:
+                    raise SystemExit(f"FAIL: {exam_id!r} has a missing or duplicate year label")
+                seen_years.add(year_label)
+                for field in ("title_en", "title_hi"):
+                    if not (year.get(field) or "").strip():
+                        raise SystemExit(f"FAIL: {exam_id!r}/{year_label} needs {field}")
+                links = year.get("links", [])
+                if not links:
+                    raise SystemExit(f"FAIL: {exam_id!r}/{year_label} needs at least one source link")
+                for link in links:
+                    for field in ("label_en", "label_hi", "url"):
+                        if not (link.get(field) or "").strip():
+                            raise SystemExit(f"FAIL: {exam_id!r}/{year_label} link needs {field}")
+                    if link.get("kind") not in PAPER_KINDS:
+                        raise SystemExit(f"FAIL: {exam_id!r}/{year_label} has unknown source kind {link.get('kind')!r}")
+                    parsed = urllib.parse.urlsplit(link["url"])
+                    if parsed.scheme:
+                        if parsed.scheme != "https" or not parsed.netloc:
+                            raise SystemExit(f"FAIL: PYQ source must use https: {link['url']}")
+                    elif link["url"].startswith("/") or ".." in pathlib.PurePosixPath(link["url"]).parts:
+                        raise SystemExit(f"FAIL: local PYQ source must be a repo-relative path: {link['url']}")
+            for link in exam.get("sources", []):
+                for field in ("label_en", "label_hi", "url"):
+                    if not (link.get(field) or "").strip():
+                        raise SystemExit(f"FAIL: {exam_id!r} source link needs {field}")
+                if link.get("kind") not in PAPER_KINDS:
+                    raise SystemExit(f"FAIL: {exam_id!r} has unknown source kind {link.get('kind')!r}")
+                parsed = urllib.parse.urlsplit(link["url"])
+                if parsed.scheme != "https" or not parsed.netloc:
+                    raise SystemExit(f"FAIL: PYQ source must use https: {link['url']}")
+
+
 # ------------------------------------------------------------------- fragments
 # ---------------------------------------------------------------- subject extras
 # Page copy that is specific to one subject: the map hero on the geography page
@@ -129,6 +209,7 @@ SUBJECT_EXTRAS = {
         "hero_primary": ("Rajasthan ke maps kholo", "subjects/rajasthan-geography/map/rajasthan/index.html"),
         "hero_secondary": ("A1 poster download",
                            "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A1.png"),
+        "hero_pdf": ("PDF में नक्शा देखें", "subjects/rajasthan-geography/map/rajasthan/index.html#map-pdf-preview"),
     },
 }
 
@@ -269,37 +350,65 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
         </li>"""
 
 
-def year_chips(subject: dict, node: dict, from_page: str, current: str = "") -> str:
-    """Saal-wise chips (2000–2026). Jis saal ka folder bana hua hai wo link ban jata hai."""
-    cfg = subject["year_folders"]
-    known = {child["path"].split("/")[-1]: child for child in node["folders"]}
+def paper_link_list(links: list[dict], from_page: str) -> str:
+    """Render clearly labelled official, login-only and third-party paper links."""
+    rows = []
+    for link in links:
+        target = link["url"]
+        external = urllib.parse.urlsplit(target).scheme == "https"
+        href = target if external else href_from(from_page, target)
+        safety = ' target="_blank" rel="noopener noreferrer"' if external else ""
+        marker = "↗" if external else "→"
+        kind = PAPER_KINDS[link["kind"]]
+        rows.append(f"""<li class="pyq-link-item">
+          <a class="pyq-source-link" href="{esc(href)}"{safety}>
+            <span class="pyq-source-title">{esc(link['label_en'])} <span aria-hidden="true">{marker}</span></span>
+            <span class="pyq-source-title-hi" lang="hi">{esc(link['label_hi'])}</span>
+            <span class="pyq-source-kind">{esc(kind)}</span>
+          </a>
+        </li>""")
+    return "\n".join(rows)
+
+
+def available_year_chips(years: list[dict]) -> str:
     chips = []
-    for year in range(int(cfg["to"]), int(cfg["from"]) - 1, -1):
-        key = str(year)
-        child = known.get(key)
-        if not child:
-            chips.append(f'<span class="chip neutral year-chip pending">{key}</span>')
-            continue
+    for year in years:
+        label = str(year["year"])
+        target_id = paper_year_id(label)
+        chips.append(f'<a class="chip year-chip ready" href="#{esc(target_id)}">{esc(label)}</a>')
+    return "".join(chips)
+
+
+def year_chips(subject: dict, node: dict, from_page: str, current: str = "") -> str:
+    """Only show year folders that actually contain a paper; no grey placeholder years."""
+    children = [
+        child for child in node["folders"]
+        if child["file_count"] and child["path"].split("/")[-1].isdigit()
+    ]
+    children.sort(key=lambda child: int(child["path"].split("/")[-1]), reverse=True)
+    chips = []
+    for child in children:
+        key = child["path"].split("/")[-1]
         target = f"subjects/{subject['slug']}/{child['path']}/index.html"
         href = esc(href_from(from_page, target))
         state = ' aria-current="page"' if key == current else ""
-        count = f'<span class="year-count">{child["file_count"]}</span>' if child["file_count"] else ""
-        chips.append(f'<a class="chip year-chip ready" href="{href}"{state}>{key}{count}</a>')
+        chips.append(f'<a class="chip year-chip ready" href="{href}"{state}>{key}<span class="year-count">{child["file_count"]}</span></a>')
     return "".join(chips)
 
 
 def year_section(subject: dict, node: dict, from_page: str) -> str:
-    """Exam folder page: saare saal ek jagah, taaki saal-wise kuch bhi chhoot na jaye."""
+    """Local PDF year folders only; external verified years live in the exam directory."""
     cfg = subject["year_folders"]
-    ready = sum(1 for child in node["folders"] if child["file_count"])
-    total_years = int(cfg["to"]) - int(cfg["from"]) + 1
+    ready = [child for child in node["folders"] if child["file_count"] and child["path"].split("/")[-1].isdigit()]
+    if not ready:
+        return ""
     return f"""
     <section class="section">
       <div class="section-head">
-        <h2>🗓️ {esc(cfg['title_en'])}</h2>
-        <span class="muted small">{ready} of {total_years} saal me paper maujood</span>
+        <h2>🗓️ {esc(cfg.get('title_en', 'Available years'))}</h2>
+        <span class="muted small">{len(ready)} available year(s)</span>
       </div>
-      <p class="section-note">{esc(cfg['note_en'])}</p>
+      <p class="section-note">{esc(cfg.get('note_en', 'Only years with a published paper are shown.'))}</p>
       <div class="year-grid">
 {year_chips(subject, node, from_page)}
       </div>
@@ -392,11 +501,14 @@ def walk_nodes(node: dict):
 
 # --------------------------------------------------------------------- builder
 class Builder:
-    def __init__(self, site: dict, subjects_doc: dict):
+    def __init__(self, site: dict, subjects_doc: dict, paper_catalog: dict):
         self.site = site
         self.subjects = site["subjects"]
         self.nav = [(subject["slug"], subject["title_en"]) for subject in self.subjects]
         self.brand = subjects_doc.get("brand", {})
+        self.paper_catalog = paper_catalog
+        self.paper_groups = paper_catalog.get("groups", [])
+        self.paper_exams = [exam for group in self.paper_groups for exam in group.get("exams", [])]
         self.written: list[tuple[pathlib.Path, str]] = []
 
     # ------------------------------------------------------------- utilities
@@ -419,9 +531,131 @@ class Builder:
             return href_from(from_page, target)
         return rel(depth) + target
 
+    # ------------------------------------------------------ previous-year pages
+    @staticmethod
+    def paper_exam_path(exam: dict) -> str:
+        return f"subjects/previous-year-papers/exams/{exam['id']}/index.html"
+
+    def paper_catalog_block(self, from_page: str) -> str:
+        groups = []
+        for group in self.paper_groups:
+            cards = []
+            for exam in group.get("exams", []):
+                exam_page = self.paper_exam_path(exam)
+                detail_href = esc(href_from(from_page, exam_page))
+                chips = "".join(
+                    f'<a class="chip year-chip ready" href="{detail_href}#{esc(paper_year_id(str(year["year"])))}">{esc(str(year["year"]))}</a>'
+                    for year in exam["years"]
+                )
+                cards.append(f"""        <article class="card pyq-exam-card">
+          <div class="pyq-exam-card-head">
+            <div><h3>{esc(exam['title_en'])}</h3><p class="pyq-title-hi" lang="hi">{esc(exam['title_hi'])}</p></div>
+            <span class="chip neutral">{len(exam['years'])} year/session records</span>
+          </div>
+          <p class="pyq-summary">{esc(exam['summary_en'])}</p>
+          <p class="pyq-summary pyq-summary-hi" lang="hi">{esc(exam['summary_hi'])}</p>
+          <nav class="pyq-year-chips" aria-label="{esc(exam['title_en'])} years">{chips}</nav>
+          <a class="button primary small" href="{detail_href}">Open year-wise sources <span aria-hidden="true">→</span></a>
+        </article>""")
+            groups.append(f"""      <section class="pyq-group" aria-labelledby="pyq-group-{esc(group['id'])}">
+        <div class="section-head"><h3 id="pyq-group-{esc(group['id'])}">{esc(group['title_en'])}</h3><span class="muted small" lang="hi">{esc(group['title_hi'])}</span></div>
+        <div class="pyq-card-grid">
+{chr(10).join(cards)}
+        </div>
+      </section>""")
+        return f"""    <section class="section pyq-catalog" id="verified-paper-sources">
+      <div class="section-head"><h2>Exam-wise previous-year sources</h2><span class="eyebrow">{len(self.paper_exams)} exams</span></div>
+      <p class="section-note">{esc(self.paper_catalog['intro_en'])}</p>
+      <p class="section-note" lang="hi">{esc(self.paper_catalog['intro_hi'])}</p>
+{chr(10).join(groups)}
+    </section>"""
+
+    def paper_exam_page(self, group: dict, exam: dict) -> None:
+        rel_path = self.paper_exam_path(exam)
+        depth = len(pathlib.PurePosixPath(rel_path).parts) - 1
+        detail_href = href_from(rel_path, "subjects/previous-year-papers/index.html")
+        group_title = group["title_en"]
+        year_cards = []
+        for year in exam["years"]:
+            label = str(year["year"])
+            year_id = paper_year_id(label)
+            year_cards.append(f"""      <article class="card pyq-year-card" id="{esc(year_id)}">
+        <div class="pyq-year-head">
+          <span class="chip green">{esc(label)}</span>
+          <h2>{esc(year['title_en'])}</h2>
+        </div>
+        <p class="pyq-title-hi" lang="hi">{esc(year['title_hi'])}</p>
+        <p class="pyq-year-note">{esc(year.get('note_en', ''))}</p>
+        <p class="pyq-year-note pyq-year-note-hi" lang="hi">{esc(year.get('note_hi', ''))}</p>
+        <ul class="pyq-source-list">
+{paper_link_list(year['links'], rel_path)}
+        </ul>
+      </article>""")
+        archive_links = paper_link_list(exam.get("sources", []), rel_path) or (
+            '<li class="muted small">No separate archive link is listed.</li>'
+        )
+        year_nav = available_year_chips(exam["years"])
+        title = f"{exam['title_en']} — Previous Year Papers — EkGuru Learning"
+        description = (f"Year-wise previous-year paper sources for {exam['title_en']}. "
+                       "Official papers, answer keys, candidate-login and third-party practice are labelled separately.")
+        body = f"""{head(title, description, depth)}
+{header(depth, self.nav, "previous-year-papers")}
+  <main id="main" class="shell">
+    <section class="section">
+      {crumbs([('Home', href_from(rel_path, 'index.html')), ('Previous Year Papers', detail_href), (exam['title_en'], '')])}
+      <span class="eyebrow">{esc(group_title)}</span>
+      <h1>{esc(exam['title_en'])}</h1>
+      <p class="pyq-title-hi" lang="hi">{esc(exam['title_hi'])}</p>
+      <p class="section-note">{esc(exam['summary_en'])}</p>
+      <p class="section-note" lang="hi">{esc(exam['summary_hi'])}</p>
+      <div class="year-grid pyq-detail-year-nav" aria-label="Available exam years">{year_nav}</div>
+    </section>
+    <section class="section pyq-year-list">
+      <div class="section-head"><h2>Year-wise papers and source notes</h2><a href="{esc(detail_href)}#source-archives">Exam archive links ↓</a></div>
+      <div class="pyq-year-grid">
+{chr(10).join(year_cards)}
+      </div>
+    </section>
+    <section class="section" id="source-archives">
+      <div class="section-head"><h2>Official archives and exam information</h2></div>
+      <p class="section-note">Use the archive to confirm the notification, paper set, shift, discipline and answer-key status. A response sheet may require candidate login and may only remain available temporarily.</p>
+      <ul class="pyq-source-list pyq-archive-list">
+{archive_links}
+      </ul>
+    </section>
+  </main>
+
+{footer(depth, self.subjects, [('Previous year papers', 'subjects/previous-year-papers/index.html'), ('All subjects', 'subjects/index.html')])}"""
+        self.add(rel_path, body)
+
+    def paper_exam_pages(self) -> None:
+        for group in self.paper_groups:
+            for exam in group.get("exams", []):
+                self.paper_exam_page(group, exam)
+
+    def map_pdf_preview(self, from_page: str) -> str:
+        pdf = "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf"
+        pdf_path = href_from(from_page, pdf)
+        pdf_href = esc(url_for(pdf_path))
+        viewer_src = esc(url_for(pdf_path) + "#view=FitH")
+        a3_pdf = esc(url_for(href_from(from_page, "content/rajasthan-geography/map/rajasthan/Rajasthan-Border-District-Atlas-A3-Print.pdf")))
+        return f"""    <section class="section map-pdf-preview" id="map-pdf-preview">
+      <div class="section-head"><h2>Rajasthan map — PDF preview</h2><span class="chip neutral">A4 · PDF</span></div>
+      <p class="section-note">Browser PDF viewer. If it does not display on your device, open or download the map directly.</p>
+      <div class="pdf-viewer">
+        <iframe src="{viewer_src}" title="Preview of the Rajasthan district and border atlas PDF" loading="lazy"></iframe>
+      </div>
+      <div class="button-row">
+        <a class="button primary" href="{pdf_href}" target="_blank" rel="noopener noreferrer">Open A4 PDF ↗</a>
+        <a class="button secondary" href="{pdf_href}" download>Download A4 PDF</a>
+        <a class="button ghost" href="{a3_pdf}" download>Download print-ready A3 PDF</a>
+      </div>
+    </section>"""
+
     # -------------------------------------------------------------- subject
     def subject_page(self, subject: dict) -> None:
         slug = subject["slug"]
+        is_pyq_subject = slug == "previous-year-papers"
         prefix = f"subjects/{slug}/"
         extras = SUBJECT_EXTRAS.get(slug, {})
         title = extras.get("title") or f'{subject["title_en"]} — EkGuru Learning'
@@ -441,12 +675,19 @@ class Builder:
         if has_test:
             subject_actions += f'<a class="button primary" href="{href_from(subject_page_rel, f"subjects/{slug}/test/index.html")}">Online Test</a>\n        '
             quick.insert(0, ("Online test", f"subjects/{slug}/test/index.html"))
+        if is_pyq_subject:
+            subject_actions += '<a class="button primary" href="#verified-paper-sources">Browse exam sources →</a>\n        '
         subject_actions += (f'<a class="button secondary" href="{href_from(subject_page_rel, "subjects/index.html")}">All subjects</a>\n        '
                             f'<a class="button ghost" href="{href_from(subject_page_rel, "index.html")}">Home</a>')
+        tile_nodes = [
+            node for node in subject["tree"]["folders"]
+            if not is_pyq_subject or node["file_count"]
+        ]
         tiles = "".join(
             folder_tile(node, self.folder_href_from(subject, node, 2, subject_page_rel))
-            for node in subject["tree"]["folders"]
+            for node in tile_nodes
         )
+        pyq_catalog = self.paper_catalog_block(subject_page_rel) if is_pyq_subject else ""
         topic_block = ""
         if subject["topics"]:
             cards = []
@@ -490,6 +731,10 @@ class Builder:
         if extras.get("hero_image"):
             primary_label, primary_target = extras["hero_primary"]
             secondary_label, secondary_target = extras["hero_secondary"]
+            pdf_action = ""
+            if extras.get("hero_pdf"):
+                pdf_label, pdf_target = extras["hero_pdf"]
+                pdf_action = f'<a class="button ghost" href="{esc(href_from(subject_page_rel, pdf_target))}">{esc(pdf_label)}</a>'
             hero = f"""
   <section class="hero">
     <div class="shell hero-inner has-media">
@@ -500,6 +745,7 @@ class Builder:
         <div class="hero-actions">
           <a class="button primary" href="{esc(href_from(subject_page_rel, primary_target))}">{esc(primary_label)}</a>
           <a class="button secondary" href="{esc(href_from(subject_page_rel, secondary_target))}" download>{esc(secondary_label)}</a>
+          {pdf_action}
         </div>
       </div>
       <div class="map-frame">
@@ -526,14 +772,14 @@ class Builder:
     </section>
     <section class="section">
       <div class="section-head">
-        <h2>📁 Folders</h2>
+        <h2>{'📁 EkGuru-hosted papers' if is_pyq_subject else '📁 Folders'}</h2>
         <span class="muted small">{plural(subject['file_count'], 'file', 'files')}</span>
       </div>
-      <p class="section-note">Folder kholo → files dekho ya download karo.</p>
+      <p class="section-note">{'Files stored on EkGuru are listed separately from the exam-wise external sources below. Check each file label to distinguish a question paper from an answer key.' if is_pyq_subject else 'Folder kholo → files dekho ya download karo.'}</p>
       <div class="folder-grid">
-{tiles}
+{tiles if tiles else '<p class="empty-state">No EkGuru-hosted paper files are available here yet. See the verified source directory below.</p>'}
       </div>
-    </section>{topic_block}
+    </section>{pyq_catalog}{topic_block}
   </main>
 
 {footer(2, self.subjects, quick)}"""
@@ -558,8 +804,14 @@ class Builder:
         )
         # exam folder (jaise RPSC / DSSSB): folders ki jagah saal-wise chips
         years = subject.get("year_folders") or {}
-        is_exam_folder = bool(years) and "/" not in node["path"]
+        is_exam_folder = bool(years) and "/" not in node["path"] and any(
+            child["file_count"] and child["path"].split("/")[-1].isdigit()
+            for child in node["folders"]
+        )
         year_block = year_section(subject, node, rel_path) if is_exam_folder else ""
+        map_pdf = (self.map_pdf_preview(rel_path)
+                   if subject["slug"] == "rajasthan-geography" and node["path"] == "map/rajasthan"
+                   else "")
         # year folder (jaise RPSC > 2024): neeche dusre saal par jane ke chips
         year_switch = ""
         if years and "/" in node["path"]:
@@ -588,7 +840,7 @@ class Builder:
       <p class="muted">{esc(node['title_hi'])}{f' — {esc(node["note_en"])}' if node['note_en'] else ''}</p>
       <p class="section-note">{esc(subject['title_en'])} · {plural(node['file_count'], 'file', 'files')}
         {f" · {' / '.join(node['file_types'])}" if node['file_types'] else ''}</p>
-    </section>{year_block}
+    </section>{map_pdf}{year_block}
     {f'''<section class="section">
       <div class="section-head"><h2>Subfolders</h2></div>
       <div class="folder-grid">
@@ -750,14 +1002,19 @@ def main() -> int:
 
     if not SITE.is_file():
         raise SystemExit("FAIL: data/site.json missing — run tools/build_catalog.py first")
+    if not PAPER_CATALOG.is_file():
+        raise SystemExit("FAIL: data/catalog/previous-year-papers.json missing")
     site = json.loads(SITE.read_text(encoding="utf-8"))
     subjects_doc = json.loads(SUBJECTS.read_text(encoding="utf-8"))
+    paper_catalog = json.loads(PAPER_CATALOG.read_text(encoding="utf-8"))
+    validate_paper_catalog(paper_catalog)
 
-    builder = Builder(site, subjects_doc)
+    builder = Builder(site, subjects_doc, paper_catalog)
     builder.home()
     builder.subjects_index()
     for subject in builder.subjects:
         builder.subject_page(subject)
+    builder.paper_exam_pages()
     builder.legacy_material()
 
     stale = []

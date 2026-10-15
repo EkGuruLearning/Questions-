@@ -119,14 +119,28 @@ section("folder page (files + breadcrumb back up)", () => {
   return `${rows} files, breadcrumb back to the subject page`;
 });
 
-/* deeper folder (year folders) ------------------------------------------ */
+/* exam-wise previous-year directory ------------------------------------- */
 section("previous year papers page", () => {
   const subject = read("subjects/previous-year-papers/index.html");
-  const exams = all(subject, /class="folder-card[^"]*" href="([^"]+)"/g)
+  const hostedFolders = all(subject, /class="folder-card[^\"]*" href="([^\"]+)"/g)
     .map((match) => repoPath("subjects/previous-year-papers/index.html", match[1]));
-  for (const exam of ["ia", "sci", "computer-operator", "system-assistant", "dsssb", "ssc", "net", "rpsc"]) {
-    assert(exams.includes(`subjects/previous-year-papers/${exam}/index.html`), `missing exam folder: ${exam}`);
+  assert(hostedFolders.length === 1 && hostedFolders[0] === "subjects/previous-year-papers/rpsc/index.html",
+    "the landing page should list only the RPSC files actually hosted on EkGuru");
+  const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "data/catalog/previous-year-papers.json"), "utf8"));
+  let examPages = 0;
+  for (const group of catalog.groups) {
+    for (const exam of group.exams) {
+      const route = `subjects/previous-year-papers/exams/${exam.id}/index.html`;
+      const page = read(route);
+      assert(subject.includes(`exams/${exam.id}/index.html`), `landing page misses ${exam.id}`);
+      for (const year of exam.years) {
+        const token = String(year.year).replace(/[^A-Za-z0-9_-]+/g, "-");
+        assert(page.includes(`id="pyq-year-${token}"`), `${exam.id} is missing the ${year.year} sitting`);
+      }
+      examPages += 1;
+    }
   }
+  assert(examPages >= 12, `expected requested exam families, saw ${examPages}`);
   const year = read("subjects/previous-year-papers/rpsc/2024/index.html");
   const files = all(year, /class="material-item/g).length;
   assert(files === 2, `RPSC 2024 should publish the paper + answer key, saw ${files}`);
@@ -138,7 +152,7 @@ section("previous year papers page", () => {
   for (const part of ["All Subjects", "Previous Year Papers", "RPSC", "2024"]) {
     assert(crumbText.includes(part), `breadcrumb is missing ${part}: ${crumbText}`);
   }
-  return `${exams.length} exam folders, RPSC 2024 page with ${files} files and a full breadcrumb`;
+  return `${hostedFolders.length} hosted folder, ${examPages} exam pages, RPSC 2024 with ${files} files`;
 });
 
 /* reasoning (empty folders still published) ------------------------------ */
@@ -161,25 +175,26 @@ section("reasoning folder pages", () => {
 
 /* saal-wise chips -------------------------------------------------------- */
 section("year-wise exam pages", () => {
-  const exam = read("subjects/previous-year-papers/dsssb/index.html");
-  const chips = all(exam, /class="[^"]*year-chip[^"]*"[^>]*>(\d{4})/g).map((match) => Number(match[1]));
-  assert(chips.length === 27, `expected 27 year chips (2000–2026), saw ${chips.length}`);
-  for (const year of [2000, 2013, 2019, 2026]) assert(chips.includes(year), `missing year ${year}`);
-  const ready = all(exam, /<a class="[^"]*year-chip ready[^"]*" href="([^"]+)"/g).map((m) => m[1]);
-  assert(ready.length === 0, "DSSSB me abhi koi paper nahi, koi chip 'ready' nahi hona chahiye");
+  const empty = read("subjects/previous-year-papers/dsssb/index.html");
+  assert(!/year-grid/.test(empty), "an empty legacy folder must not imply years with papers");
   const rpsc = read("subjects/previous-year-papers/rpsc/index.html");
   const rpscReady = all(rpsc, /<a class="[^"]*year-chip ready[^"]*" href="([^"]+)"/g).map((m) => m[1]);
   assert(rpscReady.some((href) => href.includes("2024/index.html")),
     "RPSC 2024 ke papers hain — uska chip link hona chahiye");
+  const rssb = read("subjects/previous-year-papers/exams/rssb-informatics-assistant/index.html");
+  assert(/id="pyq-year-2024"/.test(rssb), "IA ko actual 2024 sitting year me dikhana chahiye");
+  assert(/recruitment cycle, exam held 21 January 2024/.test(rssb), "RSSB recruitment year should remain as context");
+  const computor = read("subjects/previous-year-papers/exams/rssb-computor/index.html");
+  assert(/id="pyq-year-2023"/.test(computor), "Computor 2023 should retain its actual year");
   const yearPage = read("subjects/previous-year-papers/rpsc/2024/index.html");
   assert(/doosre saal/.test(yearPage), "year page par doosre saal ke chips hone chahiye");
-  return `${chips.length} year chips, ready chips sirf jahan papers hain`;
+  return `${rpscReady.length} locally ready year chip; external years are grouped by exam and actual sitting`;
 });
 
 /* maps ------------------------------------------------------------------- */
 section("map folder pages", () => {
   const hub = read("subjects/rajasthan-geography/index.html");
-  assert(/map\/index\.html/.test(hub), "the map folder tile is missing");
+  assert(/map\/rajasthan\/index\.html/.test(hub), "the Rajasthan map folder link is missing");
   const rajasthan = read("subjects/rajasthan-geography/map/rajasthan/index.html");
   const rows = all(rajasthan, /class="material-item/g).length;
   assert(rows === 8, `expected 8 map files (PNG prints + PDF prints), saw ${rows}`);
@@ -192,7 +207,13 @@ section("map folder pages", () => {
       `preview needs width/height so the page does not jump: ${tag.slice(0, 70)}`);
   }
   assert(/content\/rajasthan-geography\/map\/rajasthan\//.test(rajasthan), "map download links are missing");
-  return `${rows} map rows with previews and downloads`;
+  assert(/id="map-pdf-preview"/.test(rajasthan), "the inline PDF preview section is missing");
+  const preview = rajasthan.match(/<iframe\b[^>]*src="([^"]+)"[^>]*>/);
+  assert(preview && /Rajasthan-Border-Districts-A4-Portrait-Print\.pdf#view=FitH/.test(preview[1]),
+    "the embedded A4 PDF preview should use the real print PDF");
+  const previewPath = repoPath("subjects/rajasthan-geography/map/rajasthan/index.html", preview[1]);
+  assert(fs.existsSync(path.join(ROOT, previewPath)), `embedded PDF is missing: ${previewPath}`);
+  return `${rows} map rows, A4 PDF preview and downloads`;
 });
 
 /* navigation + footer on every page ------------------------------------- */

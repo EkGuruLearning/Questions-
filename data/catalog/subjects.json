@@ -186,10 +186,10 @@
       "slug": "previous-year-papers",
       "title_en": "Previous Year Papers",
       "title_hi": "पिछले वर्षों के पेपर",
-      "tagline_en": "Exam-wise aur saal-wise old papers — 2000 se aage",
-      "tagline_hi": "परीक्षा-वार और साल-वार पुराने पेपर — 2000 से आगे",
-      "intro_en": "Pehle exam chuno (IA, SCI, Computer Operator, System Assistant, DSSSB, SSC, NET, RPSC), phir us saal ka folder kholo. Naya saal folder (jaise 2019) apne aap ban jata hai jab usme paper daala jata hai.",
-      "intro_hi": "पहले परीक्षा चुनें, फिर उस साल का फोल्डर खोलें। नया साल फोल्डर (जैसे 2019) अपने आप बन जाता है जब उसमें पेपर डाला जाता है।",
+      "tagline_en": "Rajasthan + Central IT / Computer exams · verified year-wise sources",
+      "tagline_hi": "राजस्थान + केंद्र की IT / कंप्यूटर परीक्षाएँ · सत्यापित साल-वार स्रोत",
+      "intro_en": "Choose an exam — RSSB, RPSC, DSSSB, KVS, EMRS and central IT exams — then open the year-wise paper links. Official papers, answer keys, candidate-login links and third-party memory-based practice are clearly labelled.",
+      "intro_hi": "परीक्षा चुनें — RSSB, RPSC, DSSSB, KVS, EMRS और केंद्र की IT परीक्षाएँ — फिर साल-वार पेपर लिंक खोलें। आधिकारिक पेपर, उत्तर-कुंजी, उम्मीदवार-लॉगिन और तीसरे पक्ष के memory-based अभ्यास साफ़ लेबल किए गए हैं।",
       "has_material": true,
       "has_test": false,
       "has_maps": false,
@@ -199,73 +199,72 @@
           "title_hi": "आई.ए.",
           "icon": "🧾",
           "order": 1,
-          "note_en": "Information Assistant ke old papers — saal ke folder ke andar.",
-          "note_hi": "सूचना सहायक के पुराने पेपर — साल के फोल्डर में।"
+          "note_en": "No IA paper PDFs are hosted in this folder yet. Use the exam-wise source directory and check the sitting year against the recruitment-cycle label.",
+          "note_hi": "इस फ़ोल्डर में अभी IA पेपर PDF उपलब्ध नहीं हैं। परीक्षा-वार स्रोत सूची देखें और परीक्षा-वर्ष को भर्ती-वर्ष से मिलाकर जाँचें।"
         },
         "sci": {
           "title_en": "SCI",
           "title_hi": "एस.सी.आई.",
           "icon": "🧾",
           "order": 2,
-          "note_en": "SCI (Senior Computer Instructor) ke papers, saal-wise.",
-          "note_hi": "एस.सी.आई. के पेपर, साल-वार।"
+          "note_en": "No SCI paper PDFs are hosted here yet. The exam-wise source directory lists verified RSSB years.",
+          "note_hi": "यहाँ अभी SCI पेपर PDF उपलब्ध नहीं हैं। परीक्षा-वार स्रोत सूची में सत्यापित RSSB वर्ष दिए हैं।"
         },
         "computer-operator": {
           "title_en": "Computer Operator",
           "title_hi": "कंप्यूटर ऑपरेटर",
           "icon": "💻",
           "order": 3,
-          "note_en": "Computer Operator ke do-do paper, saal ke folder me.",
-          "note_hi": "कंप्यूटर ऑपरेटर के दोनों पेपर, साल-वार।"
+          "note_en": "No Computer Operator paper PDFs are hosted here yet; no year is implied. Check the exam source directory for any verified release.",
+          "note_hi": "यहाँ अभी Computer Operator पेपर PDF उपलब्ध नहीं हैं; कोई वर्ष अनुमान से नहीं दिया गया। सत्यापित पेपर के लिए स्रोत सूची देखें।"
         },
         "system-assistant": {
           "title_en": "System Assistant",
           "title_hi": "सिस्टम असिस्टेंट",
           "icon": "🖥️",
           "order": 4,
-          "note_en": "System Assistant ke saare papers, saal-wise.",
-          "note_hi": "सिस्टम असिस्टेंट के सारे पेपर, साल-वार।"
+          "note_en": "No official System Assistant question paper is hosted here. The exam-wise directory links the 2024 recruitment record and paper archive.",
+          "note_hi": "यहाँ सिस्टम असिस्टेंट का कोई आधिकारिक प्रश्न-पत्र होस्ट नहीं है। परीक्षा-वार सूची में 2024 भर्ती रिकॉर्ड और पेपर संग्रह के लिंक हैं।"
         },
         "dsssb": {
           "title_en": "DSSSB",
           "title_hi": "डी.एस.एस.एस.बी.",
           "icon": "🏫",
           "order": 5,
-          "note_en": "DSSSB ke saare papers 2000 se aage, saal ke folder me.",
-          "note_hi": "डी.एस.एस.एस.बी. के सारे पेपर, साल-वार।"
+          "note_en": "No DSSSB PDFs are hosted in this legacy folder. See the exam-wise directory for the specific verified shifts and years.",
+          "note_hi": "इस पुराने फ़ोल्डर में DSSSB PDF उपलब्ध नहीं हैं। सत्यापित शिफ्ट और वर्ष देखने के लिए परीक्षा-वार सूची खोलें।"
         },
         "ssc": {
           "title_en": "SSC",
           "title_hi": "एस.एस.सी.",
           "icon": "📋",
           "order": 6,
-          "note_en": "SSC (CGL, CHSL, MTS, CPO) ke technical papers.",
-          "note_hi": "एस.एस.सी. के टेक्निकल पेपर।"
+          "note_en": "No SSC question papers are hosted in this legacy folder. Candidate response sheets may be available only during a limited login window.",
+          "note_hi": "इस पुराने फ़ोल्डर में SSC प्रश्न-पत्र उपलब्ध नहीं हैं। उम्मीदवार response sheet सीमित समय के login window में ही मिल सकती है।"
         },
         "net": {
           "title_en": "NET",
           "title_hi": "यू.जी.सी. नेट",
           "icon": "🎓",
           "order": 7,
-          "note_en": "UGC NET / SET Computer Science papers.",
-          "note_hi": "यू.जी.सी. नेट कंप्यूटर साइंस पेपर।"
+          "note_en": "No NET papers are hosted in this legacy folder. The exam-wise directory links the official NTA archive.",
+          "note_hi": "इस पुराने फ़ोल्डर में NET पेपर उपलब्ध नहीं हैं। परीक्षा-वार सूची में NTA के आधिकारिक archive का लिंक है।"
         },
         "rpsc": {
           "title_en": "RPSC",
           "title_hi": "आर.पी.एस.सी.",
           "icon": "🏛️",
           "order": 8,
-          "note_en": "RPSC Programmer, AEN aur Assistant Professor papers.",
-          "note_hi": "आर.पी.एस.सी. प्रोग्रामर, AEN और असिस्टेंट प्रोफेसर पेपर।"
+          "note_en": "EkGuru currently hosts the RPSC Programmer 2024 Paper I copy and answer key; the source status is labelled on the exam page.",
+          "note_hi": "EkGuru पर अभी RPSC Programmer 2024 के Paper I की प्रति और उत्तर-कुंजी है; परीक्षा पेज पर स्रोत की स्थिति साफ़ बताई गई है।"
         }
       },
       "topics": [],
       "year_folders": {
-        "from": 2000,
-        "to": 2026,
-        "title_en": "Saal-wise (year-wise)",
-        "note_en": "Jis saal ka paper aa chuka hai wo gehra (blue) chip hai — us par click karke paper kholo. Halke chip wale saal ke paper jald aa rahe hain.",
-        "note_hi": "जिस साल का पेपर आ चुका है वह गहरा (नीला) चिप है — उस पर क्लिक करके पेपर खोलें। हल्के चिप वाले सालों के पेपर जल्द आ रहे हैं।"
+        "title_en": "Available years",
+        "title_hi": "उपलब्ध वर्ष",
+        "note_en": "Only years with a paper in this folder are shown. See the exam-wise source directory for official links and candidate-login notes.",
+        "note_hi": "इस फ़ोल्डर में जिन वर्षों के पेपर हैं, केवल वही वर्ष दिखते हैं। आधिकारिक लिंक और उम्मीदवार-लॉगिन की जानकारी के लिए परीक्षा-वार स्रोत सूची देखें।"
       }
     }
   ]

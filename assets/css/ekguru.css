@@ -366,6 +366,7 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
   .brand-mark { width: 36px; height: 36px; border-radius: 10px; font-size: 1.1rem; }
   .map-frame { padding: 0.5rem; border-radius: 12px; }
   .map-caption { font-size: 0.8rem; }
+  .pdf-viewer { min-height: 420px; height: 72vh; }
   .material-actions { width: 100%; }
   .material-actions .button { min-height: 44px; }
   .topic-actions .button, .card-actions .button { min-height: 44px; }
@@ -458,6 +459,61 @@ button.chip[aria-pressed="true"] { background: var(--primary); color: #fff; }
 .map-frame img { width: 100%; height: auto; border-radius: 12px; }
 .map-caption { color: var(--muted); font-size: 0.85rem; margin: 0.6rem 0.2rem 0; }
 .map-grid { display: grid; gap: 0.9rem; grid-template-columns: minmax(0, 1fr); }
+
+/* PDF preview --------------------------------------------------------------- */
+.pdf-viewer {
+  width: 100%;
+  min-height: 520px;
+  height: min(78vh, 860px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #e8ebf2;
+  box-shadow: var(--shadow);
+  margin: 0.75rem 0 1rem;
+}
+.pdf-viewer iframe { display: block; width: 100%; height: 100%; min-height: inherit; border: 0; background: #fff; }
+
+/* Previous-year paper directory -------------------------------------------- */
+.pyq-catalog { scroll-margin-top: 84px; }
+.pyq-group { margin-top: 2.1rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.pyq-group > .section-head { align-items: center; }
+.pyq-group > .section-head h3 { margin: 0; }
+.pyq-card-grid { display: grid; gap: 0.9rem; grid-template-columns: minmax(0, 1fr); }
+.pyq-exam-card { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; }
+.pyq-exam-card-head { display: flex; width: 100%; flex-wrap: wrap; gap: 0.45rem 0.75rem; align-items: flex-start; justify-content: space-between; }
+.pyq-exam-card-head h3 { margin: 0; }
+.pyq-title-hi { color: var(--muted); font-size: 0.92rem; margin: 0.2rem 0 0.7rem; }
+.pyq-exam-card .pyq-title-hi { margin: 0.25rem 0 0; }
+.pyq-summary { color: var(--ink-soft); margin: 0; }
+.pyq-summary-hi { color: var(--muted); font-size: 0.91rem; }
+.pyq-year-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.15rem 0 0.3rem; }
+.pyq-exam-card > .button { margin-top: auto; }
+.pyq-detail-year-nav { margin-top: 1rem; }
+.pyq-year-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); }
+.pyq-year-card { scroll-margin-top: 88px; }
+.pyq-year-head { display: flex; align-items: flex-start; gap: 0.65rem; }
+.pyq-year-head h2 { flex: 1; margin: 0; font-size: 1.2rem; }
+.pyq-year-note { color: var(--ink-soft); margin: 0.25rem 0 0.65rem; }
+.pyq-year-note-hi { color: var(--muted); font-size: 0.92rem; }
+.pyq-source-list { list-style: none; display: grid; gap: 0.5rem; padding: 0; margin: 0.75rem 0 0; }
+.pyq-link-item { min-width: 0; }
+.pyq-source-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.15rem 0.6rem;
+  align-items: center;
+  padding: 0.65rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.pyq-source-link:hover { border-color: var(--primary); background: var(--primary-soft); }
+.pyq-source-title { font-weight: 700; }
+.pyq-source-title-hi { color: var(--muted); font-size: 0.9rem; }
+.pyq-source-kind { justify-self: start; color: var(--ink-soft); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 0.12rem 0.5rem; font-size: 0.76rem; font-weight: 700; }
+.pyq-archive-list { max-width: 850px; }
 
 /* 9. test setup ------------------------------------------------------------ */
 .mode-switch { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.1rem; }
@@ -674,6 +730,7 @@ a.year-chip:hover { border-color: var(--primary); color: var(--primary-dark); }
 @media (min-width: 720px) {
   .hero-inner.has-media { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr); align-items: center; }
   .folder-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pyq-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
