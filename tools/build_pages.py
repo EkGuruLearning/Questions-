@@ -350,6 +350,69 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
         </li>"""
 
 
+# Links jo humne khud check kiye aur kaam nahi karte (HTTP error / error page).
+# Key = URL ka shuru ka hissa. Har entry ke saath check ki tareekh likhi hai.
+LINK_CHECKS = {
+    "https://www.rrbcdg.gov.in/uploads/": (
+        "2026-10-15",
+        "This PDF is linked from the RRB CDG site, which returned a server error when checked. Try the official homepage link below.",
+        "यह PDF RRB CDG की साइट से जुड़ा है, जाँच के समय साइट ने server error दिया। नीचे दी गई आधिकारिक homepage से खोजें।",
+    ),
+    "https://www.rrbcdg.gov.in/": (
+        "2026-10-15",
+        "The RRB CDG homepage returned a server error when checked. Try again later or use the backup search link.",
+        "RRB CDG की homepage जाँच के समय server error दे रही थी। बाद में फिर कोशिश करें या backup search link use करें।",
+    ),
+    "https://rpsc.rajasthan.gov.in/quespapers": (
+        "2026-10-15",
+        "This RPSC question-paper page shows an error page when checked. Use the RPSC homepage or the backup search below.",
+        "यह RPSC प्रश्न-पत्र पेज जाँच के समय error पेज दिखा रहा था। RPSC homepage या नीचे की backup search use करें।",
+    ),
+}
+
+
+def link_check_note(url: str) -> tuple[str, str] | None:
+    for prefix, (_date, note_en, note_hi) in LINK_CHECKS.items():
+        if url.startswith(prefix):
+            return note_en, note_hi
+    return None
+
+
+def official_backup_block(exam: dict) -> str:
+    """Har exam ke official domains ke liye homepage aur site-search link — ek link toote to dusra kaam aaye."""
+    urls = [s["url"] for s in exam.get("sources", [])]
+    urls += [link["url"] for year in exam["years"] for link in year["links"]]
+    hosts: list[str] = []
+    for url in urls:
+        parts = urllib.parse.urlsplit(url)
+        if parts.scheme != "https" or not parts.netloc or parts.netloc.endswith("drive.google.com"):
+            continue
+        if parts.netloc not in hosts:
+            hosts.append(parts.netloc)
+    if not hosts:
+        return ""
+    rows = []
+    for host in hosts[:4]:
+        home = f"https://{host}/"
+        query = urllib.parse.quote_plus(f"site:{host} {exam['title_en']} previous year question paper answer key")
+        search = f"https://www.google.com/search?q={query}"
+        rows.append(f"""<li class="pyq-link-item">
+          <a class="pyq-source-link" href="{esc(home)}" target="_blank" rel="noopener noreferrer">
+            <span class="pyq-source-title">{esc(host)} — official homepage <span aria-hidden="true">↗</span></span>
+            <span class="pyq-source-title-hi" lang="hi">{esc(host)} — आधिकारिक homepage</span>
+            <span class="pyq-source-kind">Backup · homepage</span>
+          </a>
+        </li>""")
+        rows.append(f"""<li class="pyq-link-item">
+          <a class="pyq-source-link" href="{esc(search)}" target="_blank" rel="noopener noreferrer">
+            <span class="pyq-source-title">Search {esc(host)} for this exam <span aria-hidden="true">↗</span></span>
+            <span class="pyq-source-title-hi" lang="hi">इस परीक्षा के लिए {esc(host)} पर खोजें</span>
+            <span class="pyq-source-kind">Backup · site search</span>
+          </a>
+        </li>""")
+    return "\n".join(rows)
+
+
 def paper_link_list(links: list[dict], from_page: str) -> str:
     """Render clearly labelled official, login-only and third-party paper links."""
     rows = []
@@ -360,11 +423,15 @@ def paper_link_list(links: list[dict], from_page: str) -> str:
         safety = ' target="_blank" rel="noopener noreferrer"' if external else ""
         marker = "↗" if external else "→"
         kind = PAPER_KINDS[link["kind"]]
+        note = link_check_note(target)
+        warning = (f'<span class="pyq-link-warning"><span aria-hidden="true">⚠</span> {esc(note[0])}'
+                   f'<span class="pyq-link-warning-hi" lang="hi">{esc(note[1])}</span></span>') if note else ""
         rows.append(f"""<li class="pyq-link-item">
           <a class="pyq-source-link" href="{esc(href)}"{safety}>
             <span class="pyq-source-title">{esc(link['label_en'])} <span aria-hidden="true">{marker}</span></span>
             <span class="pyq-source-title-hi" lang="hi">{esc(link['label_hi'])}</span>
             <span class="pyq-source-kind">{esc(kind)}</span>
+            {warning}
           </a>
         </li>""")
     return "\n".join(rows)
@@ -576,21 +643,29 @@ class Builder:
         detail_href = href_from(rel_path, "subjects/previous-year-papers/index.html")
         group_title = group["title_en"]
         year_cards = []
-        for year in exam["years"]:
+        for index, year in enumerate(exam["years"]):
             label = str(year["year"])
             year_id = paper_year_id(label)
-            year_cards.append(f"""      <article class="card pyq-year-card" id="{esc(year_id)}">
-        <div class="pyq-year-head">
+            # Mobile par sab saal ek saath khule to page bahut lamba ho jata hai:
+            # har saal collapsible hai, sirf sabse naya saal (pehla) shuru me khula rehta hai.
+            open_attr = " open" if index == 0 else ""
+            year_cards.append(f"""      <details class="card pyq-year-card" id="{esc(year_id)}"{open_attr}>
+        <summary class="pyq-year-summary">
           <span class="chip green">{esc(label)}</span>
-          <h2>{esc(year['title_en'])}</h2>
-        </div>
-        <p class="pyq-title-hi" lang="hi">{esc(year['title_hi'])}</p>
+          <span class="pyq-year-summary-text">
+            <strong>{esc(year['title_en'])}</strong>
+            <span class="pyq-title-hi" lang="hi">{esc(year['title_hi'])}</span>
+          </span>
+          <span class="pyq-year-toggle" aria-hidden="true">▾</span>
+        </summary>
+        <div class="pyq-year-body">
         <p class="pyq-year-note">{esc(year.get('note_en', ''))}</p>
         <p class="pyq-year-note pyq-year-note-hi" lang="hi">{esc(year.get('note_hi', ''))}</p>
         <ul class="pyq-source-list">
 {paper_link_list(year['links'], rel_path)}
         </ul>
-      </article>""")
+        </div>
+      </details>""")
         archive_links = paper_link_list(exam.get("sources", []), rel_path) or (
             '<li class="muted small">No separate archive link is listed.</li>'
         )
@@ -618,6 +693,13 @@ class Builder:
     </section>
     <section class="section" id="source-archives">
       <div class="section-head"><h2>Official archives and exam information</h2></div>
+      <div class="pyq-backup">
+        <h3>Agar upar ka link na khule to</h3>
+        <p class="section-note">Upar ke direct link kabhi server error ya login page dikhate hain. Neeche official homepage aur site-search se wahi paper dhoondhein.</p>
+        <ul class="pyq-source-list">
+{official_backup_block(exam)}
+        </ul>
+      </div>
       <p class="section-note">Use the archive to confirm the notification, paper set, shift, discipline and answer-key status. A response sheet may require candidate login and may only remain available temporarily.</p>
       <ul class="pyq-source-list pyq-archive-list">
 {archive_links}
@@ -645,6 +727,7 @@ class Builder:
       <div class="pdf-viewer">
         <iframe src="{viewer_src}" title="Preview of the Rajasthan district and border atlas PDF" loading="lazy"></iframe>
       </div>
+      <p class="pdf-mobile-note">Mobile par PDF preview kai phone browsers me nahi khulta — neeche button se PDF seedha kholo ya download karo.</p>
       <div class="button-row">
         <a class="button primary" href="{pdf_href}" target="_blank" rel="noopener noreferrer">Open A4 PDF ↗</a>
         <a class="button secondary" href="{pdf_href}" download>Download A4 PDF</a>
