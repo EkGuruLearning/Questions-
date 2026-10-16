@@ -21,15 +21,18 @@ Inputs:
 
 Anything not described in the catalogue gets a sensible label derived from its
 own name (`reasoning/tests/` -> "Tests"; `DSSSB-2019-Paper-1.pdf` -> "DSSSB 2019
-Paper 1"; `previous-year-papers` -> "Previous Year Papers").
+Paper 1"; `previous-year-papers` -> "Previous Year Papers"), and every file gets
+a name-derived bilingual description (title + description sath me) — PDF ho ya
+picture, naye folder bina code likhe apne aap dikh jate hain.
 
 The build fails (instead of shipping a wrong page) when:
 
 1. A file listed in `materials.json` does not exist on disk (typo protection).
 2. A folder/`?folder=` route points somewhere that is not a real folder.
 3. A folder declared in `subjects.json` does not exist on disk.
-4. A picture has no up-to-date preview from `tools/build_thumbs.py`, or — when it
-   is described in `materials.json` — no alt text / description for search engines.
+4. A picture described in `materials.json` has no alt text / description for
+   search engines. (Bina catalogue entry wali picture kabhi fail nahi karti:
+   halka preview na ho to asli file hi preview ban jati hai.)
 5. A topic referenced by a file is not a topic of that subject's question bank.
 
 Run:
@@ -55,8 +58,8 @@ BANKS = ROOT / "data/banks"
 THUMB_MANIFEST = ROOT / "data/thumbs/manifest.json"
 OUTPUT = ROOT / "data/site.json"
 
-CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
-PICTURE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".svg"}
+CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg", ".avif", ".gif"}
+PICTURE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".avif", ".gif"}
 # Names that must stay in capitals when a filename is turned into a label.
 ACRONYMS = {
     "ia", "sci", "dsssb", "ssc", "net", "rssb", "rpsc", "pyq", "cgl", "chsl", "mts",
@@ -243,34 +246,44 @@ def build_file_record(subject: dict, rel: str, raw: dict, thumbs: dict) -> dict:
     thumb = None
     if suffix in PICTURE_SUFFIXES:
         entry = thumbs.get(rel)
-        if entry is None or not (ROOT / entry["thumb"]).is_file():
-            raise SystemExit(
-                f"FAIL: {rel} has no site preview — run python3 tools/build_thumbs.py "
-                "(it writes data/thumbs/, which is what the pages load)"
-            )
-        thumb = {"url": url_for(entry["thumb"]), "bytes": (ROOT / entry["thumb"]).stat().st_size}
+        if entry is not None and (ROOT / entry["thumb"]).is_file():
+            # thumb_url = data/thumbs/ me asli (unquoted) path — URL encoding render par hoti hai
+            thumb = {"url": entry["thumb"], "bytes": (ROOT / entry["thumb"]).stat().st_size}
+        else:
+            # abhi tak halka preview nahi bana (tools/build_thumbs.py) — asli picture
+            # hi preview ke roop me dikhegi, build kabhi fail nahi hoga
+            thumb = {"url": rel, "bytes": size}
 
     is_picture = suffix in PICTURE_SUFFIXES
     alt_en = (raw.get("alt_en") or "").strip()
     alt_hi = (raw.get("alt_hi") or "").strip()
     description_en = (raw.get("description_en") or "").strip()
     description_hi = (raw.get("description_hi") or "").strip()
+    if is_picture and raw:
+        for field, value in (
+            ("alt_en", alt_en), ("alt_hi", alt_hi),
+            ("description_en", description_en), ("description_hi", description_hi),
+        ):
+            if not value:
+                raise SystemExit(
+                    f"FAIL: {rel} is described in materials.json, so it needs a non-empty '{field}' "
+                    "(SEO alt text / description)"
+                )
     if is_picture:
-        if raw:
-            for field, value in (
-                ("alt_en", alt_en), ("alt_hi", alt_hi),
-                ("description_en", description_en), ("description_hi", description_hi),
-            ):
-                if not value:
-                    raise SystemExit(
-                        f"FAIL: {rel} is described in materials.json, so it needs a non-empty '{field}' "
-                        "(SEO alt text / description)"
-                    )
-        else:
-            alt_en = alt_en or title_en
-            alt_hi = alt_hi or title_hi
-            description_en = description_en or f"{title_en} — preview dekho ya poori file download karo."
-            description_hi = description_hi or f"{title_hi} — प्रीव्यू देखें या पूरी फ़ाइल डाउनलोड करें।"
+        alt_en = alt_en or title_en
+        alt_hi = alt_hi or title_hi
+    folder_label = humanize(folder.rsplit("/", 1)[-1])
+    # har file (PDF ho ya picture) ko naam se milti-julti description — bina code likhe
+    description_en = description_en or (
+        f"{title_en} — {subject['title_en']} · {folder_label} folder ka "
+        f"{suffix.lstrip('.').upper()} study material, file ke naam se bana label. "
+        "Online preview dekho ya poori file free me download karo."
+    )
+    description_hi = description_hi or (
+        f"{title_hi} — {subject['title_hi']} · {folder_label} फ़ोल्डर का "
+        f"{suffix.lstrip('.').upper()} स्टडी मटेरियल, फ़ाइल के नाम से बना लेबल। "
+        "ऑनलाइन प्रीव्यू देखें या पूरी फ़ाइल मुफ़्त में डाउनलोड करें।"
+    )
 
     return {
         "id": rel.split("/", 1)[1].replace("/", "-").rsplit(".", 1)[0],
@@ -317,6 +330,16 @@ def build_tree(subject: dict, files: list[dict]) -> dict:
 
     for item in files:
         node_for(item["folder"])["files"].append(item)
+    # disk ka har folder website par dikhta hai — khali ho ya bharpoor, jitna bhi
+    # gehra ho (content/<subject>/a/b/c ...) — bina code/catalogue likhe
+    subject_dir = CONTENT / subject["id"]
+    for path in sorted(subject_dir.rglob("*")):
+        if not path.is_dir():
+            continue
+        rel_parts = path.relative_to(subject_dir).parts
+        if any(part.startswith(".") for part in rel_parts):
+            continue
+        node_for("/".join(rel_parts))
     for folder in labels:  # declared-but-empty folders still show up on the site
         if folder not in nodes:
             on_disk = CONTENT / subject["id"] / folder

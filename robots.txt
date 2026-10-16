@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ekgurulearning.github.io/Questions-/sitemap.xml

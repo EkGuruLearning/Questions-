@@ -77,16 +77,18 @@ Website ka folder view `content/` ke asli folders se banta hai:
 ## 4. Recipes
 
 ### Nayi PDF student ko dena hai
-1. File `content/<subject>/<folder>/` me rakho (naam me topic prefix, e.g. `T03-...`).
-2. `data/catalog/materials.json` me entry: `file`, `subject`, `topic` (ya `null`),
-   `order`, `title_en`, `title_hi`, `note_en`, `note_hi`.
-3. Naya folder banaya? `data/catalog/subjects.json` ke `folders` me uska label likho
-   (`title_en`, `title_hi`, `note_en`, `note_hi`, `icon`, `order`) — site par folder card apne aap ban jayega.
-4. Picture (map/PNG) hai to `python3 tools/build_thumbs.py` — halka preview `data/thumbs/` me banta hai,
-   jise website thumbnail ke liye use karti hai (full file dekho/download ke liye alag rehti hai).
-   Picture ke entry me `alt_en`, `alt_hi`, `description_en`, `description_hi` bhi likho — alt text image
-   SEO hai aur description folder view me map ke neeche dikhti hai (kitne jile, kis se seema lagti hai etc.).
-5. `python3 tools/build_catalog.py && python3 tools/validate_site.py`
+1. File `content/<subject>/<folder>/` me rakho (naam me topic prefix, e.g. `T03-...`) —
+   jitne chahe folder/andar ke folder banao, sab apne aap dikhenge. Title aur description
+   file ke naam se apne aap bante hain (Hindi + English).
+2. Build chalao (bas ek baar): `python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
+   — picture ke liye halka preview bhi `data/thumbs/` me apne aap ban jata hai
+   (ImageMagick chahiye; na ho to website asli picture hi dikha degi).
+3. Bas — folder card, file row (title + description + preview + download) aur us folder ka
+   SEO-ready page (title, description, keywords, canonical, OG/Twitter, JSON-LD) taiyar.
+4. *Optional sundarta:* `data/catalog/subjects.json` me folder/subject ka apna
+   `title_en`, `title_hi`, `note_en`, `note_hi`, `icon`, `order` likh do; `data/catalog/materials.json`
+   me file ke liye `title_en`, `title_hi`, `note_en`, `note_hi`, `topic`, `order` aur picture ke liye
+   `alt_en`, `alt_hi`, `description_en`, `description_hi` (image SEO). Catalogue ke bina bhi sab chalta hai.
 
 ### Nayi quiz/test file (HTML) banani hai?
 Zaroorat nahi — topic-wise aur full-mix test site ke andar hi hai. Naya topic add karne ke liye
@@ -94,9 +96,10 @@ Zaroorat nahi — topic-wise aur full-mix test site ke andar hi hai. Naya topic 
 `tools/build_site_data.py` + `tools/build_catalog.py`.
 
 ### Naya subject / naya map folder
-`data/catalog/subjects.json` me subject (aur uske `folders`) add karo, `content/<subject>/...` me
-files rakho, routes banao, `data/catalog/site-routes.txt` me pages likho, phir builder + validator
-chalao. Map ke liye jaise `content/rajasthan-geography/map/<state>/` — folder khud site par aa jayega.
+`content/<subject>/...` me folder/files rakho aur upar wala build chalao — subject card, folder
+pages aur routes (`data/catalog/site-routes.txt`) sab apne aap ban jate hain. Hindi naam, icon,
+note, order ya online test chahiye to `data/catalog/subjects.json` me us entry ko likh do. Map ke
+liye jaise `content/rajasthan-geography/map/<state>/` — folder khud site par aa jayega.
 
 ### Question bank ke sections
 Test page section filter topic ke `subtopic` se banata hai (canonical bank ke sections). Section ka
@@ -114,9 +117,14 @@ chhota naam builder nikalta hai: "Section A - DC Components & Protocol Basics (�
 ## 5b. Naya subject ya folder — bina code change
 
 1. `content/<subject>/<folder>/` banao aur file daalo (khali chhodna ho to `.gitkeep` rakho taaki git me rahe).
-2. `python3 tools/build_thumbs.py && python3 tools/build_catalog.py`.
-3. Subject/folder card apne aap ban jayega (naam se label). Hindi naam, icon, note, order ya
-   "subject ka online test bhi hai" chahiye to `data/catalog/subjects.json` me us entry ko likh do.
+   Andar ke andar ke folders bhi chalega — PDF, PNG/JPG/WebP/AVIF/GIF sab dikhte hain, title aur
+   description file ke naam se apne aap (Hindi + English) bante hain.
+2. `python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
+   (sitemap.xml aur robots.txt bhi isi me update ho jate hain).
+3. Subject/folder card, uska SEO-ready page aur links apne aap ban jayenge (naam se label).
+   Hindi naam, icon, note, order ya "subject ka online test bhi hai" chahiye to
+   `data/catalog/subjects.json` me us entry ko likh do. Folder delete kiya to next build uske
+   purane pages bhi hata deta hai.
 
 ## 6. Local preview
 

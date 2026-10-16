@@ -100,7 +100,7 @@ class GeneratedDataTests(unittest.TestCase):
         self.assertFalse((ROOT / "Computer Network").exists())
 
     def test_only_student_material_lives_under_content(self):
-        suffixes = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
+        suffixes = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg", ".avif", ".gif"}
         for path in (ROOT / "content").rglob("*"):
             if path.is_file():
                 with self.subTest(path=path.as_posix()):
