@@ -12,7 +12,7 @@ ROUTES = ROOT / "data/catalog/site-routes.txt"
 PAPER_CATALOG = ROOT / "data/catalog/previous-year-papers.json"
 BANK_MANIFEST = ROOT / "data/banks/cn/manifest.json"
 
-CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg"}
+CONTENT_SUFFIXES = {".pdf", ".png", ".jpg", ".jpeg", ".webp", ".svg", ".avif", ".gif"}
 FOLDER_FIELDS = ("title_en", "title_hi", "icon", "file_count", "total_bytes", "file_types")
 
 
@@ -274,7 +274,7 @@ class SiteDataTests(unittest.TestCase):
                     self.assertEqual(len(raw), item["bytes"])
                     self.assertEqual(hashlib.sha256(raw).hexdigest(), item["sha256"])
                     self.assertFalse(item["title_en"].lower().endswith(".md"))
-                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}:
+                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG", "AVIF", "GIF"}:
                         self.assertTrue(item["thumb_url"], f"{item['repo_path']} needs a light preview")
                         thumb = ROOT / item["thumb_url"]
                         self.assertTrue(thumb.is_file(), item["thumb_url"])
@@ -315,7 +315,7 @@ class SiteDataTests(unittest.TestCase):
 
     def test_pictures_carry_real_seo_text(self):
         pictures = [item for subject in self.site["subjects"] for item in subject["files"]
-                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}]
+                    if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG", "AVIF", "GIF"}]
         self.assertTrue(pictures)
         for item in pictures:
             with self.subTest(item=item["repo_path"]):
@@ -344,7 +344,7 @@ class SiteDataTests(unittest.TestCase):
     def test_image_previews_are_current_and_light(self):
         thumbs = json.loads((ROOT / "data/thumbs/manifest.json").read_text(encoding="utf-8"))["thumbs"]
         images = [item for subject in self.site["subjects"] for item in subject["files"]
-                  if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}]
+                  if item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG", "AVIF", "GIF"}]
         self.assertTrue(images, "the site should publish at least one picture")
         self.assertEqual({item["repo_path"] for item in images}, set(thumbs))
         for item in images:

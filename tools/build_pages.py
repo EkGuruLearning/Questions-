@@ -22,6 +22,10 @@ The pages are written straight into the folders the site already publishes:
                                                    verified year-wise exam source pages
     subjects/computer-network/material/index.html  (kept: older links still work)
     subjects/computer-network/test/index.html      (hand-written: the online test app)
+    sitemap.xml, robots.txt                        har page + file ka SEO sitemap
+
+Har page ka <head> SEO-ready hota hai: unique title, description, keywords, canonical URL,
+Open Graph / Twitter cards aur schema.org breadcrumb JSON-LD.
 
 Inputs: data/site.json (tools/build_catalog.py), data/catalog/subjects.json (labels) and
 `data/catalog/previous-year-papers.json` (verified exam/year source records).
@@ -41,6 +45,7 @@ import re
 import struct
 import sys
 import urllib.parse
+from datetime import date
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = ROOT / "data/site.json"
@@ -61,6 +66,42 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' "
            "text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E")
 BRAND_TAGLINE = "Study material, previous year papers aur online test — sab free, koi login nahi."
+# GitHub Pages project URL — canonical, og:url aur sitemap isi se judte hain.
+SITE_URL = "https://ekgurulearning.github.io/Questions-/"
+OG_IMAGE = "assets/img/ekguru-og-card.png"
+
+
+def canonical_for(page_path: str) -> str:
+    """`subjects/x/index.html` -> `https://…/Questions-/subjects/x/` (folder URL hi canonical hai)."""
+    if page_path == "index.html":
+        path = ""
+    elif page_path.endswith("/index.html"):
+        path = page_path[: -len("index.html")]
+    else:
+        path = page_path
+    return urllib.parse.urljoin(SITE_URL, path)
+
+
+def auto_keywords(title: str) -> str:
+    """Title se keywords (catalogue me keywords na likhe hon to bhi har page par SEO keywords)."""
+    parts = [part.strip() for part in re.split(r"\s*[—|·:]\s*", title) if part.strip()]
+    parts.append("EkGuru Learning")
+    parts += ["study material", "PDF download", "notes", "online test", "Hindi English"]
+    return ", ".join(dict.fromkeys(parts))
+
+
+def breadcrumb_jsonld(page_path: str, breadcrumbs: list | None) -> dict | None:
+    """crumbs() jaisa [(label, href)] list -> schema.org BreadcrumbList."""
+    if not breadcrumbs:
+        return None
+    items = []
+    for position, (label, href) in enumerate(breadcrumbs, start=1):
+        if href:
+            item_url = urllib.parse.urljoin(SITE_URL + page_path, href)
+        else:
+            item_url = canonical_for(page_path)
+        items.append({"@type": "ListItem", "position": position, "name": label, "item": item_url})
+    return {"@type": "BreadcrumbList", "itemListElement": items}
 
 
 # --------------------------------------------------------------------------- html
@@ -243,12 +284,42 @@ def image_size(rel_path: str) -> tuple[int, int] | None:
 
 
 def head(title: str, description: str, depth: int, extra_head: str = "", extra_body: str = "",
-         keywords: str = "", structured_data: str = "") -> str:
+         keywords: str = "", structured_data: str = "",
+         page_path: str = "", breadcrumbs: list | None = None) -> str:
+    """Poore site ka <head>: title + description + keywords + canonical + OG + Twitter + JSON-LD.
+
+    page_path  = page ka repo path (jaise `subjects/reasoning/theory/index.html`) — canonical,
+                 og:url aur sitemap isi se bante hain.
+    breadcrumbs = crumbs() jaisa [(label, href)] list — SEO breadcrumb JSON-LD isi se.
+    """
     prefix = rel(depth)
-    keyword_line = f'\n  <meta name="keywords" content="{esc(keywords)}">' if keywords else ""
-    extra_head = extra_head + keyword_line
+    keywords = keywords or auto_keywords(title)
+    canonical = canonical_for(page_path) if page_path else ""
+    og_image = urllib.parse.urljoin(SITE_URL, OG_IMAGE)
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": title,
+        "description": description,
+        "inLanguage": ["hi", "en"],
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "EkGuru Learning",
+            "url": SITE_URL,
+            "publisher": {"@type": "Organization", "name": "EkGuru Learning", "url": SITE_URL},
+        },
+    }
+    if canonical:
+        ld["url"] = canonical
+    breadcrumb_ld = breadcrumb_jsonld(page_path, breadcrumbs)
+    if breadcrumb_ld:
+        ld["breadcrumb"] = breadcrumb_ld
+    ld_text = json.dumps(ld, ensure_ascii=False, indent=2)
+    extra_struct = ""
     if structured_data:
-        extra_head += f'\n  <script type="application/ld+json">\n{structured_data}\n  </script>'
+        extra_struct = f'\n  <script type="application/ld+json">\n{structured_data}\n  </script>'
+    canonical_line = f'\n  <link rel="canonical" href="{esc(canonical)}">' if canonical else ""
+    og_url_line = f'\n  <meta property="og:url" content="{esc(canonical)}">' if canonical else ""
     return f"""<!doctype html>
 <html lang="hi">
 <head>
@@ -256,9 +327,29 @@ def head(title: str, description: str, depth: int, extra_head: str = "", extra_b
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#4f46e5">
   <meta name="description" content="{esc(description)}">
-  <title>{esc(title)}</title>
+  <meta name="keywords" content="{esc(keywords)}">
+  <meta name="author" content="PRAKASH — EkGuru Learning">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <title>{esc(title)}</title>{canonical_line}
   <link rel="icon" href="{FAVICON}">
-  <link rel="stylesheet" href="{prefix}assets/css/ekguru.css">{extra_head}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EkGuru Learning">
+  <meta property="og:locale" content="hi_IN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(description)}">{og_url_line}
+  <meta property="og:image" content="{esc(og_image)}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EkGuru Learning — study material, previous year papers aur online test">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:description" content="{esc(description)}">
+  <meta name="twitter:image" content="{esc(og_image)}">
+  <link rel="stylesheet" href="{prefix}assets/css/ekguru.css">
+  <script type="application/ld+json">
+{ld_text}
+  </script>{extra_struct}{extra_head}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -316,7 +407,7 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
     href = url_for(href_from(from_page, item["repo_path"])) if from_page else prefix + url_for(item["repo_path"])
     viewer_base = href_from(from_page, "subjects/reader/index.html") if from_page else prefix + "subjects/reader/index.html"
     viewer_href = viewer_base + "?" + urllib.parse.urlencode({"file": item["repo_path"]})
-    is_picture = item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG"}
+    is_picture = item["file_type"] in {"PNG", "JPG", "JPEG", "WEBP", "SVG", "AVIF", "GIF"}
     thumb = ""
     if is_picture and item.get("thumb_url"):
         thumb_src = url_for(href_from(from_page, item["thumb_url"])) if from_page else prefix + url_for(item["thumb_url"])
@@ -326,7 +417,7 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
                  f'<img src="{esc(thumb_src)}" alt="{esc(item["alt_en"] or item["title_en"])}"{size_attrs} '
                  f'loading="lazy" decoding="async"><span class="file-thumb-open">Poora dekho</span></a>')
     description = ""
-    if is_picture and item.get("description_en"):
+    if item.get("description_en"):
         description = f'<p class="file-description" lang="en">{esc(item["description_en"])}</p>'
         if item.get("description_hi"):
             description += f'<p class="file-description" lang="hi">{esc(item["description_hi"])}</p>'
@@ -679,11 +770,12 @@ class Builder:
         title = f"{exam['title_en']} — Previous Year Papers — EkGuru Learning"
         description = (f"Year-wise previous-year paper sources for {exam['title_en']}. "
                        "Official papers, answer keys, candidate-login and third-party practice are labelled separately.")
-        body = f"""{head(title, description, depth)}
+        crumb_parts = [('Home', href_from(rel_path, 'index.html')), ('Previous Year Papers', detail_href), (exam['title_en'], '')]
+        body = f"""{head(title, description, depth, page_path=rel_path, breadcrumbs=crumb_parts)}
 {header(depth, self.nav, "previous-year-papers")}
   <main id="main" class="shell">
     <section class="section">
-      {crumbs([('Home', href_from(rel_path, 'index.html')), ('Previous Year Papers', detail_href), (exam['title_en'], '')])}
+      {crumbs(crumb_parts)}
       <span class="eyebrow">{esc(group_title)}</span>
       <h1>{esc(exam['title_en'])}</h1>
       <p class="pyq-title-hi" lang="hi">{esc(exam['title_hi'])}</p>
@@ -850,11 +942,14 @@ class Builder:
       <h1>{esc(subject['title_en'])}</h1>
       <p class="section-note">{esc(subject['intro_en'] or subject['tagline_en'])}</p>"""
 
-        body = f"""{head(title, description, 2, keywords=extras.get('keywords', ''), structured_data=extras.get('structured_data', ''))}
+        crumb_parts = [('Home', href_from(subject_page_rel, 'index.html')),
+                       ('All Subjects', href_from(subject_page_rel, 'subjects/index.html')),
+                       (subject["title_en"], '')]
+        body = f"""{head(title, description, 2, keywords=extras.get('keywords', ''), structured_data=extras.get('structured_data', ''), page_path=subject_page_rel, breadcrumbs=crumb_parts)}
 {header(2, self.nav, slug)}{hero}
   <main id="main" class="shell">
     <section class="section">
-      {crumbs([('Home', href_from(subject_page_rel, 'index.html')), ('All Subjects', href_from(subject_page_rel, 'subjects/index.html')), (subject["title_en"], '')])}{intro}
+      {crumbs(crumb_parts)}{intro}
       <div class="button-row">
 {subject_actions}
       </div>
@@ -886,7 +981,8 @@ class Builder:
         pieces = breadcrumb_parts(subject, node, rel_path)
         title = f'{node["title_en"]} — {subject["title_en"]} — EkGuru Learning'
         description = (f'{node["title_en"]} ({node["title_hi"]}) — {subject["title_en"]}: '
-                       f'{plural(node["file_count"], "file", "files")}.')
+                       f'{plural(node["file_count"], "file", "files")}. Folder kholo — '
+                       f'file ka title aur description dekho, online preview ya free PDF download karo.')
         sub_tiles = "".join(
             folder_tile(child, self.folder_href_from(subject, child, depth, rel_path))
             for child in node["folders"]
@@ -920,7 +1016,7 @@ class Builder:
                       else '        <p class="empty-state">Is folder ka material jald aa raha hai. '
                            'Tab tak doosre subjects ka material dekh lo.</p>')
         quick = [("All subjects", "subjects/index.html"), ("Home", "index.html")]
-        body = f"""{head(title, description, depth)}
+        body = f"""{head(title, description, depth, page_path=rel_path, breadcrumbs=pieces)}
 {header(depth, self.nav, subject["slug"])}
   <main id="main" class="shell">
     <section class="section">
@@ -980,7 +1076,7 @@ class Builder:
         title = "EkGuru Learning — study material, previous year papers aur online test"
         description = ("EkGuru Learning by PRAKASH — Computer Network, Reasoning, Rajasthan Geography maps "
                        "aur Previous Year Papers (RPSC, DSSSB, SSC, NET). Folder-wise PDF aur online test, free.")
-        body = f"""{head(title, description, 0)}
+        body = f"""{head(title, description, 0, page_path="index.html")}
 {header(0, self.nav)}
   <section class="hero">
     <div class="shell hero-inner">
@@ -1039,11 +1135,12 @@ class Builder:
             {f'<a class="button secondary" href="{rel(1)}{esc(subject["test_route"])}">Test do</a>' if subject.get('test_route') else ''}
           </div>
         </article>""")
-        body = f"""{head("All subjects — EkGuru Learning", "EkGuru Learning ke saare subjects — Computer Network, Reasoning, Rajasthan Geography aur Previous Year Papers.", 1)}
+        crumb_parts = [('Home', '../index.html'), ('All Subjects', '')]
+        body = f"""{head("All subjects — EkGuru Learning", "EkGuru Learning ke saare subjects — Computer Network, Reasoning, Rajasthan Geography aur Previous Year Papers. Folder-wise free PDF study material, maps aur online test.", 1, page_path="subjects/index.html", breadcrumbs=crumb_parts)}
 {header(1, self.nav, "all")}
   <main id="main" class="shell">
     <section class="section">
-      {crumbs([('Home', '../index.html'), ('All Subjects', '')])}
+      {crumbs(crumb_parts)}
       <span class="eyebrow">Subjects</span>
       <h1>Saare subjects</h1>
       <p class="section-note">Subject chuno → folder kholo → file dekho ya download karo.</p>
@@ -1057,11 +1154,12 @@ class Builder:
         self.add("subjects/index.html", body)
 
     def reader(self) -> None:
-        body = f"""{head("PDF & Map Reader — EkGuru Learning", "Mobile-friendly PDF and map reader. Page-wise reading, zoom and direct downloads.", 2, extra_head='<script type="module" src="../../assets/js/viewer.mjs"></script>')}
+        crumb_parts = [('Home', '../../index.html'), ('All Subjects', '../index.html'), ('PDF / Map Reader', '')]
+        body = f"""{head("PDF & Map Reader — EkGuru Learning", "Mobile-friendly PDF and map reader. Page-wise reading, zoom aur direct download — koi app install nahi.", 2, extra_head='<script type="module" src="../../assets/js/viewer.mjs"></script>', page_path="subjects/reader/index.html", breadcrumbs=crumb_parts)}
 {header(2, self.nav)}
   <main id="main" class="shell">
     <section class="section">
-      {crumbs([('Home', '../../index.html'), ('All Subjects', '../index.html'), ('PDF / Map Reader', '')])}
+      {crumbs(crumb_parts)}
       <h1 id="readerTitle">PDF / Map Reader</h1>
       <p id="readerStatus" role="status" aria-live="polite">File load ho rahi hai…</p>
       <noscript>Reader ke liye JavaScript on karein. Subject folder par Original / Download links bina JavaScript ke bhi kaam karte hain.</noscript>
@@ -1098,11 +1196,12 @@ class Builder:
             folder_tile(node, f'../{node["path"]}/index.html')
             for node in subject["tree"]["folders"]
         )
-        body = f"""{head("Study Material — Computer Network — EkGuru Learning", "Computer Network ke saare PDF folder-wise — theory, practice, answers, tests, reference.", 3)}
+        crumb_parts = [('Home', '../../../index.html'), ('Computer Network', '../index.html'), ('Study Material', '')]
+        body = f"""{head("Study Material — Computer Network — EkGuru Learning", "Computer Network ke saare PDF folder-wise — theory, practice, answers, tests, reference. Free download.", 3, page_path="subjects/computer-network/material/index.html", breadcrumbs=crumb_parts)}
 {header(3, self.nav, "computer-network")}
   <main id="main" class="shell">
     <section class="section">
-      {crumbs([('Home', '../../../index.html'), ('Computer Network', '../index.html'), ('Study Material', '')])}
+      {crumbs(crumb_parts)}
       <h1>Study Material</h1>
       <p class="section-note">Folder kholo → file dekho ya download karo. Test dene ke liye
         <a href="../test/index.html">Online Test</a> kholo.</p>
@@ -1114,6 +1213,60 @@ class Builder:
 
 {footer(3, self.subjects, [('Home', 'index.html'), ('Computer Network', 'subjects/computer-network/index.html'), ('Online test', 'subjects/computer-network/test/index.html')])}"""
         self.add("subjects/computer-network/material/index.html", body)
+
+    def seo_files(self) -> None:
+        """sitemap.xml (har page + har student file) aur robots.txt — search engines ke liye."""
+        today = date.today().isoformat()
+        seen: dict[str, str] = {}
+        for path, _ in self.written:
+            rel_path = path.relative_to(ROOT).as_posix()
+            if rel_path.endswith(".html"):
+                seen[canonical_for(rel_path)] = today
+        # haath se likhe hue pages bhi sitemap me (404 ko chhod ke)
+        for rel_path in ("subjects/computer-network/test/index.html",):
+            if (ROOT / rel_path).is_file():
+                seen[canonical_for(rel_path)] = today
+        for subject in self.subjects:
+            for record in subject["files"]:
+                seen[urllib.parse.urljoin(SITE_URL, record["url"])] = today
+        rows = "".join(
+            f"  <url>\n    <loc>{esc(loc)}</loc>\n    <lastmod>{lastmod}</lastmod>\n  </url>\n"
+            for loc, lastmod in sorted(seen.items())
+        )
+        self.add("sitemap.xml",
+                 '<?xml version="1.0" encoding="UTF-8"?>\n'
+                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                 f"{rows}</urlset>\n")
+        self.add("robots.txt",
+                 "User-agent: *\n"
+                 "Allow: /\n"
+                 "\n"
+                 f"Sitemap: {SITE_URL}sitemap.xml\n")
+
+
+def stale_generated_pages(written: set[str]) -> list[str]:
+    """Aise generated pages jo content/ ke folder ke gayab hone ke baad bache hain.
+
+    Haath se likhe hue pages (online test app) hata nahi sakte — sirf wahi pages
+    jinhe builder banata hai unme se extra mile to hatao.
+    """
+    keep = {"subjects/computer-network/test/index.html"}
+    found = []
+    for path in sorted((ROOT / "subjects").rglob("*.html")):
+        rel_path = path.relative_to(ROOT).as_posix()
+        if rel_path in written or rel_path in keep:
+            continue
+        found.append(rel_path)
+    return found
+
+
+def prune_generated_page(rel_path: str) -> None:
+    path = ROOT / rel_path
+    path.unlink(missing_ok=True)
+    parent = path.parent
+    while parent != ROOT / "subjects" and parent.is_dir() and not any(parent.iterdir()):
+        parent.rmdir()
+        parent = parent.parent
 
 
 def main() -> int:
@@ -1138,7 +1291,9 @@ def main() -> int:
         builder.subject_page(subject)
     builder.paper_exam_pages()
     builder.legacy_material()
+    builder.seo_files()
 
+    written_rels = {path.relative_to(ROOT).as_posix() for path, _ in builder.written}
     stale = []
     for path, content in builder.written:
         rel_path = path.relative_to(ROOT).as_posix()
@@ -1149,17 +1304,27 @@ def main() -> int:
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
 
+    leftover = stale_generated_pages(written_rels)
     if args.check:
         if stale:
             print("FAIL: pages are missing or out of date:\n  - " + "\n  - ".join(stale))
             print("      run: python3 tools/build_pages.py")
             return 1
+        if leftover:
+            print("FAIL: stale page(s) from removed content folders:\n  - " + "\n  - ".join(leftover))
+            print("      run: python3 tools/build_pages.py")
+            return 1
         print(f"PASS: {len(builder.written)} generated page(s) match data/site.json.")
         return 0
+
+    for rel_path in leftover:
+        prune_generated_page(rel_path)
 
     print(f"wrote {len(builder.written)} page(s):")
     for path, _ in sorted(builder.written, key=lambda item: item[0].as_posix()):
         print("  " + path.relative_to(ROOT).as_posix())
+    for rel_path in leftover:
+        print(f"  removed stale page {rel_path}")
     return 0
 
 

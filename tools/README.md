@@ -5,9 +5,9 @@
 | Command | Kaam |
 |---|---|
 | `python3 tools/build_site_data.py` | Canonical bank → `data/banks/cn/manifest.json` + topic chunks. `--check` verify karta hai |
-| `python3 tools/build_thumbs.py` | Picture files ke halke preview (`data/thumbs/`) → website thumbnails. `--check` verify karta hai. Naya picture add karne par ImageMagick chahiye |
-| `python3 tools/build_catalog.py` | Catalogue inputs + previews + chunks → `data/site.json` (alt/description = image SEO). `--check` verify karta hai |
-| `python3 tools/build_pages.py` | `data/site.json` + `data/catalog/previous-year-papers.json` → plain HTML pages, year-wise exam source pages and the Rajasthan map PDF preview. `--check` verify karta hai |
+| `python3 tools/build_thumbs.py` | `content/` ki saari pictures ke halke preview (`data/thumbs/`) → website thumbnails. `--check` verify karta hai. Naya picture add karne par ImageMagick chahiye (na ho to site asli picture dikha degi) |
+| `python3 tools/build_catalog.py` | Content folders + catalogue inputs + previews + chunks → `data/site.json` (naam se auto title/description = SEO). `--check` verify karta hai |
+| `python3 tools/build_pages.py` | `data/site.json` + `data/catalog/previous-year-papers.json` → plain HTML pages (har page ka SEO: canonical/OG/Twitter/JSON-LD), `sitemap.xml`, `robots.txt`, year-wise exam source pages and the Rajasthan map PDF preview. `--check` verify karta hai |
 | `python3 tools/build_site_routes.py` | HTML files se `data/catalog/site-routes.txt` likhta hai. `--check` verify karta hai |
 | `python3 tools/validate_site.py` | Routes, links, anchors, `.md`/maintainer leak, download hashes, `?folder=` links, preview files |
 | `python3 tools/validate_question_bank.py` | Bank schema v2, evidence gate, chunk coverage |

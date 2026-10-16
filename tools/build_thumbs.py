@@ -8,14 +8,15 @@ keeps the full-resolution file for viewing and downloading.
 
 Where things go:
 
-* source  : every image registered in `data/catalog/materials.json`
+* source  : every picture under `content/**` (folder kuch bhi ho — apne aap mil jati hai)
 * thumb   : `data/thumbs/<subject>/<folder>/<name>.png`  (max 640 px, stripped)
 * manifest: `data/thumbs/manifest.json` — source SHA-256 + thumb size, so
   `--check` can prove the previews match the files that are actually published.
 
 Resizing needs ImageMagick (`magick` or `convert`). The thumbnails are committed,
 so the site and every test work without it — you only need it when a new picture
-is added.
+is added. ImageMagick ke bina bhi site toot-ti nahi: `tools/build_catalog.py`
+phir asli picture ko hi halka preview maan kar dikha deta hai.
 
 Run:
 
@@ -33,10 +34,10 @@ import subprocess
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-CATALOG = ROOT / "data/catalog/materials.json"
+CONTENT = ROOT / "content"
 THUMB_ROOT = ROOT / "data/thumbs"
 MANIFEST = THUMB_ROOT / "manifest.json"
-IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp"}
+IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".svg", ".avif", ".gif"}
 MAX_WIDTH = 640
 MAX_BYTES = 600 * 1024
 
@@ -64,16 +65,20 @@ def thumb_path(source_rel: str) -> pathlib.Path:
 
 
 def image_records() -> list[dict]:
-    materials = json.loads(CATALOG.read_text(encoding="utf-8"))
+    """Har picture jo content/ ke neeche kisi bhi folder me rakhi ho — catalogue se azaad."""
     records = []
-    for record in materials["materials"]:
-        path = ROOT / record["file"]
-        if path.suffix.lower() in IMAGE_SUFFIXES:
-            records.append({"source": record["file"], "path": path, "thumb": thumb_path(record["file"])})
-    return sorted(records, key=lambda item: item["source"])
+    for path in sorted(CONTENT.rglob("*")):
+        if not path.is_file() or path.name.startswith("."):
+            continue
+        if path.suffix.lower() not in IMAGE_SUFFIXES:
+            continue
+        source = path.relative_to(ROOT).as_posix()
+        records.append({"source": source, "path": path, "thumb": thumb_path(source)})
+    return records
 
 
-def make_thumb(magick: str, record: dict) -> None:
+def make_thumb(magick: str, record: dict) -> bool:
+    """Halka preview banao. Fail ho to False (catalog asli file hi dikha dega)."""
     record["thumb"].parent.mkdir(parents=True, exist_ok=True)
     command = [
         magick,
@@ -86,7 +91,11 @@ def make_thumb(magick: str, record: dict) -> None:
     ]
     result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
-        raise SystemExit(f"FAIL: could not build a preview for {record['source']}:\n{result.stderr.strip()}")
+        print(f"WARN: preview nahi bana {record['source']} — website asli file dikha dega:\n"
+              f"      {result.stderr.strip()}")
+        record["thumb"].unlink(missing_ok=True)
+        return False
+    return True
 
 
 def load_manifest() -> dict:
@@ -123,12 +132,15 @@ def main() -> int:
             stale.append(source_rel)
             continue
         if magick is None:
-            raise SystemExit(
-                "FAIL: ImageMagick is needed to build previews for new pictures.\n"
-                "  install it (e.g. `sudo apt-get install imagemagick`) or commit the "
-                f"preview yourself at {record['thumb'].relative_to(ROOT).as_posix()}"
+            print(
+                "WARN: ImageMagick nahi mila — nayi pictures ke light preview skip hue.\n"
+                "      Website phir bhi theek chalegi (asli file hi preview ban jayegi);\n"
+                "      halka preview chahiye to `magick`/`convert` install karke "
+                "`python3 tools/build_thumbs.py` chalao."
             )
-        make_thumb(magick, record)
+            break
+        if not make_thumb(magick, record):
+            continue
         entries[source_rel] = {
             "thumb": record["thumb"].relative_to(ROOT).as_posix(),
             "sha256": source_hash,

@@ -41,6 +41,10 @@ subjects/previous-year-papers/ssc/index.html
 subjects/previous-year-papers/system-assistant/index.html
 subjects/rajasthan-geography/index.html
 subjects/rajasthan-geography/map/index.html
+subjects/rajasthan-geography/map/rajasthan/Blank/index.html
+subjects/rajasthan-geography/map/rajasthan/Border/index.html
+subjects/rajasthan-geography/map/rajasthan/Division/index.html
+subjects/rajasthan-geography/map/rajasthan/Internal/index.html
 subjects/rajasthan-geography/map/rajasthan/PDF/index.html
 subjects/rajasthan-geography/map/rajasthan/index.html
 subjects/reader/index.html

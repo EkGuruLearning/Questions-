@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-15T07:02:02+00:00",
+  "generated_at": "2026-10-16T06:16:39+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
-    "pass": 21,
-    "skip": 0,
+    "pass": 19,
+    "skip": 2,
     "fail": 0
   },
   "checks": [
@@ -41,7 +41,7 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 51 route(s), 1808 link(s), 65 download(s) and 18 folder(s) checked",
+        "PASS: 55 route(s), 1937 link(s), 70 download(s) and 18 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
       ]
     },
@@ -51,7 +51,7 @@
       "exit_code": 0,
       "note": "Content uploads and reader links are reflected in the published HTML.",
       "output_tail": [
-        "PASS: 49 generated page(s) match data/site.json."
+        "PASS: 55 generated page(s) match data/site.json."
       ]
     },
     {
@@ -64,22 +64,17 @@
         "  - section filter: 129 questions in the chosen section",
         "  - player: 10-question practice session rendered",
         "  - practice mode: instant feedback after answering",
-        "  - result: 30% score, stats, topic bars and 10 review items",
+        "  - result: 10% score, stats, topic bars and 10 review items",
         "  - exam mode: hidden answers, palette marking, submit and result"
       ]
     },
     {
       "name": "CBT and mobile reader browser regression (optional)",
-      "status": "PASS",
-      "exit_code": 0,
-      "note": "Real HTTP under /Questions-/: CBT at four widths, PDF pages, maps, zoom and original/download links.",
+      "status": "SKIP",
+      "exit_code": 77,
+      "note": "Real HTTP under /Questions-/: CBT at four widths, PDF pages, maps, zoom and original/download links. Skipped in this environment.",
       "output_tail": [
-        "PASS mobile reader: content/computer-network/theory/T01-Introduction-to-Data-Communication-Theory-MCQ.pdf",
-        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait-Print.pdf",
-        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan-Border-Districts-A4-Portrait.png",
-        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/Rajasthan_Border_District_Map_A4 (1).pdf",
-        "PASS mobile reader: content/rajasthan-geography/map/rajasthan/PDF/Rajasthan_Border_District_Map_A4.pdf",
-        "PASS lightweight map preview and external URL rejection"
+        "SKIP: puppeteer-core / @sparticuz/chromium not installed"
       ]
     },
     {
@@ -106,7 +101,7 @@
       "exit_code": 0,
       "note": "Every published picture has a light preview that matches the full-size file.",
       "output_tail": [
-        "PASS: 6 image preview(s) match the published pictures."
+        "PASS: 9 image preview(s) match the published pictures."
       ]
     },
     {
@@ -132,7 +127,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 17 tests in 0.958s",
+        "Ran 17 tests in 1.128s",
         "",
         "OK"
       ]
@@ -146,7 +141,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 23 tests in 0.283s",
+        "Ran 23 tests in 0.434s",
         "",
         "OK"
       ]
@@ -160,7 +155,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 19 tests in 0.058s",
+        "Ran 19 tests in 0.093s",
         "",
         "OK"
       ]
@@ -174,7 +169,7 @@
         "test_topic_chunks_partition_the_published_bank (test_data_pipeline.GeneratedDataTests.test_topic_chunks_partition_the_published_bank) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 8 tests in 0.060s",
+        "Ran 8 tests in 0.065s",
         "",
         "OK"
       ]
@@ -197,7 +192,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 55.24814"
+        "# duration_ms 71.264969"
       ]
     },
     {
@@ -211,21 +206,16 @@
         "  - reasoning folder pages: 4 folder pages, empty ones explained",
         "  - year-wise exam pages: 1 locally ready year chip; external years are grouped by exam and actual sitting",
         "  - map folder pages: 17 map rows, lightweight preview, reader and downloads",
-        "  - nav + footer on every published page: 50 pages carry the full nav + footer"
+        "  - nav + footer on every published page: 54 pages carry the full nav + footer"
       ]
     },
     {
       "name": "Mobile / responsive browser check (optional)",
-      "status": "PASS",
-      "exit_code": 0,
-      "note": "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me.",
+      "status": "SKIP",
+      "exit_code": 77,
+      "note": "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me. Skipped in this environment.",
       "output_tail": [
-        "ok   desktop-1280 /subjects/previous-year-papers/sci/index.html      scrollW=1280",
-        "ok   desktop-1280 /subjects/reasoning/answers/index.html             scrollW=1280",
-        "ok   desktop-1280 /subjects/previous-year-papers/rpsc/2024/index.html scrollW=1280",
-        "ok   desktop-1280 /404.html                                          scrollW=1280",
-        "",
-        "PASS: 68 page/viewport checks, 0 problem(s). Screenshots: /tmp/ekguru-mobile-shots"
+        "SKIP: puppeteer-core install nahi hai (exit 77). README me setup likha hai."
       ]
     },
     {
@@ -244,7 +234,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (255 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (80 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],
