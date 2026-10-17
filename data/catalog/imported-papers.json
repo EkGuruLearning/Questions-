@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "scope_note": "Curated IT-exam PDF batch, not exhaustive. Source hashes establish exact mirror identity, not official authenticity or an exam-owner redistribution license. Original bytes unchanged. Copyright remains with respective owners. No coaching solution books included.",
+  "papers": [
+    {
+      "exam": "gate-cse",
+      "repo": "baquer/GATE-and-CSE-Resources-for-Students",
+      "commit": "bb2837fbd0539743d916990068ea7752b034dd5f",
+      "source_path": "Gate_QuestionPapers/GATE2012.pdf",
+      "git_blob": "49d886b66a6d53dcf2af27fcac15d54fb8b17dcd",
+      "sha256": "ff1031a54b710960b9b7f7e941ff299c0ce77952ee540816e040aa01fbb30269",
+      "bytes": 392867,
+      "page_count": 20,
+      "file": "content/previous-year-papers/gate-cse/2012/GATE-CSE-2012.pdf",
+      "title": "GATE 2012 — Computer Science & IT",
+      "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2012.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    },
+    {
+      "exam": "gate-cse",
+      "repo": "baquer/GATE-and-CSE-Resources-for-Students",
+      "commit": "bb2837fbd0539743d916990068ea7752b034dd5f",
+      "source_path": "Gate_QuestionPapers/GATE2016.pdf",
+      "git_blob": "7ca152af19588dadc3e697c4cff259b740ed6956",
+      "sha256": "7b5b8dda4c7263a5cce90d25af696f541057551897a5ebfaff66b5fca7e36c88",
+      "bytes": 735975,
+      "page_count": 45,
+      "file": "content/previous-year-papers/gate-cse/2016/GATE-CSE-2016.pdf",
+      "title": "GATE 2016 — Computer Science & IT — CS-1 + CS-2 bundle",
+      "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2016.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Contains both sessions and appended keys; MCQ/NAT formats. MuPDF reports repaired parent-tree metadata; all pages render.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [
+          [
+            1,
+            "Repairing missing parent (P) in parent tree nodes\n... repeated 6 times..."
+          ]
+        ],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    },
+    {
+      "exam": "gate-cse",
+      "repo": "baquer/GATE-and-CSE-Resources-for-Students",
+      "commit": "bb2837fbd0539743d916990068ea7752b034dd5f",
+      "source_path": "Gate_QuestionPapers/GATE2018.pdf",
+      "git_blob": "29fb0904fc67fb2fcefd3dfce1f9a45e81dfa6c6",
+      "sha256": "60a64161cf48d98e11779af034043f9b3e960049c10d782a0dd18a51042a9187",
+      "bytes": 999503,
+      "page_count": 26,
+      "file": "content/previous-year-papers/gate-cse/2018/GATE-CSE-2018.pdf",
+      "title": "GATE 2018 — Computer Science & IT",
+      "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2018.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Includes GA Set-3, CS and an appended MCQ/NAT key; no single-choice conversion.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    },
+    {
+      "exam": "gate-cse",
+      "repo": "baquer/GATE-and-CSE-Resources-for-Students",
+      "commit": "bb2837fbd0539743d916990068ea7752b034dd5f",
+      "source_path": "Gate_QuestionPapers/GATE2019.pdf",
+      "git_blob": "6dffae478907d3d16d04b801282aeccbfafcc3a1",
+      "sha256": "aa80100a9136a07aaba70b48a9e86b23246e53f2f5fc80760784d8ce3b8994cd",
+      "bytes": 2514739,
+      "page_count": 19,
+      "file": "content/previous-year-papers/gate-cse/2019/GATE-CSE-2019.pdf",
+      "title": "GATE 2019 — Computer Science & IT",
+      "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2019.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Scan: no OCR-derived questions or marks have been invented.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    },
+    {
+      "exam": "gate-cse",
+      "repo": "baquer/GATE-and-CSE-Resources-for-Students",
+      "commit": "bb2837fbd0539743d916990068ea7752b034dd5f",
+      "source_path": "Gate_QuestionPapers/GATE2022.pdf",
+      "git_blob": "384d5b310ac0dc42fa59d1e51e676dd36079924f",
+      "sha256": "236fb65d02777feba9811b3c5ac62e6305ecfe789f2dd46e29e90f114f75951f",
+      "bytes": 2637957,
+      "page_count": 43,
+      "file": "content/previous-year-papers/gate-cse/2022/GATE-CSE-2022.pdf",
+      "title": "GATE 2022 — Computer Science & IT",
+      "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2022.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Includes MCQ/MSQ/NAT and appended key. Source has a repairable cross-reference table; all pages render.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [
+          [
+            1,
+            "broken xref subsection, proceeding anyway.\nformat error: incorrect number of xref entries in trailer, repairing\ntrying to repair broken xref\nrepairing PDF document"
+          ]
+        ],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    },
+    {
+      "exam": "isro-cse",
+      "repo": "ardraslal/ISRO-ICRB-Scientist-Engineer-SC-Previous-Year-Question-Papers---CSE",
+      "commit": "abe3a9323b51c386a6237ed15bc20d22bb38d092",
+      "source_path": "previous-year-question-paper-for-computer-science-2023.pdf",
+      "git_blob": "213374d10a4657a0f9b9be4c775e4e9748b883f5",
+      "sha256": "8a9f9569acea838f83694e940b4eb9e69aa8881889ccc18ce4b3af5c670e20f3",
+      "bytes": 684699,
+      "page_count": 45,
+      "file": "content/previous-year-papers/isro-cse/2023/ISRO-ICRB-CSE-2023-Set-A-Questions.pdf",
+      "title": "ISRO ICRB 2023 — CSE Set A (question section)",
+      "source_url": "https://github.com/ardraslal/ISRO-ICRB-Scientist-Engineer-SC-Previous-Year-Question-Papers---CSE/blob/abe3a9323b51c386a6237ed15bc20d22bb38d092/previous-year-question-paper-for-computer-science-2023.pdf",
+      "downloaded_on": "2026-10-17",
+      "source_type": "public-github-mirror",
+      "official_bytes_independently_verified": false,
+      "standalone_redistribution_license_found": false,
+      "format_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Mirror starts at printed page 3 and ends at 47: cover/instruction pages 1–2 are absent. 95 questions; bilingual Hindi/English.",
+      "render_review": {
+        "engine": "MuPDF 1.28.2",
+        "every_page_rendered": true,
+        "warnings": [],
+        "embedded_active_markers_detected": [],
+        "browser": {
+          "engine": "PDF.js 4.10.38",
+          "first_page_rendered": true,
+          "last_page_rendered": true,
+          "checked_on": "2026-10-17"
+        }
+      }
+    }
+  ]
+}

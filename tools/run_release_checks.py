@@ -17,6 +17,8 @@ PY = sys.executable
 PY_TOOLS = [
     "tools/build_catalog.py",
     "tools/build_practice.py",
+    "tools/build_quizzes.py",
+    "tools/import_existing_cbt.py",
     "tools/build_pages.py",
     "tools/build_site_data.py",
     "tools/validate_site.py",
@@ -50,6 +52,11 @@ PY_TOOLS = [
 JS_FILES = [
     "assets/js/engine.mjs",
     "assets/js/account.mjs",
+    "assets/js/history-store.mjs",
+    "assets/js/quiz-engine.mjs",
+    "assets/js/quiz.mjs",
+    "assets/js/theme.mjs",
+    "tests/mobile/universal_cbt_check.cjs",
     "assets/js/paper-engine.mjs",
     "assets/js/paper-reader.mjs",
     "assets/js/room.mjs",
@@ -67,6 +74,10 @@ JS_FILES = [
 ]
 
 CHECKS = [
+    ("All-subject CBT catalogue", [PY, "tools/build_quizzes.py", "--check"],
+     "Subject-sharded hash-addressed banks, source guards, typed question/answer contracts and small CN-only bootstrap."),
+    ("Native all-subject CBT/history browser regression (optional)", ["node", "tests/mobile/universal_cbt_check.cjs"],
+     "Six widths, native RPSC/reasoning/typed CBT, offline saves, guest history, 551-result mocked paging/export, 35 queued writes, owner isolation and six imported PDF readers. Not live OAuth."),
     ("Auth, cookies and practice engine", ["npm", "test"],
      "PKCE/state, encrypted HttpOnly cookies, refresh/logout, CSRF, owner isolation, input bounds, timing and honest grading."),
     ("Old-paper room manifest", [PY, "tools/build_practice.py", "--check"],
@@ -135,10 +146,10 @@ def main() -> int:
             "status": status,
             "exit_code": result.returncode,
             "note": note,
-            "output_tail": output[-6:],
+            "output_tail": output[-160:] if result.returncode not in (0, 77) else output[-6:],
         })
         print(f"[{status}] {name}")
-        for line in output[-4:]:
+        for line in (output[-160:] if result.returncode not in (0, 77) else output[-4:]):
             print("    " + line)
 
     report = {

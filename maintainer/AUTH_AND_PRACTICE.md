@@ -1,11 +1,11 @@
-# Google login + Test Room — setup & maintenance
+# Google login, all-subject results + CBT — setup & maintenance
 
 ## What is ready
 
 - Separate **free-plan Supabase project**, `EkGuru Questions`, Mumbai (`ap-south-1`), ref `byinrfmonsqfkoxejhgn`.
 - Separate **Vercel project**, `ekguru-questions`, ID `prj_1kdFq22FVdir3TWOQcILikOtcmeL`.
 - Reserved production origin: `https://ekguru-questions.vercel.app`. **No production deployment has been created yet.**
-- DB migrations in `supabase/migrations/` have already been applied to this new project. Existing unrelated projects were not changed.
+- All three DB migrations in `supabase/migrations/` (including `202610170003_all_subject_history.sql`) have already been applied to this project. For a NEW database, run them in order; do not reapply them to the prepared project. Existing unrelated projects were not changed.
 - Vercel server environment configured: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SESSION_SECRET`, `APP_ORIGIN`.
 - **Owner action still required:** create/enable the Google OAuth provider. Connecting Supabase/Vercel does not create a Google Cloud OAuth client. No password/client secret should be pasted in chat or committed to Git.
 - Vercel's GitHub integration does **not** currently have permission for `EkGuruLearning/Questions-`. Grant that repository access and link this existing project for automatic deployment. The connector's direct-upload deployment was also attempted on 2026-10-17, but Vercel rejected it before building: `projectSettings` is required, and this connector does not expose that field. Follow-up deployment listing confirmed that no deployment was created. Do not create another paid project.
@@ -78,7 +78,9 @@ npm test
 npm run build
 ```
 
-Every uploaded question PDF gets a Test Room card and a **Practice as test** link in its folder. A scanned PDF works as-is: read one page at a time, choose responses on the OMR sheet, mark/revisit/clear, time the attempt, submit and review. Only the selected PDF and current canvas page are rendered. Source material stays in Git; it does not consume database storage or a paid OCR quota.
+Every uploaded question PDF gets a Test Room reader card. **Native question/options CBT is the default where a reviewed transcription exists**, with a Start CBT link beside its source file. RPSC and two Reasoning samples now use it. Scans/mixed-format papers are left readable rather than forced into a single-choice conversion. The previous PDF/response-sheet UI remains opt-in under **Optional tools for older scanned papers**. Set `reader_only: true` to exclude incompatible papers from that picker; optional `cbt_subject` / `cbt_test` link to a matching authored transcription.
+
+For adding any subject/test, typed questions and the shared history SDK, see [CBT_AUTHORING.md](CBT_AUTHORING.md). Source material stays in Git, not database blobs; no paid OCR API is required. The six newly curated GATE/ISRO PDFs are reader-only, with pinned mirror provenance and explicit limitations, not an “all papers” claim.
 
 **Without a digital key:** confirm the question count/options in the setup form. The result shows attempted/skipped counts and **Unscored**, not invented marks, correctness or percentages. Time/marking defaults are configurable **practice defaults**, not assertions about official exam rules.
 
@@ -124,12 +126,12 @@ Example (replace both hashes with actual file hashes; do not copy an old paper's
 - HTTPS cookies use `__Host-`, `HttpOnly`, `Secure`, `SameSite=Lax`, `Path=/`, no Domain. Access/refresh tokens are **never** returned to JS or saved in local/session storage. Only explicitly opted-in localhost HTTP development can omit Secure.
 - Session cookies persist up to **30 days**, with access-token refresh when needed. Google revocation, browser cookie deletion, provider policy, rotating the session secret or an auth outage can require a new login; there is no “never expires” token promise.
 - Writes require exact `APP_ORIGIN` + a CSRF header. Each history request also carries the expected non-secret user ID. The server verifies `/auth/v1/user`, derives the actual ID from that response, rejects account-switch races, and sends the user's JWT to Postgres. Browser user IDs are never authorization.
-- **No service-role key.** Postgres RLS allows only SELECT/INSERT/DELETE of the authenticated user's own immutable attempts. The insertion trigger retains the latest 200 per user; the UI fetches the latest 50. Users can delete individual results; deleting the auth user cascades history deletion.
+- **No service-role key.** Postgres RLS allows only SELECT/INSERT/DELETE of the authenticated user's own immutable attempts. Migration 003 removes the pruning trigger: **no automatic 200-result deletion**. Subject/test IDs cover any subject; indexed completion-time/UUID keyset paging returns 50 at a time (max 100), with filters, Load older and full matching export. Delayed offline sync retains the actual test completion date. Users can delete individual results; deleting the auth user cascades history deletion.
 - Google identity/email stays in Supabase Auth. No extra profile table, tracking/advertising cookies or analytics SDK has been added.
 - Old-paper drafts survive reload for up to 7 days on the same browser. Wall-clock deadlines are recomputed on resume; closing a tab does not pause time. Updated paper/key fingerprints invalidate old drafts. Review marks do not suppress selected answers at submission.
 - The latest paper result is local and downloadable as JSON. Cloud sync only applies to attempts **started while signed in to that same account**. Guest drafts/history are never silently uploaded to a later/different login. Local browser history/drafts are not a multi-user vault; shared-device users should clear site data as well as log out.
-- Offline cloud writes have idempotent UUIDs and an owner-scoped local outbox (max 20 pending attempts), retried on Online / Sync. Storage-disabled browsers retain a volatile outbox for the current tab and show a warning. Logged-out users' pending outbox is cleared from that browser.
-- CN preserves its existing local saved-question/result behaviour. New signed-in CN summaries can also sync; for sets over 150 questions the cloud record omits individual answers to keep requests small. The full CN bank still works (up to 2,000 supported in history), while PDF rooms are capped at 300.
+- Offline cloud writes have idempotent UUIDs and an owner-scoped **IndexedDB journal/outbox with no 20-item truncation**, retried on Online / Sync. Guest stays local. Acknowledgement clears pending answer details, not the result summary. Logout preserves each owner's queued records for their next sign-in, never another account. If IndexedDB is unavailable/full, a volatile tab-only fallback warns the user to export. Clearing browser storage can remove local records.
+- CN keeps saved questions and a small owner-filtered recent preview; the all-subject journal is the complete new-result timeline. Signed-in CN, native quizzes and legacy paper summaries use the same SDK; for sets over 150 questions the cloud record omits individual answers to keep requests small. The full CN bank still works (up to 2,000 supported in history), while PDF rooms are capped at 300.
 - These are **self-practice** scores: questions/keys are public and results are client-computed, not proctored or suitable for a trusted competitive leaderboard.
 
 ## 5. Deployment / speed / free-tier reality
@@ -140,7 +142,7 @@ npm run build:content
 npm run build
 ```
 
-`tools/build_web.mjs` exports allowlisted public files into ignored `public/`, minifies own JS/CSS/HTML/JSON, and precompresses text at **Brotli quality 11 / gzip level 9**. It also emits `.vercel/output/` Build Output API v3 with a tiny Node 22 server function in `bom1` (Mumbai). Vercel's CDN negotiates transfer compression; the preview server can serve the generated `.br`/`.gz` variants. Hashed question chunks get immutable caching; other files revalidate. Auth/user API responses are always private/no-store. PDFs/images are not destructively downsampled for a misleading compression claim.
+`tools/build_web.mjs` exports allowlisted public files into ignored `public/`, minifies own JS/CSS/HTML/JSON, and precompresses text at **Brotli quality 11 / gzip level 9**. It also emits `.vercel/output/` Build Output API v3 with a tiny Node 22 server function in `bom1` (Mumbai). Vercel's CDN negotiates transfer compression; the preview server can serve the generated `.br`/`.gz` variants. Five browser entries are bundled/tree-shaken, kept at their original module depth, hash-addressed alongside CSS, and rewritten into exported HTML. Hashed entries/CSS, question banks, subject indexes and question images get immutable caching; HTML/runtime/manifests revalidate. PDF.js remains an external lazy import, never part of native CBT. CN starts with 5 KB of topic metadata rather than the whole ~400 KB catalogue. Auth/user API responses are always private/no-store. PDFs/images are not destructively downsampled for a misleading compression claim.
 
 No React/Next runtime, browser auth SDK, fonts CDN, ORM or continuously running paid server has been introduced. The Python scripts run at build time, never on a student request. Rewriting the static app in Rust/C++ would not remove network latency or make Google/DB operations the “fastest ever”; small payloads, static delivery and lazy PDF/chunk loading are the practical optimizations.
 
@@ -164,9 +166,13 @@ python3 tools/run_release_checks.py
 
 # Optional real browser tooling (not app runtime dependencies):
 npm install --prefix .cache/browser-deps puppeteer-core@24.16.0 @sparticuz/chromium@138.0.2 jsdom@26.1.0
-NODE_PATH="$PWD/.cache/browser-deps/node_modules" node tests/mobile/room_account_check.cjs
+NODE_PATH="$PWD/.cache/browser-deps/node_modules" npm run test:browser
 ```
 
 The browser regression exercises 360/390/768/951/1280px, real local PDFs, OMR, failure/retry/cancellation, bounded-canvas zoom, clear/review/palette, reload/resume, expiry/auto-submit, truthful unscored results, quick CN presets, and **mocked** account/history/offline/logout/storage-failure UI. PDF.js worker-termination notices caused by the intentional network-abort test are classified separately; unrelated errors still fail. This is not a claim of completing Google's live consent flow. If the host lacks NSS/NSPR, use system Chromium or unpack the optional Chromium package's `al2023.tar.br` libraries into an ignored cache and set `LD_LIBRARY_PATH`; no browser binaries/libraries are committed.
 
-Verified on 2026-10-17: all 24 local release gates passed against the minified production export (including all optional browser checks), 41 Node tests passed, 79 Python tests passed, and the GitHub Verify portal push workflow passed. Supabase's forced RLS/policies were independently queried, and `supabase/tests/history_rls.sql` passed own-user read/insert, cross-user read/insert/delete denial, immutable results and 200-result retention. Its synthetic users/results were rolled back. The callback allowlist includes the explicit state-query patterns above. Live Google consent, physical devices, and a public Vercel deployment remain unverified.
+The expanded implementation has 60 Node tests and 84 Python tests, including a 550-definition / 50-subject sharding fixture. The native browser regression covers 320/360/390/768/951/1280px, real IndexedDB, an actual offline finish, typed CBT, native RPSC, mocked 551-result history/export, a 35-record retry queue and A/B isolation. Six imported PDFs pass first/last PDF.js rendering; all 198 pages also rendered in MuPDF. Source hashes/repair and missing-page notes are retained.
+
+**Live database verification (2026-10-17):** migration 003 applied; `supabase/tests/history_rls.sql` passed 50 subjects / 551 distinct tests/results, no pruning, own read/insert/delete, cross-user denial, immutable rows, completion timestamps and tied-time keyset paging. All synthetic data rolled back; subsequent count was zero, forced RLS remained enabled, no retention trigger remained, anonymous SELECT and authenticated UPDATE stayed denied. Record: `maintainer/reports/history_integration.json`.
+
+The release runner's current result is in `maintainer/reports/release_checks.json`; optional-browser SKIP is never represented as PASS. GitHub checks for the pushed revision should be checked separately. **Live Google consent, physical devices and a public Vercel deployment remain unverified/owner-blocked.** No new claim of deployment or Google activation is made by these local/mocked tests.

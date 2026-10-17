@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "isro-cse-2023",
+  "title": "ISRO ICRB 2023 — CSE Set A (question section)",
+  "question_count": 95,
+  "duration_minutes": 0,
+  "reader_only": true,
+  "key_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Mirror starts at printed page 3 and ends at 47: cover/instruction pages 1–2 are absent. 95 questions; bilingual Hindi/English.",
+  "paper_sha256": "8a9f9569acea838f83694e940b4eb9e69aa8881889ccc18ce4b3af5c670e20f3",
+  "source_url": "https://github.com/ardraslal/ISRO-ICRB-Scientist-Engineer-SC-Previous-Year-Question-Papers---CSE/blob/abe3a9323b51c386a6237ed15bc20d22bb38d092/previous-year-question-paper-for-computer-science-2023.pdf"
+}

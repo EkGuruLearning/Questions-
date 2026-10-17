@@ -15,9 +15,12 @@ const SHOTS = path.join(ROOT, ".cache/browser-shots");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const UID = "a07a8170-ea16-4dd4-8ab3-e8fa19f1d800";
 const errors = (page) => { const list = []; page.on("pageerror", (error) => list.push(error.message)); return list; };
-const noOverflow = async (page) => assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), "horizontal overflow");
+const noOverflow = async (page) => assert(await page.evaluate((width) => document.documentElement.scrollWidth <= width + 1 && innerWidth <= width + 1, page.viewport().width), "horizontal overflow / expanded layout viewport");
 const clickSubmit = async (page) => { page.once("dialog", (dialog) => dialog.accept()); await page.click("#submitPaperButton"); await page.waitForSelector("#paperResult:not([hidden])"); };
-const ready = async (page) => page.waitForFunction(() => document.getElementById("startPaperButton") && !document.getElementById("startPaperButton").disabled);
+const ready = async (page) => {
+  await page.waitForFunction(() => document.getElementById("startPaperButton") && !document.getElementById("startPaperButton").disabled);
+  await page.$eval("#legacyPaperTools", (node) => { node.open = true; });
+};
 async function isolatedContext(browser) {
   let page;
   return { async newPage() {
@@ -65,7 +68,7 @@ async function start(page, { paper = "rpsc-programmer-2024-paper-1", minutes = "
       assert.equal(await page.$eval("#roomFeedback", (e) => e.hidden), true);
       const draft = await page.evaluate(() => JSON.parse(localStorage.getItem("ekguru.paper.draft.v1")));
       await page.click("#pausePaperButton"); await page.reload(); await ready(page);
-      await page.waitForSelector("#draftNotice:not([hidden])"); await page.click("#resumePaperButton");
+      await page.waitForSelector("#draftNotice:not([hidden])"); await page.$eval("#legacyPaperTools", (node) => { node.open = true; }); await page.click("#resumePaperButton");
       await page.waitForSelector("#paperPlayer:not([hidden])");
       const restored = await page.evaluate(() => JSON.parse(localStorage.getItem("ekguru.paper.draft.v1")));
       assert.equal(restored.id, draft.id); assert.equal(restored.started_at, draft.started_at);
@@ -93,7 +96,7 @@ async function start(page, { paper = "rpsc-programmer-2024-paper-1", minutes = "
       await page.click("#newPaperButton"); await start(page, { minutes: "1" });
       await page.click("#pausePaperButton");
       await page.evaluate(() => { const key = "ekguru.paper.draft.v1", d = JSON.parse(localStorage.getItem(key)); d.started_at = Date.now() - 120000; d.deadline = Date.now() + 999999999; localStorage.setItem(key, JSON.stringify(d)); });
-      await page.reload(); await ready(page); await page.click("#resumePaperButton"); await page.waitForSelector("#paperResult:not([hidden])");
+      await page.reload(); await ready(page); await page.$eval("#legacyPaperTools", (node) => { node.open = true; }); await page.click("#resumePaperButton"); await page.waitForSelector("#paperResult:not([hidden])");
       assert.match(await page.$eval("#paperResultLabel", (e) => e.textContent), /time up, auto-submitted/);
       const timed = await page.evaluate(() => JSON.parse(localStorage.getItem("ekguru.paper.last.v1")));
       assert.equal(timed.duration_seconds, 60);
@@ -123,7 +126,7 @@ async function start(page, { paper = "rpsc-programmer-2024-paper-1", minutes = "
       await page.waitForFunction(() => /Page 2 ready/.test(document.getElementById("roomPdfStatus").textContent), { timeout: 30000 });
       assert(await page.$eval("#roomCanvas", (e) => e.width * e.height <= 6000000), "PDF canvas memory is bounded");
       await page.click("#pausePaperButton");
-      mode = "delay"; await page.click("#resumePaperButton"); await sleep(100);
+      mode = "delay"; await page.$eval("#legacyPaperTools", (node) => { node.open = true; }); await page.click("#resumePaperButton"); await sleep(100);
       await page.click("#roomNext"); await page.click("#pausePaperButton");
       await page.waitForSelector("#paperPlayer[hidden]");
       mode = "normal"; page.once("dialog", (dialog) => dialog.accept());

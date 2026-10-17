@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "gate-cse-2019",
+  "title": "GATE 2019 — Computer Science & IT",
+  "question_count": null,
+  "duration_minutes": 0,
+  "reader_only": true,
+  "key_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Scan: no OCR-derived questions or marks have been invented.",
+  "paper_sha256": "aa80100a9136a07aaba70b48a9e86b23246e53f2f5fc80760784d8ce3b8994cd",
+  "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2019.pdf"
+}

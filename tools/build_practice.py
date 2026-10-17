@@ -14,6 +14,7 @@ import json
 import pathlib
 import re
 import sys
+from urllib.parse import urlsplit
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = pathlib.Path("data/practice/manifest.json")
@@ -110,7 +111,7 @@ def generate(root: pathlib.Path = ROOT) -> dict:
         if doc.get("key_sha256") and (not key_pdf or sha256(key_pdf) != doc["key_sha256"]):
             raise ValueError(f"{rel}: key_pdf hash changed — review the answer map before publishing")
         paper_hash = sha256(pdf)
-        if doc.get("answer_key") and doc.get("paper_sha256") != paper_hash:
+        if (doc.get("answer_key") or doc.get("paper_sha256")) and doc.get("paper_sha256") != paper_hash:
             raise ValueError(f"{rel}: a digital key needs the matching paper_sha256 — review before publishing")
         note = doc.get("key_note", "")
         if not isinstance(note, str) or len(note) > 1000:
@@ -133,6 +134,19 @@ def generate(root: pathlib.Path = ROOT) -> dict:
             "key_pdf": key_pdf.relative_to(root).as_posix() if key_pdf else None,
             "key_label": "Provided practice key — not independently verified against the official final key" if normalized else "No digital answer key — unscored self-practice",
         }
+        reader_only = doc.get("reader_only", False)
+        if type(reader_only) is not bool: raise ValueError("reader_only must be boolean")
+        entry["reader_only"] = reader_only
+        if reader_only and normalized: raise ValueError("reader-only paper cannot have a forced digital key")
+        if doc.get("source_url"):
+            parsed = urlsplit(doc["source_url"])
+            if parsed.scheme != "https" or parsed.netloc != "github.com" or parsed.username or parsed.password: raise ValueError("Invalid pinned source URL")
+            entry["source_url"] = doc["source_url"]
+        if doc.get("cbt_test") or doc.get("cbt_subject"):
+            if reader_only or not re.fullmatch(r"[a-z0-9][a-z0-9_.-]{0,95}", doc.get("cbt_subject", "")) or not re.fullmatch(r"[a-z0-9][a-z0-9_.-]{0,95}", doc.get("cbt_test", "")): raise ValueError("Invalid CBT link")
+            authored = root / f"data/tests/{doc['cbt_subject']}/{doc['cbt_test']}.test.json"
+            if not authored.is_file() or json.loads(authored.read_text(encoding="utf-8")).get("source", {}).get("pdf") != rel: raise ValueError("CBT link needs a matching authored source PDF")
+            entry.update(cbt_subject=doc["cbt_subject"], cbt_test=doc["cbt_test"])
         entry["fingerprint"] = hashlib.sha256(json.dumps(entry, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
         papers.append(entry)
     papers.sort(key=lambda p: (p["year"], p["exam"], p["title"]), reverse=True)

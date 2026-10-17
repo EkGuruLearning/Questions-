@@ -1,0 +1,30 @@
+{
+  "checked_on": "2026-10-17",
+  "project_ref": "byinrfmonsqfkoxejhgn",
+  "migration": "ekguru_all_subject_history",
+  "migration_applied": true,
+  "migration_sha256": "2ae9b30f8c7e6ce779d26da65e1a1b8609ee236158c93efe7a01bd5df82ccbbd",
+  "regression_sql": "supabase/tests/history_rls.sql",
+  "regression_sql_sha256": "2cf3eefdfa7ca56dfebc9e2372c2b0e0e17831302fa74945c3a178dee967cc8e",
+  "result": "PASS",
+  "tested_subjects": 50,
+  "tested_distinct_tests_and_results_for_user_a": 551,
+  "synthetic_data_rolled_back": true,
+  "stored_attempts_after_rollback": 0,
+  "rls_enabled": true,
+  "rls_forced": true,
+  "automatic_retention_trigger_exists": false,
+  "authenticated_can_update": false,
+  "anonymous_can_select": false,
+  "checks": [
+    "own reads/inserts/deletion",
+    "cross-user SELECT/INSERT/DELETE denial",
+    "immutable rows",
+    "invalid subject rejection",
+    "actual completion time preserved",
+    "all results kept beyond 200",
+    "tied timestamp/UUID keyset paging",
+    "four user-scoped recent/filter indexes"
+  ],
+  "scope_note": "Database administrator rollback integration test, not a live Google consent or public-deployment test."
+}

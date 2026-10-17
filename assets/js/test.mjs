@@ -5,6 +5,7 @@ import { filterQuestions, gradeAttempt, sampleQuestions } from "./engine.mjs";
 
 const ROOT = new URL("../../", import.meta.url);
 const STORAGE = { sessions: "ekguru.sessions.v2", saved: "ekguru.saved.v2" };
+const sessionKey = (who) => `ekguru.sessions.v3.${who || "guest"}`;
 const POOL_STATUS = "all_practice"; // answer-checked + community-answered; review-only records stay out
 
 const state = {
@@ -258,9 +259,11 @@ function setMode(mode) {
 
 /* ------------------------------------------------------------- session ----- */
 async function startTest(questionList, label, presetAnswers) {
+  await window.EkGuruAccount?.ready;
   state.questions = questionList;
   state.owner = window.EkGuruAccount?.user?.id || null;
   state.attemptId = globalThis.crypto?.randomUUID?.() || null;
+  state.sessions = readLocal(sessionKey(state.owner), []);
   state.answers = presetAnswers || {};
   state.marked = new Set();
   state.visited = new Set();
@@ -448,12 +451,14 @@ function finishTest(silent) {
     correct: result.correct,
     percent: result.percent,
   }].concat(state.sessions).slice(0, 12);
-  writeLocal(STORAGE.sessions, state.sessions);
+  writeLocal(sessionKey(state.owner), state.sessions);
   if (state.attemptId && window.EkGuruAccount?.saveAttempt) {
     const details = { version: 1, mode: state.exam ? "exam" : "practice", language: state.language,
       answers_saved: state.questions.length <= 150 };
     if (details.answers_saved) details.answers = state.answers;
-    window.EkGuruAccount.saveAttempt({ id: state.attemptId, kind: "cn", paper_id: "cn-" + (state.topicId || "full"),
+    window.EkGuruAccount.saveAttempt({ id: state.attemptId, kind: "cn", subject_id: "computer-network",
+      test_id: state.mode === "full" ? `cn-mixed-${result.total}` : `cn-topic-${(state.topicId || "mixed").toLowerCase()}-${result.total}`,
+      completed_at: new Date().toISOString(), paper_id: "cn-" + (state.topicId || "full"),
       label, total: result.total, correct: result.correct, wrong: result.wrong, unanswered: result.unanswered,
       score: result.correct, max_score: result.total, duration_seconds: Math.min(604800, state.elapsed), details }, state.owner)
       .catch(() => showToast("Cloud sync pending. Result is browser mein available hai."));
@@ -653,10 +658,10 @@ function bind() {
 async function init() {
   try {
     const [site, manifest] = await Promise.all([
-      fetchJSON("data/site.json"),
+      fetchJSON("data/banks/cn/topics.json"),
       fetchJSON("data/banks/cn/manifest.json"),
     ]);
-    state.site = site.subjects.find((subject) => subject.id === "computer-network");
+    state.site = site;
     state.manifest = manifest;
     manifest.topics.forEach((topic) => state.manifestTopics.set(topic.topic_id, topic));
     state.site.topics.forEach((topic) => {
@@ -664,7 +669,8 @@ async function init() {
       topic.sections.forEach((section) => state.sectionLabels.set(section.title, section.short));
     });
     state.saved = new Map(readLocal(STORAGE.saved, []));
-    state.sessions = readLocal(STORAGE.sessions, []);
+    await window.EkGuruAccount?.ready;
+    state.sessions = readLocal(sessionKey(window.EkGuruAccount?.user?.id), []);
     /* student-facing line: sirf numbers — koi internal build id/version nahi */
     $("bankInfo").textContent =
       `${number(manifest.published_question_count)} questions · ${manifest.topics.length} topics`;
@@ -704,4 +710,8 @@ async function init() {
   }
 }
 
+window.addEventListener("ekguru:account", () => {
+  if (!$("playerPanel").hidden) return;
+  state.sessions = readLocal(sessionKey(window.EkGuruAccount?.user?.id), []); renderHistory();
+});
 init();

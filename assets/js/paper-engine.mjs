@@ -81,7 +81,7 @@ export function gradePaper(paper, draft) {
 
 export function paperAttempt(paper, draft, now = Date.now()) {
   const result = gradePaper(paper, draft);
-  return { id: draft.id, kind: "paper", paper_id: paper.id, label: paper.title,
+  return { id: draft.id, kind: "paper", subject_id: "previous-year-papers", test_id: paper.id, completed_at: new Date(now).toISOString(), paper_id: paper.id, label: paper.title,
     total: result.total, correct: result.correct, wrong: result.wrong, unanswered: result.unanswered,
     score: result.score, max_score: result.max_score,
     duration_seconds: Math.min(604800, Math.max(0, Math.floor(((draft.deadline ? Math.min(now, draft.deadline) : now) - draft.started_at) / 1000))),

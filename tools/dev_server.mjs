@@ -61,6 +61,7 @@ const server = http.createServer(async (req, res) => {
     const original = target;
     let stat = await fs.stat(target);
     const headers = { "Content-Type": mime[path.extname(original)] || "application/octet-stream", "Cache-Control": "no-cache", "X-Content-Type-Options": "nosniff", "Referrer-Policy": "strict-origin-when-cross-origin", "Accept-Ranges": "bytes", "Vary": "Accept-Encoding" };
+    if (/\.(?:[a-f0-9]{12}|[A-Z0-9]{8})\.(?:min\.json|mjs|css|webp|png)$/.test(original)) headers["Cache-Control"] = "public, max-age=31536000, immutable";
     // Do not block iframe embedding: Arena displays this server in a preview iframe.
     if (!req.headers.range) {
       for (const encoding of compression(req.headers["accept-encoding"])) {

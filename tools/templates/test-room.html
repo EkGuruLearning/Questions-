@@ -2,7 +2,7 @@
       <div>
         <span class="eyebrow">Study → Practice → Improve</span>
         <h1>Aapka Test Room</h1>
-        <p class="section-note">Old paper ko exam ki tarah solve karo. PDF padho, answer sheet bharo, timer ke saath practice karo—scanned papers bhi chalte hain.</p>
+        <p class="section-note">Subject chuno. Question padho. Answer do. Native CBT, ek all-subject result timeline aur useful IT-exam PDFs—bina unnecessary clutter.</p>
         <p class="small muted" data-cloud-status role="status">Guest practice free hai. Google login se naye results har device par milenge.</p>
       </div>
       <div class="room-account card">
@@ -16,6 +16,11 @@
     </section>
 
     <div id="roomCatalog">
+      <section class="section" aria-labelledby="nativePracticeTitle">
+        <div class="section-head"><h2 id="nativePracticeTitle">Question/options CBT.</h2><a class="button primary" href="../practice/index.html">Browse all {{CBT_COUNT}} tests →</a></div>
+        <p class="section-note">Reasoning aur RPSC reprint ab normal test player mein. Scans aur unreviewed mixed-format papers ko forced CBT mein convert nahi kiya.</p>
+        <!-- CBT_CARDS -->
+      </section>
       <section class="section" aria-labelledby="quickPracticeTitle">
         <div class="section-head"><h2 id="quickPracticeTitle">Quick practice</h2><span class="small muted">Existing CN bank · random questions</span></div>
         <div class="quick-test-grid">
@@ -25,11 +30,12 @@
         </div>
       </section>
       <section class="section" aria-labelledby="oldPaperTitle">
-        <div class="section-head"><h2 id="oldPaperTitle">Previous papers, real practice</h2><a href="../previous-year-papers/index.html">Saare papers &amp; sources →</a></div>
-        <p class="small muted">PDF aapke start karne par hi load hogi. Bina digital key ke paper unscored rehta hai; answer key ka status har paper par diya hai.</p>
+        <div class="section-head"><h2 id="oldPaperTitle">Past papers, clearly labelled.</h2><a href="../previous-year-papers/index.html">Saare papers &amp; sources →</a></div>
+        <p class="small muted">Curated batch, exhaustive archive nahi. PDFs click par load hoti hain. Mirrored sources independently official-hash verified nahi hain; questions/keys invent nahi kiye.</p>
         <!-- PAPER_CARDS -->
       </section>
-      <section class="section card" id="paperSetup" aria-labelledby="paperSetupTitle">
+      <details class="section legacy-paper-tools" id="legacyPaperTools"><summary>Optional tools for older scanned papers</summary><p class="small muted">Default CBT upar hai. Sirf existing single-choice paper/scan ke liye PDF + response-sheet fallback; mixed NAT/MSQ papers reader-only hain.</p>
+      <section class="card" id="paperSetup" aria-labelledby="paperSetupTitle">
         <h2 id="paperSetupTitle">Apna paper choose karo</h2>
         <p id="roomLoadStatus" class="muted" role="status">Paper list load ho rahi hai…</p>
         <form id="paperSetupForm">
@@ -53,6 +59,7 @@
         </div>
         <p id="lastLocalResult" class="small muted"></p>
       </section>
+      </details>
     </div>
 
     <section class="section" id="paperPlayer" hidden aria-label="Paper practice room">

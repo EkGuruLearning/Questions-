@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "it-fundamentals-5",
+  "title": "IT fundamentals — 5-question check",
+  "subject_title": "Computer Network",
+  "duration_minutes": 5,
+  "note": "Original EkGuru practice, not an official previous-exam paper. Includes single-choice, multiple-select and numerical answers. Exact-set MSQ scoring; no partial credit. Practice marking: +1 correct, no negative marks.",
+  "source": { "label": "Original EkGuru practice — no exam-source or official-key claim" },
+  "questions": [
+    {
+      "text": "At which OSI layer does IP routing primarily operate?",
+      "options": ["Physical", "Network", "Session", "Application"],
+      "answer": ["B"],
+      "explanation": "IP addressing and routing operate at the network layer (Layer 3)."
+    },
+    {
+      "text": "Select ALL transport-layer protocols from this list.",
+      "type": "multiple",
+      "options": ["TCP", "UDP", "HTTP", "Ethernet"],
+      "answer": ["A", "B"],
+      "explanation": "TCP and UDP are transport protocols. HTTP is application-layer; Ethernet concerns the data-link and physical layers."
+    },
+    {
+      "text": "How many bits are in an IPv4 address? Enter a number.",
+      "type": "numeric",
+      "answer_range": [32, 32],
+      "explanation": "IPv4 uses a 32-bit address, commonly displayed as four 8-bit octets."
+    },
+    {
+      "text": "An initially empty FIFO queue receives 4, then 5. What value does the first dequeue operation return?",
+      "options": ["4", "5", "9", "No value"],
+      "answer": ["A"],
+      "explanation": "FIFO means first in, first out. The first inserted value is 4."
+    },
+    {
+      "text": "Convert the unsigned binary number 1011 to decimal. Enter a number.",
+      "type": "numeric",
+      "answer_range": [11, 11],
+      "explanation": "1011₂ = 8 + 0 + 2 + 1 = 11₁₀."
+    }
+  ]
+}

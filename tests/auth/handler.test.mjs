@@ -215,3 +215,54 @@ test("Build Output API's captured path dispatches to the same handler", async ()
   assert.equal(response.status, 200); assert.equal(response.data.google_enabled, true);
   assert.equal((await h.request("/api/does-not-exist")).status, 404);
 });
+
+test("generic subject/test attempts need no paper-specific field, retain completion time and reject malformed identities", () => {
+  const raw = attempt({ kind: "quiz", subject_id: "reasoning", test_id: "series-12", completed_at: "2026-10-17T15:30:00+05:30" });
+  delete raw.paper_id;
+  const clean = validateAttempt(raw);
+  assert.equal(clean.subject_id, "reasoning"); assert.equal(clean.test_id, "series-12"); assert.equal(clean.paper_id, "series-12");
+  assert.equal(clean.completed_at, "2026-10-17T10:00:00.000Z");
+  assert.equal(validateAttempt(attempt({ kind: "cn" })).subject_id, "computer-network");
+  assert.equal(validateAttempt(attempt()).subject_id, "previous-year-papers");
+  for (const patch of [{ subject_id: undefined }, { subject_id: "../other" }, { subject_id: ["reasoning"] }, { test_id: ["series-12"] }, { test_id: "a,b" }, { id: [ID] }, { completed_at: "2026-02-31T00:00:00Z" }, { completed_at: "not-a-date" }, { total: 2001 }]) assert.throws(() => validateAttempt({ ...raw, ...patch }), (e) => e.status === 400);
+});
+
+test("551 results/50 subjects/500+ tests page without gaps or duplicates, even at tied microsecond timestamps", async () => {
+  const records = Array.from({ length: 551 }, (_, i) => ({ ...attempt(), id: `f0000000-0000-4000-8000-${String(i + 1).padStart(12, "0")}`,
+    kind: "quiz", subject_id: `subject-${i % 50}`, test_id: `test-${i}`, completed_at: "2026-10-17T03:12:14.123456+00:00", created_at: "2026-10-17T03:13:00.234567+00:00" })).reverse();
+  const h = setup({ fetcher: async (url) => {
+    if (url.endsWith("/user")) return json(user);
+    const query = new URL(url).searchParams;
+    assert.equal(query.get("user_id"), `eq.${UID}`); assert.equal(query.get("order"), "completed_at.desc,id.desc");
+    assert.equal(query.get("offset"), null, "keyset pagination must not scan/degrade with OFFSET");
+    let rows = records;
+    for (const field of ["subject_id", "test_id"]) if (query.has(field)) rows = rows.filter((row) => `eq.${row[field]}` === query.get(field));
+    if (query.has("or")) {
+      const match = /^\(completed_at\.lt\.([^,]+),and\(completed_at\.eq\.([^,]+),id\.lt\.([0-9a-f-]+)\)\)$/.exec(query.get("or"));
+      assert.ok(match, "safe lexicographic PostgREST cursor filter"); assert.equal(match[1], records[0].completed_at); assert.equal(match[2], match[1]);
+      rows = rows.filter((row) => row.completed_at < match[1] || row.completed_at === match[1] && row.id < match[3]);
+    }
+    return json(rows.slice(0, Number(query.get("limit"))));
+  } });
+  const read = async (query) => h.request("/api/attempts?" + query, { cookie: sessionCookie(), headers: { "x-ekguru-user": UID } });
+  const rows = []; let cursor = null, pages = 0;
+  do {
+    const response = await read(new URLSearchParams({ limit: "50", ...(cursor ? { cursor } : {}), user_id: OTHER }));
+    assert.equal(response.status, 200); rows.push(...response.data.attempts); cursor = response.data.next_cursor; pages++;
+    if (cursor) assert.equal(JSON.parse(Buffer.from(cursor, "base64url").toString()).at, records[0].completed_at, "do not truncate Postgres microseconds");
+  } while (cursor);
+  assert.equal(rows.length, 551); assert.equal(new Set(rows.map((row) => row.id)).size, 551); assert.equal(pages, 12);
+  const subject = await read("subject_id=subject-0"); assert.equal(subject.data.attempts.length, 12);
+  const byTest = await read("test_id=test-0"); assert.equal(byTest.data.attempts.length, 1);
+  assert.equal(byTest.data.attempts[0].id, records.at(-1).id, "old test remains accessible beyond the first 500 newer results");
+});
+
+test("malformed history cursors/filters/limits fail before any database request", async () => {
+  const h = setup();
+  const encode = (value) => Buffer.from(JSON.stringify(value)).toString("base64url");
+  const invalid = ["limit=0", "limit=101", "limit=", "limit=all", "subject_id=unsafe/path", "test_id=x,y", "cursor=", "cursor=not-json",
+    "cursor=" + encode({ at: "2026-02-31T00:00:00Z", id: ID }), "cursor=" + encode({ at: "2026-10-17T00:00:00Z", id: "bad" }),
+    "cursor=" + encode({ at: "2026-10-17T00:00:00Z),id.gt.0", id: ID }), "cursor=" + "A".repeat(300)];
+  for (const query of invalid) assert.equal((await h.request("/api/attempts?" + query, { cookie: sessionCookie(), headers: { "x-ekguru-user": UID } })).status, 400, query);
+  assert.equal(h.calls.filter((call) => call.url.includes("/rest/v1/")).length, 0);
+});

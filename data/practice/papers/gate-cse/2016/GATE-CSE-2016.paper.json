@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "gate-cse-2016",
+  "title": "GATE 2016 — Computer Science & IT — CS-1 + CS-2 bundle",
+  "question_count": null,
+  "duration_minutes": 0,
+  "reader_only": true,
+  "key_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Contains both sessions and appended keys; MCQ/NAT formats. MuPDF reports repaired parent-tree metadata; all pages render.",
+  "paper_sha256": "7b5b8dda4c7263a5cce90d25af696f541057551897a5ebfaff66b5fca7e36c88",
+  "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2016.pdf"
+}

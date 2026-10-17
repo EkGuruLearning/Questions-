@@ -7,7 +7,15 @@ const ACCOUNT = "/subjects/account/index.html";
 const ROOM = "/subjects/test-room/index.html";
 const MAX_BODY = 24 * 1024;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-const SELECT = "id,kind,paper_id,label,total,correct,wrong,unanswered,score,max_score,duration_seconds,created_at";
+const SELECT = "id,kind,subject_id,test_id,paper_id,label,total,correct,wrong,unanswered,score,max_score,duration_seconds,completed_at,created_at";
+
+function timestamp(value) {
+  if (typeof value !== "string") return false;
+  const match = /^(20\d{2})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,6})?(?:Z|[+-]\d{2}:\d{2})$/.exec(value);
+  if (!match || !Number.isFinite(Date.parse(value))) return false;
+  const [, year, month, day, hour, minute, second] = match.map(Number);
+  return month >= 1 && month <= 12 && day >= 1 && day <= new Date(Date.UTC(year, month, 0)).getUTCDate() && hour <= 23 && minute <= 59 && second <= 59;
+}
 
 class APIError extends Error {
   constructor(status, code) { super(code); this.status = status; this.code = code; }
@@ -45,20 +53,30 @@ export function safeNext(raw, origin) {
 
 export function validateAttempt(input) {
   const integer = (n, min, max) => Number.isInteger(n) && n >= min && n <= max;
-  if (!input || typeof input !== "object" || Array.isArray(input) || !UUID.test(input.id || "")) throw new APIError(400, "invalid_attempt");
-  if (!["cn", "paper"].includes(input.kind) || !/^[\w.-]{1,128}$/.test(input.paper_id || "")) throw new APIError(400, "invalid_attempt");
+  if (!input || typeof input !== "object" || Array.isArray(input) || typeof input.id !== "string" || !UUID.test(input.id)) throw new APIError(400, "invalid_attempt");
+  if (!["cn", "paper", "quiz"].includes(input.kind)) throw new APIError(400, "invalid_attempt");
+  const subjectId = input.subject_id ?? (input.kind === "cn" ? "computer-network" : input.kind === "paper" ? "previous-year-papers" : "");
+  const testId = input.test_id ?? input.paper_id;
+  if (typeof subjectId !== "string" || typeof testId !== "string" || !/^[a-z0-9][a-z0-9_.-]{0,95}$/.test(subjectId) || !/^[\w.-]{1,128}$/.test(testId)) throw new APIError(400, "invalid_attempt");
+  input = { ...input, subject_id: subjectId, test_id: testId, paper_id: input.paper_id ?? testId };
+  if (typeof input.paper_id !== "string" || !/^[\w.-]{1,128}$/.test(input.paper_id)) throw new APIError(400, "invalid_attempt");
   if (typeof input.label !== "string" || !input.label.trim() || input.label.length > 200) throw new APIError(400, "invalid_attempt");
-  if (!integer(input.total, 1, input.kind === "cn" ? 2000 : 300) || !integer(input.unanswered, 0, input.total) || !integer(input.duration_seconds, 0, 7 * 86400)) throw new APIError(400, "invalid_attempt");
+  if (!integer(input.total, 1, input.kind === "paper" ? 300 : 2000) || !integer(input.unanswered, 0, input.total) || !integer(input.duration_seconds, 0, 7 * 86400)) throw new APIError(400, "invalid_attempt");
   const unscored = input.correct === null && input.wrong === null && input.score === null && input.max_score === null;
   if (!unscored && (!integer(input.correct, 0, input.total) || !integer(input.wrong, 0, input.total)
     || input.correct + input.wrong + input.unanswered > input.total
     || !Number.isFinite(input.score) || !Number.isFinite(input.max_score)
     || input.max_score <= 0 || input.max_score > 30000 || input.score > input.max_score || input.score < -30000)) throw new APIError(400, "invalid_attempt");
+  const extra = [];
+  if (input.completed_at !== undefined) {
+    if (!timestamp(input.completed_at)) throw new APIError(400, "invalid_attempt");
+    extra.push(["completed_at", new Date(input.completed_at).toISOString()]);
+  }
   const details = input.details ?? {};
   if (!details || typeof details !== "object" || Array.isArray(details) || JSON.stringify(details).length > 16000) throw new APIError(400, "invalid_attempt");
   return Object.fromEntries([
-    "id", "kind", "paper_id", "label", "total", "correct", "wrong", "unanswered", "score", "max_score", "duration_seconds",
-  ].map((key) => [key, key === "label" ? input.label.trim() : input[key]]).concat([["details", details]]));
+    "id", "kind", "subject_id", "test_id", "paper_id", "label", "total", "correct", "wrong", "unanswered", "score", "max_score", "duration_seconds",
+  ].map((key) => [key, key === "label" ? input.label.trim() : input[key]]).concat([["details", details]], extra));
 }
 
 async function readJSON(req) {
@@ -233,9 +251,33 @@ export function createHandler({ env = process.env, fetcher = fetch, now = Date.n
         if (!auth) throw new APIError(401, "login_required");
         if (req.headers["x-ekguru-user"] !== auth.user.id) throw new APIError(409, "account_changed");
         if (req.method === "GET") {
-          const query = new URLSearchParams({ user_id: `eq.${auth.user.id}`, select: SELECT, order: "created_at.desc", limit: "50" });
-          const attempts = await upstream(`/rest/v1/ekguru_attempts?${query}`, { token: auth.session.access });
-          return send(200, { attempts });
+          const rawLimit = requestURL.searchParams.get("limit") ?? "50";
+          if (!/^\d{1,3}$/.test(rawLimit) || Number(rawLimit) < 1 || Number(rawLimit) > 100) throw new APIError(400, "invalid_page");
+          const limit = Number(rawLimit);
+          const query = new URLSearchParams({ user_id: `eq.${auth.user.id}`, select: SELECT, order: "completed_at.desc,id.desc", limit: String(limit + 1) });
+          for (const field of ["subject_id", "test_id"]) {
+            const value = requestURL.searchParams.get(field);
+            if (value !== null) {
+              if (!(field === "subject_id" ? /^[a-z0-9][a-z0-9_.-]{0,95}$/ : /^[\w.-]{1,128}$/).test(value)) throw new APIError(400, "invalid_filter");
+              query.set(field, `eq.${value}`);
+            }
+          }
+          const rawCursor = requestURL.searchParams.get("cursor");
+          if (rawCursor !== null) {
+            let cursor;
+            try {
+              if (rawCursor.length > 256 || !/^[A-Za-z0-9_-]+$/.test(rawCursor)) throw new Error();
+              cursor = JSON.parse(Buffer.from(rawCursor, "base64url").toString());
+              if (typeof cursor?.id !== "string" || !UUID.test(cursor.id) || !timestamp(cursor.at)) throw new Error();
+            } catch { throw new APIError(400, "invalid_cursor"); }
+            // Preserve Postgres microseconds; truncating through JS Date loses tied rows.
+            query.set("or", `(completed_at.lt.${cursor.at},and(completed_at.eq.${cursor.at},id.lt.${cursor.id}))`);
+          }
+          const rows = await upstream(`/rest/v1/ekguru_attempts?${query}`, { token: auth.session.access });
+          if (!Array.isArray(rows)) throw new APIError(502, "history_unavailable");
+          const attempts = rows.slice(0, limit), last = attempts.at(-1);
+          const next_cursor = rows.length > limit && last ? Buffer.from(JSON.stringify({ at: last.completed_at || last.created_at, id: last.id })).toString("base64url") : null;
+          return send(200, { attempts, next_cursor });
         }
         if (req.method === "POST") {
           const attempt = validateAttempt(await readJSON(req));

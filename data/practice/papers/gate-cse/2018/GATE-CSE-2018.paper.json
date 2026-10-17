@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "gate-cse-2018",
+  "title": "GATE 2018 — Computer Science & IT",
+  "question_count": 65,
+  "duration_minutes": 0,
+  "reader_only": true,
+  "key_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added. Includes GA Set-3, CS and an appended MCQ/NAT key; no single-choice conversion.",
+  "paper_sha256": "60a64161cf48d98e11779af034043f9b3e960049c10d782a0dd18a51042a9187",
+  "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2018.pdf"
+}

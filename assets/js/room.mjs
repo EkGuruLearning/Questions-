@@ -170,9 +170,10 @@ function finish(auto = false) {
   $("paperResult").scrollIntoView({ block: "start" });
 }
 
-$("paperSetupForm").addEventListener("submit", (event) => {
+$("paperSetupForm").addEventListener("submit", async (event) => {
   event.preventDefault();
   try {
+    await window.EkGuruAccount?.ready;
     const paper = selectedPaper(); if (!paper) throw new Error("Pehle ek paper choose karein.");
     const settings = readSettings();
     if (state.saved && !window.confirm("Pichhla saved draft replace karke naya paper shuru karein?")) return;
@@ -230,14 +231,15 @@ async function init() {
     if (!response.ok) throw new Error("Paper list load nahi hui.");
     const manifest = await response.json();
     if (manifest.schema_version !== 1 || !Array.isArray(manifest.papers)) throw new Error("Paper list format invalid hai.");
-    state.papers = manifest.papers;
+    state.papers = manifest.papers.filter((paper) => !paper.reader_only);
     $("paperSelect").replaceChildren();
     for (const paper of state.papers) {
       const option = document.createElement("option"); option.value = paper.id; option.textContent = paper.title; $("paperSelect").append(option);
     }
     $("paperSelect").disabled = !state.papers.length; $("startPaperButton").disabled = !state.papers.length;
-    $("roomLoadStatus").textContent = state.papers.length ? `${state.papers.length} uploaded papers · PDF + answer-sheet practice` : "Abhi old papers upload nahi hue. Upar CN practice se shuru karein.";
+    $("roomLoadStatus").textContent = state.papers.length ? `${state.papers.length} older single-choice papers · optional fallback tools` : "Abhi old papers upload nahi hue. Upar CN practice se shuru karein.";
     const requested = new URLSearchParams(location.search).get("paper");
+    if (requested && $("legacyPaperTools") && state.papers.some((p) => p.id === requested)) $("legacyPaperTools").open = true;
     choosePaper(state.papers.some((p) => p.id === requested) ? requested : state.papers[0]?.id);
     document.querySelectorAll("[data-paper-id]").forEach((link) => link.addEventListener("click", () => choosePaper(link.dataset.paperId)));
     const raw = read(DRAFT);

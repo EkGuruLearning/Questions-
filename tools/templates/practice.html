@@ -1,0 +1,48 @@
+    <section class="section quiz-intro" id="quizIntro">
+      <span class="eyebrow">One player · every subject</span>
+      <h1>Apna next test chuno.</h1>
+      <p class="section-note">Asli CBT flow: question, options, palette aur timer. Har subject ka result ek hi history mein—device par, aur login ke saath private cloud mein.</p>
+      <p class="small muted" data-cloud-status role="status"></p>
+    </section>
+    <section class="section card quiz-setup" id="quizSetup">
+      <form id="quizSetupForm">
+        <div class="field-grid">
+          <div class="field"><label for="quizSubject">Subject</label><select id="quizSubject" disabled><option>Loading subjects…</option></select></div>
+          <div class="field"><label for="quizTest">Test</label><select id="quizTest" disabled><option>Choose a subject</option></select></div>
+          <div class="field"><label for="quizMode">Pattern</label><select id="quizMode"><option value="exam">Exam — answers after submission</option><option value="practice">Practice — check as you learn</option></select></div>
+          <div class="field"><label for="quizMinutes">Time in minutes (0 = untimed)</label><input id="quizMinutes" type="number" min="0" max="360" value="30" required></div>
+        </div>
+        <p id="quizMeta" class="small muted" role="status">Sirf selected subject aur test ka data load hoga.</p>
+        <p id="quizSourceNote" class="notice small" hidden></p>
+        <div class="action-row"><button id="quizStart" class="button primary" type="submit" disabled>Start CBT →</button><button id="quizResume" class="button secondary" type="button" hidden>Resume saved attempt</button><a class="button ghost" href="../account/index.html">All-subject history ↗</a></div>
+      </form>
+    </section>
+    <section class="section" id="quizPlayer" hidden aria-label="Computer-based practice test">
+      <div class="quiz-exam-bar">
+        <div><span class="eyebrow" id="quizSubjectLabel"></span><h2 id="quizTitle"></h2></div>
+        <div class="action-row"><span class="timer" id="quizTimer" aria-label="Test timer">00:00</span><button class="button secondary" id="quizLeave" type="button">Save &amp; leave</button><button class="button primary" id="quizSubmit" type="button">Submit test</button></div>
+      </div>
+      <p id="quizSaveStatus" class="small muted" role="status"></p>
+      <div class="quiz-workspace">
+        <article class="question-card">
+          <div class="question-head"><span class="chip" id="quizQuestionNumber"></span><span class="small muted" id="quizQuestionType"></span><span class="small muted" id="quizMarking"></span></div>
+          <h3 class="question-stem" id="quizQuestionText" tabindex="-1"></h3>
+          <div id="quizQuestionMedia" hidden></div>
+          <p class="notice small" id="quizQuestionNotice" hidden></p>
+          <div id="quizOptions" class="option-list" role="group" aria-labelledby="quizQuestionText"></div>
+          <div id="quizNumericWrap" class="field" hidden><label for="quizNumeric">Enter numerical answer</label><input id="quizNumeric" type="text" inputmode="decimal" maxlength="32" autocomplete="off" placeholder="e.g. 2.15"><p class="small muted">Decimal / negative values allowed. Invalid input counts as unanswered.</p></div>
+          <p id="quizFeedback" class="notice" role="status" hidden></p>
+          <div class="question-actions"><button class="button secondary" id="quizPrev" type="button">← Previous</button><button class="button secondary" id="quizClear" type="button">Clear response</button><button class="button secondary" id="quizCheck" type="button" hidden>Check answer</button><button class="button secondary" id="quizMark" type="button" aria-pressed="false">Mark for review</button><button class="button primary push-right" id="quizNext" type="button">Save &amp; next →</button></div>
+        </article>
+        <aside class="palette quiz-sidebar"><h3>Question navigator</h3><p class="small muted" id="quizProgress"></p><details id="quizPaletteDetails" open><summary>Open question palette</summary><div id="quizPalette" class="palette-grid" aria-label="Jump to question"></div></details><p class="palette-legend">Green: answered · Amber: review · Red: visited, unanswered. Marked answers still count.</p><p class="small muted">Timed attempts keep their original deadline after reload. Alt+N / Alt+P: next / previous.</p><a id="quizOriginal" class="button ghost small" href="../test-room/index.html" target="_blank" rel="noopener noreferrer" hidden>Original source PDF ↗</a></aside>
+      </div>
+    </section>
+    <section class="section card" id="quizResult" hidden>
+      <span class="eyebrow">Another step forward</span><h2>Your test, your progress.</h2>
+      <p class="muted" id="quizResultTitle"></p><div class="result-stats" id="quizStats"></div><p class="notice" id="quizResultNote"></p>
+      <p class="small muted" data-cloud-status role="status"></p>
+      <div class="action-row"><a class="button primary" href="../account/index.html">View all results →</a><button class="button secondary" id="quizAgain" type="button">Choose another test</button><button class="button secondary" id="quizExport" type="button">Download result</button></div>
+      <details id="quizReviewDetails" class="room-review"><summary>Question-by-question review</summary><div id="quizReview" class="review-list"></div><button class="button secondary" id="quizReviewMore" type="button" hidden>Show 50 more</button></details>
+    </section>
+    <p class="notice" id="quizMessage" role="status" hidden></p>
+    <noscript><p class="notice">CBT ke liye JavaScript chahiye. Original PDFs Test Room / subject folders se bina JavaScript bhi available hain.</p></noscript>

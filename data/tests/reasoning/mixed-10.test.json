@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "id": "mixed-10",
+  "title": "Mixed reasoning — 10 questions",
+  "subject_title": "Reasoning",
+  "duration_minutes": 10,
+  "note": "Existing EkGuru sample questions, not a previous official exam. Mixed test Q6 is ungraded because its source relationship is ambiguous.",
+  "source": {
+    "pdf": "content/reasoning/tests/Reasoning-Sample-Test-Paper.pdf",
+    "sha256": "7b27d2c795fac4e4551f48cdfbb3d01ed9d7d9a0ce5dc42c25423994dbe12303",
+    "label": "Existing repository practice material — not independently verified official key"
+  },
+  "questions": [
+    {
+      "text": "6, 12, 24, 48, ? — agla number kya hoga?",
+      "options": [
+        "72",
+        "84",
+        "96",
+        "108"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "har number pichle ka dugna: 48 × 2 = 96."
+    },
+    {
+      "text": "Agar CAT ko 3-1-20 likha jata hai, to DOG ko kaise likhenge?",
+      "options": [
+        "4-15-7",
+        "4-14-7",
+        "5-15-7",
+        "4-15-8"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "CAT = C(3), A(1), T(20). Isi tarah DOG = D(4), O(15), G(7)."
+    },
+    {
+      "text": "Book : Pages :: Ladder : ?",
+      "options": [
+        "Wood",
+        "Rungs",
+        "Height",
+        "Climb"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "jis tarah pustak ke panne hote hain, usi tarah seedhi ke dande (rungs) hote hain."
+    },
+    {
+      "text": "Inme se alag (odd one out) kaun sa hai?",
+      "options": [
+        "16",
+        "25",
+        "36",
+        "42"
+      ],
+      "answer": [
+        "D"
+      ],
+      "explanation": "16, 25 aur 36 pure varg hain (4², 5², 6²), 42 varg nahi hai."
+    },
+    {
+      "text": "Ek vyakti 3 km uttar (north) chalta hai, phir 4 km poorab (east). Shuruaat se uski seedhi doori kitni hai?",
+      "options": [
+        "5 km",
+        "6 km",
+        "7 km",
+        "3.5 km"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "3 aur 4 ke beech samkon (90°) hai, isliye seedhi doori = √(3² + 4²) = 5 km."
+    },
+    {
+      "text": "P, Q ka pita hai aur Q, R ki behen hai. To R, P ki kya hai?",
+      "options": [
+        "Putri (daughter)",
+        "Putra (son)",
+        "Bahu",
+        "Behen"
+      ],
+      "explanation": "Given that Q is R's sister does not determine R's gender. The source key incorrectly assumes R is female.",
+      "notice": "Ungraded: the provided relationship is insufficient to determine R's gender."
+    },
+    {
+      "text": "11, 13, 17, 19, 23, ? — agla number kya hoga?",
+      "options": [
+        "25",
+        "27",
+        "29",
+        "31"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "11, 13, 17, 19, 23 lagatar abhajya sankhyayen hain; agla prime 29 hai."
+    },
+    {
+      "text": "20 vidyarthiyon ki ek pankti me Sunita baayein se 7ve sthan par hai. Dayein se uska sthan kya hoga?",
+      "options": [
+        "13va",
+        "14va",
+        "15va",
+        "7va"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "dayein se sthan = kul + 1 – baayein se sthan = 20 + 1 – 7 = 14."
+    },
+    {
+      "text": "Doctor : Hospital :: Teacher : ?",
+      "options": [
+        "School",
+        "Student",
+        "Book",
+        "Class"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "jis tarah doctor hospital me kaam karta hai, teacher school me."
+    },
+    {
+      "text": "Agar MONDAY ko NPOEBZ likha jata hai, to SUNDAY ko kaise likhenge?",
+      "options": [
+        "TVOEBZ",
+        "TVPDBZ",
+        "RUOEBZ",
+        "TVOEBY"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "har akshar ek aage badhta hai: S→T, U→V, N→O, D→E, A→B, Y→Z."
+    }
+  ]
+}

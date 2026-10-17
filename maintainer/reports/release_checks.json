@@ -1,24 +1,47 @@
 {
-  "generated_at": "2026-10-17T05:33:10+00:00",
+  "generated_at": "2026-10-17T07:04:56+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
-    "pass": 24,
+    "pass": 26,
     "skip": 0,
     "fail": 0
   },
   "checks": [
+    {
+      "name": "All-subject CBT catalogue",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Subject-sharded hash-addressed banks, source guards, typed question/answer contracts and small CN-only bootstrap.",
+      "output_tail": [
+        "PASS: 9 CBT manifest/index/bank files current"
+      ]
+    },
+    {
+      "name": "Native all-subject CBT/history browser regression (optional)",
+      "status": "PASS",
+      "exit_code": 0,
+      "note": "Six widths, native RPSC/reasoning/typed CBT, offline saves, guest history, 551-result mocked paging/export, 35 queued writes, owner isolation and six imported PDF readers. Not live OAuth.",
+      "output_tail": [
+        "PASS PDF.js 4.10.38: GATE-CSE-2016.pdf \u00b7 45 pages \u00b7 first/last render",
+        "PASS PDF.js 4.10.38: GATE-CSE-2018.pdf \u00b7 26 pages \u00b7 first/last render",
+        "PASS PDF.js 4.10.38: GATE-CSE-2019.pdf \u00b7 19 pages \u00b7 first/last render",
+        "PASS PDF.js 4.10.38: GATE-CSE-2022.pdf \u00b7 43 pages \u00b7 first/last render",
+        "PASS PDF.js 4.10.38: ISRO-ICRB-CSE-2023-Set-A-Questions.pdf \u00b7 45 pages \u00b7 first/last render",
+        "PASS universal CBT/history/PDF browser regressions; screenshots/report stay ignored in .cache/"
+      ]
+    },
     {
       "name": "Auth, cookies and practice engine",
       "status": "PASS",
       "exit_code": 0,
       "note": "PKCE/state, encrypted HttpOnly cookies, refresh/logout, CSRF, owner isolation, input bounds, timing and honest grading.",
       "output_tail": [
-        "# pass 41",
+        "# pass 60",
         "# fail 0",
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 304.8182"
+        "# duration_ms 3202.142248"
       ]
     },
     {
@@ -78,7 +101,7 @@
       "exit_code": 0,
       "note": "No broken links, no .md links, no maintainer links, download hashes match.",
       "output_tail": [
-        "PASS: 60 route(s), 2327 link(s), 72 download(s) and 19 folder(s) checked",
+        "PASS: 69 route(s), 2669 link(s), 78 download(s) and 21 folder(s) checked",
         "PASS: no .md links, no maintainer links, no broken internal links, hashes match data/site.json"
       ]
     },
@@ -88,7 +111,7 @@
       "exit_code": 0,
       "note": "Content uploads and reader links are reflected in the published HTML.",
       "output_tail": [
-        "PASS: 60 generated page(s) match data/site.json."
+        "PASS: 69 generated page(s) match data/site.json."
       ]
     },
     {
@@ -101,7 +124,7 @@
         "  - section filter: 129 questions in the chosen section",
         "  - player: 10-question practice session rendered",
         "  - practice mode: instant feedback after answering",
-        "  - result: 20% score, stats, topic bars and 10 review items",
+        "  - result: 50% score, stats, topic bars and 10 review items",
         "  - exam mode: hidden answers, palette marking, submit and result"
       ]
     },
@@ -169,7 +192,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 17 tests in 0.899s",
+        "Ran 17 tests in 0.962s",
         "",
         "OK"
       ]
@@ -183,7 +206,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 23 tests in 0.324s",
+        "Ran 23 tests in 0.334s",
         "",
         "OK"
       ]
@@ -197,7 +220,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 19 tests in 0.076s",
+        "Ran 19 tests in 0.081s",
         "",
         "OK"
       ]
@@ -211,7 +234,7 @@
         "test_skip_option_cannot_be_a_correct_key_entry (test_practice_manifest.PracticeManifestTests.test_skip_option_cannot_be_a_correct_key_entry) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 20 tests in 0.074s",
+        "Ran 25 tests in 0.164s",
         "",
         "OK"
       ]
@@ -234,7 +257,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 54.62419"
+        "# duration_ms 74.81542"
       ]
     },
     {
@@ -244,11 +267,11 @@
       "note": "Reads the generated HTML and asserts folder trees, files, map previews, breadcrumbs, nav and footer.",
       "output_tail": [
         "  - folder page (files + breadcrumb back up): 5 files, breadcrumb back to the subject page",
-        "  - previous year papers page: 2 hosted folder, 18 exam pages, RPSC 2024 with 2 files",
+        "  - previous year papers page: 4 hosted folder, 18 exam pages, RPSC 2024 with 2 files",
         "  - reasoning folder pages: 4 folder pages, empty ones explained",
         "  - year-wise exam pages: 1 locally ready year chip; external years are grouped by exam and actual sitting",
         "  - map folder pages: 17 map rows, lightweight preview, reader and downloads",
-        "  - nav + footer on every published page: 59 pages carry the full nav + footer"
+        "  - nav + footer on every published page: 68 pages carry the full nav + footer"
       ]
     },
     {
@@ -257,7 +280,7 @@
       "exit_code": 0,
       "note": "Asli browser me phone/tablet/desktop widths: koi horizontal scroll nahi, nav sahi, tap targets bade. Exit 77 = puppeteer/Chrome nahi mila (skip). Screenshots /tmp/ekguru-mobile-shots me.",
       "output_tail": [
-        "ok   desktop-1280 /subjects/reasoning/practice/index.html            scrollW=1280",
+        "ok   desktop-1280 /subjects/rajasthan-geography/map/rajasthan/index.html scrollW=1280",
         "ok   desktop-1280 /subjects/previous-year-papers/BCI/2022/index.html scrollW=1280",
         "ok   desktop-1280 /subjects/previous-year-papers/BCI/2026/index.html scrollW=1280",
         "ok   desktop-1280 /404.html                                          scrollW=1280",
@@ -281,7 +304,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (111 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (2 paths inspected; maintainer/archive originals excluded)."
       ]
     }
   ],
