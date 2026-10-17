@@ -1,0 +1,31 @@
+name: Verify portal
+on:
+  pull_request:
+  push:
+    branches: [main, arena/1491208e-questions]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run build:content
+      - run: npm test
+      - run: python3 tools/validate_question_bank.py && python3 tools/validate_site.py
+      - run: python3 -m unittest discover -s tests/data -p 'test_*.py' -v
+      - run: python3 -m unittest discover -s tests/site -p 'test_*.py' -v
+      - run: python3 -m unittest discover -s tests/navigation -p 'test_*.py' -v
+      - run: python3 -m unittest discover -s tests/responsive -p 'test_*.py' -v
+      - run: node tests/navigation/site_dom_smoke.cjs
+      - run: npm run build
+      - run: node --test tests/room/export.test.mjs

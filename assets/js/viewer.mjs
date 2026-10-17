@@ -77,7 +77,7 @@ async function init() {
         standardFontDataUrl: new URL('../vendor/pdfjs/standard_fonts/', import.meta.url).href,
         isEvalSupported: false,
       });
-      task.onProgress = ({ loaded, total }) => status(total ? `PDF load ho raha hai… ${Math.min(100, Math.round(loaded / total * 100))}%` : 'PDF load ho raha hai…');
+      task.onProgress = ({ loaded, total }) => { if (!pdf) status(total ? `PDF load ho raha hai… ${Math.min(100, Math.round(loaded / total * 100))}%` : 'PDF load ho raha hai…'); };
       const timeout = setTimeout(() => status('File badi hai ya internet slow hai. Aap Original file / Download bhi use kar sakte hain.'), 20000);
       try { pdf = await task.promise; } finally { clearTimeout(timeout); }
     } else {

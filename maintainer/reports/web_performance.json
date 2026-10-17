@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-10-17",
+  "command": "npm run build",
+  "stats": {
+    "files": 377,
+    "public_bytes": 290242303,
+    "text_original_bytes": 5581592,
+    "text_minified_bytes": 5356824,
+    "text_brotli_bytes": 901813,
+    "text_gzip_bytes": 1125137,
+    "brotli_text_reduction_percent": 84,
+    "hashed_asset_entries": 6,
+    "cn_bootstrap_metadata_bytes": 5005,
+    "native_cbt_subjects": 3,
+    "native_cbt_tests": 7
+  },
+  "scope_notes": [
+    "Brotli reduction refers to exported text, not the PDF-heavy site as a whole.",
+    "public_bytes is uncompressed publication payload; does not include duplicate .br/.gz build artifacts.",
+    "Native CBT loads a subject index and selected bank, not every test or PDF.js.",
+    "These are local build byte counts, not a deployed speed/Core Web Vitals measurement."
+  ]
+}

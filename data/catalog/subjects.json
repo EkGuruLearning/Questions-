@@ -257,6 +257,22 @@
           "order": 8,
           "note_en": "EkGuru currently hosts the RPSC Programmer 2024 Paper I copy and answer key; the source status is labelled on the exam page.",
           "note_hi": "EkGuru पर अभी RPSC Programmer 2024 के Paper I की प्रति और उत्तर-कुंजी है; परीक्षा पेज पर स्रोत की स्थिति साफ़ बताई गई है।"
+        },
+        "gate-cse": {
+          "title_en": "GATE — Computer Science & IT",
+          "title_hi": "गेट — कंप्यूटर साइंस और आईटी",
+          "icon": "🧾",
+          "order": 10,
+          "note_en": "Curated mirrored question PDFs; source/format notes in Test Room. Not an exhaustive archive.",
+          "note_hi": "चुनिंदा मिरर PDF; स्रोत और फ़ॉर्मेट की जानकारी Test Room में।"
+        },
+        "isro-cse": {
+          "title_en": "ISRO ICRB — Scientist/Engineer (CSE)",
+          "title_hi": "इसरो ICRB — वैज्ञानिक/इंजीनियर (कंप्यूटर विज्ञान)",
+          "icon": "🧾",
+          "order": 11,
+          "note_en": "2023 Set A question section, printed pages 3–47; source cover/instructions are absent.",
+          "note_hi": "2023 सेट A के प्रश्न, मूल पृष्ठ 3–47; कवर/निर्देश पृष्ठ उपलब्ध नहीं हैं।"
         }
       },
       "topics": [],

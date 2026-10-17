@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "gate-cse-2012",
+  "title": "GATE 2012 — Computer Science & IT",
+  "question_count": 65,
+  "duration_minutes": 0,
+  "reader_only": true,
+  "key_note": "Pinned public GitHub mirror, not independently authenticated against official archive bytes. Reader-only: no reviewed native CBT transcription or digital key has been added.",
+  "paper_sha256": "ff1031a54b710960b9b7f7e941ff299c0ce77952ee540816e040aa01fbb30269",
+  "source_url": "https://github.com/baquer/GATE-and-CSE-Resources-for-Students/blob/bb2837fbd0539743d916990068ea7752b034dd5f/Gate_QuestionPapers/GATE2012.pdf"
+}

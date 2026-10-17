@@ -3,6 +3,7 @@
 index.html
 404.html
 subjects/index.html
+subjects/account/index.html
 subjects/computer-network/answers/index.html
 subjects/computer-network/index.html
 subjects/computer-network/material/index.html
@@ -11,6 +12,10 @@ subjects/computer-network/reference/index.html
 subjects/computer-network/test/index.html
 subjects/computer-network/tests/index.html
 subjects/computer-network/theory/index.html
+subjects/practice/index.html
+subjects/previous-year-papers/BCI/2022/index.html
+subjects/previous-year-papers/BCI/2026/index.html
+subjects/previous-year-papers/BCI/index.html
 subjects/previous-year-papers/computer-operator/index.html
 subjects/previous-year-papers/dsssb/index.html
 subjects/previous-year-papers/exams/drdo-ceptam-sta/index.html
@@ -31,8 +36,16 @@ subjects/previous-year-papers/exams/rssb-informatics-assistant/index.html
 subjects/previous-year-papers/exams/rssb-senior-computer-instructor/index.html
 subjects/previous-year-papers/exams/ssc-selection-posts-it/index.html
 subjects/previous-year-papers/exams/ugc-net-computer-science/index.html
+subjects/previous-year-papers/gate-cse/2012/index.html
+subjects/previous-year-papers/gate-cse/2016/index.html
+subjects/previous-year-papers/gate-cse/2018/index.html
+subjects/previous-year-papers/gate-cse/2019/index.html
+subjects/previous-year-papers/gate-cse/2022/index.html
+subjects/previous-year-papers/gate-cse/index.html
 subjects/previous-year-papers/ia/index.html
 subjects/previous-year-papers/index.html
+subjects/previous-year-papers/isro-cse/2023/index.html
+subjects/previous-year-papers/isro-cse/index.html
 subjects/previous-year-papers/net/index.html
 subjects/previous-year-papers/rpsc/2024/index.html
 subjects/previous-year-papers/rpsc/index.html
@@ -55,3 +68,4 @@ subjects/reasoning/practice/index.html
 subjects/reasoning/tests/index.html
 subjects/reasoning/theory/Calendar/index.html
 subjects/reasoning/theory/index.html
+subjects/test-room/index.html

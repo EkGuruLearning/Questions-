@@ -85,20 +85,18 @@ class SiteDataTests(unittest.TestCase):
     def test_declared_empty_folders_are_published_as_empty(self):
         by_id = {item["id"]: item for item in self.site["subjects"]}
         pyq = by_id["previous-year-papers"]
-        self.assertEqual(
-            [folder["path"] for folder in pyq["tree"]["folders"]],
-            ["ia", "sci", "computer-operator", "system-assistant", "dsssb", "ssc", "net", "rpsc"],
-        )
+        configured = ["ia", "sci", "computer-operator", "system-assistant", "dsssb", "ssc", "net", "rpsc"]
+        paths = [folder["path"] for folder in pyq["tree"]["folders"]]
+        self.assertEqual(paths[:len(configured)], configured, "declared folders retain their order")
         for folder in pyq["tree"]["folders"]:
             with self.subTest(folder=folder["path"]):
                 self.assertTrue(folder["title_en"].strip())
-                if folder["path"] == "rpsc":
-                    # the exam whose papers are already published
-                    self.assertFalse(folder["empty"])
-                    self.assertGreater(folder["file_count"], 0)
-                    continue
-                self.assertTrue(folder["empty"], "exam folders without papers stay empty, never invented")
-                self.assertEqual(folder["file_count"], 0)
+                directory = ROOT / "content/previous-year-papers" / folder["path"]
+                uploaded = [file for file in directory.rglob("*") if file.is_file()
+                            and not file.name.startswith(".") and file.suffix.lower() in CONTENT_SUFFIXES]
+                self.assertEqual(folder["file_count"], len(uploaded))
+                self.assertEqual(folder["empty"], not bool(uploaded),
+                                 "real uploads populate their exam folder; missing papers are never invented")
         reasoning = by_id["reasoning"]
         self.assertEqual([folder["path"] for folder in reasoning["tree"]["folders"]],
                          ["theory", "practice", "answers", "tests"])
@@ -366,7 +364,7 @@ class SiteDataTests(unittest.TestCase):
         on_disk = {
             path.relative_to(ROOT).as_posix()
             for path in ROOT.rglob("*.html")
-            if path.relative_to(ROOT).parts[0] not in {"maintainer", "tools", "tests", ".git"}
+            if path.relative_to(ROOT).parts[0] not in {"library", "maintainer", "tools", "tests", ".git", "node_modules", "public", ".vercel", ".cache", ".venv"}
         }
         self.assertEqual(on_disk - listed, set(), "every published page must be listed in data/catalog/site-routes.txt")
 

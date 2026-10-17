@@ -124,8 +124,11 @@ section("previous year papers page", () => {
   const subject = read("subjects/previous-year-papers/index.html");
   const hostedFolders = all(subject, /class="folder-card[^\"]*" href="([^\"]+)"/g)
     .map((match) => repoPath("subjects/previous-year-papers/index.html", match[1]));
-  assert(hostedFolders.length === 1 && hostedFolders[0] === "subjects/previous-year-papers/rpsc/index.html",
-    "the landing page should list only the RPSC files actually hosted on EkGuru");
+  const siteData = JSON.parse(fs.readFileSync(path.join(ROOT, "data/site.json"), "utf8"));
+  const expectedFolders = siteData.subjects.find((item) => item.id === "previous-year-papers").tree.folders
+    .filter((folder) => folder.file_count).map((folder) => `subjects/previous-year-papers/${folder.path}/index.html`);
+  assert(JSON.stringify(hostedFolders.slice().sort()) === JSON.stringify(expectedFolders.sort()),
+    "the landing page must list every uploaded exam folder, and no empty folder");
   const catalog = JSON.parse(fs.readFileSync(path.join(ROOT, "data/catalog/previous-year-papers.json"), "utf8"));
   let examPages = 0;
   for (const group of catalog.groups) {

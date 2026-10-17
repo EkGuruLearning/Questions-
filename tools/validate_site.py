@@ -51,7 +51,7 @@ REQUIRED_ROUTES = (
 # Repo-only roots: a page must never resolve into these. Checked on the resolved
 # path (not as a substring) so a student folder called `tests/` inside content or a
 # subject page stays legal.
-FORBIDDEN_ROOTS = ("maintainer/", "tools/", "tests/", ".git/", "data/sources/", "data/schemas/")
+FORBIDDEN_ROOTS = ("library/", "maintainer/", "tools/", "tests/", ".git/", "data/sources/", "data/schemas/")
 FORBIDDEN_FILES = ("README.md", "SITE_GUIDE.md")
 
 

@@ -18,6 +18,7 @@ Yahan wo sab hai jo student ko nahi dikhana hai, lekin repository me rakhna zaro
 | `maintainer/catalog-inputs/` | Retired portal catalogue inputs (`books.json`, `exams.json`, `syllabus_mappings.json`, …) |
 | `maintainer/releases/` | Purane release zip |
 | `maintainer/archive/` | Purane snapshots (`pre-audit-2026-10-14`) — bytes kabhi edit nahi karte |
+| `maintainer/AUTH_AND_PRACTICE.md` | Google OAuth activation, Test Room paper/key uploads, privacy, free-tier and deployment notes |
 | `maintainer/COVERAGE.md` | Purana coverage note |
 
 Ye files waise hi rakhi gayi hain jaisi thin — na rename, na rewrite. Sirf unka *location* badla hai

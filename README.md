@@ -1,11 +1,18 @@
-# EkGuru Learning — student portal (Computer Network + Rajasthan map atlas)
+# EkGuru Learning — all-subject CBT, results & study material
 
-Live site (GitHub Pages project path): `https://ekgurulearning.github.io/Questions-/`
+- Static / guest site: `https://ekgurulearning.github.io/Questions-/`
+- Configured Vercel target (**deployment pending**, not a live-site claim): `https://ekguru-questions.vercel.app/subjects/test-room/index.html`
+- **Google provider activation is pending the owner's Google OAuth setup.** Connecting hosting/database alone does not enable Google consent. Exact dashboard steps: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_PRACTICE.md).
 
-Website par sirf do cheezein hain, aur dono student ke kaam ki hain:
+1. **Native question/options CBT** — RPSC's existing 100-question reprint, two Reasoning samples and an original five-question IT check; single-choice, MSQ and numerical answers. Existing CN's 1,554-question engine and 20/50/100 presets remain available.
+2. **One results timeline for every subject/test** — no automatic 200-result deletion, IndexedDB offline journal, owner-isolated retries, subject/test filters, Load older and export. Scale regressions cover **50 subjects / 550+ tests/results**; that is capacity testing, not a claim that 550 tests are already authored.
+3. **Modern light / dark / system theme** — responsive 320px–desktop CBT. Native RPSC does not load the disliked PDF/OMR interface; optional older-scan tools are collapsed, and infeasible/unreviewed conversions stay reader-only.
+4. **Six added IT-exam PDFs** — GATE CSE 2012/2016/2018/2019/2022 and ISRO ICRB CSE 2023 Set A. Pinned mirror hashes, source limitations and reader checks are recorded; not an exhaustive or independently official-authenticated archive. [Curation details](maintainer/CBT_AUTHORING.md#curated-it-pdfs--not-an-exhaustive-archive).
+5. **Optional Google login** — encrypted HttpOnly/Secure cookies (up to 30 days) and private RLS-backed results. Owner's Google/provider and deployment setup is still pending; guest practice stays usable.
 
-1. **Computer Network** — 7 topics, topic-wise/full-mix online test (1,554 questions) aur PDF study material (32 files).
-2. **Rajasthan Geography** — border-district map atlas, A1 se A4 print sizes (6 files).
+Static HTML/native JS + a tiny Node API; no React/Next, browser auth SDK or webfonts CDN. Production uses bundled/hash-cached entries and CSS, **Brotli 11 / gzip 9**, lazy subject/test banks and a **~5 KB CN bootstrap** instead of the roughly 400 KB file catalogue. PDF quality is not destroyed to inflate compression claims. Free-tier quotas/inactivity policies apply; lifetime-free availability is not guaranteed. Private results are **never** stored in public GitHub files.
+
+Authoring/custom-player save contract: [`maintainer/CBT_AUTHORING.md`](maintainer/CBT_AUTHORING.md).
 
 Audit reports, source registers, GIS scripts, purane legacy apps — kuch bhi website par nahi dikhta.
 Wo sab `maintainer/` me hai (dekhne ke liye [`maintainer/README.md`](maintainer/README.md)).
@@ -21,6 +28,9 @@ subjects/                                   subject pages
   computer-network/index.html                 CN home — folders + topic list
   computer-network/material/index.html        folder browser (folder kholo → files)
   computer-network/test/index.html            online test (topic-wise + full mix)
+  test-room/index.html                        CBT starts + curated PDFs / optional scan tools
+  practice/index.html                         shared all-subject native CBT player
+  account/index.html                          optional Google login + private results
   rajasthan-geography/index.html              Map folder → Rajasthan → maps
 404.html                                     purane link ke liye friendly page
 
@@ -42,7 +52,9 @@ content/                                    STUDENT CONTENT (yahi publish hota h
 assets/                                     site code
   css/ekguru.css                               ek hi stylesheet (light + dark)
   js/test.mjs                                  online test app (player, result, review)
-  js/engine.mjs                                pure question-engine helpers
+  js/engine.mjs                                existing CN helpers
+  js/quiz{,-engine}.mjs                        shared typed CBT player / rules
+  js/account.mjs + history-store.mjs            owner-scoped results journal / cloud sync
   img/                                         map preview image
 
 data/                                       site data
@@ -52,6 +64,9 @@ data/                                       site data
   catalog/subjects.json                        subject/topic titles (EN + HI)
   catalog/materials.json                       har downloadable file ka record
   catalog/site-routes.txt                      published page list
+  tests/<subject>/*.test.json                 authoring contract (not directly exported)
+  quizzes/manifest.json + hash indexes/banks  lazy generated CBT publication
+  catalog/imported-papers.json                 pinned IT-paper provenance
 
 maintainer/                                 NOT published — audits, reports, GIS, legacy, archive
 tools/ tests/                               builders, validators, tests
@@ -66,7 +81,9 @@ content/reasoning/practice/series/Sitting-Arrangement-Set-1.pdf
 
 # 2. rebuild (+ image ho to pehle preview)
 python3 tools/build_thumbs.py       # sirf nayi picture ke liye (PNG/JPG)
+python3 tools/build_practice.py     # old-paper uploads -> Test Room manifest
 python3 tools/build_catalog.py      # content -> data/site.json
+python3 tools/build_quizzes.py      # data/tests/<subject>/*.test.json -> lazy CBT banks
 python3 tools/build_pages.py        # data/site.json -> plain HTML pages
 python3 tools/build_site_routes.py  # published page list (validate/test isi ko padhte hain)
 
@@ -123,7 +140,7 @@ python3 tools/new_reasoning_chapter.py "Calendar" "Clock" "Blood Relations"
 #    content/reasoning/tests/Calendar/Calendar-Test-Paper.pdf
 
 # 3. site bana dijiye
-python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py
+npm run build:content
 ```
 
 Chapter ka folder khali ho to site par nahi dikhta — PDF daalte hi us chapter ka page apne aap
@@ -133,15 +150,15 @@ Calendar`. Naye sample PDF banane ke liye: `python3 tools/reasoning_samples.py [
 
 ## Previous Year Papers — exam-wise aur saal-wise
 
-`content/previous-year-papers/<exam>/<saal>/` me paper rakho. Har exam ke page par **2000 se 2026 tak
-ke saare saal** chip ke roop me dikhte hain: jis saal ka paper aa chuka hai wo gehra (blue) chip hai
-aur us par click karke paper khulta hai; baaki saal muted chip hain. Jo saal folder banta hai, uska page
-apne aap ban jata hai.
+`content/previous-year-papers/<exam>/<saal>/` me paper rakho; uploaded exam/year folders and reader cards automatically appear after rebuilding. Source-directory links are separately labelled official paper, key, candidate login or third-party material. A year link is not a promise that every exam/year PDF is already hosted. Native CBT conversion needs reviewed question/options data; scans/mixed formats can stay reader-only.
 
 ## Local preview
 
 ```bash
-python3 tools/serve_site.py          # http://localhost:8000 — sirf public pages
+npm ci
+EKGURU_DISABLE_AUTH=true npm run dev  # http://localhost:8000 — website + guest API
+# Real local login: fill ignored .env.local from .env.example, then npm run dev
+# Static-only fallback: python3 tools/serve_site.py
 ```
 
 ## Mobile check (asli browser me)
@@ -188,13 +205,14 @@ NODE_PATH=<node_modules> node tests/navigation/test_app_dom_smoke.cjs   # option
   PDF that may be blank on Android/iOS. Full maps open in the zoomable reader.
 - The CBT player supports countdown/auto-submit, saved answers during question
   navigation, clear response, mark-for-review & next, and a mobile palette toggle.
-  Attempts are in memory; leaving/reloading a running test resets the attempt.
+  CN attempts are in memory; reloading a running CN test resets it. Old-paper Test Room
+  drafts auto-save locally and resume with the original wall-clock deadline.
 - Only locally hosted files are guaranteed by repository checks. Other exams'
   official/third-party sites may be unavailable, require login, or remove papers;
   these are external source links, not files hosted by EkGuru. RPSC Paper I 2024
   questions and the answer key are hosted locally and available in the reader.
 
-Real-browser regression (start `python3 tools/serve_site.py` first):
+Real-browser regression (start `EKGURU_DISABLE_AUTH=true npm run dev` first):
 
 ```bash
 npm install --prefix /tmp/ekguru-deps puppeteer-core @sparticuz/chromium
@@ -208,3 +226,28 @@ be reproduced locally. The browser check uses **real ES modules** and the
 Changes on an Arena working branch do not update the public site automatically:
 GitHub Pages is configured to deploy **main / (root)**. Merge the reviewed fix PR
 into main and wait for the Pages deployment before checking the public URL.
+
+## Google login / old-paper upload / production build
+
+```bash
+npm ci
+npm run build:content   # discover paper uploads + regenerate manifests/pages/routes
+npm test               # auth/cookie/CSRF/ownership/timer/grading tests
+npm run build          # ignored public/ + Vercel Build Output API
+```
+
+Upload PDFs to `content/previous-year-papers/<exam>/<year>/`; optional count/answer-key
+metadata goes in the mirrored `data/practice/papers/<exam>/<year>/<name>.paper.json`,
+not in `content/`. Unreviewed/mixed-format papers can set `reader_only: true`. Native tests use `data/tests/<subject>/*.test.json`; no paid OCR API is required. The existing RPSC key is labelled
+provided/unverified; Q3 and Q5 are intentionally ungraded. BCI scans are unscored until
+a digital key is supplied; optional PDF tools do not pretend to be a native question transcription.
+
+Full instructions, Google activation, privacy/retention, deployment integration limits
+and free-tier caveats: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_PRACTICE.md).
+GitHub Actions can publish a fresh static build after uploads to main; select
+**Settings → Pages → Source: GitHub Actions** once. Vercel automatic updates separately
+require granting its GitHub app access to this repository.
+
+## Expanded material: source checkpoint only
+
+`library/` now preserves 385 English teaching chapters from nine explicitly licensed repositories, with pinned hashes and all notices. It is **not published in the student website yet**. The requested larger syllabus/topic layout, subject-only homepage and additional subject quizzes remain unfinished; these source files are not 200 reviewed websites or complete exam coverage. Status, rights and remaining work: [`library/README.md`](library/README.md).

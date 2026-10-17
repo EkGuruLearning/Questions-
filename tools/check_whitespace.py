@@ -2,7 +2,9 @@
 """Check changed and untracked text files for trailing spaces/tabs.
 
 `maintainer/` and `archive/` hold preserved original material (audits, GIS scripts,
-source registers, old snapshots). Those bytes are never rewritten, so they are skipped.
+source registers, old snapshots). Hash-verified `library/third_party/` sources and
+`assets/library/licenses/` notices also preserve upstream bytes, including Markdown
+hard line breaks and CRLF. These precise namespaces are skipped, not library code/docs.
 """
 from __future__ import annotations
 import pathlib
@@ -23,7 +25,7 @@ def main():
     errors = []
     for relative in sorted(paths):
         path = ROOT / relative
-        if not path.is_file() or relative.startswith(("archive/", "maintainer/")):
+        if not path.is_file() or relative.startswith(("archive/", "maintainer/", "library/third_party/", "assets/library/licenses/")):
             continue
         raw = path.read_bytes()
         if b"\0" in raw:
@@ -34,7 +36,7 @@ def main():
     if errors:
         print("\n".join(errors), file=sys.stderr)
         raise SystemExit(1)
-    print(f"PASS: changed text files contain no trailing whitespace ({len(paths)} paths inspected; maintainer/archive originals excluded).")
+    print(f"PASS: changed text files contain no trailing whitespace ({len(paths)} paths inspected; preserved maintainer/archive/upstream originals excluded).")
 
 if __name__ == "__main__":
     main()

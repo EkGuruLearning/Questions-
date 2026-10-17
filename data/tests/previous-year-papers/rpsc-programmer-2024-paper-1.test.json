@@ -1,0 +1,1512 @@
+{
+  "schema_version": 1,
+  "id": "rpsc-programmer-2024-paper-1",
+  "title": "RPSC Programmer 2024 — Paper 1",
+  "subject_title": "Previous Year Papers",
+  "kind": "paper",
+  "duration_minutes": 120,
+  "note": "Native CBT transcription of the existing repository reprint. Provided practice key, not independently verified official final key. Q3/Q5 are intentionally ungraded. Timing/marking are practice settings, not an official pattern claim.",
+  "source": {
+    "pdf": "content/previous-year-papers/rpsc/2024/RPSC-Programmer-2024-Paper-1-Questions.pdf",
+    "sha256": "59b03c3640e784dc7292985c9ad98c3305ed65b2f67b1f70ebc7922e273de98b",
+    "label": "Existing repository practice material — not independently verified official key"
+  },
+  "questions": [
+    {
+      "text": "Based on the following information, answer the question given below -\nA businessman has five articles P, Q, R, S and T.\nI. P weighs double that of Q.\nII. Q weighs four and half times of R.\nIII. R weighs half that of T.\nIV. T weighs less than P but more than R. S is heavier than R.\nWhich one of the following is the lightest?",
+      "options": [
+        "Q",
+        "S",
+        "R",
+        "P",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 1,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "In a certain language, NOIDA is coded as QLLAD. How is AJMER coded in that language?",
+      "options": [
+        "DHOAC",
+        "DGPBU",
+        "DMOBC",
+        "DNPAU",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 1,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Data of 500 students who took an examination of Physics, Chemistry and Mathematics is given\nbelow -\nPassed in all the subjects | 176\nFailed in all the subjects | 70\nFailed in Physics | 185\nFailed in Chemistry | 217\nFailed in Mathematics | 201\nPassed in Physics only | 84\nPassed in Chemistry only | 52\nPassed in Mathematics only | 73\nHow many students passed in at least one subject?",
+      "options": [
+        "324",
+        "176",
+        "209",
+        "430",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 2,
+      "notice": "Ungraded: provided key conflicts with the question (500 − 70 = 430). Original PDF/key are preserved."
+    },
+    {
+      "text": "Should there be a total ban on use of plastic bags?\nArguments:\nI. Yes, use of plastic bags causes various environmental problems.\nII. No, instead thickness of plastic should be specified which don't cause much damage to the\nenvironment.",
+      "options": [
+        "Both the arguments I & II are strong",
+        "Neither argument I nor II is strong",
+        "Only argument I is strong",
+        "Only argument II is strong",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 2,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Answer the question based on the data given in the table below:\n[Table showing Gender/Performance distribution with rules:\nA) Half of the students are either Excellent or Good.\nB) 40% of the students are females.\nC) One third of the male students are average.]\nNumber of female students whose performance is good, is -",
+      "options": [
+        "16",
+        "22",
+        "8",
+        "0",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 2,
+      "notice": "Ungraded: the existing reprint does not include the complete source table."
+    },
+    {
+      "text": "Three consecutive integers are written in increasing order. What is the second integer?\nStatements:\n(i) The sum of the first and third integer is 22.\n(ii) The sum of the thrice of third integer, first integer and second integer is 57.\nGive answer as:",
+      "options": [
+        "Both statements (i) and (ii) together are sufficient to answer the question but neither\nstatement alone is sufficient",
+        "If statement (ii) alone is sufficient but statement (i) alone is not sufficient to solve the\nquestion",
+        "If statement (i) alone is sufficient but statement (ii) alone is not sufficient to solve the\nquestion",
+        "Each statement (i) and (ii) alone is sufficient to answer the question",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 3,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "In the following series one term is missing. The missing term is -\n6, 10, 18, ?, 66, 130, 258",
+      "options": [
+        "28",
+        "32",
+        "34",
+        "50",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 3,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Find the signs in the given equation, which when mutually interchanged the equation becomes\ncorrect -\n9 + 5 ÷ 4 × 3 - 6 = 12",
+      "options": [
+        "+ and -",
+        "÷ and -",
+        "+ and ×",
+        "÷ and ×",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 3,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "The ratio of Amit's salary to Vikas's salary is 4:5. How much is Vikas's expenditure?\nStatements:\n(i) The ratio of Amit's and Vikas's expenditure is 5:6.\n(ii) The ratio of their savings is 1:1.\nGive answer as:",
+      "options": [
+        "If statement (i) and (ii) both are required to answer the question",
+        "If statement (i) and (ii) both are not sufficient to answer the question. More data\n(information) are needed to answer the question",
+        "If statement (ii) alone is sufficient to answer the question",
+        "If statement (i) alone is sufficient to answer the question",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 3,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "If January 1st, 2007 is Monday, then what was the day on 1st January, 1995?",
+      "options": [
+        "Friday",
+        "Monday",
+        "Saturday",
+        "Sunday",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 4,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "A statement and two conclusions (i) and (ii) are given below. You have to consider the statement as\ntrue though it seems to be different from the actual facts.\nStatement: All the scientists are males. Abdul Kalam is a scientist.\nConclusions:\n(i) Abdul Kalam is a male.\n(ii) Females cannot be the scientists.\nWhich of the conclusion/s follow/s from the given statement?",
+      "options": [
+        "Neither conclusion (i) nor (ii) follows",
+        "Both the conclusions (i) and (ii) follows",
+        "Only conclusion (ii) follows",
+        "Only conclusion (i) follows",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 4,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "City C is in which direction to city A?\nStatements:\nI. C is to the North of D, which is to the West of B.\nII. B is to the South - East of C.\nIII. D is to the North - East of A.\nWhich of the statement/s is/are sufficient to answer the question?",
+      "options": [
+        "Only Statement I",
+        "Statements I and III",
+        "Statements I and II",
+        "Statements II and III",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 4,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Study the table and find the ratio P:R -\nArticle | Cost Price | Market Price | Discount | Selling Price | Profit/Loss(%)\n1 | 12000 | +20% | 10% | P | M\n2 | 12500 | +10% | 15% | N | Q\n3 | 13000 | +30% | 20% | O | R",
+      "options": [
+        "2:1",
+        "3:2",
+        "2:3",
+        "1:2",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 5,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The sum of a positive number and its reciprocal is twice the difference of the number and its\nreciprocal. The number is -",
+      "options": [
+        "√3",
+        "1/√3",
+        "√2",
+        "1/√2",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 5,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The two sides of a triangle measure 5 and 12. The length of the third side of the triangle lies\nbetween the interval -",
+      "options": [
+        "13 to 23",
+        "7 to 17",
+        "6 to 10",
+        "3 to 8",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 5,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "In which region of the moon is 'Shiv Shakti Point' located?",
+      "options": [
+        "Near the South Pole",
+        "Near the Equator",
+        "Near the Sea of Tranquility",
+        "Near the North Pole",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 5,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The 'Smart Laboratory on Clean Rivers (SLCR)' in Varanasi is being established in collaboration with\nwhich of the following country?",
+      "options": [
+        "Denmark",
+        "Norway",
+        "Sweden",
+        "Iceland",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 6,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Who of the following is the author of the book \"Why Bharat Matters\"?",
+      "options": [
+        "Shashi Tharoor",
+        "Subrahmanyam Jaishankar",
+        "J Sai Deepak",
+        "Bhupender Yadav",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 6,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Gati Shakti Vishwavidyalaya is situated in -",
+      "options": [
+        "Maharashtra",
+        "Tamil Nadu",
+        "Gujarat",
+        "Rajasthan",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 6,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "'Kharchi Puja' is a major festival of -",
+      "options": [
+        "Tripura",
+        "Jharkhand",
+        "Bihar",
+        "Chhattisgarh",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 6,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "For which of the following product French delegation visited Rajasthan in July, 2024 to study the\npossibility of GI tag?",
+      "options": [
+        "Kota Doria",
+        "Pokaran Pottery",
+        "Sojat Mehandi",
+        "Mathania Chilli",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 6,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "'National Milk Day' is celebrated every year on -",
+      "options": [
+        "28th August",
+        "26th November",
+        "22nd September",
+        "12th December",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 7,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Who among the following was NOT a member of Padma Awards Committee, 2024?",
+      "options": [
+        "Jogendra Nath Phukan",
+        "Satnam Singh Sandhu",
+        "I.V. Subbarao",
+        "Tariq Mansoor",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 7,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "How many Delimitation Commissions have been constituted by the Government of India till July,\n2024?",
+      "options": [
+        "Three",
+        "Four",
+        "Two",
+        "One",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 7,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "In the modified Budget 2024-25 of Rajasthan, at which place the construction of Adivasi Panorama\nhas been announced by the Chief Minister?",
+      "options": [
+        "Banswara",
+        "Dungarpur",
+        "Karauli",
+        "Dausa",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 7,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The first multi-sports beach games in India, 'The Beach Games 2024', was organized at -",
+      "options": [
+        "Kasarkod Beach, Karnataka",
+        "Golden Beach, Odisha",
+        "Eden Beach, Puducherry",
+        "Ghoghla Beach, Diu",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 7,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The Indian rupee sign (₹) was adopted by the Government of India in the year -",
+      "options": [
+        "2012",
+        "2010",
+        "2009",
+        "2011",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 8,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "How many aerodromes are operational in India as on 1st August, 2024?",
+      "options": [
+        "127",
+        "157",
+        "141",
+        "109",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 8,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The name of the project, led by UGC in collaboration with Bhartiya Bhasha Samiti, which aims to\nproduce 22,000 books in the next five years in 22 scheduled languages is -",
+      "options": [
+        "PRAGATI",
+        "ASMITA",
+        "STARS",
+        "BRIDGE",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 8,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Consider the following statements -\n(I) In 2023-24, Agriculture and Allied Sectors contributed 28.21 percent in Rajasthan's Gross State\nValue Added at current prices.\n(II) In the year 2023-24, Service Sector continued to be the largest sector in the state with a share\nof 45.07 percent in Rajasthan's Gross State Value Added at current prices.\nCorrect answer is -",
+      "options": [
+        "Only statement (I) is true",
+        "Both the statements (I) and (II) are false",
+        "Only statement (II) is true",
+        "Both the statements (I) and (II) are true",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 8,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "'Dhabhai Kund' is located in -",
+      "options": [
+        "Jodhpur",
+        "Bundi",
+        "Alwar",
+        "Kota",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 8,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "In the modified Budget 2024-25 of Rajasthan, LEAP program has been announced under i-Start to\nupskill start-up founders and youth and to provide them skilled manpower. Here the full form of\nLEAP is -",
+      "options": [
+        "Learn, Earn And Progress",
+        "Learn, Excel And Progress",
+        "Learn, Earn And Pay",
+        "Learn, Excel And Pay",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 9,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Through which toll free helpline mental health consultation is being provided by psychological\nexperts in Rajasthan?",
+      "options": [
+        "Tele-ASHA",
+        "Tele-CHITTA",
+        "Tele-NIDAN",
+        "Tele-MANAS",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 9,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Under which section of the 'Bharatiya Nagarik Suraksha Sanhita 2023' is Zero FIR mentioned?",
+      "options": [
+        "Section 302",
+        "Section 173",
+        "Section 428",
+        "Section 150",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 9,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Which mineral associated with Tungsten is found in the Degana area of Rajasthan?",
+      "options": [
+        "Hematite",
+        "Wolframite",
+        "Magnetite",
+        "Bauxite",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 9,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Consider the following statements regarding 'Mission Madhuhari' in Rajasthan -\n(A) It is started to prevent Type-1 Diabetes.\n(B) This program is started under the joint aegis of the Medical and Health Department, National\nHealth Mission and Ford Foundation.\nChoose the correct option -",
+      "options": [
+        "Both the statements (A) and (B) are incorrect",
+        "Only statement (A) is correct",
+        "Both the statements (A) and (B) are correct",
+        "Only statement (B) is correct",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 9,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "Germplasm station of RCDF ltd. is situated at -",
+      "options": [
+        "Nadol (Pali)",
+        "Barsingsar (Bikaner)",
+        "Narwa Khichiyan (Jodhpur)",
+        "Jobner (Jaipur)",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 10,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Which Jaipur film Director's debut film 'Sad letters of an imaginary woman' has received the Asian\nCinema Fund 2024 award?",
+      "options": [
+        "Nidhi Saxena",
+        "Monika Jain",
+        "Sandeep Kaur",
+        "Taru Jindal",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 10,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Match List-I with List-II and select the correct answer by using the code given below the lists -\nList-I List-II\n(Book) (Writer)\n(A) Sangeet Raj (i) Krishnanand Vyas\n(B) Raag Manjari (ii) Bhavbhatt\n(C) Anup Vilas (iii) Pundarika Vittala\n(D) Raag Kalpdrum (iv) Maharana Kumbha\nCode:",
+      "options": [
+        "A-(iii), B-(ii), C-(iv), D-(i)",
+        "A-(i), B-(ii), C-(iii), D-(iv)",
+        "A-(iv), B-(iii), C-(ii), D-(i)",
+        "A-(iv), B-(i), C-(ii), D-(iii)",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 10,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Hemchandra Vikramaditya, the Hindu emperor is related to which district of Rajasthan?",
+      "options": [
+        "Ajmer",
+        "Jalore",
+        "Sirohi",
+        "Alwar",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 10,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The reliable data transfer is implemented by",
+      "options": [
+        "Network layer",
+        "Physical layer",
+        "Presentation layer",
+        "Transport layer",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 11,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "For Stop-and-Wait ARQ, for 10 data packets sent, ............ acknowledgements are needed.",
+      "options": [
+        "9",
+        "20",
+        "11",
+        "10",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 11,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "What does /24 denote in CIDR?",
+      "options": [
+        "24 bits are used for host portion",
+        "24 bits are used for network portion",
+        "24 subnets are created",
+        "24 addresses are available in the subnet",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 11,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "IP address 172.16.123.213 is found to be residing on a sub-network with the following subnet\nmask: 255.255.255.240. What is the network address of this subnet?",
+      "options": [
+        "172.16.123.240",
+        "172.16.123.208",
+        "172.16.123.213",
+        "172.16.123.245",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 11,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Which of the following concurrency control protocols ensure both conflict serializability and freedom\nfrom deadlock?\nI) 2PL (Two Phase Lock)\nII) Time-Stamp ordering\nIII) Multiple granularity protocol",
+      "options": [
+        "III only",
+        "I only",
+        "II only",
+        "I and II both",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 11,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "In ER Model constructs, which type of attribute is most suitable to represent the skill(s) of an\nemployee for an organization?",
+      "options": [
+        "Composite attribute",
+        "Multivalued attribute",
+        "Atomic attribute",
+        "Derived attribute",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 12,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The size of the 'total length field' of IPv4 datagram is -",
+      "options": [
+        "16 bits",
+        "32 bits",
+        "8 bits",
+        "4 bits",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 12,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Consider Relations R1 and R2 as given below -\n[Relations shown in tables]\nThe number of tuples in output of R1 ⋈ R2 will be -",
+      "options": [
+        "20",
+        "7",
+        "6",
+        "5",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 12,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "In IPv4, packet fragmentation and reassembly is handled by",
+      "options": [
+        "using the More Fragments and Fragment Offset Fields",
+        "using the MAC Header",
+        "using the Header Checksum",
+        "encapsulating packets in larger data frames",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 12,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "What network property is achieved through the use of the Automatic Repeat reQuest (ARQ)\nmechanism?",
+      "options": [
+        "Reliability",
+        "Scalability",
+        "Availability",
+        "Confidentiality",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 12,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "What is the role of DNS? It is best described as -",
+      "options": [
+        "maps a domain name to an IP address",
+        "translate a host's private IP address to a public IP address",
+        "translate a host's IPv6 address to an IPv4 address",
+        "maps a MAC address to an IP address",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 13,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The number of attribute in a relation is known as -",
+      "options": [
+        "Degree of the relation",
+        "State of the relation",
+        "Features of the relation",
+        "Address of the relation",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 13,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Consider following schedule with a sequence of operations on a data object Q having the initial\nvalue of 500 -\n[Table showing operations T1 and T2]\nWhat will be the final value of Q after the last operation is completed?",
+      "options": [
+        "700",
+        "500",
+        "550",
+        "600",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 13,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Consider a schema R (A, B, C, D) and functional dependencies A → B, C → D. Then, the\ndecomposition of R into R1 and R2 where R1 (AB) and R2 (CD), is -",
+      "options": [
+        "Lossless join but not dependency preserving",
+        "Dependency preserving and lossless join",
+        "Not dependency preserving and not lossless join",
+        "Dependency preserving but not lossless join",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 13,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Consider below statements -\n(I) Each non-leaf node in B+ tree has between [n/2] and n Children, where n is fixed for a particular\ntree.\n(II) The search key of a clustering index is always primary key.\n(III) Secondary indices must be dense.\n(IV) In a dense index, an index entry appears for only some of the search-key values.\nWhich of the above statements are true?",
+      "options": [
+        "I and II",
+        "I and III",
+        "II and III",
+        "I and IV",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 14,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The message 1001 is to be transmitted using the CRC polynomial x³ + x + 1 to protect it from\nerrors. The message that should be transmitted is -",
+      "options": [
+        "1001100",
+        "1001011",
+        "1001110",
+        "1001000",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 14,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Which operation allows us to find tuples that are in one relation but not in another relation?",
+      "options": [
+        "The Set – Difference Operation",
+        "Cartesian Product Operation",
+        "The Union Operation",
+        "The Set Intersection Operation",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 14,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "A Reverse Lookup in DNS means a lookup to ........................ using ........................ records.",
+      "options": [
+        "identify mail servers, SOA",
+        "map IP address to domain name, PTR",
+        "map domain names to IP address, A",
+        "determine the authoritative name servers, CNAME",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 14,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Consider a relation with attributes {A, B, C, D} and the following functional dependencies: A → B, B\n→ C and C → D. If A is the primary key, which of the following is true regarding BCNF?",
+      "options": [
+        "The relation is in BCNF because it is in 3NF.",
+        "The relation is not in BCNF.",
+        "The relation is in 3NF but not in BCNF.",
+        "The relation is in BCNF because all determinants are super keys.",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 15,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "The primary use of scramblers in Line Coding Schemes is to -",
+      "options": [
+        "make the data look random",
+        "compress transmission data",
+        "increase signal bandwidth",
+        "decrease signal bandwidth",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 15,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "In a slotted ALOHA with G-stations attempting to transmit in one slot, the throughput is equal to -",
+      "options": [
+        "G × e⁻ᴳ",
+        "2G × e⁻ᴳ",
+        "e⁻ᴳ",
+        "G × e⁻²ᴳ",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 15,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Two phase locking protocol has which of the following problem(s)?",
+      "options": [
+        "Chances of deadlock",
+        "Cascading Rollback",
+        "Neither 1 nor 2",
+        "Both 1 & 2",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 15,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Which operation requires two relations as input to form a new relation and these two relations must\nhave a common attribute?",
+      "options": [
+        "Projection operation",
+        "Cartesian product operation",
+        "Division operation",
+        "Natural join operation",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 15,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Consider following relation S(S1, S2, S3, E1, E2) and functional dependencies hold on the schema\nare as -\nFD1: S1 → {S2, S3}\nFD2: {E1, S3, S2} → S1\nFD3: E2 → {S3, S2, E1}\nWhat is the highest normal form of the relation S?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "BCNF",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 16,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Which of the following protocol is used for transferring email messages from one machine to\nanother?",
+      "options": [
+        "SNMP",
+        "FTP",
+        "TELNET",
+        "SMTP",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 16,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Let us assume that there are four (4) network segments in Bus topologies: A1 – A2, B1 – B2 – B3,\nC1 – C2 and D1 – D2 – D3. If A1, B1, C1 and D1 are interconnected in mesh, then how many mesh\nconnections are required?",
+      "options": [
+        "12",
+        "10",
+        "6",
+        "45",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 16,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "An organization has a Class B network and wishes to form subnets for 64 departments. The subnet\nmask would be -",
+      "options": [
+        "255.255.128.0",
+        "255.255.0.0",
+        "255.255.64.0",
+        "255.255.252.0",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 16,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "Indices whose search key specifies an order different from the sequential order of the file are called\n-",
+      "options": [
+        "Primary Indices",
+        "Random Indices",
+        "Secondary Indices",
+        "Sequential Indices",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 17,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "Consider the following instance of a relation District -\nDistrict\nName | Population\nJA | 10\nAJ | 50\nMM | 5\nWhich of the District name will be returned by the following relational algebra expression?\n(πName (σName=\"AJ\"(District))) - [(πName (σPopulation>5(District))) ∩ (πName\n(σName=\"AJ\"(District)))]",
+      "options": [
+        "JA",
+        "MM",
+        "AJ",
+        "JA, AJ",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 17,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "The cardinality of a relational table with 5000 rows and 10 columns is -",
+      "options": [
+        "500",
+        "5000",
+        "10",
+        "50000",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 17,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Which of the following Multiple Access Protocols is not suitable for wired networks?",
+      "options": [
+        "CSMA/CD",
+        "TGMA",
+        "TDMA",
+        "CSMA/CA",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 17,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "What is the advantage of setting up a DMZ (Demilitarized Zone) using firewall?",
+      "options": [
+        "To create multiple zones of trust",
+        "Load balancing on the server",
+        "Improve network performance",
+        "Brings internet service into home from internet service provider",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 18,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "In ER Model, which of the following relationship is correct for a condition that a person in INDIA has\nan Aadhaar Card?",
+      "options": [
+        "One to one relationship",
+        "Many to many relationship",
+        "Many to one relationship",
+        "One to many relationship",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 18,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Which one of the following statement is not correct?",
+      "options": [
+        "Self-describing nature of database system is one of the characteristics of the database\napproach.",
+        "Data models provide necessary means to achieve data abstraction.",
+        "Database approach doesn't support data independence between data and programs.",
+        "Database approach supports multiple views of the data.",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 18,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "In Relational Model, which type of constraint does not allow composite and multivalued attributes?",
+      "options": [
+        "Uniqueness constraints",
+        "Referential integrity constraints",
+        "Domain constraints",
+        "Entity integrity constraints",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 18,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Consider following two instances of relation Student and Faculty with operation on these instances -\nStudent Faculty\nD-Name | Strength D-Name | Strength\nCS | 900 EE | 2000\nIT | 500 ECE | 5000\nCyber | 300 Cyber | 300\nME | 1000 DS | 100\nCIVIL | 2000 CIVIL | 2000\n(a) Student - Faculty\n(b) (Student ∩ Faculty) ∪ (Faculty ∩ Student)\n(c) (Student ∪ Faculty) - (Student ∩ Faculty)\n(d) Student ∩ Faculty\nIdentify the correct option that produces equivalent output -",
+      "options": [
+        "b, d",
+        "a, b",
+        "b, c",
+        "b, c, d",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 19,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "If a Class B network on the internet has a subnet mask of 255.255.248.0, what is the maximum\nnumber of hosts per subnet?",
+      "options": [
+        "2046",
+        "1022",
+        "1023",
+        "1024",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 19,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "There are n stations in a slotted LAN. Each station attempts to transmit with a probability p in each\ntime slot. What is the probability that only one station transmits in a given time slot?",
+      "options": [
+        "n × p × (1 - p)ⁿ⁻¹",
+        "p × (1 - p)ⁿ⁻¹",
+        "1 - (1 - p)ⁿ⁻¹",
+        "(1 - p)ⁿ⁻¹",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 19,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "'View' in a database is -",
+      "options": [
+        "A physical table that stores data",
+        "A virtual table created by querying one or more tables",
+        "A method to improve database performance",
+        "A backup copy of a database",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 19,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The three-way handshake mechanism in TCP aims to -",
+      "options": [
+        "secure the communication",
+        "send bits from one device to another over an optical fibre connection",
+        "perform error detection and correction",
+        "establish connection and synchronize sequence numbers",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 20,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Total time to access a disk block is given by the -",
+      "options": [
+        "Seek time + transfer time",
+        "Seek time + rotational delay + transfer time",
+        "Seek time + rotational delay",
+        "Seek time",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 20,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Which set of SQL language commands is used to query and update a database?",
+      "options": [
+        "Data Manipulation Language (DML)",
+        "Data Control Language (DCL)",
+        "Data Definition Language (DDL)",
+        "Both Data Control Language (DCL) and Data Definition Language (DDL)",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 20,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "The Address Resolution Protocol (ARP) is used for -",
+      "options": [
+        "finding the IP address that corresponds to a MAC address",
+        "finding the MAC address that corresponds to an IP address",
+        "finding the IP address from the DNS",
+        "finding the IP address of the default gateway",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 20,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "An ER Model describes which type of schema?",
+      "options": [
+        "Physical Schema",
+        "Internal Schema",
+        "External Schema",
+        "Conceptual Schema",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 20,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "The operation which can be used to specify automatic actions that the database system will\nperform when certain events and conditions occur is known as -",
+      "options": [
+        "CREATE TRIGGER",
+        "CREATE ASSERTION",
+        "CREATE VIEW",
+        "CREATE TABLE",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 21,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Correct order of applying 3 passes in ARIES recovery algorithm is -",
+      "options": [
+        "Undo, Analysis, Redo",
+        "Analysis, Undo, Redo",
+        "Analysis, Redo, Undo",
+        "Undo, Redo, Analysis",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 21,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Which of the following protocol may be used as zeroconf and plug-and-play?",
+      "options": [
+        "TCP",
+        "DHCP",
+        "NAT",
+        "ICMP",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 21,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "How many bits for 'Fragment Offset' field are there in IPv4 header?",
+      "options": [
+        "16 bits",
+        "10 bits",
+        "13 bits",
+        "32 bits",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 21,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "Consider a relation R with attributes (A, B, C), where B is the only candidate key. Identify the total\nnumber of possible super keys of the relation R.",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "1",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 21,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Any relation that is not a part of the Logical Model, but is made visible to a user as a virtual relation\nis called a -",
+      "options": [
+        "View",
+        "Instance",
+        "Schema",
+        "Tuple",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 22,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "Consider following two instances of relations X and Y -\nX Y\nCode | Item Item | Quantity\n100 | A A | 5\n200 | B B | 6\n300 | B C | 3\n400 | C\nHow many total tuples a Cartesian product between the two relations X and Y will produce?",
+      "options": [
+        "3",
+        "7",
+        "4",
+        "12",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 22,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "The size of MAC address (in bits) is -",
+      "options": [
+        "42",
+        "48",
+        "24",
+        "36",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 22,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "Network Allocation Vector (NAV) is associated with which of the following MAC technologies?",
+      "options": [
+        "Wi-Fi",
+        "CSMA/CD",
+        "Bluetooth",
+        "Ethernet",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 22,
+      "answer": [
+        "A"
+      ]
+    },
+    {
+      "text": "ICMP protocol is a ........................ layer protocol.",
+      "options": [
+        "Data link",
+        "Transport",
+        "Application",
+        "Network",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 23,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Which SQL statement is used in embedded SQL to fetch data into host variables?",
+      "options": [
+        "INSERT INTO",
+        "DELETE",
+        "SELECT INTO",
+        "UPDATE",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 23,
+      "answer": [
+        "C"
+      ]
+    },
+    {
+      "text": "Which of the following is true for Circuit Switching handling multiple simultaneous connections?",
+      "options": [
+        "A single path is used and shared for all data",
+        "All connections are multiplexed into a single channel",
+        "It encodes all data into a single channel",
+        "Separate physical paths are allocated for each channel",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 23,
+      "answer": [
+        "D"
+      ]
+    },
+    {
+      "text": "Which of the following is not related to data link layer?",
+      "options": [
+        "Error control",
+        "Congestion control",
+        "Framing",
+        "MAC addressing",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 23,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "What are the maximum number of spanning trees (Tn) possible for a complete graph K5 on 5\nvertices?",
+      "options": [
+        "20",
+        "125",
+        "100",
+        "200",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 23,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "An organized collection of logically related data is called -",
+      "options": [
+        "Data type",
+        "Database",
+        "Metadata",
+        "Transaction",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 24,
+      "answer": [
+        "B"
+      ]
+    },
+    {
+      "text": "The physical layer is responsible for -",
+      "options": [
+        "Bit-by-bit delivery",
+        "Port to port delivery",
+        "Process to process delivery",
+        "Application to application delivery",
+        "Question not attempted"
+      ],
+      "skip_option": "E",
+      "source_page": 24,
+      "answer": [
+        "A"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "id": "series-12",
+  "title": "Series practice — 12 questions",
+  "subject_title": "Reasoning",
+  "duration_minutes": 12,
+  "note": "Existing EkGuru sample questions, not a previous official exam. Mixed test Q6 is ungraded because its source relationship is ambiguous.",
+  "source": {
+    "pdf": "content/reasoning/practice/Reasoning-Series-Sample-Practice.pdf",
+    "sha256": "8ec1aae169c14a8f103168ddb505999d0fc6bc76c02e452efae18bf4bf906ad8",
+    "label": "Existing repository practice material — not independently verified official key"
+  },
+  "questions": [
+    {
+      "text": "5, 11, 23, 47, ? — agla number kya hoga?",
+      "options": [
+        "94",
+        "95",
+        "96",
+        "97"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "har baar ×2 + 1: 5 → 11 → 23 → 47 → 95."
+    },
+    {
+      "text": "7, 14, 28, 56, ? — series poora karo.",
+      "options": [
+        "108",
+        "112",
+        "114",
+        "120"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "har number pichle ka dugna: 56 × 2 = 112."
+    },
+    {
+      "text": "1, 4, 9, 16, 25, ? — agla number kya hoga?",
+      "options": [
+        "30",
+        "34",
+        "36",
+        "49"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "1², 2², 3², 4², 5², isliye agla 6² = 36."
+    },
+    {
+      "text": "2, 3, 5, 7, 11, ? — series ka agla pad kya hai?",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "2, 3, 5, 7, 11 lagatar abhajya sankhyayen hain; 11 ke baad 13."
+    },
+    {
+      "text": "8, 27, 64, 125, ? — agla number kya hoga?",
+      "options": [
+        "196",
+        "206",
+        "216",
+        "226"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "2³, 3³, 4³, 5³, isliye agla 6³ = 216."
+    },
+    {
+      "text": "120, 60, 30, 15, ? — series poora karo.",
+      "options": [
+        "5",
+        "7.5",
+        "8",
+        "10"
+      ],
+      "answer": [
+        "B"
+      ],
+      "explanation": "har number aadha hota ja raha hai: 15 ÷ 2 = 7.5."
+    },
+    {
+      "text": "A, D, I, P, ? — agla akshar kya hoga?",
+      "options": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "antar +3, +5, +7, isliye agla +9: P(16) + 9 = 25 = Y."
+    },
+    {
+      "text": "Z, X, V, T, ? — agla akshar kya hoga?",
+      "options": [
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "har baar –2: T(20) – 2 = 18 = R."
+    },
+    {
+      "text": "3, 8, 15, 24, ? — agla number kya hoga?",
+      "options": [
+        "32",
+        "33",
+        "35",
+        "36"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "antar 5, 7, 9, isliye agla antar 11: 24 + 11 = 35."
+    },
+    {
+      "text": "2, 5, 10, 17, 26, ? — series poora karo.",
+      "options": [
+        "35",
+        "36",
+        "37",
+        "39"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "antar 3, 5, 7, 9, isliye agla antar 11: 26 + 11 = 37."
+    },
+    {
+      "text": "1, 1, 2, 3, 5, 8, ? — agla number kya hoga?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "15"
+      ],
+      "answer": [
+        "C"
+      ],
+      "explanation": "Fibonacci series: 5 + 8 = 13."
+    },
+    {
+      "text": "Z, W, T, Q, ? — agla akshar kya hoga?",
+      "options": [
+        "N",
+        "O",
+        "M",
+        "P"
+      ],
+      "answer": [
+        "A"
+      ],
+      "explanation": "har baar –3: Q(17) – 3 = 14 = N."
+    }
+  ]
+}

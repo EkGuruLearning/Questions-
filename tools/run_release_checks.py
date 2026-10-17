@@ -16,6 +16,11 @@ RESULTS_PATH = ROOT / "maintainer/reports/release_checks.json"
 PY = sys.executable
 PY_TOOLS = [
     "tools/build_catalog.py",
+    "tools/build_practice.py",
+    "tools/build_quizzes.py",
+    "tools/import_existing_cbt.py",
+    "tools/import_open_courses.py",
+    "tools/build_pages.py",
     "tools/build_site_data.py",
     "tools/validate_site.py",
     "tools/serve_site.py",
@@ -47,6 +52,21 @@ PY_TOOLS = [
 ]
 JS_FILES = [
     "assets/js/engine.mjs",
+    "assets/js/account.mjs",
+    "assets/js/history-store.mjs",
+    "assets/js/quiz-engine.mjs",
+    "assets/js/quiz.mjs",
+    "assets/js/theme.mjs",
+    "tests/mobile/universal_cbt_check.cjs",
+    "assets/js/paper-engine.mjs",
+    "assets/js/paper-reader.mjs",
+    "assets/js/room.mjs",
+    "server/cookies.mjs",
+    "server/handler.mjs",
+    "tools/dev_server.mjs",
+    "tools/build_web.mjs",
+    "tools/vercel_snapshot_bootstrap.mjs",
+    "tests/mobile/room_account_check.cjs",
     "assets/js/test.mjs",
     "assets/js/viewer.mjs",
     "tests/mobile/cbt_reader_check.cjs",
@@ -55,6 +75,16 @@ JS_FILES = [
 ]
 
 CHECKS = [
+    ("All-subject CBT catalogue", [PY, "tools/build_quizzes.py", "--check"],
+     "Subject-sharded hash-addressed banks, source guards, typed question/answer contracts and small CN-only bootstrap."),
+    ("Native all-subject CBT/history browser regression (optional)", ["node", "tests/mobile/universal_cbt_check.cjs"],
+     "Six widths, native RPSC/reasoning/typed CBT, offline saves, guest history, 551-result mocked paging/export, 35 queued writes, owner isolation and six imported PDF readers. Not live OAuth."),
+    ("Auth, cookies and practice engine", ["npm", "test"],
+     "PKCE/state, encrypted HttpOnly cookies, refresh/logout, CSRF, owner isolation, input bounds, timing and honest grading."),
+    ("Old-paper room manifest", [PY, "tools/build_practice.py", "--check"],
+     "All uploaded PDFs discovered; key/paper hash guards, no fabricated keys."),
+    ("Paper room and account browser regression (optional)", ["node", "tests/mobile/room_account_check.cjs"],
+     "Five widths including 951px, scanned PDFs, OMR, retry/cancellation, resume, auto-submit, mocked account sync/logout and storage failures. Not live Google OAuth."),
     ("Python syntax", [PY, "-m", "py_compile", *dict.fromkeys(PY_TOOLS)],
      "Every builder/validator script compiles."),
     ("Generated data parses as JSON",
@@ -117,10 +147,10 @@ def main() -> int:
             "status": status,
             "exit_code": result.returncode,
             "note": note,
-            "output_tail": output[-6:],
+            "output_tail": output[-160:] if result.returncode not in (0, 77) else output[-6:],
         })
         print(f"[{status}] {name}")
-        for line in output[-4:]:
+        for line in (output[-160:] if result.returncode not in (0, 77) else output[-4:]):
             print("    " + line)
 
     report = {
@@ -133,6 +163,7 @@ def main() -> int:
         },
         "checks": results,
         "not_tested": [
+            "Live Google account consent and OAuth completion: Google provider credentials must be configured by the owner first.",
             "Physical Android/iOS devices and the live GitHub Pages deployment (local Chromium checks run when available).",
             "Exhaustive rendering of every PDF page; the browser regression samples hosted papers, theory and maps.",
         ],

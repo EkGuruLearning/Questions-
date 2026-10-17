@@ -79,6 +79,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
     files.push('content/rajasthan-geography/map/rajasthan/PDF/Rajasthan_Border_District_Map_A4.pdf');
     files[2] = findPDF(site.subjects.find((s) => s.id === 'computer-network').tree);
     for (const file of files) {
+      console.log("CHECK mobile reader: " + file);
       await page.goto(BASE + 'subjects/reader/index.html?file=' + encodeURIComponent(file));
       await page.waitForFunction(() => /^(Ready|Page nahi)|Original file \/ Download available/.test(document.getElementById('readerStatus').textContent), { timeout: 60000 });
       assert.match(await page.$eval('#readerStatus', (e) => e.textContent), /^Ready/, file);

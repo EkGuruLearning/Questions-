@@ -1,0 +1,46 @@
+    <section class="section account-intro">
+      <span class="eyebrow">One timeline · every subject</span>
+      <h1>Chhoti practice. Badi progress.</h1>
+      <p class="section-note">CN ho, Reasoning ho ya agla naya subject—har test ka result yahin. Guest results is browser mein; Google login ke baad shuru kiye tests private cloud mein bhi.</p>
+      <p class="notice" role="status" data-account-notice hidden></p>
+    </section>
+    <section class="section account-layout" aria-label="Account and privacy">
+      <div class="card account-profile">
+        <div data-account-guest>
+          <span class="account-symbol" aria-hidden="true">e</span><h2>Your learning space</h2>
+          <p class="muted">Cross-device results ke liye optional Google sign-in.</p>
+          <a class="button google-button" href="index.html" data-account-login aria-disabled="true"><span class="google-letter" aria-hidden="true">G</span>Continue with Google</a>
+          <p class="small muted">Password sirf Google ki official screen par. Humse share na karein.</p>
+          <a class="button primary" href="../practice/index.html">Guest CBT shuru karo →</a>
+        </div>
+        <div data-account-signed hidden>
+          <span class="eyebrow">Signed in with Google</span><h2 data-account-name>Student</h2><p class="muted" data-account-email></p>
+          <div class="action-row"><a class="button primary" href="../practice/index.html">Choose a test →</a><button class="button secondary" type="button" data-account-sync>Refresh / Sync</button><button class="button ghost" type="button" data-account-logout>Logout</button></div>
+        </div>
+        <p class="small muted" data-cloud-status role="status"></p>
+      </div>
+      <aside class="card privacy-card">
+        <span class="eyebrow">Private by design</span><h2>Aapka data, aapka control.</h2>
+        <ul>
+          <li>Encrypted <b>HttpOnly + Secure</b> session cookies; login tokens JavaScript/localStorage mein nahi.</li>
+          <li>Session cookie up to 30 din; security settings ke hisaab se dobara login lag sakta hai.</li>
+          <li>Har subject/test supported. 200-result auto-delete nahi; 50-at-a-time paging aur export.</li>
+          <li>Offline results tab tak queued rehte hain jab tak sync na ho; purani guest history silently upload nahi hoti.</li>
+        </ul>
+        <p class="small muted">Device history account-filtered hai, encrypted vault nahi. Shared browser par logout aur zarurat par site data clear karein. Browser storage clear/evict ho sakti hai: important results export karein. Provider storage/inactivity quotas apply; lifetime-free availability guaranteed nahi.</p>
+      </aside>
+    </section>
+    <section class="section" aria-labelledby="allResultsTitle">
+      <div class="section-head"><h2 id="allResultsTitle">Your results, without the clutter.</h2><span class="chip neutral" id="historyCaption">Private cloud / this device</span></div>
+      <form id="historyFilter" class="card history-filters">
+        <div class="field-grid">
+          <div class="field"><label for="historySource">History source</label><select id="historySource"><option value="local">This device (includes unsynced)</option><option value="cloud" disabled>Private cloud</option></select></div>
+          <div class="field"><label for="historySubject">Subject ID (optional)</label><input id="historySubject" type="text" maxlength="96" placeholder="e.g. reasoning" autocomplete="off"></div>
+          <div class="field"><label for="historyTest">Test ID (optional)</label><input id="historyTest" type="text" maxlength="128" placeholder="e.g. series-12" autocomplete="off"></div>
+        </div>
+        <div class="action-row"><button class="button primary" type="submit">Apply filters</button><button class="button secondary" id="historyExport" type="button">Export all matching results</button></div>
+        <p class="small muted">Examples: computer-network, reasoning, previous-year-papers. IDs har result ke saath dikhte hain. Cloud delete aur device delete alag hain. Scores self-practice ke liye, official/proctored rankings nahi.</p>
+      </form>
+      <div id="accountHistory" class="history-list" aria-live="polite"><p class="muted">History load ho rahi hai…</p></div>
+      <button class="button secondary history-more" id="historyMore" type="button" hidden>Load 50 older results ↓</button>
+    </section>
