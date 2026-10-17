@@ -4,11 +4,11 @@
 
 - Separate **free-plan Supabase project**, `EkGuru Questions`, Mumbai (`ap-south-1`), ref `byinrfmonsqfkoxejhgn`.
 - Separate **Vercel project**, `ekguru-questions`, ID `prj_1kdFq22FVdir3TWOQcILikOtcmeL`.
-- Public origin: `https://ekguru-questions.vercel.app`.
+- Reserved production origin: `https://ekguru-questions.vercel.app`. **No production deployment has been created yet.**
 - DB migrations in `supabase/migrations/` have already been applied to this new project. Existing unrelated projects were not changed.
 - Vercel server environment configured: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SESSION_SECRET`, `APP_ORIGIN`.
 - **Owner action still required:** create/enable the Google OAuth provider. Connecting Supabase/Vercel does not create a Google Cloud OAuth client. No password/client secret should be pasted in chat or committed to Git.
-- Vercel's GitHub integration does **not** currently have permission for `EkGuruLearning/Questions-`. Initial deployment can use the public, immutable Git snapshot bootstrap below. Automatic future Vercel deploys require granting that repository access in Vercel's GitHub app, then linking this existing project. Do not create another paid project.
+- Vercel's GitHub integration does **not** currently have permission for `EkGuruLearning/Questions-`. Grant that repository access and link this existing project for automatic deployment. The connector's direct-upload deployment was also attempted on 2026-10-17, but Vercel rejected it before building: `projectSettings` is required, and this connector does not expose that field. Follow-up deployment listing confirmed that no deployment was created. Do not create another paid project.
 
 ## 1. Enable Google once (owner, in the dashboards)
 
@@ -146,7 +146,9 @@ No React/Next runtime, browser auth SDK, fonts CDN, ORM or continuously running 
 
 For automatic Vercel updates: grant the Vercel GitHub App access to **EkGuruLearning/Questions-** and connect it to this existing Vercel project. Build is `npm run build`, install is `npm ci`; `npm run build` automatically runs `build:content` first, so newly uploaded papers are discovered during each deployment. The generated HTML/manifests can also be refreshed locally with `npm run build:content`. Do not expose `.env.local` or use a service-role key.
 
-Initial direct deployment without repo-integration permission uses **only a public, immutable commit SHA** in `EKGURU_SOURCE_SHA`, plus a minimal bootstrap that fetches that codeload snapshot, installs locked build dependencies and runs this same production build. It stores no GitHub token or Google secret in the source. An integration-less snapshot deployment does not automatically track future Git pushes.
+**Publish from the Vercel dashboard:** grant the Vercel GitHub App access to this repository, connect it in the existing project's **Settings → Git**, then deploy the reviewed source. After merging the feature PR, deploy `main` for the regular production site. Keep install `npm ci`, build `npm run build`, output `public`, and Node 22 (or newer). Server environment variables have already been configured; do not paste secrets into a build command or source file. Existing GitHub Pages still serves `main` until the PR is merged.
+
+`tools/vercel_snapshot_bootstrap.mjs` is an **optional, not end-to-end deployment-verified** fallback for a capable deployment client. It takes only a public, immutable commit SHA in `EKGURU_SOURCE_SHA`, fetches that GitHub codeload snapshot and runs the locked build. The supplied connector could not submit the required deployment `projectSettings`, so this fallback did not publish a site here. It stores no GitHub token or Google secret in source and does not automatically track future pushes.
 
 The GitHub Actions workflow verifies PRs and publishes a freshly generated static `public/` on pushes to main (enable **Settings → Pages → Source: GitHub Actions** once). It does not deploy a backend or magically provision a Google OAuth app.
 
@@ -165,4 +167,6 @@ npm install --prefix .cache/browser-deps puppeteer-core@24.16.0 @sparticuz/chrom
 NODE_PATH="$PWD/.cache/browser-deps/node_modules" node tests/mobile/room_account_check.cjs
 ```
 
-The browser regression exercises 360/390/768/1280px, real local PDFs, OMR, clear/review/palette, reload/resume, expiry/auto-submit, truthful unscored results, quick CN presets, and **mocked** account/history/offline/logout/storage-failure UI. It is not a claim of completing Google's live consent flow. If the host lacks NSS/NSPR, use system Chromium or unpack the optional Chromium package's `al2023.tar.br` libraries into an ignored cache and set `LD_LIBRARY_PATH`; no browser binaries/libraries are committed.
+The browser regression exercises 360/390/768/951/1280px, real local PDFs, OMR, failure/retry/cancellation, bounded-canvas zoom, clear/review/palette, reload/resume, expiry/auto-submit, truthful unscored results, quick CN presets, and **mocked** account/history/offline/logout/storage-failure UI. PDF.js worker-termination notices caused by the intentional network-abort test are classified separately; unrelated errors still fail. This is not a claim of completing Google's live consent flow. If the host lacks NSS/NSPR, use system Chromium or unpack the optional Chromium package's `al2023.tar.br` libraries into an ignored cache and set `LD_LIBRARY_PATH`; no browser binaries/libraries are committed.
+
+Verified on 2026-10-17: all 24 local release gates passed against the minified production export (including all optional browser checks), 41 Node tests passed, 79 Python tests passed, and the GitHub Verify portal push workflow passed. Supabase's forced RLS/policies were independently queried, and `supabase/tests/history_rls.sql` passed own-user read/insert, cross-user read/insert/delete denial, immutable results and 200-result retention. Its synthetic users/results were rolled back. The callback allowlist includes the explicit state-query patterns above. Live Google consent, physical devices, and a public Vercel deployment remain unverified.

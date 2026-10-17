@@ -1,7 +1,7 @@
 # EkGuru Learning — free study, Google account & Test Room
 
 - Static / guest site: `https://ekgurulearning.github.io/Questions-/`
-- Secure login + practice site: `https://ekguru-questions.vercel.app/subjects/test-room/index.html`
+- Configured Vercel target (**deployment pending**, not a live-site claim): `https://ekguru-questions.vercel.app/subjects/test-room/index.html`
 - **Google provider activation is pending the owner's Google OAuth setup.** Connecting hosting/database alone does not enable Google consent. Exact dashboard steps: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_PRACTICE.md).
 
 1. **Computer Network** — 7 topics, topic-wise/full-mix online test (1,554 questions) aur 20/50/100-question quick-test presets.
