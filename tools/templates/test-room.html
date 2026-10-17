@@ -1,0 +1,107 @@
+    <section class="section room-intro" id="roomIntro">
+      <div>
+        <span class="eyebrow">Study → Practice → Improve</span>
+        <h1>Aapka Test Room</h1>
+        <p class="section-note">Old paper ko exam ki tarah solve karo. PDF padho, answer sheet bharo, timer ke saath practice karo—scanned papers bhi chalte hain.</p>
+        <p class="small muted" data-cloud-status role="status">Guest practice free hai. Google login se naye results har device par milenge.</p>
+      </div>
+      <div class="room-account card">
+        <span class="chip green">Free practice · no paywall</span>
+        <p data-account-guest>Progress ko private account mein save karna hai?</p>
+        <a class="button google-button" href="../account/index.html" data-account-login aria-disabled="true"><span class="google-letter" aria-hidden="true">G</span>Continue with Google</a>
+        <p data-account-signed hidden>Hi, <b data-account-name>Student</b> 👋</p>
+        <a class="button secondary" href="../account/index.html" data-account-signed hidden>My results →</a>
+        <p class="small muted" data-account-notice hidden></p>
+      </div>
+    </section>
+
+    <div id="roomCatalog">
+      <section class="section" aria-labelledby="quickPracticeTitle">
+        <div class="section-head"><h2 id="quickPracticeTitle">Quick practice</h2><span class="small muted">Existing CN bank · random questions</span></div>
+        <div class="quick-test-grid">
+          <a class="card quick-test" href="../computer-network/test/index.html?mode=full&amp;count=20&amp;pattern=practice"><span class="eyebrow">20 questions · learn mode</span><h3>Daily warm-up</h3><p class="muted">Turant answer aur explanation. Saat topics se ek fresh mix.</p><b>Practice shuru karo →</b></a>
+          <a class="card quick-test" href="../computer-network/test/index.html?mode=full&amp;count=50&amp;pattern=exam&amp;minutes=60"><span class="eyebrow">50 questions · 60 minutes</span><h3>CN exam sprint</h3><p class="muted">Answers sirf submit ke baad. Timer ke saath apni speed check karo.</p><b>Mock test do →</b></a>
+          <a class="card quick-test" href="../computer-network/test/index.html?mode=full&amp;count=100&amp;pattern=exam&amp;minutes=120"><span class="eyebrow">100 questions · 120 minutes</span><h3>Full revision</h3><p class="muted">Bada mixed set. Result ke baad galat questions dobara solve karo.</p><b>Revision shuru karo →</b></a>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="oldPaperTitle">
+        <div class="section-head"><h2 id="oldPaperTitle">Previous papers, real practice</h2><a href="../previous-year-papers/index.html">Saare papers &amp; sources →</a></div>
+        <p class="small muted">PDF aapke start karne par hi load hogi. Bina digital key ke paper unscored rehta hai; answer key ka status har paper par diya hai.</p>
+        <!-- PAPER_CARDS -->
+      </section>
+      <section class="section card" id="paperSetup" aria-labelledby="paperSetupTitle">
+        <h2 id="paperSetupTitle">Apna paper choose karo</h2>
+        <p id="roomLoadStatus" class="muted" role="status">Paper list load ho rahi hai…</p>
+        <form id="paperSetupForm">
+          <div class="field"><label for="paperSelect">Paper</label><select id="paperSelect" required disabled><option value="">Loading…</option></select></div>
+          <p id="paperMeta" class="small muted"></p>
+          <p id="paperKeyNote" class="notice small"></p>
+          <div class="field-grid">
+            <div class="field"><label for="paperCount">Total questions (PDF se confirm karein)</label><input id="paperCount" type="number" min="1" max="300" value="100" required></div>
+            <div class="field"><label for="paperOptions">Options per question</label><select id="paperOptions"><option value="2">2 (A–B)</option><option value="3">3 (A–C)</option><option value="4" selected>4 (A–D)</option><option value="5">5 (A–E)</option></select></div>
+            <div class="field"><label for="paperMinutes">Practice time (minutes, 0 = no limit)</label><input id="paperMinutes" type="number" min="0" max="360" value="120" required></div>
+            <div class="field"><label for="paperMode">Mode</label><select id="paperMode"><option value="exam">Exam — key after submission</option><option value="practice">Practice — check selected answer</option></select></div>
+            <div class="field"><label for="paperMarks">Marks per correct answer</label><input id="paperMarks" type="number" min="0.001" max="100" step="0.001" value="1" required></div>
+            <div class="field"><label for="paperNegative">Negative marks per wrong answer</label><input id="paperNegative" type="number" min="0" max="100" step="0.001" value="0" required></div>
+          </div>
+          <p class="small muted">Time aur marking practice settings hain, official exam pattern ka claim nahi. Paper ki original instructions ko follow karein.</p>
+          <button class="button primary" id="startPaperButton" type="submit" disabled>Start paper →</button>
+        </form>
+        <div id="draftNotice" class="draft-notice" hidden>
+          <p id="draftText"></p>
+          <div class="action-row"><button class="button primary" id="resumePaperButton" type="button">Resume saved paper</button><button class="button secondary" id="discardPaperButton" type="button">Discard draft</button></div>
+        </div>
+        <p id="lastLocalResult" class="small muted"></p>
+      </section>
+    </div>
+
+    <section class="section" id="paperPlayer" hidden aria-label="Paper practice room">
+      <div class="room-toolbar card">
+        <div><span class="eyebrow">Paper practice</span><h2 id="activePaperTitle"></h2><p class="small muted" id="roomProgress"></p></div>
+        <div class="action-row"><span class="timer" id="roomTimer" aria-label="Test time">00:00</span><button class="button secondary" id="pausePaperButton" type="button">Save &amp; leave</button><button class="button primary" id="submitPaperButton" type="button">Submit paper</button></div>
+      </div>
+      <p id="draftSaveStatus" class="small muted" role="status">Answers automatically save on this device. Timed paper ka timer tab band hone par bhi chalta hai.</p>
+      <div class="paper-workspace">
+        <section class="card paper-document" aria-label="Question paper PDF">
+          <div class="reader-tools">
+            <button class="button secondary" id="roomPagePrev" type="button" aria-label="Previous PDF page">←</button>
+            <label for="roomPageNumber">Page</label><input id="roomPageNumber" type="number" min="1" value="1" aria-label="PDF page number"><span id="roomPageCount">/ …</span>
+            <button class="button secondary" id="roomPageNext" type="button" aria-label="Next PDF page">→</button>
+            <button class="button secondary" id="roomZoomOut" type="button" aria-label="Zoom out PDF">−</button>
+            <button class="button secondary" id="roomZoomIn" type="button" aria-label="Zoom in PDF">+</button>
+            <a class="button secondary" id="roomOriginal" href="../previous-year-papers/index.html" target="_blank" rel="noopener noreferrer">Original PDF ↗</a>
+          </div>
+          <p class="small muted" id="roomPdfStatus" role="status">PDF load ho rahi hai…</p>
+          <div class="paper-canvas-wrap" id="roomCanvasWrap"><canvas id="roomCanvas" role="img" aria-label="Question paper page"></canvas></div>
+          <button class="button secondary" id="retryPaperPdf" type="button" hidden>PDF dobara load karo</button>
+        </section>
+        <section class="card paper-answer-sheet" aria-labelledby="answerSheetTitle">
+          <div class="section-head"><h2 id="answerSheetTitle">Answer sheet</h2><span class="chip neutral" id="roomQuestionLabel">Question 1</span></div>
+          <p class="small muted">PDF page aur answer-sheet question alag controls hain. Question number match karke answer choose karein.</p>
+          <fieldset class="room-options" id="roomOptions"><legend class="sr-only">Select your answer</legend></fieldset>
+          <p id="roomFeedback" class="notice small" role="status" hidden></p>
+          <div class="action-row">
+            <button class="button secondary" id="roomCheck" type="button" hidden>Check answer</button>
+            <button class="button secondary" id="roomClear" type="button">Clear</button>
+            <button class="button secondary" id="roomMark" type="button" aria-pressed="false">Mark for review</button>
+          </div>
+          <div class="action-row question-navigation">
+            <button class="button secondary" id="roomPrev" type="button">← Previous</button>
+            <button class="button primary" id="roomNext" type="button">Next →</button>
+          </div>
+          <details class="room-palette" open><summary>Question palette</summary><p class="small muted">Green = answered · Yellow = review · Border = current</p><div id="roomPalette" class="palette-grid" aria-label="Jump to question"></div></details>
+        </section>
+      </div>
+    </section>
+
+    <section class="section card" id="paperResult" hidden aria-labelledby="paperResultTitle">
+      <span class="eyebrow">Practice complete</span><h2 id="paperResultTitle">Your result</h2>
+      <p id="paperResultLabel" class="muted"></p>
+      <div class="result-stats" id="paperResultStats"></div>
+      <p id="paperResultNote" class="notice"></p>
+      <p class="small muted" data-cloud-status role="status"></p>
+      <div class="action-row"><button class="button primary" id="newPaperButton" type="button">Choose another paper</button><button class="button secondary" id="downloadPaperResult" type="button">Download result JSON</button><a class="button secondary" href="../account/index.html">My account →</a></div>
+      <details class="room-review"><summary>Answer-by-answer review</summary><div id="paperReview"></div></details>
+    </section>
+    <p id="roomMessage" class="notice" role="status" hidden></p>
+    <noscript><p class="notice">Interactive Test Room ke liye JavaScript on karein. Upar ke Original PDF links aur subject PDFs bina JavaScript ke bhi khulte hain.</p></noscript>

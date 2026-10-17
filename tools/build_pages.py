@@ -65,7 +65,7 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='44' "
            "font-size='34' font-family='Arial' font-weight='bold' fill='%23fff' "
            "text-anchor='middle'%3Ee%3C/text%3E%3C/svg%3E")
-BRAND_TAGLINE = "Study material, previous year papers aur online test — sab free, koi login nahi."
+BRAND_TAGLINE = "Study material aur practice sab free. Google login optional — apne results save karein."
 # GitHub Pages project URL — canonical, og:url aur sitemap isi se judte hain.
 SITE_URL = "https://ekgurulearning.github.io/Questions-/"
 OG_IMAGE = "assets/img/ekguru-og-card.png"
@@ -347,6 +347,7 @@ def head(title: str, description: str, depth: int, extra_head: str = "", extra_b
   <meta name="twitter:description" content="{esc(description)}">
   <meta name="twitter:image" content="{esc(og_image)}">
   <link rel="stylesheet" href="{prefix}assets/css/ekguru.css">
+  <script type="module" src="{prefix}assets/js/account.mjs"></script>
   <script type="application/ld+json">
 {ld_text}
   </script>{extra_struct}{extra_head}
@@ -361,6 +362,7 @@ def header(depth: int, subject_slugs: list[tuple[str, str]], current: str = "") 
     links = [("Home", f"{prefix}index.html", "")]
     for slug, title in subject_slugs:
         links.append((title, f"{prefix}subjects/{slug}/index.html", slug))
+    links.append(("Test Room", f"{prefix}subjects/test-room/index.html", "test-room"))
     links.append(("All Subjects", f"{prefix}subjects/index.html", "all"))
     nav_desktop = "".join(
         f'<a href="{esc(href)}"' + (' aria-current="page"' if key == current else "") + f'>{esc(label)}</a>'
@@ -374,6 +376,7 @@ def header(depth: int, subject_slugs: list[tuple[str, str]], current: str = "") 
         <span><span class="brand-name">EkGuru Learning</span><span class="brand-caption">By PRAKASH</span></span>
       </a>
       <nav class="site-nav desktop-nav" aria-label="Main navigation">{nav_desktop}</nav>
+      <a class="account-link" href="{prefix}subjects/account/index.html" data-account-link>Google login</a>
       <details class="site-menu">
         <summary class="site-menu-toggle">Menu</summary>
         <nav class="site-nav" aria-label="Main navigation (mobile)">{nav_desktop}</nav>
@@ -426,6 +429,14 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
         chips.append(f'<span class="chip neutral">{esc(item["topic_id"])}</span>')
     chips.append(f'<span class="chip neutral">{esc(item["file_type"])}</span>')
     chips.append(f'<span class="chip neutral">{esc(human_size(item["bytes"]))}</span>')
+    practice_action = ""
+    practice_manifest = ROOT / "data/practice/manifest.json"
+    if item["repo_path"].startswith("content/previous-year-papers/") and practice_manifest.is_file():
+        papers = json.loads(practice_manifest.read_text(encoding="utf-8"))["papers"]
+        paper = next((entry for entry in papers if entry["pdf"] == item["repo_path"]), None)
+        if paper:
+            room = href_from(from_page, "subjects/test-room/index.html") if from_page else prefix + "subjects/test-room/index.html"
+            practice_action = f'<a class="button secondary small" href="{esc(room)}?paper={esc(paper["id"])}">Practice as test →</a>'
     open_label = "Map kholo" if is_picture else "PDF kholo"
     return f"""        <li class="material-item{' is-image' if is_picture else ''}">
           {thumb}
@@ -437,6 +448,7 @@ def file_row(item: dict, depth: int, from_page: str = "") -> str:
             <div class="material-meta">{''.join(chips)}</div>
           </div>
           <div class="material-actions">
+            {practice_action}
             <a class="button secondary small" href="{esc(viewer_href)}">{open_label}</a>
             <a class="button ghost small" href="{esc(href)}" target="_blank" rel="noopener noreferrer">Original ↗</a>
             <a class="button primary small" href="{esc(href)}" download>Download</a>
@@ -857,7 +869,7 @@ class Builder:
             subject_actions += f'<a class="button primary" href="{href_from(subject_page_rel, f"subjects/{slug}/test/index.html")}">Online Test</a>\n        '
             quick.insert(0, ("Online test", f"subjects/{slug}/test/index.html"))
         if is_pyq_subject:
-            subject_actions += '<a class="button primary" href="#verified-paper-sources">Browse exam sources →</a>\n        '
+            subject_actions += '<a class="button primary" href="../test-room/index.html">Practice papers in Test Room →</a>\n        <a class="button secondary" href="#verified-paper-sources">Browse exam sources →</a>\n        '
         subject_actions += (f'<a class="button secondary" href="{href_from(subject_page_rel, "subjects/index.html")}">All subjects</a>\n        '
                             f'<a class="button ghost" href="{href_from(subject_page_rel, "index.html")}">Home</a>')
         tile_nodes = [
@@ -1086,7 +1098,8 @@ class Builder:
         <p class="hero-lead">Har subject ke folders — theory, practice, answers aur tests. Previous year papers
           exam-wise aur saal-wise, aur Computer Network ka online test turant.</p>
         <div class="hero-actions">
-          <a class="button primary" href="subjects/computer-network/index.html">Computer Network</a>
+          <a class="button primary" href="subjects/test-room/index.html">Test Room →</a>
+          <a class="button secondary" href="subjects/computer-network/index.html">Computer Network</a>
           <a class="button secondary" href="subjects/previous-year-papers/index.html">Previous Year Papers</a>
           <a class="button secondary" href="subjects/rajasthan-geography/index.html">Rajasthan Map</a>
           <a class="button ghost" href="subjects/index.html">All subjects</a>
@@ -1185,6 +1198,39 @@ class Builder:
   </main>
 {footer(2, self.subjects, [('All subjects', 'subjects/index.html'), ('Previous year papers', 'subjects/previous-year-papers/index.html')])}"""
         self.add("subjects/reader/index.html", body)
+
+    # ----------------------------------------------------- account / test room
+    def portal_pages(self) -> None:
+        manifest_path = ROOT / "data/practice/manifest.json"
+        if not manifest_path.is_file():
+            raise SystemExit("FAIL: run python3 tools/build_practice.py before building pages")
+        papers = json.loads(manifest_path.read_text(encoding="utf-8"))["papers"]
+        cards = []
+        for paper in papers:
+            pdf_href = "../../" + url_for(paper["pdf"])
+            count = f'{paper["question_count"]} questions' if paper["question_count"] else "Confirm count from PDF"
+            key = f'{sum(value != "DROP" for value in paper["answer_key"].values())} keyed questions · provided practice key' if paper["answer_key"] else "No key · unscored self-practice"
+            cards.append(f"""<article class="card paper-card">
+          <span class="eyebrow">{esc(paper['exam'].upper())} · {esc(paper['year'] or 'Uploaded paper')}</span>
+          <h3>{esc(paper['title'])}</h3><p class="small muted" lang="hi">{esc(paper['title_hi'])}</p>
+          <p class="small muted">{esc(count)} · {esc(human_size(paper['bytes']))}</p>
+          <p class="small">{esc(key)}</p>
+          <div class="action-row"><a class="button primary" href="#paperSetup" data-paper-id="{esc(paper['id'])}">Practice paper →</a><a class="button secondary" href="{esc(pdf_href)}" target="_blank" rel="noopener noreferrer">Original PDF ↗</a></div>
+        </article>""")
+        cards_html = '<div class="paper-card-grid">' + "\n".join(cards) + "</div>" if cards else '<p class="empty-state">Old papers upload hone ke baad yahan practice cards aa jayenge. Tab tak CN practice available hai.</p>'
+        for name, title, description, module in (
+            ("account", "My Account — EkGuru Learning", "Optional Google login, private practice history aur secure session cookies. Guest practice sabke liye free.", ""),
+            ("test-room", "Test Room — EkGuru Learning", "Old papers ko PDF aur answer sheet ke saath solve karein. Timed practice, resume, review aur optional Google result sync.", "room.mjs"),
+        ):
+            page = f"subjects/{name}/index.html"
+            parts = [("Home", "../../index.html"), ("All Subjects", "../index.html"), ("My account" if name == "account" else "Test Room", "")]
+            content = (ROOT / f"tools/templates/{name}.html").read_text(encoding="utf-8").replace("<!-- PAPER_CARDS -->", cards_html)
+            script = f'<script type="module" src="../../assets/js/{module}"></script>' if module else ""
+            body = (head(title, description, 2, extra_head=script, page_path=page, breadcrumbs=parts)
+                    + header(2, self.nav, name) + '\n  <main id="main" class="shell">\n'
+                    + crumbs(parts) + "\n" + content + "  </main>\n"
+                    + footer(2, self.subjects, [("Test Room", "subjects/test-room/index.html"), ("My account", "subjects/account/index.html")]))
+            self.add(page, body)
 
     # -------------------------------------------------------------- legacy
     def legacy_material(self) -> None:
@@ -1287,6 +1333,7 @@ def main() -> int:
     builder.home()
     builder.subjects_index()
     builder.reader()
+    builder.portal_pages()
     for subject in builder.subjects:
         builder.subject_page(subject)
     builder.paper_exam_pages()

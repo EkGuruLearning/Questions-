@@ -10,6 +10,8 @@
 | `subjects/index.html` | Saare subjects; `?subject=<slug>` par us subject ke folders (`&folder=` se andar) |
 | `subjects/computer-network/material/index.html` | Folder browser: folder tile kholo → files dikhte hain (open/download) |
 | `subjects/computer-network/test/index.html` | Test setup + player + result + review |
+| `subjects/test-room/index.html` | Old-paper PDF + OMR, timer, local resume, review/export |
+| `subjects/account/index.html` | Optional Google login + private synced history |
 | `subjects/rajasthan-geography/index.html` | Map folder → Rajasthan folder → A1/A2/A3/A4 map files |
 | `404.html` | Purane/unknown link ke liye friendly page |
 
@@ -80,7 +82,7 @@ Website ka folder view `content/` ke asli folders se banta hai:
 1. File `content/<subject>/<folder>/` me rakho (naam me topic prefix, e.g. `T03-...`) —
    jitne chahe folder/andar ke folder banao, sab apne aap dikhenge. Title aur description
    file ke naam se apne aap bante hain (Hindi + English).
-2. Build chalao (bas ek baar): `python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
+2. Build chalao (bas ek baar): `python3 tools/build_thumbs.py && python3 tools/build_practice.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
    — picture ke liye halka preview bhi `data/thumbs/` me apne aap ban jata hai
    (ImageMagick chahiye; na ho to website asli picture hi dikha degi).
 3. Bas — folder card, file row (title + description + preview + download) aur us folder ka
@@ -112,14 +114,14 @@ chhota naam builder nikalta hai: "Section A - DC Components & Protocol Basics (�
 * **Do pattern:** Practice (turant answer + explanation/nukta) aur Exam (end me result, optional time limit).
 * **Language:** English + हिंदी (dono), English, ya हिंदी.
 * Result: score ring, correct/wrong/skipped, topic-wise bars, poora answer review, "galat questions dobara".
-* Saved questions (⭐) aur pichhle test results `localStorage` me rehte hain — server par kuch nahi jata.
+* Saved questions (⭐) aur local results browser mein rehte hain. Google se pehle se logged-in users ke **naye** completed tests private Supabase history mein bhi sync ho sakte hain; guest history silently upload nahi hoti.
 
 ## 5b. Naya subject ya folder — bina code change
 
 1. `content/<subject>/<folder>/` banao aur file daalo (khali chhodna ho to `.gitkeep` rakho taaki git me rahe).
    Andar ke andar ke folders bhi chalega — PDF, PNG/JPG/WebP/AVIF/GIF sab dikhte hain, title aur
    description file ke naam se apne aap (Hindi + English) bante hain.
-2. `python3 tools/build_thumbs.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
+2. `python3 tools/build_thumbs.py && python3 tools/build_practice.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py`
    (sitemap.xml aur robots.txt bhi isi me update ho jate hain).
 3. Subject/folder card, uska SEO-ready page aur links apne aap ban jayenge (naam se label).
    Hindi naam, icon, note, order ya "subject ka online test bhi hai" chahiye to
@@ -129,7 +131,9 @@ chhota naam builder nikalta hai: "Section A - DC Components & Protocol Basics (�
 ## 6. Local preview
 
 ```bash
-python3 tools/serve_site.py          # http://localhost:8000
+npm ci
+EKGURU_DISABLE_AUTH=true npm run dev  # website + same-origin guest API, http://localhost:8000
+# Static-only: python3 tools/serve_site.py
 ```
 
 Ye server sirf public paths deta hai (`index.html`, `404.html`, `subjects/`, `assets/`, `data/`,
@@ -146,3 +150,26 @@ python3 tools/run_release_checks.py          # poora suite, report: maintainer/r
 
 `run_release_checks.py` ka report `maintainer/` me likha jata hai — website par nahi.
 Optional browser checks (jsdom) skip ho jate hain agar package installed na ho.
+
+## 8. Google login + old-paper Test Room
+
+`tools/build_practice.py` scans all old-paper PDFs, skips key PDFs, validates optional
+metadata under `data/practice/papers/`, and writes `data/practice/manifest.json`.
+`npm run build:content` includes this step before the ordinary catalogue/pages/routes.
+New scanned papers need no OCR; without a digital key they get attempted/skipped
+progress, not fabricated marks. Provided-key scores exclude dropped/unkeyed questions.
+Drafts save per browser for up to seven days; timers do not restart on reload.
+
+`server/handler.mjs` provides same-origin Google PKCE OAuth, encrypted HttpOnly session
+cookies, CSRF checks and a user-bound history API. Supabase RLS, not a client user ID,
+protects private results; no service-role key or auth token is sent to browser JS.
+Google provider credentials still require owner dashboard setup. GitHub Pages remains
+static and points its login link to the Vercel site rather than sharing cross-site cookies.
+
+`npm run build` creates ignored, allowlisted `public/` plus `.vercel/output/`; only
+public assets are shipped, not maintainer/tools/server source/metadata/.env files.
+Build-time minification and Brotli 11/gzip 9 reduce text payloads; existing PDF/image
+quality is preserved. No claim of a universally fastest language or lifetime hosting.
+
+Owner setup, exact callback URLs, upload metadata example, retention, deployment
+permission limits and security tests: [AUTH_AND_PRACTICE.md](maintainer/AUTH_AND_PRACTICE.md).

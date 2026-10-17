@@ -3,6 +3,7 @@
 index.html
 404.html
 subjects/index.html
+subjects/account/index.html
 subjects/computer-network/answers/index.html
 subjects/computer-network/index.html
 subjects/computer-network/material/index.html
@@ -11,6 +12,9 @@ subjects/computer-network/reference/index.html
 subjects/computer-network/test/index.html
 subjects/computer-network/tests/index.html
 subjects/computer-network/theory/index.html
+subjects/previous-year-papers/BCI/2022/index.html
+subjects/previous-year-papers/BCI/2026/index.html
+subjects/previous-year-papers/BCI/index.html
 subjects/previous-year-papers/computer-operator/index.html
 subjects/previous-year-papers/dsssb/index.html
 subjects/previous-year-papers/exams/drdo-ceptam-sta/index.html
@@ -55,3 +59,4 @@ subjects/reasoning/practice/index.html
 subjects/reasoning/tests/index.html
 subjects/reasoning/theory/Calendar/index.html
 subjects/reasoning/theory/index.html
+subjects/test-room/index.html

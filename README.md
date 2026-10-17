@@ -1,11 +1,15 @@
-# EkGuru Learning — student portal (Computer Network + Rajasthan map atlas)
+# EkGuru Learning — free study, Google account & Test Room
 
-Live site (GitHub Pages project path): `https://ekgurulearning.github.io/Questions-/`
+- Static / guest site: `https://ekgurulearning.github.io/Questions-/`
+- Secure login + practice site: `https://ekguru-questions.vercel.app/subjects/test-room/index.html`
+- **Google provider activation is pending the owner's Google OAuth setup.** Connecting hosting/database alone does not enable Google consent. Exact dashboard steps: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_PRACTICE.md).
 
-Website par sirf do cheezein hain, aur dono student ke kaam ki hain:
+1. **Computer Network** — 7 topics, topic-wise/full-mix online test (1,554 questions) aur 20/50/100-question quick-test presets.
+2. **Previous papers → Test Room** — scanned PDFs bhi: OMR answers, timer, review marks, clear, local draft/resume, auto-submit, result review/export. Key missing ho to honest unscored practice, invented score nahi.
+3. **Optional Google login** — encrypted HttpOnly/Secure cookies (up to 30 days), private cross-device results in Supabase with row-level security. Guest practice stays free; no login wall.
+4. **Reasoning & Rajasthan Geography** — chapter PDFs, printable maps/atlas, lightweight previews and self-hosted reader.
 
-1. **Computer Network** — 7 topics, topic-wise/full-mix online test (1,554 questions) aur PDF study material (32 files).
-2. **Rajasthan Geography** — border-district map atlas, A1 se A4 print sizes (6 files).
+Small static HTML/JS frontend + a dependency-free Node API; no framework rewrite or browser auth SDK. Production build minifies text and precompresses Brotli 11 / gzip 9. Free-tier quotas/inactivity policies apply; no provider can promise lifetime-free, never-expiring service. Private results are **not** stored in public GitHub files.
 
 Audit reports, source registers, GIS scripts, purane legacy apps — kuch bhi website par nahi dikhta.
 Wo sab `maintainer/` me hai (dekhne ke liye [`maintainer/README.md`](maintainer/README.md)).
@@ -21,6 +25,8 @@ subjects/                                   subject pages
   computer-network/index.html                 CN home — folders + topic list
   computer-network/material/index.html        folder browser (folder kholo → files)
   computer-network/test/index.html            online test (topic-wise + full mix)
+  test-room/index.html                        previous-paper PDF + OMR practice
+  account/index.html                          optional Google login + private results
   rajasthan-geography/index.html              Map folder → Rajasthan → maps
 404.html                                     purane link ke liye friendly page
 
@@ -66,6 +72,7 @@ content/reasoning/practice/series/Sitting-Arrangement-Set-1.pdf
 
 # 2. rebuild (+ image ho to pehle preview)
 python3 tools/build_thumbs.py       # sirf nayi picture ke liye (PNG/JPG)
+python3 tools/build_practice.py     # old-paper uploads -> Test Room manifest
 python3 tools/build_catalog.py      # content -> data/site.json
 python3 tools/build_pages.py        # data/site.json -> plain HTML pages
 python3 tools/build_site_routes.py  # published page list (validate/test isi ko padhte hain)
@@ -123,7 +130,7 @@ python3 tools/new_reasoning_chapter.py "Calendar" "Clock" "Blood Relations"
 #    content/reasoning/tests/Calendar/Calendar-Test-Paper.pdf
 
 # 3. site bana dijiye
-python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py
+python3 tools/build_practice.py && python3 tools/build_catalog.py && python3 tools/build_pages.py && python3 tools/build_site_routes.py
 ```
 
 Chapter ka folder khali ho to site par nahi dikhta — PDF daalte hi us chapter ka page apne aap
@@ -141,7 +148,10 @@ apne aap ban jata hai.
 ## Local preview
 
 ```bash
-python3 tools/serve_site.py          # http://localhost:8000 — sirf public pages
+npm ci
+EKGURU_DISABLE_AUTH=true npm run dev  # http://localhost:8000 — website + guest API
+# Real local login: fill ignored .env.local from .env.example, then npm run dev
+# Static-only fallback: python3 tools/serve_site.py
 ```
 
 ## Mobile check (asli browser me)
@@ -188,13 +198,14 @@ NODE_PATH=<node_modules> node tests/navigation/test_app_dom_smoke.cjs   # option
   PDF that may be blank on Android/iOS. Full maps open in the zoomable reader.
 - The CBT player supports countdown/auto-submit, saved answers during question
   navigation, clear response, mark-for-review & next, and a mobile palette toggle.
-  Attempts are in memory; leaving/reloading a running test resets the attempt.
+  CN attempts are in memory; reloading a running CN test resets it. Old-paper Test Room
+  drafts auto-save locally and resume with the original wall-clock deadline.
 - Only locally hosted files are guaranteed by repository checks. Other exams'
   official/third-party sites may be unavailable, require login, or remove papers;
   these are external source links, not files hosted by EkGuru. RPSC Paper I 2024
   questions and the answer key are hosted locally and available in the reader.
 
-Real-browser regression (start `python3 tools/serve_site.py` first):
+Real-browser regression (start `EKGURU_DISABLE_AUTH=true npm run dev` first):
 
 ```bash
 npm install --prefix /tmp/ekguru-deps puppeteer-core @sparticuz/chromium
@@ -208,3 +219,24 @@ be reproduced locally. The browser check uses **real ES modules** and the
 Changes on an Arena working branch do not update the public site automatically:
 GitHub Pages is configured to deploy **main / (root)**. Merge the reviewed fix PR
 into main and wait for the Pages deployment before checking the public URL.
+
+## Google login / old-paper upload / production build
+
+```bash
+npm ci
+npm run build:content   # discover paper uploads + regenerate manifests/pages/routes
+npm test               # auth/cookie/CSRF/ownership/timer/grading tests
+npm run build          # ignored public/ + Vercel Build Output API
+```
+
+Upload PDFs to `content/previous-year-papers/<exam>/<year>/`; optional count/answer-key
+metadata goes in the mirrored `data/practice/papers/<exam>/<year>/<name>.paper.json`,
+not in `content/`. No OCR or paid API is required. The existing RPSC key is labelled
+provided/unverified; Q3 and Q5 are intentionally ungraded. BCI scans are unscored until
+a digital key is supplied.
+
+Full instructions, Google activation, privacy/retention, deployment integration limits
+and free-tier caveats: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_PRACTICE.md).
+GitHub Actions can publish a fresh static build after uploads to main; select
+**Settings → Pages → Source: GitHub Actions** once. Vercel automatic updates separately
+require granting its GitHub app access to this repository.

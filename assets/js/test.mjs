@@ -32,6 +32,8 @@ const state = {
   elapsed: 0,
   saved: new Map(),
   sessions: [],
+  owner: null,
+  attemptId: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -56,7 +58,7 @@ async function fetchJSON(path) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 20000);
   try {
-    const response = await fetch(root(path), { cache: "no-cache", signal: controller.signal });
+    const response = await fetch(root(path), { cache: /\.[a-f0-9]{12}\.min\.json$/.test(path) ? "default" : "no-cache", signal: controller.signal });
     if (!response.ok) throw new Error(`${response.status} for ${path}`);
     return await response.json();
   } finally { clearTimeout(timeout); }
@@ -257,6 +259,8 @@ function setMode(mode) {
 /* ------------------------------------------------------------- session ----- */
 async function startTest(questionList, label, presetAnswers) {
   state.questions = questionList;
+  state.owner = window.EkGuruAccount?.user?.id || null;
+  state.attemptId = globalThis.crypto?.randomUUID?.() || null;
   state.answers = presetAnswers || {};
   state.marked = new Set();
   state.visited = new Set();
@@ -445,6 +449,15 @@ function finishTest(silent) {
     percent: result.percent,
   }].concat(state.sessions).slice(0, 12);
   writeLocal(STORAGE.sessions, state.sessions);
+  if (state.attemptId && window.EkGuruAccount?.saveAttempt) {
+    const details = { version: 1, mode: state.exam ? "exam" : "practice", language: state.language,
+      answers_saved: state.questions.length <= 150 };
+    if (details.answers_saved) details.answers = state.answers;
+    window.EkGuruAccount.saveAttempt({ id: state.attemptId, kind: "cn", paper_id: "cn-" + (state.topicId || "full"),
+      label, total: result.total, correct: result.correct, wrong: result.wrong, unanswered: result.unanswered,
+      score: result.correct, max_score: result.total, duration_seconds: Math.min(604800, state.elapsed), details }, state.owner)
+      .catch(() => showToast("Cloud sync pending. Result is browser mein available hai."));
+  }
 
   $("playerPanel").hidden = true;
   $("resultPanel").hidden = false;
@@ -658,6 +671,17 @@ async function init() {
     bind();
     const params = new URLSearchParams(window.location.search);
     const topicParam = params.get("topic");
+    const countParam = params.get("count");
+    if (["10", "20", "30", "50", "100", "all"].includes(countParam)) state.count = countParam === "all" ? "all" : Number(countParam);
+    if (["practice", "exam"].includes(params.get("pattern"))) {
+      state.exam = params.get("pattern") === "exam";
+      document.querySelectorAll("[data-pattern]").forEach((node) => node.setAttribute("aria-pressed", String(node.getAttribute("data-pattern") === params.get("pattern"))));
+      $("timeField").hidden = !state.exam;
+    }
+    const minutesParam = params.get("minutes");
+    if ([...$("minutesSelect").options].some((option) => option.value === minutesParam)) {
+      state.minutes = Number(minutesParam); $("minutesSelect").value = minutesParam;
+    }
     const sectionParam = params.get("section");
     renderSavedPanel();
     renderHistory();
@@ -671,7 +695,7 @@ async function init() {
       }
       setMode("topic");
     } else {
-      setMode("topic");
+      setMode(params.get("mode") === "full" ? "full" : "topic");
     }
   } catch (error) {
     $("bankInfo").textContent = "Data load nahi hua";

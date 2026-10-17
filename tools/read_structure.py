@@ -18,10 +18,14 @@ REQUIRED_PATHS = (
     "subjects/computer-network/material/index.html",
     "subjects/computer-network/test/index.html",
     "subjects/rajasthan-geography/index.html",
+    "subjects/test-room/index.html",
+    "subjects/account/index.html",
     # site code and data
     "assets/css/ekguru.css",
     "assets/js/test.mjs",
-    "assets/js/test.mjs",
+    "assets/js/account.mjs",
+    "assets/js/room.mjs",
+    "data/practice/manifest.json",
     "assets/js/engine.mjs",
     "assets/img/rajasthan-border-atlas-preview.webp",
     "data/thumbs/manifest.json",
@@ -47,6 +51,7 @@ REQUIRED_PATHS = (
 )
 
 PREFLIGHT_COMMANDS = (
+    ("Paper rooms are current", [sys.executable, "tools/build_practice.py", "--check"]),
     ("Bank chunks are current", [sys.executable, "tools/build_site_data.py", "--check"]),
     ("Site data is current", [sys.executable, "tools/build_catalog.py", "--check"]),
     ("Published routes, links and downloads", [sys.executable, "tools/validate_site.py"]),
@@ -66,6 +71,8 @@ STUDENTS JO DEKHTE HAIN (website routes):
   subjects/computer-network/index.html             CN home (Material / Test)
   subjects/computer-network/material/index.html     study material (PDF downloads)
   subjects/computer-network/test/index.html         online test (topic-wise + full mix)
+  subjects/test-room/index.html                    old-paper PDF + OMR practice room
+  subjects/account/index.html                      optional Google login + private results
   subjects/rajasthan-geography/index.html           Rajasthan map atlas
   404.html                                          purane link ke liye friendly page
 
@@ -86,7 +93,10 @@ Koi bhi folder ya file daalo, `python3 tools/build_catalog.py` chalao, site par 
 
 SITE CODE AND DATA:
   assets/css/ekguru.css                one stylesheet for every page
-  assets/js/site.js                    renders topic/material/map lists from data/site.json
+  assets/js/account.mjs                optional same-origin account UI (no browser tokens)
+  assets/js/room.mjs                   old-paper player, resume and review
+  server/handler.mjs                   server-only PKCE login, cookies, RLS-backed history
+  data/practice/manifest.json          generated old-paper practice list
   assets/js/test.mjs                   online test app (player, result, review)
   assets/js/engine.mjs                 pure question-engine helpers
   data/site.json                       generated page data (counts, titles, file hashes)

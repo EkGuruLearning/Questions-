@@ -1,0 +1,45 @@
+    <section class="section account-intro">
+      <span class="eyebrow">Your private study space</span>
+      <h1>Practice yahin. Progress har device par.</h1>
+      <p class="section-note">Google se sign in karein, apne naye test results private account mein save karein. Padhna aur practice karna hamesha guest mode mein bhi available hai.</p>
+      <p class="notice" role="status" data-account-notice hidden></p>
+    </section>
+    <section class="section account-layout" aria-label="Account and privacy">
+      <div class="card">
+        <div data-account-guest>
+          <span class="account-symbol" aria-hidden="true">e</span>
+          <h2>Welcome to EkGuru</h2>
+          <p class="muted">Ek Google account. Aapki apni practice history.</p>
+          <a class="button google-button" href="index.html" data-account-login aria-disabled="true"><span class="google-letter" aria-hidden="true">G</span>Continue with Google</a>
+          <p class="small muted">Koi password humse share nahi karna. Google ki official sign-in screen par hi login hota hai.</p>
+          <a class="button secondary" href="../test-room/index.html">Abhi guest practice karo →</a>
+        </div>
+        <div data-account-signed hidden>
+          <span class="eyebrow">Signed in with Google</span>
+          <h2 data-account-name>Student</h2>
+          <p class="muted" data-account-email></p>
+          <p data-cloud-status role="status"></p>
+          <div class="action-row">
+            <a class="button primary" href="../test-room/index.html">Test Room kholo →</a>
+            <button class="button secondary" type="button" data-account-sync>Refresh / Sync</button>
+            <button class="button secondary" type="button" data-account-logout>Logout</button>
+          </div>
+        </div>
+      </div>
+      <aside class="card privacy-card">
+        <span class="eyebrow">Simple &amp; secure</span>
+        <h2>Aapke results, sirf aapke</h2>
+        <ul>
+          <li>Login ki essential cookies only; koi ads ya tracking cookies nahi.</li>
+          <li>Encrypted <b>HttpOnly + Secure</b> session cookies; JavaScript mein login tokens nahi.</li>
+          <li>Session cookie up to 30 din; Google ya security settings ki wajah se dobara login lag sakta hai.</li>
+          <li>Account mein latest 200 results; yahan latest 50 dikhte hain. Har result aap delete kar sakte hain.</li>
+          <li>Guest drafts isi browser mein rehte hain; bina pooche purani guest history upload nahi hoti.</li>
+        </ul>
+        <p class="small muted">Shared device par logout karein. Scores self-practice ke liye hain, official/proctored rankings nahi. Free hosting quotas aur inactivity policies apply hoti hain; lifetime availability ka promise nahi.</p>
+      </aside>
+    </section>
+    <section class="section" data-account-signed hidden>
+      <div class="section-head"><h2>Your recent practice</h2><span class="chip neutral">Private history</span></div>
+      <div id="accountHistory" class="history-list" aria-live="polite"><p class="muted">Sign in ke baad aapke saved results yahan aayenge.</p></div>
+    </section>
