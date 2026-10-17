@@ -67,7 +67,7 @@ const cssName = `assets/css/ekguru.${createHash("sha256").update(cssBytes).diges
 files.delete("assets/css/ekguru.css"); files.add(cssName); generated.set(cssName, cssBytes); assetMap["assets/css/ekguru.css"] = cssName;
 generated.set("data/asset-manifest.json", Buffer.from(JSON.stringify({ version: 1, files: assetMap }))); files.add("data/asset-manifest.json");
 for (const rel of [...files].sort()) {
-  if (rel.includes("\\") || rel.split("/").some((part) => part === ".." || part === ".") || path.isAbsolute(rel) || /^(?:server|supabase|tools|tests|maintainer|\.env|\.git)(?:\/|$)/.test(rel)) throw new Error(`Unsafe public export: ${rel}`);
+  if (rel.includes("\\") || rel.split("/").some((part) => part === ".." || part === ".") || path.isAbsolute(rel) || /^(?:library|server|supabase|tools|tests|maintainer|\.env|\.git)(?:\/|$)/.test(rel)) throw new Error(`Unsafe public export: ${rel}`);
   const source = path.join(ROOT, rel), dest = path.join(PUBLIC, rel);
   await fs.mkdir(path.dirname(dest), { recursive: true });
   const ext = path.extname(rel);

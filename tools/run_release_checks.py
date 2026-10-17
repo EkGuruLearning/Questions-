@@ -19,6 +19,7 @@ PY_TOOLS = [
     "tools/build_practice.py",
     "tools/build_quizzes.py",
     "tools/import_existing_cbt.py",
+    "tools/import_open_courses.py",
     "tools/build_pages.py",
     "tools/build_site_data.py",
     "tools/validate_site.py",

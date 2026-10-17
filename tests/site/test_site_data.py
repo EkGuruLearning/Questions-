@@ -364,7 +364,7 @@ class SiteDataTests(unittest.TestCase):
         on_disk = {
             path.relative_to(ROOT).as_posix()
             for path in ROOT.rglob("*.html")
-            if path.relative_to(ROOT).parts[0] not in {"maintainer", "tools", "tests", ".git", "node_modules", "public", ".vercel", ".cache", ".venv"}
+            if path.relative_to(ROOT).parts[0] not in {"library", "maintainer", "tools", "tests", ".git", "node_modules", "public", ".vercel", ".cache", ".venv"}
         }
         self.assertEqual(on_disk - listed, set(), "every published page must be listed in data/catalog/site-routes.txt")
 

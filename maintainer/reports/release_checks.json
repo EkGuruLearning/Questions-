@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T07:04:56+00:00",
+  "generated_at": "2026-10-17T08:34:03+00:00",
   "command": "python3 tools/run_release_checks.py",
   "summary": {
     "pass": 26,
@@ -41,7 +41,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 3202.142248"
+        "# duration_ms 2809.182931"
       ]
     },
     {
@@ -124,7 +124,7 @@
         "  - section filter: 129 questions in the chosen section",
         "  - player: 10-question practice session rendered",
         "  - practice mode: instant feedback after answering",
-        "  - result: 50% score, stats, topic bars and 10 review items",
+        "  - result: 10% score, stats, topic bars and 10 review items",
         "  - exam mode: hidden answers, palette marking, submit and result"
       ]
     },
@@ -192,7 +192,7 @@
         "test_registry_entries_resolve_to_real_files (test_site_data.SiteDataTests.test_registry_entries_resolve_to_real_files) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 17 tests in 0.962s",
+        "Ran 17 tests in 0.888s",
         "",
         "OK"
       ]
@@ -206,7 +206,7 @@
         "test_year_page_offers_the_other_years (test_navigation.NavigationTests.test_year_page_offers_the_other_years) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 23 tests in 0.334s",
+        "Ran 23 tests in 0.356s",
         "",
         "OK"
       ]
@@ -220,7 +220,7 @@
         "test_touch_targets_and_keyboard_focus_are_visible (test_responsive.ResponsiveStructuralTests.test_touch_targets_and_keyboard_focus_are_visible) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 19 tests in 0.081s",
+        "Ran 19 tests in 0.078s",
         "",
         "OK"
       ]
@@ -234,7 +234,7 @@
         "test_skip_option_cannot_be_a_correct_key_entry (test_practice_manifest.PracticeManifestTests.test_skip_option_cannot_be_a_correct_key_entry) ... ok",
         "",
         "----------------------------------------------------------------------",
-        "Ran 25 tests in 0.164s",
+        "Ran 33 tests in 0.301s",
         "",
         "OK"
       ]
@@ -257,7 +257,7 @@
         "# cancelled 0",
         "# skipped 0",
         "# todo 0",
-        "# duration_ms 74.81542"
+        "# duration_ms 51.186467"
       ]
     },
     {
@@ -304,7 +304,7 @@
       "exit_code": 0,
       "note": "Tracked diffs and changed/untracked text files are checked.",
       "output_tail": [
-        "PASS: changed text files contain no trailing whitespace (2 paths inspected; maintainer/archive originals excluded)."
+        "PASS: changed text files contain no trailing whitespace (1078 paths inspected; preserved maintainer/archive/upstream originals excluded)."
       ]
     }
   ],

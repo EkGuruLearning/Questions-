@@ -247,3 +247,7 @@ and free-tier caveats: [`maintainer/AUTH_AND_PRACTICE.md`](maintainer/AUTH_AND_P
 GitHub Actions can publish a fresh static build after uploads to main; select
 **Settings → Pages → Source: GitHub Actions** once. Vercel automatic updates separately
 require granting its GitHub app access to this repository.
+
+## Expanded material: source checkpoint only
+
+`library/` now preserves 385 English teaching chapters from nine explicitly licensed repositories, with pinned hashes and all notices. It is **not published in the student website yet**. The requested larger syllabus/topic layout, subject-only homepage and additional subject quizzes remain unfinished; these source files are not 200 reviewed websites or complete exam coverage. Status, rights and remaining work: [`library/README.md`](library/README.md).

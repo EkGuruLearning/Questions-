@@ -1,0 +1,4 @@
+# Preserve reviewed upstream bytes, including CRLF and Markdown hard line breaks.
+# SHA-256 / Git-blob integrity tests cover these immutable source copies instead.
+library/third_party/** -text -whitespace
+assets/library/licenses/** -text -whitespace

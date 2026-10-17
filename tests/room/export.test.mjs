@@ -11,7 +11,7 @@ const json = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
 
 test("production export is an allowlist, not the entire repository", { skip: !built }, () => {
   assert.deepEqual([...new Set(fs.readdirSync(PUBLIC).map((file) => file.replace(/\.(br|gz)$/, "")))].sort(), [".nojekyll", "404.html", "assets", "content", "data", "index.html", "robots.txt", "sitemap.xml", "subjects"].sort());
-  for (const rel of [".env", ".env.local", ".git", "server", "supabase", "tools", "tests", "maintainer", "README.md", "data/practice/papers", "data/tests", "data/banks/cn/cn_questions.json"]) {
+  for (const rel of [".env", ".env.local", ".git", "library", "server", "supabase", "tools", "tests", "maintainer", "README.md", "data/practice/papers", "data/tests", "data/banks/cn/cn_questions.json"]) {
     assert.equal(fs.existsSync(path.join(PUBLIC, rel)), false, `${rel} must not be exported`);
   }
 });
